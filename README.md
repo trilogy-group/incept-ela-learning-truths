@@ -1,12 +1,12 @@
-# Incept learning truths
+# Incept ELA learning truths
 
 Research and shared formats for the questions lane. Each learning keeps its evidence, scope and counterarguments. Courses are sources and examples; the aim is knowledge that applies across lessons.
 
 The three repositories are:
 
-- [learning-truths](https://github.com/trilogy-group/incept-learning_truths): the public library, proposal and shared contract.
-- [question-generator](https://github.com/trilogy-group/incept-question-generator): the generator. Today it fills two lesson templates without a model.
-- [question-evaluator](https://github.com/trilogy-group/incept-question-evaluator): the evaluator. It runs on the reference lesson and is not yet qualified.
+- [incept-ela-learning-truths](https://github.com/trilogy-group/incept-ela-learning-truths): the public library, proposal and shared contract.
+- [question-generator](https://github.com/trilogy-group/incept-ela-question-generator): the generator. Today it fills two lesson templates without a model.
+- [question-evaluator](https://github.com/trilogy-group/incept-ela-question-evaluator): the evaluator. It runs on the reference lesson and is not yet qualified.
 
 Start with [AGENTS.md](AGENTS.md) and [IDEAS.md](IDEAS.md). [PERFECT-QUESTION.md](PERFECT-QUESTION.md) and [GENERATING.md](GENERATING.md) summarize the records. [RELATED.md](RELATED.md) links the related repositories.
 
