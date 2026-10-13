@@ -1,0 +1,201 @@
+{
+ "id": "save-the-first-attempt",
+ "title": "Save the first attempt",
+ "statement": "Save the first attempt as well as the last: first-try answers are how two designs get compared.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The film player keeps the first and the latest attempt at each check (`g9/player/content/archivist-checks.json`).\nFirst-try answers are the measure the film study names for comparing designs: a gate has to earn its minutes in\nfirst-try answers (`othello-unit-video/research/FINDINGS.md`, finding 4).",
+ "against": "forced checks may push some students\nto guess (the same finding).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/FINDINGS.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "399-400",
+   "quote": "supported retry counted as first independent success. - Claim boundary: Repair evidence remains distinct from first-try evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1380",
+   "quote": "base high-stakes decisions on the first unaided check (or transfer task) that follows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/alpha-read/modelling-moment-procedures-v2/INDEX.qmd",
+   "lines": "161",
+   "quote": "A modelling handoff is supported practice, not independent mastery evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0050-timeback-events-api.qmd",
+   "lines": "134",
+   "quote": "repeated attempt numbers overwrite prior info",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "400",
+   "quote": "Repair evidence remains distinct from first-try evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "400",
+   "quote": "- Claim boundary: Repair evidence remains distinct from first-try evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "94",
+   "quote": "Telemetry and log: everything needed to replay this tick exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "2-3"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2632",
+   "quote": "The important implementation gap: Grade 3’s current receipt records eventual passes, not durable independent mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2857",
+   "quote": "Completing a task after hints does not establish independent mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2857",
+   "quote": "We need to distinguish initial performance, assisted success and later independent transfer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "148",
+   "quote": "Preserve the original attempt separately. If the student revises after support, label the revision as supported.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "413",
+   "quote": "First attempts survive later support and revision.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "481",
+   "quote": "Record supported revisions honestly and retain the first attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "119-120",
+   "quote": "Solved revisits repaint the answered state cosmetically — never a synthetic click (it would overwrite recorded attempt quality).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "66",
+   "quote": "record quality, log the response once (idempotent)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "50",
+   "quote": "Back never re-locks anything",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/independent-evidence-audit.md",
+   "lines": "12",
+   "quote": "A later accepted response does not erase the original rejection/duplicate evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "391",
+   "quote": "Repair success remains distinct from first-try independent evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/design-mock-l1.html",
+   "lines": "202",
+   "quote": "Each answer is judged, but I have not found anything that stores and totals first-try pass rates across children.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "142",
+   "quote": "Each answer is also logged (`onAnswer` → `unit-video:check-<segment>-<q>`), appending `prev | new` so first and latest attempts survive.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "43",
+   "quote": "First and latest attempts are kept per check (event_contract lesson_2_payload).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "162",
+   "quote": "Each answer is judged, but nothing found so far stores and totals first-try pass rates across children.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

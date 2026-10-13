@@ -1,0 +1,70 @@
+{
+ "id": "hateful-lines-stay-on-the-page",
+ "title": "Hateful lines stay on the page",
+ "statement": "Keep a studied text's slurs and hateful lines on the page only, never voiced, staged or lit, and skip whole sentences so no fragment of one is performed.",
+ "example": "One audio build skips 4 listed ranges of racist lines and aborts if any other voiced line matches its slur pattern.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version of the Grade 9 lessons keeps the play's racist lines as text only, never voiced, staged or lit (`othello-archive/README.md`, line 84). Its audio build skips listed ranges, which may cover a whole sentence so no fragment is performed, and aborts the run if any unlisted voiced line matches a slur pattern (`othello-archive/scripts/play_audio.py`, lines 65-73). The stage-move gate fails a move on one of those lines, and the audio check fails a clip in which a word from a skipped line can be heard (`othello-archive/scripts/check-moments.mjs`, line 6; `othello-archive/scripts/play_audio_check.py`, line 9).",
+ "against": "The lines stay readable and quotable: a learner may quote such language in writing, and the marker treats it as the speaker's weapon, matter-of-factly (`othello-archive/server/tasks/practice.mjs`, line 46); a draft checkpoint quotes one in its question (`othello-archive/src/content/checks.ts`, line 26); and the course names the language plainly as the characters' prejudice, never playing it for drama (`othello-archive/BRIEF.md`, line 43).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "README.md",
+   "lines": "84",
+   "quote": "Racist lines in the play are text only. They are never voiced, staged or lit.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "65",
+   "quote": "Racist language is never voiced.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "66",
+   "quote": "A range may cover a whole sentence so no fragment of it is performed.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "73",
+   "quote": "Belt and braces: any unlisted voiced line matching this aborts the run.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "6",
+   "quote": "the move's line is one of the never-staged racist lines (play_audio.py SKIP)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio_check.py",
+   "lines": "9",
+   "quote": "and no word from the skipped racist lines may be heard",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

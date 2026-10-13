@@ -1,0 +1,63 @@
+{
+ "id": "drop-dont-patch",
+ "title": "Drop, don't patch",
+ "statement": "Drop an item whose fact can't be traced to a cited source rather than patching the gap with a generated claim.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Adopted for new AP training sets after model-written source text was blamed for most factual failures of document-based items (`icloud-work/auto-memory-backup/feedback_no_hallucination_in_training_data.md`, lines 15-19). The project judged that allowing generated text anywhere in a curated set would recreate the same failure, and ruled that a record with a fact that can't be cited to a primary source is dropped, not patched (line 33). The rule still allows prompts, reference answers and connecting text written by hand (lines 27-29). Handovers from the same work extend the rule to any source or data row that fails an audit: drop it rather than rework it until it passes.",
+ "against": "The same project later had a model write items from verified facts and kept those the grader passed: \"- v29 SFT data: pull all KCs per course, generate one MCQ + one SAQ per KC using the bundled scaffolding as the prompt context, IB-grade, keep ≥0.85\" (`icloud-work/auto-memory-backup/reference_curriculum_api_lan.md`, line 85). No result of applying the rule is recorded. The later generation service repaired rather than dropped: when the model returns malformed JSON, the route repairs the schema from the retrieved context (the generation service's `README.md`, line 30), and a later spec mutates a failing candidate to address the criterion it failed (`99stack_layer4_repair_spec.md`, line 14). Both repair generated items, not sources or data rows.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_no_hallucination_in_training_data.md",
+   "lines": "33",
+   "quote": "**Drop-don't-patch rule:** if a fact in a candidate record can't be cited to a primary source, the record gets dropped from the corpus, not patched with a synthesized claim.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_no_hallucination_in_training_data.md",
+   "lines": "19",
+   "quote": "If we curate a \"real-source corpus\" but allow LLM-generated content anywhere in it (gold responses, glue text, paraphrased document text), we recreate the same failure mode. **The point of curation is verified facts; hallucination defeats the purpose.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_curriculum_api_lan.md",
+   "lines": "85",
+   "quote": "- v29 SFT data: pull all KCs per course, generate one MCQ + one SAQ per KC using the bundled scaffolding as the prompt context, IB-grade, keep ≥0.85",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/01_HANDOVER.md",
+   "lines": "89",
+   "quote": "Drop-don't-patch when sources fail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "359",
+   "quote": "- **Drop-don't-patch** on any audit failure.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

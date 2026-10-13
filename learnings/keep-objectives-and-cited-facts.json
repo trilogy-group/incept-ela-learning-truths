@@ -1,0 +1,64 @@
+{
+ "id": "keep-objectives-and-cited-facts",
+ "title": "Keep objectives and cited facts",
+ "statement": "Keep learning objectives and cited facts as two levels of a single store, since either source alone can lose much of what the other holds.",
+ "example": "In one course, 39% of the objective-level entries had no match among the facts, and 99.8% of the facts had no match among the objectives.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Comparing two AP curriculum sources for one course showed they sat at different levels of the official hierarchy: 39% of objective-level entries had no match among the facts, and 99.8% of the facts had no match among the objectives (`icloud-work/auto-memory-backup/feedback_oracle_source_reconciliation.md`, line 44). One source alone lost 1,049 cited facts; the other alone lost 838 sub-objective breakdowns with misconceptions (line 30). Tagging to the objectives with the facts beneath is the note's plan, not a tested result.",
+ "against": "In another course one source was kept as primary and backfilled, and there the sources overlapped heavily: \"78% of curriculum repo APWH content is already in InceptBench (with matching CB-format KC IDs).\" (`icloud-work/auto-memory-backup/feedback_oracle_source_reconciliation.md`, line 40). The analysis covered \"Histories (APUSH, APWH, APEURO) only — non-history AP subjects not analyzed.\" (line 8), and the merge has no recorded result.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "44",
+   "quote": "The two sets are at different tiers of the CB hierarchy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "44",
+   "quote": "39% of curriculum repo APUSH has no InceptBench match; 99.8% of InceptBench's atomic facts have no curriculum match. **Best path: merge them — use curriculum repo as the canonical tagging skeleton, layer InceptBench's atomic facts as the evidence tier underneath.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "30",
+   "quote": "- **APUSH with either alone**: curriculum-only loses 1,049 atomic facts; InceptBench-only loses 838 sub-KC pedagogical decompositions with common-misconceptions. Single-source halves the pedagogy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "40",
+   "quote": "78% of curriculum repo APWH content is already in InceptBench (with matching CB-format KC IDs).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "8",
+   "quote": "Histories (APUSH, APWH, APEURO) only — non-history AP subjects not analyzed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

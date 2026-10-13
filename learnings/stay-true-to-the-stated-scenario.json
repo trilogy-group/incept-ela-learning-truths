@@ -1,0 +1,49 @@
+{
+ "id": "stay-true-to-the-stated-scenario",
+ "title": "Stay true to the stated scenario",
+ "statement": "Content must stay consistent with every detail it states about a person or scenario.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's base rubric for questions counts content that states a person's or scenario's details, such as an age, a name or a location, and then contradicts them as a factual error (`shadow/bench/src/inceptbench/prompts/question/_base_evaluation.txt` line 90); its rubric for other content does the same for stated context relevant to the content (`other/evaluation.txt` line 348). That rubric also fails a response that leaves out personal context given in the request when it should use it to be accurate, appropriate or complete (line 418).",
+ "against": "The second rule doesn't apply when the detail is irrelevant to the content: a name or age given with a request for a general explanation need not be echoed (`shadow/bench/src/inceptbench/prompts/other/evaluation.txt` line 418).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "90",
+   "quote": "- If the content explicitly references a specific user or scenario context (e.g., a student's age, name, or location) and then contradicts that explicitly stated context, this is a factual error. → `factual_accuracy`",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/other/evaluation.txt",
+   "lines": "348",
+   "quote": "- Contradicting explicitly stated personal or scenario context (e.g., a person's stated age, name, or location) that is relevant to the educational content",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/other/evaluation.txt",
+   "lines": "418",
+   "quote": "If the user explicitly provides personal context in their prompt (e.g., age, name, location, relevant background, or other identifying or situational details), and the response reasonably should incorporate that context to be accurate, appropriate, or complete, then failure to acknowledge or incorporate that explicitly provided user context is a `content_appropriateness` failure (0.0).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

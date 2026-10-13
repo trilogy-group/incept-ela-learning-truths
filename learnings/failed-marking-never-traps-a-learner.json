@@ -1,0 +1,226 @@
+{
+ "id": "failed-marking-never-traps-a-learner",
+ "title": "Failed marking never traps a learner",
+ "statement": "If automated marking fails, spend no try and give no verdict; after repeated failures, show the authored answer, let the learner move on, and label it unchecked, not earned.",
+ "example": "The lesson walk forces every scoring call to fail and requires all 5 of its degrade assertions to pass.",
+ "group": "ai-judges-and-markers",
+ "role": "criterion",
+ "facets": [
+  "marking",
+  "integrity",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The grade-3 rulebook makes it a standing rule that a broken scorer must never trap a child: marking degrades open, to a keyword fallback or an unjudged full pay, always with honest wording such as 'Checked by you this time'. Where a gate lets a child past after repeated failures it must first show the authored reveal, a rule added after a bare 'Move on' exit left a child knowing less than the question asked. An unjudged moment pays in full because the system's failure is never charged to the child, while progress ticks show neutral, never earned, when nothing was scored. The lesson walk forces every scoring call to fail and asserts that the app answers honestly, never claims the answer was good, never opens the gate on the first failure and eventually offers a way past.",
+ "against": "A live walk found the scoring service timing out after 28 s on 4 of about 30 calls: Next stayed locked for the 28 s and then opened, 'so the fallback works, but those exchanges were probably not scored' (grade3-reading/artifacts/qc-2026-09-30-staging/LIVE-WALK.md, lines 86-89).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/01-NON-NEGOTIABLES.md",
+   "lines": "44-47",
+   "quote": "**A broken scorer must never trap a child** — degrade OPEN: keyword fallback or unjudged full pay, always with honest wording (\"Checked by you this time\"). Where a gate lets a child past after repeated infrastructure failures, it must show the authored reveal before letting them go",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/01-NON-NEGOTIABLES.md",
+   "lines": "49-51",
+   "quote": "the bare \"Move on\" was the only exit where a child left knowing less than the question asked, firing when they had done nothing wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "152-153",
+   "quote": "tick rows draw from the VERDICT when scored and show local facts as neutral (never earned-green) when not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "170-171",
+   "quote": "An UNJUDGED moment pays FULL (scorer unreachable, nothing checkable, no-mic path — our failure is never charged to a child).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "160-162",
+   "quote": "The degrade section of `walk-lesson` must force every scoring call to fail and assert the app responds honestly in the child's words, never claims the answer was good, never opens the gate on first failure, and eventually offers a way past.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "163-164",
+   "quote": "A broken scorer that waves children through looks from outside exactly like one that works (5/5 degrade assertions required",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "89",
+   "quote": "Next then opens, so the fallback works, but those exchanges were probably not scored.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/unscored-recovery-copy/CAUSE-AND-PROPOSAL.md",
+   "lines": "7",
+   "quote": "Nothing is wrong with what you said. Send it again when you are ready.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/unscored-recovery-copy/CAUSE-AND-PROPOSAL.md",
+   "lines": "9",
+   "quote": "An unscored turn has no correctness verdict; the notice cannot truthfully certify the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "22",
+   "quote": "marks an infrastructure failure as `unscored`, and excludes those turns from scored-attempt/history/dedup accounting.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "40",
+   "quote": "no scored attempt is consumed and no done gate is banked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/unscored-recovery-copy/CAUSE-AND-PROPOSAL.md",
+   "lines": "25",
+   "quote": "Your answer has not been checked. You can send it again when you are ready.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/unscored-recovery-copy/CAUSE-AND-PROPOSAL.md",
+   "lines": "27",
+   "quote": "This exactly reuses the existing historical unscored notice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "736",
+   "quote": "Where a gate lets a child past after repeated infrastructure failures, it shows the authored `reveal` before it lets them go.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "47",
+   "quote": "the authored example is shown through existing UI, and only the explicit existing Move on action retires the editor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/static-scoring-audit.md",
+   "lines": "19",
+   "quote": "An unavailable scorer returns an unscored attempt, spends no scored try, banks no criterion, and never sets `passed`. After the configured repeated infrastructure-failure limit (default two), the authored answer appears and the student can choose Move on. That releases the navigation gate but is not a successful assessment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/static-scoring-audit.md",
+   "lines": "21",
+   "quote": "A 45-second deadline bounds both stalled fetch and stalled body parsing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/static-scoring-audit.md",
+   "lines": "21",
+   "quote": "After continuation, the exchange retains the visible statement that the answer has not been checked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "25",
+   "quote": "Failed scoring could strand a learner or imply that an unchecked answer was correct",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "25",
+   "quote": "Retry the real request, bound its duration, and explicitly name an unscored continuation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "25",
+   "quote": "Real no-key outage, three attempts, persistent unchecked notice and nine transport tests",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "539-540",
+   "quote": "Where a gate lets a child past after repeated infrastructure failures, it shows the authored `reveal` before it lets them go.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "547-549",
+   "quote": "That is the only exit in the app through which a child leaves a question knowing less than it asked of them, and it fires at the one moment they have done nothing wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "An unavailable scorer returns an unscored attempt, spends no scored try, banks no criterion, and never sets `passed`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "After the configured repeated infrastructure-failure limit (default two), the authored answer appears and the student can choose Move on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "That releases the navigation gate but is not a successful assessment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/g5-static-scoring-audit.md",
+   "lines": "21",
+   "quote": "After continuation, the exchange retains the visible statement that the answer has not been checked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "README.md",
+   "lines": "132-134",
+   "quote": "Infrastructure failures do not count as incorrect answers. Book responses keep the learner's draft available for retry, and offer an explicitly unscored continuation after the configured consecutive failure limit.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

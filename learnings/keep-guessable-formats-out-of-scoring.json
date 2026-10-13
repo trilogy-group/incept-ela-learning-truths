@@ -1,0 +1,95 @@
+{
+ "id": "keep-guessable-formats-out-of-scoring",
+ "title": "Keep guessable formats out of scoring",
+ "statement": "Keep true/false and other two-option items out of scored decisions, and score a multi-select item only when its stem says how many to choose and its scoring rule is declared.",
+ "example": "In one course, 4 of 48 multi-select stems did not announce how to select.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "stem",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An assessment BrainLift in the reading course's feedback bans true/false from summative pools, and any multi-select without a principled scoring rule, because these formats are unusually sensitive to guessing, cueing and ambiguous category boundaries; one review round's feedback added that a two-option yes/no is a 50/50 guess. The course's assessment memo then counted 0 of 432 items as true/false, declared all-or-nothing scoring for multi-select, and found 44 of 48 multi-select stems announcing how to select and 4 not; its quality standard requires an explicit count in multi-select stems.",
+ "against": "A multiple-choice BrainLift in the same file holds that single true/false items are nearly useless for inference but that in bundles of 15 or more the guessing averages out and the format becomes more defensible (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 2008).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "35",
+   "quote": "Today **44 of 48** MSQ stems cue this; **4 do not**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-quality.qmd",
+   "lines": "40",
+   "quote": "- explicit count in multi-select stems;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "33",
+   "quote": "Multi-select is banned unless it declares a principled scoring rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "29",
+   "quote": "Stated plainly: 0 of 432 items are True/False.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1403",
+   "quote": "These formats are unusually sensitive to guessing, cueing, and ambiguous category boundaries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "52",
+   "quote": "A 2-option yes/no is a 50/50 guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "A 0.50 chance floor cannot independently support advancement or mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "29",
+   "quote": "Stated plainly: 0 of 432 items are True/False.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "86",
+   "quote": "Isolated two-option items are forbidden for mastery and may appear only as declared non-mastery subdecisions with chance floor visible.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

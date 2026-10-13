@@ -1,0 +1,97 @@
+{
+ "id": "size-the-bank-between-two-limits",
+ "title": "Size the bank between two limits",
+ "statement": "Size an adaptive bank between two limits: large enough that no item is over-exposed, small enough that each item can gather the responses its calibration needs.",
+ "example": "With 1,000 students sitting 39 items each, one spec reckons at most about 175 to 200 items reach the 200 responses it sets for good calibration.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A reading assessment's exam spec frames bank size as two limits: large enough for adaptive testing without over-exposure, yet not so large that items gather too few responses for calibration (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md`). For the first it gives a pool of at least 6 and preferably 10 times the test length, citing a 1994 research report on adaptive item pools. For the second it reckons that 1,000 students sitting 39 items give 39,000 exposures, concentrated near the population mean, so that at most about 175 to 200 items reach the 200 responses it sets for good calibration.",
+ "against": "The cited report's abstract puts the ratio differently, finding pools \"of the size and quality of six to eight linear tests\" adequate for adaptive tests \"of roughly half the length of a parallel linear test\", which by my arithmetic is 12 to 16 times the adaptive test's length, and the package elsewhere targets 800 to 1,000 items, 20 to 25 times the test length, for operational security (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). The spec's own formula, SE ≈ 2/√N, gives about 0.14 logits at 200 responses rather than the 0.30 it pairs with them (my arithmetic), so its calibration bar is a conservative one. The bank itself grew well past what one cohort can calibrate, so its calibration has to accrue from regular use (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "129",
+   "quote": "The bank must be large enough for CAT without overexposure, yet not so large that individual items accumulate insufficient responses for IRT calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "161",
+   "quote": "Minimum 6×, recommended 10× test length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "141",
+   "quote": "Total exposures = 1000 students × 39 items = 39,000",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "148",
+   "quote": "Maximum items well-calibrated (≥200 responses): ~175–200",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "133",
+   "quote": "SE(b̂) ≈ 2/√N   (at P=0.50 targeting)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "135",
+   "quote": "For SE(b̂) ≤ 0.30 logits (3 RIT): N ≥ 200 responses per item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "124",
+   "quote": "Target bank size for operational security: 800–1,000 items (20–25× the test length",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "47",
+   "quote": "far below the ~200 responses per item that calibration requires",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "47",
+   "quote": "Calibration then **accrues from regular use**",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Three practical issues for modern adaptive testing item pools (ETS Research Report RR-94-5, 1994)",
+   "url": "https://doi.org/10.1002/j.2333-8504.1994.tb01578.x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

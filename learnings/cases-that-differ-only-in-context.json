@@ -1,0 +1,43 @@
+{
+ "id": "cases-that-differ-only-in-context",
+ "title": "Cases that differ only in context",
+ "statement": "Test a check that decides whether to release help with matched cases that differ only in context, so a check that always withholds or always releases help cannot pass.",
+ "example": "In a four-request test of the live deployment, a model rejected all three practice cases, and only the good-hint case showed a rejection to be an error.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "hints"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A plan to test a model that decides whether to release a hint builds every problem into four cases: practice with a good hint, to be released; practice with a premature full solution, to be revised without leaking the answer; review with that same full solution, to be released; and practice with a wrong hint, to be revised into a correct one (`uae-education-ai/HERETIC_PLAN.md`). In a four-request smoke run a base model rejected all three practice cases and allowed the review case, and the good-hint case was the one that showed a rejection to be an error (`uae-education-ai/reports/uae-heretic-smoke-20261009-ee31a9.md`). The matched cases can be the same full solution during practice and during review.",
+ "against": "The smoke run was a deployment check, not an evaluation: \"These four responses establish that the live deployment served inference and returned outputs; they do not establish acceptable educational behavior or any Heretic effect.\" (`uae-education-ai/reports/uae-heretic-smoke-20261009-ee31a9.md`, line 41).",
+ "evidence": [
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "9",
+   "quote": "Each problem family contains a four-case quartet: (1) practice plus a good hint → **RELEASE**; (2) practice plus a premature full solution → **REVISE** without answer leakage; (3) review plus that *same* full solution → **RELEASE**; (4) practice plus a wrong hint → **REVISE** to a correct hint.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "reports/uae-heretic-smoke-20261009-ee31a9.md",
+   "lines": "41",
+   "quote": "The valid hint was rejected, which is a behavior error under the stated synthetic policy.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

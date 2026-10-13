@@ -1,0 +1,517 @@
+{
+ "id": "authored-is-not-delivered",
+ "title": "Authored is not delivered",
+ "statement": "Judge content by what the delivered player shows, checking files, the student's live experience and course claims apart, and count an authored element or gate only once seen working.",
+ "example": "One course build's feedback was silent, 0/542, and two live courses had a null mastery threshold, so their 90% gate didn't block.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "feedback",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A course quality gate failed one course build with its feedback silent, 0/542, and the course checklist now requires the live response check to return the authored feedback, not the generic fallback, because authored is not the same as resolves. The renderer's notes add that content without proper response processing shows no feedback at all in strict mode. An evaluation of one live course found its 90% mastery threshold declared in metadata but not enforced by any observable mechanism, and a merge found the threshold null on both live courses, so the 90% gate didn't block; the course-fix skill now says to prove a gate with a play-through rather than assert a metadata field as enforced. Check in code that every authored element reaches a surface the student uses, count anything never shown as missing, and count a gate as working only once it is seen blocking.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "31",
+   "quote": "NN#5 feedback **silent 0/542**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "44",
+   "quote": "`process-response` returns the authored `FEEDBACK` (CORRECT/INCORRECT), NOT the generic fallback; wrong answer fires corrective feedback. *(new — the silent-no-op trap; \"authored\" ≠ \"resolves\")*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0019-alphalearn-qti-renderer.qmd",
+   "lines": "133",
+   "quote": "Content lacking these will render with NO feedback in strict mode — author accordingly or risk silent gaps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "`masteryThreshold:90` declared in metadata, not enforced by an observable mechanism; lesson tests carry NO threshold;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "92-93",
+   "quote": "`masteryThreshold` was `null` on both live courses (the 90% gate didn't actually block)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "44-45",
+   "quote": "PROVE it with a play-through, don't assert a metadata field as \"enforced.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "111-112",
+   "quote": "`validate-passage-refs` only proves the span text is a SUBSTRING of the passage; it does not run the engine's own unit-boundary logic",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "114",
+   "quote": "run the engine's own `unitsOf`/`partOfLine` over every authored span before accepting it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "69",
+   "quote": "1,077 items, 100% `cardinality=single`, zero TE ever rendered",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "69-70",
+   "quote": "Our G5 contract hard-requires all six formats + 40% TEI",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "70-71",
+   "quote": "we can fully certify a form that **physically cannot be delivered**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0134-g5-reading-v2-local-design-package.qmd",
+   "lines": "110-111",
+   "quote": "all hot-text items were hardcoded as radios, so a two-span key was impossible to submit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1211",
+   "quote": "A substring search is not a structural test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1211-1212",
+   "quote": "Three times this session a grep over content gave a confidently wrong answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "92",
+   "quote": "A validator must FAIL an authored block sitting on a node type whose renderer never reads it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-matrix/shards/curriculum-gen.jsonl",
+   "lines": "60",
+   "quote": "an authored block (Part B open clue hunt, ~477 lines) can sit on a node type whose renderer never reads its extension keys and nothing catches it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-matrix/shards/curriculum-gen.jsonl",
+   "lines": "60",
+   "quote": "tsc passed (JSON untyped), all 16 validators passed, build passed, and no string reached a screen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAP-CLOSURE-PLAN-2026-09-15.md",
+   "lines": "57",
+   "quote": "builds the Step-4 quote proof from hot_text + reading-notes text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAP-CLOSURE-PLAN-2026-09-15.md",
+   "lines": "57",
+   "quote": "on /book those notes are drawn by nothing, so that quote blank's proof is invisible to the child",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "350",
+   "quote": "Clicks counted as production; authored prompts never render",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "27",
+   "quote": "The intended experience is demonstrated as behavior, not inferred from source files or screenshots.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "64-65",
+   "quote": "The D15 24-hour delay is documented but not platform-enforced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "`masteryThreshold:90` declared in metadata, not enforced by an observable mechanism",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "52",
+   "quote": "InceptBench should not overclaim runtime behavior or package truth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "118",
+   "quote": "document-integrity floor only, never a course-quality/child-readiness/outcome verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "22",
+   "quote": "an authored hint passing a source check does not prove the learner receives that hint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "13",
+   "quote": "That lets conceal pass inside concealed and familiar pass inside unfamiliar, although neither creates the intended interactive token.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/REPORT.md",
+   "lines": "23",
+   "quote": "The renderer uses whole-word dictionary keys, but the validator accepts substrings in story text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/REPORT.md",
+   "lines": "23",
+   "quote": "Use reviewed surface-form entries and validation aligned with rendering",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g5-u1/IMPLEMENTATION.md",
+   "lines": "35",
+   "quote": "Eight affected inflection occurrences render buttons and dispatch their real definitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "20",
+   "quote": "The exact inflected SG glossary word concealed opened its matching definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/INTEGRATION-DISPOSITIONS.md",
+   "lines": "14",
+   "quote": "A real-browser check of L4 p21 showed that revised authored hints alone were insufficient: the generated second reply still supplied “a lighter feeling,” an accepted answer concept.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "720",
+   "quote": "The repetition worth catching is at the seam between a written line and a generated one, which is the only place nobody is reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "66-67",
+   "quote": "- **A substring search is not a structural test.** Three times this session a grep over content gave a confidently wrong answer (\"know\", \"bank\", \"nursery\"). Walk the structure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "176-177",
+   "quote": "Three field families in this build were authored at full quality, voiced, and read by no code",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "179-180",
+   "quote": "A content field with no gate asserting it reaches the DOM is a plan, not a feature.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/verification/README.md",
+   "lines": "156",
+   "quote": "the reverse assertion: every **generated** clip has a playback site (56% did not, once)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "17",
+   "quote": "Balanced authored order is an authoring safeguard, not proof that the production delivery application's runtime shuffles.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/generation-contract.md",
+   "lines": "63-64",
+   "quote": "verify shuffle on both surfaces.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "70-71",
+   "quote": "The red-team's RT-1 per-surface sequence render-shuffle screenshot is owed before student delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "4",
+   "quote": "A passing code check or HTTP response cannot stand in for a usable lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "132",
+   "quote": "Source identity alone never replaces the original visual inspection or proves unexecuted interactions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/README.md",
+   "lines": "47",
+   "quote": "Root's student walk found that all seven U9 `speak:open` tasks printed only the generic speaking/typing instruction, omitting the actual question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "20",
+   "quote": "Inspect the actual question and accessible input label on every response screen. JSON completeness does not prove delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/NOTE-dose-teach-sections.md",
+   "lines": "21",
+   "quote": "The teach content **does exist** in TimeBack, fully authored and InceptBench-gated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "127-129",
+   "quote": "A config/JSON diff can look correct while the rendered component is still wrong — the schema allowed a value the renderer silently mishandles.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "23",
+   "quote": "They do not mean287 completed activities.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/curriculum-verification-2026-09-10/README.md",
+   "lines": "7",
+   "quote": "A clean visual review is not evidence that these curriculum requirements are complete.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "324",
+   "quote": "Rule: dev-server walks need an idle worktree; clean proofs run against the production build.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "407",
+   "quote": "It was never pushed, and you haven't clicked through it yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "273",
+   "quote": "Browser interaction checks and JSON/content checks are complementary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "165",
+   "quote": "Nothing plays pages in order in a real session. Clip collisions (W6), silent holds (W7), dropped chips (W10), overwritten answers (W11) and backend timeouts (W12) only show at runtime.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "531-534",
+   "quote": "The inversion is deliberate: the field sat on all ten of this grade's mcq nodes while nothing read it, and a promise made in content and not kept by the engine is the failure mode worth a hard error.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "78-81",
+   "quote": "approval here is approval of a plan + a strong contract, with all enactment risk - does the misconception gate actually run, are the MCQs really 4-option misconception-mapped, is the I-do modeled alongside the text - deferred to the content phase.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "124",
+   "quote": "- Selectable captions were verified by ffprobe disposition only, not in a real player.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "156",
+   "quote": "two attempts, then the answer is given warmly (server phrases it). Never loop",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/ui.tsx",
+   "lines": "99",
+   "quote": "{verdict === 'secure' && <span className=\"tick\" aria-label=\"accepted\" style={{ fontSize: 13 }}>✓ Accepted</span>}",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "41",
+   "quote": "The G3 reading gaming episode (mastery stamp at ~20% accuracy by click-through) is the cautionary tale: `masteryThreshold: 90` in metadata is not a gate.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "63-65",
+   "quote": "The first July 24 response was only partial: it had added oral source fields, but the maintained validator did not enforce them, the full-course review did not render them",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/REPORT.md",
+   "lines": "10-13",
+   "quote": "The initial raw scan at PR commit `c4f36652` examined 83 questions and raised 126 signals. Removing hidden pages and nodes reduced the scan to 63 questions and 86 signals; lesson-wide signals were recomputed on the visible content.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/academics-review-2026-07-08.md",
+   "lines": "20",
+   "quote": "To be direct: most of the items reported as \"done & live\" are not yet resolved in the app, and several look like they come from a gap in how these instructional methods — the I-do / we-do / you-do gradual release in particular — are meant to work in practice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "68",
+   "quote": "A screenshot gallery, an app screen recording, a silent sequence, and a music-backed sequence each demonstrate only part of the required experience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "38",
+   "quote": "So the child reads an unlabelled sentence and then meets \"Step 4: Build the meaning\" with no Step 3 ever having appeared.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L5-2026-09-05.md",
+   "lines": "18-19",
+   "quote": "doors render from the doc, not duplicated in this JSON pass (out of scope for this file; visual QA owns door rendering).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-PEDAGOGY-2026-09-05.md",
+   "lines": "17",
+   "quote": "deliberately removed the door beat from all nine G3 lessons, rule pack updated so regen won't re-author it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "81-83",
+   "quote": "the browser fired media errors, and every text-side validator (assets, provenance, voiceover-sync) stayed green because none opens the file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/pre-weekend-audit/SKILL.md",
+   "lines": "18-19",
+   "quote": "Spot-check assets by HTTP status + content-length floor (>10KB) — a 200 on a truncated mp3 is the failure mode this exists for.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "715-717",
+   "quote": "and then never landed the rendering: zero references to any of those keys existed in `index.html`, and no patch-log entry was written.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "66",
+   "quote": "The accommodations note claimed TTS on stems/choices; **the product had none** (verified: zero TTS/audio references in the player)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

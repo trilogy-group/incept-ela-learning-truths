@@ -1,0 +1,179 @@
+{
+ "id": "review-each-item-after-real-use",
+ "title": "Review each item after real use",
+ "statement": "Once items are in use, review each one's statistics as a standing duty, and revise, quarantine or retire those that fail.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "accessibility"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The assessment packet requires a live-analysis plan covering a minimum number of students, item and option functioning, subgroup and differential item functioning review, uncertainty, drift, quarantine and retirement (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md`). The project's digest of a national reading study sets the bar: if performance differences reflect individual, social, linguistic or cultural variation rather than comprehension, the test is inadequate (`grade3-reading/knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd`; RAND Reading Study Group 2002, https://www.rand.org/pubs/monograph_reports/MR1465.html). Revise options almost nobody picks, investigate items where weaker students beat stronger ones or stronger ones favour a distractor, and check subgroup fairness and drift.",
+ "against": "These statistics need many responses: the retirement thresholds belong to a stage planned for 300 to 1,000 students (`grade3-reading/knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd`), and a diagnostic guide puts even basic calibration at 100 to 200 responses per item (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "55-56",
+   "quote": "Live-analysis plan covering minimum N, item and option functioning, subgroup/DIF review, uncertainty, drift, quarantine, and retirement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "753",
+   "quote": "Good comprehension assessments must be adaptable to individual, social, linguistic, and cultural variation; if performance differences reflect such variation rather than comprehension itself, the test is inadequate for the research/instructional agenda.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "85",
+   "quote": "Difficulty index (proportion correct), discrimination index (point-biserial correlation with total score), and distractor analysis (proportion selecting each distractor, by ability group) are the minimum post-administration checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "85",
+   "quote": "Negatively discriminating items — where weaker students outperform stronger students — are almost always flawed and should be investigated immediately.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "85",
+   "quote": "A distractor selected more by high-performing students than low-performing students suggests the keyed answer is wrong or ambiguous.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "85",
+   "quote": "Non-functioning distractors (selected by <5%) should be revised or the item reduced to fewer options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "204",
+   "quote": "item retirement (INFIT > 1.30 or pt-biserial < 0.20)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "99-100",
+   "quote": "escalation are part of the lifecycle rather than optional cleanup.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0162-assessment-item-difficulty-evidence.qmd",
+   "lines": "119",
+   "quote": "an item’s difficulty may differ systematically across subgroups even when overall ability is matched.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "47",
+   "quote": "Distractor-level data reviewed; non-functioning distractors (<5%) revised; negative-discrimination items flagged",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "455",
+   "quote": "J16-ASS-008: Treat predicted difficulty as a prior awaiting live calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "625",
+   "quote": "J16-ASS-009: Monitor live item functioning, fairness, and drift.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "135",
+   "quote": "Non-functioning distractors (<5% pickup) get revised.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "255",
+   "quote": "- The 14-dimension evaluation cannot assess Rasch model fit, item discrimination, or guessing behavior — these require empirical response data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "561",
+   "quote": "| INFIT mean square | 0.70 – 1.30 | Retire item |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "562",
+   "quote": "| OUTFIT mean square | < 2.00 | Retire item |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "563",
+   "quote": "| Point-biserial correlation | > 0.20 | Retire item |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "564",
+   "quote": "| Empirical b vs provisional b | |Δb| < 0.5 logits | Accept; flag if > 0.5 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "549",
+   "quote": "Flag broken items (infit > 1.5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "88",
+   "quote": "D5.36 (distractor-response data review) requires live analytics on which distractors are actually chosen by real students; not derivable from authored JSON.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "RAND Reading Study Group 2002",
+   "url": "https://www.rand.org/pubs/monograph_reports/MR1465.html"
+  },
+  {
+   "ref": "Holland & Wainer 1993",
+   "url": "https://doi.org/10.4324/9780203357811"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

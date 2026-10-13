@@ -1,0 +1,93 @@
+{
+ "id": "delivery-questions-need-choice-and-context",
+ "title": "Delivery questions need choice and context",
+ "statement": "Ask how a line should be spoken only where it allows clearly different deliveries and the lines around it show what the speaker wants, which decides the key.",
+ "example": "On the first live proof the judge, given the surrounding lines, picked the written delivery on both texts with a confidence of 0.98 or above.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "stimulus",
+  "key"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's delivery block asks the writer for a line that could be delivered in clearly different ways, where the lines around it show which delivery fits, and for three deliveries of which exactly one fits what the speaker wants at that moment (`g9/transformer/src/mechanics/direct-the-line.js`). A judge reading the same surrounding lines must pick the same delivery, and an advisory check asks whether the line really allows different deliveries. On the first live proof both checks held on both of its texts, the second at p 0.92 and 0.94 (`g9/transformer/v01/proof-2026-10-09.json`).",
+ "against": "The check that the line allows different deliveries only advises and holds nothing back; the fitting delivery sat second of three in all 4 saved blocks; and the judge reads up to three lines either side of the line while the student's card shows only the three before it (`g9/transformer/src/mechanics/direct-the-line.js`, `g9-transformer-runs/blocks/`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "24",
+   "quote": "delivery fits best. Offer three deliveries; exactly one fits what the speaker wants at this moment.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "2",
+   "quote": "The judge, reading the same lines around it, must pick the same delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "60",
+   "quote": "label: \"The line genuinely allows different deliveries\", required: false",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "197-200",
+   "quote": "\"id\": \"one-delivery\", \"required\": true, \"verdict\": \"holds\", \"p\": 1",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "203-206",
+   "quote": "\"id\": \"line-has-choices\", \"required\": false, \"verdict\": \"holds\", \"p\": 0.92",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "469-472",
+   "quote": "\"id\": \"one-delivery\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.98",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "475-478",
+   "quote": "\"id\": \"line-has-choices\", \"required\": false, \"verdict\": \"holds\", \"p\": 0.94",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "55",
+   "quote": "Math.abs(x.n - u.n) <= 3",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "67",
+   "quote": "x.n < u.n && x.n >= u.n - 3",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

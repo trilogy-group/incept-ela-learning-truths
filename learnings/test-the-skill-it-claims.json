@@ -1,0 +1,523 @@
+{
+ "id": "test-the-skill-it-claims",
+ "title": "Test the skill it claims",
+ "statement": "The skill a lesson or item claims must be one its text affords and its task really demands at the stated depth, not recall or a neighbouring skill.",
+ "example": "A probe of 18 inference items found 1 whose conclusion the passage stated outright.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An integrity probe in the reading project extracted the expected conclusion of every inference-bearing item in three lessons and searched the lesson's own passage for a sentence stating it: of 18 items, 1 stated its conclusion outright and was fixed, and the reverse check found no retrieval item that secretly needed an unstated inference. The project's lesson rulings call a retrieval question dressed as an inference, or the reverse, a defect, not style. A gap analysis of its content-evaluation tools makes thinking-level alignment binding, coverage being false if an 'analyze' standard is assessed by 'identify', and a second-round review in July 2026 found a main-idea lesson serving an inference item. The depth asked can mean, for example, explaining a cause-and-effect link or weighing several causes. An identify task can't assess an analyze goal, and an inference whose conclusion the source states outright is retrieval however it is labelled.",
+ "against": "In the response to an earlier review, one cited mistag was judged defensible. The higher-order rule comes from a practical guidance paper, not a systematic study, and the AP judge can still pass a factually correct question that teaches the wrong skill. The external audit rated that check medium and the course judged it not serious (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`, line 61); the item-statistics review rated it minor, noting it was framed as a comprehension pause rather than a strict locating item (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md`, lines 245 and 258). No before-and-after measurement, and the difficulty finding paraphrases typical judge rationales rather than quoting one. These are adopted rules from writer prompts, untested one by one, and the synthesis rewrite is a single targeted repair. The gain was measured on the ten public items being patched, and a different sample then failed: \"third public n=10 was `10/10`, but runner sanity failed `1/2`\" (aptraining-local/den-of-ideation/to_main/2026-05-23T1808Z_DEN_REQUEST_validate_unit9_mcq_solver_v1.md, line 26).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "75",
+   "quote": "behavior is fine — that's the clue; stating the trait/conclusion itself is a disguised-FIND",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "84",
+   "quote": "| **Total** | **18** | **16** | **1** | **1** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "86-87",
+   "quote": "Zero reverse-defect violations (no FIND item anywhere in L5-L7 secretly requires an unstated inference).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "105-106",
+   "quote": "a FIND question dressed as INFER (or the reverse) is a defect, not style",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "122",
+   "quote": "- N1: DOK-level alignment. Coverage is false if an \"analyze\" standard is assessed by \"identify.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "92",
+   "quote": "- Example found: a main-idea lesson served an inference/evidence item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "51",
+   "quote": "the cited \"mistag\" was defensible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "95-97",
+   "quote": "The item framed itself as inference while handing the child the two exact adjectives the very next sentence states outright",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "58",
+   "quote": "The novel stimulus requirement is the single most reliable test of whether an item is genuinely higher-order: no new material, no higher-order thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "57",
+   "quote": "Questions must explicitly test one of these skills. A question that just asks \"what happened?\" fails `educational_accuracy` because it tests recall, not historical thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "90",
+   "quote": "- Learning objective mismatch (question asks for causation when LO requires comparison)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "77-78",
+   "quote": "- Question tests college-level historical analysis that AP students don't need\n- Question is too easy (tests rote recall when AP requires analysis)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "149",
+   "quote": "Practical guidance paper, not a systematic empirical study.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "186",
+   "quote": "- It doesn't fully test \"pedagogical value\" — a factually correct question that teaches the wrong skill can still pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "132",
+   "quote": "- **Issue:** The task assesses basic subtraction rather than writing a one-step equation, which the stated standard/lesson emphasizes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "429",
+   "quote": "**Failures:** 122 questions (8.7% of all failures)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "371",
+   "quote": "- `curriculum_alignment` (6/36; often due to operation mismatch vs stated skill)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "406",
+   "quote": "- Skill metadata can drift (questions sometimes include multiplication when the skill says add/sub only).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "27",
+   "quote": "The question must directly assess the standard's specific skill, not a tangentially related skill.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "103",
+   "quote": "### 1. Clarity (99.1% pass rate) ✅",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "134",
+   "quote": "### 7. Curriculum Alignment (43.0% pass rate) ❌❌",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "33",
+   "quote": "The generator ignores the specific `learning_objective` and `statement` provided in the request.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "132",
+   "quote": "Learning objectives require \"explain how and why\" but questions only test \"what\"",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "60",
+   "quote": "- Scope expansion beyond provided curriculum (e.g., adding Syria/Libya when curriculum specifies Iraq/Afghanistan only)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "30",
+   "quote": "The dramatic improvement in curriculum alignment (43% → 89%) confirms the endpoint is now properly utilizing the `learning_objective` and `statement` fields provided in requests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "61",
+   "quote": "A model's pedagogical knowledge does not survive the trip into its generated content",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "85",
+   "quote": "at least one item is mistagged (a vocabulary item labelled Inference and Evidence), which weakens the claim of full standards alignment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "87",
+   "quote": "spot-audit the standards tags against what each item actually assesses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "92",
+   "quote": "Example found: a main-idea lesson served an inference/evidence item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "132",
+   "quote": "do not teach one cognitive operation and assess another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "122",
+   "quote": "N1: DOK-level alignment. Coverage is false if an \"analyze\" standard is assessed by \"identify.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "124",
+   "quote": "N3: recognition-vs-production match. \"Write/explain/draw\" targets cannot be assessed by MCQ alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-aladdin-2026-08-25/feedback-text.txt",
+   "lines": "28",
+   "quote": "This involves inference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "61",
+   "quote": "but the story never states a reason",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "258",
+   "quote": "Either way the correct answer should be statable with a single-sentence verbatim pointer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "129",
+   "quote": "N8: integrative-assessment presence. Include tasks that coordinate multiple KCs, not only atomized checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "114-115",
+   "quote": "`concept_coverage` checks spread, not whether each lesson's claimed KC/skill matches what its items actually assess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "282",
+   "quote": "standards tags do not match delivered cognitive work",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "66",
+   "quote": "No rendered check requires integrating both sources",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "64",
+   "quote": "Do not certify productive or integrative knowledge with recognition alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "91",
+   "quote": "Lesson labels and delivered items do not line up.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "93",
+   "quote": "Single short passages carry several question types, so lesson-level teaching claim and item-level assessment drift apart.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "132",
+   "quote": "Preserve coherence across instruction, practice, and assessment; do not teach one cognitive operation and assess another.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "128",
+   "quote": "Use analytical question stems, not recall",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "65",
+   "quote": "Cognitive_demand failures on recall stems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "225",
+   "quote": "rubric \"complexity\" guidance fails to require students to weigh multiple causes, undermining the stated difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "115",
+   "quote": "7. **Recall-only on a higher-order standard**: standard demands analysis but stem asks \"what year did X happen\". Match cognitive demand to the standard.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_leq.md",
+   "lines": "73",
+   "quote": "1. **Reasoning skill mismatch.** Prompt is labeled \"comparison\" but actually asks for causation. Match the verb to the skill.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "387",
+   "quote": "- Repaired MCQ hard institution item to require synthesis rather than recall.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T132917Z_2026-05-27T1330Z_bm0zjn5z_n100_unit1_RAW_PROBE_REPORT.md.md",
+   "lines": "130",
+   "quote": "`mastery_learning_alignment=0` on 62% of MCQ fails — pure recall, not the \"explain how\" depth that AP standards demand",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1808Z_DELIVERED_unit9_mcq_solver_v1_candidate.md",
+   "lines": "54",
+   "quote": "Fix: rewrote those broad summary templates into sharper cause/effect items",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-23T1808Z_DEN_REQUEST_validate_unit9_mcq_solver_v1.md",
+   "lines": "24",
+   "quote": "first public n=10 was `6/10`",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-23T1808Z_DEN_REQUEST_validate_unit9_mcq_solver_v1.md",
+   "lines": "25",
+   "quote": "second public n=10 was `7/10`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1648Z_DELIVERED_unit7_mcq_solver_v1_candidate.md",
+   "lines": "62",
+   "quote": "Miss: WWII military template scored `0.65 INFERIOR`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1648Z_DELIVERED_unit7_mcq_solver_v1_candidate.md",
+   "lines": "63",
+   "quote": "Fix: rewrote WWII military as a cleaner cause/effect item linking Allied victory factors to postwar U.S. power",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1648Z_DELIVERED_unit7_mcq_solver_v1_candidate.md",
+   "lines": "68",
+   "quote": "Result: `3/3`",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell T5",
+   "quote": "the Phase 3 ladder assesses the HOW of the lamp-use change, and the text has no because/so/since signal words. Reassign RL.3.1.d to a lesson whose text genuinely signals cause-effect.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K45",
+   "quote": "RL.3.6.d replaces mistagged RL.3.9.d.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K52",
+   "quote": "WRITER'S COMPARISON — RI.3.3 not RI.3.9 (single text).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K96",
+   "quote": "RI.3.8.c (paragraph relationships) replaces mistagged RI.3.9.b.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INTEGRATED-READINESS-REVIEW.md",
+   "lines": "13",
+   "quote": "A compact list of correct comparisons can meet those criteria without an organized essay.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INTEGRATED-READINESS-REVIEW.md",
+   "lines": "13",
+   "quote": "The later `sg-revise / question` revises a supplied claim, rather than the student's own writing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INTEGRATED-READINESS-REVIEW.md",
+   "lines": "15",
+   "quote": "add an opening comparison, connected supporting paragraphs and a supported conclusion, with a prompt to reread and revise the student's own answer before submitting.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/d8-tag-audit-2026-07-06/README.md",
+   "lines": "30-31",
+   "quote": "**Dominant pattern:** 4 of 6 misses are the **`Rx.5.10` range/complexity band stamped as if it were a skill** — `.10` describes text complexity, not an assessable comprehension skill, so any item tagged",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/d8-tag-audit-2026-07-06/README.md",
+   "lines": "15",
+   "quote": "| **Sub-skill (defensible)** | **34 / 40** | **85%** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/d8-tag-audit-2026-07-06/README.md",
+   "lines": "39-40",
+   "quote": "Recovering the sub-skill rate to ~100% needs only a re-code of the `.10` items to the discrete skill their task exercises",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/assessments/DESIGN.md",
+   "lines": "44",
+   "quote": "RL.5.10 (range-of-reading), RI.5.9 (multi-text) — not discretely assessable on single passage; remove in v3",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/u02.md",
+   "lines": "187",
+   "quote": "item requiring the student to use a stage direction — not a spoken line — to answer (distractor:",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/u02.md",
+   "lines": "188",
+   "quote": "treats a bracketed action as something a character said aloud",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "522-524",
+   "quote": "stops at locating the mistake sentence; canonical I03 asks for the cross-sentence event→repair inference (locate the mistake AND state how it was fixed and why).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

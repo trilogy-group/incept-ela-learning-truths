@@ -1,0 +1,339 @@
+{
+ "id": "a-taught-word-appears-and-recurs",
+ "title": "A taught word appears and recurs",
+ "statement": "Teach only words the learner's own text uses more than once and that come back later in the unit.",
+ "example": "Before a gate required it, 7 of 9 taught words appeared only once.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "alignment",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A QC week found a Grade 3 lesson assessing the child on a taught word that never appears in its passage (`grade3-reading/knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd`, lines 74-76). The project's draft certification standard then made an earned word a build gate, recurring in the passage and in a later unit, after 7/9 taught words had appeared only once (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`, lines 65-66). Review feedback on an earlier version asked for distinct target words, since one lesson's three overlapped and one even appeared inside another's definition, and for support for difficult words beyond the three designated ones (`grade3-reading/knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd`, lines 105-106). A word should also be taught in the first lesson that leans on it heavily, not a later one (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md`, lines 66-71). Words picked because they look hard mostly fail the recurrence test (`grade3-reading/artifacts/g5-course/VOCAB-DECISIONS-U1.md`, lines 13-25).",
+ "against": "The gate allows exceptions: a taught word absent from the passage may carry an exemption that names its reason and authority (`grade3-reading/knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd`, lines 89-90). Some designs keep a taught word out of the passage on purpose: the same review's refutation attempt noted words chosen to sum the passage up, absent from it by design and used in the student's own task, with repeated use coming from other activities (`grade3-reading/artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md`, line 91). An audit of the same course judged two pairs with heavily overlapping definitions to be deliberate contrast pairs, opposites taught in parallel, and good teaching rather than a defect (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/VOCAB-AUDIT.md`, line 51). A later run found: A Grade 3 course's decision record teaches four words for putting an interpretation of a story into words, about a character's manner or a mood, that are deliberately absent from the original prose, and forbids inserting them into the story to satisfy an encounter-count rule; their use comes in independent work, retelling and receipts, which the record says is not evidence of uniform oral elaboration. The same course's published rule says a taught word must appear in the passage more than once (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`, line 896), so for words taught to express an interpretation the two disagree (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md`). A later run found: Two later lessons in one arc teach their word as an encapsulating word kept out of the passage on purpose, so the child is the one who supplies it, and each carries a named design document waiving the rule (`grade3-reading/artifacts/arc-audit/REGISTER-2026-09-16.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md`). A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/REGISTER-2026-09-16.md`). A later run found counter-evidence (`grade3-reading/course-renderer/authoring/inputs/rule-packs/reading-g3.json`). A later run found counter-evidence (`othello-course-renderer-draft/repo/authoring/inputs/rule-packs/reading-g3.json`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/rules/vocabulary.md`). A later run found counter-evidence (`grade3-reading/artifacts/red-team-2026-09-23/PRE-BRIEF.md`). A later run found counter-evidence (`grade3-reading/artifacts/pp1-v3-design.txt`). A later run found counter-evidence (`grade3-reading/.claude/skills/lesson-build/SKILL.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "74-76",
+   "quote": "**Taught word \"betrayal\" never appears in the L1 passage**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "65-66",
+   "quote": "vocab-earned (taught word recurs in-passage + later unit, from 7/9 taught words appearing only once)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "106",
+   "quote": "Handle difficult words beyond the three designated vocabulary words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "105",
+   "quote": "Choose distinct vocabulary words. In the camouflage lesson, *camouflage*, *adapt*, and *blend* overlap too much; *blend* even appears inside the definition of *camouflage*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "69",
+   "quote": "unit, counted by word family (R-VOC-7/13 — written after seven of nine taught words turned out",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/VOCAB-DECISIONS-U1.md",
+   "lines": "19",
+   "quote": "| U1L1 | atmosphere, hydrosphere, geosphere, biosphere | **0 of 4** — each appears once |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "87",
+   "quote": "Across the arc, each target word gets approximately 4–5 exposures, not 6+, and drops out after",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "53",
+   "quote": "12 of 46 taught words appeared nowhere in their own lesson's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "56",
+   "quote": "`oxygen` appears **8× in U3-L1's passage** and 48× in its",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "66",
+   "quote": "**Teach-before-use:** no word a passage leans on (≥5 hits) may be first taught in a later lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "71",
+   "quote": "The rule is **first heavy use**, not peak use.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "62",
+   "quote": "self-check: no target word appears inside another target word's definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "30",
+   "quote": "Teach enchanting, menacing, merciless and triumphant as words children use to express an interpretation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "30",
+   "quote": "They are deliberately absent from the original prose. Do not insert them into the story to satisfy an encounter-count rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "30",
+   "quote": "Current use appears in independent work, retelling and receipts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "30",
+   "quote": "that is not evidence of uniform oral elaboration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "30",
+   "quote": "Preserve the chosen word and its deliberate absence from the story.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "31",
+   "quote": "Keep the absence-from-passage exemption and pronunciation flow",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "75-76",
+   "quote": "**Taught vocabulary sits IN the passage, not drilled into it**: a taught word appears once or twice, in the sentence where it does actual work, never five times for repetition's sake",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "79-80",
+   "quote": "This is the passage-side half of vocabulary rule R-VOC-7 below (the word must also recur ≥2x by word family; see §7).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "270-271",
+   "quote": "a taught word must appear in its own lesson's passage more than once, counted by word family; once is a mention, not a meeting",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "273-274",
+   "quote": "If the story does not want the word twice, the word is wrong for the story: never bend the story around the card.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "77-78",
+   "quote": "a G4 rewrite went from 470 words / FK 4.4 with vocabulary inflation to 793 words / FK 5.6 by removing the inflation and adding subordination instead",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "29",
+   "quote": "teach their word as an encapsulating word that is deliberately kept out of the passage so the child is the one who supplies it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "29",
+   "quote": "each carries a named design document waiving this rule on that basis",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-selection-and-generative-items.md",
+   "lines": "17",
+   "quote": "there are six key word characteristics that should be considered when selecting target words for instruction … Centrality to understanding a text, frequency of use in a text, likelihood of appearing in other content areas, having multiple meanings, containing affixes, and having cross-language potential.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "29",
+   "quote": "A taught word absent from the passage carries `encapsulating {reason, authority}` | Sanctioned exemption; `validate-vocab-earned` honours it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "40",
+   "quote": "Word chosen: MENACING — an encapsulating character word (not in the text), chosen per the KB. It gives the child the language they reach for in Phase 3 to describe Captain Hook, and it is the mandatory magic word in the Phase 3 build.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "29",
+   "quote": "Two later lessons in the same arc, L5 ('menacing') and L6 ('merciless'), teach their word as an encapsulating word that is deliberately kept out of the passage so the child is the one who supplies it, and each carries a named design document waiving this rule on that basis;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L5.md",
+   "lines": "22",
+   "quote": "Encapsulating-word metadata block cites the design doc as authority directly (`\"authority\": \"pp2-v3-design.txt Component 2\"`)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "27",
+   "quote": "author it into the passage twice per R-VOC-7, which forces a re-cut of the passage voiceovers because the prose change invalidates the `audio_of` hashes on the story nodes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "33",
+   "quote": "Words live in the passage: taught words appear inside the passage where",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "339",
+   "quote": "Vocabulary validation passed: 76 taught word(s), each met more than once in its own passage and again later in its unit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "896",
+   "quote": "A taught word must appear in the passage the child then reads, more than once, and be reachable there.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/FEEDBACK-RESPONSES.md",
+   "lines": "113",
+   "quote": "Twelve of the 46 words never actually appeared in their own story, so we wrote",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "272-273",
+   "quote": "7 of 9 taught words appeared exactly once when this was first checked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "29",
+   "quote": "Two later lessons in the same arc, L5 ('menacing') and L6 ('merciless'), teach their word as an encapsulating word that is deliberately kept out of the passage so the child is the one who supplies it, and each carries a named design document waiving this rule on that basis",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "115-117",
+   "quote": "seven of the unit's nine taught words appeared exactly once in the passage they were taught for, and every other validator passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "281",
+   "quote": "R-VOC-7 requires a taught word to appear in its own lesson's passage, and the academics team's design docs deliberately teach ENCAPSULATING words that appear nowhere in the text (the word names what happens, and the child reaches for it in the independent task).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "281",
+   "quote": "the academics team's design docs deliberately teach ENCAPSULATING words that appear nowhere in the text (the word names what happens, and the child reaches for it in the independent task).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "147-149",
+   "quote": "When the passage does not carry the word twice, the word is still earned if the lesson's own activities use it: the questions, answer options, feedback, sentence frames, the retelling cloze and the recap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "29",
+   "quote": "A taught word absent from the passage carries `encapsulating {reason, authority}`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp1-v3-design.txt",
+   "lines": "31",
+   "quote": "Word chosen: ENCHANTING — an encapsulating mood word (not in the text), chosen per the KB.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "36-38",
+   "quote": "a taught word NOT in the passage gets the sanctioned \"encapsulating\": {reason, authority} field on the vocab node — validate-vocab-earned honours it and fails loud if the claim is false.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

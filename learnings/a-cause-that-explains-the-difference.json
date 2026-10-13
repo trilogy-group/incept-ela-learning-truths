@@ -1,0 +1,34 @@
+{
+ "id": "a-cause-that-explains-the-difference",
+ "title": "A cause that explains the difference",
+ "statement": "In a comparison item, the keyed explanation must name a cause that differs between the things compared; a cause that applies to both explains nothing about the difference.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "One of eight copy-task audits added to an item evaluator for issue 962 fails a keyed explanation that applies equally to both subjects of a comparison, since it explains the general direction of change rather than the difference (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). The audit fires only on data tables comparing exactly two named subjects (the same file, line 102), and it rests on one rubric, not a measurement.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "116",
+   "quote": "If the correct answer's causal explanation applies equally to both subjects, it explains the general direction of change for all subjects — not the specific comparative difference.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

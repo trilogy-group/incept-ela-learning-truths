@@ -1,0 +1,105 @@
+{
+ "id": "a-word-card-short-enough-to-hold",
+ "title": "A word card short enough to hold",
+ "statement": "Keep a word card short: a one-sentence everyday definition of at most 20 words, and a short example and non-example, since each extra clause weakens the contrast.",
+ "example": "The rule caps a definition at 20 words, an example at 30 and a non-example at 35.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading course's published vocabulary rule keeps a card short enough to hold both halves at once: a definition is one sentence of 20 words at most, an example at most two sentences and 30 words, and a non-example at most two and 35, its extra five words for the 'because' another rule requires. Sentences sit in the grade's own band, 11 to 16 words at Grade 4, and a validator checks the limits. The rule adds that when a pair will not fit, the problem is almost never the budget but two sides that have drifted into different scenarios and started explaining themselves.",
+ "against": "The wording principle itself is not machine checkable and stays a review question (`othello-course-renderer-draft/repo/docs/rules/vocabulary.md`, lines 329-331), and no outcome of the limits was measured.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "845",
+   "quote": "Keep the card short enough to hold both halves at once",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "848",
+   "quote": "A definition is ONE sentence, 20 words at the outside. An example is at most two sentences and 30 words; a non-example at most two and 35",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "848",
+   "quote": "Sentences sit in the grade's own band, which is 11 to 16 words at Grade 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "848",
+   "quote": "Where a pair will not fit, the problem is almost never the budget: it is that the two sides have drifted into different scenarios and each has started explaining itself.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "849",
+   "quote": "checked by scripts/validate-contracts.mjs",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "286",
+   "quote": "**Rule.** A definition is ONE sentence, 20 words at the outside.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "286-288",
+   "quote": "An example is at most two sentences and 30 words; a non-example at most two and 35",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "296-297",
+   "quote": "capture the essence of the word and say it in everyday language the child already has.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "306-307",
+   "quote": "Every extra clause is another place the two sides differ, so a long pair is a weaker contrast, not a more thorough one.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "316-318",
+   "quote": "A 52-word non-example, which is what the `epic` card carried, is past the point where a nine-year-old can still hold the example it is supposed to be compared against.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "327-329",
+   "quote": "which fails a definition over one sentence or 20 words, an example over two sentences or 30 words, and a non-example over two or 35.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

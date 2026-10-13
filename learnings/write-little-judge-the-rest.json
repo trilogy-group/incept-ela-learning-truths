@@ -1,0 +1,411 @@
+{
+ "id": "write-little-judge-the-rest",
+ "title": "Write little, judge the rest",
+ "statement": "Let a model write only the free text a lesson needs, and make every choice, mark and check a bounded judgment that, at play time, picks among lines written and checked in advance.",
+ "example": "A paragraph coach that took 6.6 s through a second model became a choice among four written steps, 0.26 to 0.48 s live.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A writer model only writes the free text that has to be written; choosing, marking, ranking and checking are bounded\njudgments (`g9/transformer/DECISIONS.md`, the entry on judging). An audit of every AI call found one judgment still made by a\nsecond model, a paragraph coach that took 6.6 s; it became a choice among four steps written in advance, 0.26 to 0.48 s\nlive (`g9/transformer/DECISIONS.md`; `g9/transformer/v02/QA.md`, the audit of AI calls). On another build's own answer table, 43\nanswers gave 0 hard fails and 1 soft miss, with a median of 266 ms over the 31 that reached the judge\n(`g9/transformer/v02/QA.md`, \"Composer and the animated build's marking\"). Replies at play time are lines written and\nchecked before the lesson ships: the debate's push-backs are drafted in advance for each side\n(`g9/transformer/src/mechanics/debate.js`).",
+ "against": "the writer still picks content that the judge then checks, such\nas a text's big idea and key words (`g9/transformer/v02/QA.md`, \"Word web\"), and the 6.6 s included an advisory check. A later run found counter-evidence (`grade3-reading/artifacts/wiki-research/pedagogy-llm-evals.md`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found counter-evidence (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "229",
+   "quote": "This is a \"closed-world\" approach: rather than asking the model to generate historical facts from open memory, you preemptively supply the plausible candidates and the model's job is selection rather than recall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "57",
+   "quote": "The replacement introduced a factual error.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "63",
+   "quote": "The backstop should fall back to the authored hint verbatim rather than regenerating on this path",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "52",
+   "quote": "| K=3 + Gemini Flash 3.5 \"reshape\" | -23pp vs PEAK | Gemini regenerated content from scratch (weaker domain knowledge) |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "54",
+   "quote": "| K=3 + Gemini \"structure-only\" | Still regenerating | Schema constraint + token cap overrode \"verbatim\" hard rules |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "56",
+   "quote": "| Current (picker-only, v0.4.0) | TBD — needs IB run | Gemini emits only `{best_index: N}`, Python serves verbatim |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "13",
+   "quote": "Anti-leak scaffold built by rule, not the model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "15",
+   "quote": "It never decides what the answer depends on → cannot leak.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "265-266",
+   "quote": "``skipped`` must never be model-controlled: if it were in the JSON schema, the\n    model could skip the merge and preserve a false pass from the main evaluator.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_no_hallucination_in_training_data.md",
+   "lines": "28",
+   "quote": "4. **Gold responses** must come from published Sample Responses, scoring guidelines, or human-written rubric-aligned responses. No LLM-generated gold answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "62-63",
+   "quote": "Their 40-student design-science pilot reported more consistent scaffolding and less premature answer-giving.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/cross-cutting.md",
+   "lines": "157",
+   "quote": "This is a hard, cited number (74% majorly flawed for LLM-generated items) that bears directly",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "137",
+   "quote": "old: LLMs assemble-and-tag only (generic model evidence). Current",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "142-143",
+   "quote": "explicitly bars any LLM grader on the auto-score-to-100 path (feedback must be a deterministic function of the machine-scored response).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "34",
+   "quote": "Deterministic span-acceptance rules first; LLM grading only after a calibration pass — until then this step never blocks progression.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_a_b_kc_pack_substitution.md",
+   "lines": "32",
+   "quote": "3. **Keep the Gemini-generated `prompt`** (analytical DBQ stem) — Gemini is good at writing those. **Replace only the `documents`** — that's where the synthesis-vs-real-source distinction lives.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "5",
+   "quote": "The one change that would most improve a saved paragraph: the check holds on D (none of these), and a case that fails names the change it expects in choice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/glue.test.mjs",
+   "lines": "26",
+   "quote": "a paragraph that does all three gets no step",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "102",
+   "quote": "a paragraph doing all three got no step (0.26 s).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "100-101",
+   "quote": "a paragraph that explains no word got \"pick one word in \"I follow him to serve my turn upon him\" and say what it suggests\" (0.34 s)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/glue.test.mjs",
+   "lines": "11",
+   "quote": "a saved claim-evidence-reasoning answer gets one next step from a Jev choice, filled with the student's words; none when Jev is unsure, or sure the words address the marker",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "Writer deciding labels or marking with no Jev check that can hold it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "word-web.js:85 and :97: the writer's 'likely' words count as right in code, with only an advisory Jev check.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "99",
+   "quote": "code knows only the forms of the centre and the key words (Jev checked those)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "272",
+   "quote": "words: [ww.item.centre, ...(ww.item.forms[ww.item.centre] ?? []), ...ww.item.keys.flatMap((k) => [k.word, ...(ww.item.forms[k.word] ?? [])])]",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "59",
+   "quote": "a form shares the start of its word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "15",
+   "quote": "const stemOf = (w) => norm(w).replace(/[^a-z]/g, \"\").slice(0, 4);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "3",
+   "quote": "so no writer runs at play time",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "29",
+   "quote": "the 3D build's paragraph coach (6.6 s through a second model) became a Jev choice of one next step",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "29-30",
+   "quote": "the 3D build's paragraph coach (6.6 s through a second model) became a Jev choice of one next step (0.26 to 0.48 s live).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "99-100",
+   "quote": "It is now a Jev choice among four authored steps, filled with the student's own words, and shown only when Jev is sure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "4",
+   "quote": "evidence only, and writes no reply of its own: every word the student reads stays the rubric's.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "5",
+   "quote": "Jev only decides. Every reply is an authored line (the block's own feedback,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "60",
+   "quote": "PAINTINGS (id: subject), for evidence beats:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "116",
+   "quote": "the archivist: a checkpoint from a quick check, judged by Jev, replied with its own authored lines",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "71-72"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "4-5"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "29",
+   "quote": "its model: the 3D build's paragraph coach (6.6 s through a second model) became a Jev choice of one next step (0.26 to",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A counter drafted in advance cannot answer the student's own wording, so it is weaker.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The 3D build writes its push-back live to the student's words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "61-62",
+   "quote": "tested a closely related three-layer design—diagnosis, rule-controlled intent, constrained response generation—in a 2026 Grade-5 mathematics system.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "62-63",
+   "quote": "Their 40-student design-science pilot reported more consistent scaffolding and less premature answer-giving.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "63-64",
+   "quote": "This is direct architectural precedent, not a production-scale or randomized outcome result",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "66-69",
+   "quote": "SHAPE represented mastery as binary state over a knowledge graph, then used an explicit gate to route generation between instruction and direct problem-solving. Results across model families support external pedagogical routing, while weak results from a smaller model show that renderer capability remains a floor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/INTEGRATION-DISPOSITIONS.md",
+   "lines": "14",
+   "quote": "A real-browser check of L4 p21 showed that revised authored hints alone were insufficient: the generated second reply still supplied “a lighter feeling,” an accepted answer concept.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/authored-feedback/PROPOSAL.md",
+   "lines": "11",
+   "quote": "tells the model to build on the authored line",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/authored-feedback/PROPOSAL.md",
+   "lines": "21",
+   "quote": "Do not prepend generated praise or append generated diagnosis: either can carry the same answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/authored-feedback/PROPOSAL.md",
+   "lines": "21",
+   "quote": "it intentionally forgoes the generated personalized recap on these nine fields.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/authored-feedback/RESULT.md",
+   "lines": "11",
+   "quote": "Valid same-test pair: 74 pass / 10 expected delivery failures → 84/84 pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "24",
+   "quote": "Use reviewed source-grounded explanations, label them as supported examples, and never substitute generated praise for evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/README.md",
+   "lines": "48",
+   "quote": "Root's real U9 L2 scoring run generated inaccurate relationship praise and an incomplete causal closing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "105-106",
+   "quote": "is sent to a marker that reads it against the Grade-3 STAAR two-point rubric and sends back one short, specific line of help.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "268",
+   "quote": "No text input, no reply loop, no timers — the Archivist says the authored feedback and nothing else.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

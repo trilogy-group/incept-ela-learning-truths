@@ -1,0 +1,122 @@
+{
+ "id": "a-film-changes-with-everything-tied-to-it",
+ "title": "A film changes with everything tied to it",
+ "statement": "A film's captions, transcript and checks must match the film that plays, so they change with it.",
+ "example": "Swapping only one lesson's video file would have left its check and five transcript segments out of step.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A draft plan to replace a reading lesson's opening film found that the installed film carried a check and five short transcript segments, so replacing only the video file would leave them mismatched, and it requires the film, poster, captions, transcript, title and check contract to be replaced together and then tested in the lesson. The same plan keeps pauses, response screens and feedback in the app, not burned into the video (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md`, lines 53 and 58).",
+ "against": "The plan is a draft: nothing has been made or installed under it, and it awaits reconciliation with a reviewed script (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md`, line 7).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md",
+   "lines": "58",
+   "quote": "Replacing only its MP4 would leave that check and the five short transcript segments mismatched.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md",
+   "lines": "58",
+   "quote": "A later implementation must replace the film, poster, captions, transcript, title/copy and checkpoint contract together",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md",
+   "lines": "53",
+   "quote": "Pauses, response UI and feedback belong to the app, not burned into the MP4.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "46",
+   "quote": "The transformer's runtime remains the owner of student answer scoring and mechanic gates; a visual module must not unlock a lesson step or rewrite approved copy.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/HANDOFF.md",
+   "lines": "33",
+   "quote": "Reusing an ID for changed media could serve stale captions and misplace a stop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE4.md",
+   "lines": "50",
+   "quote": "The closing checkpoint has been corrected to include poem, but the film transcript still omits that defining feature.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "253",
+   "quote": "(1) L4's current 33 s short film has a required checkpoint about its OLD ending; the FINAL Part 1 script ends on the story-pattern cue, so that checkpoint must be re-authored when the new film lands;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5588",
+   "quote": "Synchronise captions and questions with each narrated panel.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "15-17",
+   "quote": "The shipped transcript was deliberately NOT edited to match, because the transcript is the caption track for audio that still says the old words, and a caption that disagrees with the voice is worse than one that is wrong with it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/CHANGES.md",
+   "lines": "28",
+   "quote": "App copy (`prototypes/app-narrated/`) still carries script v1; its transcript will not match film v3 until the app content is revised, which needs",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/checks.js",
+   "lines": "3",
+   "quote": "`at` = end of the scene minus 0.3 s, relative to the video.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-and-visual-plan.md",
+   "lines": "15-17",
+   "quote": "The shipped transcript was deliberately NOT edited to match, because the transcript is the caption track for audio that still says the old words, and a caption that disagrees with the voice is worse than one that is wrong with it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "25",
+   "quote": "details opens, persists (`transcriptOpen`), text equals the exact spoken script (54 words, scene 8)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "judge-the-experience-not-the-storage",
+ "title": "Judge the experience, not the storage",
+ "statement": "Judge only what changes the student's experience, and never fail an item for how its data is stored.",
+ "example": "A judge flagged three equivalent answers to a single blank as if the item had several blanks.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The judge misread a valid list of equivalent answers to one blank as several blanks and marked the item down, so a guard now restores those scores when the nested lists are the only issue cited (`icloud-work/inceptbench-main/tests/test_issue_390_fillin_accepted_answers.py`). Version 2.6.6 added a base rule that the schema is irrelevant whenever a student would have the same experience however the data is structured (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`), and turned a guard that failed answers for not matching a renderer's format into a no-op, since that is a platform concern rather than one of question quality (`icloud-work/inceptbench-main/src/inceptbench/evaluators/guards.py`).",
+ "against": "Version 2.6.3 still failed items for passage text placed in the question field (`icloud-work/inceptbench-latest/src/inceptbench/prompts/question/sat_rw_evaluation.txt`, line 27); answer options written into the stem as well as the options field are still penalised, which fits the rule because the student sees them twice (`icloud-work/inceptbench-main/src/inceptbench/evaluators/question.py`, lines 700-701).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "20",
+   "quote": "If the same question, asked of a student, would have the same pedagogical experience regardless of how the JSON is structured, the schema is irrelevant.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_issue_390_fillin_accepted_answers.py",
+   "lines": "3-6",
+   "quote": "The evaluator incorrectly flags FILL_IN questions where accepted_answers contains multiple single-element lists (e.g. [[\"3\"], [\"3/1\"], [\"6/2\"]]) as having multiple blanks, when in fact this is the valid platform format for multiple equivalent answers to a single blank (list[answer_set][blank_index]).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "1919-1921",
+   "quote": "Renderer / UI schema compliance is a platform concern, not a question-quality concern, so InceptBench no longer scores on it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "28",
+   "quote": "However, the engine does NOT render `node.definition` as visible or spoken text to the child on this node.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "105",
+   "quote": "they are inputs to the adapter, not what the student sees.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,128 @@
+{
+ "id": "a-source-rich-enough-for-its-task",
+ "title": "A source rich enough for its task",
+ "statement": "A source must be rich enough for its task, with a distinct part for each question and, when paired, distinct evidence; any false detail or failing question fails the set.",
+ "example": "One rubric's own case: a 50-word passage cannot support a 4-paragraph argumentative essay.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's extended-writing rubric fails a source that is too short, too simple or too similar to the other text to support the evidence the essay needs, and asks that paired texts be substantive and distinct enough to give different evidence perspectives (`shadow/bench/src/inceptbench/prompts/question/ecr_evaluation.txt` lines 157-163). Its reading-level notes add a per-grade minimum length for passages shared by several questions, documented by NWEA for grades 2–5 and advisory for other grades (`shadow/bench/docs/internals/lexile_evaluation.md` lines 47-48). One false detail or one failing question fails the whole set.",
+ "against": "The length floor holds only where it is documented: standalone single-item passages have no documented floor and are exempt (`shadow/bench/src/inceptbench/evaluators/guards.py` lines 2586-2587). It was once applied to ordinary standalone passages by mistake, forcing a short at-grade passage of about 66 words to 0.0, and was then limited to passages positively detected as shared (git commit 3c78f22 in `shadow/bench`, lines 29-38). the evaluator's published spec states only that the questions must require the source, and the notes don't record what failure led to the rule. Only factual accuracy is all-or-nothing across the set: its educational accuracy fails only when more than 20% of the questions fail, and shared measures such as stimulus quality pass at an 80% rate (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md`, lines 102-103).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "157-158",
+   "quote": "- The provided source text(s) must be rich enough to support the required essay — a 50-word passage cannot support a 4-paragraph argumentative essay.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "162-163",
+   "quote": "- Stimulus fails if it is too short, too simple, or too similar to the other provided text to support the required evidence differentiation.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "160-161",
+   "quote": "- For Grade 6–English II (requires both texts): both texts must be substantive and distinct enough to provide different evidence perspectives.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "47-48",
+   "quote": "3. **Length floor.** Common-stimulus passages below the NWEA per-grade minimum (grades 2–5 are NWEA-documented; others advisory) fail `length_appropriateness`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "107",
+   "quote": "A well-written, historically accurate stimulus can still fail stimulus_quality if it doesn't have enough substance for 3 different questions to reference. The 3 questions must all trace back to specific elements of the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "54",
+   "quote": "One bad detail in the stimulus fails the entire 3-question set.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/AP_EVALUATION.md",
+   "lines": "141",
+   "quote": "Questions must require the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "86",
+   "quote": "3. **Stimulus too thin**: 30-word stimulus + 4 questions = no question can actually require it. Match stimulus depth to set size.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "74",
+   "quote": "- The set fails if ANY single question fails any metric.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-22T211855Z_exploits_EXPLOIT-003-mcqset-phrase-anchor/source_report.md",
+   "lines": "66-68",
+   "quote": "The single failing critical metric is `educational_accuracy`, driven by ≥1 of 3 child questions failing its own MCQ-level checks",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-22T211855Z_exploits_EXPLOIT-003-mcqset-phrase-anchor/source_report.md",
+   "lines": "65-66",
+   "quote": "Both score exactly at the C=1 N=0 ceiling of 0.84 (rubric INFERIOR range 0.70-0.84).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "163",
+   "quote": "If the provided `factual_accuracy failures` count is > 0 → MCQ set factual_accuracy = 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "164",
+   "quote": "If the provided `educational_accuracy failure percentage` is > 20% → MCQ set educational_accuracy = 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "101",
+   "quote": "- Parent factual accuracy fails if any child has a factual failure.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

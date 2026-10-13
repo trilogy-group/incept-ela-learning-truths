@@ -1,0 +1,162 @@
+{
+ "id": "feedback-where-the-student-is-looking",
+ "title": "Feedback where the student is looking",
+ "statement": "Show feedback directly under the answer or option it responds to, and keep the text in view whenever feedback says to look back.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course's checklist requires the reply to a wrong answer to render directly under the tapped option, checked by a code tripwire, and the passage to be on screen whenever feedback says to look back, as a blocking row (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, lines 72 and 103). A visual pass on one lesson found a correct reply rendered under a box on the right while the tapped line sat on the left, usually off screen (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md`, lines 43-46).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "103",
+   "quote": "Wrong-answer reply renders directly under the tapped option, not below the list",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md",
+   "lines": "46",
+   "quote": "The feedback is right; its position is not where the child's eyes are.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "72",
+   "quote": "passage visible whenever feedback says look back",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "127",
+   "quote": "The feedback register is the corrective-feedback bar: ≤40 words, evidence-anchored, teaches without revealing.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "30",
+   "quote": "Wrong-answer feedback lands directly under the option tapped | The correction attaches to the exact act, not to the screen in general | 25.08 feedback item (“directly under the ABCD”), engine-wide",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1958",
+   "quote": "Observe the feedback lies beneath the activity leaf while focus remains in the input.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2020",
+   "quote": "The live wrong correction extends below the task leaf at y=638 while the window is 720px tall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1830",
+   "quote": "The first capture shows only the correction border above leaf bottom638; the authored text is present in DOM.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1737",
+   "quote": "The saved 1280x720 capture has both enabled bank buttons visible at y475..539 but the new Great work/which clue/Tap it instruction is below leafbottom638 after the nested hint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1706",
+   "quote": "The next field is focused but below the visible leaf.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1706",
+   "quote": "Manual scrolling is available; no permanent clipping or false completion is claimed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1750",
+   "quote": "Both requested four-clue and nested two-clue first arrivals put the current task above the bank",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1969",
+   "quote": "Actual fresh L5/L7 spelling corrections fully readable with input selection/focus and quiet history.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "77-79",
+   "quote": "onward button (\"Keep reading →\" / \"Now let's dig deeper →\") renders only after correct feedback is on screen (the explicit Continue)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "83-84",
+   "quote": "correct → feedback + explicit Continue before the next element renders.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "84-85",
+   "quote": "feedback finishes before Next renders",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "81",
+   "quote": "The three response plans (cherry-pick;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "165",
+   "quote": "Native U1L1 sg-model captures19-22 on1379 product8ba show generic green action pills for all choices, disabled gray wrong response with plain correction, and disappearance of stem/options on correct choice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "34-36",
+   "quote": "**Feedback anchors to the thing acted on.** A wrong answer's reply renders directly under the tapped option, not below the list three distractors away.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

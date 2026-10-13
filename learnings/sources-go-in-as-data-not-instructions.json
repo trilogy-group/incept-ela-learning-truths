@@ -1,0 +1,42 @@
+{
+ "id": "sources-go-in-as-data-not-instructions",
+ "title": "Sources go in as data, not instructions",
+ "statement": "Pass source texts and task material to a writer model as data apart from its instructions, so words inside a source cannot override the rules it was given.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A plan for a model-neutral prompt envelope, in an experiment on steering generation with teaching rules, lists as a first-tier insight that task text and evidence are untrusted data, never to be interpolated into the instruction channel or allowed to override the frozen rules. The same plan fixes one canonical envelope whose bytes and hashes are set before any provider-specific formatting, so adapter syntax may change but the rules' meaning may not.",
+ "against": "It is a design rule from one plan and was never tested.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/reading-0hr-model-neutral-prompt-envelope-plan.md",
+   "lines": "28-29",
+   "quote": "task text and evidence are untrusted data. They must not be interpolated into the policy instruction channel or allowed to override the frozen contract.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/reading-0hr-model-neutral-prompt-envelope-plan.md",
+   "lines": "26-27",
+   "quote": "Tier 1: model-neutrality requires one canonical semantic envelope whose bytes and hashes are fixed before provider projection; adapter-specific syntax may change, policy semantics may not.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

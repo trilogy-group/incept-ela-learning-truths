@@ -1,0 +1,81 @@
+{
+ "id": "each-evidence-option-fits-one-reading",
+ "title": "Each evidence option fits one reading",
+ "statement": "In a two-part item asking for evidence behind the first answer, only the keyed evidence may support the right answer, and each wrong evidence option should fit a wrong reading.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "distractors",
+  "integrity",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two-part evidence items came into the evaluator with mandatory copy-task audits of how the evidence part links to the answer part (`shadow-bench/src/inceptbench/prompts/question/ebsr_evaluation.txt`). An item fails when an evidence option is not drawn from the passage or when a wrong evidence option also supports the keyed answer, and each wrong evidence option must align to a wrong reading of the first part, not to the key. When a test-wise student can pick the evidence through a surface cue without doing the first part, the item measures test-wiseness instead of evidence-based reasoning; mixing quotations with paraphrases among the evidence options is failed as an unintended cue.",
+ "against": "The evaluator's text-hidden probe does not cover this item type: 'ebsr/match/sequence/saq/scr reported not-probeable (v1 scope).' (`shadow-bench`, git commit e435432, line 14).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "62",
+   "quote": "- a Part B option has `appears_in_passage: NO` (evidence is fabricated, not drawn from the passage);",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "65-66",
+   "quote": "- a NON-keyed Part B option has `supports_part_a_keyed_answer: YES` (a distractor is itself valid supporting evidence, so the Part B key is not the unique/complete set).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "69",
+   "quote": "Each Part B distractor must align to a WRONG Part A reading, not to the key.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "82-84",
+   "quote": "When a test-wise student can pick the evidence without performing the Part A comprehension, the item no longer measures evidence-based reasoning — it measures test-wiseness, defeating the EBSR purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "97-98",
+   "quote": "mixing quotes and paraphrases turns citation style into an unintended cue",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e435432",
+   "lines": "14",
+   "quote": "ebsr/match/sequence/saq/scr reported not-probeable (v1 scope).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "212",
+   "quote": "- **No vocabulary EBSR or hot-text:** Vocabulary items use short context sentences as stimulus, not full passages. Two-part text-evidence format does not apply.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

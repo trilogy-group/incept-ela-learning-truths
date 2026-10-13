@@ -1,0 +1,78 @@
+{
+ "id": "strike-the-option-not-its-explanation",
+ "title": "Strike the option, not its explanation",
+ "statement": "When a worked example marks a rejected option, style the option itself and keep the explanation of why it fails fully readable.",
+ "example": "A 3-pixel red strike line, set on the box holding both the option and its explanation, ran through every line of that explanation in two lessons.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a modelled-reasoning step the decoration for a rejected candidate, a 3px red line-through, was set on the element holding both the candidate and its explanation, so it was drawn through every line of the explanation the student must read to see why the answer is unsuitable. It appeared in two lessons, through all three candidate steps in one of them, and stayed visible after advancing. The expected fix scopes the decoration to the quoted candidate, and the regression check passes only when the explanations read without strikethrough while the rejected candidate is still clearly identified.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L1-model-rationale-strikethrough.md",
+   "lines": "5",
+   "quote": "The student must read that explanation to understand why the answer is unsuitable, but a thick red line runs through its letters.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L1-model-rationale-strikethrough.md",
+   "lines": "16",
+   "quote": "Expected: the rationale stays readable; rejection styling identifies the candidate without striking through its teaching explanation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L1-model-rationale-strikethrough.md",
+   "lines": "24",
+   "quote": "parent decoration is `line-through 3px rgb(209, 81, 58)`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L1-model-rationale-strikethrough.md",
+   "lines": "26",
+   "quote": "Scope the decoration to the quote, preserving normal readable rationale text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L1-model-rationale-strikethrough.md",
+   "lines": "14",
+   "quote": "through all three candidate steps",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "7",
+   "quote": "in two confirmed lessons",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/REGRESSIONS.md",
+   "lines": "7",
+   "quote": "Explanations remain readable without strikethrough; the rejected candidate is still clearly identified.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "student-words-in-their-own-field",
+ "title": "Student words in their own field",
+ "statement": "Put a student's words in a field of their own in the judge's input and ask about that field by name, never inside the question's wording.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's two writing blocks that judge a student's words at play time put them in named fields of the judge's state: student_text in the debate, and claim, evidence and reasoning in the claim-evidence-reasoning paragraph; its open check does the same with student_text. Their questions name those fields, and the options the judge picks among are written in advance, never taken from the student's text. A guard on words aimed at the marker is asked beside each of these judgments.",
+ "against": "No test compares this with putting the words inside the question, so the benefit is not measured.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "101",
+   "quote": "Does student_text answer challenge with a reason from the text?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "102",
+   "quote": "return { state: { question: item.question, student_text: text }, checks: [",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "103",
+   "quote": "Which position does student_text take on question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "74",
+   "quote": "claim: String(action.claim), evidence: String(action.evidence), reasoning: String(action.reasoning)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "99",
+   "quote": "return { state: { question: item.q, student_text: text,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

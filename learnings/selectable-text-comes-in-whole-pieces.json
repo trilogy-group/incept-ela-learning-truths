@@ -1,0 +1,177 @@
+{
+ "id": "selectable-text-comes-in-whole-pieces",
+ "title": "Selectable text comes in whole pieces",
+ "statement": "Make each selectable piece of text a whole word, phrase, clause or sentence, never a fragment cut mid-word or mid-phrase.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's rubric for items where students select parts of a text audits every selectable span, asking whether it is a whole word, phrase, clause or sentence rather than a mid-word fragment or an arbitrary cut that distorts meaning (`shadow/bench/src/inceptbench/prompts/question/hot_text_evaluation.txt` lines 115-120). A span that begins or ends mid-word, or slices a phrase into a fragment a student can't evaluate on its own, fails the item's clarity outright (lines 122-124).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "120",
+   "quote": "is the span a whole word, phrase, clause, or sentence rather than a mid-word fragment or an arbitrary cut that distorts meaning?",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "122-124",
+   "quote": "**MUST-FAIL** (`clarity_precision = 0.0`) if any selectable span has `is_coherent_unit: NO` (e.g. a span begins or ends mid-word, or slices a phrase so the selectable text reads as a fragment that a student cannot evaluate on its own).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "85",
+   "quote": "Up to n quotes from a ranked pool of units, the best first, shown in the text's order: whole clauses first (a line and",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "86",
+   "quote": "the rest of its sentence, three lines of one speech at most), then single lines; never a line in `taken` or one the",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/963297774d627c12.json",
+   "lines": "22",
+   "quote": "\"L4\": \"L4 Half sunk a shattered visage lies, whose frown,\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/963297774d627c12.json",
+   "lines": "23",
+   "quote": "\"L5\": \"L5 And wrinkled lip, and sneer of cold command,\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/963297774d627c12.json",
+   "lines": "33",
+   "quote": "\"instructions\": \"Does line L4 in lines, read on its own, give clear evidence for the claim?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/963297774d627c12.json",
+   "lines": "60",
+   "quote": "\"value\": 0.16,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/963297774d627c12.json",
+   "lines": "217",
+   "quote": "\"value\": 0.58,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "22",
+   "quote": "\"L9\": \"L9 [IAGO] Heaven is my judge, not I for love and duty,\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "90",
+   "quote": "\"value\": 0.35,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "460",
+   "quote": "\"value\": 0.33,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "90",
+   "quote": "\"value\": 0.35,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "458",
+   "quote": "\"value\": 0.24,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/963297774d627c12.json",
+   "lines": "13",
+   "quote": "\"reveal\": \"The ruined face shows a frowning mouth with a cold expression, showing the ruler's harsh authority.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "75",
+   "quote": "Does line, read on its own, give clear evidence for claim?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "82",
+   "quote": "if (verdict === \"fails\") return missed(item, action);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "83",
+   "quote": "// the judge unsure or absent: the hint, no miss, and the line kept for review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1237",
+   "quote": "inspect reached replay buttons: one ends with Mrs. and the next is Craven died.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1246",
+   "quote": "If the correct evidence spans two sentences, present them as one selectable thing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "63-64",
+   "quote": "A quote that is a fragment of a sentence is not a sentence — tap targets are whole sentences, byte-exact (validate-passage-refs).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

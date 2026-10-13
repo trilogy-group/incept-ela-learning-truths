@@ -1,0 +1,65 @@
+{
+ "id": "blatant-calibration-cases-subtle-live-faults",
+ "title": "Blatant calibration cases, subtle live faults",
+ "statement": "Does a calibration set built from blatant faults show that a judge will catch the subtle faults that actually occur?",
+ "example": "Seven of one AP judge's 15 failing calibration cases expect a cognitive-demand failure, six of them for asking only for recall.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An AP judge's calibration set holds 25 cases, 23 of them multiple choice, and its 15 failing cases are mostly blatant: seven expect a cognitive-demand failure, two absolute language, one a structural fault, two gross period misplacements and three factual errors, one of them subtle (1832 for 1830) (`APinceptbench/ap_benchmark/calibration/gold_standard.json`). In a live run, factual accuracy became the commonest failing dimension, with 24 failures whose patterns were events placed in the wrong period, geographic slips and oversimplifications (`APinceptbench/docs/reports/BENCHMARK_RUN2_REPORT.md`). Whether catching the first kind predicts catching the second has not been measured.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/calibration/gold_standard.json",
+   "lines": "194",
+   "quote": "Recall-only question - just asks for a date without any analysis",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/calibration/gold_standard.json",
+   "lines": "403",
+   "quote": "Factual error: Midway was in the Pacific against Japan, not the Atlantic against Germany",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "87",
+   "quote": "1. **Temporal confusion** - Misattributing events to wrong time periods",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "36",
+   "quote": "| Positive | 9/10 | 9/10 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "37",
+   "quote": "| Boundary | 3/10 | 2/10 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

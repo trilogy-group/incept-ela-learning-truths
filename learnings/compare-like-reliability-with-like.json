@@ -1,0 +1,71 @@
+{
+ "id": "compare-like-reliability-with-like",
+ "title": "Compare like reliability with like",
+ "statement": "Compare a reliability figure only with the same kind of reliability measured under like conditions, because one test's marginal, test-retest and sub-score reliabilities can differ markedly.",
+ "example": "One reference test reported 0.96 marginal reliability on its calibrated pool, 0.82–0.89 test-retest and 0.87–0.88 for its sub-scores.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An adversarial review set a proxy test's simulated reliability of 0.931 against the reference test's operational 0.96. The package's reply cited the reference test's technical report for 2024–25: the 0.96 is marginal reliability of the operational adaptive test on a fully calibrated pool, its test-retest reliability across terms is 0.82–0.89, and its sub-scores average 0.87–0.88. It called holding a pre-calibration simulation to the operational-pool figure a category error, and its simulation evidence names 0.96 after calibration, not before, as the comparison to hold it to.",
+ "against": "The review still read the result as a near miss: \"0.931 meets the self-set ≥0.93 target but sits below MAP's 0.96 operational bar, on provisional b-values\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md`, line 57). The published figures were read from the package's citation of the report's tables, which gives no DOI or URL, and were not checked against the report itself.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "73",
+   "quote": "**The comparison mixes reliability types.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "77",
+   "quote": "| Marginal reliability (Table 7.7) | 0.96 | Operational CAT, fully calibrated pool, N ≈ 800K–980K per grade/term |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "78",
+   "quote": "| Test-retest reliability (Table 7.10) | 0.82–0.89 | Same instrument, real students, across terms — with NWEA's own caveat that months of true growth attenuate it |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "79",
+   "quote": "| Instructional-area scores (Table 7.8) | 0.87–0.88 mean | The domain sub-scores — MAP's own, on the operational pool |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "81",
+   "quote": "Holding a pre-calibration simulation to the operational-pool number is a category error",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "46",
+   "quote": "The comparison to hold us to is 0.96 post-calibration, not pre.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,164 @@
+{
+ "id": "render-the-extremes-at-every-width",
+ "title": "Render the extremes at every width",
+ "statement": "Render a course's extremes, its longest word, option and sentence and its largest set of options, at phone, tablet and desktop widths, and again whenever new content extends one.",
+ "example": "A desktop-only check battery missed all three classes of layout fault one visual audit found.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "accessibility",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's QC checklist asks that the longest word, longest option, longest sentence and largest option count render clean at 1280 and 390 pixels, again whenever new content extends an extreme, and at a third width in the 720 to 820 pixel band, which its walker never opened (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`). A visual audit found three faults, among them long button labels that overflowed the 390 pixel viewport and forced sideways scrolling, and the register's class rule was that the check battery was desktop-only, so all three were invisible to it (`grade3-reading/artifacts/feedback-codex-visual-2026-09-07/REGISTER.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "113",
+   "quote": "Longest word, longest option, longest sentence, max option count render clean at 1280 AND 390",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "113",
+   "quote": "re-run when new content extends an extreme",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "114",
+   "quote": "Content-extremes and phone-fit checks also run at a third width in the **720–820px band**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-codex-visual-2026-09-07/REGISTER.md",
+   "lines": "12",
+   "quote": "overflow the 390px viewport and force horizontal scroll",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-codex-visual-2026-09-07/REGISTER.md",
+   "lines": "14",
+   "quote": "Class rule: battery is desktop-only; all three classes invisible to it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/frames.js",
+   "lines": "3",
+   "quote": "state renders on the canvas (the host contract's preflight: some text passes the schema yet cannot fit).",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7e771d331c6b4135.json",
+   "lines": "120",
+   "quote": "Every frame validates and fits its canvas: beat 2: render Evidence line exceeds two display rows | beat 3: render Point exceeds two display rows",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "core/README.md",
+   "lines": "26",
+   "quote": "`wrapText` is a soft character-count helper, not a font metric; modules must independently check their own text bounds and layout.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "argument-map/src/index.js",
+   "lines": "61",
+   "quote": "throw new RangeError('Point exceeds two display rows');",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "17",
+   "quote": "const NOMINAL = 10; // seconds of narration a beat is checked at before its real length is known",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "43",
+   "quote": "- \"evidence\": heading (at most 50 characters); claims: two or three, each at most 60 characters, each true to the text;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "45",
+   "quote": "{\"label\": \"at most 24 characters\", \"points\": [two",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "46",
+   "quote": "points, each at most 50 characters]}",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7e771d331c6b4135.json",
+   "lines": "31",
+   "quote": "\"A frown and wrinkled lip show harsh contempt\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "43",
+   "quote": "\"What we say will not endure\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "118",
+   "quote": "The quote card leaves a one-word last line, and its underline starts on the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/README.md",
+   "lines": "77",
+   "quote": "Repair direction: make the footer groups shrink or reflow at narrow widths, and budget space using the longest labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "171",
+   "quote": "A viewport never asserted is a viewport never tested.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "29",
+   "quote": "Mobile 390×844: no horizontal overflow, controls fit | PASS | scrollWidth 390",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

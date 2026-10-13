@@ -1,0 +1,120 @@
+{
+ "id": "check-a-links-kind-and-direction",
+ "title": "Check a link's kind and direction",
+ "statement": "When content links two facts, check that the stated kind and direction of the link hold, not only that the facts are related.",
+ "example": "About 20 of the 160 generated links people rejected were wrong in kind, direction or claim, such as one that ran the other way around.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "People checked 2,087 model-generated links between knowledge nodes for an AP history course and marked 160 'No'. About 20 of the rejection notes concern the link's kind, direction or claim: one idea inspired rather than enabled another, 'included' was the right term instead of 'enabled', a link ran 'more the other way around', or one fact did not exemplify the other. Rejection rates by stated type ran from 4.2% for 'causes' (6 of 143) to 9.1% for 'exemplifies' (76 of 835).",
+ "against": "Most generated links were kept, and repeats, not wrong kinds of link, were the commoner reason for rejection, so the per-type rates are driven mostly by repeats.",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 3 Relationships', row 74, column J (type 'enables', Keep 'No')",
+   "quote": "The description is an over simplification of the two statements. Locke's ideas didn't necessarily enable the ideological shift--rather it inspired and gave language to republican principles of self governances.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 7 Relationships', row 130, column J (type 'enables', Keep 'No')"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 5 Relationships', row 41, column J (type 'influences', Keep 'No')",
+   "quote": "more the other way around",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 1 Relationships', row 134, column J (type 'exemplifies', Keep 'No')",
+   "quote": "the trade networks don't exemplify how they adapted to their environments.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/question-causality/PROPOSAL.md",
+   "lines": "3",
+   "quote": "correct a false causal implication in the current student question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/question-causality/PROPOSAL.md",
+   "lines": "5",
+   "quote": "Current source says “The Lost Boys scrambled for their weapons, but they were outnumbered.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/question-causality/PROPOSAL.md",
+   "lines": "5",
+   "quote": "The keyed answer describes the numerical disadvantage they faced, not something caused by reaching for weapons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "34",
+   "quote": "Both rubric and uses-but-so criterion say “Uses at least one But and one So to join an event to its consequence.” So can signal a result; but signals contrast.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "38",
+   "quote": "L7 second_hint “the boys were armed, so they charged. Peter fought Hook, but Hook fell” is a poor contrast because Hook falling is the expected fight result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-IMPLEMENTATION.md",
+   "lines": "7",
+   "quote": "Both lessons' connective requirements distinguish contrast from result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/causality.md",
+   "lines": "6",
+   "quote": "Asks what happened as a result of scrambling for weapons; key says pirates outnumbered them, while source uses contrast but.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3020",
+   "quote": "L6/L7 But/So rubric treats contrast as consequence; L7 hint uses expected fight outcome as contrast.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/question-causality/REVIEW-by-unit1.md",
+   "lines": "5",
+   "quote": "The boys reaching for weapons does not cause pirates to outnumber them; being outnumbered is the obstacle already present.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

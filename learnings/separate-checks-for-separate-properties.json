@@ -1,0 +1,330 @@
+{
+ "id": "separate-checks-for-separate-properties",
+ "title": "Separate checks for separate properties",
+ "statement": "A check certifies only the property it tests, so give structure, facts, design, text dependence and teaching quality each a blocking check of its own.",
+ "example": "A generated question scored a perfect 1.0 for structure while a blind solver answered it 100% of the time without its passage.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A structural benchmark scored a generated question 1.0 while a blind solver answered it 100% of the time without its passage, and a generator rewarded on that score converged on structurally valid leaked questions (`grade3-reading/artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md`). The other way round, 13 of 13 rewritten items passed the blind gate but only 4 passed a quality rubric, because some tested the wrong standard or became mechanical ordering tasks (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`). For reading, the approved plan calls the leak check a build-time lint, not a comprehension guarantee, since finding the answer in the passage is the reading skill (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`). A check does not carry over by itself either: an item factory's certification evidence came from AP history, a different subject and grader, and an AP pipeline's fix removed the stimulus so the grader's leak probe was skipped, which a fact sheet calls grader-gaming (`grade3-reading/artifacts/PROPOSAL_REVIEW_2026_06_16.md`; `grade3-reading/artifacts/alpha-read-packager/FACTS_SHEET.md`). Require them all: a top score on one, such as a quality grade, says nothing about another, such as whether the question needs its text.",
+ "against": "The 13 items passed the blind gate under a loosened bar, and that pilot was superseded and is not a production result (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`). The pilot's blind gate ran under a loosened bar and its quality review was a model's, not a person's (`grade3-reading/knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd`), and an earlier ruling in the knowledge store, not cited here, set a passage-blind re-check aside as redundant because the set had already passed both graders. It can catch a blatant passage mismatch, and did once, though a subtler topic drift sits in its flip band and would not be reliably caught (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, lines 254-256). the judge does veto on its own terms: a score is capped at 0.84 if a critical metric, factual or educational accuracy, is 0, and leaking is not among them (`grade3-reading/knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd`, lines 27-31). Where the model lacked the facts, facts dominated: \"Factual accuracy is the dominant kill — fresh-base 8B doesn't have Unit-1 facts.\" (aptraining-local/den-of-ideation/reports/validation_triage/20260527T132917Z_2026-05-27T1330Z_bm0zjn5z_n100_unit1_RAW_PROBE_REPORT.md.md, line 115); and on the same baseline as the 0/20, 94% of failed document tasks had factual_accuracy=0 (aptraining-local/den-of-ideation/reports/validation_triage/20260527T192220Z_2026-05-27T1922Z_v80b_n100_unit1_BASELINE_REPORT.md.md, line 108).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "34",
+   "quote": "**IB = 1.0. Blind-solve = 100%.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "44",
+   "quote": "Structural quality and passage-dependency are **orthogonal**. Both must be in the signal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "84",
+   "quote": "- only 4/13 passed the LLM quality-B rubric",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "89",
+   "quote": "Anti-leak success is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "89",
+   "quote": "Several items passed the blind gate but failed quality-B because they assessed the wrong standard, used weak fragments, or became mechanical \"put these text snippets in order\" tasks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "328",
+   "quote": "for reading, \"anti-leak\" is a build-time lint (answer not in the stem, honest distractors) — NOT a comprehension guarantee, since finding the answer in the passage IS the reading skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "54",
+   "quote": "actual MCQ fix was the OPPOSITE — *removing* the stimulus so the grader's leak-probe is skipped (grader-gaming).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "73",
+   "quote": "G's certification evidence to date is AP-history, a different subject/grader, and reading runs the leak-probe \"hot\" (mandatory stimulus)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "47",
+   "quote": "separate from InceptBench, which graded answer-leaking items 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "68-69",
+   "quote": "InceptBench grades *instructional* quality, **not** test-security — so it won't catch a leaky-stimulus gap; anti-leak must be enforced upstream.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd",
+   "lines": "195",
+   "quote": "Independent passage-blind review is still required; IB+Opus passing is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "124-125",
+   "quote": "13/13 sound-gate pass under `loosened`; - only 4/13 LLM quality-B pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "127-128",
+   "quote": "Lesson: anti-leak success alone is insufficient. Some items became mechanical ordering tasks or failed standard fit even after passing the blind gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "31",
+   "quote": "Anti-leak certification is necessary but not sufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "60",
+   "quote": "Stratified 90-item sample (30 per type) scored **mean 0.932**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "66",
+   "quote": "compliance, NOT passage-dependence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "19",
+   "quote": "wrong construct; green-lights leaks at 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "47",
+   "quote": "**MAP-likeness review (separate from InceptBench, which graded answer-leaking items 1.0):**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "103-105",
+   "quote": "a course where every item scores IB 1.0 but 90% is blind-solvable is a failed course (proof: DAPO epoch 0 emitted \"What is the primary function of chlorophyll?\" from a photosynthesis passage — IB 1.0, blind-solve 100%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "106-108",
+   "quote": "The binding gate must stay **cross-family** (solver family != generator family); IB self-certification is not anti-leak evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1905Z_hidden_acceptance_repair_status.md",
+   "lines": "75",
+   "quote": "The IB critique is consistent: factually sound, but too many question-level failures due answer leaks, weak distractors, or insufficient AP-level cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "55",
+   "quote": "Most MCQ_SET failures are semantic/educational rather than simple schema/leak failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T192220Z_2026-05-27T1922Z_v80b_n100_unit1_BASELINE_REPORT.md.md",
+   "lines": "109",
+   "quote": "failures are test_preparedness / concept_coverage / answer_balance / stimulus_quality (NOT factual)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/ROUND-04.md",
+   "lines": "27",
+   "quote": "Cert proves passage-dependence/attention/location (blind-fail + with-passage-pass); match/sequence solvable by locating/ordering surface strings without comprehending",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/REGISTER.md",
+   "lines": "64",
+   "quote": "cert proves passage-dependence/location, not comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "85-86",
+   "quote": "The checkpoint-grounding validator passes any answer whose content word appears in the transcript — it cannot tell *mentioned* from *taught*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "26",
+   "quote": "Distinguish exact text fidelity, coverage of prescribed reading, alignment of teaching demand and academic approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Controlled model replies establish route arithmetic, not semantic reliability of the live model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/splash-composition/verification.json",
+   "lines": "7",
+   "quote": "Earlier typography-only visual approval was insufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE5.md",
+   "lines": "51",
+   "quote": "These checks establish fidelity to chosen files, not the desired lesson allocation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "247-248",
+   "quote": "Semgrep green is not course validation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/01-goal-and-scope.md",
+   "lines": "35",
+   "quote": "JSON validity proves shape conformance, not pedagogical correctness or model portability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_1_DELIVERY_REQUIREMENTS.md",
+   "lines": "31",
+   "quote": "- InceptBench is NOT a leak gate (it scored leaking items 1.0). Never report the \"0.932 vs 0.356 IB lift\" (version-confounded).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "33-36",
+   "quote": "The conversion succeeded where it treated \"anti-leak\" as only one layer of course-worthiness. The work failed or became fragile whenever it treated an item as done because it passed a local script, appeared in XML, had plausible text, or helped hit a count target.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/qa/objective_audit.qmd",
+   "lines": "22",
+   "quote": "clean lesson sample: {'BORDERLINE': 9, 'FAIL': 61, 'PASS': 2}",
+   "verified": "script"
+  },
+  {
+   "source": "g9-film-v01-render",
+   "path": "qa-results.json",
+   "lines": "165",
+   "quote": "cue start + lead vs aligned first-word time; checks rendering, not alignment accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0180--kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "220-222",
+   "quote": "Lesson: compare NODE to the closest matching node across the reference lessons (same type, max key-set Jaccard similarity), not page position, and judge voiced/silent as a separate pass — a key-set-only census missed 36 silent stems undetected.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "91",
+   "quote": "Technical audio measurements do not establish musical quality, intelligibility under speech, or acceptable transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/review-build/VALIDATION.md",
+   "lines": "8",
+   "quote": "This is a state-flow check, not rendered browser QA.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "144-146",
+   "quote": "It cannot select source rights, prove that knowledge was taught before assessment, verify teacher-only data isolation in an app, or establish student learning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "66",
+   "quote": "Deterministic file checks can establish structure, traceability, and internal consistency.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "95-96",
+   "quote": "NEVER ships on the strength of a style approval",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

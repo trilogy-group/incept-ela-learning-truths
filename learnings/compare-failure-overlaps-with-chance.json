@@ -1,0 +1,76 @@
+{
+ "id": "compare-failure-overlaps-with-chance",
+ "title": "Compare failure overlaps with chance",
+ "statement": "Compare the overlap between two runs' failures with chance before reading it as a pattern, because when both runs fail most items many shared failures are forced.",
+ "example": "36 of 58 items failed in both runs, but with 42 and at least 48 failures among those items at least 32 had to overlap, and chance alone gives about 35.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Two AP models trained by very different methods were scored on the same 58 document-based items, and 36 failed under both; the note read this as proof that the same items fail whatever the method (`icloud-work/auto-memory-backup/project_dbq_floor_is_data_veracity.md`, lines 17-37). One model passed 16 of 58 and the other 10 of 60, so at least 32 shared failures were forced and independent runs would share about 34.8 to 36.2. The overlap was no better than chance, and the note never made that comparison.",
+ "against": "Of the 36 shared failures, 27 failed on the same criteria (`icloud-work/auto-memory-backup/project_dbq_floor_is_data_veracity.md`, line 35), which was not compared with chance either; for factual accuracy, 18 of the 36 share it against roughly 35% expected from the per-run shares of 56% and 62%, so that part may exceed chance. The planned test that sorts failures into consistent or scattered has no recorded result (`icloud-work/auto-memory-backup/feedback_diagnostic_before_treatment.md`, line 22).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "17",
+   "quote": "### v25b DBQ (10/60 = 16.7% pass)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "24",
+   "quote": "### v20b DBQ (16/58 = 27.6% pass) — different training method, same shape",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "33",
+   "quote": "- 58 common DBQ items in both v20b and v25b runs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "34",
+   "quote": "- **36 of those (62%) fail in BOTH** — same items broken across radically different training regimes (SFT-only vs DPO-from-v23).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "37",
+   "quote": "If the bottleneck were optimizer state (LR, epochs, DPO LR), v25b's 1.5 orders of magnitude of additional training steps over v20b would have moved at least the easy items. It didn't. **The bottleneck is invariant to training method.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "35",
+   "quote": "- **27 of those 36 (75%) fail on the SAME dimensions** — primarily factual_accuracy (18 items) and stimulus_quality (10 items).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_diagnostic_before_treatment.md",
+   "lines": "22",
+   "quote": "- **Cheap diagnostic queued:** D11 ($2, classifies failure mode as consistent-wrong vs scattered-wrong).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "list-the-fields-a-check-reads",
+ "title": "List the fields a check reads",
+ "statement": "Take the text a check reads from an explicit list of the fields students see, not by excluding the rest.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons first chose the text to check with a block list, and tokenized audio file names and voice names leaked into its vocabulary report (`shadow/content-eval/README.md`). It now reads only the fields on an explicit list, puts prose that is never shown, such as rubrics and keys, on a separate list, and flags any new prose field in the schema until it is placed on one of them (`shadow/content-eval/SKILL.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "151-153",
+   "quote": "A blacklist was tried first and leaked tokenized audio filenames and TTS voice names into the vocabulary report.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "153-154",
+   "quote": "A new prose field in the schema must be added to `PROSE_KEYS`; `SCHEMA-UNREAD` flags it until it is.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "403-405",
+   "quote": "A field that looks like prose but is never shown (rubrics, keys, `pronunciation`) goes in `NOT_PROSE`.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "405-406",
+   "quote": "Extraction is a strict whitelist on purpose: a blacklist leaked tokenized audio filenames and TTS voice names into the vocabulary report.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "26-27",
+   "quote": "one read only the prompt field",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

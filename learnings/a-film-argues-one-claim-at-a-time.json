@@ -1,0 +1,56 @@
+{
+ "id": "a-film-argues-one-claim-at-a-time",
+ "title": "A film argues one claim at a time",
+ "statement": "Build a short film on a text as a voiced argument, one visible claim at a time: the key line quoted exactly, what it shows, then two defensible readings.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "sequence",
+  "stimulus"
+ ],
+ "stage": "write",
+ "scope": "domain",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video tool's style research inspected a 144-frame storyboard of a reference unit video and named its repeatable pattern one visible claim at a time, paced by voice (`g9/tools/unit-video-essay/INTEGRATION.md`). The lesson engine adopted it as its video essay: the writer is asked for the line that matters most, what it shows, and two readings a careful reader could defend, and a code check holds any essay whose first part is not a quotation (`g9/transformer/src/mechanics/video-essay.js`).",
+ "against": "It is a design inference, not a measured effect: \"That is a design inference from the sampled motifs.\" (g9/tools/unit-video-essay/INTEGRATION.md line 14). Nothing measures what students learn from a film built this way.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "14",
+   "quote": "The repeatable pattern is **one visible claim at a time, paced by voice**.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "3",
+   "quote": "A 144-frame storyboard sampled at about 4.9-second intervals was inspected.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "38",
+   "quote": "read over it, building an argument: the line that matters most, what it shows, and two readings a careful reader could",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "100",
+   "quote": "check(\"opens-with-quote\", \"The first beat is a quotation\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

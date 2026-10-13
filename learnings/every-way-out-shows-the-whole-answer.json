@@ -1,0 +1,112 @@
+{
+ "id": "every-way-out-shows-the-whole-answer",
+ "title": "Every way out shows the whole answer",
+ "statement": "Show the complete authored answer on every way out of an open question, including a pass, the last miss and a scoring outage, since passing answers are often partial.",
+ "example": "After two scoring failures, the default limit, the authored answer appears and the learner may move on, with the attempt left unscored.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A younger-grade renderer gives an open response three scored turns, a hint, a closer hint and a reveal that gives the answer, and ends a pass the same way, with the praise and the whole answer in one reply, because a passing answer is usually half a sentence and its writer would otherwise never read the complete version. A later sign-off ruling on writing frames shows the one correct answer in the blank when the turns run out or the answer is right. The renderer also found that four surfaces that could strand a child each offered only a Move on button after repeated scoring failures, the one exit through which a child left a question knowing less than it asked, at a moment they had done nothing wrong, so that exit now shows the authored reveal first. A later scoring audit records an unavailable scorer's attempt as unscored, spending no try, banking no criterion and never passing, and shows the authored answer after the failure limit, two by default, before Move on.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "415-416",
+   "quote": "**Third miss: the reveal.** Stop hinting. Name the gap, give the answer, say where in the text it came from, and open the gate.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "433",
+   "quote": "**A pass ends the same way a reveal does: with the whole answer, in one reply.**",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "434-435",
+   "quote": "A passing answer is usually half a sentence, and the child who wrote it is the one child who never gets to read the complete version.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "253-254",
+   "quote": "That answer is shown in the blank after all of the turns are exhausted, or when the student gets the answer correct.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "539-540",
+   "quote": "**Rule.** Where a gate lets a child past after repeated infrastructure failures, it shows the authored `reveal` before it lets them go.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "544",
+   "quote": "Four surfaces could strand a child",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "545-547",
+   "quote": "each offered the same escape after `gate.max_tries` consecutive failures: a button reading \"Move on\", and nothing else.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "547-549",
+   "quote": "That is the only exit in the app through which a child leaves a question knowing less than it asked of them, and it fires at the one moment they have done nothing wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "An unavailable scorer returns an unscored attempt, spends no scored try, banks no criterion, and never sets `passed`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "After the configured repeated infrastructure-failure limit (default two), the authored answer appears and the student can choose Move on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "433",
+   "quote": "A pass ends the same way a reveal does: with the whole answer, in one reply.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "434-435",
+   "quote": "A passing answer is usually half a sentence, and the child who wrote it is the one child who never gets to read the complete version.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

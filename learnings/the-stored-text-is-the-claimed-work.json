@@ -1,0 +1,143 @@
+{
+ "id": "the-stored-text-is-the-claimed-work",
+ "title": "The stored text is the claimed work",
+ "statement": "Before a writer or learner sees a source, verify that its link opens the claimed work and that the stored text is that whole work run to its end.",
+ "example": "An audit found all 6 stored texts it checked cut at exactly 50,000 characters.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A spike report found that a pull list's identifiers for three famous speeches pointed to entirely different works in the library they named. A fetch audit found all 6 rows it checked truncated at exactly 50,000 characters, cutting 62%-96% of the primary-source content, with library preambles or scanning noise in three of them, and an earlier audit could verify none of 870 sourced rows, because their links reached blocked pages or landing pages rather than texts. In a source pack whose attributions were real, the text field held OCR of a modern museum tour transcript. Copy the text in by file rather than having a model retype it (`grade3-reading/ti-courseplans/skills/knowledge-ingest/SKILL.md`). The stored text must not be empty, a landing page, a metadata stub or a capped excerpt, and must be free of catalogue notes, library boilerplate and scanning noise.",
+ "against": "The 870 rows were unverifiable, not shown to be wrong: their links reached blocked pages or landing pages. A content hash shows a stored text is unchanged, not that it is whole: one handover counted 8 hashed documents as needing no re-fetch (icloud-work/aptraining/handover/2026-05-01T1039Z_data_session/HANDOVER.md, line 275).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-01T1314Z_u8_pd_status_spike_BOMBSHELL.md",
+   "lines": "15",
+   "quote": "**the Gutenberg IDs point to ENTIRELY DIFFERENT WORKS**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-01T0911Z_d13_u1_quality_audit_t3.md",
+   "lines": "12",
+   "quote": "**6 of 6 rows truncated at exactly 50,000 chars.** Real fulltext sizes: 50KB to 1.3MB. **Quill is capping at 50KB**, cutting **62%-96% of primary-source content**. Three rows have **library-copy preamble / OCR garbage in the first 5KB**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "150",
+   "quote": "### 2.4 D13 primary-source pipeline — 0/870 verified",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "156",
+   "quote": "| LoC APUSH | 436 | **0** | Cloudflare 403 on `www.loc.gov/item/<id>/` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "158",
+   "quote": "| Gutenberg | 109 | **0** | `source_url` points to landing page, not fulltext |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-29T1605Z_DBQ_realsource_smoke_FAIL_pack_content_issue_E2.md",
+   "lines": "27-28",
+   "quote": "But the `content` field is OCR text from a modern museum tour transcript",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "43",
+   "quote": "**F-D13-13**: all 6 rows truncated at exactly 50,000 chars, losing 85-96% of fulltext. 5 of 6 rows reject (Spanish library preamble, BYU bookplate, Newberry Library + Latin OCR garbage, PG header pollution).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/SHADOW_HANDOFF.md",
+   "lines": "36",
+   "quote": "D13 pipeline broken (322/761 LoC URLs Cloudflare-blocked, 109/109 Gutenberg URLs are landing pages).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/d13_corpus_v5_inventory.md",
+   "lines": "28",
+   "quote": "- v3 has 648 docs: **92 fulltext + 556 metadata_only** (LoC frequently has metadata but not transcribed fulltext for newer/obscure items)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "39",
+   "quote": "(does each extraction reach the document's true end?)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "50",
+   "quote": "the full texts here were never re-typed through a model.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/knowledge-ingest/SKILL.md",
+   "lines": "41-42",
+   "quote": "a scanned PDF yielding whitespace is `skipped: needs-manual-export`, never ingested empty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/knowledge-ingest/SKILL.md",
+   "lines": "68",
+   "quote": "a source is largely copyrighted prose (the model re-emitting the full text trips it).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/knowledge-ingest/SKILL.md",
+   "lines": "71",
+   "quote": "never re-type source text through a model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "111",
+   "quote": "A matching line count and HTTP200 can still deliver the wrong book.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/workflow.md",
+   "lines": "3",
+   "quote": "verify source work/edition/ranges/anchors/hash instead of line counts alone.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

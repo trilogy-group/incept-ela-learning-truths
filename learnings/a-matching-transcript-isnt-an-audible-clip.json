@@ -1,0 +1,199 @@
+{
+ "id": "a-matching-transcript-isnt-an-audible-clip",
+ "title": "A matching transcript isn't an audible clip",
+ "statement": "Check every generated voice clip against its script and measure how loud its first word is, because a matching transcript doesn't show the clip can be heard.",
+ "example": "In one lesson every transcript of 55 clips matched, yet 13 clips had a first word 25 to 74 dB below the clip's own mean.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course's checklist blocks any new or re-cut clip that has not passed a listen check: a speech-to-text transcript compared with the script, and the loudness of the first word against the clip's own mean (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, line 84). In one round it caught a take that dropped a clause and a re-cut that turned a bare word into another form, and both were made again (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md`, line 21). Across 55 clips of one lesson every transcript matched, yet 13 clips had a first word 25-74 dB below the clip's own mean, all confirmed by an independent RMS measurement, and an earlier first word heard as a different word was the incident that started the check (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-listen-qa.md`, lines 218-220).",
+ "against": "The transcriber can mishear too: one word came back as a longer form in both an old and a new take and was left for a person's ear (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md`, line 21). A later run found counter-evidence (`grade3-reading/course-renderer/authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md",
+   "lines": "21",
+   "quote": "L6 p15 first take dropped \"then she would have to find another way\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md",
+   "lines": "21",
+   "quote": "recut #1 inflected the bare stem \"Enchant.\" → \"enchanting\"; caught by listen",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-listen-qa.md",
+   "lines": "218",
+   "quote": "55 clips checked. 13 onset findings, all confirmed real by independent RMS measurement. 0 transcript mismatches",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-listen-qa.md",
+   "lines": "220",
+   "quote": "the first word's attack in the 60ms after that silence falls 25–74dB below the clip's own mean",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "487",
+   "quote": "- 21.09 listen pass (whisper base, all clips) L5: 0 transcript findings; 21 WEAK ATTACK = probe artifact (clips open with 190–350 ms silence; the probe measures 0–60 ms). Follow-up for a quiet session: `scripts/verify/listen-clips.mjs` onset window should start at the first non-silent sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "622-624",
+   "quote": "The only findings are 9 WEAK ATTACK on L4, which are the known probe artifact: flagged and passed clips have indistinguishable leading silence (0.243-0.292 s), so the probe's 0-60 ms window is measuring encoder silence.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "228",
+   "quote": "one gentle trim after levelling: low threshold so soft word endings (\"Moor\", \"then\") survive,",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "229",
+   "quote": "80 ms pad -> edge silence well under 120 ms. (A 0.012 threshold here clipped final words.)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio.py",
+   "lines": "230",
+   "quote": "x = trim(x, thr=0.004, pad=0.08)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "64-67",
+   "quote": "Whisper mis-hearings happen (proper nouns, invented names): a transcript finding on \"Anansi\"/\"Iktomi\" words is usually whisper, not the clip. Onset findings are far more reliable. The probe now folds these itself (rulings, each tested against the 3 historical true-positives before adoption)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "68-72",
+   "quote": "hyphen fold; homophone -i/-y fold (Merci≡mercy) … betrayal→\"trail\", wendy→\"when he\" still fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "73-74",
+   "quote": "5 of 6 findings on the first full G5 pass were probe artifacts, 1 was real.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "94-95",
+   "quote": "Whisper is useless on isolated syllables; the generator's read-backs (WORD_PROMPT / CLIP_PROMPT / PROBE) and a human ear are the instruments.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1012",
+   "quote": "Listen-check every new clip : false PROHIBITED_CONTENT refusals must be rephrased and retried (never ship silence); watch for elision",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "23",
+   "quote": "Required full sound-on page-by-page listening remains open: missing/silent clips, misreads, pacing, highlight drift and unwanted continuation.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "351",
+   "quote": "They passed the word-for-word read-back but failed the pitch check; the paths are in handover §3.2.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "86-87",
+   "quote": "Whisper (listen-clips, base model): L4 79 clips → 23 WEAK ATTACK onset flags, 0 transcript misses (22 pre-existing clips + p12-pause-they-want; transcripts read the first word correctly)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "16",
+   "quote": "| 2.5-pro Algenib take2 | 42.3 s | 0 | **\"happily\" for \"happy\"** | |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v01/README.md",
+   "lines": "9",
+   "quote": "| vo_intro_01 | 86 | exact after one regeneration (first take heard as \"happily\"; kept in `rejected/`) |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "41",
+   "quote": "3.1 Flash dropped half of a 17-word check line and misread \"ensign\" and \"trusted\" in narration → run the no-hint check on every line, short Archivist lines included, and regenerate until it matches",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "129-130",
+   "quote": "It shipped: rewriting three passages left all four passage clips reading the previous draft.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/REPORT.md",
+   "lines": "75-77",
+   "quote": "Whisper heard the first word and matched the text in all four clips; the onset meter flagged a soft attack on L7's bad and line-2 feedback clips, so those two still need a human ear before merge.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "307",
+   "quote": "Compare the actual speech with the exact script, not just a successful API response.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "9-11",
+   "quote": "Proven 2026-09-03: a reviewer heard \"betrayal\" as \"trail\" — the /b/ onset sat at -84dB in the vocab card clip — and everything text-side passed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

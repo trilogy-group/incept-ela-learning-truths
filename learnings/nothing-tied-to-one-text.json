@@ -1,0 +1,107 @@
+{
+ "id": "nothing-tied-to-one-text",
+ "title": "Nothing tied to one text",
+ "statement": "A block meant for any text holds nothing made for one text, such as a stored film, pictures or labels, unless each text gets its own, checked for fit.",
+ "example": "The film block, whose one stored film belongs to the first play, failed on 2 of 2 new texts.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "media",
+  "stimulus",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "I made all 16 of the lesson engine's blocks, built around one play, unchanged for a poem and a speech, and where a block leaned on something made for that play it failed or degraded. The only film on file is the play's unit film, and the film block failed on both texts; 12 of the 14 painting briefs are scenes of the play and 2 show a book, and the poem's video essay set the open-book painting beside claims about a carved face. In the builds the engine renders to, a 3D version's key-word cards read 'Link to deceit', an animated version's lesson file is named for the play's first scene, and its apply page labelled any scene 'Act 1, Scene 1'. The slur guard's code list holds only that play's never-staged lines, so on other texts it matches nothing and a judged question on each line carries the guard.",
+ "against": "The ties follow a decision to reuse the existing builds unchanged: \"Their work is used as it is, never rewritten, and nothing is written into their repositories.\" (`g9/transformer/DECISIONS.md`, line 18). Where the fit question ran, it stopped the mismatch: the film block failed on both texts rather than shipping.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "11",
+   "quote": "{ id: \"othello-opening\", title: \"Othello: the opening (unit film)\", file: \"Othello-opening-full.mp4\", vtt: \"Othello-opening-full.vtt\", poster: \"thumbnail-othello-love.jpg\" },",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.json",
+   "lines": "16-17",
+   "quote": "\"status\": \"failed\",",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.json",
+   "lines": "128-129",
+   "quote": "\"status\": \"failed\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/briefs.json",
+   "lines": "180",
+   "quote": "\"file\": \"shot24-book-open.jpg\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7e771d331c6b4135.json",
+   "lines": "31",
+   "quote": "\"A frown and wrinkled lip show harsh contempt\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7e771d331c6b4135.json",
+   "lines": "34",
+   "quote": "\"image\": \"shot24-book-open\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "261",
+   "quote": "// its key-word cards say \"Link to deceit\": our links go on them only when that is our centre too",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/render-animated.sh",
+   "lines": "12",
+   "quote": "cp \"$1\" \"$WORK/src/content/othello-1-1.json\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/README.md",
+   "lines": "49",
+   "quote": "- **Fixed in its component:** its apply page labels any scene \"Act 1, Scene 1\", so our exports leave the scene panel",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "78",
+   "quote": "Its lines never staged or voiced (scripts/check-moments.mjs SLUR, Othello's): read from the mirror at run time, so no",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "79",
+   "quote": "Without the mirror there is none, and the Jev question carries the guard.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

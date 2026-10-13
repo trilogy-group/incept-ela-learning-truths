@@ -1,0 +1,59 @@
+{
+ "id": "test-a-generator-for-variety",
+ "title": "Test a generator for variety",
+ "statement": "Test a generator for variety by sending it the same request several times and measuring how far the outputs differ; one whose outputs barely differ is static.",
+ "example": "The benchmark sends each request 10 times, scores the outputs' diversity by trigram Jaccard distance, and calls the generator static below 0.45.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator has a variety check that takes the caller's own requests, sends each one 10 times, and scores the responses' diversity by trigram Jaccard distance (`icloud-work/inceptbench-main/README.md`). A mean score below the default threshold of 0.45 marks the generator as static (`icloud-work/inceptbench-main/src/inceptbench/tools/variety_check.py`).",
+ "against": "The 10 sends and the 0.45 threshold are the tool's own defaults; no validation of either was found.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/README.md",
+   "lines": "146",
+   "quote": "- Sends each provided request 10 times, scores response diversity via trigram Jaccard distance",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/variety_check.py",
+   "lines": "500",
+   "quote": "is_static = (variety_score < self.threshold) if variety_score is not None else None",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/variety_check.py",
+   "lines": "300",
+   "quote": "threshold: float = 0.45,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CORPUS-AND-SAMPLING-CONTRACT.md",
+   "lines": "67",
+   "quote": "The bank has 5,271 gross rows for each of DBQ, LEQ, MCQ, MCQ set, and SAQ. Exact unique counts differ sharply: DBQ 989, LEQ 208, MCQ 122, MCQ set 1,167, and SAQ 1,172.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

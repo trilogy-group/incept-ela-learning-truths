@@ -1,0 +1,106 @@
+{
+ "id": "fix-a-cue-by-making-the-item-harder",
+ "title": "Fix a cue by making the item harder",
+ "statement": "Fix a cue that points to the key by making the item harder, never by deleting what makes the key uniquely right, which can leave two options equally right.",
+ "example": "In one lesson, all three suggested rewordings that cleared a word-overlap scan fit a wrong option at least as well as the answer.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "options",
+  "distractors"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A word-overlap cue check in a Grade 3 reading build was red in all three units; one guided-practice stem carried a phrase found in exactly one option, the answer, which the build's BrainLift says lets a child match keywords instead of reading. The shipped fix reworded the stem, and the fixes ledger records the item as harder, not merely un-cued, because a wrong option also names a gift, so the item turns on whose domain is whose. In another lesson the three suggested rewordings all cleared the scan but described a wrong option at least as well as the answer, so the fix kept the answer's generality and dropped only the lexical echo, since an ambiguous item is the worse defect. The BrainLift's rule is that a fix that only removes the cue makes the item easier, while the fix worth shipping makes it harder; the build's schema adds that a cue singling out a wrong option is fine and often good.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/FIXES-LEDGER.md",
+   "lines": "123",
+   "quote": "`cue_check` red in all three units.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/FIXES-LEDGER.md",
+   "lines": "124",
+   "quote": "a phrase in exactly one option — the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "189-190",
+   "quote": "A we-do stem that hands over a phrase appearing in exactly one option lets the child match keywords instead of reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/FIXES-LEDGER.md",
+   "lines": "128-129",
+   "quote": "The item is harder, not merely un-cued: option 0 also names a gift, so it turns on whose domain is whose.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1243",
+   "quote": "The three candidates offered",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1244-1245",
+   "quote": "all clear the scan, but they also describe **option 2**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1246",
+   "quote": "at least as well as they describe the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1248-1249",
+   "quote": "Dropping the generality marker to satisfy a word-overlap scan would have traded a surface cue for a genuinely ambiguous item, which is the worse defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1251",
+   "quote": "So the given keeps the generality and drops only the lexical echo",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "191",
+   "quote": "fix that only removes the cue makes the item *easier*; the fix worth shipping makes it **harder**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "609",
+   "quote": "A cue that singles out a WRONG option is fine and often good",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

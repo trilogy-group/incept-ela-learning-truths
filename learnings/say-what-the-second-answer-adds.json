@@ -1,0 +1,59 @@
+{
+ "id": "say-what-the-second-answer-adds",
+ "title": "Say what the second answer adds",
+ "statement": "Tell a student what a later answer adds to an earlier one only when the judge is sure, in a fixed authored line, never as a mark.",
+ "example": "Three lines are written in advance: the answer now rests on the text's own words, makes a sharper claim, or weighs another reading.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "evidence-of-learning",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "When the lesson question is answered again at the end, the lesson engine asks the judge one four-way choice on what the final answer adds to the first: exact words from the text, a sharper claim, another reading, or nothing new (`g9/transformer/src/mechanics/learning-question.js`). A line is shown only for a sure choice other than nothing new; the line is the engine's own and quotes neither answer, and nothing is said about words aimed at the marker.",
+ "against": "The choice is advisory and has no labelled cases. A later run found: a 3D version has the model itself name how the thinking moved between the first and final answers, in its own words held by code to exact quotation of the learner, whenever the final answer is a real attempt, rather than in a fixed line on a sure judgment (`othello-archive/server/tasks/close.mjs`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "12",
+   "quote": "const MOVED = { A: \"It now rests on the text's own words.\", B: \"It now makes a sharper claim than the first.\", C: \"It now weighs another reading.\" };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "71-72",
+   "quote": "one Jev choice on what it adds to the first, shown only when Jev is … sure, and never as a mark. The line is ours and quotes neither answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "77",
+   "quote": "D: \"nothing new: it says what first says\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "71",
+   "quote": "Name exactly how their thinking moved between the two answers (what is new: a quote, a key word, a second side, a sharper claim).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

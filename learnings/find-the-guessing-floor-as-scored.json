@@ -1,0 +1,72 @@
+{
+ "id": "find-the-guessing-floor-as-scored",
+ "title": "Find the guessing floor as scored",
+ "statement": "Work out each item's guessing floor from the scoring rule actually used where it is served, not from its format label.",
+ "example": "A select-several item scored on its first choice had a floor of k/n, not the 1/C(n,k) its format implied.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "measurement",
+  "format"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course's practice spec states chance floors per item from its response declaration under the scoring rule actually serving it, after a live probe found scoring binary with no partial credit anywhere and multi-select scored as exact set equality (`ti-courseplans-audit/docs/practice-layer-spec.md`). A select-k interaction authored as single cardinality was scored on its first token in the correct set, so its floor was k/n, not 1/C(n,k): the format label alone never determines the floor, and a bar within noise of its floor measures nothing (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "115-116",
+   "quote": "Chance floors are stated **per item from its responseDeclaration under the actual serving scoring rule**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "117-118",
+   "quote": "a select-k interaction authored `cardinality=\"single\"` scores \"first token in correct set\" (floor k/n, not 1/C(n,k)), so the format label alone never determines the floor.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "119-120",
+   "quote": "A bar within noise of its floor measures nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "117-120",
+   "quote": "so the format label alone never determines the floor. Pair-accuracy 0.50 is a solver-metric floor only, never a serving floor. A bar within noise of its floor measures nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "115-116",
+   "quote": "Chance floors are stated **per item from its responseDeclaration under the actual serving scoring rule**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "117-118",
+   "quote": "a select-k interaction authored `cardinality=\"single\"` scores \"first token in correct set\" (floor k/n, not 1/C(n,k))",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

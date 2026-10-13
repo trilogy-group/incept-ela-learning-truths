@@ -1,0 +1,85 @@
+{
+ "id": "examples-the-learners-already-know",
+ "title": "Examples the learners already know",
+ "statement": "Use examples, units and references the target learners know, or explain them; universal experiences and widely used teaching cases are fine anywhere.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's script rubric fails examples or cultural references likely to be unfamiliar or inappropriate for the stated grade and subject, among them units of measurement used without explanation where the lesson has no international context, and examples that assume a heavily urban or heavily rural setting (`shadow/bench/src/inceptbench/prompts/video_script/evaluation.txt` lines 461-466). It doesn't fail references to universal human experiences or internationally recognised teaching cases (lines 468-471).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "461",
+   "quote": "**Fail:** Examples or cultural references are likely unfamiliar or culturally inappropriate for the stated grade/subject context.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "464",
+   "quote": "- Using a non-US unit of measurement (e.g., stones for weight, kilometres when the lesson has no international context) without explanation",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "466",
+   "quote": "- Examples that assume a specific regional context (heavily urban or heavily rural) in a way that excludes large portions of the student population",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "470",
+   "quote": "- References to universal human experiences (eating, breathing, growing, seeing the sun)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "471",
+   "quote": "Standard curriculum examples that are internationally recognised teaching cases",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "92",
+   "quote": "it may not name an unintroduced PERSON",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "93",
+   "quote": "teaches them they missed something.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "94",
+   "quote": "Introducing a name inline (\"a doom called Ragnarok\") is fine and is how to do it deliberately.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

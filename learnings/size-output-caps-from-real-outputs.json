@@ -1,0 +1,70 @@
+{
+ "id": "size-output-caps-from-real-outputs",
+ "title": "Size output caps from real outputs",
+ "statement": "Size output length caps from the longest real outputs plus headroom and check every delivered item is complete, since a cap or timeout can silently cut it short.",
+ "example": "A timed-out call returned an empty or truncated item, which scored 0.0.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "contested",
+ "detail": "The AP question work's synthesis blamed missing answer choices and incomplete output on a borderline output cap of 8192 for question sets, citing vendor guidance that a cap below the worst-case length truncates output silently (`icloud-work/ML learnings/master_strategy_apr24.md`). Its research summary advises profiling the longest outputs per question type and adding a 20-30% buffer (`icloud-work/ML learnings/research_qwen3_structured_multistage.md`). Separately, a timeout returned an empty or truncated response that scored 0.0, and a completeness check that counts opening against closing braces was added after the call (`icloud-work/ML learnings/gemini_benchmark_relentless.md`).",
+ "against": "Whether caps caused the missing answer choices is unsettled: after a smaller writer's caps were cut, the record says \"No quality regression observed after the reduction\" (`icloud-work/ML learnings/pipeline_architecture_insight.md`, line 70). The project's own rule can set a cap below the worst case: \"Run 5 DBQ requests, find where timeouts start, set limit at 50% of that.\" (the same file, line 73).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_qwen3_structured_multistage.md",
+   "lines": "54",
+   "quote": "- **Never set `max_tokens` below the worst-case full output length.** For complex AP exam questions with 5+ nested fields, estimate the maximum possible output and add a 20-30% buffer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_qwen3_structured_multistage.md",
+   "lines": "59",
+   "quote": "**Practical recommendation:** Profile your longest outputs per question type before setting token limits. Add 30% headroom. For mcq_set (3 questions + stimulus), 8192 is probably borderline — consider 12000-16000.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "161",
+   "quote": "**Result of timeout:** The generator returned an empty or truncated response. Score: 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "163-164",
+   "quote": "**Fix:** Added JSON truncation detection after the Pro call:\n1. Check if the response JSON is complete (count opening vs closing braces)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "18",
+   "quote": "Missing answer choices, incomplete JSON. Root cause: **token limit truncation** — Alibaba Cloud docs explicitly warn that capping `max_tokens` below worst-case output causes silently truncated JSON. Our `mcq_set_questions` limit of 8192 is borderline. Secondary cause: SFT loss doesn't shape partial schema correctness.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Enforce Structured JSON Output with Qwen Models (Alibaba Cloud documentation)",
+   "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-structured-output"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

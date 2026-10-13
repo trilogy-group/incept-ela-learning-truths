@@ -1,0 +1,179 @@
+{
+ "id": "prove-each-new-scope-on-its-own",
+ "title": "Prove each new scope on its own",
+ "statement": "Prove a generator on every item type, scope, grade and difficulty it will serve, accepting it on its worst, since success on one shows nothing about another.",
+ "example": "Wrapping a generic all-period fallback for a new period passed 0 of 3 in its self-test.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A coverage scout of 23 May 2026 read the solvers validated for the first period and found that period's span hard-coded into their prompts; it concluded that running them on later periods would be 'actively wrong' because they would force the first period's limits onto later requests, and that coverage of the other units could not be claimed from prompt generalization alone. The one measured case: wrapping a generic all-period fallback for the second period passed 0 of 3 in a self-test, with invalid or generic content on later rows, and the note ruled that the expansion should not be delivered from that fallback alone. One of the three failures was a judge timeout on the one locally valid item (`icloud-work/aptraining/workspace/comms/from_den/2026-05-23T1357Z_BLOCKED_unit2_mcqset_parent_archetype.md`, lines 31-39). A plan to take a reading generator from grade 3 to grade 5 found none of its roughly 930 items in the higher grade's reading band, which lies above anything the generator had produced, so moving an item up means regenerating it with a new passage, stem, distractors and evaluation (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/ITEM_INVENTORY.md`, lines 22-36; `grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md`, line 60). What carries over is a generator's scaffolding, not its items.",
+ "against": "The breakage was concentrated in the most complex type: \"Other untrained types (mcq_set, saq, leq) parse OK 86-100% — they're structurally simpler.\" (`icloud-work/auto-memory-backup/project_v8_mcq_only.md`, line 18).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit2_9_coverage_scout_20260523.md",
+   "lines": "57",
+   "quote": "prompt hard-codes `Time period: 1491-1607 only`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit2_9_coverage_scout_20260523.md",
+   "lines": "69",
+   "quote": "Conclusion: running these solvers on Unit 2-9 would be actively wrong. They would force Unit-1 constraints onto later-period requests.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit2_9_coverage_scout_20260523.md",
+   "lines": "125",
+   "quote": "Do not claim Unit 2-9 coverage from prompt generalization alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1357Z_BLOCKED_unit2_mcqset_parent_archetype.md",
+   "lines": "32",
+   "quote": "passed: 0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1357Z_BLOCKED_unit2_mcqset_parent_archetype.md",
+   "lines": "42",
+   "quote": "2. Parent all-unit fallback emits invalid/generic Unit-2 MCQ_SET content for later sampled rows.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1357Z_BLOCKED_unit2_mcqset_parent_archetype.md",
+   "lines": "49",
+   "quote": "Unit-2 MCQ_SET expansion should not be delivered from parent fallback alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "60",
+   "quote": "**Lexile-band extrapolation is unproven at G5.** Today's templates top out at 800–820L. G5 needs **830–1010L** — *above everything the generator has ever produced*. EBSR already proves the model degrades at higher Lexile (couldn't clear EBSR above 560L); pushing the whole bank +230–410L is into untested territory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/ITEM_INVENTORY.md",
+   "lines": "22",
+   "quote": "**Total ELA-reading items in hand:** 745 (deployed) + 80 (form_a/b) + 21 (spares) + 84 passing attempts = **~930 G3 reading items**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/ITEM_INVENTORY.md",
+   "lines": "23",
+   "quote": "**Items at/in the G5 Lexile band (≥830L):** **0.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/ITEM_INVENTORY.md",
+   "lines": "34",
+   "quote": "Up-leveling a G3 item means a new cold passage + new stem + new distractors + re-eval = a regeneration, not a reuse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/ITEM_INVENTORY.md",
+   "lines": "36",
+   "quote": "### What IS reusable (the real \"don't reinvent\" win — scaffolding, not items)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/NORTH_STAR.md",
+   "lines": "24",
+   "quote": "We need to win every cell, not the average. Average can hide a regression on the hardest cell.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/OVERNIGHT_RECAP.md",
+   "lines": "105",
+   "quote": "**v8/v15 numbers were MCQ-only.** v8 was trained on MCQ records only — and on the 10-cell test, **v8's DBQ outputs fail to parse 50% of the time** (13/30 APUSH, 17/30 APWH).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/NORTH_STAR.md",
+   "lines": "45",
+   "quote": "The mission is the min over 10 cells, not the mean.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v8_mcq_only.md",
+   "lines": "14",
+   "quote": "v8's training data was filtered to MCQ records only (2,821 records, all `question_type=mcq`). When tested on the full 10-cell holdout, v8 produces non-parseable output ~50% of the time on DBQ:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v8_mcq_only.md",
+   "lines": "22",
+   "quote": "Single-cell results without the 10-cell context can hide DBQ-style failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_ops.md",
+   "lines": "20",
+   "quote": "- Cell-balance matters: don't optimize one cell while breaking others. Test on the full eval set, not just the one you're working on.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v8_mcq_only.md",
+   "lines": "18",
+   "quote": "Other untrained types (mcq_set, saq, leq) parse OK 86-100% — they're structurally simpler.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "39",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "68",
+   "quote": "No hint hands the answer over: a hint uses a word that hands the answer over, or the answer itself",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138-140",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may quote the line to read); its give-away question was answered from general knowledge of Othello (now: the question's own words only)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

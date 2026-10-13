@@ -1,0 +1,70 @@
+{
+ "id": "quotas-alone-never-stop-a-test",
+ "title": "Quotas alone never stop a test",
+ "statement": "End an adaptive test only when its minimum length, content quotas and precision target are all met, under a hard cap, so meeting the quotas alone never stops it.",
+ "example": "Under that rule one engine's sessions averaged 40.6 items: 76.5% stopped at the 40-item floor, 15.1% ran to the 43-item cap and none stopped below 40.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "alignment"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment's earlier exam spec ended a session once 39 items were given with the quotas and the floor for technology-enhanced items met, whatever the precision, or early from 20 items once the standard error reached 0.30 logits (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md`). Its later configuration lets a session end only when the 40-item scored floor, the quotas, that floor and a standard error of at most 0.35 logits are all met, with items 41 to 43 as a band for extra precision and 43 as a hard cap (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). In the full-bank validation sessions averaged 40.6 items, 76.5% stopped at exactly 40, 15.1% ran to the cap and none stopped below 40, which the package reads as quota-only stopping removed (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`).",
+ "against": "The change was made to match another engine's configuration, not because a gain was measured: the 0.35-logit stop, checked only from 40 items, replaced 0.30 with an early stop from 20 items (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "233",
+   "quote": "a session may end only when the scored floor, the quotas, the TEI floor, *and* the SE target are all satisfied — quotas alone never stop the test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "249",
+   "quote": "In the v4 validation, sessions averaged 40.6 items: 76.5% stopped at exactly 40 (SE ≤ 0.35 met at the scored floor), 15.1% ran to the 43-item hard cap, and no session stopped below 40.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "96",
+   "quote": "4. EARLY TERMINATION: stop early if SEᵢ ≤ 0.30 AND quotas done AND i ≥ 20",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "99",
+   "quote": "- Administered 39 items AND all quotas met AND TEI floor met",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "30",
+   "quote": "no session stops below 40 — quota-only stopping is confirmed removed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "257",
+   "quote": "| SE_STOP_THRESHOLD | 0.35 logits, evaluated only at ≥40 items (was 0.30 with an early stop at ≥20) | TimeBack parity [AUTHORING-DECISION; ASSEMBLED] |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

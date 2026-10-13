@@ -1,0 +1,145 @@
+{
+ "id": "formats-the-player-can-deliver",
+ "title": "Formats the player can deliver",
+ "statement": "Use a question format only once the student's own player has been seen to render it, and keep a fallback format for the rest.",
+ "example": "Three item types uploaded without an error and then showed students an empty quiz.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "review"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Live probes of the reading project's delivery platform found that matching, hot-text and text-entry items uploaded cleanly (201, valid QTI, GET 200) but showed an empty quiz to students and had to be turned into single-choice items (`grade3-reading/knowledge_bot/knowledge/kb-0009-timeback-alpha-read-packager.qmd`). A production reading course there held 1,077 items, 100% single-choice, with no interactive item ever rendered, while the project's Grade 5 contract required all six formats, so it could fully certify a form that could not be delivered; the action was a delivery gate asking for a live render in the student's view of every non-choice format, with a choice-only fallback form (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`). A publishing plugin distilled from AP science builds exists to stop items that return 200 OK but render broken or empty in the student's view (`grade3-reading/knowledge_bot/knowledge/kb-0020-incept-timeback-plugin.qmd`).",
+ "against": "The project chose not to cut its courses down to single choice for the platform's sake: all-choice is a fallback only, and a separate delivery app was planned for the richer formats (`grade3-reading/knowledge_bot/knowledge/kb-0022-incept-team-sync-2026-06-17.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0009-timeback-alpha-read-packager.qmd",
+   "lines": "116-117",
+   "quote": "**R3 — `match`, `hot-text`, `text-entry` render BLANK.** They push fine (201, valid QTI, GET 200) but the quiz body is empty — must be transformed to single-select choice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "68-71",
+   "quote": "a live probe found the PRODUCTION TimeBack G3 Reading course is **1,077 items, 100% `cardinality=single`, zero TE ever rendered**. Our G5 contract hard-requires all six formats + 40% TEI → we can fully certify a form that **physically cannot be delivered**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "71-72",
+   "quote": "Action: add a deliverability gate — every non-MCQ format needs a live student-UI render artifact; absent that, mark TEI `humanApproved:false-for-delivery` and define an MCQ-only fallback form.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0020-incept-timeback-plugin.qmd",
+   "lines": "21",
+   "quote": "items that return `200 OK` but render broken/empty in the student UI, silent data loss on updates, etc.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0022-incept-team-sync-2026-06-17.qmd",
+   "lines": "33",
+   "quote": "All-MCQ/MSQ is a fallback only.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "2",
+   "quote": "Blocks map to its native nodes where one exists; the rest are listed, not forced.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "18",
+   "quote": "The rest are listed, not forced.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "15",
+   "quote": "a key-term page used as a choice card (the line as the term, the lines before it under it), until",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "80",
+   "quote": "a reading page of its own (the two answers as its text, the pick as its quick check);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "40-41",
+   "quote": "The evidence hunt and the comparison were listed, not forced, as they have no screen of their own yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "122",
+   "quote": "compare, film, say it back and debate have no screen there yet and play in our view under the frame.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "22-23",
+   "quote": "A block a build cannot draw plays in the lesson view under it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2588",
+   "quote": "Native ce19052a G3-U1-L5/p16 asks for two clues in story, but Book HotText routes to standalone single-best buttons and rejects authored Captain Hook was watching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-grading.md",
+   "lines": "130",
+   "quote": "So the adapter has **never received a real input** — it is effectively dead code.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "163-164",
+   "quote": "- MSQ uses the MCQ handler; every click clears prior selection (line 158), so a two-key answer cannot be submitted or graded all-or-nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "283",
+   "quote": "as a workaround after a child hit `Unsupported question type: inline_choice` at question 4 of 10",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

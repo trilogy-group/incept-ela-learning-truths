@@ -1,0 +1,56 @@
+{
+ "id": "plan-each-question-before-the-prose",
+ "title": "Plan each question before the prose",
+ "statement": "Decide in code, before the model writes any prose, what each question covers and which fact its answer hinges on, and let the model only render that plan.",
+ "example": "Freeform generation of question sets had a committed baseline of 0.31, against 0.6 for a structured single stage.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "For AP question sets, the chosen design pins each answer's hinge before the model writes: a deterministic first stage picks the curriculum fact the correct answer hinges on and asserts it is absent from the source, and the model only renders the source, stems and options to that plan. It was chosen because freeform generation leaks by default, against committed baselines of 0.31 for freeform and 0.6 for a structured single stage, and earlier work had found question sets better when a plan step fixed what each question must cover. The two-stage run itself was queued, not yet measured.",
+ "against": "\"over-constrained Stage 1 can pass eduacc but break factual/coherence\" (icloud-work/aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md, line 37); the run was only queued: \"Status: queued for the macmini executor / main-a on reconnect.\" (same file, line 44).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "8",
+   "quote": "Freeform generation leaks by default (least-resistance = stimulus-answerable).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "12",
+   "quote": "select the **curriculum fact the correct answer hinges on + assert it is ABSENT from the stimulus**;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "35",
+   "quote": "**Baselines (≠0):** v97 freeform = **0.31**; structured 1-stage = **0.6** (Cursor). Beat 0.6.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "75",
+   "quote": "MCQ_SET works better when the plan step constrains what each child question must cover.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

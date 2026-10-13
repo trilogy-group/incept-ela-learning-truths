@@ -1,0 +1,307 @@
+{
+ "id": "room-for-more-than-one-position",
+ "title": "Room for more than one position",
+ "statement": "An argument task's prompt and sources must leave room for more than one defensible position.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "stimulus",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP evaluator lists arguability as a hard-fail dimension for long essays and document-based questions, and an outside judge's rubric fails a document set when all documents point to one obvious conclusion. An exploit study found the check passes when the rubric notes merely list two opposing thesis sentences, and recommended that the judge verify both are genuinely defensible from the curriculum. One way is to weigh one cause against another rather than confirm a single primary cause. A check must confirm that each alternative is really defensible, not merely opposed, that each source bears on the prompt and that the scoring guide is fully earnable from what the course teaches.",
+ "against": "in one evaluator's report, document-based items passed overall at 99.1% while only 27.3% passed its document-diversity check, so a related rule did not gate the result. Official prompts also use 'primarily' when they pose two alternatives, so the judge's dislike of 'primary cause' framing may be its own preference. The gain after banning that framing, +15.9 points, came on 20 essay items, and the project counted swings of ±14 points at 17 to 24 items as not statistically meaningful; specification failures were still 88% of the remaining essay failures (`icloud-work/ap-social-studies-generator/data/model_findings.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/AP_EVALUATION.md",
+   "lines": "143",
+   "quote": "Prompt must allow for arguable thesis",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/dbq_evaluation.txt",
+   "lines": "60",
+   "quote": "All documents point to one obvious conclusion; no real analysis or argumentation is possible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-005-leq-no-stimulus.md",
+   "lines": "96-97",
+   "quote": "currently passes if rubric_notes literally lists two opposing thesis sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-005-leq-no-stimulus.md",
+   "lines": "97-99",
+   "quote": "The judge should verify both are genuinely defensible from the curriculum, not just rhetorically opposed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "34",
+   "quote": "DBQ | 109 | 1 | 4 | 99.1%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "78",
+   "quote": "document_diversity | 30 | 80 | 27.3%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/leq_evaluation.txt",
+   "lines": "58",
+   "quote": "- Score 0.0: Only one valid position exists, making the prompt non-argumentative",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "60",
+   "quote": "- Score 0.0: All documents point to one obvious conclusion; no real analysis or argumentation is possible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "55",
+   "quote": "- Score 0.0: One or more documents are irrelevant to the prompt topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/leq_evaluation.txt",
+   "lines": "22",
+   "quote": "- Score 0.0: Rubric is unachievable (e.g., requires evidence that doesn't exist in the curriculum)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/AP_EVALUATION.md",
+   "lines": "143",
+   "quote": "| `prompt_arguability` | LEQ, DBQ | Prompt must allow for arguable thesis |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1112",
+   "quote": "- `specification_compliance` 43% — model uses \"primary cause/primarily responsible\" framing → binary thesis",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1114",
+   "quote": "- Pattern: \"primary cause\" framing generates falsifiable yes/no questions instead of nuanced analytical prompts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/GENERATOR_STATUS.md",
+   "lines": "27",
+   "quote": "- Prompts are genuinely arguable — students can take multiple positions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf",
+   "lines": "pdftotext -layout output, line 12700",
+   "quote": "Evaluate whether the Thirty Years’ War was fought primarily for religious or primarily for political reasons.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "63",
+   "quote": "- Score 0.0: All documents point to one obvious conclusion; no real analysis or argumentation is possible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/leq_evaluation.txt",
+   "lines": "58",
+   "quote": "- Score 0.0: Only one valid position exists, making the prompt non-argumentative",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "45",
+   "quote": "a debate on the text that a Grade 9 reader could take either side of, with a",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "82",
+   "quote": "Can a Grade 9 reader defend side_${k}, as an answer to question, with a reason from passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/90a1089f3e8d7ad5.json",
+   "lines": "80-84",
+   "quote": "\"p\": 0.86,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/90a1089f3e8d7ad5.json",
+   "lines": "115-116",
+   "quote": "\"verdict\": \"holds\", \"p\": 0.82",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "132",
+   "quote": "Could a careful reader defend left_${k} from passage, as an answer to lesson_question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "41",
+   "quote": "\"label\": \"Speech Is Weak\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "48",
+   "quote": "\"label\": \"Action Is Powerful\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "83",
+   "quote": "Re-examine the two readings presented, which both place long term power on the side of physical action rather than speech.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/34c293906aa945a2.json",
+   "lines": "1003",
+   "quote": "\"value\": 0.78,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/34c293906aa945a2.json",
+   "lines": "1020",
+   "quote": "\"value\": 0.89,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "132",
+   "quote": "Beat ${k + 1}: the first reading can be defended",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "354",
+   "quote": "\"p\": 0.78,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "370",
+   "quote": "\"p\": 0.89,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "72",
+   "quote": "norm(A.label) !== norm(B.label) && norm(A.counter) !== norm(B.counter)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "82",
+   "quote": "as an answer to question, with a reason from passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "per side: 'Is this side defensible from the text?' (both must hold)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "147",
+   "quote": "\"\"how does Shakespeare present Desdemona as defiant and dutiful?\"\" is descriptive, not \"\"X or Y\"\".",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "140",
+   "quote": "TASK 3 evaluate (\"\"X or Y?\"\").",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "232",
+   "quote": "Highlight \"to what extent\" and \"entirely\" as the evaluative commands; gloss \"serve my turn\" as use him for my own ends.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/oral.mjs",
+   "lines": "50",
+   "quote": "Either choice can be secure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "150",
+   "quote": "A reasoned yes, no, or qualified view is permitted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "606-607",
+   "quote": "The question must support more than one defensible argument path. A document set should not encode a single thesis through captions or ordering.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

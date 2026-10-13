@@ -1,0 +1,136 @@
+{
+ "id": "proofread-every-line-students-meet",
+ "title": "Proofread every line students meet",
+ "statement": "Proofread every line a student reads or hears, model answers first, since validators miss grammar slips and the repeated stock openers of machine writing.",
+ "example": "One course repeated two stock openers across 11 think-alouds, and no validator caught it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "wording",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Two proofreading sweeps on 2026-08-31 read only the surface prose of every string a child sees or hears, leaving out whatever a validator already owns (`grade3-reading/knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd`). In one course the worst finding was in a spoken model answer, the kind a child imitates: a subject-verb error repeated at 5 paths; in the other, every think-aloud in one unit opened with the same clause and every one in a second unit with another, 11 verbatim repetitions in all, and none of the findings is caught by any current validator (the same file). A slip that recurred at one slot was recommended as one fix to its template, not four patches (the same file). An earlier course review found word-bank prompts that misuse vocabulary and read as unedited AI output (`grade3-reading/knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "63-64",
+   "quote": "**F4 (structural AI-tell):** every U1 lesson's think-aloud opens with the identical clause \"I am hunting for...\" (7x)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "64-66",
+   "quote": "11 total verbatim-opener repetitions across the course's single most important reasoning demonstration per lesson, all spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "10",
+   "quote": "none of which any current validator catches",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "16-17",
+   "quote": "pure surface prose (grammar, typos, verbosity, register, punctuation, AI-tell phrasing) of every child-facing string",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "23",
+   "quote": "F1 (worst, spoken, in a model answer a child imitates)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "24-25",
+   "quote": "subject-verb/number disagreement, repeated at 5 paths in L5",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "33-34",
+   "quote": "Recommended as one template-level fix, not four patches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "88",
+   "quote": "Some word-bank prompts misuse vocabulary and read as unedited AI output.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "106",
+   "quote": "every option is well formed (added after a draft offered \"he is not what he am\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "86",
+   "quote": "Is every option in options_${k} grammatical, well-formed English?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "139",
+   "quote": "Is every option in options_${k} grammatical, well-formed English?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "106",
+   "quote": "every option is well formed (added after a draft offered \"he is not what he am\"). In the animated build's film",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/683479ffa581cd45.json",
+   "lines": "48",
+   "quote": "He says that he is not what he am",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "337-338",
+   "quote": "Small text defects matter when the course itself models quotation and evidence conventions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/obviously-bad-sweep/L4-L7-2026-08-31.md",
+   "lines": "134",
+   "quote": "the codebase's validators (`validate-contracts.mjs`, `validate-feedback.mjs`, `validate-component-text.mjs`) enforce em-dash/semicolon/ALL-CAPS/parens/slash-compound bans, field-shape, and pre-read rules, none of which cover subject-verb agreement, run-on sentences after quotes, filler-word punctuation consistency, or repeated sentences",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

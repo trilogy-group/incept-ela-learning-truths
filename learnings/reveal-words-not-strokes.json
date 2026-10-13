@@ -1,0 +1,83 @@
+{
+ "id": "reveal-words-not-strokes",
+ "title": "Reveal words, not strokes",
+ "statement": "When text or a model answer appears bit by bit, reveal it in whole words or chunks in step with the explanation, not by slow letter-by-letter tracing.",
+ "example": "In one study, whole-word appearance beat letter tracing on recall with d=.97.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A research-boundary review checked two studies an outside review cited (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md`, section 1). In a paper comparing fonts and reveal styles in narrated videos, Study 1, with 12 university adults and pseudowords, found whole-word appearance beat tracing on recall, d=.97 (Ram & Zhao 2022); a study of diagrams drawn during narration, four experiments with 484 college students, found conditional transfer benefits, not a universal effect (Fiorella & Mayer 2016, https://doi.org/10.1037/edu0000065). The review concludes that progressive modelling with synchronized explanation is plausible, that slow letter tracing that obstructs reading should be avoided, and that a chunked reveal is a reasonable prototype.",
+ "against": "Both studies used adults and non-reading tasks; with typeface held constant, whole-word against tracing was d=.74 with corrected p=.077/.076, a trend rather than a significant contrast; and the paper compares no single-word reveal against chunks and sets no child-specific speed (the same file, lines 17-21).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "13",
+   "quote": "**Design conclusion:** progressive modelling with synchronized explanation is plausible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "19",
+   "quote": "Whole-word appearance beat tracing on recall in Study1, d=.97.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "21",
+   "quote": "**Design conclusion:** avoid slow letter tracing that obstructs reading; chunked reveal is a reasonable prototype.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The animated Model types each step out letter by letter, but the 3D build dropped typing after review because it reads as going fast (Model.tsx header).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Model.tsx",
+   "lines": "8",
+   "quote": "typed text moves under the reader's eye and reads as \"going fast\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Model.tsx",
+   "lines": "8",
+   "quote": "typed text moves under the reader's eye and reads as \"going fast\")",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Fiorella & Mayer 2016",
+   "url": "https://doi.org/10.1037/edu0000065"
+  },
+  {
+   "ref": "Ram & Zhao 2022",
+   "url": "https://synteraction.org/assets/files/Ram-A-et-al-2022-Does-Dynamically-Drawn-Text-Improve-Learning-Investigating-the-Effect-of-Text-Presentation-Styles-in-Video-Learning.pdf"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "difficulty-spreads-in-lessons-not-exam-sets",
+ "title": "Difficulty spreads in lessons, not exam sets",
+ "statement": "Across a lesson, the questions on one source should range from easier to harder without strict ordering, while an exam-style set on one source keeps them at one level.",
+ "example": "One rubric expects uniform difficulty across a set of 3-5 questions sharing a single stimulus, as standardized tests do.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's lesson rubric, for one passage with a mixed set of questions, passes a lesson whose questions run from recall to inference and synthesis and fails one where all cluster at one level, without requiring strict easy-to-hard order (`shadow/bench/src/inceptbench/prompts/lesson_bundle/evaluation.txt` lines 95-97). Its rubric for a small set of questions sharing one stimulus expects uniform difficulty instead, unlike a quiz, to match standardized test formats (`mcq_set/evaluation.txt` line 3), and the AP chemistry overlay says the same of stimulus-based sets (`question/ap_chemistry_evaluation.txt` lines 55-57). Both are adopted rules; neither has been measured on learners.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "96",
+   "quote": "Pass: questions span a range from easier (recall/retrieval) to harder (inference/synthesis), appropriate for the grade level. Perfect E→M→H ordering is NOT required.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "3",
+   "quote": "Unlike quizzes which require Easy/Medium/Hard distribution, MCQ sets are expected to have UNIFORM difficulty - all questions should be at the same appropriate difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "56-57",
+   "quote": "uniform (not escalating) difficulty across the set is expected.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

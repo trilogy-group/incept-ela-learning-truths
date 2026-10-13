@@ -1,0 +1,121 @@
+{
+ "id": "leave-the-hunt-to-the-learner",
+ "title": "Leave the hunt to the learner",
+ "statement": "In independent practice, leave the search to the learner: don't pre-mark candidates, name where to look, or say how many to find in an open hunt.",
+ "example": "One audit found an independent hunt that pre-highlighted 8 segments and told the child to tap the three clues.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A curriculum adherence audit (`grade3-reading/artifacts/curriculum-adherence-2026-09-24/REPORT.md`, 2026-09-24) compared served independent tasks with designs that ask for an open hunt in which nothing is pre-highlighted. In three lessons the served hunts pre-highlighted their candidates and said how many to find, one with 8 highlighted segments and \"Tap the three clues\", and a multiple-choice zoom step named the evidence region first, which the audit says undoes the open hunt. The lesson-components list describes independent practice as clicking the evidence in the passage rather than choosing from options (`grade3-reading/artifacts/curriculum-adherence-2026-09-24/inputs/procedures/Example_Lesson_Components.txt`).",
+ "against": "One governing design itself shows a count, a tracker reading \"{n} of 2 found\", and whether a hunt can run with nothing pre-highlighted was left to a ruling on the engine (the same report, lines 46 and 48). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/open-hunt/CAUSE-PROPOSAL-IMPLEMENTATION.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/extras/alpharead-lesson-design-witw-part-1.md`). A later run found counter-evidence (`g9/sources/Readventure - Lesson Design and Scaffolding - Updated.docx`). A later run found counter-evidence (`grade3-reading/artifacts/pp2-v3-design.txt`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "45",
+   "quote": "**3. Independent Find is assisted, not an open hunt (core; L5, L6, L7; supporting in L4).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "47",
+   "quote": "L6 p16/step3 hot_text, 8 glowing segments, \"Tap the three clues ... Not all the glowing clues are useful\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "135",
+   "quote": "the Zoom MCQ pre-names the evidence region and undoes the open hunt",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/inputs/procedures/Example_Lesson_Components.txt",
+   "lines": "31",
+   "quote": "usually by clicking the evidence in the shown passage (click-to-highlight) rather than choosing from options",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/open-hunt/CAUSE-PROPOSAL-IMPLEMENTATION.md",
+   "lines": "24",
+   "quote": "Root approved the existing book story target treatment: six authored candidate fragments glow, including decoys.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1350",
+   "quote": "Do not glow the answer or tell the child which line to tap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "184-185",
+   "quote": "independent hunts pre-glow and state the count (L5–L7; open-hunt itself = engine ruling)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-witw-part-1.md",
+   "lines": "337",
+   "quote": "Progress message after a find: **\"{n} of 4 found. Keep going!\"** (with a magnifier icon).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "71",
+   "quote": "The \"n of 3 found\" tracker keeps the goal visible; hints escalate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "45",
+   "quote": "Making all sentences tappable removes a cue and is right.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp4-v4-design.txt",
+   "lines": "223",
+   "quote": "Unlike the MM, evidence does not pre-glow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "246",
+   "quote": "After a find, a tracker appears: \"{n} of 2 found. Keep going!\" (with a magnifier icon).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "137-139",
+   "quote": "the open hunt keeps its prose deliberately unmarked — in both cases marking the candidate spans would redraw the answer key, so the finger alone is the whole cue there.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

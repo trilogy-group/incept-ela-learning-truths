@@ -1,0 +1,64 @@
+{
+ "id": "help-may-paraphrase-not-interpret",
+ "title": "Help may paraphrase, not interpret",
+ "statement": "Help may paraphrase a hard line, say who speaks to whom or ask planned questions that draw out reasoning, but the interpretation, evidence and answer stay the learner's.",
+ "example": "The help for a tapped line may ask one question that makes the learner look at one word, but may not say what the line reveals about the character.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The line-help task in a 3D version of the Grade 9 lessons tells its model to help learners understand the line themselves: it may put a hard word into plain modern English, say who is speaking to whom and what has just happened, or ask one question that makes them look at one word, but must not interpret what the line reveals about the character or answer the learning question, in under 50 words (`othello-archive/server/api.mjs`, line 119). The boundary lives only in that prompt.",
+ "against": "The boundary was never tried with learners: per-line help was taken out of the reading (`othello-archive/src/steps/Reading.tsx`, line 3), and the client function for this task is defined but no longer called (`othello-archive/src/api.ts`, line 25). Untested with students, and how much help independent practice allows was left open: 'We should agree whether this means writing without co-authorship but with bounded hints, or demonstrating unaided understanding.' (`g9/transcript/chat-transcript.redacted.txt`, line 4392).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "119",
+   "quote": "Help them understand the line themselves. You may: put a hard word into plain modern English, say who is speaking to whom and what has just happened, or ask one question that makes them look at one word.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "119",
+   "quote": "You must not: interpret what the line reveals about the character for them, or answer the learning question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4279",
+   "quote": "We should distinguish questions that elicit the student’s reasoning from hints that supply it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3108",
+   "quote": "Agents do not choose evidence, suggest interpretations or revise the response.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4337",
+   "quote": "The Archivist can ask the planned questions and listen, but the student should supply the interpretation, evidence and explanation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

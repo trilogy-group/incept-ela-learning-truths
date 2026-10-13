@@ -1,0 +1,47 @@
+{
+ "id": "code-prompts-for-decoding-meaning-prompts-for-comprehension",
+ "title": "Code prompts for decoding, meaning prompts for comprehension",
+ "statement": "During word reading, prompt a stuck reader with the letters and sounds rather than 'what would make sense', and during comprehension, prompt for meaning and reasoning.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "An opportunities-to-respond BrainLift for early reading comprehension, sent as the playbook for a Grade 3 reading course, keeps code-based prompts out of comprehension talk and meaning-based prompts out of decoding (`othello-course-renderer-draft/repo/docs/pedagogy/otr-brainlift-2026-07-24.md`, line 104). For word reading it follows an IES practice guide on foundational reading skills for kindergarten to grade 3 (the same file, line 209). It is a rule taken from that guide; nothing here measured it in a course.",
+ "against": "The BrainLift was written for PreK to Grade 2 (the same file, line 12), and the course that adopted it leaves decoding out from Grade 3 on (`othello-course-renderer-draft/repo/docs/rules/knowledge-and-curriculum.md`, lines 209-212), so the word-reading half applies only where decoding is still taught.",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "104",
+   "quote": "Keep code-based prompts out of comprehension talk and meaning-based prompts out of decoding.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "104",
+   "quote": "During word reading, prompt with the code rather than asking “what would make sense”",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Foorman et al. 2016, Foundational Skills to Support Reading for Understanding in Kindergarten Through 3rd Grade (NCEE 2016-4008)",
+   "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/21"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

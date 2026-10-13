@@ -1,0 +1,865 @@
+{
+ "id": "unsure-is-neither-yes-nor-no",
+ "title": "Unsure is neither yes nor no",
+ "statement": "An unsure judge has said neither yes nor no: unsure is never a pass and never a miss, the student keeps the answer, and a part the judge can't confirm is left out.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The judge's own gates count an answer as unsure when its confidence is under 0.55, its top probability under 0.6, or\nits lead over the next answer under 0.15; the code calls them conservative engineering thresholds, not calibrated ones\n(`grade3-reading/engine/src/decide/questions.js`). In the lesson engine an unsure check holds a block before anyone\nsees it (`g9/transformer/src/transform.js`); during play, an unsure judgment of a student's answer is neither right nor\nwrong in either build it renders to (`g9/transformer/src/glue/`, `g9/transformer/web/lesson.js`), with 15 tests in\n`g9/transformer/test/positive-evidence.test.mjs`. An optional part the judge doesn't confirm is left out rather than\nholding the block: word classes show only where confirmed, and a painting the judge doesn't find fitting leaves the\nframe while the claims stay (`g9/transformer/v02/QA.md`; `g9/transformer/src/mechanics/video-essay.js`). One draft\nglossed a word as loyal in a line where the speaker only pretends to be; the judge was unsure, the block was held, and\na fresh draft passed.",
+ "against": "holding costs a redraft; a student whose answer can't be checked is left without a\nverdict; and an animated version's word web counts a word the judge is unsure of, by that build's own rule that a web\nis generous (`g9/transformer/src/glue/animated-judge.js`). A later run found: in a passage-blind leak check, a rule that ignored a solver's hits because the solver reported low confidence certified an item that leaked, so a blind solver's low-confidence right answer still counts as a leak (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`). A later run found: an AP evaluator's lesson-level evidence gate passes any borderline subjective call that has no quotable evidence, so there an unsure call counts as a pass (`shadow-bench/`). A later run found counter-evidence (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt`). A later run found counter-evidence (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py`). A later run found counter-evidence (`icloud-work/incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt`). A later run found counter-evidence (`icloud-work/evaluator/ap_benchmark/prompts/base.py`). A later run found counter-evidence (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`). A later run found counter-evidence (`icloud-work/inceptbench/src/inceptbench/agents/localization_evaluator.py`). A later run found counter-evidence (`APinceptbench/ap_benchmark/prompts/base.py`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`). A later run found counter-evidence (`shadow-bench/src/inceptbench/prompts/question/_base_evaluation.txt`). A later run found counter-evidence (`shadow-bench/src/inceptbench/prompts/lesson_bundle/evaluation.txt`). A later run found counter-evidence (`g9/transformer/v02/QA.md`). A later run found counter-evidence (`g9/transformer/test/animated-judge.test.mjs`). A later run found counter-evidence (`g9/transformer/src/mechanics/glossary.js`). A later run found counter-evidence (`g9-transformer-runs/decisions/366b8d2c7104a608.json`). A later run found counter-evidence (`g9/transformer/src/glue/animated-judge.js`). A later run found counter-evidence (`g9/transformer/v02/QA.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "422",
+   "quote": "if two evaluations of the same content could reasonably disagree, choose 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "43-45",
+   "quote": "Promotion review found `r3-09` at 3/8 exact plain-blind recovery and 0.71875 mean partial accuracy; the sealed rule had ignored those hits because the solver reported low confidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0126-claude-takeover-audit-2026-07-13.qmd",
+   "lines": "29-30",
+   "quote": "was exactly solved blind in 3/8 shuffles and that low solver confidence had hidden those hits",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "80",
+   "quote": "return True  # ← WRONG! Should be False to trigger regeneration",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "28-29",
+   "quote": "6. Timeouts are evidence gaps, not content failures. - Evidence: first calibration smoke marked DBQ as 0.0 because local IB timed out, while existing winner scores showed the same rows passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "67",
+   "quote": "the model fabricated a second occurrence it then quoted back verbatim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "76-77",
+   "quote": "**the failure mode is confident wrongness, not incompleteness**, which is worse for an automated gate than an honest \"cannot tell.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "47",
+   "quote": "attempts bias toward certification; errored controls toward false defect). Leaky verdicts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "49",
+   "quote": "The first gemini pass errored on 82 long-prompt items (76",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "50",
+   "quote": "a transport limit, not item signal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "51",
+   "quote": "Re-run at `max_tokens=2000` cleared all 82 (0 errors).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "101",
+   "quote": "— a broken harness must fail loud, never leak into the walk as phantom content failures",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "102",
+   "quote": "(2026-09-03: 11 phantom FAILs cost a diagnosis round).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "50",
+   "quote": "leaky never re-rolled, certification requires a FULL valid blind set).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "93-94",
+   "quote": "**Flat score row** — the judge returns identical/undiscriminating statuses; treat as a non-answer (re-ask once, then RED), never as a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/PROJECTION.qmd",
+   "lines": "10",
+   "quote": "Use `NOT_EVALUABLE` as a stop signal, never as a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "93-94",
+   "quote": "treat as a non-answer (re-ask once, then RED), never as a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "38-39",
+   "quote": "gog-unavailable is a loud UNVERIFIED failure, never a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "34-36",
+   "quote": "to score any of these below 1.0 the model must name the item_id and quote the exact text proving the violation; a borderline call with no quotable evidence PASSES.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "203",
+   "quote": "Below a reliability threshold, set by minimum word count, minimum sentence count and a cap on unrecognised words, the check reports itself unreliable and defers to the LLM rather than passing silently.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/dpo_and_fdpo_pipeline.md",
+   "lines": "30-31",
+   "quote": "- Higher bar preferred: score ≥ 0.90 (not just barely passing)\n- Rationale: the \"chosen\" side needs to be clearly good, not borderline",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "8",
+   "quote": "If reasonable evaluators could disagree, the metric passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "28",
+   "quote": "**When in doubt, FAIL the question. Missing problems is worse than over-flagging.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "422",
+   "quote": "- Prefer reproducibility: if two evaluations of the same content could reasonably disagree, choose 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/answer-verification.md",
+   "lines": "105",
+   "quote": "- **●●○○○○○○○○ (0-4)**: Low - manual review recommended",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-04T1010Z_drift_rescore_findings_grader_stable.md",
+   "lines": "39",
+   "quote": "5 of 9 are transient HTTP timeouts → counted as 0.0 (not grader nondeterminism, but call failure).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_155759_209babe7.md",
+   "lines": "11-14",
+   "quote": "| Passed | 33 (61.1%) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_repair_loop_clean4/loop_summary.jsonl",
+   "lines": "2",
+   "quote": "\"api_missing_evaluation\": 1",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "28",
+   "quote": "**When in doubt, FAIL the question. Missing problems is worse than over-flagging.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_main_self_discipline_phase_1_2_3.md",
+   "lines": "62",
+   "quote": "**Don't act on a factual_accuracy verdict — positive or negative — until at least Quill's calibration result lands.** That includes interpreting Phase 1 BoN K=4 results.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "190",
+   "quote": "When validation is uncertain, the safe choice is to fail (and regenerate) rather than pass (and ship broken content).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FACT_CHECK_RESULTS.md",
+   "lines": "42",
+   "quote": "- **Analysis:** The knowledge base may lack specific WWI domestic policy facts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "5",
+   "quote": "If reasonable evaluators could disagree, the metric passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_evaluator.py",
+   "lines": "51",
+   "quote": "- Return FAIL (score=0) if there is any violation, uncertainty, or missing evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "2750903",
+   "lines": "3",
+   "quote": "Per golden dataset regression test (94% pass rate, below 98% threshold):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "111-112",
+   "quote": "If you are uncertain of the specific approximate dates for both items → default to sequence_accuracy = 4 (uncertain, not confirmed wrong).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/website/content/english/pages/answer-verification.md",
+   "lines": "105",
+   "quote": "- **●●○○○○○○○○ (0-4)**: Low - manual review recommended",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "28",
+   "quote": "**When in doubt, FAIL the question. Missing problems is worse than over-flagging.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "70-71",
+   "quote": "preflight refuses a keyless judge (\"HARNESS, NOT CONTENT\" — 2026-09-03 cost 11 phantom FAILs once)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0190-jev-skills-and-engine-lane.qmd",
+   "lines": "80-81",
+   "quote": "each check returns `holds` / `fails` / **`unclear`**, and `unclear` is not a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "285",
+   "quote": "wiring) is marked UNVERIFIABLE, not PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "151",
+   "quote": "flagged not flipped, to avoid a confident",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "38",
+   "quote": "Never certified on missing evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-standards-centralization-2026-08-05/README.qmd",
+   "lines": "105",
+   "quote": "> **BLOCKED — evidence missing; no pass inferred.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-standards-centralization-2026-08-05/IMPLEMENTATION-PLAN.md",
+   "lines": "253",
+   "quote": "3. Return `NOT_EVALUABLE` for affected rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "180-182",
+   "quote": "promotion review caught `r3-09` at 3/8 exact blind recoveries and 0.71875 mean partial accuracy; low model confidence had wrongly hidden those hits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "24-25",
+   "quote": "`NEEDS_HUMAN`: evidence is missing, conflicting, inaccessible, malformed, or specialist judgment is genuinely required.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-content-integrity/SKILL.md",
+   "lines": "24-25",
+   "quote": "`NEEDS_HUMAN`: evidence is missing, conflicting, inaccessible, malformed, or specialist judgment is genuinely required.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/course-quality.qmd",
+   "lines": "77",
+   "quote": "A surface may have emission code but an unreadable or under-scoped token (a reachability gap), or may not emit at all (a coding gap). The first is `UNVERIFIED` pending a scoped read; the second is `FAIL`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "101-102",
+   "quote": "correctly routes missing evidence to `NOT_EVALUABLE` instead of guessing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "44-45",
+   "quote": "the sealed rule had ignored those hits because the solver reported low confidence.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "49",
+   "quote": "Treat `insufficient_evidence` as a deliberate abstention.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "53",
+   "quote": "Gemini probably defaulted to <0.85 on anything it couldn't decisively grade. Format mismatch, not Goodhart.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "15-17",
+   "quote": "+ low_confidence flag on the result when confirmation samples disagree (some pass, some fail) — a genuinely borderline lesson whose overall score is not reliable; treat as needs-review instead of forcing a precise number.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "5",
+   "quote": "**Your default is PASS.** Most educational content meets quality standards. You should only fail a metric when you find a clear, concrete, unambiguous violation that you can quote and explain. If reasonable evaluators could disagree, the metric passes.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "11",
+   "quote": "Do not fail on a general impression, a \"could be better,\" or a paraphrase — a borderline judgment is a PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/full150_y4axbi4f/RESULTS.md",
+   "lines": "12",
+   "quote": "After retrying all 25 initial score-error rows with a longer single-row timeout:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md",
+   "lines": "245",
+   "quote": "- Per user direction, the long IB run was stopped and treated as grader instability rather than a pipeline result.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0615Z_REPORT_unit1_mcq_solver_v2_repair_delivery.md",
+   "lines": "34",
+   "quote": "No candidate is counted as a pass unless live IB returns a passing score.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1509Z_DELIVERED_unit4_mcq_solver_v1_candidate.md",
+   "lines": "17",
+   "quote": "No timeout fallback is accepted as pass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "78",
+   "quote": "an unsure judge is not a no: the correction asks for a version that plainly holds, not for its opposite",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "79",
+   "quote": "the judge could not confirm this; rewrite it so that it plainly holds, or choose another",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "191",
+   "quote": "it now asks for a version that plainly holds; before, it only said \"unclear\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "180",
+   "quote": "the writer now gets a correction it can act on",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "33-34",
+   "quote": "A mechanic says what an unsure check means for it; any response that still … marks or completes turns neutral here: no verdict, not done, what the student gave kept.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "30",
+   "quote": "That one could not be checked yet. It is kept, with no mark.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "122",
+   "quote": "settle(mech.resolve(item, action, results, ctx), results)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "1-2",
+   "quote": "with no judge, a judge that cannot be … reached, or one that is unsure, no judged action of any mechanic is marked wrong or completes on the judge's word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "78",
+   "quote": "// an unsure judge is not a no: the correction asks for a version that plainly holds, not for its opposite",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0e36e4f6c770a7b1.json",
+   "lines": "120",
+   "quote": "Beat 3: the first reading can be defended: the judge found this unclear",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "5",
+   "quote": "unsure or absent judge is never a verdict: such a tick is neutral, put up for review, and not counted as an attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "84",
+   "quote": "assert.equal(s.state.entities[e.id].attempts, 0, `${where}: not an attempt`);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "130",
+   "quote": "the Grade 3 engine's judgeTerms rule: a drafted word Jev is sure a Grade 9 reader knows unaided is dropped, unless",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "115",
+   "quote": "return { ...item, words: item.words.map((w, k) => (sure(k) ? w : { ...w, cls: \"\" })) };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "146",
+   "quote": "a painting Jev did not find fitting is left out of the frame (the claims stay)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/4a2c8f7b98ff3449.json",
+   "lines": "354",
+   "quote": "\"verdict\": \"unclear\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/4a2c8f7b98ff3449.json",
+   "lines": "355",
+   "quote": "\"p\": 0.41,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "47",
+   "quote": "\"term_9\": \"owe\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "49",
+   "quote": "\"note_9\": \"own or possess\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "310",
+   "quote": "\"value\": 0.59,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "482",
+   "quote": "\"value\": 0.44,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "37",
+   "quote": "\"word_2\": \"mocked\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "38",
+   "quote": "\"meaning_2\": \"copied or represented something in an artistic work\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "275",
+   "quote": "\"value\": 0.59,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "49",
+   "quote": "about it (a rank, an older sense, a word for what a character does or is), to study and then recall from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "85",
+   "quote": "title, an older sense of a word, an idiom), four to ten of them, in the order they come.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "take the nudge of the first criterion that is not a sure hold. That can be one Jev was unsure of, rather than the one Jev is sure is missing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "114",
+   "quote": "only a criterion Jev is sure is missing makes a miss; unsure is no verdict, and no try",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "126",
+   "quote": "only a criterion Jev is sure is missing is a miss, with that criterion's nudge; unsure is asked once more.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "112",
+   "quote": "a word class is a judgment call on Shakespeare, so it never holds the block, but one Jev did not confirm is not shown",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "115",
+   "quote": "unclear is no verdict at all",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "2-3",
+   "quote": "an answer that fails the support gates is \"unclear\", never a pass. Its band (the director's act, probe or … escalate) is kept, so an unsure answer can be told from a refuted one and put up for review.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "126-127",
+   "quote": "an unsure Jev is never a pass and never a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "121",
+   "quote": "the hunt: an unsure judge gives the hint with no miss; a confident no is a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "9",
+   "quote": "An unsure Jev is never a pass and never a miss: like no judge at all, it is the build's offline case",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "229",
+   "quote": "developing only on a job Jev is sure is missing: unsure jobs alone are the offline case, so no revision is used up",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "141-142",
+   "quote": "word classes are shown only where Jev confirmed them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v06/README.md",
+   "lines": "9",
+   "quote": "Images through the TrueFoundry image route, shown only on positive evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "128",
+   "quote": "(its generous word web takes the word)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "146",
+   "quote": "// a painting Jev did not find fitting is left out of the frame (the claims stay)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "35",
+   "quote": "each verdict keeps its pass, probabilities and band, so unsure is told apart from refuted",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "99",
+   "quote": "an unsure criterion is never a miss: the student is told it could not be checked; the word web, generous, takes the word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "2-3"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "5",
+   "quote": "// Only a confident no is \"Not about\" the centre; a word the judge was unsure of, or could not check, stays pending.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "47-49, 310",
+   "quote": "\"note_9\": \"own or possess\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "99",
+   "quote": "an unsure criterion is never a pass and never a miss. The word web's own rule is to be generous, so there an unsure",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "47",
+   "quote": "a judge that answered nothing found nothing: that empty focus is not kept as the text's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "38-39",
+   "quote": "Three defects fixed in the run: an image with a 0.46 match was being served (pictures now need positive evidence, accepted count fell 16 → 9)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "151",
+   "quote": "engine unreachable: not an attempt, not a verdict. Keep their words in the box and say so.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "17",
+   "quote": "the engine is unreachable: never mark it Accepted on a guess. Keep the answer, say so plainly, let them go on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1644",
+   "quote": "An unavailable assessment must describe the missing result and the retry without endorsing the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/apps/broker/WRITING-SCORE.md",
+   "lines": "128-129",
+   "quote": "Scoring is 3× self-consistency majority-vote; agreement → `high` confidence / `auto_score`, disagreement → `low` / `prompt_revise`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "21",
+   "quote": "Missing routes, HTML fallback pages, HTTP error responses, malformed result objects and explicit unscored verdicts cannot become passes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "123-124",
+   "quote": "1. Record the response without verified mastery or XP. 2. Route low-confidence constructed responses to human review.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

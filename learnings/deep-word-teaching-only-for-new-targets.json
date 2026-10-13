@@ -1,0 +1,127 @@
+{
+ "id": "deep-word-teaching-only-for-new-targets",
+ "title": "Deep word teaching only for new targets",
+ "statement": "Spend taught-word slots only on words new at the learners' grade, not words graded lists put a grade or more below; give others at most a one-line gloss.",
+ "example": "An audit found two words outside a lesson's pinned target getting the full four-part cycle, one of them a kindergarten-to-grade-3 science word, and both became one-line glosses.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 reading lesson found two words getting the full deep-teach cycle of example, non-example, word parts and saying it back, though neither was the pinned target word, and one was a K-3 science word a Grade 5 reader almost certainly already knows. The rules it applied say not to pick a word the child already knows, to judge whether a word is new against a reader of the target grade, and to keep light glossing apart from the few words taught for use. The fix demoted both words to one-line tap glosses rather than removing all support.",
+ "against": "The audit calls even the light gloss optional: \"but that is optional polish, not required by this fix.\" (`grade3-reading/artifacts/u4l2-build/GRADE5-AUDIT.md`, lines 101-102). How many words get the full cycle stays open: the course's bar pins exactly one, while the shipped lesson carries three full word cards (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`, lines 520-521 and 548-549); see how-many-words-a-lesson-teaches. The lists set a floor, not the choice: \"A word earns its place here by unlocking our text (R-VOC-7), which is why `trial`, `departure` and `hospitality` are taught although that sheet lists none of them\" (`grade3-reading/course-renderer/docs/rules/vocabulary.md`, lines 25-27). The grading comes from another curriculum. Which words are general academic words (Tier 2), and whether a word unlocks the text, stays a judgement (`othello-course-renderer-draft/repo/docs/rules/vocabulary.md`, lines 35-36). The sources record no measure of what the rule changes for learners, nor of what teaching an easy word costs.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "86-89",
+   "quote": "`producer` and `habitat` receive the full blocking-word-style deep-teach cycle (example/non-example/morphology/say-back), but neither is the pinned canonical blocking word — only `decomposer` is — and `habitat` is a K-3 science word a G5 reader almost certainly already knows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "93-94",
+   "quote": "RULE_G3_D4.2 (don't pick a word the child already knows), RULE_G3_D7.11 (\"new\" judged against a G5 reader), RULE_G3_D4.23 (light glossing vs. the few words taught to production)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "100-101",
+   "quote": "downgrade them to a light non-card gloss (tooltip only, no example/non-example/morphology/say-back cycle) rather than removing all support",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "547-549",
+   "quote": "one-line comprehension-support definitions for producer and habitat plus a `_rule` note naming the demotion; only decomposer keeps the full example/non-example/ morphology/say-back cycle (G5-BAR §4 pins exactly one blocking word)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "101-102",
+   "quote": "but that is optional polish, not required by this fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "520-521",
+   "quote": "The three word-card slots carry **evidence** and **correspond** as full cards alongside **decomposer**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "28-30",
+   "quote": "Where the choice is otherwise free, prefer a word the sheet already tests at this grade, and never spend a card on one it places a grade or more below.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "117-120",
+   "quote": "It also reads `content/vocab-word-lists.json`, another curriculum's graded word lists kept as a REFERENCE and not as our scope, and fails a word those lists place a grade or more below this one unless the lesson plan records an `off_list_reason`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "657-660",
+   "quote": "They are words a grade 4 child already holds well enough to read this passage, L1 already used them structurally in the five parts, and neither unlocks a sentence of this text. Teaching them would spend one of three gates on recognition rather than on the words the episode actually turns on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "24-25",
+   "quote": "It belongs to a DIFFERENT curriculum, so it is a reference and not our scope.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "28-30",
+   "quote": "Where the choice is otherwise free, prefer a word the sheet already tests at this grade, and never spend a card on one it places a grade or more below.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "118-120",
+   "quote": "fails a word those lists place a grade or more below this one unless the lesson plan records an `off_list_reason`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "24-25",
+   "quote": "It belongs to a DIFFERENT curriculum, so it is a reference and not our scope.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "34-35",
+   "quote": "a taught word that the reference lists place a grade or more below this one fails.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

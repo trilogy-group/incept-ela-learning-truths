@@ -1,0 +1,388 @@
+{
+ "id": "a-verdict-belongs-to-its-model",
+ "title": "A verdict belongs to its model",
+ "statement": "A verdict holds only for the pinned model version that gave it, so compare runs under one version and, when it changes, re-score everything, baseline and blind solves included.",
+ "example": "An item an older solver missed 3 times out of 3 without the text, a newer one solved 3 times out of 3 with neither the text nor the earlier lessons.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A spine-gate report keeps its historical run, in which an older solver missed an item 0/3 without the text but recovered it 3/3 once given the earlier lessons; a calibrated newer solver replayed it and solved it 3/3 in both conditions, so its classification changed from a leak only the earlier lessons reveal to plain gameability (`grade3-reading/artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md`, lines 1-20 and 105-113). The report's lasting lesson is that solver results drift and must be rerun with a pinned current model, and the unit's item gate summary now treats its solver as historical provenance, not current certification (`grade3-reading/artifacts/demo-unit-2026-07-10/items/02-gate-summary.md`, lines 1-6). Checks of whether a solver can answer without the text need this most: an item that resisted a weaker solver can leak to a stronger one, and an old pass is not certification.",
+ "against": "A strictness audit moved the other way: it found an older blind solver too strict in the wrong way, returning blind accuracy of 1.0 on items that still needed the passage, and after re-baselining to a different solver the same judge marked those items clean. An approval package also notes that model ablation may give false positives and negatives compared with real students. The instance gap is only 'Likely' a judge-version difference and sets one seed against a three-seed mean (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md`, line 489), and part of the fall from 90.67% came from hard-zero checks the later judge added, a real change in strictness (`icloud-work/aptraining/.agent/memory/feedback_iterative_improvement_not_fresh_models_2026_05_12.md`, line 78). Later practice froze one baseline as a reference ('- Baseline number 56.48% is FROZEN reference; no re-eval needed unless serving drifts', `icloud-work/aptraining/.agent/memory/feedback_test_2_at_a_time_2026_05_12.md`, line 44), and the unchanged-model deltas were called 'most likely' noise without the baseline being re-run. No case of the two judges disagreeing on the same item is recorded, so the rule rests on the stated difference in semantics, and one confusion the records cite was a tool failing because the other evaluator was down. The cause was not isolated: \"Same v2.4.0 codebase but different host, different curriculum dataset, possibly different grading prompts.\" (`icloud-work/auto-memory-backup/project_v29_new_canonical_external_ib.md`, line 17). Only three candidates were re-scored, and part of the shift may be run-to-run variation: in another note, first-pass and clean scores of the same outputs differ on an item type with no lost items, about 77% against 90.0% (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`, lines 24 and 43). Pinning the version is not enough: the same generations re-scored under one version still varied by 17 points per item type (`icloud-work/aptraining/helpers/shadow/output/analytics.md`), and the version change also moved scoring to a different grader endpoint, so the 25.92 points bundle both (`icloud-work/aptraining/coordination/.archive/CLONE_VERIFY_GRADER.md`). The fresh-baseline rule was written for continuous-score comparisons (`icloud-work/aptraining/coordination/HANDOVER.md`). The binding grader's 28% was itself traced to four harness bugs (`grade3-reading/artifacts/alpha-read-packager/FACTS_SHEET.md`), so that case shows a judge artifact, not the true score.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md",
+   "lines": "7",
+   "quote": "calibrated Gemini 3.5 solves the target 3/3 without either passage or prior-course context.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md",
+   "lines": "113",
+   "quote": "solver results drift and must be rerun with a pinned current model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "5-6",
+   "quote": "treat Gemini 2.5 as historical provenance, not current model selection or current cross-family certification",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "32",
+   "quote": "plain-blind 0/3 but 3/3 with prior-lesson corpus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "33",
+   "quote": "Current Gemini 3.5 replay: 3/3 in both conditions - direct blind leak; old lift is historical.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "53",
+   "quote": "invalidation by a stronger current plain-blind solver; stale solver results are not certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "67-69",
+   "quote": "showed the weak gpt-4o-mini gate had over-credited items — of v1's 95 re-gated \"clean\" items, only **20 (21%) survived**; **75 leaked** under the strong solver.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "37",
+   "quote": "cert stamp + recert (re-run on drift/flip/generator-version bump).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "31",
+   "quote": "it returned blind accuracy of `1.0` on items that genuinely needed the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "33",
+   "quote": "After re-baselining the blind-solver to `claude-haiku-4-5`, the same judge marked those items clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "182",
+   "quote": "LLM ablation may false-positive/negative vs real students",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "186",
+   "quote": "Same v29 generations score 63.64% (v2.4.0 endpoint 192.168.1.26:8001) vs 89.56% (v2.5.3 endpoint 192.168.1.10:8001). +25.92pp swing from grader alone, no model change.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "186",
+   "quote": "**Rule:** every pass-rate citation must specify grader version explicitly. Don't compute deltas across versions; require both endpoints same OR re-score one side.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_iterative_improvement_not_fresh_models_2026_05_12.md",
+   "lines": "81",
+   "quote": "The \"v43-soup was 90.67%\" memory entries refer to IB v2.5.3. After grader update, v43-soup is ~54.7%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md",
+   "lines": "489",
+   "quote": "Audit baseline (2026-05-14 s7 single-shot): 70.0% — drift -7.1pp. Likely grader-version delta between IB instances (audit used iCloud local IB; this is 192.168.1.15:8001).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/templates/eval-cycle.md",
+   "lines": "45",
+   "quote": "IB grader version captured (v2.5.11 currently)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "114",
+   "quote": "v29 inference at temp=0 gives DIFFERENT continuous (0.9475 frozen vs 0.9307 fresh) on same prompts/model. Binary same (87.56%). All test configs use fresh gens; baseline must too. Several \"regressions\" reverse to \"real lifts\" with proper baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "184",
+   "quote": "Reverses v42/v40h regression framings — both now stat-tied with v29",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md",
+   "lines": "76",
+   "quote": "vs v80b 68.22% → **-5.43pp regression** (between v81b's -4.44 and v81e's -8.22).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md",
+   "lines": "111",
+   "quote": "The -4.4 / -5.4 / -8.2pp eval deltas are most likely measurement noise around an essentially-unchanged v80b",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "5",
+   "quote": "This project uses TWO different evaluators and mixing them up causes subtle, hard-to-diagnose failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "20",
+   "quote": "**Hard rule:** Never use localhost:8080 for official benchmarking. The `/get_standard` API has different semantics that can produce different pass/fail decisions on identical content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "149",
+   "quote": "4. Tool fails with connection error because localhost:8080 is down",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "36",
+   "quote": "2. **No source MANIFEST** — the 73.33% number lived in a status file, not a `summary_*.json` with hashes-of-inputs + grader-version + per-item-score.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-01T1238Z_eval_runs_phantom_audit_v2.md",
+   "lines": "48",
+   "quote": "The 73.33% / 0.792 number main-A cited at 01:00Z does not have a corresponding manifest entry.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "50",
+   "quote": "grader v2.5.2 → v2.5.3 schema change silently re-scores; no `grader_version` field in summary_*.json",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-06T0825Z_synapse_enrolled_learnings_published.md",
+   "lines": "20",
+   "quote": "Pin exact versioned model ID for LLM judge calls",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-20T0821Z_PIL_WEEKLY_APUSH_REPORT.md",
+   "lines": "29",
+   "quote": "- 149/150-style gate: stitched slices reach 149/150, but mixed builds (`6f0ffdf`, `e429b16`), so not strict same-build proof.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "12",
+   "quote": "All three models scored same gen files via the same grader.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "23",
+   "quote": "| v25b (DPO from v23) | 64.3% | **59.26%** | -5.0pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "24",
+   "quote": "| v28 (DPO from v25b w/ D5 pairs) | 57.6% | **53.20%** | -4.4pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "25",
+   "quote": "| **v29 (SFT from v25b w/ 988 D9 fact-recall pairs)** | 60.9% | **63.64%** ✓ | **+2.7pp** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "50",
+   "quote": "- v25b's \"64.3%\" memory is no longer load-bearing — it was on a now-superseded grader.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v29_new_canonical_external_ib.md",
+   "lines": "17",
+   "quote": "Same v2.4.0 codebase but different host, different curriculum dataset, possibly different grading prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "43",
+   "quote": "- apush/leq regressed sharply (−13pp). The one cell at 90% with v18 is no longer there. This regression is real even after fixing 503s — it's measured on the cells with 0 503s.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "24",
+   "quote": "| apush/leq | 90.0% (0.942) | **90.0%** (0.947) | = |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md",
+   "lines": "24",
+   "quote": "| v30b (15:45Z): 58.25% on broader-v18 retrain (vs v25b 64.3%, -6.05pp) | More v18 = worse, not better. Broader training compounds the wrong content |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/.archive/CLONE_VERIFY_GRADER.md",
+   "lines": "12",
+   "quote": "- **+25.92pp swing from grader version alone**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "18",
+   "quote": "Same v29 generations score 63.64% on v2.4.0 but 89.56% on v2.5.3 (+25.92pp from grader change alone).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/forensics/mcq_v2.5.6_rubric_tightening.md",
+   "lines": "5",
+   "quote": "v50 r1 v2.5.3: 30 mcq rows (100% pass on the OLD grader per prior data)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/forensics/mcq_v2.5.6_rubric_tightening.md",
+   "lines": "6",
+   "quote": "v50 r1/r2/r3 v2.5.6: ~30 mcq rows each (76.7%, 80.0%, 70.0% pass on NEW grader)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md",
+   "lines": "135",
+   "quote": "| ONLY IB v2.5.3 | All historical comparisons require explicit grader-version tagging; some \"regressions\" may be artifacts | `feedback_ib_grader_version_v240_to_v253.md` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md",
+   "lines": "138",
+   "quote": "| Fresh baseline rule | Several \"regressions\" reverse to \"real lifts\" with proper baseline | `feedback_baseline_must_be_fresh_gen.md` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/HANDOVER.md",
+   "lines": "102",
+   "quote": "7. Fresh-gen baseline for continuous comparisons",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "12",
+   "quote": "Same generations re-scored produce 17pp per-cell variance, ~1-2pp aggregate variance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "67",
+   "quote": "v3-card re-scores 17.0/25 on the legacy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "68",
+   "quote": "subset vs 23.5 in July — absolute numbers shifted with the judge; only within-eval comparisons",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "52",
+   "quote": "\"real passages = 0.29→0.95 lever\" is **REFUTED**: that jump existed only under a discredited",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "53",
+   "quote": "on the binding grader it collapsed to 28% (DBQ 0%, MCQ_SET 0%, \"Gemini-judge artifact\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "289",
+   "quote": "Recovery cascade: 1. Test paired older/newer checkpoints. 2. Use worst-model scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/workspace-docs.md",
+   "lines": "72",
+   "quote": "InceptBench rubber-stamped leaking items at 1.0 and the 0.932-vs-0.356 lift was version-confounded and banned from reporting",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

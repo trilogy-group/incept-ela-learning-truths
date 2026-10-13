@@ -1,0 +1,43 @@
+{
+ "id": "enough-data-for-the-conclusion-asked-for",
+ "title": "Enough data for the conclusion asked for",
+ "statement": "A question asking for a conclusion from data or an experiment must give enough data to reach it, vary only the factor tested and never present correlation as cause.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "demand",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's science rules require an item built on an experiment, procedure or data set to support the inference it asks for: a controlled comparison varies the intended variable while holding the others fixed, the data provided must be sufficient to reach the asked-for conclusion, and correlation is not presented as established causation without support. A reading-the-data or interpret-the-graph task must give enough information for the intended answer to be determinate. These are adopted rules for the judge, with no measurement behind them.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "21-25",
+   "quote": "- When an item involves an experiment, procedure, or data set, the design must support the inference it asks for: a controlled comparison varies the intended variable while holding others fixed; the data provided must actually be sufficient to reach the asked-for conclusion; correlation must not be presented as established causation without support.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "26-27",
+   "quote": "- A reading-the-data or interpret-the-graph task must give enough information for the intended answer to be determinate.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

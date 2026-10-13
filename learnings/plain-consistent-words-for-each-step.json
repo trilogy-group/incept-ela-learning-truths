@@ -1,0 +1,278 @@
+{
+ "id": "plain-consistent-words-for-each-step",
+ "title": "Plain, consistent words for each step",
+ "statement": "Name each step and concept one way everywhere, in plain words for what a reader thinks or does, with no internal jargon or stock assistant phrasing.",
+ "example": "Complaints about the wording of taught steps, stems and instructions came back in 4 later review sections, more than any other class.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A recurrence gauge over seven review records of the reading course, 183 classified entries with 54 reported defects, found that complaints about whether named steps, sentence stems and instructions were consistent came back in 4 later sections after the first review raised them, more than any other class (`grade3-reading/artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md`, `grade3-reading/codex/qa-recurrence.json`). One of them asked for no machine-speak such as \"run all four\" (`grade3-reading/artifacts/feedback-aladdin-2026-08-25/REGISTER.md`). The course's checklist bans procedure jargon and coined names in what children read, and sweeps stock assistant phrasing, such as the guide narrating its own mechanism or restating what a button says, as its own class, since no validator caught it (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`). Use the same sentence stems throughout. Make a frame's wording match the procedure it teaches, and check that wording as a class of its own.",
+ "against": "The gauge says its review sections have incomparable coverage, so the count shows how often the complaint came back in reports, not a rate (`grade3-reading/artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md`). Not every repeated phrase should be uniform: the same proofread judged one family of aside phrases legitimately varied, not robotic (`grade3-reading/knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd`, line 70).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "codex/qa-recurrence.json",
+   "lines": "210",
+   "quote": "Named procedure, stems and instruction language are consistent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md",
+   "lines": "21",
+   "quote": "| aladdin-followup | 2 | — | procedure_language |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md",
+   "lines": "22",
+   "quote": "| arc-audit | 8 | component_coverage, cross_text_transfer, lesson_threshold, magic_word_use, phase_indication, reading_sequence | procedure_language |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md",
+   "lines": "27",
+   "quote": "| pedagogy | 6 | question_focus | cross_text_transfer, guided_scaffolding, lesson_threshold, procedure_language, vocabulary_demand |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md",
+   "lines": "34",
+   "quote": "| eight-gaps | 5 | hint_disclosure | magic_word_use, morphology_accuracy, procedure_language |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-aladdin-2026-08-25/REGISTER.md",
+   "lines": "55",
+   "quote": "No machine-speak (\"run all four\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "66",
+   "quote": "coined organizer names, procedure jargon to children",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "67",
+   "quote": "Zero instances of generic-assistant phrasing that reads as \"every AI app\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "55",
+   "quote": "**MAJOR — we-do renames three of the four I-do step labels (R-KC-11).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "104-106",
+   "quote": "A lesson's frame wording must match its *declared* procedure — a FIND question dressed as INFER (or the reverse) is a defect, not style",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "81-82",
+   "quote": "RULE 1 (STEP LABEL DRIFT, shipped) requires the step be named identically at all three stages",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "61-62",
+   "quote": "**F3 (minor, display-only):** \"erosion\" and \"mechanism\" each get two different phonetic respellings across their two in-course appearances (U1-L2 vs U1-L7).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "96",
+   "quote": "\"reread and tap\" -> \"reread and find\" (\"find\" names what a reader does, not what a finger does).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "111",
+   "quote": "What a viewer reads at a film's stops (the questions, options and feedback) speaks of the film, never of how it is",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7388ea11514d7e6d.json",
+   "lines": "83",
+   "quote": "This is incorrect. The second frame showed that Iago compares the loyal servant to an ass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "113",
+   "quote": "const MAKING = /\\b(beat|cue|caption|frame)s?\\b/i;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Reviewer-Feedback-2026-08-18.md",
+   "lines": "15",
+   "quote": "Its Verdict chip is a sequence role. Spine and Hard have the **same mean Lexile (844L)** with overlapping ranges",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Reviewer-Feedback-2026-08-18.md",
+   "lines": "15",
+   "quote": "Rename proposed, **declined for now**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "414",
+   "quote": "symbols are unambiguous and data-true",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "422",
+   "quote": "ambiguous status symbols",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "69",
+   "quote": "Direct child-readable questions are the default and one-off organizer labels require a documented reuse purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/standard.sql",
+   "lines": "546",
+   "quote": "Use direct learner language instead of unnecessary organizer names.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "287",
+   "quote": "J16-LES-008: Use direct learner language instead of unnecessary organizer names.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "135-136",
+   "quote": "An organizer is a set of questions, not a branded noun to memorize. **Do not name it**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/RESPONSE-MATRIX.md",
+   "lines": "49",
+   "quote": "The proper-noun \"____ Frame\" labels are removed everywhere (student-facing **and** scaffolding — 0 occurrences course-wide), replaced with plain question stems",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "69",
+   "quote": "Direct child-readable questions are the default and one-off organizer labels require a documented reuse purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "217-218",
+   "quote": "**No branded organizer:** the lesson names no memorizable tool; the organizer lives in the purpose as plain questions (A4a).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "433",
+   "quote": "beat the child fills tells the child it is two charts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "758",
+   "quote": "The we-do and the you-do first carried the step numbers of the four-step FIND rail while the Skill page's chart and the wrap recap both showed five, so the same beat was Step 4 on one page and Step 5 on another.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "355",
+   "quote": "label the card \"Check 1 · 3\" everywhere (bar, card, progress dot). Keep \"today's Learning Question\" for the lesson question, never in the card.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "165",
+   "quote": "a term that recurs needs one fixed name and one fixed treatment or it never becomes vocabulary the student can use.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "167",
+   "quote": "If the four steps are to be learned as shorthand, the narration has to use their names; an informal paraphrase alongside a named procedure is what stops shorthand sticking.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "30",
+   "quote": "You talk like a real teacher who respects the student, not like an AI assistant.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "165",
+   "quote": "One screen fixed and the rest left is worse than none, because the inconsistency is the defect.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "167",
+   "quote": "If the four steps are to be learned as shorthand, the narration has to use their names; an informal paraphrase alongside a named procedure is what stops shorthand sticking.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

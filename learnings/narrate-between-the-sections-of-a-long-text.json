@@ -1,0 +1,114 @@
+{
+ "id": "narrate-between-the-sections-of-a-long-text",
+ "title": "Narrate between the sections of a long text",
+ "statement": "Narrate a long text read in parts: open each part with a short line on what to watch for, review it afterwards, and summarise at the end.",
+ "example": "The same format note heads all four reading texts of one Grade 9 unit.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "Every reading text in a Grade 9 unit opens with a format note: a narrator speaks between sections, feeding forward before a section, reviewing back after it and summarising at the end, while section headings stay hidden and a simple divider marks each break. The forward feeds point readers at what to look for, such as deciding whether to believe a speaker or looking for one word.",
+ "against": "Some forward feeds also tell learners what the next section contains before they read it: \"In this next section, you'll read that Othello turned those men down and chose someone else.\" (`g9/sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx`, line 38), which the record `no-spoilers-of-what-comes-later` forbids. A ruling of 30 September deleted the lines from four of the course's lessons and one in another course because \"They take away from the reading flow.\" (kb-0230-late-sept-incidental-findings.qmd lines 39-46), and they lengthen the timed read-through (REGISTER-2026-09-15.md line 181).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "4",
+   "quote": "narrates between sections of the text: feeding forward before a section, reviewing back after it, and summarizing at the end. Section headings are not shown to students; a simple divider marks each break.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "16",
+   "quote": "As you read, decide whether you believe him.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "102",
+   "quote": "Look for the word \"flag.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "168",
+   "quote": "the per-chunk reading 'purpose' banner (D7.27 / D12.2 motivate-then-orient) is present on 11 of 14 story chunks across the precedent lessons L1/L2/L4 and on 0 of 12 in L5/L6/L7.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "168",
+   "quote": "it is a real pedagogical scaffold, not polish, so this is FIX-NOW.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "173",
+   "quote": "Do NOT touch chunk-1 of any lesson (its framing lives in the p7 goal page, matching L1 p8 / L2 p6 / L4 p6). All strings verified: no em-dash/semicolon/parenthesis/ALL-CAPS, one child-actionable sentence, under 25 words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "186",
+   "quote": "F10 (nine purposes + clips)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "81",
+   "quote": "the JSON has escalating purpose statements per chunk (p8: character observation → p10: cause/belief → p12: mood/craft)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "181",
+   "quote": "The `purpose` field also feeds the core.tsx:701 self-read wait timer, so the timed read-through will lengthen slightly by design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "39",
+   "quote": "They take away from the reading flow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "41",
+   "quote": "the `passage.purpose` line printed and spoken above every story part",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "45-46",
+   "quote": "nine `purpose` + `purpose_voiceover` fields deleted per lesson across L4-L7 + G5-U1-L1, nine clips retired",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

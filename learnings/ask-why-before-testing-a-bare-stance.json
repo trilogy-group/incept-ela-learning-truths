@@ -1,0 +1,63 @@
+{
+ "id": "ask-why-before-testing-a-bare-stance",
+ "title": "Ask why before testing a bare stance",
+ "statement": "When a learner gives a position without a reason, ask why before arguing against it.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's closing debate treats an answer of three words or fewer with no word such as 'because' as a bare stance, a position with no reason. On the first round it names the stance and asks one 'why' question, with a pointer to a moment that bears on the question, holding its counter-reading back until a reason comes. Its marking gate expects a bare 'no' to a checkpoint asking 'Is it real? How do you know?' to come back partial: a bare yes or no is marked partial when the question also asks why.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "41",
+   "quote": "a bare stance (\"no\", \"yes\", \"kind of\") is a position with no reason: ask for the why before testing it",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "49",
+   "quote": "Their position is a bare stance with no reason given. Do not argue against it yet.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "298",
+   "quote": "\"answer\": \"no\",",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "299",
+   "quote": "\"expect\": \"partial\",",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/checks.ts",
+   "lines": "12",
+   "quote": "Iago shows \"a flag and sign of love.\" Is it real? How do you know?",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,417 @@
+{
+ "id": "split-dont-cut",
+ "title": "Split, don't cut",
+ "statement": "Meet a length limit by splitting the material into parts, not by cutting or speeding up approved words.",
+ "example": "Cut from 434 words to 299, my script lost its style.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Finding 2 of the film study: cut from 434 words to 299 and read faster to fit a shorter film, the script lost its\nstyle; read in full at a natural pace and split into parts, it kept it (`othello-unit-video/research/FINDINGS.md`). The\nkit's standard is to meet a length limit by changing the voice model or splitting the film, never by cutting lines or\ntime-stretching a take (`othello-unit-video/kit/docs/STANDARDS.md`). A meta-analysis found segmenting improved\nretention and transfer, with small to medium effects (Rey et al. 2019, https://doi.org/10.1007/s10648-018-9456-4).",
+ "against": "a faster read is a different voice; one of three AI judges thought the quick read sounded too young, and\nnobody outside the project has compared the two (finding 2). A later run found: an intro-video BrainLift for a Grade 3 course meets a 60-second target by compressing the reviewed script, a job it calls smaller, safer and more auditable than generating a new one, and guards the cut by reading it aloud, since cutting does not remove teaching evenly (`downloads/BrainLift - What makes a good intro video.md`). A later run found counter-evidence (`othello-archive/scripts/unit_film_audio.py`).",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/FINDINGS.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "kit/docs/STANDARDS.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "46",
+   "quote": "cannot be edited to insert a word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "46-48",
+   "quote": "a word not carried twice by the passage is still \"earned\" if the lesson's own activities (questions, options, feedback, frames, retell, recap) use it at least 3 times",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-run-2026-09-04/QC Run Report — Peter Pan L4-L7 + G5 (2026-09-04).md",
+   "lines": "31",
+   "quote": "### 3. HIGH — one-screen census, our lane (additions row I/census)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-run-2026-09-04/QC Run Report — Peter Pan L4-L7 + G5 (2026-09-04).md",
+   "lines": "33",
+   "quote": "each two-MCQ page split into two single-MCQ pages; the match split into two 2-prompt cases with all verbatim quoted options preserved",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0248-g9-video-research-full-files.qmd",
+   "lines": "144-145",
+   "quote": "engagement drops sharply with length (students rarely watched past 9 min; recommend **≤6 min segments**)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "267",
+   "quote": "Start from the human-reviewed script and compress it. Do not generate a new one.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "269",
+   "quote": "Compression is a smaller, safer and more auditable job than generation.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "315",
+   "quote": "Cutting does not remove teaching evenly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "31",
+   "quote": "5. NEVER time-stretch the voice to fit visuals. Re-cut visuals instead.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "195",
+   "quote": "Artificially speeding playback costs learning (1.4–1.5× ≈ g−0.21; 1.8–2× ≈ g−0.36) [21].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "33",
+   "quote": "1. **No user-controlled audio playback speed** — kids rush; enforce a consistent age-appropriate rate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "35",
+   "quote": "If source reading, discussion, accessibility support, or correction needs more time, split the lesson rather than compressing the required evidence work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0198-meetings-decisions-timeline-0819-1001.qmd",
+   "lines": "92",
+   "quote": "(a 1-minute cut lost cohesion)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "171",
+   "quote": "slice boundaries never orphan a sentence mid-thought",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "77",
+   "quote": "Narrative sentences are never cut down to hit a length number (Lexile-driven editing forbidden)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "171-173",
+   "quote": "Segments are cut from one approved take with ffmpeg, never re-synthesized, so the voice a reviewer approved stays the voice a child hears even as new states are spliced in.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/source-course-refinement.qmd",
+   "lines": "102",
+   "quote": "If an additive layer changes source content, split the change and re-run no-cut.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/source-course-refinement.qmd",
+   "lines": "47",
+   "quote": "| No silent cuts | Missing source ids fail the build. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "110-111",
+   "quote": "each split into single-question pages/cases, all verbatim quoted options preserved",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "111",
+   "quote": "transferred with one split to keep sentences inside the grade-3 length ceiling.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "586",
+   "quote": "Ruled: document, don’t cut cosmetically; revisit when canonical videos land.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "182-183",
+   "quote": "so **insert whole new sentences; never extend an existing one.**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "243",
+   "quote": "- Deterministic compression solved grader length but destroyed educational signal / source richness.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "evidence-plate/README.md",
+   "lines": "20",
+   "quote": "Split longer copy into another beat.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "33",
+   "quote": "use a progressive verse or evidence module for longer passages.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "126-128",
+   "quote": "even the corrected total only fitted 95 seconds if the whole narration were read at 3.0 words per second, which is a review pace and not a first-exposure pace.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "132-134",
+   "quote": "Rather than compress, the runtime is extended. Every window below is at least the line's own word count divided by **2.5 words per second**, the slow end of the brief's band for new content",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "124",
+   "quote": "**How the 139.00 seconds is derived, and why it is not 95.**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "17",
+   "quote": "Per handover §10 the edit should follow the voice, not the other way round, so that is a creative trade-off, not a blocker.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "41",
+   "quote": "Total **283.583 s** (the music-only WIP was 234 s; the voice runs 260 s, so the film follows the voice as §10 asks).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v04/render/QA.md",
+   "lines": "3",
+   "quote": "tempo ×1.2 pitch-preserved and pauses capped at 0.3 s",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v05/render/QA.md",
+   "lines": "3",
+   "quote": "narrator Gacrux with the v3 direction and natural pace",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v07/README.md",
+   "lines": "10",
+   "quote": "2:54 at 158 words a minute: a new brisk take, no words cut, no time-stretch",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L30b6dc.txt",
+   "lines": "17-18",
+   "quote": "Gacrux on gemini-2.5-pro reads this script at about 140 words a minute in any direction, which cannot fit three minutes without stretching.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L30b6dc.txt",
+   "lines": "18",
+   "quote": "gemini-3.1-flash-tts-preview reads it at 158 with the same voice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L30b6dc.txt",
+   "lines": "10",
+   "quote": "2:54 at 158 words a minute: a new brisk take, no words cut, no time-stretch",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "39",
+   "quote": "measure pace across models before reaching for time-stretch",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L30b6dc.txt",
+   "lines": "19-20",
+   "quote": "on scene 4 two of three preferred the brisker read, and one heard it as \"far too young\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/unit-video-production.md",
+   "lines": "7",
+   "quote": "Do not stretch a short recording to pass a duration check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "16",
+   "quote": "No artificial time stretch was applied to reach the target duration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "25-26",
+   "quote": "because once the narration was recounted honestly it did not fit 95 seconds at the slow end of a nine-year-old's pace, and the brief is to lengthen the video rather than to read faster.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/video-recut-drafts-2026-08-31.md",
+   "lines": "264-265",
+   "quote": "~80 seconds vs the current ~35: the doc's canonical teach list does not fit 35 seconds. Flagging for approval rather than trimming canon.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v05/render/QA.md",
+   "lines": "3",
+   "quote": "The 2:00 v4 (trimmed, brisk) is kept as `../../v04/render/` and in git history.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v05/render/QA.md",
+   "lines": "8",
+   "quote": "- Parts (drafts, `tools/player/build_parts.py`): 1 = herald + goal 67.7 s · 2 = world + people 91.1 s · 3 = weapon → return 112.1 s; cover art = `thumbnail-othello-love.jpg`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/Othello-Opening-Recording-Manifest.json",
+   "lines": "294",
+   "quote": "Articulate each term and definition at a natural pace. Do not rush to a target duration.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "453",
+   "quote": "That one splits across two lessons: lesson A runs everything through the Modelling Moment and ends on a plan, lesson B opens with a short recap and is almost entirely writing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "37",
+   "quote": "to reach 2:30, shorten the people segment to Othello, Desdemona, Iago and Cassio, and introduce the others in Lesson 1",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "57",
+   "quote": "(to reach 2:30, shorten the people segment to Othello, Desdemona, Iago and Cassio, and introduce the others in Lesson 1)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/unit_film_audio.py",
+   "lines": "19",
+   "quote": "RATE = float(os.environ.get(\"RATE\", \"1.12\"))   # tempo, pitch kept (atempo)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/curation/film-and-audio.json",
+   "lines": "842",
+   "quote": "narration-v3 sped up x1.2 with pauses capped at 0.3 s for the 2:00 film v4, which the owner rejected as having lost the style.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "47",
+   "quote": "NEVER speed up playback to save time (1.4–1.5×≈g−0.21).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-and-visual-plan.md",
+   "lines": "24-26",
+   "quote": "**The runtime moved from 95.00 to 139.00 seconds** in round 2, because once the narration was recounted honestly it did not fit 95 seconds at the slow end of a nine-year-old's pace, and the brief is to lengthen the video rather than to read faster.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "314",
+   "quote": "Do not force each generated clip into those estimates merely to retain the old duration.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rey et al. 2019",
+   "url": "https://doi.org/10.1007/s10648-018-9456-4"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

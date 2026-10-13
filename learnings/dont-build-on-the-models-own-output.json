@@ -1,0 +1,41 @@
+{
+ "id": "dont-build-on-the-models-own-output",
+ "title": "Don't build on the model's own output",
+ "statement": "Don't build a model's examples or training data from its own output; draw them from real material outside it.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An analysis memory for an AP question model's training names self-bootstrap as the corpus problem: its few-shot bank was earlier models' outputs plus their own. It records that the only lift on document-based questions that cost no other item type came from real documents, the only data from outside the chain, and that four dead-end versions shared the flaw.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/.agent/MEMORY.md",
+   "lines": "42",
+   "quote": "fewshot_bank = v43soup + v52b + their own outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/.agent/MEMORY.md",
+   "lines": "42",
+   "quote": "The ONLY non-zero-sum lift mechanism on DBQ historically was `d13` (LoC real documents) — the only data outside the chain.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

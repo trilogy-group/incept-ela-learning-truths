@@ -1,0 +1,56 @@
+{
+ "id": "2026-10-12-6-transformer-ideas",
+ "title": "Run 6: the lesson engine's ideas, and how universal they are",
+ "date": "2026-10-12",
+ "kind": "sweep",
+ "status": "assimilated",
+ "method": {
+  "workflow": ".claude/workflows/learnings-sweep.js",
+  "workflow_sha256": "498fa6e52e929c20f65f115fe695fe4dc8960e2ab3932831423085e3b3b43c20",
+  "run_id": "wf_9aff1090-fd5",
+  "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_9aff1090-fd5",
+  "merge": {
+   "run_id": "wf_62909ca9-c8a",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_62909ca9-c8a",
+   "workflow": ".claude/workflows/learnings-merge.js",
+   "workflow_sha256": "5518ca2a0cca515b3e658a0665a37d0a03257b959d8e1373e5f57891f1dc57fa",
+   "items": 331,
+   "batches": 14,
+   "batch_size": 25
+  },
+  "review": {
+   "workflow": ".claude/workflows/learnings-review.js",
+   "workflow_sha256": "988527ad3b1a9cfbb2552638981c72b07b03d223e5f8d9996c4a8c9475f67ddb",
+   "batches": 2,
+   "slices": 17,
+   "pairs": 20,
+   "run_id": "wf_7fac03ac-4a2",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_7fac03ac-4a2"
+  }
+ },
+ "sources": [
+  "g9",
+  "g9-transformer-runs"
+ ],
+ "counts": {
+  "directions": 7,
+  "agents": 19,
+  "candidates": 339,
+  "kept": 331,
+  "dropped": 8,
+  "gaps": 2,
+  "merge_batches": 14,
+  "merge_records": 57,
+  "merge_folded": 10,
+  "records_added": 57,
+  "records_updated": 702,
+  "quotes_checked": 2051,
+  "quotes_dropped": 7,
+  "evidence_unregistered": 0,
+  "review_fixes": 20,
+  "review_drops": 0,
+  "review_folded": 3,
+  "review_flags": 6,
+  "records_after_review": 54
+ }
+}

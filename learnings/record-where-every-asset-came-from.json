@@ -1,0 +1,553 @@
+{
+ "id": "record-where-every-asset-came-from",
+ "title": "Record where every asset came from",
+ "statement": "Record where every asset came from and its hash, check the hash before using it, and treat a source note as a record of origin, not a licence to reuse.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Each video frame takes its pictures by id and SHA-256, verified before use, and an asset's source note records its\norigin, not a right to reuse it (`unit-video-modules/INTEGRATION.md`); the lesson engine checks each painting's bytes\nagainst its manifest before drawing it (`g9/transformer/src/video/art.js`), and every film it makes carries a manifest\nof module digests, narrator, renderer versions and file hashes (`g9/transformer/src/video/produce.js`). The kit's\nnarration rule keeps one folder per model, voice and direction, because a new voice in an old folder leaves old takes\nunder a new label (`othello-unit-video/.claude/skills/uvk-narration-make/SKILL.md`).",
+ "against": "the kit's art export\nstrips every metadata block from the finished images (`othello-unit-video/.claude/skills/uvk-art-make/SKILL.md`), so the\nrecord lives beside them, not in them. A later run found counter-evidence (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/audio/VOICE-IDENTITY-2026-09-16.md`).",
+ "evidence": [
+  {
+   "source": "unit-video-modules",
+   "path": "INTEGRATION.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/art.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-narration-make/SKILL.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-art-make/SKILL.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/user_guides/api.md",
+   "lines": "292",
+   "quote": "Every response echoes the evaluator version that produced it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "7",
+   "quote": "Used MD5 hash of first 200 chars of assistant content for deduplication.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "14",
+   "quote": "A 34% false dedup rate made the dataset look much smaller than it was",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "9",
+   "quote": "review clips carry no audio_of so a definition edit leaves the clip silently stale",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-01T1314Z_u8_pd_status_spike_BOMBSHELL.md",
+   "lines": "34",
+   "quote": "**20th-century civil-rights speeches are systematically NOT on Gutenberg** because they aren't PD.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-01T1314Z_u8_pd_status_spike_BOMBSHELL.md",
+   "lines": "82",
+   "quote": "3. Commissioned transcription / licensed excerpts as a budget item — NOT free-PD assumption",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "45",
+   "quote": "don't relabel machine-authored cold passages as \"real.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "41-42",
+   "quote": "machine-authored cold/unseen passages (`humanApproved:false`)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "44-45",
+   "quote": "the passages are **machine-authored, not primary-source**. Say so — don't relabel machine-authored cold passages as \"real.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "43-44",
+   "quote": "55 legacy-generator clips shipped in-lane using raw voices",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "41-42",
+   "quote": "a page opened with the wrong voice while every validator — including the text and listen-QA transcript check — was green.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "40",
+   "quote": "every clip is stamped with a `course-tts model=<m> voice=<v>` comment-tag",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "49",
+   "quote": "a provenance stamp embedded in every mp3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "65",
+   "quote": "These are leads/pending shares, not a license, model-training record, or evidence of transfer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "65",
+   "quote": "Confirm receipt, rights, and permitted use before placing any material in a training corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "75",
+   "quote": "NPS excerpt-rights confirmation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "76",
+   "quote": "remain later gates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-p3-stale-clip-2026-09-29/README.md",
+   "lines": "3",
+   "quote": "that carries NO text hash (`audio_of`), so voiceover-sync cannot see staleness",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-p3-stale-clip-2026-09-29/README.md",
+   "lines": "7",
+   "quote": "**STALE** (older definition)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-p3-stale-clip-2026-09-29/README.md",
+   "lines": "14",
+   "quote": "Class gap: frame `rows[].audio_path` review clips have no `audio_of`, so a definition edit leaves the clip silently stale.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "29-31",
+   "quote": "a text edit (e.g. a definition rewording) leaves the clip silently stale with nothing in the validator suite able to detect it",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of DevFactory_Example_Backward-Design_Threads.docx",
+   "lines": "3 (textutil text)",
+   "quote": "[© model] = the example text is in copyright and shown only to illustrate the concept — find a free equivalent (or we license it).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of DevFactory_Example_Backward-Design_Threads.docx",
+   "lines": "111 (textutil text)",
+   "quote": "For any translated classic (the Odyssey, Greek drama, Beowulf), use a public-domain translation — a modern translation carries its own fresh copyright.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "210",
+   "quote": "Curriculum API merge_source is record-level; same record mixes CB-canonical statement with Haiku-generated misconceptions/assessment_boundaries. Treat curriculum API as retrieval/few-shot reference, NOT direct training data.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/fireworks_training_reference.md",
+   "lines": "62",
+   "quote": "- **Assessment:** Never benchmarked. Did this become sft-v6? Unknown. sft-v6 was deployed at some point with a pass rate of ~27%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "137",
+   "quote": "**Pattern:** Metadata bugs are easy to overlook because they don't affect training quality directly. But they accumulate over time and make later analysis harder. Worth fixing before the next DPO dataset build.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-29T1605Z_DBQ_realsource_smoke_FAIL_pack_content_issue_E2.md",
+   "lines": "40-43",
+   "quote": "- The metadata says \"Date: 1491-1607 (subject period; doc undated)\" for many docs, meaning the actual document is undated and the date field is filled in with the KC's subject period — not the doc's real authorship date",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_oracle_helper.md",
+   "lines": "12",
+   "quote": "8/8 md5 spot-checks matched between source and oracle/.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_curriculum_api_lan.md",
+   "lines": "88",
+   "quote": "- All generated stems carry `synthesis_provenance: curriculum_api/v0.1.0/<KC>` for Atlas audit",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles', cell M21",
+   "quote": "note that the google doc in H is the old version, the approved version is the s3 in column F",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "fb17482",
+   "lines": "48-50",
+   "quote": "Provenance per record (set during merge, not LLM-derived): ``merge_source`` — inceptbench_native | inceptbench_enriched | inceptbench_propagated | inceptbench_remapped |",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "Knowledge Schema Generator - AP USH Unit 2.xlsx",
+   "lines": "sheet '4. Consolidation Audit' (xl/worksheets/sheet10.xml), row 2, column F ('Sources')",
+   "quote": "AMSCO, Princeton, Exam",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/d13_dbq_corpus_pipeline_spec.md",
+   "lines": "33",
+   "quote": "**Every row carries source_snapshot_hash** — provenance integrity intact",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/CHANGELOG.md",
+   "lines": "81",
+   "quote": "- Verified extraction completeness: 8/8 md5 hash spot-checks MATCHED between source and oracle",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "29-30",
+   "quote": "review clips have no `audio_of` sha256, so a text edit (e.g. a definition rewording) leaves the clip silently stale",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "33",
+   "quote": "The cold/transfer passages are **MACHINE-AUTHORED** (`humanApproved:false`), **NOT real / primary-source**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/KB_FURTHER_IMPROVEMENTS.md",
+   "lines": "87",
+   "quote": "flip humanApproved:true ONLY on individually-reviewed items, stamped with provenance",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/audio/VOICE-IDENTITY-2026-09-16.md",
+   "lines": "16",
+   "quote": "i.e. the stamp's voice label is wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-agent-entrypoint-g3-practical-test-2026-08-06/REPORT.qmd",
+   "lines": "31",
+   "quote": "one ZIP-only file and two byte mismatches",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R18.md",
+   "lines": "25",
+   "quote": "exactly before trusting any line-level comparison against it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "29-31",
+   "quote": "frame `rows[].audio_path` review clips have no `audio_of` sha256, so a text edit (e.g. a definition rewording) leaves the clip silently stale with nothing in the validator suite able to detect it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0176-g3-peter-pan-pr-timeline.qmd",
+   "lines": "53",
+   "quote": "Every deploy was proven by **hashing the served file**, never by a 200 response",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/source-map.json",
+   "lines": "5",
+   "quote": "\"ai_use\": \"Resolve source IDs here; verify SHA-256 before treating archived bytes or KB entries as the reviewed input.\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "24",
+   "quote": "Source commit, source digest, release digest, live digest, route, and evidence identify the same immutable artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "146-147",
+   "quote": "clip basenames repeat across lessons so hash edits must match the full lesson path, never the bare basename.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "479",
+   "quote": "Preserve each historical source's identity, repository, edition or representation boundary, rights note, student material, and content digest.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "README.md",
+   "lines": "9",
+   "quote": "The [v3 synthetic corpus manifest](data/heretic_synthetic_v3/manifest.json) hashes 488 inputs and separate gold data.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "209",
+   "quote": "484/492 rows have dead URLs",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_result_tagging_discipline.md",
+   "lines": "9",
+   "quote": "Without per-record provenance, you can't filter, can't bisect quality regressions to a source, can't selectively re-ingest.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_curriculum_enrichment_mandatory_2026_05_11.md",
+   "lines": "21",
+   "quote": "- Manifest entries: record `curriculum_api_version`, `n_hits_per_row`, `query_used` per row for auditability.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "80",
+   "quote": "- Log every candidate, validation reason, selector score, selected index, model, qtype, row id, and final content hash.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "146",
+   "quote": "- Every dynamic run writes `retrieval_manifest.jsonl`, proving per row how many curriculum facts, local constraints, source docs, question-bank examples, and few-shots were used.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/v10_validated_artifact_integrity_20260524T0421Z.md",
+   "lines": "7",
+   "quote": "The current production solver in Den is byte-identical to the main-a promoted v10 artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/HANDOFF.md",
+   "lines": "33",
+   "quote": "When a full film is ready for that mechanic, select it explicitly by immutable ID/hash.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "62",
+   "quote": "if (!best || shared > best.shared) best = { film: f, shared };",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/d2d7d0787d6754d9.json",
+   "lines": "20",
+   "quote": "\"passage\": \"Four score and seven years ago our fathers brought forth on this continent,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "35",
+   "quote": "SVG markup is deterministic for a fixed input and context, but font rasterization can vary by host. Pin fonts and SVG renderer versions in a production render manifest and review the actual video at its delivery size.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/7fc2d6f7b8e85a6b/manifest.json",
+   "lines": "123",
+   "quote": "\"fonts\": \"the modules' font stacks as Chrome resolves them on this machine (not packaged)\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "167",
+   "quote": "WebVTT captions, a poster, and a manifest of module digests, narrator, renderer versions and file hashes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/art.js",
+   "lines": "2",
+   "quote": "// is offered an image by id and subject only; its bytes are checked against the finish's manifest before every use, and",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "evidence-plate/README.md",
+   "lines": "3",
+   "quote": "The source note records provenance but does not establish reuse rights.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/README.md",
+   "lines": "20",
+   "quote": "Validation refuses changed input bytes and overlong text; verification rejects changed output bytes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "core/README.md",
+   "lines": "32",
+   "quote": "The host should pin package versions and record installed package and font hashes for reproducible renders.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "60",
+   "quote": "duplicated the prior handoff, matched 0/55 current lesson digests and 0/7 current showcase digests, and produced 12 current-validator errors.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "The named shared-app ZIP is the prior handoff again and contains no current-build advantage.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Compare candidate downloads by exact bytes and canonical digests before reuse.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/README.md",
+   "lines": "3",
+   "quote": "Provenance (prompt, refs, sha256) in `art-manifest.json`; `art-map.json` tells `tools/film/render-narrated.js --art-map` which painting each storyboard shot uses.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "305",
+   "quote": "Record the actual provider route, model identifier, voice, script version, generation settings, file format, sample rate, channel count, duration, and production date.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "650-652",
+   "quote": "Every student-facing source record carries creator, title or description, date, repository or publisher, stable URL or local locator, exact excerpt boundary, rights basis, adaptation disclosure, retrieval date, and content digest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.1 (pdftotext line 26)",
+   "quote": "Peter Pan Part 1.md, SHA-256 0d87e2a5...f421b. Treated as immutable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "20",
+   "quote": "A clip without the stamp did not come from the pinned route.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,436 @@
+{
+ "id": "sample-every-unit-the-claim-covers",
+ "title": "Sample every unit the claim covers",
+ "statement": "Test a claim across everything it covers, every lesson, unit, standard, bank and population, not a showcase or convenient slice, reporting the share that holds and what went unchecked.",
+ "example": "One model scored about 9 points lower on a single unit than across the whole course.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "alignment"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An analytics note on the AP project flagged that its evaluation set sampled only three units of the course (`analytics.md`, line 156). A course check found one model at 59.0% on a single unit against 68.22% over the full course, about 9 points lower (`2026-05-27T2130Z_v80b_u1_baseline_course_check.md`, lines 24, 25 and 29), and a lab note found some standards failing systematically while others systematically passed (`system_improvement_brainstorm.md`, line 39). Everything a claim covers means every unit, standard, course, code path, item bank and learner population. Check hardest where the subject is least documented.",
+ "against": "The single-unit result rests on one seed of 100 items (`2026-05-27T2130Z_v80b_u1_baseline_course_check.md`, line 7). No per-course failure rates are given, and the fact gap is offered only as a partial cause: \"This partially explains why APWH factual_accuracy failures are more common than APUSH failures.\" (`icloud-work/ML learnings/knowledge_and_rag_pipeline.md`, line 217). The weaker memory for those courses is asserted, not measured (`icloud-work/ML learnings/what_is_ap_and_why_it_matters.md`, line 99). Even a full simulation is not field evidence: if the Rasch model is misspecified, all simulation results overestimate actual field performance (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). The bias sat in the running estimate, not in the score the engine reports. The same audit's finding taxonomy counts 3 of 18 lessons, the reviewed one plus two (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`), where the skill file and the gradual-release dimension say 1 of 18; on either count most lessons lacked it.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "156",
+   "quote": "⚠ Unit-coverage skew: eval set only samples APUSH Units 3/6/8 — main agent should blend before deploy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-27T2130Z_v80b_u1_baseline_course_check.md",
+   "lines": "29",
+   "quote": "v80b on U1 is ~9pp below its full-course aggregate. U1 is a harder period for the chain.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/system_improvement_brainstorm.md",
+   "lines": "39",
+   "quote": "Some substandards (KC-1.1.I.* on MCQ_SET) systematically fail; others systematically pass.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-27T2130Z_v80b_u1_baseline_course_check.md",
+   "lines": "24",
+   "quote": "| v80b U1-alone (this probe) | n=100 U1 raw | **59.0%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-27T2130Z_v80b_u1_baseline_course_check.md",
+   "lines": "25",
+   "quote": "| v80b full course | 3×150 | 68.22% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "97",
+   "quote": "Why 28 units matters: a system that performs well on APUSH but poorly on APWH/APEURO is not production-ready. The 97% target is across ALL 28 units, not just the most-trained ones.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "99",
+   "quote": "**The APWH/APEURO challenge:** These courses have less internet training data than US history. The model's parametric memory is weaker for World and European history → more hallucination risk → factual_accuracy harder to achieve.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "217",
+   "quote": "**Coverage gaps:** Some units have more facts than others. APUSH tends to have 150-300 facts per unit; APWH and APEURO units may have 100-200. This means APWH/APEURO questions have slightly less curriculum grounding. This partially explains why APWH factual_accuracy failures are more common than APUSH failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "113",
+   "quote": "The most relevant finding: **\"Fine Tuning vs. RAG for Less Popular Knowledge\"** (SIGIR-AP 2024) showed that RAG surpasses fine-tuning by a large margin specifically for rare or less popular factual knowledge. AP history content includes many obscure primary source documents, minor historical figures, and precise dates — exactly the type of content where parametric knowledge is unreliable in any model under 100B+ parameters.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "12",
+   "quote": "| 4 | Simulations were G3-scoped (630 items, G3 prior, simplified selector) but described as \"G2–G5, production code\" |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "134",
+   "quote": "The initial-run results (r=0.948, rel=0.928, RMSE=4.12 RIT) could not expose production-path effects",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "26",
+   "quote": "The v1 production-path re-run (2026-07-02) flagged RMSE 4.73 RIT and a **+2.62 RIT systematic overestimate** — we reported the regression rather than the earlier, prettier number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "26",
+   "quote": "| 1 | Population baseline (206.4 / 72nd pctile) is a biased slice |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "40",
+   "quote": "n = 915, mean RIT 196.0, mean percentile 46.3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "40",
+   "quote": "The old figure was not an arithmetic slip but a compound of three biases we have now quantified",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "97",
+   "quote": "If the Rasch model is misspecified, all simulation results — including the r=0.967 theta recovery and rel=0.931 reliability — overestimate actual field performance.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "13",
+   "quote": "Real pass rate 48.9 % (n = 266)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "13",
+   "quote": "**Real pass rate 37.0 % (n = 897, full run).** F1 was a lucky early-window slice; later items pass-rated lower.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "61",
+   "quote": "A measurement-integrity report got partially fooled by its own measurement window.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_324d5e51_what_is_really_going_on.md",
+   "lines": "54",
+   "quote": "The 70.2 % on n=225 is real for *the items that survived*, but the survival itself is not random — it's truncated at the queue's natural drain point.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1005",
+   "quote": "The completion audit caught an important scope error: the prior 135/135 gate used the replay harness's default `first_per_type` selector. That proves each unit's first benchmark standard per type, not the full benchmark files and not standard diversity across each file.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/goal_runs/RUNNING_SUMMARY.md",
+   "lines": "16",
+   "quote": "- `official_n15_after_73012b8_20260514T223736Z`: 15/15 = 100% on APUSH Unit 3 first-cluster smoke.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/goal_runs/RUNNING_SUMMARY.md",
+   "lines": "17",
+   "quote": "- `official_n30_balanced_20260514T225509Z`: 20/30 = 66.67%; expansion exposed the second APUSH Unit 3 independence-movement cluster.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/goal_runs/official_n30_balanced_after_7e027d7_20260515T011350Z/RESULTS.md",
+   "lines": "33",
+   "quote": "- Patched the smoke harness selector so `--per-type 6` actually produces 30 rows, balanced 2 easy / 2 medium / 2 hard per type.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/handoff_from_calibration/README.md",
+   "lines": "66",
+   "quote": "- The lab marks a packet `confidence: low` if the analysis was on a partial export (eval_ratio < 60%) — main-a should wait for a fuller draw.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "77-78",
+   "quote": "G3 iter-3's real \"reject-the-alternative\" modeling held in 1 of 18 lessons; the reviewed lesson (U2·L1) was that one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "191",
+   "quote": "iter-3's real \"reject-the-alternative\" think-aloud existed in **3 of 18** lessons — the reviewed lesson (U2·L1) plus two",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "78-79",
+   "quote": "Recompute every interaction-quality claim across ALL lessons and report the fraction that actually hold",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "397",
+   "quote": "**U1-L1 is not shape-representative.** Its passage came from `v3_showcase`, not `v3_gen`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "29",
+   "quote": "Unreviewed content cannot inherit the result of a strong sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "29",
+   "quote": "A coverage manifest names every governed object, checked scope, unchecked scope, failures, and exclusions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "118-119",
+   "quote": "Recompute every quality claim across ALL lessons, report the fraction that holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "120",
+   "quote": "real modeling in 1 of 18 lessons — the reviewed one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "121",
+   "quote": "A self-audit is a hypothesis.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "123",
+   "quote": "was \"true by count, misleading by quality — 2-3 trivial say-backs; 5 of 7 spoken moments canned.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D1-D4.md",
+   "lines": "301",
+   "quote": "recurrence of the PP-12 defect pattern one lesson after its fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md",
+   "lines": "47",
+   "quote": "`AUDIO_STATUS.md` falsely claims all of Unit 4 is done — only 3 of 9 are",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/g5_analysis_digest.md",
+   "lines": "15",
+   "quote": "Any G5 gate report claiming format compliance based only on these artifacts would be dishonest.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "77-78",
+   "quote": "G3 iter-3's real \"reject-the-alternative\" modeling held in 1 of 18 lessons; the reviewed lesson (U2·L1) was that one.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md",
+   "lines": "47",
+   "quote": "run every I-do/we-do/you-do, report the fraction with genuine modeling (G3 iter-3: 1 of 18).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "29",
+   "quote": "A coverage manifest names every governed object, checked scope, unchecked scope, failures, and exclusions.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "29",
+   "quote": "Unreviewed content cannot inherit the result of a strong sample.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "191",
+   "quote": "existed in **3 of 18** lessons — the reviewed lesson (U2·L1) plus two",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "64",
+   "quote": "It was run on the **true production selection path** — the engine's real `select_next()`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "64",
+   "quote": "against **all 650 items** (including `bank_ebsr_191_200.json`, which the old harness silently omitted; old runs used 630 items across 12 of 13 bank files)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "84",
+   "quote": "- **(a) Deterministic first passage.** Production selection is deterministic from the fixed session-start prior — the first passage is identical in 100% of sessions, an exposure/security issue. Fix queued: randomize among near-optimal first passages.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "70",
+   "quote": "| Bias | −0.24 RIT | **+2.62 RIT** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "48",
+   "quote": "not in the shipped score — re-basing the final score on the score report's MLEF `overall_logit` (the number students actually receive) removed it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "16",
+   "quote": "| Sim 1 bias | +2.62 RIT",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "16",
+   "quote": "| −0.46 RIT | −0.38 RIT | **−0.04 RIT** (near-eliminated) | abs(bias) < 0.5 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "78",
+   "quote": "The RMSE worsening is partly compositional — the wider prior includes the floor region",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "444",
+   "quote": "Existing source/native evidence is extensive but representative; it cannot silently waive unexecuted cells or classify them as human judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Anatomy-of-a-Perfect-Course.md",
+   "lines": "59-60",
+   "quote": "One excellent lesson proves only that lesson and explicitly exercised shared surfaces.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "133-134",
+   "quote": "A claim about \"all 55 lessons\" verified by opening 2 of them is a sampling gap, not verification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "A sample can illustrate; it cannot establish 55-lesson consistency or progression.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "157",
+   "quote": "Never extrapolate one inspected lesson to unchecked lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "93",
+   "quote": "**Simulation scope.** The initial simulations recorded in the per-simulation sections below were run on a Grade-3-configured 630-item bank, with true ability drawn from a G3 fall prior N(−1.5, 1.0), and used a closed-form Fisher-information selector rather than the full production shadow-test path.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Fine Tuning vs. Retrieval Augmented Generation for Less Popular Knowledge (SIGIR-AP 2024)",
+   "url": "https://arxiv.org/html/2403.01432v3"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

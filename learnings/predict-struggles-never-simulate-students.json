@@ -1,0 +1,64 @@
+{
+ "id": "predict-struggles-never-simulate-students",
+ "title": "Predict struggles, never simulate students",
+ "statement": "To anticipate where learners will struggle, have a model predict their difficulties from learner data rather than role-play a struggling student.",
+ "example": "One relayed finding pairs above 90% accuracy on misconceptions with below 25% problem-solving accuracy in the same model.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A course-evaluation engine in the reading project asks a model to predict where students will struggle, never to simulate them, because making a model behave like a struggling student suppresses the reasoning that accurate prediction needs; it relays a figure of above 90% misconception accuracy alongside below 25% problem-solving accuracy in the same model (`grade3-reading/ti-courseplans/predictor/README.md`, line 9). It cites population-level prediction at r ≈ 0.72–0.79 across three research groups (He-Yueya et al. 2024, Lu & Wang 2024, Xu et al. 2025) (line 13). The model never role-plays a student, and numbers such as learning-model estimates are meant to come in as data from learner profiles (lines 34-35).",
+ "against": "The figures are relayed second-hand from a BrainLift, with no links to the studies, and the engine is a scaffold that does not validate itself, with a synthetic placeholder in place of real learner profiles: its outputs must be checked against real student outcomes before they are trusted (`grade3-reading/ti-courseplans/predictor/README.md`, lines 37 and 53-57). Scripted readers that play a stuck learner, kept in another record, do a different job: exercising every branch of a lesson, not predicting difficulty.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/predictor/README.md",
+   "lines": "9",
+   "quote": "The **Student Data Paradox**: making an LLM behave like a struggling student requires suppressing the reasoning capability you need for accurate prediction. >90% misconception accuracy correlates with <25% problem-solving accuracy in the same model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/predictor/README.md",
+   "lines": "13",
+   "quote": "reaches r ≈ 0.72–0.79 population-level prediction across three independent research groups (He-Yueya et al. 2024, Lu & Wang 2024, Xu et al. 2025)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/predictor/README.md",
+   "lines": "34",
+   "quote": "It does not simulate student response sequences. The LLM never role-plays as a student.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/predictor/README.md",
+   "lines": "35",
+   "quote": "Those numbers come from the student profiles as input data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/predictor/README.md",
+   "lines": "37",
+   "quote": "It does not validate itself. Outputs MUST be validated against real student outcomes data before they're trusted (Phase 6 in the build plan).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

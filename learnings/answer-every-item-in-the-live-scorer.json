@@ -1,0 +1,157 @@
+{
+ "id": "answer-every-item-in-the-live-scorer",
+ "title": "Answer every item in the live scorer",
+ "statement": "After items are built or rebuilt, submit the right answer, each wrong answer and an incomplete one to the live scorer, since scoring that loaded can still be wrong.",
+ "example": "A behavioural sweep found 41 rebuilt choice items paying 0 for every answer.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A behavioural sweep of a Grade 5 course found 41 choice items paying 0 for every answer, because their scoring compared the response with stale option text instead of the key's id, and the worklog notes that writing a file and reading it back catches only that it landed (`grade3-reading/knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd`, lines 180 and 235-236). After the fix, a full re-sweep reported 772/772 paying full credit (the same file, line 238). In a Grade 3 course, a match item's right buckets were keyed twice with a match maximum of 1, which would have let a renderer that follows the spec accept an incomplete response (`grade3-reading/knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd`, lines 99-100). Scoring that loaded, or was checked only on the right answer, can still pay nothing, pay for a wrong answer or accept an incomplete one.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "235-236",
+   "quote": "A behavioral sweep found 41 Unit-2 MCQs paying 0 for every answer because response processing compared `RESPONSE` against stale literal option text instead of the key id.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "180",
+   "quote": "PUT/read-back catches XML landing, but behavioral scoring sweeps are needed for response-processing bugs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "238",
+   "quote": "A full re-sweep reported 772/772 paying full credit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "99-100",
+   "quote": "right buckets keyed 2x with `match-max=1`, which would have let a spec-conformant renderer accept an incomplete response",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0241-alpha-read-contract-investigation-and-packager-build-2026-06.qmd",
+   "lines": "106-107",
+   "quote": "`map_response` is not a real QTI template (invented), EBSR scoring would be silently wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/README.md",
+   "lines": "308-310",
+   "quote": "The committed evidence is `course-json-live-evidence/3`: it binds schema, validator, projector, source, and manifest digests and proves one correct response plus every per-response negative case for all nine fixture items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "103",
+   "quote": "the same match-max defect was flagged as still-open on two other non-P0 live",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "138",
+   "quote": "Verify JSON health and one actual answer after launch; HTTP200 or environment presence alone is insufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/README.md",
+   "lines": "17",
+   "quote": "A browser submission on G5-U9-L1/p2 accepted the original playwright explanation and enabled Next page (round-2/g5-u9/dom/probe-playwright-real-scoring.txt).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "139-143",
+   "quote": "The scoring sweep was a major lesson. Raw XML read-back was not enough. A set of Unit 2 MCQs had stale literal option text in response processing, causing a response-processing desync. Behavioral scoring caught and fixed 41/41 of those. This became a rule: course-serving means live scoring behavior, not just valid looking QTI.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "322",
+   "quote": "my status-200 probes hid `{\"ok\":false,\"error\":\"no_api_key\"}` — every open answer on 3407 would have come back 'unscored'. Restarted with the key mapped into the process env; real-body probe now `ok:true, band full`. Rebuild script asserts a real judge answer before serving.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "938",
+   "quote": "test exercises the happy path fully, a precondition that only matters on partial input is invisible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "98-99",
+   "quote": "the WitW review found vocab say-text/oral answers displayed and captured in the UI, but never sent to the evaluator, so spoken vocab answers went unassessed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "README.md",
+   "lines": "130-131",
+   "quote": "Check the JSON result and a real scoring request; HTTP 200 alone is not a healthy scorer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "135-137",
+   "quote": "It needs the dev server, because the open answers go to the live scorer: an unscored walk proves nothing about the gates",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-moments.mjs",
+   "lines": "82",
+   "quote": "wrong move first: must be refused, with a reason",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/scoring-sweep-2026-07-06/README.md",
+   "lines": "9-11",
+   "quote": "41 Unit-2 MCQ items whose response-processing block compared the response against a stale literal (option text from an earlier revision) instead of the keyed choice id — every answer scored 0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "57-58",
+   "quote": "Walker: add MODEL_ANSWERS entries (scripts/verify/walk-lesson.mjs) for every open-response gate (speak / dialogue opening / scr open blanks).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

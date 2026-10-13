@@ -1,0 +1,108 @@
+{
+ "id": "say-how-many-answers-to-choose",
+ "title": "Say how many answers to choose",
+ "statement": "A multiple-select item says in its stem how many answers to choose, or to choose all that fit, and that number matches the key.",
+ "example": "A stem that says \"select two\" while three answers are keyed fails.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "key",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "When the evaluator gained selectable-text and two-part evidence items, its audits began to fail a multi-answer item that leaves the student guessing how many to pick, and one whose stated count or selection limits disagree with the number of keyed answers (`shadow-bench/src/inceptbench/prompts/question/hot_text_evaluation.txt`). The two-part audit applies the same rule to an evidence part with several keys (`shadow-bench/src/inceptbench/prompts/question/ebsr_evaluation.txt`). A stated count, a 'select all that' framing, or limits that pin the number each meet it.",
+ "against": "The first version over-fired: it 'wrongly failed multi-select hot-text whose selection count is fixed by min_selections/max_selections, and would also have failed valid 'select all that [criterion]' stems' (`shadow-bench`, git commit 246a67d, lines 33-35), and was narrowed to accept a stated count, select-all framing or limits that pin the number. The 0.00% rests on a small group: '- **Grade 6 MSQ (20 questions):** 0% pass rate - all failing' (`icloud-work/incept/nova_forge/EXECUTIVE_SUMMARY.md`, line 296). The low pass rate also mixes causes, among them keys that left out true options (`icloud-work/incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md`), so it is not the missing instruction's effect alone.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "83-84",
+   "quote": "- the key has more than one span AND `student_can_determine_how_many_to_select: NO` (the student is left guessing how many spans to pick); OR",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "85-86",
+   "quote": "- a stated count, `min_selections`, or `max_selections` disagrees with `number_of_keyed_answers` (e.g. stem says \"select two\" but three ids are keyed, or `max_selections` is below the keyed count).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "118-119",
+   "quote": "When Part B is multi-select, the stem must tell the student how many pieces of evidence to select (e.g. \"Select two…\"); a multi-key Part B with no stated count fails here.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "75-77",
+   "quote": "Set `student_can_determine_how_many_to_select: YES` if ANY of these hold: the stem states a count; the stem frames an unbounded \"select all that [criterion]\" task; OR `min_selections` / `max_selections` are present and pin the number to select",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "246a67d",
+   "lines": "33-35",
+   "quote": "HT-2's no-count MUST-FAIL clause wrongly failed multi-select hot-text whose selection count is fixed by min_selections/max_selections, and would also have failed valid 'select all that [criterion]' stems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "79",
+   "quote": "| **MSQ** | 21.43% | 0.00% | 6.15% | 21.08% | 15.27% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "81",
+   "quote": "**Key Finding:** MSQ (Multiple Select Questions) have the lowest pass rate overall, with Grade 6 having 0% pass rate on MSQs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "83",
+   "quote": "- **Fix:** Add: \"Select 1 correct answer.\" after the stem to remove ambiguity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "84",
+   "quote": "- **Issue:** Missing guidance on how many answers to choose creates ambiguity for students.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "257",
+   "quote": "**Problem:** Missing \"Select all that apply\", unclear wording",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "45",
+   "quote": "**MSQ** — stem states the explicit count (`\"Which TWO…\"`).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

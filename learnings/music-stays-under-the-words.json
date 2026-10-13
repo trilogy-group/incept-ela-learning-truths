@@ -1,0 +1,180 @@
+{
+ "id": "music-stays-under-the-words",
+ "title": "Music stays under the words",
+ "statement": "Keep music under the narration, lowest where it teaches, and check the final mix by ear for clear words, not only the clean voice track.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The narrated opening's original score had passed technical level checks but had never been auditioned, and the handover states that technical audio measurements do not establish musical quality, intelligibility under speech or acceptable transitions. Its mixing rules keep speech consistently intelligible, lower the score under narration with ducking where useful, and check that the mix neither pumps distractingly nor becomes loud in pauses, so the score stays subordinate during narration. The check is made on the exported file at the start, every scene transition, the most intense musical passage and the ending, because a waveform or a codec report alone is not an audition.",
+ "against": "No delivery target was agreed: \"Exact mastering targets should be selected and documented for the delivery platform; they have not been agreed here.\" (`g9-archive/handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip!/Othello-handover/Othello-project-handover.txt`, line 323). No person has listened to the mix, at normal or quiet level (`g9-film-v01-render/QA.md`, lines 3 and 122), and whether its ducking \"reads as breathing or as pumping is a listening judgement\" (the same file, line 94). Transcription over music is noisy in its own right: one timing offset was \"whisper's own early bias over music, not caption lateness\" (the same file, line 76), and a misheard name did not reproduce on an immediate re-transcription of the same mix segment (the same file, line 114).",
+ "evidence": [
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "323",
+   "quote": "Keep speech consistently intelligible, lower the score under narration, and use ducking where useful. Check that the mix does not pump distractingly or become loud in pauses.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "325",
+   "quote": "Check the actual exported file, including the start, every scene transition, the most intense musical passage, and the ending.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "325",
+   "quote": "A waveform or a codec report alone is not an audition.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "91",
+   "quote": "Technical level checks were performed, but the score was not auditioned. Technical audio measurements do not establish musical quality, intelligibility under speech, or acceptable transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "384",
+   "quote": "The score supports speech and remains subordinate during narration.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "21",
+   "quote": "Definitions are instruction, so the score must be especially quiet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "19",
+   "quote": "The quotation and the dramatic-irony explanation lead, not the music.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "15",
+   "quote": "Do not strike over the word “kill.”",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "7",
+   "quote": "a low impact follows the word rather than covering it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "20",
+   "quote": "Respect the gravity; no melodramatic hit on a person’s name.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "24",
+   "quote": "Keep the score clearly beneath speech, with approximately 6–9 dB of additional ducking during narration as a starting mix move.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/fitted/v01/fitted-cue-sheet.json",
+   "lines": "11",
+   "quote": "scene 5 impact removed so the quotation and dramatic-irony explanation lead",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/fitted/v01/fitted-cue-sheet.json",
+   "lines": "12",
+   "quote": "scene 8 impact moved to follow",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "96",
+   "quote": "near-silence under \"I am not what I am\" 4.6–9.8 s of scene 5; pulse removed in scene 7",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "100",
+   "quote": "Gemini transcription (`tools/narration/verify_take.py`, no script hint) of each scene cut from the **final mix**:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "81",
+   "quote": "Voice over music, measured on the delivered stems during speech:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "86",
+   "quote": "| 2 | 32.92 | 14.1 | — |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "91",
+   "quote": "| 7 | 30.22 | 17 | 2.6 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v03/render/QA.md",
+   "lines": "9",
+   "quote": "Final-mix transcription (Gemini, no hint): 7/8 scenes exact; scene 1 \"lie/lies\" transcriber bias as before.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "24",
+   "quote": "Audition intelligibility at normal and quiet playback levels.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v00/FULL-WIP.md",
+   "lines": "7",
+   "quote": "review the whole film at normal and quiet playback",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

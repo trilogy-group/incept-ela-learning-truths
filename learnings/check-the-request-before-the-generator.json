@@ -1,0 +1,64 @@
+{
+ "id": "check-the-request-before-the-generator",
+ "title": "Check the request before the generator",
+ "statement": "When a request contradicts itself or the course's scope, or different generators fail it the same way, fix or reject the request before changing the generator.",
+ "example": "In one gap analysis, 2 of 4 wrong-unit failures were faults in the benchmark's own data.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP generator's benchmark, two different models hard-failed the same document-based item, which the notes take as a sign that some evaluation samples are intrinsically difficult: a wrong unit mapping, an impossible spec, or a judge edge case (`icloud-work/ap-social-studies-generator/data/model_findings.md`). On one topic the judge failed one item for leaving out a civilization its objective named and another for including it, as belonging to a different course, and it failed an item whose request labelled a document-based essay easy, a level it ruled such a task can't have (`icloud-work/ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md`). In the final gap analysis, 2 of 4 wrong-unit failures were benchmark data quality issues (`icloud-work/ap-social-studies-generator/python/CLAUDE.md`).",
+ "against": "Whether a task type can be easy is the judge's view, and a scaffolded short source task could be easy for some students. That a request was impossible is inferred from two models failing the same item, and the notes themselves list other explanations, among them a judge edge case (`icloud-work/ap-social-studies-generator/data/model_findings.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "829",
+   "quote": "Both models hard-failed at the same DBQ item (item 33) — confirming some eval samples are intrinsically difficult (wrong unit mapping, impossible spec, or IB v2.4.0 edge case).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "50",
+   "quote": "The question fails to address the specific learning objective requested (Inca Empire) and instead focuses on a different group (Pueblo peoples).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "100",
+   "quote": "The question targets the wrong curriculum. AP US History focuses on societies in what is now the United States; the Inca Empire is a South American civilization assessed in AP World History.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "60",
+   "quote": "There is a clear mismatch between the labeled difficulty ('easy') and the actual task complexity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "113",
+   "quote": "- **4 curriculum alignment** (wrong unit) -- 2 are benchmark data quality issues (unfixable)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

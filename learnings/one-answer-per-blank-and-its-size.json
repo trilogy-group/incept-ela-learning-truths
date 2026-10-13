@@ -1,0 +1,136 @@
+{
+ "id": "one-answer-per-blank-and-its-size",
+ "title": "One answer per blank, and its size",
+ "statement": "Write each blank so that only one answer fits, and say whether a term, a phrase or a concept is wanted.",
+ "example": "In one run, 15 of 28 fill-in items failed clarity.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "key",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one AP benchmark run, 15 of 28 fill-in items failed clarity because their blanks allowed several answers at different levels of detail; the judge wrote that \"The range of acceptable answers for blank 1 creates ambiguity about the expected level of specificity\". The run report then set two requirements: one clear correct answer per blank, and a stated granularity (term, phrase or concept). These are the report's recommendations after the failures, not a tested fix. Before reading the key, list what students at that level might reasonably write, since correct answers missing from the accepted set leave the item without a single answer. An item evaluator's prompt runs this check and fails the item when two or more such answers fit (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, lines 440 to 445).",
+ "against": "The judge also penalized one obvious fix, listing several pre-written acceptable answers: \"Providing multiple pre-written acceptable answers reduces it to pattern matching rather than requiring critical thinking\". One answer in meaning may still have several accepted wordings.",
+ "evidence": [
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "86",
+   "quote": "| Dimension | Failures (of 28 fill-in) |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "89",
+   "quote": "| Clarity | **15 failures** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "93",
+   "quote": "**New clarity failures:** Fill-in blanks are ambiguous about expected answers.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "97-98",
+   "quote": "The range of acceptable answers for blank 1 creates ambiguity about the expected level of specificity",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "260",
+   "quote": "1. Each blank should have ONE clear correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "261",
+   "quote": "2. Specify expected granularity (term, phrase, concept)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "115-116",
+   "quote": "Providing multiple pre-written acceptable answers reduces it to pattern matching rather than requiring critical thinking",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "440",
+   "quote": "Apply this check ONLY to fill-in-the-blank items; skip entirely for multiple-choice, multiple-select, true/false, and matching question types.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "442",
+   "quote": "1. Read the stem WITHOUT looking at the accepted-answer list.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "445",
+   "quote": "4. If TWO OR MORE of your completions are factually correct, grammatically fit, AND are NOT in the accepted-answer set, this is a **concrete, unambiguous violation**: the question does not have a single correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "449",
+   "quote": "Example of violation (topic-agnostic): Stem: \"A person who writes books is called a _____.\" Accepted answers: only \"author\". A student could also correctly answer \"writer\" because the stem's description fits that just as well.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "92",
+   "quote": "With meaning_${i} as its cue, does gap_${i} point to word_${i} rather than to any other word in deck?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "53",
+   "quote": "\"accept\": [\"any OTHER word of this deck that would also fit the blank; usually none\"]}.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "117",
+   "quote": "\"${other.word}\" fits the sentence too. But this meaning is ${w.meaning}. Which word is that?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "101",
+   "quote": "assert.equal(fits.correct, null, \"another deck word that fits the sentence is not a miss\");",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

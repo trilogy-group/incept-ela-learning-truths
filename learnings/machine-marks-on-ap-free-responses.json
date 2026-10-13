@@ -1,0 +1,54 @@
+{
+ "id": "machine-marks-on-ap-free-responses",
+ "title": "Machine marks on AP free responses",
+ "statement": "Can a machine marker score AP-style short answers and essays reliably enough to award mastery, once calibrated against independently scored responses?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "marking",
+  "evaluation",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An AP history course's production plan names the case where a response cannot be graded confidently: record it without verified mastery or XP, route low-confidence constructed responses to human review, and calibrate against independently scored AP responses before enabling mastery effects. Its status file lists target-runtime mastery, XP, event and accessibility behaviour as contracted, not run, so no calibration result exists. Until one does, the plan gives a machine score of a free response no power over mastery.",
+ "against": "Published evidence points both ways: one benchmark found model judges scoring educational responses higher than people and agreeing with them only in part, while a large study found model and human markers of short answers agreeing almost as well as people agree with each other.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "123-125",
+   "quote": "1. Record the response without verified mastery or XP. 2. Route low-confidence constructed responses to human review. 3. Calibrate against independently scored AP responses before enabling mastery effects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "51",
+   "quote": "Target-runtime mastery, XP, event, and accessibility behavior | Contracted, not run",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "EduBench (2025), arXiv:2505.16160",
+   "url": "https://arxiv.org/pdf/2505.16160"
+  },
+  {
+   "ref": "Henkel et al. 2024",
+   "url": "https://arxiv.org/abs/2405.02985"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

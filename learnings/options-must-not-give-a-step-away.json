@@ -1,0 +1,43 @@
+{
+ "id": "options-must-not-give-a-step-away",
+ "title": "Options must not give a step away",
+ "statement": "When a stem asks for two steps, options that all share the first step's outcome give it away; drop that step or let the options span its outcomes.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "stem",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An item evaluator's closed-ended rubric gives the case of a stem that asks students to identify the sentence with an error and then choose its correction, while every option concerns one sentence: the identification step is given away by the option set, and the fix is to drop the first step or offer options spanning all the sentences (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). The rule came from issue 382 and is pinned by a prompt-rule test.",
+ "against": "It does not apply when the options' own text names the first step's output, because the student then commits to both steps in one choice (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, line 156).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "603",
+   "quote": "If the stem asks the student to do two things (e.g., \"First identify the sentence with the error, then choose the correction\"), but the answer options only correspond to ONE of the source items, the identification step is given away by the option set.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "603",
+   "quote": "Fix is either to drop the first step from the stem or to provide options spanning all source items.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

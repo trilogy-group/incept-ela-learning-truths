@@ -1,0 +1,296 @@
+{
+ "date": "2026-10-13",
+ "fixes": [
+  {
+   "id": "aim-every-task-at-the-lesson-question",
+   "changed": {
+    "statement": {
+     "from": "Give every task's writer the lesson's one question, and point each task at what bears on it, preferring the lines a judge found help answer it.",
+     "to": "Give every task's writer the lesson's one question, and point each task that can serve it at what bears on it, preferring the lines a judge found help answer it."
+    },
+    "scope": {
+     "from": "domain",
+     "to": "universal"
+    }
+   },
+   "why": "The record's own against says the glossary, key words and word in focus are chosen for reading the text, not for the question, and the code agrees (direct the line also never names it), so 'point each task' claimed more than the evidence shows. Giving every task the lesson question and preferring lines a judge found relevant is not tied to one exam, programme or product, so it holds for lessons in other subjects."
+  },
+  {
+   "id": "ask-a-choice-question-open",
+   "changed": {
+    "against": {
+     "from": "none found; the open-stem test is only a phrase list (`g9/transformer/src/glue/threejs-render.js`), and on the last try the answer is given in place of a wrong option's feedback (`g9/transformer/src/glue/threejs-archivist.js`).",
+     "to": "The open-stem test is only a phrase list (`g9/transformer/src/glue/threejs-render.js`), and on the last try the answer is given in place of a wrong option's feedback (`g9/transformer/src/glue/threejs-archivist.js`)."
+    }
+   },
+   "why": "The against opened with 'none found' and then listed two limits. It now states just the limits, starting with a capital."
+  },
+  {
+   "id": "ask-the-lessons-question-first-and-last",
+   "changed": {
+    "against": {
+     "from": "The 3D render does not carry the return yet: \"Closing tasks are not exported: say it back, debate, the apply task and the learning question's end-of-lesson return.\" (`g9-transformer-audit/2026-10-09-builders.json`, line 1). The design comes from another build, and the sources give no measure of what the second answers add. Its export to a 3D version leaves out the return at the end: \"its return at the end of the lesson is a closing step, not exported\" (`g9/transformer/src/glue/threejs-render.js`, line 234). The first answer is optional (\"Code only: both answers are saved, never marked; the first is optional.\", `g9/transformer/src/mechanics/learning-question.js`, line 89).",
+     "to": "The export to a 3D version leaves out the return at the end: \"its return at the end of the lesson is a closing step, not exported\" (`g9/transformer/src/glue/threejs-render.js`, line 234; `g9-transformer-audit/2026-10-09-builders.json`, line 1). The design comes from another build, and the sources give no measure of what the second answers add. The first answer is optional (\"Code only: both answers are saved, never marked; the first is optional.\", `g9/transformer/src/mechanics/learning-question.js`, line 89)."
+    }
+   },
+   "why": "The against said twice that the 3D export leaves out the end-of-lesson return, once from the audit and once from the code. It now says it once and cites both."
+  },
+  {
+   "id": "asking-about-a-contrast-the-text-states",
+   "changed": {
+    "scope": {
+     "from": "domain",
+     "to": "universal"
+    }
+   },
+   "why": "Asking about a contrast the text states outright without giving the answer away is a problem for open questions on any text in any subject. It is not one programme's convention or one product's setting."
+  },
+  {
+   "id": "check-where-spacing-rules-put-questions",
+   "changed": {
+    "scope": {
+     "from": "domain",
+     "to": "universal"
+    }
+   },
+   "why": "Checking which placements a spacing rule leaves holds for any film that stops for questions. Only the two rules' values (20 seconds, non-adjacent parts) belong to one product, and the learning doesn't depend on them."
+  },
+  {
+   "id": "delivery-questions-need-choice-and-context",
+   "changed": {
+    "example": {
+     "from": "On the first live proof the judge, given the surrounding lines, picked the written delivery on both texts at p 0.98 or above.",
+     "to": "On the first live proof the judge, given the surrounding lines, picked the written delivery on both texts with a confidence of 0.98 or above."
+    }
+   },
+   "why": "'p' was an abbreviation nobody explained. It is the judge's probability for its verdict, and another record in the repository uses p for a significance value."
+  },
+  {
+   "id": "find-every-line-that-proves-the-claim",
+   "changed": {
+    "against": {
+     "from": "The search covers at most eight lines (`g9/transformer/src/mechanics/evidence-hunt.js`, line 53), and the judgments on the extra lines are advisory, with no labelled cases. The pool is capped at eight lines, so a fair line outside it is left to the play-time check: \".filter((i) => !keyed.has(i)).slice(0, 8);\" (`g9/transformer/src/mechanics/evidence-hunt.js`, line 53). Each verdict came from one judge sample, and the judge checks' precision is not yet measured (`g9/transformer/v01/QA.md`, line 46).",
+     "to": "The pool is capped at eight lines, so a fair line outside it is left to the play-time check: \".filter((i) => !keyed.has(i)).slice(0, 8);\" (`g9/transformer/src/mechanics/evidence-hunt.js`, line 53). The judgments on the extra lines are advisory and came from one judge sample each, and with no labelled cases the judge checks' precision is not yet measured (`g9/transformer/v01/QA.md`, line 46)."
+    }
+   },
+   "why": "The against gave the eight-line cap twice, citing the same line both times, and gave both 'no labelled cases' and 'precision not measured' for one point. Each is now said once."
+  },
+  {
+   "id": "four-jobs-of-an-analytical-paragraph",
+   "changed": {
+    "statement": {
+     "from": "Mark an analytical paragraph on four jobs, each checked alone: a claim answering the question, an exact quotation, what one quoted word suggests, and a link back to the claim.",
+     "to": "Mark an analytical paragraph on four jobs, each checked alone: a claim answering the question, a quotation, what a quoted word suggests, and a link back to the question."
+    }
+   },
+   "why": "The four jobs' source defines the link as 'a closing sentence that ties the paragraph back to question', not to the claim (`g9/transformer/src/glue/threejs-archivist.js`, line 202). The code accepts a near quotation as well as an exact one (line 226). The analysis job takes 'a word or phrase', and 'one quoted word' had put a second number in the statement."
+  },
+  {
+   "id": "judge-only-from-the-words-given",
+   "changed": {
+    "kind": {
+     "from": "measured",
+     "to": "adopted-rule"
+    },
+    "against": {
+     "from": "The fix is an instruction inside the judge's question, and the engine's calibration sets are seed cases that \"prove the wiring, measure nothing\" (g9/transformer/v02/QA.md line 136), so how often the judge still draws on what it knows has not been measured. Narrowing leaves a question whose answer is common knowledge unasked by this check, by design: \"its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's\" (g9/transformer/src/mechanics/open-check.js line 86). Whether the judge was right to hold the question that named both sides of its contrast is not known. After the change, all three drafts of a question on a famous speech still failed the check (0.69, 0.71 and 0.65), and the check has no person-labelled cases, so whether the new wording judges better is not known.",
+     "to": "The fix is an instruction inside the judge's question, and the engine's calibration sets are seed cases that \"prove the wiring, measure nothing\" (`g9/transformer/v02/QA.md`, line 136), so how often the judge still draws on what it knows has not been measured. Narrowing leaves a question whose answer is common knowledge unasked by this check, by design: \"its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's\" (`g9/transformer/src/mechanics/open-check.js`, line 86). After the change, all three drafts of a question on a famous speech that named both sides of its contrast still failed the check (0.69, 0.71 and 0.65), and with no person-labelled cases it is not known whether the judge was right to hold them."
+    }
+   },
+   "why": "No count or rate from real runs backs the rule. One failure was seen, and it led to an instruction whose effect the record itself says is unmeasured, so this is an adopted rule. The against also said three ways that the effect is unknown and mentioned the contrast question before introducing it. Each point is now made once."
+  },
+  {
+   "id": "keep-student-facing-lines-out-of-the-player",
+   "changed": {
+    "statement": {
+     "from": "Keep every line a student sees in the lesson's data, not the player: a line built into a player for one text shows up wrongly on every other text.",
+     "to": "Keep every line a student sees in the lesson's data, not the player: a line built into a player for one text can show up wrongly on other texts."
+    }
+   },
+   "why": "The record's own against quotes a leftover that 'does no harm on other texts', so 'shows up wrongly on every other text' claimed more than the evidence shows."
+  },
+  {
+   "id": "likely-misreadings-in-a-rubric",
+   "changed": {
+    "statement": {
+     "from": "A rubric can list a question's likely misreadings, each checked on its own and answered when nothing else is met; my engine's rubrics list none yet.",
+     "to": "Whether a rubric should list a question's likely misreadings, each checked on its own and answered when nothing else is met."
+    }
+   },
+   "why": "This is an open question, but the statement made a claim and added one build's state ('my engine's rubrics list none yet'). That state isn't a learning, and detail already gives it: 'Every rubric the engine exports sets that list to empty'. The statement now says what is open."
+  },
+  {
+   "id": "model-written-wrong-options-rarely-tempt",
+   "changed": {
+    "statement": {
+     "from": "Wrong options a model writes rarely pass a judge's test of whether they would tempt a skimming reader, and an advisory test still lets every such block through.",
+     "to": "Wrong options a model writes rarely pass a judge's test of whether they would tempt a skimming reader."
+    },
+    "example": {
+     "from": "In seven live lesson runs, the judge found 2 of 28 machine-written wrong options tempting, none of the 14 for word meanings, and all 14 blocks were marked ready.",
+     "to": "In seven live lesson runs, the judge found 2 of 28 machine-written wrong options tempting, and none of the 14 for word meanings."
+    }
+   },
+   "why": "The statement held two learnings. The second, that an advisory test still lets every such block through, is already in detail ('All 14 blocks were still marked ready, because the question cannot hold a block'), so it came out of the statement, and the example's last clause, which showed that second learning, went with it. The counts were checked against the seven stored lesson runs: 2 of 28 hold."
+  },
+  {
+   "id": "pitch-model-answers-at-a-strong-student",
+   "changed": {
+    "example": {
+     "from": "On the live proof, the judge's check that a model paragraph is something a strong Grade 9 student could write in about five minutes held at p 0.84 and 0.86.",
+     "to": "On the live proof, the judge's check that a model paragraph is something a strong Grade 9 student could write in about five minutes held with a confidence of 0.84 and 0.86."
+    }
+   },
+   "why": "'p' was an abbreviation nobody explained. It is the judge's probability for its verdict, and another record in the repository uses p for a significance value."
+  },
+  {
+   "id": "say-what-the-second-answer-adds",
+   "changed": {
+    "against": {
+     "from": "None found. The choice is advisory and has no labelled cases.",
+     "to": "The choice is advisory and has no labelled cases."
+    }
+   },
+   "why": "The against opened with 'None found.' and then gave two limits. It should give the limits on their own."
+  },
+  {
+   "id": "show-the-lines-that-prove-the-answer",
+   "changed": {
+    "against": {
+     "from": "none found",
+     "to": "The rule has not been tried with readers."
+    }
+   },
+   "why": "The detail names a limit, that the rule has not been tried with readers, but against said none was found."
+  },
+  {
+   "id": "slurs-nearby-and-the-clean-line-check",
+   "changed": {
+    "scope": {
+     "from": "domain",
+     "to": "universal"
+    }
+   },
+   "why": "The question is whether a judge shown a whole passage lets a slur elsewhere in it lower its confidence about one line. That would apply to source texts carrying slurs in any subject or setting. It is not an exam's format, a programme's convention or a product setting. Domains stay g9, where the evidence came from."
+  },
+  {
+   "id": "speaker-names-only-where-speeches-start",
+   "changed": {
+    "kind": {
+     "from": "measured",
+     "to": "adopted-rule"
+    }
+   },
+   "why": "The support is one fault seen in a render, then fixed and enforced by a test. No count or rate from real runs backs it, so it is an adopted rule, not a measured one."
+  },
+  {
+   "id": "suggest-a-lesson-question-the-text-answers",
+   "changed": {
+    "statement": {
+     "from": "For a text without a lesson question, draft several, keep one only on a judge's positive evidence that the text answers it, and cache it per text.",
+     "to": "For a text without a lesson question, draft several and keep one only on a judge's positive evidence that the text answers it."
+    },
+    "against": {
+     "from": "The judge is asked two things at once, whether the question can be answered from the passage alone and whether it is worth a lesson of about an hour. The poem's suggested question was also narrower than the sample question it came with: 5 of its 14 lines were ranked for it, against 13 lines judged relevant to the sample question in the 9 October proof.",
+     "to": "The judge is asked two things at once, whether the question can be answered from the passage alone and whether it is worth a lesson of about an hour. The poem's suggested question was also narrower than the sample question it came with: 5 of its 14 lines were ranked for it, against 13 lines judged relevant to the sample question in the 9 October proof. With no judge present, the lesson engine keeps and caches the first well-formed draft unchecked (`g9/transformer/src/question.js`, lines 31-37)."
+    }
+   },
+   "why": "The statement held a second learning: cache the question per text so the same text always gets the same one. The detail already says this ('cached under a hash of the text'), so cutting it loses nothing. Reading the cited question.js also showed that with no judge the first well-formed draft is kept as the question and cached without any check (line 31 sets question = qs[0], only a judge replaces it, line 37 saves it). That limits the rule, so it goes in against."
+  },
+  {
+   "id": "the-same-lesson-in-different-players",
+   "changed": {
+    "example": {
+     "from": "An animated version's export sets three tries by default, two on its open check and debate, and one for a web word.",
+     "to": "An animated version's export sets three tries by default, two on its open check and debate, and one for each word added to its word web."
+    }
+   },
+   "why": "'a web word' is an internal coinage, taken from a function name. The example now says what it means: a word the student adds to the word web, judged with one try (max_tries: 1 at animated.js line 113)."
+  },
+  {
+   "id": "time-each-reveal-from-aligned-speech",
+   "changed": {
+    "against": {
+     "from": "Timing from an alignment is not approval of the take: the pilot's notes say its generated voice has had no human listening or curriculum sign-off, and \"matched alignment flags are not such proof.\" (g9/tools/unit-video-essay/INTEGRATION.md line 44).",
+     "to": "Timing from an alignment is not approval of the take: the pilot's notes say its generated voice has had no human listening or curriculum sign-off, and \"matched alignment flags are not such proof.\" (g9/tools/unit-video-essay/INTEGRATION.md line 44). The lesson engine's own films spread each part's reveals evenly across its narration and time captions by each sentence's share of the narration's length, and no harm from that has been recorded (`g9/transformer/src/video/beats.js`, `g9/transformer/src/video/produce.js`)."
+    }
+   },
+   "why": "The detail records that the lesson engine's own films spread reveals evenly and time captions by sentence length, with no harm recorded. That limits the 'not by spreading them evenly or by sentence length' half of the statement, and against had left it out. I checked beats.js line 3 and produce.js line 43. The first against sentence is unchanged."
+  }
+ ],
+ "drops": [],
+ "merges": [
+  {
+   "keep": "fit-the-hint-to-the-kind-of-miss",
+   "folded": [
+    "name-a-recall-answers-near-miss"
+   ],
+   "statement": "Fit a recall hint to the kind of miss, naming a near spelling or another taught word rather than just saying wrong, and give the word on the second miss.",
+   "folded_records": [
+    {
+     "id": "name-a-recall-answers-near-miss",
+     "statement": "In a recall task, say what kind of near miss an answer is, the right word misspelt or another taught word that fits, rather than marking it plainly wrong.",
+     "detail": "Say it back and key words are marked in code, and a test checks that a slip is named and that the second miss gives the answer. In say it back, a near spelling of a key word of five letters or more is named with a note to check its spelling, and the sentence still counts as said; in key words, a near spelling gets \"Nearly. That is the word, but the spelling is not right yet.\" Another word of the deck that also fits the gap is no miss: the student is told it fits the sentence too and asked for the word with the meaning given."
+    }
+   ],
+   "why": "Both records come from the same code in the key-word marking and state one learning: sort a recall miss by its kind (the right word misspelt, or another taught word) and answer it for that kind, not with a bare wrong. One is filed under marking and one under hints. Naming the near miss is the hint fitted to the miss, so the marking record is a special case of the hint record. The hint record is broader: it also covers any other miss and giving the word on the second miss, which both records' evidence shows. Neither record was on record before this run, so the broader one is kept and takes the merged statement. The related hint rules that were already on record (help after a try, every rung adds something, advance only on a changed answer) say different things and are left alone."
+  },
+  {
+   "keep": "check-feedback-for-the-answer-reworded",
+   "folded": [
+    "a-give-away-in-other-words"
+   ],
+   "statement": "Check wrong-option feedback for the right answer said in other words, which a word-match check misses and a truth check never asks about.",
+   "folded_records": [
+    {
+     "id": "a-give-away-in-other-words",
+     "statement": "How to catch wrong-option feedback that gives the answer away in other words, which a word-overlap check can't see and a truth check doesn't ask about.",
+     "detail": "In a ready video-essay block, one question asked how two readings interpret a contrast; its key said one reading stresses the weakness of speech and the other the power of action, and the feedback on a wrong option told the viewer that both readings put long-term power on the side of action rather than speech (`g9-transformer-runs/blocks/34c293906aa945a2.json`, lines 78 and 83). The code check for give-aways looks for runs of the answer's own words (`g9/transformer/src/mechanics/util.js`, line 116), and the judged check asks only whether each line is true to what the film had said and to the text (the same file, line 128); the line passed both, the truth check at 0.82. No check asks whether a line gives the answer away in other words."
+    }
+   ],
+   "why": "Both records describe the same gap in the same checks. Wrong-option feedback that restates the key in other words passes two checks: the code check, which looks only for a run of the right option's own words (both cite the same util.js line), and the judged check, which asks only whether the line is true. One record states this as the rule to check for, the other as an open question of how to catch it. The rule's own against already says a paraphrase check would need person-labelled cases before it can hold a block, so the open method question is still there after the merge. The fold adds the other record's video-essay case, scored 0.82 on truth, and its point that pointing back to what was said may count as a hint. Neither record was on record before this run. I kept the measured, held record with the larger evidence set. I left the on-record leak check by words only the key carries alone, because it states the word-based check that both of these records say misses a paraphrase."
+  },
+  {
+   "keep": "practise-taught-words-by-typed-recall",
+   "folded": [
+    "study-key-words-then-recall-them"
+   ],
+   "statement": "After study, practise taught words by typed recall: cue each by its meaning in a one-blank sentence pointing to it alone and containing no form of it; nudge before revealing.",
+   "folded_records": [
+    {
+     "id": "study-key-words-then-recall-them",
+     "statement": "Teach key words by study first, then hide them and have each typed into a sentence from memory, cued by its meaning, with a nudge before the word is given.",
+     "detail": "The lesson engine's key-words block joins an animated version's keyword cards to a 3D version's recall: the student studies each word and what it means, puts the set away, and types each word into a blank in a sentence about the text, cued by its meaning (`g9/transformer/src/mechanics/key-words.js`; `g9/transformer/web/lesson.js`). Marking is code only: an exact match fills the gap, another word of the deck that also fits the sentence is not a miss, and a first miss gets a nudge, such as the word's first letter, before the second gives the word. The recall follows the study at once."
+    }
+   ],
+   "why": "Both new records state the same practice, drawn from the same key-words block: after study, each taught word is typed from memory into a gap sentence cued by its meaning. One adds the rules for the cue (one blank, it points to its own word, no form of the word appears). The other adds the order (study, then hide) and the nudge before the word is given. The statement keeps both. Neither was on record. I kept the record whose title names the rule and whose detail covers more of the statement. Related records already on record (two-tries-then-the-answer, retrieval-needs-a-gap, retrieval-questions-teach-not-just-measure) say different things, so I left them alone."
+  }
+ ],
+ "flags": [
+  {
+   "id": "model-written-wrong-options-rarely-tempt",
+   "issue": "The record held two learnings. The main one stays in the statement. The second, that an advisory test still lets every such block through, is already in detail and repeats an-advisory-check-stops-nothing."
+  },
+  {
+   "id": "check-feedback-for-the-answer-reworded",
+   "issue": "Possible duplicate of a-give-away-in-other-words. Both rest on the same finding: wrong-option feedback that gives the answer in other words passes the word-match check and is judged only for truth. It is a held method here and an open question there, so the two could be merged or linked."
+  },
+  {
+   "id": "name-a-recall-answers-near-miss",
+   "issue": "Possible duplicate of fit-the-hint-to-the-kind-of-miss. Both answer a recall miss by its kind (a near spelling or another taught word), and both rest on the same key-word deck code (`g9/transformer/src/mechanics/key-words.js`, lines 117-122). Its example also uses two of the engine's block names ('Say it back', 'key words') as though readers knew them."
+  },
+  {
+   "id": "a-film-argues-one-claim-at-a-time",
+   "issue": "Its against cites a file without backticks ('g9/tools/unit-video-essay/INTEGRATION.md line 14'), so the check never verifies that path. The against fields of a-still-cant-replace-a-performance, bind-each-mark-to-its-place, check-where-spacing-rules-put-questions, hints-no-student-can-reach, judge-a-reading-as-defensible-not-true, mark-a-word-web-generously, model-written-wrong-options-rarely-tempt and name-a-recall-answers-near-miss do the same. The standard has no rule on citation format, so I left these unchanged."
+  },
+  {
+   "id": "repair-mechanical-slips-in-code",
+   "issue": "The detail says both blocks failed after 2 tries 'with 0 judge calls'. A block file's judgeCalls counts only its last try: g9 transformer/src/blocks.js line 83 sets judgeCalls: mine.length inside the try loop. The decision logs show that each block's first try was judged (g9-transformer-runs decisions/f23aebacf033daa2.json at 2026-10-12T15:36:47, decisions/aeb043df247f1b45.json at 15:37:04), as the against says. The example ('last draft ... never reached the judge') is accurate. The detail's phrase reads as if the judge was never called and could say '0 judge calls on the last try'. These rules don't let me edit detail, so I left it."
+  },
+  {
+   "id": "suggest-a-lesson-question-the-text-answers",
+   "issue": "The statement held a second learning, which I cut: cache the suggested question per text, so the same text is always given the same question. It now lives only in detail and may deserve its own record or a merge. Two things in against have no evidence entry. First, the count '5 of its 14 lines were ranked' is in g9-transformer-runs focus/cafa551791ea3a78.json (five focus lines), and decisions/focus-cafa551791ea3a78.json confirms its question is the poem's suggested one. Second, the no-judge limit I added rests on g9 transformer/src/question.js line 31 ('let question = qs[0] ?? null;') and line 37 (the saveDoc of the question). Both could be added as quotes and verified."
+  }
+ ],
+ "skipped": []
+}

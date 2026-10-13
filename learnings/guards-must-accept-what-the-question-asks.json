@@ -1,0 +1,200 @@
+{
+ "id": "guards-must-accept-what-the-question-asks",
+ "title": "Guards must accept what the question asks",
+ "statement": "Every rule that can refuse an answer must accept one that does exactly what the question asks, so test it on the wanted answer in its expected words.",
+ "example": "A copying rule rejected word-perfect recall because the sentence made up 84/114 = 0.74 of a marking criterion, over its 0.70 threshold.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "scoring-guide",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A fragment rule gave no credit to the short phrase a question asked for, so a student who did exactly what the stem said, quote a short phrase, scored nothing and was told to say the whole idea as one full sentence (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md`). A rubric edit that dropped the phrase a fragment rule keyed on would have refused one-word answers until a test caught it, and one blank carried acceptance rules that disagreed with each other (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). A copying check counted the marking criteria as text a student could copy, so on three recall pages word-perfect recall was rejected, the sentence making up 84/114 = 0.74 of a criterion against a 0.70 threshold (`grade3-reading/artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md`); a later validator rule holds that a criterion states the standard and does not quote the story (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R26.md`). Such rules include fragment and copying rules. Keep any recall target short enough to pass a copying rule, and let a copying rule count only text the student was shown.",
+ "against": "The fragment rule's harm was bounded, since a student who then gave the phrase with an explanation passed: \"Not CRITICAL because the child who then\" (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md`, line 53).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "48",
+   "quote": "So a Grade-5 child who does exactly what the stem asks, \"Quote a short",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "152",
+   "quote": "the speak-score route's fragment gate keys on it, so a one-word answer would have been refused",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "117",
+   "quote": "The blank's own acceptance rules disagree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "23",
+   "quote": "contains the sentence at 84/114 = 0.74, threshold 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "41",
+   "quote": "Echo guard rejects the word-perfect recall on three pages (one class)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R26.md",
+   "lines": "18",
+   "quote": "a criterion states the standard, it does not quote the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "194-196",
+   "quote": "the answer checker's echo guard (0.70 threshold) misreads a child's exact, correct recall as an illegitimate copy and demotes it — proven when an 86-character L5 candidate sentence failed and a 66-character one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "192-193",
+   "quote": "the \"Name it\" recall sentence must stay under roughly 66 normalized characters",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "128",
+   "quote": "a Name-it/recall sentence longer than ~66 normalized chars is ≥0.70 of its own criterion line",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "128",
+   "quote": "an exact recall is demoted (\"page's own words\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "128",
+   "quote": "RULE — applies to every future Name it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "13",
+   "quote": "const NOISE = /^(.)\\1{3,}$|^[^aeiou\\s]{6,}$/i;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "14",
+   "quote": "a short answer that says it is enough (the 3D build's marking rule), so only noise is turned away before Jev",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "15",
+   "quote": "const thin = (t) => !wordCount(t) || NOISE.test(t.replace(/\\s+/g, \"\"));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "98",
+   "quote": "if (thin(text)) return null;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "10",
+   "quote": "const thin = (t) => wordCount(t) < 2 || NOISE.test(t.replace(/\\s+/g, \"\"));",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "That text is byte-identical to `assessment.reveal`, identifies the growing activity, and explicitly says it matters to Mary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/README.md",
+   "lines": "27",
+   "quote": "A correct `thee` → `you` substitution and explanation was rejected by overly literal source grounding.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "39",
+   "quote": "Run-24 on `7a26ee98` FAILED at p22 know-b: staging's no-one-word rule scored the one-word answer \"free\" off (\"turn that thought into a full sentence\") because `shortAnswerByDesign` only recognised \"one / a single\" word asks, not our \"Type a second, different describing word.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "131",
+   "quote": "#685 restored that phrase on L4 and L5 because the scorer refuses one-word answers without it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "235-236",
+   "quote": "(shortened 25.09: the longer sentence was 0.74 of its criterion line and the echo guard demoted exact recall)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l4-parity/README-p24-ladder.md",
+   "lines": "64-67",
+   "quote": "Rubric and both criteria `requirement`s gained an OWN-STORY clause. Engine coupling: `DialogueLadderView.submitOwn` judges the child's own-story answer (who/want) against `ladder.opening.assessment`; without the clause a valid Oz/Narnia answer fails \"ties-it-to-peters-words\" and drops to the floor.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "52-53",
+   "quote": "The judge wanted the rank named. The rubric's own keywords for that criterion include \"job\", and its accept list includes \"Iago wanted the promotion.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0180--kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "152-154",
+   "quote": "a Name-it/recall sentence must stay under roughly 66 normalized characters (≤ ~0.68 of its generic criterion line), or the answer checker's own echo guard (0.70 threshold) demotes an exact recall as if it were copied rather than produced.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

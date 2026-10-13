@@ -1,0 +1,115 @@
+{
+ "id": "dont-trust-the-generator",
+ "title": "Don't trust the generator",
+ "statement": "Expect to discard much of what a generator writes, keep the trace of what was accepted and rejected, and let the gates, not trust in the generator, carry the quality.",
+ "example": "Of 299 items another model could answer with the passage, only 113 passed the check that it could not answer them without it.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A retrospective on a Grade 5 generation run says the questions were good because the generator was not trusted: items survived only if a model from another family could solve them with the passage and not without it, and large volumes of plausible-looking output were discarded (`grade3-reading/knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd`). In its non-match tranche, 360 items were written, 299 passed the with-text control and 113 were certified blind. The generator's handoff owes an accepted-and-rejected generation trace (`grade3-reading/knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd`), and in the AP work generated candidates stay candidate material that bypasses none of the source, format, factuality, answerability, independence or human review gates (`grade3-reading/knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd`).",
+ "against": "Quality review was not run across every final item of that run (`grade3-reading/knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "26",
+   "quote": "The questions were good because the generator was not trusted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "36",
+   "quote": "- discarding large volumes of plausible-looking output.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "160",
+   "quote": "| with-passage control pass | 299/360 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "161",
+   "quote": "| Grade 5 blind-certified | 113/299 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "33",
+   "quote": "accepted_and_rejected_generation_trace",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "88-89",
+   "quote": "None bypasses source identity, current-format, factuality, answerability, independence, or human review gates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "217-220",
+   "quote": "Quality-B was not run across every final item: - used on the small sequence MODIFY pilot; - not run over the final 700 MATCH or final 167 non-match items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "70-71",
+   "quote": "The `certification_yield=0.5` default comes from a historical G5 generation campaign (48.7%, rounded).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "64",
+   "quote": "to_generate = ceil(to_certify / certification_yield)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "70",
+   "quote": "the retrospective's own headline is 'the questions were good because the generator was not trusted'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-clean-course-v2/GATE_REPORT.md",
+   "lines": "31-32",
+   "quote": "Per-type yield through the binding blind gate: sequence 33/975 (3.4%), hot-text 71/1000 (7.1%), match 83/1171 (7.1%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "194-196",
+   "quote": "The pipeline is COMPLETE and LANDS WITH ZERO ACCEPTED CANDIDATES: three full runs against the Aladdin Part 1 lesson each ended in an honest DISCARD on structural gates after the refine budget (manifests in `runs/`).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

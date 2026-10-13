@@ -1,0 +1,196 @@
+{
+ "id": "colour-each-mark-for-its-meaning",
+ "title": "Colour each mark for its meaning",
+ "statement": "Choose a mark's colour for what the mark means, never by its order in a list.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The style notes for the unit videos say to use red and green to mark the meaning of a word or claim (`g9/tools/unit-video-essay/INTEGRATION.md`, line 21), and the quotation card's notes ask that each mark's `meaning` say why a span is marked, not just its colour (`g9-unit-video-packages/quote-card/README.md`, line 31). The lesson engine instead gives a quotation's marked words red, ochre and green by their order (`g9/transformer/src/video/beats.js`, line 16), so in its film on a speech the word for what was said came out red and the word for what was done ochre, whatever each word does (`g9-transformer-runs/blocks/34c293906aa945a2.json`, lines 17-22). No lesson has been reviewed by a person or used by a student, so what viewers read into the colours has not been measured (`g9/transformer/README.md`, line 120).",
+ "against": "Colouring by column is the reference's design and the module's: \"A two-column red/green argument map.\" (`g9/tools/unit-video-essay/INTEGRATION.md`, line 12), \"The left and right columns have stable semantic colors\" (`g9-unit-video-packages/argument-map/README.md`, line 3), and in the engine's two-readings frame the first reading always gets the red edge, \"const accent = left ? '#db796f' : '#8bbf9a';\" (`g9-unit-video-packages/argument-map/src/index.js`, line 68), though both readings are meant to be defensible; whether that reads as a verdict on one of them is not measured.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "21",
+   "quote": "Use red and green to mark the *meaning* of a word or claim, and keep marks and arrows quiet enough that the source remains legible.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "31",
+   "quote": "Use `meaning` to describe why a span is marked, not just its color.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/beats.js",
+   "lines": "16",
+   "quote": "tone: [\"red\", \"ochre\", \"green\"][i % 3]",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "18",
+   "quote": "\"meaning\": \"describes spoken words\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "22",
+   "quote": "\"meaning\": \"describes physical actions\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "31",
+   "quote": "On `/p21b` two of those are on screen at the same time, meaning different things.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "16",
+   "quote": "Keep gold for reading along and source attention; vocabulary target gets clear underline",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "16",
+   "quote": "Source/visual distinction to verify",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "20",
+   "quote": "Transparent target with deep-jade2px underline and weight600; spoken `.bk-reading` wash and all exact words/marks/timing remain.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "28",
+   "quote": "It also checks computed palette, contrast, instructional/source font distinction, vocabulary underline versus actual spoken wash, feedback rule and focus outline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "31",
+   "quote": "**The pale yellow highlight carries four different meanings** — text being read aloud, the target vocabulary word, the passage being referred to, and Scout's current thought.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md",
+   "lines": "45",
+   "quote": "gives the vocabulary target a jade underline, leaves the authored read-along wash, and removes the competing Scout-thought wash.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md",
+   "lines": "45",
+   "quote": "This does not claim every use of gold has been eliminated or forced into one universal meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "111",
+   "quote": "Mark the quote with more than hue. Avoid a color that collides with error or correct-answer states.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "288",
+   "quote": "In most interfaces red signals wrong, invalid or danger, so using it for the important quote risks reading as a mistake.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "288",
+   "quote": "The same problem was flagged on the extra-thinking panel, where green already carries correct-answer feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "12",
+   "quote": "One colour, one meaning",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "17",
+   "quote": "and only them | buttons, errors, progress |",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "180",
+   "quote": "Shown only beside a section that has one; the bar is the key, so red stays on quotes only.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/film/scenes.tsx",
+   "lines": "315",
+   "quote": "(never red: red is for store-cupboard quotes only).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "41",
+   "quote": "Blue means the student's own words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "288",
+   "quote": "In most interfaces red signals wrong, invalid or danger, so using it for the important quote risks reading as a mistake.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "288",
+   "quote": "The same problem was flagged on the extra-thinking panel, where green already carries correct-answer feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "111",
+   "quote": "Mark the quote with more than hue. Avoid a color that collides with error or correct-answer states.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

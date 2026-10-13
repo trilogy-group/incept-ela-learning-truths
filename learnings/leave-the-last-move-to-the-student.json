@@ -1,0 +1,183 @@
+{
+ "id": "leave-the-last-move-to-the-student",
+ "title": "Leave the last move to the student",
+ "statement": "In a worked example, model every step up to the final thinking move and leave that move to the student, with the modelled steps still in view.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project fixed the split of its modelling moment across all lessons: the lesson models every step up to but not including the final substantive thinking move, and the child does that move (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, lines 83-84). A later closure audit flagged worked examples that handed an earlier step's conclusion to the child as a clause to complete, instead of a complete modelled sentence (`grade3-reading/knowledge_bot/knowledge/kb-0226-g3-pre-submission-closure-audit-2026-09-24.qmd`, lines 38-39).",
+ "against": "The rulings make one exception, where the child composes a summary and the lesson verifies it aloud, because composing is the real cognitive work (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, lines 84-86). The lesson's own design did the opposite: \"The design doc’s Modelling Moment ends with the full model answer typed to completion; we leave the last word to the child\", and the build called its choice a deliberate divergence in emphasis. A later run found: More of the reading course's designs keep the model fully worked and leave completion to later turns: one contrasts the model's fully typed whiteboard with the child's three-blank frame in the independent task, and a line-by-line diff registered a built model that ends in a child-completed slot as partly breaking that contrast, a judgment call rather than a fix. A later simulated review credited the guided turn as the completed partial, a sentence starter the child finishes after three walked steps. A conformance audit still marked a model ending in a child-completed slot as delivered (`grade3-reading/artifacts/arc-audit/L7.md`, line 37), so the course holds both positions (`grade3-reading/artifacts/pp4-v4-design.txt`). A later run found counter-evidence (`grade3-reading/visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md`). A later run found counter-evidence (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/procedures/find.md`). A later run found counter-evidence (`grade3-reading/artifacts/pp4-v4-design.txt`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "83-84",
+   "quote": "the teacher models every step up to but not including the final substantive thinking move; the child does that move",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0226-g3-pre-submission-closure-audit-2026-09-24.qmd",
+   "lines": "38",
+   "quote": "FIND I-do State hands the conclusion to the child",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "26 (textutil text)",
+   "quote": "modelling every step except the final thinking move. It sounds like genuine thinking, not a lecture.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "28 (textutil text)",
+   "quote": "The child completes the final step only — one typed gap that carries the inference (“…so I think ___”) — with the modelled steps kept visible beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "207",
+   "quote": "even in the I-do the last thinking move is the child’s, a small production that turns watching into doing",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "211",
+   "quote": "The design doc’s Modelling Moment ends with the full model answer typed to completion; we leave the last word to the child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/SPEC-find-infer-procedures.md",
+   "lines": "28",
+   "quote": "When the final step is a verification rather than a thinking move (MAIN IDEA Step 4 \"Check coverage\" is the clearest example), the child does the step BEFORE the verification - because composing the summary is the real cognitive work and \"yes it covers the passage\" can be rubber-stamped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "28",
+   "quote": "When the final step is a verification rather than a thinking move (MAIN IDEA Step 4 \"Check coverage\" is the clearest example), the child does the step BEFORE the verification - because composing the summary is the real cognitive work and \"yes it covers the passage\" can be rubber-stamped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "28",
+   "quote": "The teacher performs the verification aloud to close the moment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/lesson-architecture.md",
+   "lines": "35-36",
+   "quote": "MAIN IDEA's Step 3 in Lesson 1, where the guide keeps the coverage check because a verification can be rubber-stamped.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "28",
+   "quote": "When the final step is a verification rather than a thinking move (MAIN IDEA Step 4 \"Check coverage\" is the clearest example), the child does the step BEFORE the verification - because composing the summary is the real cognitive work and \"yes it covers the passage\" can be rubber-stamped.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "28",
+   "quote": "performs the verification aloud to close the moment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp4-v4-design.txt",
+   "lines": "320",
+   "quote": "MM State is the teacher's typed whiteboard; Independent State is the child's 3-blank frame.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "54-56",
+   "quote": "the MM (modelled-model) Step 3 \"State\" ends in a child-completed `write_slot` rather than the doc's fully auto-typed whiteboard model, partially breaking the doc's explicit MM-vs-IT (independent-task) gradual-release contrast.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "54",
+   "quote": "D1.3 We-do is a completed partial — pages[17].nodes[6] (finish-the-writeup, type=speak) gives the child a sentence starter ('I start, you finish: The story says ... so my answer is that flying feels…') after the coach has walked steps 1-3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md",
+   "lines": "12",
+   "quote": "Present one model part or vocabulary stage at a time, retain earlier material in disclosures, and focus the productive response after a model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "65-66",
+   "quote": "**teacher models all steps except the final substantive move — the child does the final step**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/procedures/find.md",
+   "lines": "18-20",
+   "quote": "Never put an `scr`, `msq` or other child-answered item on a modelling page: the whole point of \"I do\" is that the guide does it, and a gated question here reverses the release.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "91-93",
+   "quote": "Backward-fading designs have the learner \"complete the last step themselves\", fading until \"full problems with no steps completed by the instructor are presented\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "54",
+   "quote": "D1.3 We-do is a completed partial",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "48-49",
+   "quote": "teacher models everything except the final substantive move — the child does the final step",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "304",
+   "quote": "auto-pacer never fills the child's row",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "feedback-must-not-look-like-a-button",
+ "title": "Feedback must not look like a button",
+ "statement": "Make feedback and a guide's speech look unlike controls, keeping button styles for what acts when pressed, since learners may try to tap anything drawn like a button.",
+ "example": "One lesson used four button styles with no rule tying them to meaning.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A supplied UI review of a Grade 3 lesson found the guide's speech bubble drawn as a green outlined rounded rectangle, the same look as the lesson's pill buttons, and four button styles in one lesson with no rule connecting them to meaning (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, lines 28 and 33). The project kept the avatar and readable text but drew replies with a thin verdict rule, square corners and a transparent ground, keeping the action pill for deliberate click controls (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 18; `grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 22).",
+ "against": "The tap prediction is the review's judgment, not observed with children, and the restyle is a source candidate, \"not a deployed or final browser-accepted state\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 3); the mapping marks it \"Pending visual refinement\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 18).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "33",
+   "quote": "On `/p3` it is a green outlined rounded rectangle, the same visual language as the \"Sound it out\" and \"The word parts\" pills.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "33",
+   "quote": "A child will try to tap it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "28",
+   "quote": "There are four button styles in one lesson and no rule connecting them to meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "18",
+   "quote": "Reply should retain avatar and readable text with a subtle rule/verdict marker; action pill belongs only to deliberate click controls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "22",
+   "quote": "Reply uses a1px bottom verdict rule, square corners, transparent background and500 text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "142-143",
+   "quote": "**E3. Feedback is honest about affordance**: success feedback must never look like another tappable element (doc 1 item 7).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "143-144",
+   "quote": "the verdict element has no role=button/cursor-pointer; OWED as a general sweep.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "DESIGN.md",
+   "lines": "84",
+   "quote": "Use borders, spacing and typography to separate feedback and controls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "DESIGN.md",
+   "lines": "84",
+   "quote": "spoken feedback must not look like another button.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

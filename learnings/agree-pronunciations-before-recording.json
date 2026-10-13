@@ -1,0 +1,122 @@
+{
+ "id": "agree-pronunciations-before-recording",
+ "title": "Agree pronunciations before recording",
+ "statement": "Before recording narration, agree one pronunciation for every name, number and taught term, write it into the voice direction, and check every clip against it by listening.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "wording"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The 6 October handover for a Grade 9 unit lists the names, ranks and spoken year whose pronunciation must be settled, asks for a consistent, academically appropriate pronunciation plan, and makes consistent, intelligible names and key terms an acceptance test (lines 300 and 382). The narrated build's audio notes say to agree the name pronunciations in the recording manifest before a final take (`g9/prototypes/app-narrated/AUDIO-HANDOFF.md`, line 7), and the handover has every clip verified by listening and text comparison, since automated transcription can assist but does not replace listening (lines 307 and 352). The voice decision still listed name pronunciations and the spoken year for a person to hear, because transcription had written one name differently (`g9/narration/auditions/2026-10-06-scene1/DECISION.md`, line 33).",
+ "against": "The rule was not yet met: QA of the narrated build verified words by transcription and alignment, not by ear (`g9/prototypes/app-narrated-qa/QA.md`, line 44), and nobody had listened when the clips were chosen (`g9/narration/auditions/2026-10-06-scene1/DECISION.md`, line 3). Automatic checks cannot settle every case, so someone still has to listen: a no-hint transcription's only differences were in how Act numbers were written and the homophone Moor/\"more\" (g9/film/v04/render/QA.md, line 9), and alignment left number words, \"Moor\" and \"Roderigo\" unmatched (g9/narration/takes/v02/README.md, line 5).",
+ "evidence": [
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "300",
+   "quote": "A pronunciation plan should be consistent and academically appropriate.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated/AUDIO-HANDOFF.md",
+   "lines": "7",
+   "quote": "Agree the name pronunciations listed in the recording manifest before a final take.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "382",
+   "quote": "Names and key terms are pronounced consistently and intelligibly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "352",
+   "quote": "Verify all eight through listening and text comparison. Correct any pronunciation or wording error before timing the edit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "307",
+   "quote": "Automated transcription can assist comparison but does not replace listening.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "33",
+   "quote": "name pronunciations (Roderigo was transcribed \"Rodrigo\" in scene 3), \"1603\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "44",
+   "quote": "this QA verified words by transcription and alignment, not by ear",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/Othello-Opening-Recording-Manifest.json",
+   "lines": "15",
+   "quote": "Agree pronunciations for Othello, Desdemona, Iago, Brabantio, Roderigo, Cassio, Emilia, and Cyprus before the first approved take; keep each consistent across clips.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/Othello-Opening-Recording-Manifest.json",
+   "lines": "17",
+   "quote": "Confirm how to speak “1603” and the Act-number phrases",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v04/render/QA.md",
+   "lines": "9",
+   "quote": "Scene 4 regenerated once (\"ensign\" heard as \"ancient\").",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v03/narration-manifest.json",
+   "lines": "86",
+   "quote": "Pronounce 'ensign' clearly as EN-sin.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/gemini-3.8-flash-tts-Orus/vo_intro_01.transcript.json",
+   "lines": "15",
+   "quote": "written around sixteen oh three",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "14",
+   "quote": "\"1603\" spoken as \"sixteen hundred and three\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

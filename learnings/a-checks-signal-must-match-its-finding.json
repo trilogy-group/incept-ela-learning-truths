@@ -1,0 +1,78 @@
+{
+ "id": "a-checks-signal-must-match-its-finding",
+ "title": "A check's signal must match its finding",
+ "statement": "Count a fault as caught only when its own check flags the right place, never on a crash or failing run, and fail runs printing failures, whatever their exit code.",
+ "example": "A validator for a generated question pool printed hard failures while exiting zero, so neither its '71/71 complete' nor exit code zero could admit the pool.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A lesson project's test harness for its content checkers counts a planted fault as caught only when the checker flags the node the test case names; a flag anywhere else is a guess. A dry run of the harness showed that an uncaught exception exits the same way as a finding, so a checker that threw on every input would pass every fault case, and the harness now treats a printed stack trace as a crash whatever the exit code. Separately, a validator for a generated question pool printed hard failures while exiting zero, so its completion count and its exit code were ruled out as an admission test.",
+ "against": "Exclusivity is the wrong bar for wide changes: \"Wide-reaching mutations (removing an idempotency guard, reverting to the unpatched player) legitimately trip many assertions and exclusivity is the wrong bar for them\" (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md`, lines 513-515).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "8-9",
+   "quote": "A checker that exits 1 but points at the wrong node has not found the defect, it has guessed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "199-201",
+   "quote": "An UNCAUGHT EXCEPTION also exits 1 — indistinguishable from \"found a defect\" by exit code alone, so a checker that throws on every input would pass every positive case.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "201-203",
+   "quote": "Node prints a stack trace to stderr, which no finding ever does; treat that as a crash regardless of exit code. Found by dry-running this template, not by reasoning about it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "122-123",
+   "quote": "The validator also prints hard tell failures while exiting zero. Therefore neither “71/71 complete” nor exit code zero is an admission test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "490",
+   "quote": "A negative control must check that the mutation was caught BY THE NAMED ASSERTION, not merely that",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "510-511",
+   "quote": "A mutation caught by two assertions establishes that neither is load-bearing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "499",
+   "quote": "WHERE you sample a state is part of the assertion",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

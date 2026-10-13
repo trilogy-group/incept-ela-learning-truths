@@ -1,0 +1,255 @@
+{
+ "id": "qualify-every-model-and-version",
+ "title": "Qualify every model and version",
+ "statement": "Qualify each model and version on its own against the rules it will follow, with controls that catch a rule applied outside its scope.",
+ "example": "On one fixed set of 20 cases, three models got 60, 67 and 136 of 140 rows exactly right.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project's counterfactual-authority experiment, three models ran one frozen contract of 20 cases at seven rows each, scored on stored responses with no judge, repair or retry, and got 60, 67 and 136 of 140 rows exact and 0, 0 and 17 of 20 robust clusters (`grade3-reading/knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd`). Of the 157 misses, 43 failed the negative-control gate, where the rule should not have applied, and one model carried out a counterfactual rule exactly but also under the wrong-path and wrong-subject controls: steerable but not safely scoped. The policy-compiler proposal requires conformance qualification for every model and version (`grade3-reading/knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd`). Re-test every instruction whenever the model changes: in the AP work an instruction that a large model mostly respected was not enough for a smaller one, which passed 0 of 6 short-answer items, failing on the accuracy of their scoring notes, where the large model had passed 95 to 100% (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`, lines 15 and 130-132).",
+ "against": "The three were small, fast model versions, and the run is one strict feasibility point, not a powered reliability estimate (`grade3-reading/knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd`). The 0 of 6 is confounded: the smaller writer was trained from the raw base on two other item types only, and the step structure did carry over to it with only token-limit changes. A post-hoc check found the assigned facet in 119 of 120 treatment outputs, which supports bounded semantic steering, though not exact control (`grade3-reading/knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd`). Only this one adjacent test ran; the formal gates never produced complete scored evidence (`grade3-reading/knowledge_bot/HOTBUCKET.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "12",
+   "quote": "OpenAI 60/140 exact and 0/20 robust clusters, Claude 67/140 and 0/20, DeepSeek 136/140 and 17/20",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "86",
+   "quote": "Failure localization across the 157 tested misses:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "89",
+   "quote": "- negative-control gate: 43;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "110",
+   "quote": "It was steerable but not safely scoped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "46",
+   "quote": "every model/version requires conformance qualification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "50",
+   "quote": "OpenAI 60/140 and 0/20 robust clusters, Claude 67/140 and 0/20, DeepSeek 136/140 and 17/20; worst route 0/20 against 20/20.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "70-71",
+   "quote": "found the assigned taxonomy or ontology facet in 119/120 treatment outputs. That supports strong bounded semantic steering",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "73-74",
+   "quote": "across 18 models, constraint adherence fell materially as instruction difficulty increased, and targeted training improved it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "130",
+   "quote": "1. **The anchor-fact pattern was invented for stimuli, not rubrics.** When MCQ_SET was broken at 0%, we fixed the stimulus with anchor-facts. SAQ was already at 95-100% on Gemini, so its scoring notes weren't a problem. Nobody connected the dots to apply it to rubrics.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "132",
+   "quote": "2. **The current approach (negative prompting) seemed to work on Gemini.** Because Gemini is large enough to mostly respect the \"no specific evidence\" instruction and has accurate enough parametric memory that when it does include evidence, it's usually right. The instruction that's good enough for a large model is insufficient for a 14B model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "15",
+   "quote": "| SAQ | 0/6 = **0%** | factual_accuracy (scoring notes) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "234",
+   "quote": "None of these are implemented yet. The current system (4,177 facts, cluster matching, \"facts as hints\") is good enough for Gemini at 97%. It's not good enough for sft-v4/sft-v7 at the target rates.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/week_of_apr_21.md",
+   "lines": "135",
+   "quote": "Gemini reliably fills all JSON schema fields including optional ones. Fireworks model frequently omits optional fields (e.g., `source_attribution`). Keep required fields minimal; never rely on optional field presence for correctness. The `anchor_fact` field is required in the schema specifically because of this.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "105",
+   "quote": "The literature is clear: static historical facts are high-confidence parametric knowledge that overrides soft prompt constraints.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "73",
+   "quote": "No matter how you phrase the prompt, the model defaults to its training behavior when generating a historical document excerpt.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_version_history.md",
+   "lines": "52",
+   "quote": "- Focus: MCQ_SET and DBQ are the failure modes. Other types excluded (already have training data from sft-v6)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/fireworks_training_reference.md",
+   "lines": "109",
+   "quote": "- **Base:** `accounts/fireworks/models/qwen3-14b` (raw, same as Stage 1)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/week_of_apr_21.md",
+   "lines": "17",
+   "quote": "The same scaffolding transfers to Fireworks with only token limit adjustments.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "50",
+   "quote": "completed 420/420 rows with zero evidence invalidities but failed strict portability: OpenAI 60/140 and 0/20 robust clusters, Claude 67/140 and 0/20, DeepSeek 136/140 and 17/20",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "46",
+   "quote": "every model/version requires conformance qualification",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "70-71",
+   "quote": "An explicitly post-hoc diagnostic found the assigned taxonomy or ontology facet in 119/120 treatment outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "107-109",
+   "quote": "KILL EPPC as the automatic primary pedagogy control plane. The frozen rule required every A/A2/B/C/D, review, quality, and viability gate to pass and required KILL on any failure or insufficient evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "110-112",
+   "quote": "adjacent A-only A1b completed 420/420 valid rows and failed exact cross-route portability: worst route 0/20 against 20/20. OpenAI and Claude each had 0/20 robust clusters; DeepSeek had 17/20.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "113-114",
+   "quote": "the post-hoc semantic-facet diagnostic was 119/120. Prompt-local steering is real, but exact execution, negative-control locality, and invariant preservation were not portable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "115-116",
+   "quote": "formal A, A2 renderer, B, C, D, artifact quality, and operational gates never produced complete scored evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/03-method-and-results.md",
+   "lines": "49-50",
+   "quote": "The primary statistic was the minimum robust-cluster result across routes: 0/20 against a required 20/20.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/03-method-and-results.md",
+   "lines": "65-66",
+   "quote": "checked only whether treatment output expressed the assigned semantic facet. It found 119/120 matches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/03-method-and-results.md",
+   "lines": "68-69",
+   "quote": "That is useful mechanism evidence: selected semantics often moved in the intended direction. It is not evidence of reliable execution, safe locality, or a pass on the primary statistic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/04-decision-and-lessons.md",
+   "lines": "29-30",
+   "quote": "Semantic selection, exact execution, invariant preservation, formatting, and scope binding are distinct failure surfaces.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "109-110",
+   "quote": "also applied the program under the wrong-path and wrong-subject controls. It was steerable but not safely scoped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "23",
+   "quote": "A1b showed negative-control leakage plus invariant and execution failures.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Ye et al. 2026",
+   "url": "https://aclanthology.org/2026.findings-acl.99/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

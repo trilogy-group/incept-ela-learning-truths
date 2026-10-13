@@ -1,0 +1,58 @@
+{
+ "id": "map-every-fact-to-the-curriculum",
+ "title": "Map every fact to the curriculum",
+ "statement": "Map every fact taken from a source to the part of the curriculum it serves, and drop or review the ones that fit none.",
+ "example": "In one unit's build, 437 of 1,194 facts extracted from source texts mapped to no part of the curriculum.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "stimulus",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One unit's knowledge build had a model generate facts from source texts and then map each one to the curriculum (`icloud-work/k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1 - Instructions.csv`, line 16). In its mapping output, 437 of 1,194 facts carried 'None' in the cluster column, against 757 mapped to a topic, and the refinement step set facts on whole civilisations aside as out of scope (`icloud-work/k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1.xlsx`, sheets '2. Mapping Output' and '6. Fact Refinement Output').",
+ "against": "An unmapped fact may still be background students need: the reviews kept asking for added definitions and context, so dropping every one could remove support students need (see the record on background at the line that needs it).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1.xlsx",
+   "lines": "sheet '2. Mapping Output', column D ('Cluster'), e.g. cell D109"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1.xlsx",
+   "lines": "sheet '6. Fact Refinement Output', cell F2",
+   "quote": "3. Out of Scope (Mesoamerican civilizations):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1 - Instructions.csv",
+   "lines": "16",
+   "quote": "7. In the main.py script, run steps 1 and 2 (generate facts + map facts to curriculum).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "131-132",
+   "quote": "**F3: Scope drift.** Detection: a lesson cannot map to a local topic ID/KC or crosses its period without explicit context. Recovery: remap, move, or remove the unsupported material.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

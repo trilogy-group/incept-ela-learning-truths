@@ -1,0 +1,556 @@
+{
+ "id": "close-the-class-not-the-instance",
+ "title": "Close the class, not the instance",
+ "statement": "Treat each defect, finding or failure as a class: repair its kind and add a standing check across everything made the same way, not just the items that failed.",
+ "example": "39 checks were added in 5 weeks, yet one defect class took seven separate commits.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's QA notes found that 39 checks were added in 5 weeks (7-10 a week) while the same defect classes kept coming back, one of them across seven separate commits, and a later formatting commit silently reverted an earlier pronunciation fix. What converged was closing a finding only when its whole class has an executable check of what the student experiences, and counting new against repeat classes in every round report. When one instance of a text-to-speech trap turned up, the rule became a census of every instance in the course file rather than assuming a one-off, and a give-away cue rule was swept over every grade. Where code can't check a class, a dated rule stands in for the check, and each check is shown to fire before the fix and runs on every lesson.",
+ "against": "A class-level check can reach too far: one specified rule was kept unwired because both of its candidate forms flagged approved, reviewed content. The same roadmap found one complaint class counted as machine-catchable covered only by a lint on one word family, not the length the complaint was about, so a class check has to be shown to cover its class (`grade3-reading/artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md`). Some renders voice such an opening anyway, so each case's transcript is checked rather than assumed (`grade3-reading/knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd`). A class check has to be precise before it is wired in: one rule for where a question belongs was specified but kept unwired, because both of its candidate forms flagged approved, reviewed content (`grade3-reading/knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd`, lines 83-85). The set catches only mistakes that have been named at least once, so content that can fail in new ways still needs people's judgment (shadow-bench/docs/brainlift.md line 143), and '*Weakest point:* learning only from refusals means approvals teach nothing.' (line 118). The same document records the objection that 'a pile of prohibitions has no construct validity, so content can pass every check and still teach badly' (line 108). The standard that states it is a draft that binds nobody, and the test it names for the practice, findings per lesson falling round by round, has no recorded result in that file (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`). The standard was a draft, not shared or adopted, that binds nobody (`grade3-reading/artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md`). Some repairs held on fresh rows: single-shot runs on rows 100-149 gave \"239/250 = 95.6%\" (aptraining-local/den-of-ideation/reports/validation_triage/20260524T202325Z_2026-05-24T2022Z_UNIT1_LEQ_SOLVER_v3_VALIDATED_99_6pct.md.md, line 140). One of the new failures, row 27, was a \"timeout/null rating\" rather than a graded miss (aptraining-local/den-of-ideation/reports/unit1_leq_solver_v3_final_gap_repair_delivery_20260524T1840Z.md, line 11). A later run found counter-evidence (`grade3-reading/curriculum-gen/.agent/AGENT.md`). A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/REGISTER-2026-09-15.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "18",
+   "quote": "39 checks were added in 5 weeks (7-10 a week), yet the glow/scroll defect class was",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "20",
+   "quote": "silent/missing-audio class has seven separate commits between 2026-08-26 and 2026-09-14.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "43",
+   "quote": "**A finding closes when its CLASS has an executable experience invariant**, not when the specific item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "50",
+   "quote": "**Every round report counts NEW defect classes vs REPEAT classes.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "102",
+   "quote": "silently reverted an earlier phonetic fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "28",
+   "quote": "census ALL colon-openers in the grade JSON rather than assuming a one-off",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd",
+   "lines": "37",
+   "quote": "Class sweep (PARALLEL-LEAD / connective-tell rule) run over every grade",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "18",
+   "quote": "39 checks were added in 5 weeks (7-10 a week)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "20",
+   "quote": "silent/missing-audio class has seven separate commits",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "24",
+   "quote": "Checks were shaped like the incident that produced them, not the class",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "35-36",
+   "quote": "every metric being watched (PASS counts, pins closed, items closed) measured CLOSURE, not RECURRENCE",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "43-44",
+   "quote": "A finding closes when its CLASS has an executable experience invariant, not when the specific item is patched.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "50",
+   "quote": "Every round report counts NEW defect classes vs REPEAT classes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "83-85",
+   "quote": "QUESTION HOME, was specified but is explicitly NOT shipped/wired — the function is retained unwired as evidence because both candidate forms flagged approved, reviewed content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "212",
+   "quote": "Each human-found defect became a machine check the same cycle, born red",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "21",
+   "quote": "L7 p3 vocab-form1 carried the same \", because …\" tell → fixed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md",
+   "lines": "144-145",
+   "quote": "fail if an exact or near-exact match reappears.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "76",
+   "quote": "Three recurring defect classes, each promoted from incident to standing gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "78-79",
+   "quote": "Voice defects repeated as one-off fixes for weeks (wrong/different voice on 2026-09-04 twice, 2026-09-07, 2026-09-21)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "27-28",
+   "quote": "Once one instance is found, census ALL colon-openers in the grade JSON rather than assuming a one-off;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0179-g3-peter-pan-close-out-state-and-reusable-process.qmd",
+   "lines": "84-85",
+   "quote": "encode the finding's CLASS as a reusable census/validator so the same shape of defect is never re-found by hand twice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0216-codex-visual-audit-2026-09-07.qmd",
+   "lines": "72-73",
+   "quote": "so none of these four visual classes can regress silently again",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "82",
+   "quote": "**Removing a check because it is inconvenient.** A check comes out when someone shows it is wrong. Any looser rule and the set stops accumulating under the first delivery deadline.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "1d49212",
+   "lines": "13-14",
+   "quote": "- Added test_evaluator_prompt_rules_1046.py to verify the rule exists and is generalised to the pattern, not anchored to specific reproducer items.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "0af5df4",
+   "lines": "13-14",
+   "quote": "Added test_evaluator_prompt_rules_1045.py to verify the rule exists and is generalised to the pattern, not anchored to specific reproducer items.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "6078ea3",
+   "lines": "12-13",
+   "quote": "Added test_evaluator_prompt_rules_1043.py to verify the rule exists and is generalised to the pattern, not anchored to specific reproducer items.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "175",
+   "quote": "A detector that is never corrected drifts from the judgment it was built to copy, so any durable check set needs a removal path as well as an addition path.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "31-32",
+   "quote": "dated registers, validators that fail a build on a rule once stated (25-word ceiling, hint ladders, no-answer-leak)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "59-60",
+   "quote": "(comment -> dated register entry -> rule/validator -> structurally extinct)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "65-66",
+   "quote": "from 7/9 taught words appearing only once",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "58",
+   "quote": "Status: DRAFT, not shared, binds nobody",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "26",
+   "quote": "> **No reviewer ever makes the same class of comment twice.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "28",
+   "quote": "shared over and over and continues not to be implemented",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "97",
+   "quote": "We also added an automated check so a long opener like this cannot land again without being caught before it reaches you.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "5",
+   "quote": "Not shared, not adopted, binds nobody.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "281",
+   "quote": "Dynamic repair works only when keyed to standard/type/context, not exact benchmark row IDs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "67",
+   "quote": "Add type-specific failure buckets and generalized repair proposals keyed by `substandard_id`, standard description, type, and retrieved sources rather than exact row ID.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_leq_solver_v3_final_gap_repair_delivery_20260524T1840Z.md",
+   "lines": "22",
+   "quote": "Added deterministic Spanish Empire social/economic repair for `c_i7Ve`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_leq_solver_v2_validated_addendum_20260524T1633Z.md",
+   "lines": "35",
+   "quote": "Rows `47` and `48` from v1 now pass, so the Maya chronology repair worked. Row `49` remains failed and a new row `27` failed.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T115335Z_2026-05-24T1153Z_UNIT1_DBQ_SOLVER_v2_VALIDATED.md.md",
+   "lines": "127",
+   "quote": "5 of v1's 6 failures repaired; 1 (row 39) still fails; 1 new fail (row 29) introduced — net +4 passes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "39-40",
+   "quote": "the exact-quotation check only accepted quotations of two or more words. The check now accepts a single word when that word is in the text, with a test for it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "42-43",
+   "quote": "The house prompt now forbids L numbers in student-facing text, and an advisory check asks whether each wrong option would tempt a reader who skimmed",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "176",
+   "quote": "Earlier drafts that were held, and the change each led to:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "179",
+   "quote": "an untrue feedback line, \"the second frame\", and wrong-option feedback that named the answer: new checks, below;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "would tempt a reader who skimmed`, required: false",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "An unsure Jev is still shown as a miss in three places:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The rank-10 fix covers only the transformer's own runtime and blocks.play path.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "125",
+   "quote": "unsure is never a pass and never a miss: the build's offline case, not an attempt",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "127",
+   "quote": "pass and never a miss: in the 3D build it is its own offline case (not an attempt, the answer kept), in the animated",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-14.md",
+   "lines": "101-106",
+   "quote": "Today: **qa-must-converge** — rounds fixed instances and shipped incident-shaped checks (39 checks in 5 weeks, 7–10 a week) while the CLASSES recurred (glow/scroll fixed 09-03, 09-04, 09-07, 09-14; silent audio seven commits 08-26→09-14). Going forward: experience invariants over mechanism assertions; a detector for every safety rule that degrades to silence; a recurrence gauge per round (new classes vs repeats); human QA on a frozen staging after waves, not during; a finding closes when its class has an executable invariant, not when the item is fixed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "48",
+   "quote": "- More red-team rounds instead of killing the generators: REGISTER.md headline — 'this is a CHURN problem, not a bug list... The exit is not more rounds. It is: (1) freeze an RC, (2) single-source the numbers, (3) fix the gate' — rounds kept re-finding the same ~15 hand-typed count copies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20593",
+   "quote": "## Two adversarial systems — keep them in sync",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20596-20599",
+   "quote": "audits GENERATED LESSONS at authoring time. They share failure modes — a probe learned … in one belongs in both. When the gauntlet adds a permanent probe (dose-item leak, … fact-disjointness, annotation-consistency), mirror it into the taxonomy here; when a … red-team round finds a new class, add it to the gauntlet. Do not let them drift.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "66-67",
+   "quote": "Renderer reality: no schema support in the whole family = a docs-vs-platform gap, recorded once (contradictions ledger), not a per-lesson defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "46",
+   "quote": "PLATFORM-GAP (schema can't express it — contradictions ledger, once)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-24.md",
+   "lines": "18",
+   "quote": "PLATFORM-GAP (arc-wide incl. L1/L2)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "| G3 L7 p19 `recount` | 2 of 4 | Same source-policy bypass; require `retells-in-order`; no claim of a native false pass |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "63",
+   "quote": "The previously sampled V3 fix does not cover all sentence-completion layouts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-recheck/README.md",
+   "lines": "11",
+   "quote": "PASS: period stays on the final answer-chip row before and after selecting an answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "75-77",
+   "quote": "On 2026-08-21 eleven defects survived a fully green `npm run check`, and seven of them were mechanically checkable — nobody had written the check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "355-356",
+   "quote": "every serious miss must leave behind at least one stronger rule, red control, evidence lane, known-limit statement, or human decision gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "125-126",
+   "quote": "**Reviewer feedback is scoped to its own course.** A matching string elsewhere is not a ruling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "287-289",
+   "quote": "**A repeat-offense item is a process failure, not a content failure.** The moment a reviewer gives the same feedback a second time, the CLASS gets a red-controlled validator the same day — a third occurrence must be structurally impossible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "174-177",
+   "quote": "the linter now has a check that goes RED if UNIT-SPECS carries its own duplicate key-understanding table - i.e. you didn't just fix the sibling-drift, you added the regression gate for it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "41",
+   "quote": "it will recur anywhere free text is accepted, in any unit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "165",
+   "quote": "One screen fixed and the rest left is worse than none, because the inconsistency is the defect.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/leadership/leadership--LEADERSHIP-PLAYBOOK.md",
+   "lines": "369-370",
+   "quote": "COPY-UK, STEP-GAP, QUOTED-PARAPHRASE classes were each fixed once and then encoded so the same shape is never hand-found twice — kb-0177).",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "68",
+   "quote": "Treat it as a concrete composition regression test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "63",
+   "quote": "The reconciliation turns two hidden failure modes - stale exam format and self-certified source labels - into deterministic rejection rules.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "95",
+   "quote": "If the standard should change, we would rather change it deliberately across every lesson than patch three cards",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "190",
+   "quote": "Detector NOT added for the step-label class: the strict invariant reds untouched signed lessons (census in the F2 agent report).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "85-86",
+   "quote": "A reviewer re-raising a fixed class must hit an enforced rule, not a promise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "123-125",
+   "quote": "Voice was the single most-repeated defect in five weeks of sessions: wrong or different voice reported 2026-09-04 (twice), 09-07 and 09-21, each time fixed as an incident, each time returning.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

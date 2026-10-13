@@ -1,0 +1,131 @@
+{
+ "id": "judge-leaks-at-the-students-level",
+ "title": "Judge leaks at the student's level",
+ "statement": "Count an answer found without the text as a leak only when a typical student at the target level could find it the same way, not merely a strong model.",
+ "example": "At one grade, dropping low-confidence forced guesses cut recoveries on 45 items from 43 to 39.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A calibration on 45 live items found a strong solver recovered 43 without the text under the strict bar and 39 once low-confidence forced guesses were dropped, noting that a strong solver out-reads the child, and recommended counting a recovery as a leak only when a typical third grader could plausibly reproduce it (`grade3-reading/artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md`). One run's blind-solver instructions set the bar at a savvy student, not an expert (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-claude/run/SOLVER_V2.md`), and the retrospective of a parallel run called the grade-level bar the clearer one because it asks whether a real fifth grader could reproduce the recovery (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`).",
+ "against": "An earlier protocol counted any model recovery, marking an item leaked at 2 of 3 correct recoveries (`grade3-reading/artifacts/LANE3_LLM.md`), and a unit report pulled an item from serving once a newer solver answered it 3 of 3 without the text (`grade3-reading/artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "62",
+   "quote": "recovery counts as leak only when a typical THIRD grader could plausibly reproduce it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "55-56",
+   "quote": "It removed 4 recoveries (43 -> 39) that were low-confidence forced guesses",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "57",
+   "quote": "out-reads the child; near-chance forced guesses are not leaks",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-claude/run/SOLVER_V2.md",
+   "lines": "14",
+   "quote": "The bar is a savvy student, not an expert.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "304",
+   "quote": "explicitly asks whether a real fifth grader could reproduce the blind recovery",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE3_LLM.md",
+   "lines": "270",
+   "quote": "**Threshold:** 2/3 correct recoveries = LEAKED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "22",
+   "quote": "Current Gemini 3.5 is 3/3 in both conditions, so the item is directly gameable",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Othello is famous, so Jev may answer plot questions from general knowledge. A blind solve will then flag many first-read checks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Decide whether that counts as a leak for Grade 9, or steer QC to line-level detail.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "139",
+   "quote": "its give-away question was answered from general knowledge of Othello (now: the question's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "406-410",
+   "quote": "Gate bars were split across tranches. The 700 MATCH items used `loosened`; the 167 non-match items used `grade5`. Both bars were trying to avoid requiring frontier-model-proof questions for fifth graders, but `grade5` is the clearer default going forward because it asks whether the blind recovery is realistically student-reproducible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/g3-control-protocol.md",
+   "lines": "30-32",
+   "quote": "A strong solver out-reads a third grader by an even wider margin than it out-reads a fifth grader, so raw blind-solve success is the wrong yardstick at G3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "254",
+   "quote": "- Text-dependence ablation uses a language model, which may have different knowledge than a typical G3–G5 student. Items that fail for LLMs may be valid for students (false positives) or vice versa.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

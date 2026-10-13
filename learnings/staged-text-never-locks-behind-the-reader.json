@@ -1,0 +1,88 @@
+{
+ "id": "staged-text-never-locks-behind-the-reader",
+ "title": "Staged text never locks behind the reader",
+ "statement": "When a text is released in stages, add each part to one continuous column, and keep everything already unlocked there to reread and its audio to replay.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "sequence",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a Grade 9 prototype accepted staged unlocking forward, which paces the reading, but ruled that nothing already unlocked may become inaccessible and that new text should append to one scrolling column, so it reads as continuous rather than as a series of cards. It extended the rule to the audio, with per-section replay and scrub-back. It rests the rule on two eye-movement studies it names, which found that regressions in reading are genuine rereading and that blocking them impaired comprehension, and calls this its strongest evidence, moving backward locking from a preference to a defect.",
+ "against": "The prototype revealed the text one tap at a time (\"So you know we show a starting line and then the student taps next to show the next thing and and so on.\", `g9/sources/meeting-notes/Incept Service CoE Catchup - 2026_10_07 10_30 CEST - Notes by Gemini.md`, line 356), which is the forward gating the review allows.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "99",
+   "quote": "Keep all previously unlocked text accessible. Gating forward is fine; nothing may lock behind the student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "100",
+   "quote": "Append new text to one scrolling column so the script reads as continuous rather than as a series of cards.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "101",
+   "quote": "Give the audio per-section replay and scrub-back, so the reading is as re-hearable as the text is re-readable.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "249",
+   "quote": "Gating forward is legitimate: it stops a child racing ahead of comprehension. Locking backward removes re-reading, and re-reading is how comprehension gets repaired.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "399",
+   "quote": "Booth & Weger (2013) found that regressions during reading are genuine re-reading rather than memory checks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "399",
+   "quote": "Schotter, Tran & Rayner (2014) used a trailing mask that permitted forward reading but blocked regressions and found measurably impaired comprehension, not only on ambiguous sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "399",
+   "quote": "This is the strongest evidence cited in this document, and it moves backward locking from a preference to a defect.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Booth & Weger 2013, The function of regressions in reading: Backward eye movements allow rereading, Memory & Cognition 41, 82-97",
+   "url": "https://doi.org/10.3758/s13421-012-0244-y"
+  },
+  {
+   "ref": "Schotter, Tran & Rayner 2014, Don't believe what you read (only once): Comprehension is supported by regressions during reading, Psychological Science 25, 1218-1226",
+   "url": "https://doi.org/10.1177/0956797614531148"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

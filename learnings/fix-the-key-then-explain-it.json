@@ -1,0 +1,64 @@
+{
+ "id": "fix-the-key-then-explain-it",
+ "title": "Fix the key, then explain it",
+ "statement": "Fix an item's structure and answer key first, write its explanations against that fixed key, then check every explanation, hint and feedback line against the actual options and key.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "key",
+  "feedback",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A distilled report on one AP generator calls two-stage generation its load-bearing pattern: the structure and key are fixed first and the explanations written against them, which keeps an explanation from contradicting the key (`k_12_social_studies_distilled.md`, lines 44 and 73). Generating multiple-answer items in one stage gave bad answer counts until two-stage generation plus validation fixed it (line 64). The AP evaluator's rubric fails an item whose explanations, hints or feedback describe options or values that are not there, and its first checklist asks whether explanations match the key and options (`mcq_evaluation.txt`, line 85; `_base_evaluation.txt`, line 66). That generator's headline scores were graded by the model family that wrote the items (line 10 of the same report), so this is design evidence, not a measured lift.",
+ "against": "The pattern was proven only for some item types: \"Match/fill-in/article were less proven and flagged for more validation\" (`k_12_social_studies_distilled.md`, line 49).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "44",
+   "quote": "- This prevents the model from generating an explanation that contradicts the answer key.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "73",
+   "quote": "- Use two-stage generation for answer-bearing item types: lock structure/key first, generate explanations second.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "64",
+   "quote": "- Single-stage MSQ produced bad answer-count behavior; the fix was two-stage MSQ plus validation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "85",
+   "quote": "- **FIELD MISMATCH**: Explanations, hints, feedback templates, or `additional_details` describe distractors, answers, or values that do NOT match the actual options or correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "66",
+   "quote": "- Do explanations/rationales match the correct answer and options?",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

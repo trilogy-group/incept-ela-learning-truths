@@ -1,0 +1,43 @@
+{
+ "id": "stage-supports-dont-stack-them",
+ "title": "Stage supports, don't stack them",
+ "statement": "Bring each support, such as a word bank, hints or sentence starters, onto the screen only at the step that uses it, so no screen opens on many live targets.",
+ "example": "An audit of 21 student screen types across four lessons of one course led to the rule that no screen may open on fifteen live targets.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The rule is one of seven in an attention standard that a grade 3 reading course codified from an audit of all 21 student-mode screen types in four of its lessons, measured at two screen sizes with per-element pixel shares and a blurred copy of each screen (`grade3-reading/course-renderer/docs/process/ATTENTION-HIERARCHY.md`, lines 3-11). It has the cloze word bank arm when a blank is aimed at, hints unlock after the first attempt and sentence starters wait behind a request, and the standard treats a screen that can't pass it as not done.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "39-42",
+   "quote": "**Support is staged, not stacked.** Word banks, hints, and sentence starters mount at the step that uses them: the cloze bank arms when a blank is aimed, hints unlock after the first attempt, starters live behind \"Need a starter?\". A screen must never open on fifteen live targets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "3-4",
+   "quote": "Codified from the WITW UX Attention Audit (2026-08-31; branch `witw-tier3-conformance`), which measured all 21 student-mode screen archetypes",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

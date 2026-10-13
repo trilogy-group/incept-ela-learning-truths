@@ -1,0 +1,112 @@
+{
+ "id": "no-local-knowledge-the-course-doesnt-teach",
+ "title": "No local knowledge the course doesn't teach",
+ "statement": "Keep an item solvable without local or cultural knowledge the course doesn't teach, in a neutral everyday setting unless the curriculum calls for a particular one.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A question benchmark's localization check passes an item only when it is solvable without local cultural knowledge, and fails one that needs such knowledge to understand or solve it (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, lines 571 and 581). Its specification for item sets asks for neutral, universal contexts and no content that needs local cultural knowledge, and lists culturally specific scenarios, from defaulting to US-centric contexts, among its ten common failure modes, with universal settings as the fix (`icloud-work/incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md`, lines 284-285 and 556). The evidence is a specification and a rubric, not a measured effect. Use at most one region-specific reference, write in the language of instruction, and fall back to neutral wording when these can't be met.",
+ "against": "The curriculum can call for a particular context: the specification avoids holidays such as Christmas or Diwali only \"unless curriculum requires\" (`icloud-work/incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md`, line 303).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "284",
+   "quote": "- Neutral, universal contexts (classroom, shopping, measurements, nature)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "285",
+   "quote": "- No content requiring local cultural knowledge to solve",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "556",
+   "quote": "| 8 | Culturally specific scenarios | localization_quality | Default to US-centric contexts | Use universal settings |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "571",
+   "quote": "- Problems solvable without local cultural knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "581",
+   "quote": "- Requires local cultural knowledge to understand/solve",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "303",
+   "quote": "- Holidays (Christmas, Diwali, etc.) unless curriculum requires",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_guidelines.json",
+   "lines": "29",
+   "quote": "**Universal solvability**: Problems should be solvable without requiring local cultural knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_guidelines.json",
+   "lines": "102",
+   "quote": "**Regional Reference Limit**: Use at most one explicit, region-specific object or concept.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_guidelines.json",
+   "lines": "107",
+   "quote": "**Instruction-Aligned Language**: Only switch to the student's regional/native language if instruction for that student actually uses that language.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_guidelines.json",
+   "lines": "82",
+   "quote": "**Neutral fallback**: If a guardrail can't be satisfied, the output should pick the neutral fallback instead of improvising.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "244",
+   "quote": "These rules reject caricatures (e.g., stacking “camel + dates + desert”) and prevent switching languages unless instruction requires it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "246",
+   "quote": "Every rule in `localization_guidelines.json` is evaluated via its own micro-prompt that returns `score: 1` (pass) or `score: 0` (fail).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

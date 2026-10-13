@@ -1,0 +1,134 @@
+{
+ "id": "dont-rehearse-the-test-you-validate-against",
+ "title": "Don't rehearse the test you validate against",
+ "statement": "When validating a new measure against an established test, don't let it act as practice for that test.",
+ "example": "In one validation plan about half the cohort sits the official test first, which gives a linking estimate with no prior exposure to the new test.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "practice"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An adversarial review of a reading assessment's validity plan pointed out that giving the new test days before the official one would be a practice intervention on the very test it was being validated against (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md`). The plan has every student take both tests within two weeks in counterbalanced order, so the half that sits the official test first gives a linking estimate with no prior exposure, and it offers an arm that gives the new test only after the official sitting (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md`). Counterbalancing measures the practice effect rather than removing it, so the plan reports the official-score difference between the two orders as a study output. The retest literature it cites puts practice effects at about d = 0.24 to 0.26 per re-administration, and it expects format familiarity without item overlap to sit well below that.",
+ "against": "Accounts differ on whether the order design was new: the package's response says the review's claim that counterbalancing was missing was a factual error (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_RESPONSE.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "21",
+   "quote": "rehearsal administered days before the real test is a **practice/familiarization intervention on the criterion measure**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "65",
+   "quote": "All students take both tests (within 2 weeks). Order is counterbalanced to control for practice effects and fatigue:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "81",
+   "quote": "Group B (MAP-first, ~50% of the cohort) provides a linking estimate with zero prior proxy exposure by construction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "81",
+   "quote": "The Group A vs Group B official-MAP score difference is reported as an explicit study output: it directly estimates any practice effect of a proxy sitting on the official score",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "81",
+   "quote": "d ≈ 0.24–0.26 per re-administration, Hausknecht et al. 2007",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "81",
+   "quote": "a **post-MAP-only administration arm** is available: the proxy administered only after the official sitting.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_RESPONSE.md",
+   "lines": "5",
+   "quote": "three of its load-bearing findings rest on factual errors — a counterbalancing design it says doesn't exist",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "72",
+   "quote": "Shorter windows risk carryover from item exposure; longer windows introduce growth as a confound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "29",
+   "quote": "the retest literature estimates d ≈ 0.24–0.26 per re-administration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "81",
+   "quote": "but format familiarity without item overlap should sit well below that, and the proxy contains no NWEA items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "55",
+   "quote": "repeat sittings require retest-overlap exclusion + per-band exposure caps",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "21",
+   "quote": "a 40–43-item, MAP-format, MAP-convention rehearsal administered days before the real test is a **practice/familiarization intervention on the criterion measure**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_RESPONSE.md",
+   "lines": "58",
+   "quote": "Group B (MAP-first, ~500 students) yields a contamination-free linking estimate by construction; the Group A vs Group B official-MAP score delta is reported as an explicit study output (it directly estimates the practice effect on the criterion, turning the objection into a measured quantity).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "25",
+   "quote": "Format familiarization without item overlap is the thing NWEA itself distributes.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Hausknecht et al. 2007",
+   "url": "https://doi.org/10.1037/0021-9010.92.2.373"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

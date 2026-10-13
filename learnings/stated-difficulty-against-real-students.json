@@ -1,0 +1,42 @@
+{
+ "id": "stated-difficulty-against-real-students",
+ "title": "Stated difficulty against real students",
+ "statement": "Whether an item's stated difficulty matches how real students do on it is untested: a plan to compare the label with the share answering correctly has no results yet.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "demand",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A strategy report for a teach-then-test loop proposed storing real-world difficulty, the share of students who answer correctly, against generated questions, and registering a difficulty mismatch when, for example, an item labelled medium has a p-value of 0.20 (`aptraining-local/analyzer/.lanes/teaching-benchmark/STRATEGY_REPORT.md`, line 33). It names released statistics or the app's own telemetry as the data (line 32). In this work difficulty is an input the writer is asked to meet (`icloud-work/aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md`, line 42), and no student results appear in the sources. To settle it: give generated items to students and compare each label with the share who answer correctly.",
+ "against": "Proposals only; no student data or measured result appears in the sources.",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/.lanes/teaching-benchmark/STRATEGY_REPORT.md",
+   "lines": "33",
+   "quote": "- **P-Value & Point-Biserial Mapping:** Store real-world question difficulty (p-value) against generated questions. If a generated \"Medium\" question has a real-world p-value of 0.20 (Hard), we register a `difficulty_misalignment` failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "42",
+   "quote": "- `difficulty`: `{{difficulty}}` (easy/medium/hard — interpreted per curriculum)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

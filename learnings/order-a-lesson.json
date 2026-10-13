@@ -1,0 +1,492 @@
+{
+ "id": "order-a-lesson",
+ "title": "Order a lesson",
+ "statement": "Order a lesson: what students already know, the source, a worked example, guided tries, their own explanation, a check, and a later transfer.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The reading project's lesson flow prepares knowledge, meets the text, models the thinking, then gives guided practice\nof the same process, the student's own explanation, an evidence check, and a delayed, varied transfer\n(`grade3-reading/knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd`), drawing on Rosenshine's\nprinciples of instruction (https://www.aft.org/sites/default/files/periodicals/Rosenshine.pdf). Its engine's model act is\n\"I do, then you try\" (`grade3-reading/engine/src/goal/lesson.js`). The lesson engine's palette runs in that order: what\nstudents know and a film, the question and key words, reading checks, a worked model, writing and comparing, then\nsaying back and debate (`g9/transformer/README.md`, \"Blocks\").",
+ "against": "this is design and research, not a result of\nours; the reading project calls its own evidence design stress, not proof of outcomes. A later run found: a practice-only course may leave its teaching to a named spine course, though deferring to a course that doesn't exist failed review (`grade3-reading/ti-courseplans/docs/course-creation-spovs.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/goal/lesson.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "40",
+   "quote": "Reading Explorers v2 is a well-built, MAP-styled practice-and-assessment engine, not a comprehension curriculum, and on its current form it should not be approved as one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "56",
+   "quote": "| `V0_skill_drill_practice_engine` | 0 | 0 | 12 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "57",
+   "quote": "| `V1_question_bank_plus_thin_instruction` | 0 | 0 | 12 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "60",
+   "quote": "| `V4_full_student_ready_candidate` | 12 | 0 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "70",
+   "quote": "Strong questions do not become a course unless they sit inside this flow and the actual app proves students can experience it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "23",
+   "quote": "not student outcome evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "40",
+   "quote": "If it is decided that this should be a MAP practice app, the recommendations below would be different.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "35",
+   "quote": "restates and tests the prior lesson's narrative state, always using a question that requires the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "153",
+   "quote": "Dimension criterion: a visible overarching purpose-question frames a multi-lesson text set from",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "495",
+   "quote": "Reading-goal page comes AFTER vocabulary instruction in L5–L7 (vocab gates orientation)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "432",
+   "quote": "the design made deliberately (vocabulary first so the word is ready for the read)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "170",
+   "quote": "**Why it is a NOTE, not a finding:** The canopy deficiency is real at the arc-text level (four",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "27",
+   "quote": "A lesson may only assume knowledge earlier lessons taught AND the child proved fluent a day later (anchor E2-cleared)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "62-64",
+   "quote": "so an anchor first taught the same day never satisfies an `assumes` edge, and an anchor that is present-but-not-fluent is treated as not met.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "118",
+   "quote": "- Build a real curriculum, not a library of components or a standards-aligned item bank.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "87",
+   "quote": "No model of a strong response is shown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0203-g9-ela-cnu-academics-meeting-2026-10-01.qmd",
+   "lines": "86-87",
+   "quote": "**three exemplar responses** at different levels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "64",
+   "quote": "Replace independent tasks that reuse answer-bearing modeled evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "61",
+   "quote": "Children need a reason to read before they start",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "26 (textutil text)",
+   "quote": "modelling every step except the final thinking move. It sounds like genuine thinking, not a lecture.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "28 (textutil text)",
+   "quote": "This is the first, most-supported turn at the skill before independent practice.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - Fantasy Classics - Knowledge Base (Complete).xlsx",
+   "lines": "sheet 'Overview', cell B35",
+   "quote": "Each lesson opens by re-firing the previous part's key threshold, then threads it into the new one.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - The Living World - Complete KB.xlsx",
+   "lines": "sheet 'Overview', cell B36",
+   "quote": "Each lesson opens by recalling the prior part's knowledge, then threads it into the new threshold.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-creation-spovs.md",
+   "lines": "90-91",
+   "quote": "every dosed lesson still ships an explicit **gradual-release teaching step** (I-do worked example → we-do guided → you-do) with **corrective feedback** (why an answer is right/wrong).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-creation-spovs.md",
+   "lines": "92",
+   "quote": "A read-then-test loop with binary \"good try\" is not a course; it's an assessment engine.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-creation-spovs.md",
+   "lines": "94-95",
+   "quote": "The first G3 build read \"no reading-strategy atoms\" as license to omit teaching and shipped a MAP-practice engine mislabeled as a comprehension curriculum",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "398",
+   "quote": "Do not ship an assessment layer ahead of the instruction and knowledge-compounding layer that prepares learners for it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-creation-spovs.md",
+   "lines": "114-115",
+   "quote": "carve-out (MAPS-practice courses defer teaching to the spine course) stands, but the deferral must name a concrete spine plan — deferring to a course that doesn't exist failed review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "21",
+   "quote": "1. **Set a purpose for reading BEFORE reading.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "25",
+   "quote": "**Read the text BEFORE modeling.** The child reads (or hears) the whole text first;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "317",
+   "quote": "Complete a first encounter with the whole text before close modelling or analysis.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "299",
+   "quote": "**C1 · Situate the learner: every section opens with a bridge to the one before.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "302-303",
+   "quote": "the defect it catches is a section that is individually well-written and contextually cold",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "616",
+   "quote": "- **Guided → Independent sequence**: Is there progression from modeling to practice?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "521",
+   "quote": "Both are valuable but serve different purposes. An article can have excellent worked examples but still lack independent practice.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/direct-instruction.md",
+   "lines": "48",
+   "quote": "1. **Review and warm-up** - Recall prior knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/website/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "87",
+   "quote": "Students see exactly how to perform the skill before trying it themselves. This is followed by short, guided practice and then independent work where students apply what they’ve learned.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/start-here.md",
+   "lines": "13",
+   "quote": "- seven progressively revealed phases: retrieval, teaching dose, model, guided response, independent response, feedback and different-evidence retry, and checkpoint;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "67",
+   "quote": "Prepare knowledge -> encounter text -> model thinking -> guided same-process practice -> student articulation -> evidence check -> delayed/varied transfer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "62",
+   "quote": "Students need to read the text first",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "28",
+   "quote": "All 14 article stimuli rebuilt: Get ready > The text > Watch me think > Your turn > Say it with evidence > Our river map",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "26",
+   "quote": "an independent inference item there would break the gradual-release order",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "225",
+   "quote": "- **W-9. WORTH-FIXING — gradual release runs backwards, only here.** p14's chart",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/lesson-instruction-agent.md",
+   "lines": "59",
+   "quote": "Do not model analysis before the learner encounters the text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "493",
+   "quote": "\"Explicit instruction provides a clear explanation of the criterion task, encourages students to pay attention, activates prior knowledge, breaks the task into small steps, provides sufficient practice at every step\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "77",
+   "quote": "camouflage lesson modeled BEFORE the child read the text and set no reading purpose",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "643",
+   "quote": "J16-LES-002: Provide a complete first encounter before close analysis.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "12",
+   "quote": "and then runs that identical four-step rail four times at decreasing support",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/academics-alignment-plan.md",
+   "lines": "46-48",
+   "quote": "→ one prerequisite retrieval prompt. Never lead with vocabulary or an unrelated hook.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "1-2",
+   "quote": "Word web: the big idea that runs through the text, as one word at the centre of a web the reader builds from memory; … then the lesson's key words for it land face down, and each is said before it is turned.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "94",
+   "quote": "Some of these words you brought with you, and some are new. The new ones are this lesson's key words for ${item.centre}.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "108",
+   "quote": "Before we read, show me what you already know. Build me a web for this one word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/index.js",
+   "lines": "24",
+   "quote": "wordWeb, filmCheck, videoEssay, learningQuestion, keyWords,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "114",
+   "quote": "Key words are not seeded from the word web's words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "1",
+   "quote": "the guide's \"I do\", before the student writes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "193",
+   "quote": "debate (the Grade 9 close: mimicry, then evaluation), then the learning question again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "116-117",
+   "quote": "The palette runs in lesson order: WW FM LQ KW | GL QC OC EH WF DL | WM CER CA | SB DB.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "182",
+   "quote": "the worked model is the model; CER is the student's paragraph",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/index.js",
+   "lines": "22",
+   "quote": "// the palette in the order a lesson runs: openers, the reading, practice, closers",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "77",
+   "quote": "House order: unit video → retrieval → learning question → new knowledge → guided practice → independent practice → closing questions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "87",
+   "quote": "Lesson 1 includes retrieval, a learning question, new knowledge, five reading sections, guided modelling, independent writing, and closing Mimicry, Application, and Evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "89-91",
+   "quote": "A lesson exists only when it teaches a bounded idea, models a move, hands that move to the learner, and gathers evidence of independent use.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "129-130",
+   "quote": "**F2: Item-bank course.** Detection: a lesson begins with independent questions before a content or reasoning model. Recovery: author the model and guided handoff before retaining the check.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rosenshine 2012",
+   "url": "https://www.aft.org/sites/default/files/periodicals/Rosenshine.pdf"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

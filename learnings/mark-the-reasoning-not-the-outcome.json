@@ -1,0 +1,57 @@
+{
+ "id": "mark-the-reasoning-not-the-outcome",
+ "title": "Mark the reasoning, not the outcome",
+ "statement": "Mark a prediction on whether the learner used the idea, not on whether it comes true.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The closing-questions design's third question has no answer key by design: a child who applies the idea has succeeded even if the next part of the story goes differently (`grade3-reading/artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt`). It takes the question out of the answer-checker entirely, since there is nothing to match against.",
+ "against": "A later run found counter-evidence (`grade3-reading/course-renderer/docs/handover/closing-questions/HANDOVER.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "104",
+   "quote": "There is no answer key, and there should not be one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "104",
+   "quote": "Mark on whether the rule was used, not on whether the prediction turns out right.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "159",
+   "quote": "**Q3 marking.** The document says both \"mark on whether the rule was used\" and \"removes the question from the answer-checker entirely\". The design follows the second.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "No right answer here. It is marked on whether you use the idea.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

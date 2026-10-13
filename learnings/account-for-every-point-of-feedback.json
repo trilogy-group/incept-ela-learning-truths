@@ -1,0 +1,105 @@
+{
+ "id": "account-for-every-point-of-feedback",
+ "title": "Account for every point of feedback",
+ "statement": "Map every point of feedback on its own to a decision and its evidence, and never drop one or bury it in a bulk statement that feedback was addressed.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The standard's golden checklist asks whether every point raised in review is individually accounted for: each source point needs a disposition and links to one or more requirements and exact evidence, so that nothing material is lost behind a bulk statement that feedback was addressed (`ti-courseplans-audit/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`, Q002). The 1.0 standard names bulk 'addressed' claims, missing source points and evidence with no feedback link as its failure signals (`ti-courseplans-audit/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`), and the base red-team profile maps each point to criteria and evidence and says feedback is neither dropped nor silently promoted into universal policy (`ti-courseplans-audit/docs/standards/student-course-quality/profiles/base/RED_TEAM_BASE.source.json`).",
+ "against": "Mapping a point is not accepting it: each linked requirement still needs its own evidence (`ti-courseplans-audit/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`).",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "25",
+   "quote": "Nothing material is lost behind a bulk statement that feedback was addressed.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "25",
+   "quote": "Each source point has a disposition and links to one or more requirements, exact evidence",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "54",
+   "quote": "Bulk addressed claims; missing source points; evidence with no feedback link.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/profiles/base/RED_TEAM_BASE.source.json",
+   "lines": "1406",
+   "quote": "map each point to criteria and evidence",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/profiles/base/RED_TEAM_BASE.source.json",
+   "lines": "1410",
+   "quote": "Feedback is neither dropped nor silently promoted into universal policy.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "55",
+   "quote": "Coverage is not acceptance; each linked requirement still needs evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "109",
+   "quote": "Preserve full rendered lists and tables, because paragraph-only extraction lost substantive requirements in this run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/workflow.md",
+   "lines": "3",
+   "quote": "Read every feedback report including lists/tables.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/feedback.md",
+   "lines": "3",
+   "quote": "Captured all30 accessible reports and1379 items, including full lists/tables, plus164 published invariants and a separate20-rule draft.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "123-125",
+   "quote": "the reviewer-facing \"here's each point of your feedback and where it lives\" table that the academics valued in G6 isn't in G5's case. For an academics re-review, that mapping is what signals the feedback was",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "62",
+   "quote": "A clause-by-clause re-read of the red-team document against everything shipped surfaced nine under-addressed points.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,80 @@
+{
+ "id": "self-report-is-a-prior-not-proof",
+ "title": "Self-report is a prior, not proof",
+ "statement": "Treat what a student says they know as a starting guess that their answers can overturn, never as proof of mastery.",
+ "example": "About 80% of students check a word as known, about 50% can give an example, and about 20% can explain it.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A diagnostic BrainLift in the reading project's knowledge base counts self-report as a legitimate, underused signal for setting priors, under one design principle: self-report is a prior, not a verdict, so it shifts probabilities but doesn't override item evidence. The platform's rules say not to advance students on time, completion or self-report. For word knowledge the gap is wide: a finding cited in the reading BrainLift has about 80% of students checking a word as known, about 50% able to give an example and about 20% able to explain it.",
+ "against": "The diagnostic evidence base says students judge coarse topic knowledge better than the assessment literature implies, though they are poor at predicting exact scores, so outside word knowledge self-report may be closer to the truth.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "108",
+   "quote": "The key design principle: self-report is a prior, not a verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "108",
+   "quote": "It shifts probabilities; it doesn't override item evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "21",
+   "quote": "Do not advance students based on time, completion, or self-report.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "72",
+   "quote": "\\~80% of students check a word as \"known,\" \\~50% can give an example, \\~20% can explain it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0155-diagnostic-assessment-evidence-base.qmd",
+   "lines": "207",
+   "quote": "students are better at judging their knowledge than the assessment literature implies — at least for coarse judgments.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/vocab-action-regression.log",
+   "lines": "75",
+   "quote": "PASS speech route self-reported remains practice only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3247",
+   "quote": "browser replay in all4 Peter Pan lessons proves claim alone does not unlock, completed check uses Next page.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

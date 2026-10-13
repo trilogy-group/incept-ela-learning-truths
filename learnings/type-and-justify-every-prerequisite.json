@@ -1,0 +1,289 @@
+{
+ "id": "type-and-justify-every-prerequisite",
+ "title": "Type and justify every prerequisite",
+ "statement": "Type every prerequisite link as hard or soft and as logical, evidence-based or conventional, let only hard, non-conventional links block a learner, and invent no chains the subject lacks.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The course validator fails any graph link that carries no warrant, since every typed link must state why it holds (logical, empirical or conventional), and warns when a hard prerequisite rests only on convention, which cannot justify a hard instructional block without stronger evidence (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py`). The reading project's draft course graph keeps hard prerequisites for logical requirements, gives soft ones a fluency threshold instead of a yes or no, and keeps its comprehension band horizontal, with no fabricated prerequisite chains (`grade3-reading/knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd`).",
+ "against": "A conventional hard link draws only a warning, not a failure, and the course graph is a draft awaiting academic review (the same two files). It is listed as an open build item, not a check that runs yet (`ti-courseplans-audit/docs/instruction-modes-spec.md`). In mathematics prerequisite chains are deep and reliable (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 368), so real chains do exist there; and the audit is listed as an open build item, not yet run (`grade3-reading/ti-courseplans/docs/instruction-modes-spec.md`, section 7).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "615",
+   "quote": "findings.append(F(\"LINT-WARRANT-PRESENT\", ERROR, \"graph/edges/%d/warrant\" % i,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "616",
+   "quote": "graph edge %s->%s carries no warrant (every typed edge must state",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "617",
+   "quote": "WHY it holds: logical|empirical|conventional).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "619",
+   "quote": "findings.append(F(\"LINT-WARRANT-PRESENT\", WARNING, \"graph/edges/%d/warrant\" % i,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "620",
+   "quote": "hard_prereq edge %s->%s rests on a conventional warrant; it cannot",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "621",
+   "quote": "justify a hard instructional block without stronger evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd",
+   "lines": "15",
+   "quote": "`hard_prereq` \\= B logically requires A",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd",
+   "lines": "15",
+   "quote": "`soft_prereq` \\= A eases B; carries a fluency\\_threshold, not binary (SPOV3)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd",
+   "lines": "13",
+   "quote": "the COMPREHENSION band is horizontal (knowledge-sequenced by design, cross-subject dependencies, no fabricated prereq chains).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd",
+   "lines": "1",
+   "quote": "G3 Reading Course Graph v1.0 (2026-07-13). DRAFT pending academics ruling.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "123-125",
+   "quote": "classify each edge logical / empirical / conventional (kc-graph change proposal, warrant field); a conventional edge may not block the on-ramp until upgraded by evidence",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "70-71",
+   "quote": "ELA comprehension is a horizontal knowledge structure — \"A before B\" is a design choice, not a logical necessity",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "126",
+   "quote": "every edge carries a warrant (logical/empirical/conventional); a *conventional* (untested tradition) edge passed off as *logical*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "70",
+   "quote": "\"A before B\" is a curriculum design choice, not a logical necessity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "380",
+   "quote": "The response cannot be to force a prerequisite structure onto content that doesn't naturally have one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "123-125",
+   "quote": "classify each edge logical / empirical / conventional (kc-graph change proposal, warrant field); a conventional edge may not block the on-ramp until upgraded by evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "78-80",
+   "quote": "**soft prereqs carry a fluency-threshold** (not binary met/unmet: \"fluent enough not to consume working memory\"), and **every edge carries a warrant tag** (logical / empirical / conventional).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "368",
+   "quote": "In mathematics, prerequisite chains are deep and reliable",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/BRAINLIFT.md",
+   "lines": "224-228",
+   "quote": "Strict prerequisite gating fits hierarchical subjects (math, phonics); horizontal subjects need looser gating with scaffolded support, because most \"prerequisites\" are contextual rather than logical and strict gating creates remediation loops on material that isn't truly blocking.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/SEQUENCING-BRIEF.md",
+   "lines": "85-86",
+   "quote": "proved on a delayed retest — not a same-day pass.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "617",
+   "quote": "Classify a hard prerequisite only when the target lesson requires unaided point-of-use retrieval of the source knowledge at a declared fluency threshold.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "417",
+   "quote": "ELA comprehension structure is largely designed rather than discovered; calling it a knowledge graph hides judgments as domain facts.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/course-graph-guide.md",
+   "lines": "111",
+   "quote": "most edges are soft/designed. The genuinely logical hard_prereqs are the A-chain introduce->reuse backbone and the discrimination->component dependencies; everything else is supportive.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/kc-graph/README.md",
+   "lines": "30-33",
+   "quote": "this is a **curriculum graph**, not a knowledge graph.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/BRAINLIFT.md",
+   "lines": "201-203",
+   "quote": "treating it as a knowledge graph risks baking one team's design choices into the architecture as if they were properties of the domain, making them invisible and therefore unchallengeable.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/kc-graph/README.md",
+   "lines": "33-35",
+   "quote": "The only `logical` hard-prereqs in the whole graph sit *inside the analytical toolkit* (you must identify a device before you can evaluate its effect)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "128-129",
+   "quote": "do not release a student on \"evaluate the effect\" who has not passed \"identify the device.\"",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "196",
+   "quote": "Unaided point-of-use retrieval plus one correct application on a parallel prompt; failure runs the named on-ramp and recheck.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "197",
+   "quote": "absence cannot silently block progression.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "192",
+   "quote": "missing fields block graph projection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20696",
+   "quote": "| **Decoding/comprehension seam ignored** | decoding = hierarchical hard-prereqs; comprehension = horizontal (no fabricated prereq chains) | are hard-prereq chains fabricated in the comprehension band? |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "197",
+   "quote": "absence cannot silently block progression",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "885",
+   "quote": "The history edge was labelled a logical one, meaning intrinsic to the domain, when it is a conventional one, meaning a tested tradition. Passing one off as the other is the error that creates misconceptions costing more to remediate than the teaching saved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R1.md",
+   "lines": "49-50",
+   "quote": "a *conventional* edge (a tested tradition) passed off as *logical* (domain-intrinsic) is the exact error",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "652",
+   "quote": "Do not let a conventionally warranted prerequisite block progression until evidence upgrades its warrant.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "58-60",
+   "quote": "`prerequisite_units` in the course map are **sequence prerequisites**: the immediately prior unit supplies chronology and vocabulary that the next unit may assume. They do not assert that history has one logically necessary graph.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

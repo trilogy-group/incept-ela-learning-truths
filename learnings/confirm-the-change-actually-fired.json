@@ -1,0 +1,149 @@
+{
+ "id": "confirm-the-change-actually-fired",
+ "title": "Confirm the change actually fired",
+ "statement": "Before crediting or blaming a change, confirm in the outputs that it took effect for every item type, since a change that never ran can still show a gain.",
+ "example": "A claimed gain from a self-checking step was within noise (p=0.7744), and the step had fired in 0 of 297 outputs.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A pressure test of a claimed +1.33-point gain from a self-checking decoding step found it within noise on a paired McNemar test (p=0.7744), and not one of 297 outputs carried the step's signal (`icloud-work/aptraining/.agent/memory/MEMORY.md`). A verification scaffold never triggered on 30 of 30 document-based items in a run that regressed 4.67 points (the same file), and the reported regressions of three training runs came from runs whose weights never moved (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md`). The eval template now asks for a significance check against the baseline (`icloud-work/aptraining/.agent-v2/templates/eval-cycle.md`). Bypasses can skip a change for some item types. Once a change is shown to have run, its gain is checked with a paired test.",
+ "against": "Two notes disagree on whether the silent fallback was the better path: one leaves the bug in on purpose because the fallback 'produces BETTER MCQ results' (the generator project's agent-memory index, `MEMORY.md`, line 15), while the improvement log has multiple choice going from 96% to 100% once the research step worked, on 10 items (`mcq_set_improvement_log.md`, line 15).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "130",
+   "quote": "McNemar p=0.7744 on APUSH (within noise); 0/297 v35 outputs emit any reflection token at decode (Self-RAG mechanism didn't fire).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "180",
+   "quote": "CoVe scaffold didn't fire at 14B (30/30 DBQ items `cove_stage=no_block`)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/plan.md",
+   "lines": "107",
+   "quote": "Across 190 steps and ~5.85M tokens, **DPO extracted zero signal**. The policy never updated.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/templates/eval-cycle.md",
+   "lines": "50",
+   "quote": "Statistical significance check (paired-t or BH-FDR if applicable)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/audits/v35_pressure_test/feedback_v35_within_noise.draft.md",
+   "lines": "22",
+   "quote": "- All 297 v35 generations under vanilla `oneshot_generate.py`: zero `[Retrieval=...]`, zero `[IsRel=...]`, zero `[IsSup=...]`, zero `[IsUse=...]`, zero `<paragraph>...</paragraph>`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md",
+   "lines": "86",
+   "quote": "| **v35 Self-RAG SFT** | 92.26% / 89.33% APUSH on canonical (looked like +1.33pp lift) | **RETRACTED** — McNemar p=0.7744, 0/297 reflection-token emission, mechanism never fired | Self-RAG vocab-extension is non-optional; \"lift\" was grader noise + threshold artifact |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "140",
+   "quote": "Log the `stage` (`revise` / `draft_fallback` / `no_block`) per item in the score record so we can quantify how often the verification phase actually fired.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "38",
+   "quote": "0/297 v35 outputs emit any reflection token at decode (Self-RAG mechanism didn't fire). The +1.33pp lift is noise + grader artifact, NOT a Self-RAG mechanism win.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "recipe_v35_self_rag_reproducible.md",
+   "lines": "135",
+   "quote": "- 0/297 v35 outputs emit ANY reflection token (`[Retrieval=…]`, `[IsRel=…]`, `[IsSup=…]`, `[IsUse=…]`)",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "11",
+   "quote": "**Impact**: The Research→Compile pipeline NEVER WORKED for either MCQ or MCQ_SET. Both silently fell back to legacy generation paths every time. The research step was designed to gather verified primary sources and plausible alternatives, but it always crashed before it could run.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_live_verdict_20260526.md",
+   "lines": "25",
+   "quote": "The v80bchain balanced15 result (E 14/15 > A 12/15) was a false signal: v80bchain selects deterministic repair routes (`dbq_source_repaired`, `mcq_set_repaired`) before the duck directives reach the model.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_live_verdict_20260526.md",
+   "lines": "16",
+   "quote": "**Confounded** — both off-limit-routed via `dbq_source_repaired` + `mcq_set_repaired`. Duck directives ignored.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_live_verdict_20260526.md",
+   "lines": "17",
+   "quote": "**Gemini 2.5 Flash (clean prompt path)** | **10/15 (avg 0.875)** | **8/15 (avg 0.783)**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/BEAD_EVIDENCE_INDEX.md",
+   "lines": "61",
+   "quote": "Finding: v80b on K=6 still routes DBQ through `dbq_source_repaired` and MCQ_SET through `mcq_set_repaired`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/BEAD_EVIDENCE_INDEX.md",
+   "lines": "61",
+   "quote": "**Duck directives don't reach the model for those cells. Code-port required (pil-6bp.10).**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2092",
+   "quote": "Initial `model_required` env was insufficient because Unit 1 had a hardcoded scored-template bypass before `call_fireworks`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "715-717",
+   "quote": "and then never landed the rendering: zero references to any of those keys existed in `index.html`, and no patch-log entry was written.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

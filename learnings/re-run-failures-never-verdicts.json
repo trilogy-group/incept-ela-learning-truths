@@ -1,0 +1,87 @@
+{
+ "id": "re-run-failures-never-verdicts",
+ "title": "Re-run failures, never verdicts",
+ "statement": "Re-run only a check that failed to finish, never one whose verdict was unwelcome, and certify nothing on missing evidence.",
+ "example": "Re-running only the errored attempts turned 2 false certifications into leaks.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one unit's gate, certification needed a full set of valid blind attempts and a valid passing control, and raw attempts were kept append-only and recomputed independently (`grade3-reading/artifacts/demo-unit-2026-07-10/items/02-gate-summary.md`, lines 8-14 and 40-45). A repair wave re-ran only evidence degraded by transport errors, because an errored blind attempt biases toward certifying an item and an errored control toward a false defect, and it never re-rolled a leaky verdict; it flipped 2 false certifications to leaky and 2 to inconclusive-defective (the same file, lines 46-49).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "47",
+   "quote": "attempts bias toward certification; errored controls toward false defect). Leaky verdicts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "48",
+   "quote": "were never re-rolled. The wave flipped 2 false certifications to leaky and 2 to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "If the provider marks the false recount as factually correct, this candidate has not closed the defect; preserve that first response and return to the demonstrated semantic failure rather than retrying until a pass looks convenient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "never resample after a valid verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-hostile-gate-v1-failure-record.md",
+   "lines": "88-89",
+   "quote": "Never rescore, repair, replenish, or recreate its deleted submissions or private results.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/MENACING-TARGETED-FLAG-DISPOSITION-by-residual.md",
+   "lines": "3",
+   "quote": "do not retry until a desired answer appears.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "49",
+   "quote": "Recover: (1) validate schema and output hashes; (2) compare saved G9 status; (3) leave B0972 open if evidence remains incomplete.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "47",
+   "quote": "There is no rerun-until-green result or automatic academic clearance.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,627 @@
+{
+ "id": "give-the-judge-what-the-student-sees",
+ "title": "Give the judge what the student sees",
+ "statement": "Give a judge exactly what the student sees, one bounded question at a time.",
+ "example": "Handed a bare question with no text or options, one check called 77 of 78 items unanswerable.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Every failure the reading engine has had was a judge asked to rule with the evidence missing\n(`grade3-reading/engine/skills/jev-verify/SKILL.md`). One of its checks was handed a bare question with no passage and\nno options, read \"no context given\" as \"not answerable\", and fired on 77 of 78 items; it now sees the passage and the\noptions the reader sees (`grade3-reading/engine/EVIDENCE-2026-09-22.md`). In a published study, giving a model judge a\nreference answer cut its false passes from 14 of 20 to 3 of 20 (Zheng et al. 2023,\nhttps://doi.org/10.48550/arXiv.2306.05685). In the lesson engine each check is one yes-or-no question about named\nfields of its state, with the student's words in their own field (`g9/transformer/README.md`, \"How a block is made\"),\nand a question must be one the statement can meet: two readings of a question are neither true nor false, so the judge\nasks only that nothing said goes against the text (`g9/transformer/src/mechanics/video-essay.js`).",
+ "against": "after the\nfix that check still fired on 41% (`grade3-reading/engine/EVIDENCE-2026-09-22.md`), and the lesson engine's precision\non its questions is not yet measured (`g9/transformer/v01/QA.md`). A later run found: the AP question-set pipeline stripped each set's image before the evaluator scored it (`icloud-work/ML learnings/mcq_set_journey.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "skills/jev-verify/SKILL.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-2026-02-19-COMPREHENSIVE.md",
+   "lines": "184",
+   "quote": "The evaluator truncates articles to 3000 characters before showing them to Claude!",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-2026-02-19-COMPREHENSIVE.md",
+   "lines": "191",
+   "quote": "The 0% article pass rate is a FALSE NEGATIVE.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "71",
+   "quote": "Image is stripped before InceptBench evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "145-146",
+   "quote": "firing on 77 of 78 items because it was shown a bare stem with no passage/options",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "8",
+   "quote": "**Pass rate**: **4/4 = 100%** when labeled \"easy\" vs **1/4 = 25%** when labeled \"hard\" on the SAME 4 stems × 4 options × 1 answer. Δ = +75pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "30",
+   "quote": "The judge is reading the label, not the content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "67-68",
+   "quote": "A weak distractor is weak regardless of whether the item claims to be easy or hard.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "6",
+   "quote": "Pilot-isolation lift is real; production stacking is not.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-2026-02-19-COMPREHENSIVE.md",
+   "lines": "161",
+   "quote": "- \"The article is truncated and ends mid-sentence\" - FALSE",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-2026-02-19-COMPREHENSIVE.md",
+   "lines": "191",
+   "quote": "**Impact:** The 0% article pass rate is a **FALSE NEGATIVE**. Articles are generating correctly but the evaluator only sees 3000 characters.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "4e52d17",
+   "lines": "1-3",
+   "quote": "fix(article-eval): prevent stimulus_quality hallucination when images fail to download (#339) Fixes #339. Merging into fix/article-eval-quality-2026-04-24. Golden dataset: 99/100 (99.0%).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "644",
+   "quote": "> - NOT describe specific visual details you have not actually seen",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "135",
+   "quote": "If you have not been given a deterministic finding in the input, you must not claim one exists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "b4a9346",
+   "lines": "3-6",
+   "quote": "The factual_audit field was appearing in the JSON schema sent to Gemini, with a description mentioning 'merged into factual_accuracy via min(main,audit)'. This primed the LLM to be more aggressive about failing factual_accuracy, causing golden-046 to consistently fail (0/2 pass on PR vs 2/2 on main).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "132-133",
+   "quote": "held back 8 of 12 lessons on a question the judge was never shown the passage to answer — fixed by (a) the key check now refusing to run without the passage in state",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "123",
+   "quote": "the judge needs the task, not just the instruction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1311-1312",
+   "quote": "`JUDGE-KEY` was a blocker and held 8 of 12 lessons at p=0.27–0.38 because the judge was never shown the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "28",
+   "quote": "rendered page first, then it \"pulled the lesson node data out of the build\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "28",
+   "quote": "It withdrew two of its four findings once it had the node data.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "20",
+   "quote": "If the same question, asked of a student, would have the same pedagogical experience regardless of how the JSON is structured, the schema is irrelevant.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1726-1728",
+   "quote": "Detect fill-in questions where the evaluator misread ``accepted_answers`` as defining multiple blanks when it actually defines multiple equivalent answer sets for a single blank.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1935-1937",
+   "quote": "Renderer / UI schema compliance is a platform concern, not a question-quality concern, so InceptBench no longer scores on it",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1959-1961",
+   "quote": "A non-zero tolerance on an exact value would silently accept incorrect answers (e.g. ``5.001`` for ``5``).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1952",
+   "quote": "Retained for reference only.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "3-5",
+   "quote": "remove_svg_from_content() substituted the literal \"[SVG converted to image for analysis]\" into the student-facing content sent to the evaluator LLM.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "6-9",
+   "quote": "the leaked bracketed marker was reliably read by the LLM as stray / unwanted / \"to-be-removed\" text, which tanked stimulus_quality and clarity and prompted \"remove this text\" suggestions.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "23-24",
+   "quote": "OLD (marker leaked): marker flagged 30/30 then 26/30 NEW (empty strip): marker flagged 0/30 then 0/30",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "51",
+   "quote": "- If image: provide rich descriptive caption (the grader sees text, not image).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "84",
+   "quote": "IB v2.5.11 grades DBQs as complete prompt+documents+rubric structures. Standalone primary-source excerpts aren't a DBQ shape.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "88",
+   "quote": "The proper test for Track A excerpts' DBQ-stim quality is downstream: **embed the excerpts in a full DBQ structure (prompt + 7 documents + rubric) + generate that DBQ → grade THAT.**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "82",
+   "quote": "Result: 30/30 scored 0.55 overall, stim_quality=0, rated INFERIOR.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/transcript_fetcher.py",
+   "lines": "10",
+   "quote": "2. Evaluators receive video URLs, not transcripts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/lit-question-qc.json",
+   "lines": "12",
+   "quote": "Options: All answer choices to evaluate - A: {correct_answer}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/detailed_report_20260226_115508.md",
+   "lines": "110",
+   "quote": "The answer options (A, B, C, D) are entirely missing from the submission.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/official_ap_formatters.py",
+   "lines": "100-101",
+   "quote": "lines.append(\"*No options provided*\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/detailed_report_20260226_115508.md",
+   "lines": "21",
+   "quote": "| MCQ | 0 | 12 | 0 | 0.0% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/detailed_report_20260226_124949.md",
+   "lines": "21",
+   "quote": "| MCQ | 11 | 1 | 0 | 91.7% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "351",
+   "quote": "content = content[:8000] + \"\\n\\n... [truncated for evaluation]\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-2026-02-19-COMPREHENSIVE.md",
+   "lines": "184",
+   "quote": "**The evaluator truncates articles to 3000 characters before showing them to Claude!**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FINAL_BENCHMARK_RESULTS.md",
+   "lines": "40",
+   "quote": "**Fix applied:** Match evaluator prompt + field name fix (`text` vs `content`)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/GENERATOR_STATUS.md",
+   "lines": "54",
+   "quote": "| Pre-fix | 17.8% | Evaluator couldn't read new format |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TEST-FINDINGS-2026-02-17.md",
+   "lines": "26",
+   "quote": "**Result:** Evaluator saw incomplete content → flagged as \"truncated\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "75",
+   "quote": "For these questions, **the formatting markup in the answer options IS the substance of the correct answer**, not decoration.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "1055-1058",
+   "quote": "The stimulus-reference check uses it as a fallback so a recursively decomposed child whose anchor slice missed a sibling-region stimulus is not falsely flagged when the parent article actually carries that image.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "63",
+   "quote": "- Article evaluation falsely failed long articles because only the first 3,000 chars were evaluated; raising the limit to 12,000 fixed the evaluator-side bug.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "155",
+   "quote": "- Transform-layer data loss was catastrophic: MCQ_SET stimulus attribution, SAQ stimulus attribution, LEQ scoring notes, DBQ author/title/date/HIPP fields were dropped before evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAP-CLOSURE-PLAN-2026-09-15.md",
+   "lines": "57",
+   "quote": "so that quote blank's proof is invisible to the child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "94",
+   "quote": "verbatim can be scored as off-text. Fix: author a pinned copy of the target",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "86-87",
+   "quote": "so author annotations (\"possibly removed\") register as false positives.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "69-70",
+   "quote": "the judged screenshot never contained the defect's gated UI node at all -- a pass that proves nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "86-88",
+   "quote": "Fix: target only child-facing instructional strings, not authoring notes.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "15-16",
+   "quote": "It also emits every question verbatim as an evidence pack.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "7-8",
+   "quote": "but the leaked bracketed marker was reliably read by the LLM as stray / unwanted / \"to-be-removed\" text, which tanked stimulus_quality and clarity",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "23",
+   "quote": "OLD (marker leaked): marker flagged 30/30 then 26/30",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "7707f02",
+   "lines": "11-13",
+   "quote": "so a diagram that exists ONLY in the surrounding resource reached the evaluator as neither text nor image — silently lost.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "218",
+   "quote": "Do not add visual DBQ documents unless the evaluator receives real visual/OCR payloads.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "68",
+   "quote": "Using only evidence_lines, is the option named by keyed_answer a correct answer to the question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "71",
+   "quote": "Using the text, is option ${letters[i]} a WRONG answer to the question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "138",
+   "quote": "Given said_by_${k}, is the option named by keyed_${k} in options_${k} the right answer to question_${k}?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/analyse.js",
+   "lines": "12",
+   "quote": "Does line L${u.n} of text help a careful reader answer lesson_question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "139-140",
+   "quote": "its give-away question was answered from general knowledge of Othello (now: the question's own words only)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "3",
+   "quote": "The writer drafts the questions from the captions;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "34",
+   "quote": "below is known (the pictures are not).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "11",
+   "quote": "const said = (film, upto) => film.captions.filter((c) => c.to <= upto + 0.01).map((c) => c.line).join(\" \");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/art.js",
+   "lines": "2",
+   "quote": "is offered an image by id and subject only",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "118",
+   "quote": "[[`image_${k}`, getArt(b.image)?.subject ?? \"\"]]",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "122-123",
+   "quote": "one Jev question a line, with the … question and the option picked beside it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/beats.js",
+   "lines": "35",
+   "quote": "/** What a frame shows, as text: for the judge to check the narration against it. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "46",
+   "quote": "held to what the film has shown and said by its stop",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "96",
+   "quote": "play time: an open check is Jev's, one question per criterion; a sure miss gets its hint, the second miss the answer, an unsure judge no verdict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "9",
+   "quote": "has **185 newly judged + 140 cached = 325 items**, zero error/unrequested items, five flagged checks and 103 not-evaluated checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "5",
+   "quote": "the reasons four model flags are unsupported",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "15",
+   "quote": "The collector is deliberately lesson-local, so empty context is a limitation of this judgment, not proof that the content was never taught.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "17",
+   "quote": "Bottom, Puck and Puck's ending already appear in U9L2p7; Puck is developed again in U9L3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-IMPLEMENTATION-AND-TESTS.md",
+   "lines": "53",
+   "quote": "The collector now includes those known omissions in each later item’s context metadata, without inventing film transcripts or answer branches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-IMPLEMENTATION-AND-TESTS.md",
+   "lines": "53",
+   "quote": "This prevents absent collected context being mistaken for absent teaching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "67-69",
+   "quote": "`JUDGE-KEY` was a blocker and held 8 of 12 lessons at p=0.27–0.38 because the judge was never shown the passage (*\"Who jumped first?\"* keyed to Michael, and the text says so) — it now carries the passage and no judged check may block;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "30-31",
+   "quote": "binding asked Jev about a passage by its label instead of its text (cost a whole lesson), clause splitting dropped connectives so tap targets read as broken English",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Zheng et al. 2023",
+   "url": "https://doi.org/10.48550/arXiv.2306.05685"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

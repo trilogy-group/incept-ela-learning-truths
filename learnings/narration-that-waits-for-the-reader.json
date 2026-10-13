@@ -1,0 +1,181 @@
+{
+ "id": "narration-that-waits-for-the-reader",
+ "title": "Narration that waits for the reader",
+ "statement": "Play a question's audio only when the student asks for it, never before they have read the question.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two rows of the reading course's checklist: question audio plays only on demand, never before the student has read the question, and no two audio sources ever play at once, including across page turns (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, lines 87 and 90). Both are checked by an automated walk of the lesson, which asserts that at most one audio element is playing at any time.",
+ "against": "A later run found: Another Grade 3 reading build never voices question stems, instructions or prompts, because reading the task is part of the assessed skill and a voice that reads the question aloud has answered half of it; it voices corrective and confirming feedback instead, since that renders after the learner acts (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md`). A later run found: A narrated film's player does the opposite for its checks: the guide's spoken question plays as each check card opens, before the student can have read it; no outcome was measured for either choice (`g9/player/qa/QA.md`). A later run found counter-evidence (`g9/player/index.html`). A later run found counter-evidence (`g9/player/qa/QA.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "90",
+   "quote": "Stem audio plays only on demand, never autoplayed before the child reads",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "87",
+   "quote": "No overlapping playback anywhere",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "3",
+   "quote": "Repair the inherited audio queue that reads future work and can treat an unanswered question stem as completed work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "11",
+   "quote": "The student should hear the reading or activity currently available to them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "20",
+   "quote": "Read to me starts question 1, then the hidden question 2 without the explicit Next question action.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "33",
+   "quote": "only the explicitly active question may be narrated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "996",
+   "quote": "Narration never starts over content that is not on screen (the VO that began over the bare passage).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "707",
+   "quote": "reading the task is part of the assessed skill",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "713",
+   "quote": "reads the question aloud has answered half of it, and comprehension questions are the measure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "705",
+   "quote": "it renders *after* the child acts, so voicing it gives nothing away",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "9",
+   "quote": "card opens, captions hidden, Archivist line `check_intro_world-ask.m4a` plays",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks-v7.json",
+   "lines": "2",
+   "quote": "The Archivist now narrates and asks in one voice (Gacrux, elder register).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "233-235",
+   "quote": "A fresh load is now silent: `AUTO()` additionally requires `S.consented`, which starts `false` and becomes `true` only on an explicit learner action",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "237",
+   "quote": "After that one choice, narration auto-continues across beats exactly as before.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "260-261",
+   "quote": "fresh load emits ZERO utterances with the read-to-me pill on",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "83",
+   "quote": "**Read it to me (default)**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "112-113",
+   "quote": "**Why.** This repo's rule: pre-reading the stem does the reading work the question is meant to check.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "357",
+   "quote": "the card is silent; the film is paused. Do not TTS the stem.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/index.html",
+   "lines": "236"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "9",
+   "quote": "Natural playback pauses at 97.783 s, card opens, captions hidden, Archivist line `check_intro_world-ask.m4a` plays",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "24",
+   "quote": "L1 voices every question node: mcq/msq stem, hot_text/inline_choice instruction (coach, autoplay false)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "32",
+   "quote": "Question stems are deliberately silent (`voiceover.silent` with a reason)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

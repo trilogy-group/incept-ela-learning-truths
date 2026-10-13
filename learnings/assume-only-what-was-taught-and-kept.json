@@ -1,0 +1,310 @@
+{
+ "id": "assume-only-what-was-taught-and-kept",
+ "title": "Assume only what was taught and kept",
+ "statement": "A lesson may assume only what earlier lessons taught and the learner still holds fluently, so record what each lesson assumes and adds, and check the whole sequence in code.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "alignment",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's instruction spec makes it a code-checked invariant that a lesson assumes only what earlier lessons taught, and counts an anchor as available only after a delayed ≥24h retest passed on new parallel items, so one first taught the same day, or present but not fluent, is not met (`grade3-reading/ti-courseplans/docs/instruction-modes-spec.md`, section 4). A committed negative fixture, a lesson assuming knowledge no earlier lesson added, was scored as individually fine by the per-lesson quality evaluator and was caught only by the cross-lesson invariant (`grade3-reading/ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md`). The course standard asks that each prerequisite be established, activated, retaught, newly introduced or routed through a tested on-ramp (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`, Q015); the curriculum BrainLift says a prerequisite that is met but not automated enough to free working memory makes the target skill unteachable (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`), and the project's curriculum reference gives soft prerequisites a fluency threshold rather than a binary met or unmet (`grade3-reading/ti-courseplans/skills/train-teacher/references/curriculum-architecture.md`). Fluently here means well enough on a later day to leave working memory free. To hold a course to this, record what each lesson builds on and seeds, keep every keystone later lessons need, and check the whole sequence in code, failing any lesson the check can't find.",
+ "against": "The same spec says the code check supplements, never replaces, human sequence review (`grade3-reading/ti-courseplans/docs/instruction-modes-spec.md`, lines 59-60). The check runs only within a unit and has no baseline across units, so a unit's first lesson must assume nothing (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md`, lines 67-68). These are the doctrine's positions, with worked examples, not results measured here. The check supplements, never replaces, a person's review of the sequence (`ti-courseplans-audit/docs/instruction-modes-spec.md`), and the record of what each text introduces is still proposed (`ti-courseplans-audit/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md`). The drop was disclosed as a deliberate design choice: the later grade's lessons were written to stand alone rather than build on the grade before (`grade3-reading/artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md`, line 70).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "61-62",
+   "quote": "The default bar for \"available to a new lesson\" is E2-cleared (delayed ≥24h retest passed on new parallel items — practice spec P2)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "63-64",
+   "quote": "an anchor first taught the same day never satisfies an `assumes` edge, and an anchor that is present-but-not-fluent is treated as not met.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "103-104",
+   "quote": "IB scores each of those two lessons as individually fine; only the cross-lesson invariant separates them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "42",
+   "quote": "Each prerequisite is established, activated, retaught, newly introduced, or routed through a tested on-ramp.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "37",
+   "quote": "A prerequisite that is technically met but not automated enough to free working memory makes the target skill unteachable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "78-80",
+   "quote": "**soft prereqs carry a fluency-threshold** (not binary met/unmet: \"fluent enough not to consume working memory\"), and **every edge carries a warrant tag** (logical / empirical / conventional).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "59-60",
+   "quote": "supplements, never replaces, human sequence review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "16",
+   "quote": "| L5 | spine check | `lesson.assumes` is a subset of the union of prior lessons' `adds`, in unit order. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "592",
+   "quote": "lesson '%s'%s assumes %s not added by any prior lesson in the unit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "578",
+   "quote": "# A missing lesson must fail here too; skipping it would make the spine check vacuous.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "123",
+   "quote": "N2: relational-reference factuality. \"As you saw last lesson\" claims must be true against order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "60",
+   "quote": "`exposure_justification` is factually wrong against the lesson's own U1-L6 lineage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "67-68",
+   "quote": "no cross-unit baseline exists in the contract, so a unit's first lesson must have empty `assumes`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "63",
+   "quote": "A prerequisite that is technically met but not automated enough to free working memory makes the target skill unteachable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "62",
+   "quote": "Splitting a restricted case from a general case (e.g., same-denominator before unlike-denominator fractions) causes students to build predictive models that become entrenched and must be actively undone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "76",
+   "quote": "(1) hard prerequisites at fluency",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "196 (textutil text)",
+   "quote": "If students haven't learned ratios (grade 6), they cannot meaningfully understand density or concentration.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of G3-8_Threads_FourTier.docx",
+   "lines": "400 (textutil text)",
+   "quote": "Sequence supplying units first so their terms are available",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of DevFactory_Example_Backward-Design_Threads.docx",
+   "lines": "60 (textutil text)",
+   "quote": "the contact means something because both sides have been built.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/[WORKING DRAFT] AlphaRead_G3-8_Full_Curriculum_to_G9.xlsx",
+   "lines": "sheet 'Overview (read across)', cell A2",
+   "quote": "Goal: a child reaches Grade 9 with no knowledge gaps.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - Fantasy Classics - Knowledge Base (Complete).xlsx",
+   "lines": "sheet 'Knowledge Base', cell E5",
+   "quote": "Prior Knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - Fantasy Classics - Knowledge Base (Complete).xlsx",
+   "lines": "sheet 'Knowledge Base', cell T5",
+   "quote": "Knowledge Seeds",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - Fantasy Classics - Knowledge Base (Complete).xlsx",
+   "lines": "sheet 'Overview', cell B39",
+   "quote": "Seeds run forward to 3.4 Folk Tales, 3.10 Myths, 3.12/3.15 Poetry, the Grade 4 units (4.1 Legends, 4.4 World Mythology, 4.9 Classic Novels), and cross-curricular Science/Geography and History.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Grade_3-12_Full_Thematic_Map.xlsx",
+   "lines": "sheet 'How to read this', cell A11",
+   "quote": "KEYSTONE texts are the anchor of a rung — the one you would not drop, because so much above it depends on the concept it plants.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "100-101",
+   "quote": "on the demo, `assumes (subset-of) prior adds` holds in unit order across l0..l4 (op-lint exit 0).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "101-103",
+   "quote": "The negative control is the committed fixture `fixtures/fail-l5-spine-gap.json` (lesson 2 assumes knowledge no prior lesson added) -> L5 FAIL.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "103-104",
+   "quote": "IB scores each of those two lessons as individually fine; only the cross-lesson invariant separates them.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "87-88",
+   "quote": "relational-reference factuality: \"as you saw last lesson\" claims must be true against order",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "14",
+   "quote": "Relational-reference truth check (\"last lesson\" must be factually last).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "62-64",
+   "quote": "so an anchor first taught the same day never satisfies an `assumes` edge, and an anchor that is present-but-not-fluent is treated as not met.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "59-60",
+   "quote": "a machine-checkable spine invariant that supplements, never replaces, human sequence review",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "106-107",
+   "quote": "Theme Ledger completeness is still proposed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-knowledge-inventory.md",
+   "lines": "8",
+   "quote": "Proposed adds / assumes per text, with carrying spans.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/01-course-graph.md",
+   "lines": "87",
+   "quote": "- What later text depends on this beat?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md",
+   "lines": "51",
+   "quote": "There is no G3→G5 or G4→G5 transfer arc encoded anywhere in the canon.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md",
+   "lines": "66",
+   "quote": "G3→G4: 9 arcs, 28/49 lessons (57%) citing G3 content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md",
+   "lines": "67",
+   "quote": "G4→G5: 7 arcs, 7/55 lessons (13%) citing G4 content — a real 7x drop in citation density.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D9-science-content-integrity.md",
+   "lines": "41",
+   "quote": "Concepts not introduced ahead of their math prerequisite; G3 energy stays qualitative",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "330",
+   "quote": "Earlier vocabulary placement does not establish prior teaching in this new unit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L492d5c.txt",
+   "lines": "40",
+   "quote": "CARRIED THRESHOLD KNOWLEDGE - short and catchy, said back in mimicry",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

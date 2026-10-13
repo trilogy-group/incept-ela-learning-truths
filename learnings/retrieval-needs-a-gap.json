@@ -1,0 +1,236 @@
+{
+ "id": "retrieval-needs-a-gap",
+ "title": "Retrieval needs a gap",
+ "statement": "Make retrieval ask for something taught earlier after a gap, with it hidden, because a check straight after teaching shows only that the student was following.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "sequence",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A BrainLift on intro videos for a reading course separates retrieval from re-exposure. A question asked before the video about an earlier lesson is real retrieval, because the child has to produce the answer across a gap of days, while the sync check after a video comes too soon after the teaching and checks attention, not memory. It rests the rule on retrieval and spacing research: retrieving strengthens retention more than re-reading (Roediger and Karpicke 2006), and knowledge revisited across spaced intervals is retained far better than knowledge massed (Cepeda et al. 2006). For example, ask for a lesson's key idea from memory at the start of the next part and again later in the unit, instead of restating it.",
+ "against": "none found; the design rates its basis well evidenced but quotes no studies or effect sizes (the same file, line 172). Matching by text misses a reworded recall: \"a reworded recall is not recognised, so check `CLOSE-RECUR-MISSING` by eye before reporting it.\" (`shadow/content-eval/SKILL.md`, line 201), and recurrence can't be checked when the later lessons are missing (`shadow/content-eval/reports/G3-U2-L1-review.md`, line 229).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "339",
+   "quote": "Real retrieval needs a gap the child fills.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "329",
+   "quote": "That is real retrieval, because the child has to produce the answer across a gap of days. The sync check after a video is not.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "430",
+   "quote": "The sync check after a video is a check on attention, not on memory.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "493",
+   "quote": "retrieving strengthens retention more than re-reading.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "494",
+   "quote": "knowledge revisited across spaced intervals is retained far better than knowledge massed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "54",
+   "quote": "The sentence must not be visible when the child produces it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "118",
+   "quote": "recur as something the child is asked to produce, not something restated at them",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "118",
+   "quote": "the sentence taught in Part 1 is the sentence asked for at the start of Part 2, and again in Part 3, without being shown",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "119",
+   "quote": "If a threshold sentence appears once and never again, we have taught a slogan.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "104",
+   "quote": "sentence not printed",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "references/closing_questions_pattern.md",
+   "lines": "79",
+   "quote": "It is asked for (produced, not restated) at the start of the next part and again later in the unit, **without being shown first**. A sentence that appears once is a slogan.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "references/closing_questions_pattern.md",
+   "lines": "86",
+   "quote": "| Spaced, repeated retrieval | well evidenced |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "52",
+   "quote": "| The Q1 sentence recurs later without being shown | **Pass.** It is asked for from memory in G3-U1-L7 p0b and G3-U1-L14 p0b. |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "201",
+   "quote": "a reworded recall is not recognised, so check `CLOSE-RECUR-MISSING` by eye before reporting it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/design-mock-l1.html",
+   "lines": "210",
+   "quote": "Choral repetition is weak evidence, kept for language and motivation, which is why the sentence is hidden and must recur",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/design-mock-l1.html",
+   "lines": "210",
+   "quote": "Our turn is unmarked and never the test; the test is the hidden recall and the Part 2 recall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "106-107",
+   "quote": "The canonical M1 on-ramp (blocking U4L1 retrieval — \"sugar made by a producer stores ___\" plus a kelp node-select, said aloud) is not rendered anywhere in the build.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "108-109",
+   "quote": "canon records a U1·L6 lineage (deepen, not introduce) — the justification is factually wrong, not just an omission.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "113",
+   "quote": "on-ramp answers said aloud before selection",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "724-725",
+   "quote": "the U4·L1 retrieval (\"sugar made by a producer stores ____\") runs aloud-first through `buildGate`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "726-727",
+   "quote": "a miss re-presents the fact via the fixture's own `on_error` and re-asks — blocking retrieval, no release valve",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "92",
+   "quote": "after 2 failed retries the release valve opens",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/PROPOSALS.md",
+   "lines": "44",
+   "quote": "The question can be answered from its introduction rather than prior teaching.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6356",
+   "quote": "Retrieval stays free of visual hints; reading, independent writing and saved progress are preserved.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/assets/our-build-intro-checks.json",
+   "lines": "107",
+   "quote": "\"carry_to_lesson_2_retrieval\": true",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "78",
+   "quote": "the three checks pause the video; the student answers, then the video continues. The answers feed Lesson 2 retrieval.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb9608f.txt",
+   "lines": "135-137",
+   "quote": "Subramaniam criticized the associated questions for being overly literal, requiring students to repeat exact wording from five seconds prior rather than engaging in critical introspection (00:06:28",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "90-92",
+   "quote": "**Your turn** (sentence removed **everywhere**: the card goes, earlier beats fold with no sentence text, no \"See the whole ask again\", no tap-to-hear, Read to me does not replay it).",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Roediger & Karpicke 2006",
+   "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+  },
+  {
+   "ref": "Cepeda et al. 2006",
+   "url": "https://doi.org/10.1037/0033-2909.132.3.354"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "higher-order-needs-material-not-seen-before",
+ "title": "Higher-order needs material not seen before",
+ "statement": "Count a question as higher-order, such as application or analysis, only when it presents material new to the learner, since a longer stem over familiar content is still recall.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The assessment BrainLift used as feedback for the reading courses holds that unless an item presents material the student has not previously encountered, such as a new passage, data set, scenario or diagram, it usually tests recall of a familiar pattern however elaborate the stem looks (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 1995). It treats difficulty and cognitive level as independent and calls conflating them the most common tagging error in item banks (line 2010). An adversarial review's checklist lists the fake higher-order item, an inference item that is recall with a longer stem, to be retagged as recall (`grade3-reading/ti-courseplans/skills/course-red-team/references/finding-taxonomy.md`, line 163). A hard question is not thereby a higher-order one.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1995",
+   "quote": "Unless the item presents material the student has not previously encountered — a new passage, data set, scenario, or diagram — it is usually testing whether the student can recall a familiar pattern, regardless of how elaborate the stem looks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1995",
+   "quote": "The novel stimulus requirement is the single most reliable test of whether an item is genuinely higher-order: no new material, no higher-order thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2010",
+   "quote": "A hard recall item is still recall. An easy application item is still application.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2010",
+   "quote": "These are independent dimensions, and conflating them is the most common tagging error in item banks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "163",
+   "quote": "genuine higher-order needs a NOVEL stimulus (unseen passage/scenario); else retag recall",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "58",
+   "quote": "no new material, no higher-order thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "58",
+   "quote": "Unless the item presents material the student has not previously encountered — a new passage, data set, scenario, or diagram — it is usually testing whether the student can recall a familiar pattern, regardless of how elaborate the stem looks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "73",
+   "quote": "A hard recall item is still recall.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "163",
+   "quote": "genuine higher-order needs a NOVEL stimulus (unseen passage/scenario); else retag recall",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "26",
+   "quote": "Any \"application/analysis\" item presents novel stimulus; else tag it recall",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

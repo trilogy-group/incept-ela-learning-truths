@@ -1,0 +1,57 @@
+{
+ "id": "unreached-steps-take-no-input",
+ "title": "Unreached steps take no input",
+ "statement": "Make every step the learner hasn't reached unreachable by any input, keyboard included, not just faded from view.",
+ "example": "After the fix, ten test groups checked that a later task stays inert until the current quote is judged.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "accessibility",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "On a staged page, tabbing on from the current quote field moved focus into a later task's text box that the learner had not reached (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 2500). Future steps were hidden with opacity and pointer settings only, and the fields inside them were not disabled. The repair made the later task inert until the current quote is judged, checked in ten test groups and a corrected keyboard sequence (line 2510).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2500",
+   "quote": "Focus enters the unreached extra-thinking textarea.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2500",
+   "quote": "Default staged branch prints future bk-stepblock waiting children using opacity and pointer-events only.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2500",
+   "quote": "Native focus JSON confirms disabled:false inside waiting parent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2510",
+   "quote": "future inference inert until actual current quote judged.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

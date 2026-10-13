@@ -1,0 +1,104 @@
+{
+ "id": "keep-verse-line-breaks-everywhere",
+ "title": "Keep verse line breaks everywhere",
+ "statement": "Show verse in its authored lines wherever it appears, in passages, pictures or films and at any screen width, never joined or re-wrapped, since its line breaks carry meaning.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A poetry and drama unit contrasts blank verse with a rhymed passage and asks why a voice should carry a sentence on past a line break, so its rules bar any visual asset from erasing lineation and keep the full verse lineation visible while a speech is modelled. The book renderer at first did not render verse at all, and the fix added real verse support rather than flattening verse into prose.",
+ "against": "Not every excerpt keeps its line breaks: a dialogue excerpt in the same unit was kept with \"original punctuation and word sequence retained, line wrapping normalized.\" (grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-07.md, line 3), and the record does not say whether it holds verse.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/README.md",
+   "lines": "37",
+   "quote": "No visual asset may erase lineation to make this distinction disappear.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-06.md",
+   "lines": "45",
+   "quote": "Keep full verse lineation visible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-04.md",
+   "lines": "52",
+   "quote": "the sentence is incomplete at the line break",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/README.md",
+   "lines": "19",
+   "quote": "The staging book dispatcher did not render verse nodes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/README.md",
+   "lines": "19",
+   "quote": "implemented proper verse support rather than flattening verse into prose.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "131",
+   "quote": "Verse renders as verse: one authored line per block element, never joined, never re-wrapped,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "134",
+   "quote": "Verse lines carry a HANGING INDENT",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "135",
+   "quote": "re-measures the verse at 390x844 to pin it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "136",
+   "quote": "so every verse assertion passed while the phone rendered 4 of the 19 lines",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "137-138",
+   "quote": "a flush-left continuation row is indistinguishable from the next verse line, so a child counting the poem gets 21 lines",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "141-142",
+   "quote": "pinned at one viewport certifies one viewport, and verse is the one content type where line breaks ARE the meaning.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,76 @@
+{
+ "id": "every-question-needs-a-way-to-answer",
+ "title": "Every question needs a way to answer",
+ "statement": "Never ask a question or invite a response, on screen or aloud, without a way for the learner to give it, including a lesson's closing question.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Internal reviews of a grade 3 reading course found a lesson ending on a question with no way to take input, which looked incomplete, and a guide line asking the child to tell a story when nothing was listening. The rule now gives every question on screen an input, and every authored lesson closes on a receipt that states what the child did and asks nothing (`grade3-reading/course-renderer/docs/rules/ui.md`, lines 210-225). The general case, a question anywhere with no input beside it, is not yet checked.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "212-213",
+   "quote": "Every question on screen has an input. A closing prompt with no way to respond is not a closing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/g3-internal-review-2026-08-05.md",
+   "lines": "44",
+   "quote": "it also says “Now tell a story about a time when you did something clever.” but we are not listening so should probably remove it, happened in issue 6 as well",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "224-225",
+   "quote": "What is not checked is the general case, a question node anywhere with no input beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/ui.md",
+   "lines": "212-213",
+   "quote": "**Rule.** Every question on screen has an input. A closing prompt with no way to respond is not a closing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/ui.md",
+   "lines": "215-216",
+   "quote": "Course ending with a question which has no way to take input looks incomplete.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/ui.md",
+   "lines": "222-224",
+   "quote": "every authored lesson closes on a `receipt`, which states what the child did, the words they learned and what they now understand, and asks nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/ui.md",
+   "lines": "224-225",
+   "quote": "What is not checked is the general case, a question node anywhere with no input beside it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

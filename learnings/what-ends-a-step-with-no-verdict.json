@@ -1,0 +1,106 @@
+{
+ "id": "what-ends-a-step-with-no-verdict",
+ "title": "What ends a step with no verdict",
+ "statement": "What should end a step whose answers never get a verdict, when a student cannot quote exactly or the judge cannot place a stance?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "practice",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Tracing the lesson engine's response paths found answers that never close their step. The claim-evidence-reasoning block sends back a quotation it cannot find in the text as often as it is given one, since it never reads the try count. The debate's judged branches, for a stance the judge cannot place, one with no reason from the text, or no judge at all, return no verdict and no release, so with no judge every real stance is asked to be said once more. On the lesson page, which counts only wrong answers, a debate answer too thin or bare to judge never reaches its two-tries release either. The scripted readers never write a real stance, so no playtest reaches these branches.",
+ "against": "The debate itself says that after two tries the position is given and the task closes, \"so no reader is held here\", and that with no judge the model position closes the task; both hold only on its code path, for thin or bare answers, and in sessions, where the runtime counts the tries. No saved playtest includes the debate.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "100",
+   "quote": "Copy the words exactly from the text, so your quotation can be found.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "118",
+   "quote": "Say it once more, plainly: where do you stand, and why?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "31",
+   "quote": "if (!judge) return { results: Object.fromEntries(proposals.map((p) => [p.pid, unjudged(p.checks)])), decision: null };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "25",
+   "quote": "verdict: \"unclear\", reason, band: \"escalate\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "662",
+   "quote": "if (res.correct === false) tries++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "129",
+   "quote": "two tries, then the position is given and the task closes (the 3D build's release rule), so no reader is held here",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "104",
+   "quote": "right: (item) => ({ type: \"reply\", side: \"A\", answer: item.model_position",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "55",
+   "quote": "The student must leave with an answer to the question.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "72",
+   "quote": "If it is not an attempt: do not quote it and do not comment on it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "After the configured repeated infrastructure-failure limit (default two), the authored answer appears and the student can choose Move on.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "19",
+   "quote": "That releases the navigation gate but is not a successful assessment.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "measure-the-content-not-its-container",
+ "title": "Measure the content, not its container",
+ "statement": "Check that the content itself is in view, the first real passage paragraph and the settled feedback with its next action, by measuring those nodes, never a wrapper.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "accessibility",
+  "feedback",
+  "stimulus"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a Grade 5 click-through the passage could begin below the visible reading viewport, and correction feedback with its next action could settle outside it (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, lines 26-27). The layout checks had measured containers instead of the first real passage paragraph and had not bound feedback text to its current action (lines 63-64). The release gate now measures the first real passage paragraph, with rendered text geometry and no horizontal overflow, treats a wrapper as insufficient evidence, and requires the response feedback and its current action to be present and fully inside the viewport after each attempt settles, at mobile and desktop sizes (lines 76, 82 and 85).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "26",
+   "quote": "the passage itself could begin below the visible reading viewport",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "27",
+   "quote": "correction feedback and its next action could settle outside the viewport",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "63",
+   "quote": "3. Layout checks measured containers instead of the first real passage paragraph and did not bind",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "85",
+   "quote": "The measured node is the first real passage paragraph, with rendered text geometry and no horizontal overflow; a wrapper is insufficient evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "82",
+   "quote": "After each attempt settles, both the response feedback and its current action are present and fully inside the viewport.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

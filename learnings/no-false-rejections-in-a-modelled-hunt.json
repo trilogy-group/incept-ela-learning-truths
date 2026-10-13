@@ -1,0 +1,41 @@
+{
+ "id": "no-false-rejections-in-a-modelled-hunt",
+ "title": "No false rejections in a modelled hunt",
+ "statement": "In a modelled evidence hunt, never reject a line that is true evidence of something nearby: say what it shows and why the question asks for something else.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Planning the think-aloud for an evidence question, a lesson's research note kept one candidate line instead of rejecting it: the line shows a character breaking a rule, while the question asks what he thought of the rule, and the guide says so aloud. The note calls this the genuinely hard move the course's modelling rule asks for, and safer than rejecting the line outright, which would teach a false rejection (`grade3-reading/course-renderer/docs/research/g4-u1-l2-the-cyclops.md`, lines 746-750). The decided lesson plan carries the same ruling (`grade3-reading/course-renderer/content/lesson-plans/g4-u1-l2.json`, line 483).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "746-750",
+   "quote": "Considered and kept, not rejected: the line where he eats two of the men. The guide says aloud that this shows he broke the rule, and that the question asks what he thought of it, which is why the two chosen lines are the answer. This is the genuinely hard move R-PED-5 asks for, and it is safer than rejecting the eating outright, which would be teaching a false rejection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g4-u1-l2.json",
+   "lines": "483",
+   "quote": "Rejecting the eating outright would be teaching a false rejection, since it is evidence, just not for this question, and holding it is the genuinely hard move R-PED-5 asks for.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

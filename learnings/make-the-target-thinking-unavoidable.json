@@ -1,0 +1,135 @@
+{
+ "id": "make-the-target-thinking-unavoidable",
+ "title": "Make the target thinking unavoidable",
+ "statement": "Make the thinking a task targets, such as understanding a text rather than matching its words, impossible to skip: students take any shortcut, and a gamed pass proves nothing.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The delivery platform's principles say any reward system attracts gaming and list the shortcuts students take: tanking placement tests to get easier content, clicking through explanations without reading, guessing until correct, and pattern matching on test items (`grade3-reading/knowledge_bot/knowledge/kb-0032-principles.qmd`). One of its eight rules is to treat incentives as adversarial and make the target cognitive process unavoidable, since an app students can pass by pattern matching, shallow guessing or memorising repeated items is gameable and its signals are untrustworthy (`grade3-reading/knowledge_bot/knowledge/kb-0028-non-negotiables.qmd`, `grade3-reading/knowledge_bot/knowledge/kb-0032-principles.qmd`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "178",
+   "quote": "Any reward system attracts gaming. Students are not \"bad\" for doing this; they are optimizing incentives.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "182-185",
+   "quote": "Tanking placement tests to receive easier content * Clicking through explanations without reading * Guessing until correct * Pattern matching on test items rather than learning concepts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "94",
+   "quote": "**Make the target cognitive process unavoidable.** If students can succeed via pattern matching, shallow guessing strategies, or memorizing repeated items, the app is gameable and its signals are untrustworthy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "31",
+   "quote": "7. **Prevent gaming.** Treat incentives as adversarial. Make the target cognitive process unavoidable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "35",
+   "quote": "The independent text/task must require genuine rereading rather than a visible word-match.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "133",
+   "quote": "- Closed-response items must require the target reasoning and must not be answerable by surface cues, keyword matching, option length, or test-wise elimination.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "27",
+   "quote": "- The claim must not copy five or more consecutive words from those lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "46",
+   "quote": "check(\"claim-no-copy\", \"The claim does not copy the line\", run < 5, `the claim shares ${run} consecutive words with a keyed line`),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/evidence-hunt.tapped-proves.json",
+   "lines": "15",
+   "quote": "Roderigo's line shares the words \\\"follow him\\\" but says nothing about Iago's purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "299-303",
+   "quote": "**Rule.** The you-do passage must be long enough that the child cannot word-match their way to the answer. **Why.** \"text passages must be sufficiently long to force genuine rereading rather than simple word matching.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "308",
+   "quote": "**Enforced.** Not applied.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "30-31",
+   "quote": "SPAN-GUARD: student span length `<= 3 x` the length of the best-matching keyed span (blocks highlight-everything; a whole-passage highlight can trivially satisfy SPAN-VALID).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "29",
+   "quote": "SPAN-VALID: `r* >= 0.50` -- the student span covers at least half of some keyed span.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "6",
+   "quote": "thresholds below are G3-uncalibrated proposals",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/academics-review-2026-07-08.md",
+   "lines": "31",
+   "quote": "Whilst there were timers on text reading before the question appeared, it still seems possible to just click through, and where a \"not so fast — read, read\" nudge appeared it was non-blocking and skipped by clicking Next twice.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "judge-the-whole-screen-as-it-changes",
+ "title": "Judge the whole screen as it changes",
+ "statement": "Check each screen as a whole at each moment, and withdraw used scaffolding once the learner succeeds, because correct parts can add up to clutter or two asks at once.",
+ "example": "After one correct answer, a guided-practice screen showed nine stacked blocks with the proof line printed three times.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "demand",
+  "hints",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 reading build's BrainLift records two defects on one guided-practice screen: a correct tap left nine stacked blocks with the proof line printed three times, and, after that fix was merged, a spoken stretch question and a say-back card asked different things at the same moment. Neither was a bug in any component; both were the sum of correct components, and the build's rules call the second defect simultaneity, not existence, so the stretch was kept but split off and printed quieter. Ruled-out options, hints and duplicate success boxes now withdraw on success, and a declutter gate holds the screen at 630 assertions.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "116",
+   "quote": "a correct we-do tap left **nine stacked blocks with the proof line printed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "118",
+   "quote": "Neither is a bug in any component; both are the sum of correct components.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "308",
+   "quote": "the defect is SIMULTANEITY, not existence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "119",
+   "quote": "ruled-out options, hints and duplicate success boxes withdraw on success",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "121",
+   "quote": "`wedo_declutter_check` holds it at 630 assertions.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

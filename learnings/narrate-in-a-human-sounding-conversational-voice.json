@@ -1,0 +1,84 @@
+{
+ "id": "narrate-in-a-human-sounding-conversational-voice",
+ "title": "Narrate in a human-sounding conversational voice",
+ "statement": "Narrate in a conversational second-person voice that sounds human, not robotic and not in a formal textbook register.",
+ "example": "Personalised narration improved retention by d = 0.30 and transfer by d = 0.54, and human voices beat robotic ones at a median d = 0.74.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The grade-7 science visual design guide asks for conversational, direct-address narration in a human-sounding voice, because direct address and a human voice create useful social cues (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, lines 180-185). It cites personalisation at d=0.30 for retention and d=0.54 for transfer (Ginns, Martin & Marsh 2013) and a human voice beating a robotic one at a median d=0.74 (Mayer, Fiorella & Stull 2020). It lists monotone robotic narration in a formal textbook register as an anti-pattern and asks for expressive, human-like synthetic speech with checked science pronunciation (lines 294 and 322), and the course's generation spec fixes one calm, natural voice per video speaking in the second person (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, line 41).",
+ "against": "The speaking-rate band paired with this rule is an operating heuristic, not a proven threshold (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, lines 187-188). Another record reports a study in which an AI voice with an AI face beat every other pairing on retention, the fully human one included (Xu et al. 2025), so a human-sounding synthetic voice is not ruled out, and whether narration before a story should speak to the student at all is open in another record.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "184-185",
+   "quote": "**Evidence.** Personalization improves retention (*d*=0.30) and transfer (*d*=0.54) [19]. Human voice beats robotic voice at a median *d*=0.74 [20].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "181-182",
+   "quote": "Direct address and a human-sounding voice create useful social cues",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "322",
+   "quote": "Monotone robotic narration in a formal textbook register.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "294",
+   "quote": "Prefer expressive, human-like TTS and validate science pronunciation; flat robotic delivery forfeits voice and personalization benefits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "41",
+   "quote": "One calm, natural, grade-appropriate voice per video; conversational 2nd person (\"you\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "187-188",
+   "quote": "The Grade-7 default of 140–160 wpm is therefore an [OH], not a proven child threshold.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Ginns, Martin & Marsh 2013",
+   "url": "https://doi.org/10.1007/s10648-013-9228-0"
+  },
+  {
+   "ref": "Mayer, Fiorella & Stull 2020",
+   "url": "https://learningglass.eu/en/wp-content/uploads/sites/2/Mayer2020_5-ways-to-increase-the-effectiveness-of-instructional-video.pdf"
+  },
+  {
+   "ref": "Xu et al. 2025",
+   "url": "https://doi.org/10.1111/bjet.13530"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

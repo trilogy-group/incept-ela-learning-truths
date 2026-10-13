@@ -1,0 +1,529 @@
+{
+ "id": "report-the-number-that-was-measured",
+ "title": "Report the number that was measured",
+ "statement": "Report every result as measured on real output, misses included and never rounded across its bar, recomputed from primary records; a projected, templated or summary-copied figure is no result.",
+ "example": "A calibration set cited as having about 150 responses had 48.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Audits of an assessment's approval case found summary tables showing reliability as \"0.930 ✅\" against a ≥0.93 benchmark where the reports beneath them said 0.928, and the one failing metric (RMSE 4.12 vs <4.0 target) left out of every summary table (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md`). A red-team pass on a writing course's package found a reused calibration set cited as \"48 items, ~150 banded kid responses\" that was 12 items and 48 responses, a number inherited from a research agent's summary and not recomputed before it was written down (`grade3-reading/ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R1.md`), and one grade's certified count drifted 541 vs 549 vs 559 across documents. The course plans' rules since: every number carries a source and comes off one dated pull, no magnitude is carried from another grade or cohort, one grade's bars and yields need a recalibration set before they gate another, and an unknown cell is marked [TO SOURCE], never invented (`grade3-reading/ti-courseplans/docs/course-formula-agents.md`, `grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, `grade3-reading/ti-courseplans/docs/grade-band-profiles.md`). Never round a near miss across its bar, leave out a failing metric or copy a number from a summary, and mark a number not yet measured as unsourced.",
+ "against": "One rosier summary and one metadata slip don't show that summaries usually drift rosier, and in the judge calibration the recomputed numbers matched the harness's own (`grade3-reading/knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd`). The code check has false positives on numbers stored in another form ('## Known false-positive: R3 on 0.9 pass rates', `icloud-work/aptraining/.agent/memory/feedback_use_claim_validator_before_save.md`, line 88). The per-run decision tables in the same folder were computed from each run, so the fault was in the templated narrative rather than in every count.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "9",
+   "quote": "Summary tables reported reliability as \"0.930 ✅\" against a ≥0.93 benchmark the underlying reports state as 0.928, below",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "10",
+   "quote": "The one failing metric (RMSE 4.12 vs <4.0 target) was omitted from every summary table",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R1.md",
+   "lines": "43-45",
+   "quote": "a number that reads authoritative and is wrong, inherited from a research-agent summary I did not independently recompute before writing it down.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "G5 certified-count drifted **541 vs 549 vs 559** across docs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "Every artifact must quote identical numbers off **one dated pull**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "29-30",
+   "quote": "2. **Never invent a magnitude.** Do not carry another grade's/cohort's numbers as if they were this one's.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "139-140",
+   "quote": "Historical G5 volume does not validate a G3 estimate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "140-141",
+   "quote": "All historical G5-derived bars and yields require a **G3 recalibration control set before any G3 gate or generation budget goes live**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/grade-band-profiles.md",
+   "lines": "17-18",
+   "quote": "Every cell cites > its source; empty cells are `[TO SOURCE]` — **never invent them**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "9",
+   "quote": "| 1 | Summary tables reported reliability as \"0.930 ✅\" against a ≥0.93 benchmark the underlying reports state as 0.928, below |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "10",
+   "quote": "| 2 | The one failing metric (RMSE 4.12 vs <4.0 target) was omitted from every summary table |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "26",
+   "quote": "The v1 production-path re-run (2026-07-02) flagged RMSE 4.73 RIT and a **+2.62 RIT systematic overestimate** — we reported the regression rather than the earlier, prettier number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "28",
+   "quote": "Verdicts are **PASS-with-named-gaps**, never bare PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "27-28",
+   "quote": "BRIEFING (the synthesized view) has drifted **ahead of** the certified COMPLIANCE files into a rosier, less-traceable story.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "60-61",
+   "quote": "while staged `g3-reading/COMPLIANCE.md` (`reading-explorers-g3-allqtypes`) records **3 FAIL / NOT MET**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "62-63",
+   "quote": "regenerate views FROM the certified files; never cite a PASS no on-disk COMPLIANCE.md + fresh pull backs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0122-g3-reading-course-graph.qmd",
+   "lines": "82-83",
+   "quote": "earlier metadata said \"5 edge types\" while both the builder and the enumerated schema define exactly four.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "54-55",
+   "quote": "adversarially recomputed from the raw per-call JSONL (not trusted from the run harness's own summary).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "40",
+   "quote": "- Answer validity appears in 95% (146/153) of hard question failures",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "17",
+   "quote": "| Hard | 153 | 765 | 20.0% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/failure_analyzer.py",
+   "lines": "127-140",
+   "quote": "analysis['hard_fail_breakdown'][hf] += 1",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "484",
+   "quote": "### 1. Implement Answer Validity Hard Gates (Expected Impact: +15-20% pass rate)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "325",
+   "quote": "## 1. Distractor Quality (348 failures - CRITICAL)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "118-119",
+   "quote": "**Every number or scope claim is derived from the primary artifact at writing time, never copied from an intermediate report**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "119-120",
+   "quote": "found five errors shipped in meeting-facing docs in one day",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "120",
+   "quote": "every single one was a figure inherited from an intermediate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "121-122",
+   "quote": "zero derived claims were wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "102-103",
+   "quote": "one canonical numbers block per course; all other docs POINT to it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "211",
+   "quote": "5 errors, all inherited; zero freshly-derived claims wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "540",
+   "quote": "The headline `/tmp/audit_compliance.json` is a `--limit` run (6 tests / 91 items), not the full course.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "23",
+   "quote": "proved \"73.33% catastrophic\" doesn't exist in any eval file.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_use_claim_validator_before_save.md",
+   "lines": "34",
+   "quote": "| **R3** | Pass-rate-shaped number (≥2 decimals, 0.40-1.0 or 40-100) NOT in any `summary_*.json` | REJECT | Phantom-number prevention; uses `scripts/grep_claim.sh` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "213",
+   "quote": "(1) v43-soup baseline was 88.67% verified, not 90.67% claimed (state_current marked unverified)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "89",
+   "quote": "(2) Re-derive baseline numbers from on-disk summary JSON, not state_current.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_5eb118bd_success_patterns.md",
+   "lines": "93",
+   "quote": "Almost everything passes (95%). Pass rows have ~7 documents (matches the live overlay hard rule) and roughly even doc word counts.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/runs_to_commits_40d.md",
+   "lines": "41",
+   "quote": "| 2026-05-26 19:59 | `5eb118bd` | 673 | 0.0% | `da0bc27` | `0.1.303-llm-final-mcqset-shape-repair` | dbq=0/132 leq=0/135 mcq=0/138 mcq_set=0/132 saq=0/136 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_324d5e51_failure_modes.md",
+   "lines": "1",
+   "quote": "# Run-0133 v2 — failure deep-dive",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_5eb118bd_live_update_decision.md",
+   "lines": "12",
+   "quote": "| dbq | 0/0 | n/a | 0 | n/a |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0600Z_DELIVERED_repair_result_triage_classifier_fix.md",
+   "lines": "12",
+   "quote": "The packet is explicitly `SECOND_TIER -> REPAIR`, but the first auto-triage run classified it as `validated_or_green_candidate` because headline pass-count language outranked repair/fail language.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0633Z_REPORT_unit1_validation_results_addendum.md",
+   "lines": "50",
+   "quote": "`scripts/triage_validation_result.sh` was patched because the first SAQ auto-triage saw the phrase `REPAIR pending` in a context table about MCQ and misclassified the SAQ VALIDATED packet as repair.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T084525Z_2026-05-24T0844Z_UNIT1_MCQ_SOLVER_VALIDATED.md.md",
+   "lines": "153",
+   "quote": "37+ SUPERIOR (estimating from log sample)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/AGENT3_EXECUTION_LOG.md",
+   "lines": "509",
+   "quote": "| Pass Rate | 41% | 99% (projected) | +58% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/AGENT3_EXECUTION_LOG.md",
+   "lines": "527",
+   "quote": "- ✅ Mock tests: 95% passing (22/23 tests)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/README.md",
+   "lines": "189",
+   "quote": "- **Result**: 0% missing type fields (was 62%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/DEPLOYMENT_TEST_RESULTS.md",
+   "lines": "43",
+   "quote": "**Result:** [PENDING - To be filled after deployment]",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PIPELINE_EVALUATION.md",
+   "lines": "88",
+   "quote": "| Reliability | **0%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PIPELINE_EVALUATION.md",
+   "lines": "94",
+   "quote": "- \"6-layer validation\" not functioning",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "scripts/verify/fixtures/closing-questions-judge-cases.json now holds 199 cases, plus 27 trap cases.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The 82/82 figure comes from an earlier set; the method stands.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "51",
+   "quote": "**Gold on cream fails contrast** at roughly 2.6:1, on every eyebrow label.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "51",
+   "quote": "I measured this from screenshots, so treat the figure as indicative; the exact values are in your CSS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "34",
+   "quote": "Original gold/paper:2.0222515421:1.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "32",
+   "quote": "Compare unrounded values against4.5:1 for normal text; thresholds are not rounded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "30",
+   "quote": "Exact computed styles and W3C luminance calculation, not screenshot colour estimates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "57-58"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "62",
+   "quote": "Zero derived numbers were wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "166-167",
+   "quote": "When we checked the live lessons directly rather than trusting our own notes, all 48 do carry the step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "656",
+   "quote": "A pasted gate transcript is a photograph, not a fact; re-run the gate rather than trusting it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "39",
+   "quote": "Every number below was re-derived from the raw ledgers, serving bank, and gate instruments by the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/09-PIPELINE-OPS.md",
+   "lines": "139-140",
+   "quote": "Approval packages: claims are re-verified against the CURRENT build before re-freezing (three overclaims were caught this way)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "30",
+   "quote": "Judges split Algenib / Gacrux / Orus among the 2.5 Pro takes and never agreed on one; Orus never had a word error in three takes, while Algenib produced \"happily\" once and the gappiest take.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R1.md",
+   "lines": "38-39",
+   "quote": "the **48 is a response count, not an item count**, and **~150 is invented** (actual = 48).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "79",
+   "quote": "### B2. \"All four feedback strings now say poem\" is false. The fourth one does not",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "479",
+   "quote": "The decisive evidence is a valid authorized audio response that decodes and plays with the correct words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CASE-FOR-PLAN-REVIEW.md",
+   "lines": "3",
+   "quote": "replace computed placeholders with validator output, never estimated claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "40-41",
+   "quote": "five errors shipped in one day and every one was an inherited figure",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L4-2026-09-05.md",
+   "lines": "76-78",
+   "quote": "the premise's \"Peter Pan lessons average 2.75\" is not distinguishing L4 from its own same-slot Aladdin peer (also 3).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "40-45",
+   "quote": "five errors shipped in one day and every one was an inherited figure … Zero derived numbers were wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "248-251",
+   "quote": "The commit message reports 1 reported item + 5 more found course-wide (6 total); the diff itself shows 7 distinct hunks across 7 separate question items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "175",
+   "quote": "The path to these numbers is part of the evidence, and we report it rather than the final table alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "173",
+   "quote": "If the pilot lands outside these ranges, the honest deliverable is the measured range, not this table.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

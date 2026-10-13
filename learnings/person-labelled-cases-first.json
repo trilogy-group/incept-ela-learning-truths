@@ -1,0 +1,840 @@
+{
+ "id": "person-labelled-cases-first",
+ "title": "Person-labelled cases first",
+ "statement": "Before a judged check holds back a lesson or steers a student, score it on cases a person labelled; a model-made label measures nothing.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's calibration harness: labels need a person, and a model-made label measures nothing; a check whose\ncontrols go wrong or flip should not hold a block or decide what a student is told, and an advisory check still\nchanges what a student is told (`g9/transformer/src/quality/calibrate.js`). The reading engine's gates are conservative\nengineering thresholds, not calibrated ones (`grade3-reading/engine/src/decide/questions.js`). Scored against planted\nfaults and items never flagged, its first run had a false-positive rate of 0.986 and its second 0.471\n(`grade3-reading/engine/EVIDENCE-2026-09-22.md`), and a change measured on a different set or model is confounded and\nmust not be called lift (`grade3-reading/artifacts/spine-solve-calibration-2026-07-10/REPORT.md`).",
+ "against": "the lesson\nengine has seed sets only, which prove the wiring and measure nothing (`g9/transformer/README.md`, \"Known gaps\"), and\nthe reading engine's two runs used different test sets. A later run found counter-evidence (`shadow-bench/src/inceptbench/golden/golden_dataset.json`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-builders.json`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_curriculum_api_canonical.md",
+   "lines": "38",
+   "quote": "- **Quill 10-row IB false-negative spot-check** runs immediately to test grader calibration: 10 known-correct facts from the API → MCQ stems → submit to IB → expect 10/10 factual_accuracy=1. Anything less = grader broken.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "33",
+   "quote": "- **Result:** 7/10 factual_accuracy=1, 3/10 factual_accuracy=0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "34",
+   "quote": "- **Critical finding:** the 3 factual_accuracy=0 verdicts are **LEGITIMATE grader catches of generator errors** — i.e., the test rows had real factual issues that the grader correctly identified",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/.claude/skills/monitor-evaluator.md",
+   "lines": "46",
+   "quote": "- Changes to evaluator should be based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "715eadc",
+   "lines": "4",
+   "quote": "- golden-001 (math g3 mcq easy): INFERIOR → SUPERIOR (BAML correctly rates it; no failing metrics)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_962.py",
+   "lines": "216-218",
+   "quote": "item's evaluator score sits on the pass/fail boundary and may vary between INFERIOR and ACCEPTABLE/SUPERIOR across runs. It is pinned to ACCEPTABLE to reflect its typical post-fix behaviour while acknowledging inherent instability.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "207",
+   "quote": "| **Human**       | 0.63        | 0.56   | 0.63     | **0.63**    | -     |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "218",
+   "quote": "- **Consistency between humans and models**: The model evaluations do not fully align with human judgments, which may be due to limited understanding of the evaluation criteria by the models.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "15",
+   "quote": "PROMPT_VERSION = \"2026.02.24.1\"  # Relaxed cognitive demand - recall is OK",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "88",
+   "quote": "- Recall and memorization questions ARE ACCEPTABLE",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/calibration/gold_standard.json",
+   "lines": "194",
+   "quote": "Recall-only question - just asks for a date without any analysis",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/calibration/gold_standard.json",
+   "lines": "4",
+   "quote": "\"pass_threshold\": 0.85,",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "213",
+   "quote": "# Pass if: no hard failures AND overall score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "403-404",
+   "quote": "A different-family LLM verifier is audit-only and cannot establish the ceiling or headline result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "132",
+   "quote": "was wired as a blocker and held back 8 of 12 lessons on a question the judge was never shown the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "134",
+   "quote": "the standing rule **\"no judge check may be a blocker\"** at current measured precision",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0190-jev-skills-and-engine-lane.qmd",
+   "lines": "62-63",
+   "quote": "Calibration is not correctness: validate thresholds against human labels before a gate is allowed to act alone on a Jev verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "75",
+   "quote": "Tier-2 does NOT yet earn a pre-review gate place",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "185",
+   "quote": "Recall on the ground-truth set: 0/3 evaluable-as-designed (0%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "185-187",
+   "quote": "This is the opposite of the first session's optimistic manual stand-in (which reported 3/3).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "311",
+   "quote": "is not incompleteness, it is confident wrongness",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "319",
+   "quote": "It DID surface two plausible genuine findings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "170-171",
+   "quote": "**`cold_passage_bonus` fires 0% of the time** on the 163 verified items (near-useless on this genre); **`curriculum_penalty` separates leaky from clean by only +0.018** (AUC ~= 0.5).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "181-182",
+   "quote": "Tier A+ (a cheap distilled passage-blind classifier, gated at AUC >= 0.80 before use)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "125-126",
+   "quote": "**Component 2 — Curriculum penalty (new)** Score contribution: −0.2 if passage hits any curriculum fingerprint; 0.0 otherwise.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/evaluator-contracts/SEMANTIC-JUDGE.qmd",
+   "lines": "9-10",
+   "quote": "Until qualified, semantic results are advisory and cannot emit `PRESERVE` or replace human sign-off.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md",
+   "lines": "45",
+   "quote": "LLM-judge (advisory until calibrated)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "64-65",
+   "quote": "GO requires every in-scope case caught, zero false flags on controls, agreement >= 0.8. **NO-GO stands; semantic lints remain advisory.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "76-77",
+   "quote": "**the failure mode is confident wrongness, not incompleteness**, which is worse for an automated gate than an honest \"cannot tell.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "83-85",
+   "quote": "the function is retained unwired as evidence because both candidate forms flagged approved, reviewed content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "77-78",
+   "quote": "It DID surface two plausible genuine findings no prior human round had filed",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "96c5537",
+   "lines": "10-11",
+   "quote": "Verified as a reproducing TRUE POSITIVE: re-evaluated live on fix HEAD 3x (overall 0.725 / 0.65 / 0.80, all INFERIOR, distractor_quality=0.0 every time).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "27b3848",
+   "lines": "4-6",
+   "quote": "That draw was non-reproducing: on the current HEAD the item evaluates SUPERIOR@1.0 five-for-five",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "27b3848",
+   "lines": "20-22",
+   "quote": "The guard tightening removes the false-positive over-firing on legitimate items (0003/0004/0130 -> stable SUPERIOR), so there are no real true-positive down-flips to re-baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ce96a3f",
+   "lines": "17-19",
+   "quote": "clean endorsing reasoning that happens to name the concept is left untouched -- removing the golden false-positives at their source instead of re-baselining them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "def36a1",
+   "lines": "11-12",
+   "quote": "The previously-curated ACCEPTABLE@0.98 baseline predates the #1026 fix and is now stale",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/golden/golden_dataset.json",
+   "lines": "3",
+   "quote": "then removed items that ever mismatched expected category or errored across 10 runs (parallel=30, GEMINI standard tier).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "11-12",
+   "quote": "2. Two borderline Social Studies items labeled INFERIOR that the evaluator stably rates as passing (0075, 0103).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "25-26",
+   "quote": "- golden_dataset.json: prune flaky 0075 + 0103 (94 items; pass/fail coverage preserved).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "fbbe38e",
+   "lines": "9-11",
+   "quote": "- 0118 (Social Studies): previously always masked in the error bucket (curriculum timeout); now evaluates and the evaluator stably rates it INFERIOR on a clear answer/distractor giveaway vs its ACCEPTABLE label.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3df60b5",
+   "lines": "5",
+   "quote": "- 0043: up-flip on all metrics (never matches its INFERIOR baseline, clamp-impossible)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "37",
+   "quote": "Both comparisons already occur on delivery; only the results are missing. Recording them costs a line per batch and is the only route to knowing whether either works (DOK3-2).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "141",
+   "quote": "Because nothing is logged, the project has no agreement rate and no evidence its manual backstop works — not for want of experiments, but because the outcomes are discarded each time they are produced.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "3",
+   "quote": "This is a local probe against the A0F export. It measures candidate validators against both failed rows and passed controls.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "9",
+   "quote": "- Caught fails: 19 (0.186)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "11",
+   "quote": "- False rejects: 22 (0.063)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "222",
+   "quote": "- Both retired; were matching metric NAMES in evaluator narrative, not actual failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/handoff_from_calibration/20260520T201911Z_run_0506c1fd_v2_deploy_packet.md",
+   "lines": "32",
+   "quote": "Confirmed 0/5 random failed-row reasonings cite this.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "179",
+   "quote": "**Known:** InceptBench was calibrated against AP teacher review panels. It's not perfect, but it's the closest proxy available.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "48-49",
+   "quote": "- Multi-dimensional calibration via trained neural network; 2x improvement over uncalibrated baselines\n- Achieves RMS error < 0.5 on 1-4 scale predicting human judge satisfaction",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/calibration/validator.py",
+   "lines": "5",
+   "quote": "Ensures >= 95% accuracy to catch evaluator drift over time.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/validator.py",
+   "lines": "4-5",
+   "quote": "Ensures >= 95% accuracy to catch evaluator drift over time.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "62",
+   "quote": "3. **Create human validation set** - 50 gold standard questions (25 good, 25 intentionally bad)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/EVALUATOR-TEAM-HANDOFF.md",
+   "lines": "149",
+   "quote": "3. Run against calibration set until it matches expected results",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/evaluation_audit.md",
+   "lines": "319",
+   "quote": "- **False negatives:** ~10-15% of failed questions (like the Match question above)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/scores/summary.txt",
+   "lines": "34-35",
+   "quote": "NOTE: Issue recommendations are based on the Reading Question QC evaluator, as it is the only production-validated framework.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/scores/summary.txt",
+   "lines": "40-41",
+   "quote": "SAT Reading Generation       | 0.654 (65%) | 0.605   | 0.704      | 100.0%   | 82 (3 sets) | 1.4.0 APLIT Quiz Generation        | 0.712 (71%) | 0.823   | 0.602      | 66.7%    | 60 (3 sets) | 1.4.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "69",
+   "quote": "include an ex-post agreement check against human scoring and record thresholds for acceptable concordance.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/CHANGELOG.md",
+   "lines": "30",
+   "quote": "- **Quill `s-quill-ib-calibration-spot-check-1500`** — 10 known-correct curriculum API facts → MCQ stems → IB grader → expect 10/10 factual_accuracy=1.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "144",
+   "quote": "First run: recall 0.625 but a **98.6% false-positive rate**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "47-48",
+   "quote": "38% is the first point on the curve; no pipeline seat until it beats the frontier-model critic on a real round.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "152",
+   "quote": "so a one-word answer would have been refused",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "185",
+   "quote": "**Recall on the ground-truth set: 0/3 evaluable-as-designed (0%).** This is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE3_LLM.md",
+   "lines": "302",
+   "quote": "**Calibration threshold:** If spot-check shows <70% agreement with gate labels → the gate threshold needs recalibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/CRITIC.md",
+   "lines": "27",
+   "quote": "label consistency across four audit agents + eight skeptics was not tested",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "49",
+   "quote": "prove grader-vs-human kappa clears the 16.7 percent floor and holds across re-audits before it scores any item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "21-23",
+   "quote": "The two **semantic** checks in section 5 -- think-aloud authenticity (reasoning trace vs answer reveal) and release-item operation classification -- are advisory until an LLM-judge calibration pass and are deliberately NOT implemented here.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/SKILL.md",
+   "lines": "110",
+   "quote": "advisory until calibrated on academics-labeled anchor lessons",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "102-103",
+   "quote": "No auto-score gates progress until the rubric-calibration harness proves LLM-vs-SME agreement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd",
+   "lines": "96",
+   "quote": "117 judge cases authored, 114 OK/3 WRONG pre-fix (all three the echo class)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R1.md",
+   "lines": "41-42",
+   "quote": "87.5% agreement (42/48), 1 false-high, 0 concerning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "92-94",
+   "quote": "These run as LLM-judge with a mandatory human sample per unit and become blocking only after a calibration pass against the round-2 failure examples.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "44-45",
+   "quote": "Before claiming sensitivity/specificity, materialize each row as machine-readable input plus an expected assertion, version both, and run the implementation against them.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "38",
+   "quote": "No unvalidated LLM judge chooses an edit.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "33",
+   "quote": "It provides context for remaining headroom, not ground truth.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/golden/golden_dataset.json",
+   "lines": "3",
+   "quote": "Pruned feedback-golden-0075 and feedback-golden-0103 (Grade-4 Social Studies items labeled INFERIOR that the evaluator stably rates as passing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v09/README.md",
+   "lines": "6",
+   "quote": "every judged check gets a measured precision and recall.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v09/README.md",
+   "lines": "10",
+   "quote": "every judged check reports its measured precision beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "133",
+   "quote": "a wrong case fails the run, advisory check or not; a split vote makes a check advisory",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "137",
+   "quote": "assert.equal(wrong.checks[0].status, \"failing\"); assert.equal(wrong.checks[0].wrong, 1); assert.equal(wrong.checks[0].precision, 0.667);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "140-141",
+   "quote": "assert.equal(advisoryWrong.checks[0].required, false);\n  assert.equal(advisoryWrong.checks[0].status, \"failing\"); assert.equal(advisoryWrong.checks[0].false_holds, 1);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "142",
+   "quote": "an advisory check still changes what a student is told",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "144",
+   "quote": "assert.equal(split.checks[0].status, \"advisory\"); assert.equal(split.checks[0].flips, 1); assert.equal(split.checks[0].wrong, 0);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/calibrate.mjs",
+   "lines": "7",
+   "quote": "Exit 1 on any wrong case or a case that cannot be built (the closing-questions judge's rule).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "105",
+   "quote": "a check whose controls go wrong or flip should not hold a block or decide what a student is told",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a775ad50ec1c4070.json",
+   "lines": "37",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "39",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "6",
+   "quote": "\"note\": \"answers from the labels themselves: proves the wiring, measures nothing\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "These harnesses supply the method: labelled states per check, several votes, and a threshold set where the two groups separate.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Its fixtures hold 199 judge cases and 27 trap cases, each with expect and why.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "4",
+   "quote": "recall of fails, and false holds (good cases the check would hold back)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "90",
+   "quote": "the gap between the groups: the lowest p among cases that hold and the highest among cases that fail",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "97",
+   "quote": "unsure || flips ? \"advisory\" : \"calibrated\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Small sets are only diagnostic.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "6",
+   "quote": "answers from the labels themselves: proves the wiring, measures nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "6",
+   "quote": "Labels need a person: a model-made label measures nothing, and a seed set this small is diagnostic only.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "111",
+   "quote": "Calibration has seed sets only: it proves the wiring and measures nothing until people label examples.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/helpers.mjs",
+   "lines": "1",
+   "quote": "Offline stand-ins: a fixture writer and a scripted judge. They prove plumbing, never judgment quality.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "46",
+   "quote": "bounded questions with the evidence supplied; their precision is not yet measured (v04).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "136",
+   "quote": "Calibration harness and seed sets (test/calibration/, seed only: they prove the wiring, measure nothing);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "111",
+   "quote": "- Calibration has seed sets only: it proves the wiring and measures nothing until people label examples.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "136",
+   "quote": "Calibration harness and seed sets (test/calibration/, seed only: they prove the wiring, measure nothing)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "105",
+   "quote": "/** Support gates (conservative engineering thresholds, not calibrated correctness). */",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The labels need a person; model-made labels measure nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The calibration numbers come from the label oracle, which answers from the labels themselves, so they prove the wiring and measure nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "They need cases in the calibration set (rank 11) before anyone relies on them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "79",
+   "quote": "an advisory check still changes what a student",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "42",
+   "quote": "the current semantic-judge contract is uncalibrated and report-only. Human review remains necessary.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "72",
+   "quote": "The labels are the tester's reading of each rubric, not a teacher's.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/STAAR-RLA-BLUEPRINT.md",
+   "lines": "57-58",
+   "quote": "after TEA moved to auto-scoring ~75% of essays, English I first-time zero-rates jumped from ~19% to **~70%**, English II to **~80%**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "125",
+   "quote": "Calibrate against independently scored AP responses before enabling mastery effects.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

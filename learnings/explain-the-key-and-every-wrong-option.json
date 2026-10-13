@@ -1,0 +1,163 @@
+{
+ "id": "explain-the-key-and-every-wrong-option",
+ "title": "Explain the key and every wrong option",
+ "statement": "Give every item an explanation that shows why its key is right and why each wrong option is wrong, rather than restating the answer.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "An AP item benchmark's judge asks whether an explanation teaches why the answer is correct and addresses why the other options are wrong, and fails one that just restates the answer (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py`, lines 98-102). Its calibration set includes a failing case whose explanation is the answer repeated (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/calibration/gold_standard.json`, line 365). A reading generator stores a separate explanation for the right answer and for each distractor (`icloud-work/incept/sat-reading-generation/README.md`, lines 210-213). This is for when the answer is revealed; after a first wrong try, feedback says only where to look. Check in code that every item has an explanation.",
+ "against": "Whether to explain each wrong option as well is contested. The local rubric asks '- Does it address why other options are wrong?' (`icloud-work/evaluator/ap_benchmark/prompts/base.py`, line 101). The later pipeline told the writer 'Prefer one concise explanation of why the keyed answer is correct instead of option-by-option rationales.' (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`, line 194) and \"- Do not use option-by-option explanation text; explain only the keyed answer's reasoning.\" (line 243). An explanation can itself be wrong: an answer letter that disagreed with its explanation failed 7 of 30 questions in a cross-check by another model (\"This bug caused 7 out of 30 questions (23%) to fail\", `icloud-work/ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md`, line 6), so each explanation needs its own consistency check. The value of an explanation is asserted in these files, not measured.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "99",
+   "quote": "- Does the explanation teach WHY the answer is correct?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "100",
+   "quote": "- Does it address why other options are wrong?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "102",
+   "quote": "- FAIL if explanation just restates the answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/README.md",
+   "lines": "211",
+   "quote": "\"explanation_distractor1\": \"Why this is wrong...\",",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/calibration/gold_standard.json",
+   "lines": "365",
+   "quote": "\"failure_reason\": \"Recall-only asking for date; explanation is just the answer repeated\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "100",
+   "quote": "- Does the explanation teach WHY the answer is correct?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "103",
+   "quote": "- FAIL if explanation just restates the answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/hard_fail/rules.py",
+   "lines": "73",
+   "quote": "r'^(the\\s+)?answer\\s+is\\s+[a-d]\\.?$',",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/gold_standard.json",
+   "lines": "365",
+   "quote": "\"failure_reason\": \"Recall-only asking for date; explanation is just the answer repeated\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md",
+   "lines": "104",
+   "quote": "**Frequency:** 139 questions (25% of all generated)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md",
+   "lines": "106",
+   "quote": "**Impact:** Students cannot learn from their mistakes without explanations",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/validation_rules.md",
+   "lines": "298",
+   "quote": "- Must explain why correct answer is correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/validation_rules.md",
+   "lines": "299",
+   "quote": "- Must explain why at least one wrong answer is wrong (for MCQ)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "12",
+   "quote": "student: \"Picks an option. A wrong pick sends them back to a line without naming the answer; the right pick shows the line that proves it.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "26",
+   "quote": "- feedback[i] is shown after option i is picked. Right option: one sentence that confirms it and quotes the line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "15",
+   "quote": "student: \"Taps a line. A wrong line gets a hint; the right line is highlighted with the reason it proves the claim.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "29",
+   "quote": "- reveal: one sentence that explains how the line proves the claim.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "177",
+   "quote": "Verdict: **the feedback lines are the best copy in the build** — declarative, one fact, no praise inflation, no exclamation marks, every wrong answer corrected with the reason.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L4-2026-09-05.md",
+   "lines": "168-170",
+   "quote": "All 5 first-read comprehension checks anchor their correct-answer feedback to a verbatim story quote (matches doc Component 5 Layer A/B house style: \"Yes. '...' Read on.\").",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

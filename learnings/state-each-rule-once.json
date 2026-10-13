@@ -1,0 +1,231 @@
+{
+ "id": "state-each-rule-once",
+ "title": "State each rule once",
+ "statement": "State every scoring rule once, so the judge's instructions, the rubric's layers, the written specification and the pass rule in code agree.",
+ "example": "When the prompt and the scoring code disagreed, 78 of 690 items (11%) landed at random in a rating band that no rule defined.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "scoring-guide",
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Two runs of an item evaluator on the same 690 Grade 10 items disagreed on 38 overall ratings (5.5%); 9 of the 27 metric flips came from a base prompt and an overlay that said different things when no difficulty definitions existed (`icloud-work/inceptbench/docs/EVALUATOR_VARIANCE_FIX.md`, deleted in commit e5be84f). The prompt also promised a score band that the code clamped away, which left ACCEPTABLE to the model's free number. Another fix made one rule's text byte-identical across the two prompts that are joined together, to stop them drifting apart (commit d9d4441). Every criterion the rubric calls critical or blocking should actually block instead of being averaged.",
+ "against": "The difficulty contradiction is still in the current rubrics (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, line 170, against `icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 547), because the change that aligned them, by passing by default, was reverted after the gold-set pass rate fell to 94% (commit 2750903). The evaluator's API reference lists the same criterion as averaged, so the judge's label may be the outlier rather than the code (`icloud-work/evaluator/docs/EVALUATION_API.md`). The dimension tables count only a full score as a pass (`icloud-work/evaluator/generate_evaluation_report.py`), so they show documents the judge marked down, not proven fabrications. The authenticity check also accepted simulated documents, and most recorded issues for document-based items were missing attribution, so part of the failure rate may be attribution format rather than invented sources. The run (2026-02-25 08:19) predates the repository's first commit (08:53), so the code that scored it can't be confirmed; the pass rule is read as it stands.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "5",
+   "quote": "When running InceptBench evaluation **twice on the same 690 Grade 10 questions**, the overall rating (`SUPERIOR` / `ACCEPTABLE` / `INFERIOR`) **disagrees for 38 questions (5.5% variance)**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "29",
+   "quote": "| `difficulty_alignment` | 9 | Base prompt and overlay prompt **contradicted each other** on what to do when no difficulty definitions exist |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "40",
+   "quote": "This meant ACCEPTABLE only existed when ALL metrics pass but the LLM gave less than 0.99 — a pure \"vibes-based\" category with no definition. 78/690 questions (11%) landed there randomly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "d9d4441",
+   "lines": "10-12",
+   "quote": "- Make the \"Unnatural interjections in the stem\" rule body byte-identical across _base_evaluation.txt and closed_ended_evaluation.txt to prevent drift between the two concatenated prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "315-321",
+   "quote": "### CRITICAL DIMENSIONS",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/benchmark_official.py",
+   "lines": "213",
+   "quote": "# Pass if: no hard failures AND overall score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/evaluation_server.py",
+   "lines": "877-895",
+   "quote": "passed = not critical_failed and overall_score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "34",
+   "quote": "| DBQ      |    186 |      5 |      0 |     97.4% |      0.87 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "82",
+   "quote": "| document_authenticity     |   28 |  163 |     14.7% |      0.15 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "34",
+   "quote": "| DBQ      |    109 |      1 |      4 |     99.1% |      0.88 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "75",
+   "quote": "| document_authenticity     |    1 |  109 |      0.9% |      0.59 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "123",
+   "quote": "### Pass Threshold: **0.85**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_API.md",
+   "lines": "543",
+   "quote": "| `document_authenticity` | Normal | Authentic sources with attribution |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/generate_evaluation_report.py",
+   "lines": "112",
+   "quote": "if dim_score >= 1.0:",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "34",
+   "quote": "| DBQ      |    186 |      5 |      0 |     97.4% |      0.87 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "82",
+   "quote": "| document_authenticity     |   28 |  163 |     14.7% |      0.15 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "315, 321-323",
+   "quote": "- Does each document have proper attribution (author, date, source)?",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "196-201",
+   "quote": "hard_fail_dims = { \"document_count\", … \"prompt_structure\", … \"factual_accuracy\", … \"answer_validity\",",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "192",
+   "quote": "overall_score = sum(scores) / len(scores) if scores else 0",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "214",
+   "quote": "passed = not critical_failed and overall_score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "322",
+   "quote": "- Are documents historically accurate or properly simulated?",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "63",
+   "quote": "- (8x) Document 1 lacks specific attribution (author, date, source)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Its closing instruction explicitly tells the model that an answer can pass when other criteria remain unmet.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "The pass instruction supplied to the model must describe the same arithmetic as the code.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-final-selection/_internal/GATE_CONSISTENCY_FIX.md",
+   "lines": "3-4",
+   "quote": "found finalish-v1 certified against **three different bars**, only 44% on the core `gpt-4.1 mean<0.60`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "127",
+   "quote": "| **Norm accuracy** | Uses correct G3 RIT norms (fall ~185 / spring ~197 / +10.5); no 207/213/+6 figures |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "246",
+   "quote": "~185/~197/+10.5 — fail C4 (correct: ~185/~194/+9, 2025 norms). (b) A \"five formats\" list (omitting match/gap-match) is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "114",
+   "quote": "Constraint audit (C1–C8): <PASS or FLAG per constraint, with reason>",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

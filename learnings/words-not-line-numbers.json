@@ -1,0 +1,345 @@
+{
+ "id": "words-not-line-numbers",
+ "title": "Words, not line numbers",
+ "statement": "Point at a text by its words, never its line numbers: editions number lines differently, and a lesson may show none.",
+ "example": "Three of six early blocks of mine cited them.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every block gets a house check that no student text cites a line number\n(`g9/transformer/src/mechanics/util.js`, `houseChecks`). The sample text is numbered as in one edition and notes that\nother editions number some lines differently (`g9/transformer/samples/othello-1-1.md`); a planning note cited a line by\none edition's number, which another edition gives two lower (`grade3-reading/artifacts/g9-prep-pack-2026-10-02/INDEX.md`).\nThree of six blocks made before the rule cited line numbers, and the engine now refuses to draw blocks made under older\nrules (`g9/transformer/v02/QA.md`, \"Video essay and the unit-video modules\").",
+ "against": "A later run found: the house check's pattern matches only forms like L12 or line 12, so a held open-check draft whose hints said \"the fifth line\" and \"line five\" passed it; that draft was held for another reason, so the hints did not ship (`g9-transformer-runs/blocks/d872bc1dfbda65fb.json`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found: A Grade 9 unit's knowledge base gives line references in act, scene and line as printed where students read the play, after converting through-line numbers that matched only in the first scene, and the first-pass prototype review kept a line citation with its speaker because it teaches the citation convention. The conversion also bears out this record's reason that numbering systems differ (`g9/sources/1. Act 1 - Knowledge Base - Overview.csv`). A later run found counter-evidence (`g9/sources/Othello_1_Feedback_DevFactory.md`). A later run found counter-evidence (`g9-archive/handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/othello-1-1.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g9-prep-pack-2026-10-02/INDEX.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md",
+   "lines": "34",
+   "quote": "so the candidate `\"So these are Peter Pan's precious friends,\" he said.` also lit the `he said.` fragment of the unrelated `\"Hook,\" he said.` a whole part earlier",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md",
+   "lines": "34",
+   "quote": "marks are bound to the sentences where the WHOLE clue occurs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "38-39",
+   "quote": "Open Source Shakespeare numbers it 43, and Gutenberg and MIT have no numbers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0191-g3-book-lesson-anatomy.qmd",
+   "lines": "150-152",
+   "quote": "The step id is the page's own authored id, never its position (a position rots the moment the lesson's shape changes; five probes pinned to `?page=<n>` broke the day L1 grew an opening video).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "46",
+   "quote": "The last word of that sentence is \"magistrate\", not \"fined\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "49",
+   "quote": "**Fix:** *\"Look at the word just before 'by the magistrate'.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "46",
+   "quote": "const LINE_NUMBER = /\\b(?:L\\d+|lines?\\s+\\d+)/i;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "806",
+   "quote": "Review lines 34 to 36, where Iago explains that traditional promotion by",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "2",
+   "quote": "They are heuristics: they catch the plain ways of breaking a rule, not every way.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "41-42",
+   "quote": "and \"L42\" written in a student paragraph. The house prompt now forbids L numbers in student-facing text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "12",
+   "quote": "!/\\b(?:L\\d+|lines?\\s+\\d+)/i.test(q)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "35",
+   "quote": "\"nudge\": \"Look at the fifth line for details about the mouth.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "36",
+   "quote": "\"second_nudge\": \"Examine the start of line five to see how the lip is described.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "96-98",
+   "quote": "\"id\": \"no-line-numbers\", \"label\": \"No student text cites a line number\", \"ok\": true,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "8",
+   "quote": "Text a student reads never cites a line number (no \"L12\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "38",
+   "quote": "Re-read the sixth line to see what spiritual quality the speaker says cannot be bestowed by speeches alone.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "57",
+   "quote": "Re-read the tenth line to consider the permanent claim of power in the title.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "8-9",
+   "quote": "Text a student reads never cites a line number (no \"L12\", no \"line 12\"): the lesson may show the text without numbers, so quote a few of the words instead.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "64",
+   "quote": "student text cited line numbers the build's reading does not show (\"in line 8\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "64",
+   "quote": "student text cited line numbers the build's reading does not show (\"in line 8\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/evidence-hunt.tapped-proves.json",
+   "lines": "5",
+   "quote": "Lines are named by their words, never by number.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-25-25-328Z.json",
+   "lines": "248",
+   "quote": "Review lines 7 and 8 to see who was recommending Iago for this permanent post.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "16",
+   "quote": "/** The words of `term` as they are written in `text` (case, curly apostrophes, spacing), or null. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "2",
+   "quote": "or a sentence (prose). Stage directions are kept for display but are never evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "41",
+   "quote": "a play-time case names a line by its words",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The animated glossary matches by text within a line, so a repeated word needs the right line index.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "7",
+   "quote": "H1's third actual miss says to look at “the very first line of the story” for Peter's offer. The displayed story begins “The Darling children could not sleep”; the offer is later.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "7",
+   "quote": "The second reply similarly generated a first-page direction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "9",
+   "quote": "It does not supply the full ordered story or page/line coordinates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "9",
+   "quote": "The excerpt order is a plausible contributing ambiguity, not proof of model-internal reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "15",
+   "quote": "the supplied items are selected supporting excerpts, not an ordered story or page/line map.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "15",
+   "quote": "Point to actual supplied words or an identified event instead.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/generated-feedback-locator-99/CAUSE-AND-PROPOSAL.md",
+   "lines": "22",
+   "quote": "Blanket first/last replacement was rejected because chronology and grounded quotations can legitimately use those words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "136",
+   "quote": "Act.Scene.Line, as printed on folger.edu (for example 1.3.208–209).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "136",
+   "quote": "Earlier drafts used Folger through-line numbers (FTLN), which only match in 1.1.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "143",
+   "quote": "FTLN references in 1.2 and 1.3 were converted to Act.Scene.Line, which is what students see on folger.edu.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "354",
+   "quote": "\"1.1.171–174 · Iago\" teaches the citation convention and names who is speaking.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "143",
+   "quote": "FTLN references in 1.2 and 1.3 were converted to Act.Scene.Line, which is what students see on folger.edu.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "842",
+   "quote": "recalled as CONTENT - what happened, what the character was like - never as a position like 'in the middle'",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "170",
+   "quote": "Quote references and line numbering may depend on the chosen edition.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "170",
+   "quote": "Verify line references against the edition actually being used rather than assuming that a familiar number is universal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "49-50",
+   "quote": "Locate Routine v2 (evidence as content never position, 60–120-word zoom, pause narration until re-read)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

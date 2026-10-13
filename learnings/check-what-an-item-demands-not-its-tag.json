@@ -1,0 +1,275 @@
+{
+ "id": "check-what-an-item-demands-not-its-tag",
+ "title": "Check what an item demands, not its tag",
+ "statement": "Check, item by item rather than from tags or averages, that each item and lesson actually demands the skill, standard, topic and passage its labels claim.",
+ "example": "One grade 3 course needed 193 items retagged for systematic mistags.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "demand",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One grade 3 reading course had systematic standard mistags, vocabulary in context on the wrong standard and comprehension on the wrong strand, and 193 items were retagged; the generator's rubric now audits tags and reports an error rate (`ti-courseplans-audit/docs/course-formula-agents.md`). After a retag counted as successful, a main-idea lesson still served an inference item, so the check is the skill claimed against the skill assessed, item by item (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`), and the course-plan standard calls such a lesson a tagging and a teaching defect (`ti-courseplans-audit/docs/instruction-quality-standard.md`). Tag coverage is plumbing, never the curriculum claim (the same file), and the grade 3 criteria ask that every standard map to at least one knowledge component, with no orphans and no false alignment, where an item matches a standard's vocabulary but its depth of knowledge is lower (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md`). Make the item-by-item check a blocking check of its own. Where a lesson's items do not demand the skill it claims to teach, fix the content rather than the tag, since a retagged item can fit its new tag and still break the lesson.",
+ "against": "Lenient by design: 'A lesson where items plausibly fit their tags PASSES.' (`shadow-bench/src/inceptbench/prompts/lesson_bundle/evaluation.txt`, line 13).",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "79-80",
+   "quote": "A lesson's items must assess the KC the lesson claims to teach (construct coherence — a main-idea lesson serving inference items is a tagging *and* teaching defect).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "84",
+   "quote": "main-idea lesson served an inference item after a \"successful\" retag",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "224",
+   "quote": "G3 had systematic mistags (vocab-in-context wrongly on L.3.4; comprehension on the wrong strand); **193 items retagged** — audit tags and report an error rate",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "57-58",
+   "quote": "Reading standards are skills, not knowledge — CASE-tag coverage is plumbing, never the curriculum claim.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md",
+   "lines": "27",
+   "quote": "Every standard maps to ≥1 KC; no orphan standards/KCs; no false alignment (vocabulary matches the standard but the item's DOK is lower)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "c4c51e8",
+   "lines": "5-6",
+   "quote": "Per-item curriculum_alignment checks an item against ITS OWN declared standard, and concept_coverage rewards skill breadth — so neither notices \"retag drift\":",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "c4c51e8",
+   "lines": "7-8",
+   "quote": "an item tagged as one skill (e.g. RI.x.2 main idea) whose stem actually assesses another (e.g. character inference).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "122",
+   "quote": "This is distinct from per-item curriculum alignment — a retagged item can align to its NEW tag while still breaking the lesson's declared construct.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "13",
+   "quote": "A lesson where items plausibly fit their tags PASSES.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-DOK-FINDING.md",
+   "lines": "5-7",
+   "quote": "**Distribution: 58% DOK-2 / 42% DOK-3.** Target is 60–70% DOK-3. **Why the gap:** the lesson-level \"64% DOK-3\" was misleading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-DOK-FINDING.md",
+   "lines": "7-8",
+   "quote": "**Why the gap:** the lesson-level \"64% DOK-3\" was misleading — every lesson front-loads 3–4 DOK-2 boilerplate items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-DOK-FINDING.md",
+   "lines": "12",
+   "quote": "**Tagging cannot fix this — it's a content-rigor gap.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "84",
+   "quote": "main-idea lesson served an inference item after a \"successful\" retag | per-lesson: KC claimed vs KC assessed, item by item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "87",
+   "quote": "shipped L10 is Anansi (wrong unit, wrong story, wrong skill)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "423",
+   "quote": "Lesson \"Who Ruled the Republic?\" but passage is about aqueduct water engineering.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "215-216",
+   "quote": "4 of 5 items are unanswerable as rendered.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "217-218",
+   "quote": "passes item evaluations but fails the holistic course evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "221-222",
+   "quote": "820 single-choice items checked, 83 flagged for low passage↔options topic overlap",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "38-39",
+   "quote": "whose water-cycle items were bound to an unrelated pistol-shrimp passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "39-40",
+   "quote": "the class of defect that \"passes item evals but fails the holistic course eval.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "26",
+   "quote": "so topic mismatches are visible to the judge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "9",
+   "quote": "plus a deterministic passage-coherence gate to live-rebuild the mast-fa-04 mastery-test form (fixed a pistol-shrimp/water-cycle content mismatch)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "34-35",
+   "quote": "every proposed KC MUST come with span evidence: one or more verbatim quotes from the text body that show the text actually carries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "58-59",
+   "quote": "trigger words are a hint, not proof; e.g. \"then ... because\" can be sequence, cause-effect, or both).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "60",
+   "quote": "Cut over-placement: a text carrying more than ~4-6 KCs is usually diluted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "100",
+   "quote": "a span quote that is not actually in the text body",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/KNOWLEDGE-COHERENCE.md",
+   "lines": "19-20",
+   "quote": "**39 are reading lenses, 15 are pure re-encounters (a lesson that completes/reads the chart or runs it cold), and exactly 1 introduces a genuinely new science concept as its new column**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/KNOWLEDGE-COHERENCE.md",
+   "lines": "21-22",
+   "quote": "Counting *passage content* rather than the `adds` column, **4 of 55 lessons** touch first-encounter science at all",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "26",
+   "quote": "Compare the student materials and rubric, not just plan labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/G5-Coverage-Pipeline-Findings-2026-08-17.md",
+   "lines": "14",
+   "quote": "relabeling the slot doesn't create new coverage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "44-45",
+   "quote": "7 carried forward on the U1–U8 unit gates (verified by TRUE demand, not headline tags)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-07-08.md",
+   "lines": "34",
+   "quote": "Tagging still does not match what items assess. A main-idea lesson served an \"Inference & Evidence\" item, and single short passages carry several different question types, so the standard a lesson claims to teach and the items it delivers do not line up.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "51",
+   "quote": "A superficially valid stimulus can teach or assess the wrong construct.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "197-199",
+   "quote": "A page labelled as a retell must deliver the maze (inline-choice cloze); the maze IS the retell. A stand-in MCQ may exist underneath but must stay hidden, not render in place of the maze.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,43 @@
+{
+ "id": "store-a-response-apart-from-its-question",
+ "title": "Store a response apart from its question",
+ "statement": "Store a completed student or model response as its own evidence record, never inside the question, so it can't leak into the item and blind judging stays possible.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP history course's design notes list what every question record holds, the prompt, source set, key or rubric, scoring model, answerability model, provenance and evaluation state, and keep a completed student or model response as a separate evidence record. The stated reason is that this stops a model answer from becoming an accidental part of the question and makes blind evaluation possible. The course's deliverable contract repeats that a response is an evaluation record, not a field of every long-essay or document-based question.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "618-621",
+   "quote": "Every intrinsic question record includes the prompt, source set, key or rubric, scoring model, answerability model, provenance, and evaluation state. A completed student or model response is a separate evidence record. This prevents a model answer from becoming an accidental part of the question and makes blind evaluation possible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/DELIVERABLE-CONTRACT.md",
+   "lines": "119-120",
+   "quote": "A completed student or model response is an evaluation record, not an intrinsic field of every LEQ or DBQ question.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

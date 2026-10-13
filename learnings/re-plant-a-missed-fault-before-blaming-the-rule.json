@@ -1,0 +1,49 @@
+{
+ "id": "re-plant-a-missed-fault-before-blaming-the-rule",
+ "title": "Re-plant a missed fault before blaming the rule",
+ "statement": "When a planted fault goes uncaught, plant it again in content the check is known to read before changing the rule, because a run that reads nothing passes everything.",
+ "example": "A run whose selection matched no lessons judged only 6% of what was asked and reported all pass, so a planted doubled word went unreported.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 reading build's rulebook records a copy-editing check run on one unit whose selection matched no lessons: it collected only the roughly 342 strings of the player's own prose, judged those and reported all pass, a clean bill over 6% of what was asked. A doubled word planted to test it went unreported and came one step from being filed as a broken prefilter; planting the same defect in prose the check had long collected came back clean too, which identified the run, not the rule, as the problem. The rule that came out of it is that a negative control needs its own positive control, or a working rule gets fixed while the real defect stays, and a selection that matches nothing now fails by name instead of sweeping what is left.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "475",
+   "quote": "when a planted defect is NOT caught, re-plant it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "480",
+   "quote": "a check that reads nothing passes everything.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "470-471",
+   "quote": "matched no lessons, collected only the ~342 player-prose literals, judged those, and reported ALL PASS",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

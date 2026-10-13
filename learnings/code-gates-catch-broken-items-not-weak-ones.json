@@ -1,0 +1,289 @@
+{
+ "id": "code-gates-catch-broken-items-not-weak-ones",
+ "title": "Code gates catch broken items, not weak ones",
+ "statement": "Hard-block in code only what code detects reliably, keep keyword and length counts advisory, and check quality and correctness separately, since a well-formed item can be weak or wrong.",
+ "example": "A deterministic suite caught 19 of 102 failing items and rejected 22 of 351 passing ones.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "On 30 scored AP question sets, a stage validator passed 12 of the 14 failing sets and wrongly failed 1 of the 16 passing ones, and its results note concluded that hard gates are a safety layer, not a quality judge, since most failures were semantic rather than schema or leak failures. Its first version also hard-blocked reading-style, source-referential stems and over-blocked known passing items, so the split kept hard gates for schema, missing fields, answer leaks, extreme length and key clustering and made wording flags advisory. A separate probe of a deterministic suite on 461 generated items caught 19 of 102 failures and rejected 22 of 351 passes, and a shape-only acceptance test passed 25 of 25 in 0.006 s while a graded retest of the same service scored 8 of 20. Code gates catch broken items, not weak ones. Keyword and wording counts stay advisory, as does length unless it is extreme, since a valid shape does not show quality.",
+ "against": "A later design hard-rejects on a semantic check before grading: \"reject any item whose answer is derivable from the stimulus\" (icloud-work/aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md, line 16). The 8 of 20 retest used a thinner generic prompt than the graded specialist solvers (aptraining-local/den-of-ideation/from_den/2026-05-25T0758Z_BLOCKED_WORKFLOW_GENERIC_MCq_RETEST.md, line 18), so it shows what the shape check missed, not how good the specialists were. The validator figures come from a replay of archived outputs, not fresh generation (aptraining-local/den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md, line 7). Used as gates rather than as scores, cheap word checks still catch real cues, such as the absolute words found in 35% of generated items in one review (`icloud-work/k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md`). A later run found: A Grade 3 course hard-blocks a modest length tell, failing the build when the key is more than 1.25 times as long as the longest wrong option or under 1/1.25 of the shortest, where this record keeps length counts advisory and blocks only extreme length. The same course's quality pass agrees that spread around the mean is not a defect, calling option lengths that span 44–91% of the mean a matter of style (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md`).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "47",
+   "quote": "\"failed_validator_passed\": 12,",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "54",
+   "quote": "The deterministic hard gates are good as a safety layer, not a complete quality judge.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "55",
+   "quote": "- Most MCQ_SET failures are semantic/educational rather than simple schema/leak failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "108",
+   "quote": "3. Treat validators as hard safety rails plus advisory diagnostics, not as a full replacement for IB or a judge.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "24",
+   "quote": "Hard gates are deliberately narrow. The first version over-blocked known passing rows because InceptBench tolerates some source-referential wording.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "73",
+   "quote": "Keep hard gates narrow: malformed schema, answer key breakage, copied answer leakage, extreme length, answer-key clustering.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "74",
+   "quote": "Keep reading-comprehension phrasing advisory unless it combines with another failure. The prototype showed hard-blocking it over-rejects known passing rows.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "42",
+   "quote": "The visible deterministic rules catch the obvious defects but cannot reliably identify the evaluator's latent concerns without damaging passed controls.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "8",
+   "quote": "- Actual fails: 102",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "9",
+   "quote": "- Caught fails: 19 (0.186)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "10",
+   "quote": "- Actual passes: 351",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "11",
+   "quote": "- False rejects: 22 (0.063)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-25T0633Z_DELIVERED_WORKFLOW_den_workflow_v1.md",
+   "lines": "20",
+   "quote": "direct package smoke: `25/25`, elapsed `0.006s`, no IB",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/from_den/2026-05-25T0758Z_BLOCKED_WORKFLOW_GENERIC_MCq_RETEST.md",
+   "lines": "12",
+   "quote": "`/no_think` generic deployable MCQ: `8/20 = 40.0%`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/EVALUATION-ANALYSIS.md",
+   "lines": "57",
+   "quote": "- Score **1.00** but be factually wrong",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/EVALUATION-ANALYSIS.md",
+   "lines": "130",
+   "quote": "**The 58.8% pass rate is meaningless** because:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CONSOLIDATION_2026-02-19.md",
+   "lines": "19",
+   "quote": "1. **Metaphorical APWH titles** - Topics like \"The Global Tapestry (1200-1450)\" were rejected because validation looked for literal words (\"tapestry\", \"global\") instead of actual historical content (Mongol Empire, Song Dynasty)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "20",
+   "quote": "**Root cause:** The evaluator treats \"Describe\" and \"Identify\" as recall-level verbs regardless of analytical keywords in the question.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "31",
+   "quote": "| `0.1.186` | fresh balanced50 shape `50/50`, score `41/50` | Availability fixed, quality not |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md",
+   "lines": "54",
+   "quote": "A scored `0.1.37` preflight found hidden quality failures despite shape passing",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1030",
+   "quote": "This proves the local candidate can emit schema-compatible content for all 26,355 benchmark rows, but it is not a substitute for IB scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "92",
+   "quote": "**What 12% means:** The model now generates MCQ_SET format (3 questions, stimulus, all required fields). But the quality threshold (factual_accuracy, stimulus_quality) was still failing 88% of the time.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "94",
+   "quote": "**What 12% doesn't mean:** We solved MCQ_SET quality. We solved MCQ_SET FORMAT. These are different problems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "251",
+   "quote": "The limitation is critical: you can force the model to emit a syntactically valid JSON field for `\"year\": <int>`, but you cannot force the value to be `1919` rather than `1914` via grammar constraints alone. Semantic fact-checking requires a different mechanism.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "150",
+   "quote": "- The knowledge and content quality within the structure is what differentiates model sizes — not the structural compliance itself",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "137-139",
+   "quote": "the key fails if it is more than 1.25x the length of the longest distractor, OR less than 1/1.25 the length of the shortest distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "29",
+   "quote": "Option-length spread (11 items) — style, not a defect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "30",
+   "quote": "Lengths span 44–91% of the mean on those items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "No keyword-based contradiction detector or generic grammar heuristic is proposed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/question-causality/PROPOSAL.md",
+   "lines": "19",
+   "quote": "Its authoring/check claims are history, not proof that this causal wording is sound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "19",
+   "quote": "Validators cannot prove plausible difficulty or absence of leakage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "20",
+   "quote": "It does not compare a semantic paraphrase against the criterion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "71",
+   "quote": "Deterministic checks prove structure and behavior; they do not replace reading, science,",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "7",
+   "quote": "back, partial answers marked off, replies that may name the missing idea (check by eye), and verdicts that change",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/ADJUDICATION.md",
+   "lines": "78-81",
+   "quote": "The contextual pass also found seven definite issue sites outside these 86 rows: L5 p17 cue/frame, L6 and L7 p13 chronology feedback, L6 and L7 p14 “evidence” instructions, L7 p15b speaker attribution, and L7 p16 slash chronology.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/REPORT.md",
+   "lines": "26",
+   "quote": "These are mechanical signals, not 76 confirmed defects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "788-789",
+   "quote": "can be bridged by an answer that names one source plus the other side's content word",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "keep-recent-items-out-of-a-retest",
+ "title": "Keep recent items out of a retest",
+ "statement": "When students sit an adaptive test again, exclude the items they answered recently and cap each item's exposure, letting both rules give way before either could stop a session.",
+ "example": "One assessment meant for repeated interim use had a mean between-session overlap of 29.4%, with 38 items above 30% exposure.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An adversarial review of a reading assessment meant for repeated interim use found a mean between-session overlap of 29.4%, 38 items above 30% exposure and 289 of 786 items never used in the latest simulation, and the package's own limits section says students who take it more than once will see repeated items (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md`; `grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). The fix excludes items a student answered in their last 2 sessions, with a three-stage fallback (relax to the last one, then off, plus an unfiltered retry mid-session) so that exposure control can never stop a session starting or end one early, and it demotes over-cap items to a second selection tier rather than excluding them (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md`). The design-review procedure makes both a hard constraint for repeat sittings (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md`).",
+ "against": "Neither mechanism is switched on yet: both ship off by default, enabling them needs a simulation re-run, and a recheck called the overlap disclosed and not blocking a one-session pilot but still a real exposure at a later stage (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "55",
+   "quote": "Repeated interim measurement is the entire point, yet mean between-session overlap is **29.4%**, 38 items exceed 30% exposure, and 289/786 items were never used in v4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "118",
+   "quote": "Item security is weaker: students who take the test multiple times will see repeated items (mean pairwise between-session overlap 29.4%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "40",
+   "quote": "**retest-overlap exclusion** — items a candidate answered in their last 2 sessions are excluded from selection, with a three-stage starvation fallback (relax to last-1, then off, plus a mid-session unfiltered retry) so exposure control can never prevent a session from starting or end one early",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "40",
+   "quote": "**per-band exposure soft caps** — over-cap items are demoted to a second selection tier, never hard-excluded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "40",
+   "quote": "Both new mechanisms ship **off by default** — pre-committed for the calibration (\"regular use\") stage, not the pilot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "55",
+   "quote": "repeat sittings require retest-overlap exclusion + per-band exposure caps",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "55",
+   "quote": "enabling requires a sim re-run",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "23",
+   "quote": "Disclosed; not blocking a 1-session pilot; still a real Stage-3 exposure.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

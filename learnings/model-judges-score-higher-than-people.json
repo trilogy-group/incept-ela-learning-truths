@@ -1,0 +1,111 @@
+{
+ "id": "model-judges-score-higher-than-people",
+ "title": "Model judges score higher than people",
+ "statement": "Don't take a model judge's scores for a person's: model judges can score the same educational responses higher than human raters do, and agree with people only in part.",
+ "example": "In one published benchmark, all 20 model-judge averages were above the human average for the same model.",
+ "group": "ai-judges-and-markers",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A published benchmark of language models in teaching scenarios, bundled with one project's evaluator, reports model-judge and human scores for the same responses (`icloud-work/incept/incept-multilingual-generation/src/evaluator/EduBench/README.md`). In its scenario-level table each of four model judges gives each of five models a higher average than people do, for example 8.46 from one judge against 7.50 from people for the smallest model. The coefficient of concordance between people and each model judge is 0.56 to 0.63, and the authors note that the model evaluations do not fully align with human judgments. It is one reason to score a model judge on person-labelled cases before trusting its level.",
+ "against": "The rankings agree at the extremes: people put the same models best and worst as the model judges do, 'which are consistent with the model-based evaluation results' (`icloud-work/incept/incept-multilingual-generation/src/evaluator/EduBench/README.md`, line 193). People also agree with the model judges about as well as the model judges agree with each other, 0.55 to 0.65, which the authors call strong agreement. The benchmark reports the same best and worst systems under the human raters and the model judges, and it calls model-to-model W values of the same size, 0.55 to 0.65, strong agreement (`icloud-work/inceptbench/submodules/EduBench/README.md`, L193 and L217).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "125",
+   "quote": "|                 | Qwen2.5-7B-Instruct    | 8.34 | 9.01 | 8.64 | 8.16 | 6.64 | 9.33 | 8.75 | 8.23 | 9.06 | 8.46 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "145",
+   "quote": "|                 | Qwen2.5-7B-Instruct    | 6.78 | 7.63 | 7.93 | 7.74 | 6.79 | 7.86 | 7.79 | 7.55 | 7.42 | 7.50 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "207",
+   "quote": "| **Human**       | 0.63        | 0.56   | 0.63     | **0.63**    | -     |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "218",
+   "quote": "- **Consistency between humans and models**: The model evaluations do not fully align with human judgments, which may be due to limited understanding of the evaluation criteria by the models.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "122",
+   "quote": "|                 | DeepSeek V3            | 9.67 | 9.12 | 8.97 | 8.82 | **8.32** | 9.31 | 9.34 | 8.65 | 9.23 | 9.05 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "142",
+   "quote": "|                 | DeepSeek V3            | 7.45 | 8.12 | 8.16 | 8.17 | 7.84 | 7.56 | 8.08 | 8.01 | 7.03 | 7.82 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "207",
+   "quote": "| **Human**       | 0.63        | 0.56   | 0.63     | **0.63**    | -     |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "218",
+   "quote": "- **Consistency between humans and models**: The model evaluations do not fully align with human judgments, which may be due to limited understanding of the evaluation criteria by the models.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "27",
+   "quote": "The left section displays our 9 educational scenarios",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "193",
+   "quote": "In Table 2, DeepSeek R1 and Qwen2.5-7B-Instruct still show the best and worst performances, respectively, which are consistent with the model-based evaluation results.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "217",
+   "quote": "The models show high consistency, with almost all Kendall's W values above 0.5 and most around 0.6, indicating strong agreement.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "EduBench (2025), arXiv:2505.16160",
+   "url": "https://arxiv.org/pdf/2505.16160"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

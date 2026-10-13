@@ -1,0 +1,135 @@
+{
+ "id": "work-from-reviewed-material",
+ "title": "Work from reviewed material",
+ "statement": "Where reviewed material exists, work from it rather than regenerating it from source notes, since regenerating throws away the review and brings back errors already caught.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An intro-video BrainLift for a Grade 3 reading course starts from the course's existing video scripts, which had been through fact-checking, spoiler sweeps, cultural review and a Grade 3 language pass, because regenerating from the knowledge base discards that work and reintroduces errors already caught once (`downloads/BrainLift - What makes a good intro video.md`, line 269). The walkthrough of a built Grade 3 lesson says most of its content was transferred from the designs, not regenerated (`downloads/SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md`, line 9).",
+ "against": "The same document then compresses the reviewed script, which is cutting approved words, and Split, don't cut found that a cut script lost its style; Remake under new rules asks for a remake when a rule changes, which this rule would resist.",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "269",
+   "quote": "Regenerating from the knowledge base discards all of that and reintroduces errors that were already caught once. Compression is a smaller, safer and more auditable job than generation.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "9",
+   "quote": "Most of the content is your own work transferred, not re-generated",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "4-5",
+   "quote": "A section of the 3D build carries its own glossary: its terms and notes are passed … through unchanged, each where its line mark puts it, and nothing is drafted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "121",
+   "quote": "the 3D build's own notes are its content: Jev's reading of them is kept, and never holds them",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "56",
+   "quote": "const given = attempt === 1 && mech.given ? mech.given(ctx) : null;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "130",
+   "quote": "a section of the 3D build brings its own glossary, unchanged and placed by its line marks; any other text is drafted",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "144",
+   "quote": "gl.judge(own, c3).checks.every((c) => c.required === false)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "5",
+   "quote": "through unchanged, each where its line mark puts it, and nothing is drafted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "122",
+   "quote": "const drafted = item.source !== \"3d-build\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "125",
+   "quote": "required: drafted,",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "266-268",
+   "quote": "**Prefer splicing to re-recording**: when a line changes by a sentence, keep the original take and synthesise only the new sentence, cutting at measured pauses (`ffmpeg -af silencedetect=n=-40dB:d=0.12`).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v03/CHANGES.md",
+   "lines": "3",
+   "quote": "We were not: v1–v2 used an assistant-written script.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "28",
+   "quote": "brief for an existing script before writing one → docs: sources/Othello Unit Video_ Info Sheet for Devfactory.md §4",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/06-AUDIO-NARRATION.md",
+   "lines": "227-228",
+   "quote": "segment-cut from the existing approved take with ffmpeg, never re-synthesized",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "69",
+   "quote": "The instructional operation (already authored — do not reinvent)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

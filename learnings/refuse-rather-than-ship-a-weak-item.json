@@ -1,0 +1,218 @@
+{
+ "id": "refuse-rather-than-ship-a-weak-item",
+ "title": "Refuse rather than ship a weak item",
+ "statement": "When no valid item can be made, fail visibly or serve a vetted item, never a weak, fallback or filler one, and refuse item types whose output was never measured.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The AP generation service gated the item types it had no evaluation signal for to an error, to avoid shipping unvalidated outputs, and its deployed mode fails visibly if the model cannot serve, with a deterministic fallback for development only (the generation service's `README.md`, lines 30 and 137). The generator kit's prompt for document-based questions returns an error, real-source documents required, when no real documents were retrieved (`system_prompt_dbq.md`, line 135). Its pre-emit checklist says not to emit failing content and to return an error after two silent retries, as better than a low-quality item (`common_pre_checklist.md`, lines 77 and 83).",
+ "against": "A later validation recommended accepting a marked timeout fallback in production, since the cached item came from content that had passed the live evaluator (`VALIDATION_REASON.md`, line 62), and a distilled report advises fallback models on timeouts because \"A complete conservative answer beats a rich timeout\" (`ap_social_studies_generator_distilled.md`, line 184). Blocking every failing draft with no fallback turned quality failures into no output: on three known-risk rows all six drafts were rejected and 0/3 requests succeeded, and the lesson recorded was not to hard-reject every such failure unless more drafts or a fallback policy exist.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/README.md",
+   "lines": "137",
+   "quote": "- We have no signal on `msq` / `fill-in` / `match` / `sequence` / `article` from internal eval — gated to 501 to avoid shipping unvalidated outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/system_prompt_dbq.md",
+   "lines": "135",
+   "quote": "Without D13: do not generate this DBQ. Return an error indicating \"real-source documents required\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "83",
+   "quote": "This is better than emitting a low-quality item that wastes an IB call.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/README.md",
+   "lines": "30",
+   "quote": "The deployed mode is `APUSH_ALL_UNITS_FALLBACK=model_required`, which calls the configured Fireworks model and fails visibly if the model cannot serve.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "77",
+   "quote": "Do NOT emit failing content. If you cannot satisfy all checks after 2 internal retries (silent regenerations), return:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "247",
+   "quote": "- The generic DBQ fallback padded missing source documents with curriculum facts using `Retrieved APUSH Unit {unit} source N`, which produced fake repetitive documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "239",
+   "quote": "- DBQ was badly poisoned: 8/55 scored DBQs passed; many failures contained `Retrieved APUSH Unit 1 source N` placeholders and duplicate document content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1822",
+   "quote": "## 2026-05-18 Official Unit 1 Run `1a637aff`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1845",
+   "quote": "- MCQ_SET: 12/193 = 6.22%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1851",
+   "quote": "- The same placeholder pattern existed in the generic MCQ_SET fallback: 179 generation rows contained `Retrieved APUSH`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "255",
+   "quote": "Generic DBQ fallback no longer pads with `Retrieved APUSH` curriculum facts; it raises a DBQ source-quality error rather than emitting fake documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "257",
+   "quote": "so any otherwise-unrouted Period 1 DBQ still emits seven vetted source documents instead of hitting the generic no-source branch.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "62",
+   "quote": "- If no LLM candidate passes gates, fail closed rather than return a canned final.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md",
+   "lines": "29",
+   "quote": "Targeted generation on three known-risk MCQ_SET rows returned `0/3` HTTP success because all K=6 candidates were rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md",
+   "lines": "29",
+   "quote": "Lesson: do not hard-reject all deterministic MCQ_SET quality failures unless K is expanded or a fallback candidate policy exists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/README.md",
+   "lines": "67",
+   "quote": "Unsupported (returns 501): `msq`, `fill-in`, `match`, `sequence`, `article`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/README.md",
+   "lines": "137",
+   "quote": "- We have no signal on `msq` / `fill-in` / `match` / `sequence` / `article` from internal eval — gated to 501 to avoid shipping unvalidated outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/README.md",
+   "lines": "66",
+   "quote": "Supported: `mcq`, `mcq_set`, `saq`, `leq`, `dbq` (the 5 cells our model has been evaluated on).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "46",
+   "quote": "after three exhausted constructions no leak-resistant two-text-comparison item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "48",
+   "quote": "is intrinsically either schema-guessable or a semi-guessable plausible particular). It is taught +",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "49",
+   "quote": "practiced (8 practice items on gate-clean paired passages), **never fake-gated**, stated as such",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-grading.md",
+   "lines": "38-39",
+   "quote": "These items are **wired into the powerpath test** (they have ids and appear in `/assessment-tests/<test>/questions`) but were never populated with a QTI body.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-grading.md",
+   "lines": "229",
+   "quote": "the empty items must not be served",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "148",
+   "quote": "a lesson assigned to them REFUSES to generate rather than being built against a prototype guess.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "4",
+   "quote": "Preserve the residual verbatim; never promote RL.7.9 to gated without a certified leak-resistant two-text-comparison item.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "194-196",
+   "quote": "The pipeline is COMPLETE and LANDS WITH ZERO ACCEPTED CANDIDATES: three full runs against the Aladdin Part 1 lesson each ended in an honest DISCARD on structural gates after the refine budget (manifests in `runs/`).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/jev-select/SKILL.md",
+   "lines": "23-24",
+   "quote": "noMatch is a real answer. When nothing clears the floor, take nothing. Reranking a search for a question the corpus cannot answer should return zero results, not the least-bad one.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

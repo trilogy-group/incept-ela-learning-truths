@@ -1,0 +1,168 @@
+{
+ "id": "one-voice-at-a-time-mic-closed",
+ "title": "One voice at a time, mic closed",
+ "statement": "Never let two audio sources play at once, such as music or sound effects under teaching narration, and keep the microphone closed while narration plays.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Internal reviews of a grade 3 reading course found the guide's voice and the story's voiceover starting together, and the tap-to-talk button arming while the voiceover was still playing (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 158-171 and 222-226). The course's rules now let nothing compete with the microphone, have any clip silence every other read-aloud, and hide both the Next button and an armed microphone while the voice is sounding. A child who can tap past a sentence still being spoken reaches the microphone before the teaching it checks, and a microphone that opens mid-sentence records the guide into the child's own answer.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "160-161",
+   "quote": "The guide and the story do not start together, and nothing competes with the microphone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "216-220",
+   "quote": "The same button must not exist while the voice is sounding, and neither must an armed microphone. Reveal is pacing, not gating, but the last stage carries the gate, and a child who can tap past a sentence still being spoken reaches the microphone before the teaching it checks. A mic that opens mid-sentence also records the guide into the child's own answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "139-140",
+   "quote": "**E2. One voice at a time.** Starting any clip silences every other read-aloud; starting the page narration silences chips.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1134",
+   "quote": "One voice at a time. Starting any clip silences every other read-aloud; starting the page narration silences chips.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1044",
+   "quote": "The same button must not exist while the voice is sounding, and neither must an armed microphone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1044",
+   "quote": "A mic that opens mid-sentence also records the guide into the child's own answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/EXPLICIT-SPEECH-CHOICE-REVIEW-by-unit9.md",
+   "lines": "15",
+   "quote": "Preserve stage3 silence so narrator audio cannot be recognized as the child.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "64",
+   "quote": "The mic is an audio kill switch: from open to close, no audio path may sound or start.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "65-67",
+   "quote": "**Stop narration before the mic opens.** Tapping \"Tap to talk\" must call narration.stop() before the microphone is activated, because the coach's voice gets captured as part of the child's answer and the child cannot listen for pronunciation cues while being asked to speak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "68",
+   "quote": "enforced: startRecording → narration.stop()",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "163-164",
+   "quote": "the story voiceover starts together",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "225-226",
+   "quote": "the voiceover was continuing and the tap to talk button got activated",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "160-161",
+   "quote": "**Rule.** The guide and the story do not start together, and nothing competes with the microphone.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "216-217",
+   "quote": "The same button must not exist while the voice is sounding, and neither must an armed microphone.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "219-220",
+   "quote": "A mic that opens mid-sentence also records the guide into the child's own answer.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "139-140",
+   "quote": "**E2. One voice at a time.** Starting any clip silences every other read-aloud; starting the page narration silences chips.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/unit-video-production.md",
+   "lines": "28",
+   "quote": "No background score over speech, decorative mascot, stock montage, generated historical imagery or burned-in karaoke text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/media-spec.md",
+   "lines": "5",
+   "quote": "Use one natural narrator consistently and keep speech intelligible without background music.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "10",
+   "quote": "There is no background music, generated historical imagery, mascot, or runtime speech synthesis.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/submission-evidence-index.md",
+   "lines": "39",
+   "quote": "without mascot voice, exaggerated excitement, sound effects or music",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

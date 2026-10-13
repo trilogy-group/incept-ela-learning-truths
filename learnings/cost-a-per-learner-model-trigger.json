@@ -1,0 +1,63 @@
+{
+ "id": "cost-a-per-learner-model-trigger",
+ "title": "Cost a per-learner model trigger",
+ "statement": "Trigger a full worked model the first time each learner meets each procedure at each stage, tracked per learner rather than by date, and cost that trigger before building.",
+ "example": "In one design, a learner who climbs every stage could meet up to 36 compulsory models across roughly 96 lessons.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "practice"
+ ],
+ "stage": "ground",
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading lesson design gives a child a compulsory full model the first time they meet a stage, and because its stages are available rather than assigned, that first time is a per-child event, not a date in the scheme (`g9/sources/Readventure - Lesson Design and Scaffolding - Updated.docx`, line 40). So the app has to hold a per-child matrix of procedure by stage and fire the full model on each cell the first time it is entered (line 41). Nine procedures by four stages make 36 cells, so a child who climbs all four stages could meet up to 36 compulsory models across roughly 96 lessons, more than a third of them on the long path, a cost the design says is worth knowing before it is built.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "40",
+   "quote": "The rule is that a child gets a compulsory full model the FIRST time they meet a stage.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "40",
+   "quote": "If stages are available rather than assigned, that first time is a per-child event, not a date in the scheme.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "41",
+   "quote": "So the app has to hold a per-child matrix of procedure by stage, and fire the full model on each cell the first time it is entered.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "41",
+   "quote": "Nine rails by four stages is 36 cells. A child who climbs all four stages could meet up to 36 compulsory models across roughly 96 lessons, which is more than a third of them running the long path.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "41",
+   "quote": "That is the real cost of making stages available, and it is worth knowing before it is built rather than after.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

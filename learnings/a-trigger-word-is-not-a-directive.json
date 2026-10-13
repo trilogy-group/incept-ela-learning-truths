@@ -1,0 +1,108 @@
+{
+ "id": "a-trigger-word-is-not-a-directive",
+ "title": "A trigger word is not a directive",
+ "statement": "A check triggered by a word list fires on ordinary uses of its words, so make it require an explicit phrase and filter out narrative and negated uses.",
+ "example": "Ordering items containing the word 'model' or 'figure' were forced to a stimulus score of 0.0.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A stimulus mismatch check injected an instruction to score the stimulus 0.0 into ordering items that contained words like 'model' or 'figure', overriding correct scores (commit 20bb29e in `icloud-work/inceptbench`). The visual-reference pattern now leaves out bare 'figure', which collided with 'figure-eight' in an item about a bee dance (`icloud-work/inceptbench-main/src/inceptbench/evaluators/question.py`), and a filter drops narrative uses such as 'a family is looking at a map', which describe a scenario rather than tell the student to consult a picture (`icloud-work/inceptbench-main/src/inceptbench/tools/stimulus_reference_detector.py`). Checks that read the judge's own reasoning were narrowed the same way: broad cues like 'causal' fired on correct explanations, so the guard needs an explicit admission phrase and drops negated forms such as 'not misleading' (`icloud-work/inceptbench-main/src/inceptbench/evaluators/guards.py`).",
+ "against": "A later run found: For misconception screens a Grade 5 reading course chose the opposite: its gate fails a literal misconception phrase even inside a negation, rejected alternative or correction, by its own account deliberately stricter than a contextual judgment. A Grade 3 gate went this record's way and added a negation guard; which scope is right is an open question (`incept-package-hub/course-packages/courses/g5-reading/review/evidence/science-process.md`). A later run found counter-evidence (`grade3-reading/edullm-review-hub/course-packages/courses/g5-reading/review/evidence/science-process.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md`). A later run found counter-evidence (`incept-package-hub/course-packages/courses/g5-reading/review/evidence/science-process.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "20bb29e",
+   "lines": "10-12",
+   "quote": "Sequence questions have no visual stimuli — the mismatch check injected \"MUST score stimulus_quality = 0.0\" for items containing words like \"model\" or \"figure\", overriding correct sequence scores.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "793-794",
+   "quote": "Bare \"figure\" / \"figures\" are intentionally excluded because they # collide with content phrases like \"figure-eight\" (#371 bee dance).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/stimulus_reference_detector.py",
+   "lines": "942-944",
+   "quote": "Narrative/descriptive \"is looking at\" is NOT a directive to the student. # Phrases like \"A family is looking at a map\" describe a scenario; they do # not instruct the student to consult a visual artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "671-675",
+   "quote": "Admission keywords are kept narrow on purpose: broader cues like \"causal\" or \"mechanism\" trigger far too often on factually-correct explanations that merely mention causation, so the guard requires an explicit admission phrase. Negated forms (\"not misleading\", \"isn't a factual error\") are filtered out via a negation-prefix post-check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "90",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "91",
+   "quote": "alternative, or correction. This is deliberately stricter than a contextual judgment: the current",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "90-91",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected alternative, or correction.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "91-92",
+   "quote": "This is deliberately stricter than a contextual judgment: the current hard-string policy requires the phrase to be rewritten before review publication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md",
+   "lines": "90-91",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected alternative, or correction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "624-625",
+   "quote": "**exempts** (a) the hook's single invited prediction (SPOV-S1b licenses voicing the wrong belief once) and (b) any explicitly *negated* body clause",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "202-204",
+   "quote": "(The \"certified mastery\" tokens appear only inside this required negation, per METHODS-CHECKLIST F4; F5 bans *claims*, and none is made.)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

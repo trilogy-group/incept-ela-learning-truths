@@ -1,0 +1,494 @@
+{
+ "id": "say-only-what-happened",
+ "title": "Say only what happened",
+ "statement": "Tell and record only what actually happened: no canned line posing as a response, no step the student didn't take, and an end screen that claims completion, never mastery.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A per-decision audit of one reading lesson's build found a welcome screen that overclaimed contingent listening while giving the same recast whatever the student said, and a receipt screen that asserted out-loud and self-done events that had not happened on the typed paths (`grade3-reading/knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd`). In the fixed build, a third attempt ends in a release framed as help, never as a solo pass. Nothing promises something the page lacks, a lesson counts as done only once its checks were attempted, help is named as help, and each recap is written for its own item.",
+ "against": "In the lesson whose recaps were copied, the recaps were a record kept for adults and were not shown to students (`shadow-content-eval/reports/G3-U1-L2-main-review.md`, line 108).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "70",
+   "quote": "The welcome beat overclaims contingent listening while still issuing a static, answer-independent recast",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "71",
+   "quote": "The receipt screen asserts out-loud/self-done events that did not actually happen on the typed/floor interaction paths.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "99",
+   "quote": "framed as help, never \"solo pass\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "45",
+   "quote": "the L4 video \"Listen again\" false-promise fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "70",
+   "quote": "| F14 | major | The welcome beat overclaims contingent listening while still issuing a static, answer-independent recast (\"However you put it...\"). |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "71",
+   "quote": "| F15 | major | The receipt screen asserts out-loud/self-done events that did not actually happen on the typed/floor interaction paths. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "42",
+   "quote": "\"honest completion\" = XP only on a scored check",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "289",
+   "quote": "\"Done\" counts only when the check is *attempted* (honest completion).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "32",
+   "quote": "two of three words come from an earlier draft.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "33",
+   "quote": "moment and it names the wrong trophies. No validator compares receipt words to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "234",
+   "quote": "and the receipt records it as practiced-with-help, never as solved-alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "228",
+   "quote": "3. **Completion, never mastery.** No string anywhere claims mastery, certification, approval,",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "33",
+   "quote": "After held tries, help is offered and named as help | A reveal dressed as a win teaches that trying is optional",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "50",
+   "quote": "The end screen claims completion, never mastery | False mastery claims teach children and parents to distrust the product | Review-standards rule (validator-enforced)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "251",
+   "quote": "after held tries the app offers to find the clues, named as help.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "353",
+   "quote": "The claim is completion, never mastery",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "61",
+   "quote": "- The `step3` recap says the child picked *\"home, safe, escape and free\"*, which are that item's wrong answers.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "169",
+   "quote": "- A frame row that claims an activity the child never did (p25 row 5).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "23",
+   "quote": "The p25 recap then tells the student something that didn't happen",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "106",
+   "quote": "assert.ok(!files[\"src/steps/Reading.tsx\"].includes(\"attempt >= 2) v = 'secure'\"), \"an answer given after two tries is not marked accepted\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "369",
+   "quote": "two attempts, then the answer is given: the step completes, never marked Accepted",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "370",
+   "quote": "v: given ? ('given' as Verdict) : v",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "91",
+   "quote": "no 3D build mirror",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "366",
+   "quote": "// two tries, then the answer is given and the step completes, but a given answer is not shown as \"Accepted\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "369",
+   "quote": "if (v !== 'secure' && attempt >= 2) v = 'secure'",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "98",
+   "quote": "done: true, released: true, saved: { released: true }",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "The current client prints the model's closing as the learner's complete answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "On the final scored miss, retain the existing supported-continuation contract, visibly distinct from a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "For these two factual recounts, use the unchanged authored reveal labelled **One supported retelling** for that teaching release, rather than attributing a generated replacement to the learner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Failure conditions: any contradictory recount passes; any criterion-free or malformed required verdict passes; an earlier fact cannot be corrected; an accurate supported answer is forced to meet all optional criteria; old saved false credit restores; final teaching is labelled as mastery; or unrelated owners change.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2275",
+   "quote": "actual three-miss neutral Example ending",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "28",
+   "quote": "A unit landing displayed a fixed zero beside the lesson count",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "28",
+   "quote": "A progress-looking display must read actual earned progress and identify what it counts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/course-index-unit-cta-review.md",
+   "lines": "3",
+   "quote": "“Start unit” and “Watch again” reflect landing visits, not watched films or earned lesson completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/static-scoring-audit.md",
+   "lines": "27",
+   "quote": "The audit found fourteen Grade 5 receipts with gold medals and fixed success claims independent of passed versus taught/unscored outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "23",
+   "quote": "Describe the practice undertaken; reserve mastery claims for actual assessment evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/course-index-unit-cta-review.md",
+   "lines": "9",
+   "quote": "A narrow improvement would use actual lesson progress for the current G5 unit action or give the landing a neutral “Unit overview” label.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSAL-REVIEW-by-unit1.md",
+   "lines": "25",
+   "quote": "Do not say a previous *submitted* response exists on a direct p10 visit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit1.md",
+   "lines": "39",
+   "quote": "It does not claim a submitted or persisted plan exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "45",
+   "quote": "The feedback must name the misconception, never state the answer, and never promise help that doesn't come (a highlight that never appears, a replay that never happens).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/course-core/REPORT.md",
+   "lines": "14",
+   "quote": "Especially the first-clue paused-audio deadlock, sequential retell arrival, wrong-feedback replay promises, and precise scorer paraphrases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "868",
+   "quote": "never confirms words the child did not say",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "61",
+   "quote": "praise opener (l3 Task 2) is kept only when it is earned: after a secure oral argument",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "321-322",
+   "quote": "promise \"nothing is recorded\" on screen; POSTing them to a server would break that on-screen contract, so they stay local by design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "675-676",
+   "quote": "because beat 16b POSTs to the same practice coach and the enumerations would otherwise have been false.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "451-453",
+   "quote": "Some of what you say and write gets checked; on a couple of turns, I'll just listen and hand you back a model answer to compare against your own",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "412",
+   "quote": "fix the mechanic, not the promise, since the promise is the better UX",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "417-419",
+   "quote": "renders identically whether the student spoke into a microphone or typed (no browser distinguishes the two paths in the counting logic) — so on any no-microphone/typed session, the receipt still claims \"out loud.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "462-463",
+   "quote": "set only when the textarea holds an unedited recognizer transcript, cleared on any keystroke or \"Say it again\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "89-90",
+   "quote": "transcript bubble only ever echoes what the recognizer actually returned; typed text is never re-attributed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "87",
+   "quote": "check-and-edit draft",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1644",
+   "quote": "The original 02-unscored-retained-retry image and DOM show “We could not check your answer” followed by “Nothing is wrong with what you said.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md",
+   "lines": "14",
+   "quote": "A learning goal no longer produces an “I finished reading” claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-07.md",
+   "lines": "67",
+   "quote": "Use “prepared” only if the performance was unobserved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/unscored-recovery-copy/CAUSE-AND-PROPOSAL.md",
+   "lines": "9",
+   "quote": "An unscored turn has no correctness verdict; the notice cannot truthfully certify the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/g5-static-scoring-audit.md",
+   "lines": "27",
+   "quote": "At audit time all fourteen Grade 5 receipts still included gold medals and fixed success claims, independent of passed versus taught/unscored outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/epic-chart.md",
+   "lines": "81-83",
+   "quote": "Each lesson's receipt names what the chart gained, and those three receipts now describe a chart that genuinely exists. Before this they promised the child a chart and a column, and there was no chart anywhere in the unit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "354",
+   "quote": "No free text, no delay-to-simulate-thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Record.tsx",
+   "lines": "8",
+   "quote": "An answer that does not engage with the lesson (e.g. released after two tries) is filed with \"One way to say it\" beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/codex-2026-10-05-prototype-build/task/DESIGN.md",
+   "lines": "7",
+   "quote": "The optional Expert, Mentor, and Motivator controls provide three distinct forms of scripted support; they do not pretend to be live AI.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L3107a2.txt",
+   "lines": "45",
+   "quote": "Make any support and media status explicit.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/g5-static-scoring-audit.md",
+   "lines": "27",
+   "quote": "At audit time all fourteen Grade 5 receipts still included gold medals and fixed success claims, independent of passed versus taught/unscored outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "144",
+   "quote": "The model is scripted teaching. It must not pretend to diagnose a student’s response or supply live assessment.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "148",
+   "quote": "“Attempt saved” is an appropriate status. “Mastered,” a fabricated grade, or an unvalidated percentage is not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "459-460",
+   "quote": "so a static string is never presented as a reaction to what the student said.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "96",
+   "quote": "Local preview must never pretend server scoring, XP, mastery, unlock, certification, or telemetry.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

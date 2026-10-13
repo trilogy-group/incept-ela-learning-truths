@@ -1,0 +1,75 @@
+{
+ "id": "precision-only-from-answered-items",
+ "title": "Precision only from answered items",
+ "statement": "Compute a score's precision only from the items the student actually answered, never from artificial items added to steady the estimate.",
+ "example": "In one engine two fence items sit 3.8 logits beyond the easiest and hardest items a student answered, and its standard error leaves them out.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment scores ability by maximum likelihood with two fictional fence items, one 3.8 logits below the easiest item given and scored right, one 3.8 logits above the hardest and scored wrong, so that an all-right or all-wrong pattern still yields a finite estimate (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). It computes the standard error over the administered items only, because counting the fences would artificially inflate the precision it reports, and its scoring code and its exam spec do the same (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md`). The fence method itself comes from published work on short and adaptive tests.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "102",
+   "quote": "**Step 3 — Compute SE (administered items only, fence excluded).** The standard error is computed over the n administered items — not including the artificial fence items, which would artificially inflate precision:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "125",
+   "quote": "# SE over non-fence items only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "56",
+   "quote": "Pure MLE diverges to ±∞ for all-correct or all-incorrect response patterns. MLEF inserts two fictional \"fence\" items to prevent this divergence without introducing prior-based bias:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "59",
+   "quote": "Lower fence: b_low  = min(b_administered) − 3.8 logits,  response u = 1 (simulated correct)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "60",
+   "quote": "Upper fence: b_high = max(b_administered) + 3.8 logits,  response u = 0 (simulated wrong)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "94",
+   "quote": "SEᵢ = 1 / √(Σ P_j(1−P_j)) over administered items (fence excluded)",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Maximum likelihood score estimation method with fences for short-length tests and computerized adaptive tests (Applied Psychological Measurement 40:4, 2016)",
+   "url": "https://doi.org/10.1177/0146621616631317"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

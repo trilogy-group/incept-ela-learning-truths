@@ -1,0 +1,209 @@
+{
+ "id": "a-gate-needs-enough-items",
+ "title": "A gate needs enough items",
+ "statement": "A mastery gate needs enough items to mean anything, so check what its bar demands at each test's real length: on four or five items, 90% means a perfect score.",
+ "example": "On a five-item test one wrong answer is 80%, under a 90% bar.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An evaluation of a live Grade 3 course found two tests of 4-5 items that could not be gated at 90% (`grade3-reading/knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd`), and the staged item standard says a test of fewer than 5 items cannot certify mastery at 90%, since 1 wrong is 80% on a 5-item test (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md`); the evaluator gap list names the same trap (`grade3-reading/knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd`). In the same course, lessons set up as adaptive gates were single-question tests, and because the adaptive score is incremental, one right answer took it from 0 to 14, not 100, so the lesson looped on the same question (`grade3-reading/knowledge_bot/knowledge/kb-0021-powerpath100-course-shape-rootcause.qmd`). Work it out again whenever items are removed. A few items can guide practice but not a mastery call, and on four or five items a 90% bar demands a perfect score.",
+ "against": "How many items are enough needs its own source: one audit's 15-item bank floor turned out to be an arbitrary constant in the audit script itself, and the real platform floor was 8 (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`). The item counts assume well-constructed items with good discrimination; poorly written items shorten a test's effective length. the project's routing rules define mastery through controlled evidence and downstream risk rather than a global raw 90% (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`, line 88).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "54-55",
+   "quote": "**A test with <5 items cannot certify mastery at 90%** (1 wrong = 80% on a 5-item test; un-gateable on a 4-item test). Gate tests carry **enough items** for a 90% threshold to be meaningful.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "two 4-5 item tests are un-gateable (no \"90% of 4\"); no three-state retry / parallel forms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0021-powerpath100-course-shape-rootcause.qmd",
+   "lines": "26",
+   "quote": "PowerPath scoring is **incremental**: one correct answer from 0 → score **14, not 100**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "gate-arithmetic trap where small tests make 90 percent require a perfect score;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "137-138",
+   "quote": "an arbitrary `>=15` bank-depth constant hardcoded in `audit_compliance.py` itself … the real platform/publisher floor is 8.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "188",
+   "quote": "a 5-item MCQ quiz is useful for retrieval practice and rough formative diagnosis but is too unreliable for mastery decisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "188",
+   "quote": "A 10–15 item assessment begins to support cautious inferences about whether a student has grasped the core content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "188",
+   "quote": "A 20–30 item assessment, with a well-designed blueprint, can support summative judgments about attainment across a domain.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "188",
+   "quote": "These numbers assume well-constructed items with good discrimination; poorly written items reduce effective test length.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "14",
+   "quote": "leak-purge shrank tests to 5–9 items → 90% gate = perfect-score-only (ceil(0.9n)=n for n≤9)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "63-64",
+   "quote": "**Arithmetic traps hide in small n.** ceil(0.9×n) = n for n ≤ 9: a 90% gate on a ≤9-item test demands a perfect score.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "57",
+   "quote": "Gate arithmetic note: at 22 items, ceil(0.9×22)=20 → the gate tolerates 2 misses; no G5-style perfect-score trap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "14",
+   "quote": "leak-purge shrank tests to 5–9 items → 90% gate = perfect-score-only (ceil(0.9n)=n for n≤9)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "63-64",
+   "quote": "ceil(0.9×n) = n for n ≤ 9: a 90% gate on a ≤9-item test demands a perfect score. Check every gating test's size.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "two 4-5 item tests are un-gateable (no \"90% of 4\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "- gate-arithmetic trap where small tests make 90 percent require a perfect score;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "88",
+   "quote": "define mastery through controlled evidence and downstream risk, not a global raw `90%`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/ATTACKS.md",
+   "lines": "25",
+   "quote": "For n ≤ 9, ceil(0.9n) = n → a 90% gate silently becomes perfect-score-only. Every gating test must be ≥ 11.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/MISSION.md",
+   "lines": "12",
+   "quote": "our own fix for Round 1 had shrunk gating tests so small that a 90% gate mathematically required a perfect score (the fix's success criterion *was* the bug).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "218-219",
+   "quote": "live lessons textually labeled `>=90%` have banks of 8, 8, 5, and 8 items. If 90% is applied, all four require a perfect score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "66",
+   "quote": "a fix for Round-1 shrank gating tests so the 90% gate mathematically required a perfect score (Round-2 NEW-1)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "443",
+   "quote": "each test draws exactly 15 certified items — meets the ≥15 bank-depth bar — so the gate tolerates one miss, 14/15 = 93.3%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/approval-package/AUDITS_AND_FIXES.md",
+   "lines": "113",
+   "quote": "Excluded-removal shrank 73 gating tests to 5–9 items, making the ≥90% gate perfect-score-only",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "239-241",
+   "quote": "On an *n*-item bank, `ceil(0.9 × n) = n` for every `n ≤ 9`",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "117-118",
+   "quote": "every gating form must be sized n≥10 so the 90% bar tolerates ≥1 miss.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

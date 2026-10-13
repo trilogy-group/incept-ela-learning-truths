@@ -1,0 +1,282 @@
+{
+ "id": "how-spelling-counts-in-answers",
+ "title": "How spelling counts in answers",
+ "statement": "How should spelling count in a comprehension answer, for each kind of task and for typed and spoken answers?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "marking",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A content review of a Grade 3 lesson found a misspelled answer that the judge had marked fully correct and asked for a stated spelling policy for comprehension answers; the register put the policy question first, since whatever is ruled becomes a judge prompt and a validator. Follow-up proposals found that meaning and spelling had different contracts across gate families and asked for one explicit credit and feedback policy per task type and input mode, decided once: what earns comprehension credit, when spelling is corrected separately, and how typed and transcribed answers differ. They add that correctness must not collapse to keyword presence.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/REGISTER.md",
+   "lines": "17",
+   "quote": "Misspelled answer marked correct (\"magician\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "8",
+   "quote": "Meaning and spelling currently have different contracts across gate families.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "8",
+   "quote": "Explicit credit/feedback policy per task type and input mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "16",
+   "quote": "The spelling policy: what earns comprehension credit, when spelling is separately corrected, and how typed versus transcribed answers differ.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "3",
+   "quote": "a near spelling of a long word is named but not counted as a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "22",
+   "quote": "\"spelling\" (a slip in a word of five letters or more, named but not a miss)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "28",
+   "quote": "w.length >= 5 && words.some((x) => x[0] === w[0] && Math.abs(x.length - w.length) <= 2 && lev(x, w) <= (w.length > 7 ? 3 : 2))",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "91",
+   "quote": "Check the spelling of \"pretence\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right; the second miss gives the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "176",
+   "quote": "count at once, a one-letter slip of them too (spelled right back); any other word goes to Jev, generously.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/word-web.linked.json",
+   "lines": "13",
+   "quote": "Deceive, misspelt: the link is plain, and the web does not mark spelling.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "119",
+   "quote": "Nearly. That is the word, but the spelling is not right yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "3-4",
+   "quote": "a near spelling … gets a nudge, since a taught word is spelled right",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "110",
+   "quote": "Could a Grade 9 reader reasonably link word to centre: a kind of it, a sign of it, a word for someone who shows it, or what it does to people? A random word, a name, or a word with no link does not count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "One real English word or short phrase (spelling slips are fine) connected to ${it.centre}",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Code checks that every term is there; a spelling slip is named but not counted as a miss.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "22",
+   "quote": "a slip in a word of five letters or more, named but not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "28",
+   "quote": "if (w.length >= 5 && words.some((x) => x[0] === w[0] && Math.abs(x.length - w.length) <= 2 && lev(x, w) <= (w.length > 7 ? 3 : 2))) return \"spelling\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "(spelling slips are fine)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "107",
+   "quote": "rubric; the only difference is that a speaker is not marked down for punctuation they never chose.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "44",
+   "quote": "Spelling slips are fine.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/threads.mjs",
+   "lines": "34",
+   "quote": "Spelling slips are fine.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "28",
+   "quote": "Spelling slips are fine unless a taught word is misspelled.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/KeyWords.tsx",
+   "lines": "4",
+   "quote": "Spelling must be right (taught words).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/oral.mjs",
+   "lines": "12",
+   "quote": "The answer is transcribed speech: ignore filler words, missing punctuation, capital letters and small transcription slips. Never mark down spelling.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "128",
+   "quote": "Mark misspellings rather than silently correcting them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb6a406.txt",
+   "lines": "6",
+   "quote": "{\"id\": \"w02\", \"check\": 0, \"cat\": \"misspelled\", \"answer\": \"manipulashun\", \"expected_met\": [\"connected\"]},",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/apps/broker/WRITING-SCORE.md",
+   "lines": "132",
+   "quote": "Spelling is never penalized.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-staar-writing-research.md",
+   "lines": "157",
+   "quote": "Spelling/punctuation errors in the revision are generally **not penalized** — the item measures revising skill.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "128",
+   "quote": "Mark misspellings rather than silently correcting them.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "24-26",
+   "quote": "\"answer\": \"Rodrigo and Lago are fighting about Othello eloping with Brabantios daughter\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1937",
+   "quote": "If language mechanics are not part of the claim, either score them separately or don’t score them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/01-NON-NEGOTIABLES.md",
+   "lines": "52-53",
+   "quote": "**Quote fidelity is 95% similarity, not exact** (2026-08-17: \"The student is penalized for very tiny differences\"). Levenshtein ratio ≥0.95 over normalized strings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "41-43",
+   "quote": "Quote fidelity: 95% similarity (edit-distance ratio over normalized strings; case, quote marks, whitespace fold away; \"sticks\"/\"stick\" passes; truncation/paraphrase fails with the fixed \"copy them just as they are\" steer).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/METHODS-CHECKLIST.md",
+   "lines": "179-181",
+   "quote": "**D2. Exact-quote checks fail closed.** Where the child must type the exact quote from the text, any deviation (a \"botched quote\") is marked not-yet-correct; only a verbatim match (modulo a declared, minimal normalization such as leading/trailing whitespace) passes.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

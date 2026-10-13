@@ -1,0 +1,74 @@
+{
+ "id": "one-knowledge-statement-per-item",
+ "title": "One knowledge statement per item",
+ "statement": "Build each item on one official knowledge statement, and take its wrong options from the misconceptions recorded for that statement once they are confirmed not model-written.",
+ "example": "In two courses, 97% and 99% of the recorded misconceptions were official; the rest had been written by a model.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "distractors",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A knowledge service holding, for each official knowledge statement, its recorded misconceptions and its assessment boundaries was adopted as the source for writing items: one multiple-choice and one short-answer item per statement, with the misconceptions as seeds for wrong options and the boundaries as a guard on scope (`icloud-work/auto-memory-backup/reference_curriculum_api_lan.md`). A provenance check then found that for one course the official framework publishes neither field and a model had filled both in, which a record-level source tag hid; in two other courses, 97% and 99% of the misconceptions were official and safe to use once the model-written ones were filtered out (`icloud-work/auto-memory-backup/feedback_field_level_provenance.md`). The writer is also given that statement's scope limits.",
+ "against": "A 454-item pilot built this way averaged 0.96 on the grader, but over the items that grader kept, so it does not show the recipe works (\"Quill v30g pilot 454 rows mean chosen IB 0.96 → on the right track.\", `icloud-work/auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md`, line 58). The claims that the boundaries eliminate out-of-scope failures and that the misconceptions are the missing piece to reach 99% are assertions, not measurements.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_curriculum_api_lan.md",
+   "lines": "72",
+   "quote": "- **`common_misconceptions` array = MCQ distractor seeds.** This is the missing piece for our 90%-passing MCQ cells to hit 99%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_curriculum_api_lan.md",
+   "lines": "73",
+   "quote": "- **`assessment_boundaries` = scope guard.** Eliminates \"out-of-scope\" generation failures Quill's D8a found.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_curriculum_api_lan.md",
+   "lines": "85",
+   "quote": "- v29 SFT data: pull all KCs per course, generate one MCQ + one SAQ per KC using the bundled scaffolding as the prompt context, IB-grade, keep ≥0.85",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "32",
+   "quote": "97% of APUSH, 99% of APWH misconceptions are CB-canonical, safe as authoritative distractor seeds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "16",
+   "quote": "Candidate misconceptions and richer authoring prompts across all nine units | Complete coverage, factual citation, or learner-ready wording",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "511-512",
+   "quote": "G5-BAR §7 pins exactly four `feedback_map` ids; this one isn't among them",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

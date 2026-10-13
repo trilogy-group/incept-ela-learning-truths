@@ -1,0 +1,206 @@
+{
+ "id": "aligned-to-the-target-not-the-topic",
+ "title": "Aligned to the target, not the topic",
+ "statement": "Fit an item and its sources to the exact target and focus its standard or objective names, not to its broad topic, period, theme or kind of evidence.",
+ "example": "A document-based essay task on the wrong sub-topic scored 1.0 for alignment while the rubric failed only a completely different subject.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "options",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A document-based essay task requested on one sub-topic came back about others and still scored 1.0 on alignment, because the rubric failed only a \"completely different subject/topic\" and the judge called both the same general domain (issue 1004, `icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_1004.py`). The essay rubric now fails prompts and documents on a different focus even within the same period or unit (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/dbq_evaluation.txt`), and an audit for choice items requires the options to make claims about the standard's named target, not a different subject inferred from the same evidence (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). Check the finished item against that objective, since a source that doesn't fit can do worse than none.",
+ "against": "The general question rule stays lenient: it passes a question that exercises the named skill or any prerequisite, component or application within the same domain and grade-level topic (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, line 163), so the stricter test applies only through that audit and the essay rubric. The general rubric is looser: it lists as a false positive to avoid '- Failing `curriculum_alignment` because the question tests a closely related skill within the same subject and topic.' and says 'Only fail for completely different subjects or unrelated skills.' (`shadow-bench/src/inceptbench/prompts/question/_base_evaluation.txt`, line 34). The guard runs on document-based essay items only. Retrieval keyed to the exact objective worked: one slice of document-based items scored 0.98 once vetted documents were retrieved by standard. Pass counts were 0 of 30 both with the lock and in the baseline, so the gap is in mean score, and the same wrapper with prompting only passed 3 of 30.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_1004.py",
+   "lines": "8-10",
+   "quote": "Root cause: the DBQ evaluation prompt used \"completely different subject/topic\" as the failure threshold, allowing the evaluator to rationalize that gender roles vs religion/labor were \"same general subject domain\" and therefore pass.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "53",
+   "quote": "The distinction that matters: the answer options must make claims **about the standard's named target**, not about a *different* subject that can be *inferred using* the same evidence. The evidence type and the cognitive target are not the same thing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "29",
+   "quote": "A DBQ whose prompt and documents address a DIFFERENT specific analytical focus or sub-topic than what the standard explicitly requires, even within the same broad historical period or unit.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/DBQ_GAP_ANALYSIS.md",
+   "lines": "4",
+   "quote": "Failures are driven almost entirely by **topic/rubric misalignment**, not hallucination or structural errors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/a0f_completed_failure_map_20260520.md",
+   "lines": "23",
+   "quote": "| quality_fail_standard_alignment | 156 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/IB_A0F_99_RECOVERY_PLAN_20260519.md",
+   "lines": "214",
+   "quote": "1. The item drifts from the requested substandard into a nearby Unit 1 topic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/a0f_completed_failure_map_20260520.md",
+   "lines": "7",
+   "quote": "- Total requests: 1080",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/a0f_completed_failure_map_20260520.md",
+   "lines": "21",
+   "quote": "| quality_fail_chronology | 24 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/DBQ_GAP_ANALYSIS.md",
+   "lines": "9",
+   "quote": "1. **Topic Extraction Pre-step:** Extract the exact \"core required theme\" from the LO before pulling documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/DBQ_GAP_ANALYSIS.md",
+   "lines": "12",
+   "quote": "4. **Validation Gate:** Add a fast pass/fail judge comparing the final DBQ rubric focus against the raw LO sub-topic before finalizing the payload.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "2157-2161",
+   "quote": "The evaluator may admit that the DBQ prompt and documents address a different specific sub-topic or analytical focus than the standard requires (e.g., the standard asks for gender roles but the DBQ covers religion, labor, or sovereignty), yet rationalize a pass by claiming it falls within the \"same general subject domain\" or \"same broad historical period.\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "2162-2163",
+   "quote": "When this self-contradiction is detected, override curriculum_alignment to 0.0 and recompute the overall score.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "34",
+   "quote": "- Failing `curriculum_alignment` because the question tests a closely related skill within the same subject and topic.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "34",
+   "quote": "Only fail for completely different subjects or unrelated skills.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/B0045_STAGED_MCQSET_INTERIM_20260519.md",
+   "lines": "25",
+   "quote": "3. Regression risk: broad winner reuse can fail a narrower substandard, as seen for gender/family when a labor-oriented passed sibling was reused.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "80",
+   "quote": "- Description-specific routes must beat generic lesson-title matches.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "20",
+   "quote": "Of 125 DBQ failures: **`curriculum_alignment = 0` in 98 % (122 / 125); `factual_accuracy = 0` in only 2 % (3 / 125).**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md",
+   "lines": "24",
+   "quote": "| quality_fail_standard_alignment | 71 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/ib_d13_wrapper_eval/RESULTS.md",
+   "lines": "24",
+   "quote": "- The local v4 retrieval/doc-lock route is not usable as-is: it frequently retrieves irrelevant/misaligned packs, and doc-locking those packs hurts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/ib_d13_wrapper_eval/RESULTS.md",
+   "lines": "15",
+   "quote": "| Local v4 D13 doc-lock | `y4axbi4f_d13_doclocked_generations.jsonl` | 0/30 | 0.0% | 0.1283 | 1 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/ib_d13_wrapper_eval/RESULTS.md",
+   "lines": "14",
+   "quote": "| Local v4 D13 prompt-wrap only | `y4axbi4f_d13_wrapped_generations.jsonl` | 3/30 | 10.0% | 0.3030 | 1 | 1 timeout |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/full150_y4axbi4f/RESULTS.md",
+   "lines": "26",
+   "quote": "| apush/dbq | 0/30 | 0.00% | 0.673667 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "106",
+   "quote": "- source pack mismatch, e.g. prompt names Africans but documents only cover Native Americans.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "88",
+   "quote": "- Dynamic DBQ cannot be allowed to invent source documents. It needs retrieved vetted documents or document-bank retrieval by standard. Source retrieval fixed the focused institution DBQ slice: `dynamic_source_gate_dbq_mcqset_v1` DBQ scored 0.98.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE5.md",
+   "lines": "9",
+   "quote": "topic coverage does not equal source compliance.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

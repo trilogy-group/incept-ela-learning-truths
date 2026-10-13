@@ -1,0 +1,819 @@
+{
+ "id": "check-against-something-that-doesnt-assume-the-answer",
+ "title": "Check against something that doesn't assume the answer",
+ "statement": "Check what a machine made against something that doesn't assume the answer.",
+ "example": "A transcriber given the script passed takes that began with extra speech; one given nothing caught all four.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Finding 6 and \"What kept going wrong\" in the film study (`othello-unit-video/research/FINDINGS.md`): a voice model read\nits style instructions aloud at the start of all four takes. A transcriber given the script passed them; one not given\nit caught one; Whisper, run with no prompt, caught all four. A fidelity score built on a recogniser's transcript put a\nword-perfect film at 98.4% (`othello-unit-video/.claude/skills/uvk-video-compare/SKILL.md`), and a frame check that\nmatched file names passed a repaint whose picture had changed.",
+ "against": "A later run found: one review of 30 AP items, itself done by a model, found the writer model's own scores reasonable and blamed a broken pass threshold rather than lenient self-grading (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md`). A later run found counter-evidence (`icloud-work/incept/sat-reading-generation/sat-prompts.json`).",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/FINDINGS.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-video-compare/SKILL.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md",
+   "lines": "202",
+   "quote": "Feb 17 AM | 56% | Gemini self-grading (meaningless)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md",
+   "lines": "203",
+   "quote": "Feb 17 PM | 9.1% | Claude external grading (real)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "10",
+   "quote": "The 95.2% benchmark used Gemini self-evaluation, NOT Claude external evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "40",
+   "quote": "Fill-in | 95.8%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "19",
+   "quote": "Fill-in | 6.7% | Tests recall, not understanding",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "70",
+   "quote": "Using Claude to verify Gemini output catches factual errors that Gemini can't detect in its own output.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "40",
+   "quote": "Claude catches some but not all.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md",
+   "lines": "10",
+   "quote": "The problem is NOT \"Gemini grading Gemini too leniently\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md",
+   "lines": "14",
+   "quote": "Gemini's scores (0.90-0.98) are reasonable",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md",
+   "lines": "15",
+   "quote": "But the pass/fail threshold is broken - questions scoring 0.94+ are marked FAILED",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "103",
+   "quote": "- Claimed 90% MCQ_SET pass rate (actual: 70-75%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "225",
+   "quote": "- Sometimes proposed a prompt change that made things slightly worse (0.5% regression)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "226",
+   "quote": "- Rarely caught code bugs (like the f-string bug) — those needed human review",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "2020",
+   "quote": "Correct Answer: {correct_answer}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "1945",
+   "quote": "Choice '[X]' is correct. In lines [specific numbers], the author [specific analytical point with quote] which demonstrates [connection to question focus].",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "5",
+   "quote": "It uses Claude API (not the same model as the generator) to ensure impartial evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "158",
+   "quote": "- Evaluator criteria should NOT be influenced by generator output",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "442",
+   "quote": "1. Read the stem WITHOUT looking at the accepted-answer list.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "445",
+   "quote": "4. If TWO OR MORE of your completions are factually correct, grammatically fit, AND are NOT in the accepted-answer set, this is a **concrete, unambiguous violation**: the question does not have a single correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "544",
+   "quote": "This prevents confirmation bias — do not start from the labeled level and try to justify it. Instead, objectively determine which level fits and compare.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "333",
+   "quote": "This prevents confirmation bias. Do NOT start from the labeled level and try to justify it.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_PROCESS.md",
+   "lines": "5",
+   "quote": "It uses Claude API (not the same model as the generator) to ensure impartial evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_PROCESS.md",
+   "lines": "158",
+   "quote": "- Evaluator criteria should NOT be influenced by generator output",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "96",
+   "quote": "if your prompt defines difficulty bands in DOK language, the LLM will classify by cognitive type, not by expected success rate, and then your \"difficulty alignment\" check will confirm the misclassification because it's using the same flawed definitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "28",
+   "quote": "**The check and the fix shared one author and one mental model**, so they shared a blind spot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "30",
+   "quote": "simply had a DIFFERENT model of the problem than the one that wrote the original fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1215",
+   "quote": "If a clip class is invisible to one, assume it is invisible to all.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "34",
+   "quote": "In-loop grader passed at 100%; independent audit held ~89% (passed a half-leaky EBSR); a post-deploy structural probe then caught 5/15 longest-option tells *both* earlier graders missed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/RESULTS.md",
+   "lines": "47",
+   "quote": "**Independent acceptance: 8/9 = 89% strict-hold; #7 is a self-grade-generous borderline",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "34",
+   "quote": "In-loop grader passed at 100%; independent audit held ~89% (passed a half-leaky EBSR)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/02-factuality-claims.md",
+   "lines": "12-13",
+   "quote": "inner-loop verdicts are recorded per claim; the QC lane owns the BINDING verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/02-factuality-claims.md",
+   "lines": "20-21",
+   "quote": "Any FAIL or unresolved verdict HOLDS THAT TEXT as a draft",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/op-taxonomy-calibration.md",
+   "lines": "68",
+   "quote": "The mistag IS the failure, so deterministic rules that consume tags cannot see it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "51",
+   "quote": "Tagging still does not match what items assess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "88 (textutil plain-text output)",
+   "quote": "produced by a pipeline bug that dropped the entire RI domain",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "86 (textutil plain-text output)",
+   "quote": "not phonics/grammar/conventions, which a broken curriculum API had falsely elevated to 68% of the course focus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "15-17",
+   "quote": "Each is the kind of defect that leaves every text/structural validator green — only a machine ear, a human eye, or an adversarial pass caught it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "168-169",
+   "quote": "re-measures every agent-reported number independently rather than trusting it, and corrects two:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "173-175",
+   "quote": "giving materially different numbers (penalty false-positive 9.8% shipped vs. 16.0% shadowed) — the agent that proposed the redesign reported the shadowed, non-shipped number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "173-175",
+   "quote": "second (string) definition silently overrides the first (regex) one, giving materially different numbers (penalty false-positive 9.8% shipped vs. 16.0% shadowed) — the agent that proposed the redesign reported the shadowed, non-shipped number.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-23T1831Z_DEN_REQUEST_validate_unit1_dbq_source_packs_v1.md",
+   "lines": "52",
+   "quote": "Please perform provenance/source-quality validation. Den's validator checks structure, Unit-1 contamination, text-bearing docs, topic coverage, primary-like count, and visual-risk filters. It does not independently fetch every URL or certify that normalized excerpts are acceptable for training.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T063156Z_2026-05-24T0630Z_UNIT1_DBQ_SOURCE_PACK_ACCEPT.md.md",
+   "lines": "88",
+   "quote": "main-a re-ran Den's gate independently:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T063156Z_2026-05-24T0630Z_UNIT1_DBQ_SOURCE_PACK_ACCEPT.md.md",
+   "lines": "99",
+   "quote": "Matches Den's claim exactly (10/10 rows valid, no missing topic targets).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "203",
+   "quote": "The CC provides an independent diagnostic perspective. When you've been staring at a failure for 2 hours and have formed strong hypotheses, an external audit can quickly confirm or reject them without the same anchoring bias.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "137-141",
+   "quote": "3. Verify each claim against internal knowledge\n4. Refine and correct the output\n\n**Quantitative results:**\n- Factual Accuracy: **83%** (vs 72% standard CoT, 78% CoT+RAG)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "1010",
+   "quote": "CRITICAL - INDEPENDENT VERIFICATION: Do NOT assume the labeled \"Correct Option\" is actually correct.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "109",
+   "quote": "**Safety heuristic**: After generating, re-verify every answer against the question. If using math, compute the answer independently and compare.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/sat-prompts.json",
+   "lines": "110",
+   "quote": "6. If you're unsure or if the judgment is very close, err on the side of accepting the marked correct answer (score 1).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/uae-mathematics.md",
+   "lines": "64",
+   "quote": "Answer Verification is an independent correctness validation submodule powered by GPT-5 that operates separately from the Pedagogical Evaluator to provide redundant correctness checking.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_oracle_helper.md",
+   "lines": "51",
+   "quote": "Per Compass's `research_best_of_n_decode.md`, the mitigation is: hold out ~30 items for an independent judge (Gemini-3-Pro on a non-InceptBench rubric) and confirm gains transfer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "203",
+   "quote": "- External verification (Claude, not Gemini)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "34",
+   "quote": "**Relabeled** — now \"internal cross-bank consistency (synthetic),\" explicitly not MAP agreement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "231",
+   "quote": "3. Use a different family for the gate than for the author. Never same-family certify.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/GENERATOR.md",
+   "lines": "123",
+   "quote": "**Generator and grader are separate roles/contexts.** The grader must never receive the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/takeover-audit-2026-07-13/pr68-enforcement-audit.md",
+   "lines": "27",
+   "quote": "lesson can omit both. An exact set diff would check declared identical strings only; it would",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "148-152",
+   "quote": "5. reveal the key only after the alternatives are recorded.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "14",
+   "quote": "An independent prompt-number oracle recomputes all 200 unique reference answers; ten more seeds generate and validate.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "mission_aim_98_floor_95.md",
+   "lines": "72",
+   "quote": "Mitigation: R30 factuality battery (FActScore-on-AP-bios) as the parallel held-out scorer. Alarm fires at IB-vs-FActScore drift ≥3pp.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3963ad5",
+   "lines": "3-5",
+   "quote": "The evaluator assessed a simple factual chat response (counting R's in \"strawberry\") with a perfunctory evaluation that merely echoed the response's conclusion without independent verification.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/other/evaluation.txt",
+   "lines": "347",
+   "quote": "The evaluator must independently verify any straightforward factual result (e.g., counting, basic arithmetic, enumeration, spelling) claimed in the content before scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2107Z_ACCEPTANCE_GREEN_v9_hidden50.md",
+   "lines": "32",
+   "quote": "IB: cache/live paths are labeled for IB v2.5.11; hidden runner judged returned score/status through `prototypes/run_den_solver_on_jsonl.py`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "2",
+   "quote": "The judge must choose the same paragraph with a clear margin, so there is one defensible pick.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "2",
+   "quote": "The judge, reading the same lines around it, must pick the same delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "20",
+   "quote": "const verdict = !a.pass ? \"unclear\" : ok ? \"holds\" : \"fails\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "197-200",
+   "quote": "\"id\": \"one-delivery\", \"required\": true, \"verdict\": \"holds\", \"p\": 1",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "14",
+   "quote": "\"samples\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "63",
+   "quote": "keyed_answer: letters[item.answer],",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "105",
+   "quote": "Support gates (conservative engineering thresholds, not calibrated correctness).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/helpers.mjs",
+   "lines": "13",
+   "quote": "Says yes to every check except give-aways; picks paragraph A and delivery A; scores knowledge 4 of 5.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v06/README.md",
+   "lines": "7-8",
+   "quote": "each checked by a transcriber that has not seen the script and by a second recogniser before it ships.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "63",
+   "quote": "const { wav } = await narrator.speak(b.narration);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "48",
+   "quote": "an item's own string is checked against the text, and cannot pass its own quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "20",
+   "quote": "\"question\": \"Who is the person speaking to the reader throughout the majority of the poem?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "20",
+   "quote": "\"question\": \"Who is the person speaking to the reader throughout the majority of the poem?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "89",
+   "quote": "\"value\": 0.54,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "89",
+   "quote": "\"value\": 0.5,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "52",
+   "quote": "\"instructions\": \"Using only evidence_lines, is the option named by keyed_answer a correct answer to the question?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "230",
+   "quote": "\"B\": \"The narrator who is repeating what a traveler told him\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "233",
+   "quote": "\"keyed_answer\": \"B\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "296",
+   "quote": "\"value\": 0.9,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "313",
+   "quote": "\"value\": 0.69,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "229",
+   "quote": "\"A\": \"The traveler who visited the antique land\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "233",
+   "quote": "\"keyed_answer\": \"A\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "297",
+   "quote": "\"value\": 0.73,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "14",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/c98cc9de312f4d43.json",
+   "lines": "14",
+   "quote": "\"answer\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Under 'Jev first', a persona's picks must not be Jev questions, or Jev grades itself.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "2",
+   "quote": "(and Jev never grades a pick Jev made)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "26",
+   "quote": "It proves plumbing, never the quality of judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "It needs live TrueFoundry calls and Grade 9 reader profiles that nobody has written yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v06/README.md",
+   "lines": "7",
+   "quote": "- Voice: lines generated through the TrueFoundry route, each checked by a transcriber that has not seen the script",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "38",
+   "quote": "It does **not** independently recognize the spoken WAV, check educational accuracy, guarantee fit on every font/platform, or provide reduced-motion behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "52, 259",
+   "quote": "\"instructions\": \"Using only evidence_lines, is the option named by keyed_answer a correct answer to the question?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Not so. The animated build already draws model (with rebuild and guided screens), mimicry, evaluate, learning_question, keyword_cards, independent and record (its src/contract.ts lines 40-188; src/nodes/index.tsx NodeView).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "14",
+   "quote": "Do not show the expected script to the transcription model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "100-101",
+   "quote": "Two invented uses of “enchanting” were treated as source text, then propagated into tap evidence and written proof.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "103-104",
+   "quote": "The additions sounded plausible and became internally consistent across several nodes. Review compared the lesson with itself more readily than with the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "110-111",
+   "quote": "Internal consistency can amplify falsehood. Every quote and attribution is checked against the pinned source; propagation never upgrades a false claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "193",
+   "quote": "internal consistency around a false claim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "611-612",
+   "quote": "- `generate-node-audio-course-tts.py` walks `voiceover` objects only, so it reported \"99 nodes already current\" while 30 branch clips were missing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "617-619",
+   "quote": "- `scripts/verify/listen-clips.mjs` shares the generator's enumeration, so it reported \"0 clip(s) heard\" four times in a row on freshly cut audio. Extended (uncommitted). **If a clip class is invisible to one of these, assume it is invisible to all three.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit9.md",
+   "lines": "20",
+   "quote": "These tests establish eligibility and syntax, not that the actual dwell/mode machinery earns only after reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/IMPLEMENTATION.md",
+   "lines": "27",
+   "quote": "review received no expected script, transcribed every word correctly, and reported no cutoff, unintelligible segment or unintended sound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "689",
+   "quote": "that happened, 46 `taught_named` lines were unvoiced while seven",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/media/README-grade5-integrity.md",
+   "lines": "7",
+   "quote": "Never derive expected speech from the currently attached voiceovers, estimate marks, or exempt unavailable assets.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "75",
+   "quote": "- **Independent onset check** (silence_end on the voice-only stem, for the 37 cues that follow a ≥ 0.5 s pause): first-word time vs measured speech onset median 0.000 s, signed mean −0.035 s, worst −0.769 s (\"Remember where the story changes\", scene 2 — the TTS ran this sentence straight on from the previous one; the alignment build flagged this same 0.769 s).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "22",
+   "quote": "Gemini TTS take passed word-diff but had read the 58-word style prompt aloud → transcriber given 'transcribe the script' silently dropped the preamble → always transcribe with a no-hint 'from the very first sound' prompt and compare word counts (tools/narration/verify_take.py)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "30",
+   "quote": "whisper with the exact script as initial_prompt skipped half of a clip after a quotation (matched 0.46) → prompt biases decoding → ALIGN_NO_PROMPT=1 fallback (tools/narration/align_words.py)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L10e9c2.txt",
+   "lines": "17",
+   "quote": "reads the style instruction aloud for 22 s** (found by whisper during alignment; the Gemini checker had passed it)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/media/README-grade5-integrity.md",
+   "lines": "7",
+   "quote": "Never derive expected speech from the currently attached voiceovers, estimate marks, or exempt unavailable assets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "19",
+   "quote": "This is not an algorithm problem — it is a measurement scaling problem. It is solved by scale linking, not by better simulations [Kolen-Brennan-2014 §1].",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,87 @@
+{
+ "id": "audit-what-exists-before-making-more",
+ "title": "Audit what exists before making more",
+ "statement": "Before making more material, audit how much already exists and how good it is, and ask whether the failure is an absence or a fault in what exists.",
+ "example": "An audit found 18,768 question-set records already on hand while 500 new ones were being planned.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In the AP question work, an audit found 18,768 question-set records already on hand while 500 new ones were being planned, and the lesson kept was to audit existing data before generating new (`icloud-work/ML learnings/decisions_and_pivots_timeline.md`). Adding examples of a missing item type lifted it from 0% to 12%: that fixed the format, but the content still failed, and the hoped-for 80%+ stalled at about 12% (`icloud-work/ML learnings/training_data_journey.md`). A 70k-record plan was cancelled once analysis showed that more data in the same format wouldn't fix the factual failures (`icloud-work/ML learnings/failures_and_false_starts.md`). The audit counted records but didn't check them, and some had wrong dates or sources (`icloud-work/ML learnings/mcq_set_journey.md`). More material can fix an absence; more of the same won't fix a fault in what exists.",
+ "against": "The fault half was never tested: whether more question-set data would fix the quality problem, or whether the bottleneck was the fabricated attributions in the data, was left unknown (`icloud-work/ML learnings/decisions_and_pivots_timeline.md`, line 127), and a proposed mini-test was answered without being run (`icloud-work/ML learnings/failures_and_false_starts.md`, line 23). The cross-team summary favours volume: \"More representative examples of the hardest cases = better coverage of the output space.\" (`icloud-work/ML learnings/cross_team_learnings_full.md`, line 73). The second example in the recorded lesson is about prompt changes, not more data (`icloud-work/ML learnings/training_data_journey.md`, line 111).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/decisions_and_pivots_timeline.md",
+   "lines": "107",
+   "quote": "**The audit finding:** We had been planning to generate 500 new MCQ_SET examples when we already had 18,768+ after combining raft_combined and sft_v6_combined.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/decisions_and_pivots_timeline.md",
+   "lines": "111",
+   "quote": "Always audit existing data before generating new.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "111",
+   "quote": "**Lesson:** Before building a bigger dataset, ask: does the failure mode respond to more data? MCQ_SET at 0% responded to adding examples (0%→12%). MCQ at 60% ceiling did NOT respond to more prompt engineering. Different failures need different fixes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/decisions_and_pivots_timeline.md",
+   "lines": "98",
+   "quote": "**What we got wrong:** Thought 504 examples would get MCQ_SET to 80%+. Actual ceiling was ~12%. The format problem was solved; the content quality problem wasn't.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "Some of the 18,768 MCQ_SET records have slightly wrong dates or sources",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2597",
+   "quote": "Presenting those as new recommendations would still undershoot.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2620",
+   "quote": "My pack undershot that.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "777",
+   "quote": "inventory and deduplicate the candidate corpus before making size claims;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

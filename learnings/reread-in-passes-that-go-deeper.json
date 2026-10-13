@@ -1,0 +1,128 @@
+{
+ "id": "reread-in-passes-that-go-deeper",
+ "title": "Reread in passes that go deeper",
+ "statement": "Have a text read more than once, in parts, each pass with its own deeper purpose, rather than read once and quizzed.",
+ "example": "Across 18 lessons of one course, each text was read once with every question after it and 0 stops inside it.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of the third iteration of one Grade 3 reading course found each passage read once as a single block with every question after it, with 0 stops inside the text across 18 lessons (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`). The course's criteria ask for the passage chunked and reread with each pass going deeper, from facts to inference to the author's purpose, each pass opened with a one-sentence purpose (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D3-reading-architecture.md`). The same criteria build knowledge through a set of related texts, not by rereading the same text start to finish every day. Set the purpose before reading, aim each pass at the parts that serve it, and don't reread the whole text by habit.",
+ "against": "The test shows that rereads were missing, not that adding them raised scores; nothing here measured their effect.",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "204",
+   "quote": "G3 iter-3: the passage is one block read ONCE, all questions after it (0 mid-passage stops across 18 lessons)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D3-reading-architecture.md",
+   "lines": "12",
+   "quote": "The passage is chunked and reread with each pass going deeper (Read 1 facts → Read 2 inference → Read 3 deeper meaning / author's purpose); not read-once-then-quiz",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D3-reading-architecture.md",
+   "lines": "20",
+   "quote": "Repeated reads escalate by named tier — on-the-surface → below-the-surface → deeper-dive (author's purpose) → an affective 'connect-to-your-life' tier — each pass opened with a one-sentence escalating purpose",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D3-reading-architecture.md",
+   "lines": "15",
+   "quote": "not by rereading the same text start-to-finish every day",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "61",
+   "quote": "The camouflage lesson has no pre-read to activate or build knowledge and no stated purpose for reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "61",
+   "quote": "Children need a reason to read before they start",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "93",
+   "quote": "4. Rereads point to a text subset for a declared knowledge purpose rather than replaying a whole text by habit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-agent-entrypoint-g3-practical-test-2026-08-06/REPORT.qmd",
+   "lines": "39",
+   "quote": "- 48/48 lessons use a single explicit read pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "137",
+   "quote": "5. How the text is READ is instruction, not delivery",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/g3-reading-standard.md",
+   "lines": "95",
+   "quote": "the passage is read more than once, with questions that deepen across readings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/g3-reading-standard.md",
+   "lines": "95",
+   "quote": "not read-once-then-quiz",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/4. 1.3 - Desdemona - Text.docx",
+   "lines": "14",
+   "quote": "You have read this scene before, for Othello and Iago. This time, you will read it for Desdemona.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/3-D-Shakespeare-Othello-1.1.pdf",
+   "lines": "94-95",
+   "quote": "When this third round is done, ask again what their comprehension level was. The numbers will go up significantly.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/3. 1.3 - Othello & Iago - Text.txt",
+   "lines": "5",
+   "quote": "The play text is the same in Lesson 3 and Lesson 4; only the Archivist narration changes.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

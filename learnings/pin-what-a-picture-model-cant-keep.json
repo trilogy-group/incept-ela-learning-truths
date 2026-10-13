@@ -1,0 +1,157 @@
+{
+ "id": "pin-what-a-picture-model-cant-keep",
+ "title": "Pin what a picture model can't keep",
+ "statement": "When a model makes pictures or film, fix each recurring character, place and medium once per unit with a reused reference, since it has no memory between pictures.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Among eight lessons one QC day in the reading project made standing practice: the model cannot count objects in generated art unless the scene line enumerates exactly how many, and recurring locations and mediums drift unless they are pinned (`grade3-reading/knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd`). Research for the Grade 9 lessons found that the comics failure readers don't forgive is a character whose face, hair or proportions shift between panels, because diffusion generation has no memory across calls unless it is deliberately conditioned on a reference (`grade3-reading/knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd`). Also give the exact number of each object in the scene line, because the model can't count.",
+ "against": "The cross-panel evidence is practitioner reports, though the research file calls its mechanism, no memory across calls, a verifiable technical fact (`grade3-reading/knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd`). The rule rests on the document's claim that recognition should replace recap in a story told in parts, which it calls its thinnest: nobody has tested recognition against recap for a child who has forgotten the earlier part (`downloads/BrainLift - What makes a good intro video.md`, line 62).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "137-138",
+   "quote": "the model cannot count objects in generated art (needs EXACTLY-N enumerated in the scene line)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "140-141",
+   "quote": "pin recurring locations/mediums or they drift",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "533-534",
+   "quote": "a character whose face/hair/proportions shift between panels, because diffusion generation has no memory across calls unless deliberately conditioned on a reference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "537-538",
+   "quote": "Practitioner reports, but the underlying mechanism (no cross-call memory) is a verifiable technical fact.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "987",
+   "quote": "A character has one appearance, decided once for the unit. It is not re-described per video and not per shot.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "59",
+   "quote": "Characters and places keep one locked look across every video, because recognition is the memory system.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "992",
+   "quote": "If an appearance has to change, it changes for the unit and every video already made against it is wrong until it is remade.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "37",
+   "quote": "The illustrations are 2D painted; the video is 3D CGI; and the video's poster frame is the 2D illustration, so it does not match its own thumbnail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/video-scripts/U1.md",
+   "lines": "7",
+   "quote": "A shot with a **seed** is image-to-video from that character's own avatar, so the child sees the character they picked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/README.md",
+   "lines": "3",
+   "quote": "The other 13 were generated here with `tools/art/generate_paintings.py`: `gemini-3-pro-image-preview` through the TrueFoundry Gemini route, 2752×1536 JPEG, each prompted with one or two of the originals as style and character references plus the character bible in `briefs.json`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Grade 9 video feedback.md",
+   "lines": "14",
+   "quote": "his face looks completely different",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Grade 9 video feedback.md",
+   "lines": "6",
+   "quote": "We should try photorealistic as the style if possible. If not, retain the style used at 00:00 and 00:40 which are very similar",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "49",
+   "quote": "Each character has one fixed colour and silhouette across the whole app (see below), so students can tell Cassio from Iago.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L25efa0.txt",
+   "lines": "39",
+   "quote": "The Archivist appears as two characters.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Le9c5ae.txt",
+   "lines": "14",
+   "quote": "01:43 \\- his face looks completely different",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "73",
+   "quote": "Use mature, coherent illustration and stable character identity across scenes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.3 (pdftotext line 104)",
+   "quote": "1. The video's character count and art style drift between scenes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "34-35",
+   "quote": "the same fence/hillside/ridge/marsh across the set — unpinned locations DRIFT: wood→chain-link happened",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

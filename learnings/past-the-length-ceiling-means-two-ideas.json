@@ -1,0 +1,67 @@
+{
+ "id": "past-the-length-ceiling-means-two-ideas",
+ "title": "Past the length ceiling means two ideas",
+ "statement": "Treat a teaching piece that runs past the length ceiling for its kind of idea as a sign that it merges two ideas or is padded.",
+ "example": "One rubric reads a single-fact script of over 280 words as a risk of silently merging two ideas.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "media",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's script rubric sets word bands for each kind of idea, computed in code after the model scores: a single-fact script over 280 words risks silently merging two ideas, and a mechanism script over 480 is likely teaching more than one (`shadow/bench/src/inceptbench/prompts/video_script/evaluation.txt` lines 409-423). The lower ends of the bands were later made advisory, one of three changes to stop the rubric false-failing correct short scripts; only going over the ceiling, or under an absolute minimum of 40 words, still scores zero (git commit 4ce0f47 in `shadow/bench`, lines 3-9). Don't fail a piece only for falling short of its target length.",
+ "against": "The ceiling depends on judging the kind of idea, and that misfired: a 310-word script on a food web or a respiration loop was classed as a single fact and failed the 280-word ceiling until the keyword list was widened (git commit 2d26518 in `shadow/bench`, lines 3-8). The rubric's reason for its lower bound is an impression that such scripts feel abrupt, not a measurement (`video_script/evaluation.txt` line 422).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "420",
+   "quote": "- Over 280: risk of silently merging two KCs, or redundant elaboration that pads length without adding learning",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "423",
+   "quote": "- Over 480: likely teaching more than one mechanism, or padding with tangential content",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "409",
+   "quote": "This metric is computed deterministically by the evaluation system after LLM scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "4ce0f47",
+   "lines": "7-9",
+   "quote": "1. length_discipline floor is now ADVISORY, not a binary zero. Being under the per-type word target no longer fails the metric; only over-ceiling (silent KC-merge risk)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "4ce0f47",
+   "lines": "3-4",
+   "quote": "Three refinements so the video_script evaluator stops false-failing correct AlphaTok short-form scripts",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

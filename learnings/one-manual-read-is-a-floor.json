@@ -1,0 +1,65 @@
+{
+ "id": "one-manual-read-is-a-floor",
+ "title": "One manual read is a floor",
+ "statement": "Treat a single manual review as a floor: a second read, blind to the first, finds what the first missed.",
+ "example": "Four of one review's medium findings came only from the second, blind read.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A merged review of one reading lesson combined two independent manual reads, the second blind to the first. They agreed on every high finding and on most mediums, but each found things the other missed: four mediums came only from the second read, which also caught that a page the first had dismissed on length was hidden. Every finding only one read raised was checked against the lesson file before it went in.",
+ "against": "No counter-evidence found; it rests on one merged review of one lesson.",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "286",
+   "quote": "The two manual reads agreed on every high and on most mediums, but each found things the other missed. Four of the mediums above … came only from the second read. Treat one manual read as a floor, not a complete review.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "5",
+   "quote": "Every finding that only one read raised was checked against the lesson JSON before it was included.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "226",
+   "quote": "(v3 as first published dismissed it on length. The second read caught that it's hidden.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "agent-kit/BLUEPRINT.md",
+   "lines": "59-61",
+   "quote": "**N opinions = N separate questions with distinct ids; never paste one agent's answer into another agent's question.** Without it, the second critic just agrees with the first — manufactured sycophancy.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/REVIEW-ROUNDS.md",
+   "lines": "10-12",
+   "quote": "Links went out on the strength of green validators. ... explicitly asked for two humans reviewing before anything is sent again.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

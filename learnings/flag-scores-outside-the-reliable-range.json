@@ -1,0 +1,78 @@
+{
+ "id": "flag-scores-outside-the-reliable-range",
+ "title": "Flag scores outside the reliable range",
+ "statement": "Find the ability range over which a test measures reliably, flag every score outside it, and send students below its floor to an instrument built for them.",
+ "example": "One adaptive reading test measured reliably from 160 to 230 on its score scale, with reliability of at least 0.85, and planned to route readers below its floor to a lower-grade test.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment's floor-and-ceiling simulation defines its reliable range as the abilities where reliability reaches 0.85, citing the testing standards' requirement to document the score range within which valid inferences can be made; on the full bank that range ran from RIT 160 to 230. Its score reports carry an above, within or below reliable-range flag, and students below the bank's floor are to go to the official lower-grade instrument rather than be measured past it. At the top, the package added harder items instead.",
+ "against": "The routing was asserted before it was built: \"Below-floor students \"route to official K–2 MAP\" — a handoff that is asserted, not built (who routes, and how?).\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md`, line 58). The documents also disagree on the cut: RIT 155 (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`, line 147) against the simulated reliable floor of RIT 160, with \"only the bottom ~5% of readers (below RIT 160) route to the K–2 MAP instrument\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`, line 44).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "301",
+   "quote": "Statistical basis: characterizing floor and ceiling is required under AERA/APA/NCME Standards §4.9 [AERA-2014] to document the score range within which valid inferences can be made.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "298",
+   "quote": "Reliable range defined as: reliability ≥ 0.85 at that theta level",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "26",
+   "quote": "| Sim 6 reliable range (rel ≥ 0.85) | RIT 181–230 | RIT 186–227 | RIT 181–227 | **RIT 160–230** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "249",
+   "quote": "- Reliable range flag: \"above/within/below reliable range\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "147",
+   "quote": "Students below RIT 155 route to the official K–2 MAP instrument.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "89",
+   "quote": "we own that boundary explicitly rather than stretching the proxy past its floor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "89",
+   "quote": "plus 18 G5 super-ceiling items at RIT 231–250",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

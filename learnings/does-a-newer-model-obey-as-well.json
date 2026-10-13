@@ -1,0 +1,69 @@
+{
+ "id": "does-a-newer-model-obey-as-well",
+ "title": "Does a newer model obey as well?",
+ "statement": "Whether a newer model follows the same frozen teaching rules at least as well as the model it replaces, with no change to the rules, is untested.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An experiment on steering generation with teaching rules planned a paired comparison of older and newer models with zero rule edits, but no eligible upgrade comparison ran. Its failure register names the assumption that a stronger model is a more obedient one, detected when quality benchmark gains stand in for conformance replay, and answers it by testing paired older and newer checkpoints and scoring the worst model. Behaviour across models in an adjacent probe varied sharply, but that was not an old-versus-new study.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "28",
+   "quote": "Planned paired old/new A comparison with zero policy edits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "28",
+   "quote": "No eligible model-upgrade comparison ran.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "28",
+   "quote": "Cross-route A1b behavior varied sharply but was not an old/new study.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "286",
+   "quote": "### F6 - stronger model is assumed to mean more obedient model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "288",
+   "quote": "Detection: quality benchmark gains substitute for conformance replay.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "289",
+   "quote": "Recovery cascade: 1. Test paired older/newer checkpoints. 2. Use worst-model scoring.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

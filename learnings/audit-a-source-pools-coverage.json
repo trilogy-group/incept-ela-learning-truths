@@ -1,0 +1,102 @@
+{
+ "id": "audit-a-source-pools-coverage",
+ "title": "Audit a source pool's coverage",
+ "statement": "Before generating from a source pool or declaring a topic short of material, audit what the pool really holds for each curriculum topic, counting only after normalising its labels.",
+ "example": "One collection of oral histories made up 46 rows, 37%, of one unit's topic cluster.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Topic scans of an AP history source corpus found required topics such as slavery and labour or Jamestown with one row each, four others with none, and 37% of one unit's cluster drawn from a single collection of oral histories with an elite foreign-policy skew. A later ingest added 648 documents for the units that had been missing or sparse, bringing the corpus to 1,385 documents and 5.8M characters. The audit covers the voices the pool draws on as well as its topics.",
+ "against": "Coverage counts can mislead: one keyword cluster had 21 of 34 false positives (icloud-work/aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md, line 128), and one inventory's per-unit totals were not deduplicated (icloud-work/aptraining/helpers/data/output/v93_data_inventory.md, line 24). None found. The normalization note is inconsistent about which units were short: it names 8 and 9, then reports the fix for 7 and 8 (line 9).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "38",
+   "quote": "Slavery/labor = 1 row, Jamestown = 1 row (critical under-rep).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "39",
+   "quote": "Sectionalism/slave-revolts/2nd Awakening/transcendentalism = 0 each.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "41",
+   "quote": "ADST oral histories = 46 rows / 37% (elite foreign-policy skew confirmed).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/d13_corpus_v5_inventory.md",
+   "lines": "8",
+   "quote": "v3 ingest added **648 new docs** across Units 1/2/4/6/9 (the units missing or sparse in v2), bringing the combined v2+v3 corpus to **1,385 docs / 5.8M chars**.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_audit_normalization_before_declaring_gap_2026_05_22.md",
+   "lines": "7",
+   "quote": "When an inventory scanner reports a unit/era below threshold, audit the normalization layer before doing more gathering.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_audit_normalization_before_declaring_gap_2026_05_22.md",
+   "lines": "9",
+   "quote": "Adding an `ERA_LABEL_TO_UNIT` dict moved Unit 7 from gap-status to +361k margin and Unit 8 from gap to +482k margin — without ingesting a single new token.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_verify_subset_exists_before_filter.md",
+   "lines": "12",
+   "quote": "The implied assumption: fewshot_bank's 3,806 rows contain a U1 slice. **It does not.** Unit distribution audit:",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_verify_subset_exists_before_filter.md",
+   "lines": "23",
+   "quote": "Had I scripted on the assumption, the consolidator would have silently produced ~468 rows (Track B only) but reported the manifest as if it included fewshot_bank",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/TOPIC-SELECTION.md",
+   "lines": "168-169",
+   "quote": "\"Belonging (5/7)\" as a single topic — an **invented grouping** merging 5 unlike SEL units under one",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/topic-selection.md",
+   "lines": "294-295",
+   "quote": "so the real frequency ceiling is **6/7**, not 7/7; don't treat /7 denominators as if all 7 could score.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

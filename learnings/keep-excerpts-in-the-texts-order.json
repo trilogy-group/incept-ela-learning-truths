@@ -1,0 +1,94 @@
+{
+ "id": "keep-excerpts-in-the-texts-order",
+ "title": "Keep excerpts in the text's order",
+ "statement": "List excerpts from a text in the order they occur in it, since a reordered list can make a line seem to belong to the wrong speaker or moment.",
+ "example": "A story-order check found three tap lists out of order across three lessons.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An outside quick-check audit of four reading lessons rated high a tap list that was out of story order: the keyed line sat after a non-evidence line from another character, so it read as the wrong speaker (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`, L6-H4). The project encoded the class as a story-order check in its passage-reference validator, which found three such lists across three lessons, and a tool reordered them (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "81",
+   "quote": "Tap list is out of story order",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "81",
+   "quote": "so the keyed line reads as the wrong speaker.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "180",
+   "quote": "STORY-ORDER (validate-passage-refs.mjs)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "180",
+   "quote": "L5 p16 youdo-clue-hunt [6], L6 p16 step3 [8], L7 p9 item-2-check-2 [3]",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "39-40",
+   "quote": "a `hot_text` question's tappable sentence list must be offered in the same order those sentences occur in the passage",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "85",
+   "quote": "Up to n quotes from a ranked pool of units, the best first, shown in the text's order: whole clauses first (a line and",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "106",
+   "quote": "return runs.sort((x, y) => x[0] - y[0]);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "306",
+   "quote": "Still present and serious: 29 (8 Highs: leak/echo feedback L4 p8, L5 p13, L6 p15b, L7/L6 p12 skill-check echo, L6 p3b mercy-root, L5 p15b nudges name the key, L6 p16 tap list out of story order; plus story-truth mediums and acceptance-rule conflicts).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "42",
+   "quote": "evidence lists stay in passage order on purpose",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

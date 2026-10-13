@@ -1,0 +1,70 @@
+{
+ "id": "show-the-lines-that-prove-the-answer",
+ "title": "Show the lines that prove the answer",
+ "statement": "When a question about a text is answered right or its answer is given, mark the lines in the text that prove the answer and bring them into view.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's own lesson view, drawn in an animated version's markup, puts that build's margin line on the lines that prove the answer whenever a reply carries them, and brings them into view (`g9/transformer/web/lesson.js`). The blocks send those lines with a right answer, and with the answer given after the last try in the evidence hunt and the open check (`g9/transformer/src/mechanics/quick-check.js`, `g9/transformer/src/mechanics/evidence-hunt.js`, `g9/transformer/src/mechanics/open-check.js`). The rule has not been tried with readers.",
+ "against": "The rule has not been tried with readers.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "167",
+   "quote": "reveal.units: the build's margin line (.marked) on the lines that prove the answer, brought into view.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "242",
+   "quote": "if (res.reveal?.units?.length) markLines(res.reveal.units);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "362",
+   "quote": "if (res.reveal?.units?.length) markLines(res.reveal.units);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "90",
+   "quote": "reveal: correct ? { units: item.evidence } : null",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "98",
+   "quote": "reveal: { units: item.evidence }, done: true, released: true",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "108",
+   "quote": "reveal: { units: item.lines }, done: true, released: true",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

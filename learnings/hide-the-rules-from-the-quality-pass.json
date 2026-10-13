@@ -1,0 +1,49 @@
+{
+ "id": "hide-the-rules-from-the-quality-pass",
+ "title": "Hide the rules from the quality pass",
+ "statement": "Score generated material for rule-following and for quality in separate blind passes, and keep the generation rules out of the quality pass.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The frozen review protocol of an experiment comparing generated Grade 3 reading material gives scorers packets with random IDs and never shows them the arm, model, prompt, cost or other scorers' labels. It splits scoring into a rule-fidelity pass, where the task evidence and the obligation and prohibition rubric are visible, and a holistic-quality pass, where the task evidence and quality rubric are visible but the rules the material was made under are not. The protocol section gives no reason for hiding the rules from the quality pass.",
+ "against": "The protocol never ran: no eligible generated artifacts or double-coded quality scores exist (grade3-reading/bias_experiment/experiment-record/evidence/knowledgebot/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd line 56).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "568-569",
+   "quote": "Artifact scoring packets use random IDs and balanced assignment. Scorers never see arm, model, prompt, cost, or other scorer labels. There are two separate passes:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "571",
+   "quote": "**rule-fidelity pass:** task evidence plus the frozen obligation/prohibition rubric is visible;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "572",
+   "quote": "**holistic-quality pass:** task evidence and quality rubric are visible, but the contract is not.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

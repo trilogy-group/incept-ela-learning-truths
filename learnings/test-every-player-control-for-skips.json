@@ -1,0 +1,50 @@
+{
+ "id": "test-every-player-control-for-skips",
+ "title": "Test every player control for skips",
+ "statement": "Test every control in a film or scene player for an unintended way past unseen content, since the main flow can pass its tests while a side control skips it.",
+ "example": "An eight-scene intro passed its flow tests, yet confirming its transcript skipped the remaining illustrated moments of a scene.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A prototype intro with eight still-image scenes, three learning checks and saved progress passed its scene and check flow tests. A later recovery pass found that confirming the transcript let students skip the remaining illustrated moments in a scene. The next version fixed the skipped story moments and simplified the intro controls, and its eight-scene flow, three checks and saved progress passed interaction tests.",
+ "against": "It rests on one bug in one prototype, caught by a later pass rather than by the tests. Whether students may skip at all is a separate design choice, barred elsewhere only for young learners.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6061",
+   "quote": "The scene/check flow passed tests; real-audio timing remains unverified.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6304",
+   "quote": "I found a concrete intro bug: confirming the transcript lets students skip the remaining illustrated moments in a scene.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6327",
+   "quote": "This version fixes skipped story moments, simplifies the intro controls, and includes the corrected narration script.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,433 @@
+{
+ "id": "warnings-and-bans-dont-steer-a-writer",
+ "title": "Warnings and bans don't steer a writer",
+ "statement": "Warnings and bans don't reliably steer a writer: some invite the error they name, exact trap lists help without removing it, unchecked bans stay advisory; change what it's given instead.",
+ "example": "Adding 'be careful' warnings took a prompt's pass rate from 45% to 30%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a prompt sweep with 20 items per variant, adding 'be careful' warnings gave a 30% pass rate against the baseline's 45%, with factual accuracy at 60% in both (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`); the project's reading is that warnings without actual constraints just introduce hedging (`icloud-work/ML learnings/failures_and_false_starts.md`). Bans did no better on fine-tuned models: told not to use specific facts, one used wrong specific facts instead of right ones (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`). Another, ordered in capitals not to write about any other topic, went on writing about the wrong topic (`icloud-work/ML learnings/stage2_postmortem_full.md`). What to change instead is the material the writer may use, the hard limits on it and how the item is built.",
+ "against": "a large model mostly respected a ban on listing specific evidence; the note calls that instruction good enough for a large model and insufficient for a 14B one (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`). a large model mostly respected a ban on listing specific evidence, and the notes conclude that an instruction good enough for a large model is not enough for a 14B one. Both cases involve one small model, and the analysis ties the failure to its weak factual memory, so the finding may not carry to larger writers (`icloud-work/aptraining/.agent/research/failure_taxonomy.md`); whether the later fix worked is not recorded there. The same postmortem proposes hard negatives, the model's own off-topic outputs labelled as rejected, as a fix, and the falsified run's next step pairs real sources against the model's own weakest samples; neither was measured here, and both use real outputs rather than made-up faults. none found; the comparison rests on 11 sets. the forbidden list's gain came on 20 essay items in a run that also recalibrated essay difficulty, and the bad examples' effect is a correlation across runs, not a controlled test. An earlier run of this research recorded that warnings made a writer worse (45% to 30%), and in another test a writer kept inserting a date error despite a guardrail against it (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md`). The word list belonged to a method that was set aside after it passed 0 of 50 fresh items (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "50",
+   "quote": "**Method:** test_variants.py — 9 variants, N=20 each, APUSH Unit 7",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "| baseline | 45% | 60% | Standard prompt |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "61",
+   "quote": "| caution | 30% | 60% | Added \"be careful\" warnings |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "124",
+   "quote": "**The \"caution\" variant also failed:** Adding \"be careful\" warnings about factual accuracy produced 30% pass rate — worse than anything. Warnings that tell the model to be careful without giving it actual constraints just introduce hedging behavior. The model starts prefacing with qualifications instead of generating confident content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "62",
+   "quote": "**Why it doesn't work:** The model ignores negative constraints. It has strong parametric associations (France → exploration → Protestant → Huguenots → plausible but wrong) that override the instruction. Telling the model \"don't use specific facts\" just means it uses wrong specific facts instead of right ones.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "77",
+   "quote": "DO NOT write about any other topic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "82",
+   "quote": "**Result:** Failures persisted.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "132",
+   "quote": "2. **The current approach (negative prompting) seemed to work on Gemini.** Because Gemini is large enough to mostly respect the \"no specific evidence\" instruction and has accurate enough parametric memory that when it does include evidence, it's usually right. The instruction that's good enough for a large model is insufficient for a 14B model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "baseline | 45% | 60% | Standard prompt",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "61",
+   "quote": "caution | 30% | 60% | Added \"be careful\" warnings",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "124",
+   "quote": "Warnings that tell the model to be careful without giving it actual constraints just introduce hedging behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "82",
+   "quote": "Failures persisted.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "62",
+   "quote": "The model ignores negative constraints.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "132",
+   "quote": "Because Gemini is large enough to mostly respect the \"no specific evidence\" instruction",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "132",
+   "quote": "The instruction that's good enough for a large model is insufficient for a 14B model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "16",
+   "quote": "The postmortem (Apr 24) is explicit that telling the 14B \"no specific facts in scoring notes\" results in *wrong* specific facts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "16",
+   "quote": "Replacing the negative constraint with a positive verified-facts-only constraint should kill 100% of the SAQ factual-hallucination class and ~30-50% of DBQ factual-attribution failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "314",
+   "quote": "Negative prompting (\"don't list specific facts\") fails because the model substitutes wrong specific facts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "314",
+   "quote": "a 14B model has weaker factual memory than a >100B model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "607",
+   "quote": "visual-artifact filter in user-prompt ineffective",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "608",
+   "quote": "T1+T2 pipeline fix committed (37e4eeb) + redeploy fired: DBQ system-prompt stimulus rules + post-gen retry on visual-artifact",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "37",
+   "quote": "- Tested: CC added explicit constraint reinforcement (caps, repetition, \"DO NOT substitute\"). Failures persisted.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "17",
+   "quote": "Stage 2 generates valid, coherent, well-formed AP content — for the WRONG topic.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "15",
+   "quote": "**Instruction-following failure baked into weights — NOT factual forgetting.**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v61_broadfab_falsified_2026_05_13.md",
+   "lines": "34",
+   "quote": "Real-source training data (like D13 for DBQ) works because it gives the model REAL examples to imitate, not synthetic anti-examples to avoid.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v61_broadfab_falsified_2026_05_13.md",
+   "lines": "3",
+   "quote": "v61 (3,917-pair 7-corruption-type DPO warmstart v60) lost pair-8 with MCQ_SET catastrophic -15.6pp + MCQ -6.7pp.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v61_broadfab_falsified_2026_05_13.md",
+   "lines": "28",
+   "quote": "**Synthetic corruption-DPO class is BROKEN for stim_quality.** Each round of corruption-based DPO training makes the model worse at generating valid stimuli, not better.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v61_broadfab_falsified_2026_05_13.md",
+   "lines": "2",
+   "quote": "v61 broad-fabrication attack: HYPOTHESIS FALSIFIED",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "66",
+   "quote": "1. Training data needs hard negatives: examples with off-topic generations labeled as rejected",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v61_broadfab_falsified_2026_05_13.md",
+   "lines": "48",
+   "quote": "Use real-source chosen vs K=8 weak-sample rejected, or skip the cell entirely and address via pipeline.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "19-20",
+   "quote": "A prompt clarification was tried first and FAILED on the live evaluator (model still flagged the marker), so the marker is dropped entirely.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "23-24",
+   "quote": "OLD (marker leaked): marker flagged 30/30 then 26/30 NEW (empty strip): marker flagged 0/30 then 0/30",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "796",
+   "quote": "A prompt that explicitly forbids the stimulus/stem from using the correct option's distinctive nouns might improve educational accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "801",
+   "quote": "Rows: 11 MCQ_SET failures from `mixed_stability_v2`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "803",
+   "quote": "Score: `2/11 = 18.18%`, with `2` score errors.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "774",
+   "quote": "Generate more MCQ_SET candidates only, because v61 deterministic outside-knowledge solved `4/11` of v2 MCQ_SET failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "809",
+   "quote": "- Next MCQ_SET attempt needs stronger content construction, not another wording-only leak warning.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "101",
+   "quote": "“Be careful” factuality warnings hurt; caution text without hard constraints creates hedging, not accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "91",
+   "quote": "For SAQ/LEQ/DBQ scoring notes, “don’t list specific facts” failed. Verified-facts-only constraints are stronger.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1257",
+   "quote": "1. **LEQ fix works**: +15.9pp vs Gate 12b. The spec_compliance FORBIDDEN list genuinely helped.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md",
+   "lines": "232",
+   "quote": "| Concrete bad examples | **Strong positive** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/improvement_plan_prompts.md",
+   "lines": "39",
+   "quote": "- BANNED WORDS has no **detection/rejection mechanism** - it's advisory only",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "73-74",
+   "quote": "Adding an explicit blacklist of constituency-vocabulary to the prompt turned both KCs from 0/19 attempts to PASS within K=6.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md",
+   "lines": "62-64",
+   "quote": "An explicit \"high-risk pitfalls\" block in the prompt that enumerates the common date-traps reduces this by ~30-50%. Doesn't eliminate it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "64-65",
+   "quote": "v80b keeps inserting a date-pitfall event despite the chronology guardrail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "3",
+   "quote": "0/50 = 0% on fresh KCs",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "41-42",
+   "quote": "and \"L42\" written in a student paragraph. The house prompt now forbids L numbers in student-facing text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "3",
+   "quote": "\"at\": \"2026-10-09T08:42:12.637Z\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "3",
+   "quote": "\"createdAt\": \"2026-10-09T08:50:57.872Z\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "806",
+   "quote": "Review lines 34 to 36, where Iago explains that traditional promotion by",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "807",
+   "quote": "Correct; in line 42, Iago explicitly states,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-25-25-328Z.json",
+   "lines": "138-139",
+   "quote": "\"severity\": \"engine\",\n   \"class\": \"line-number-shown\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "63",
+   "quote": "no text a student reads cites a line number; quoting the words passes",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/video-recut-drafts-2026-08-31.md",
+   "lines": "10-11",
+   "quote": "Never write \"no X\" in a positive prompt; it reinforces X. State the desired thing positively instead (\"mouth closed, calm smile\", not \"not talking\").",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/video-recut-drafts-2026-08-31.md",
+   "lines": "12-13",
+   "quote": "A negative prompt alone cannot close a waving character's mouth; put the closed mouth in the positive prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "177-178",
+   "quote": "negative prompts go in negative_prompt (a \"no X\" sentence in the positive prompt reinforces X)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/video-recut-drafts-2026-08-31.md",
+   "lines": "10-11",
+   "quote": "Never write \"no X\" in a positive prompt; it reinforces X. State the desired thing positively instead (\"mouth closed, calm smile\", not \"not talking\").",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

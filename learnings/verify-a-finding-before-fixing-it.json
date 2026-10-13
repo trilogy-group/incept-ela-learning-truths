@@ -1,0 +1,548 @@
+{
+ "id": "verify-a-finding-before-fixing-it",
+ "title": "Verify a finding before fixing it",
+ "statement": "Before filing or fixing a finding, confirm it on the current, settled, live build, test the check that raised it on clean content, and publish how many were withdrawn.",
+ "example": "In one audit, 9 of 12 serious findings were refuted with evidence.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A rule-by-rule audit of one reading lesson ran nine independent audits and then an adversarial refutation pass, and 9 of 12 serious findings were refuted with evidence. A count of an interface audit's bug register put its false-positive rate at 6/65 = 9%, matching another audit lane's measured 8-15%. A benchmark's audit of an older version had 20 rows already fixed on the working branch. The check that raised a finding should also be tested on content known to be clean.",
+ "against": "Both rates come from one project's own audits, so they are examples, not a constant. The reference test can bless a gap the references share: one finding was dismissed as an aspiration the approved references do not meet either (`grade3-reading/artifacts/g5-course/G3-U1-L4-RESIDUAL-ADJUDICATION-2026-08-21.md`). Findings also catch what checks miss: 26 findings from one review round landed on lessons the calibration log had marked green, findings the team's own passing gate missed (`grade3-reading/knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd`, lines 34-36).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "9",
+   "quote": "9 of 12 serious findings were refuted with evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "100-101",
+   "quote": "audit false-positive rate **6/65 = 9%**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "101",
+   "quote": "independently matching the arc-audit lane's measured 8-15%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1550",
+   "quote": "20 rows already FIXED-ON-BRANCH",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "101",
+   "quote": "**6/65 = 9%**, independently matching the arc-audit lane's measured 8-15%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "76",
+   "quote": "two-layer audits (8-15% FP rate)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "78-79",
+   "quote": "roughly half of \"CRITICAL\" audit claims were false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "83",
+   "quote": "Verify against the file, not the report.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/G3-U1-L4-RESIDUAL-ADJUDICATION-2026-08-21.md",
+   "lines": "10",
+   "quote": "Verdicts: **1 CONFIRMED, 9 DISMISSED** (plus the 3 engine-debt items carried unchanged).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/G3-U1-L4-RESIDUAL-ADJUDICATION-2026-08-21.md",
+   "lines": "27",
+   "quote": "aspiration the references do not meet either. Not a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "128",
+   "quote": "Agent findings are re-verified in a main loop before any fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "129",
+   "quote": "false-positive rate of single-layer findings is 8–15% across two independent lanes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "108",
+   "quote": "Provenance: probe-is-often-the-bug — half of \"audio defects\" were defective",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/whisper-qa-2026-09-02/REPORT.md",
+   "lines": "10",
+   "quote": "itself and \"finds\" cross-lesson bleed that isn't there. First pass flagged 27 such",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "56",
+   "quote": "the \"28%\" was **four harness bugs**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "47",
+   "quote": "The same probe scored the **172 certified-clean** pool at ~0–1.7% leak — the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "102-103",
+   "quote": "6 practice items dropped after the screen credibly showed a **multi-defensible key** (verified by reading each, not on judge vibes)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "231",
+   "quote": "item screen surfaces candidates, a read confirms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "90-91",
+   "quote": "5 of 7 were already fixed live before this session (the FIX_LIST's \"not applied\" status was stale)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "35",
+   "quote": "two-layer audits at a measured ~8-15% false-positive rate",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "53",
+   "quote": "**Greptile reviews can be stale** — the review fires on PR open, but the author often pushes follow-up commits. Always verify each Greptile concern against the **current** diff before letting it block approval.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "151",
+   "quote": "- **Reading Greptile reviews as authoritative.** They're a useful first pass, not the final word. Always cross-check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "204",
+   "quote": "2 ALREADY-FIXED, 2 NOT-REPRODUCIBLE on c056d3e",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "205",
+   "quote": "a matching term found elsewhere (another course's accepted list, a sibling system) is DROPPED",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-codex-visual-2026-09-07/REGISTER.md",
+   "lines": "26",
+   "quote": "Codex's reproductions ran before the chip-glue merge built.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "11",
+   "quote": "NOT the report's own suggestion (a plant nursery is a CORRECT use of the word and cannot be a wrong option in \"uses the word correctly\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L4-REVIEW-GAPS-2026-09-16.md",
+   "lines": "98",
+   "quote": "Merriam-Webster recognizes -ry as a form of -ery, so “must change to -ery” was unsupported.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "15",
+   "quote": "a specified step is not a defect; keep \"the step is wrong\" apart from \"this instance is weak\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "120",
+   "quote": "**Was it requested?** Check the feedback ledgers first",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "127-128",
+   "quote": "(Three \"nothing happened\" blockers were feedback rendering in the other column.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "129",
+   "quote": "3. **Wait out the designed timer** (compute it) before calling a gate broken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "130-131",
+   "quote": "4. **Environment vs product** (a hung `getUserMedia` in headless produced a false dead-end).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "134-135",
+   "quote": "Publish the correction rate when findings are disputed (ours: 4 of 6 blockers retracted on the first uncalibrated sweep",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "172",
+   "quote": "*A finding that rests on a checkable factual error damages the audit more than the package*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "48",
+   "quote": "Not defects (each re-read at full size; do not re-raise):",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "70",
+   "quote": "the background paragraph is there (thumbnail artifact)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md",
+   "lines": "93",
+   "quote": "The jump was the harness's own scrolling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "134",
+   "quote": "three \"does nothing\" claims were feedback in the other column",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "13",
+   "quote": "Wait out the designed timer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "22",
+   "quote": "Inspect actual PeterPan film and poster; Aladdin CGI report cannot by itself prove PeterPan mismatch. Preserve media until observed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/MEDIA-INSPECTION-by-residual.md",
+   "lines": "5",
+   "quote": "The Aladdin art-direction observation **also applies to Peter Pan**: book `art.ts` maps the opening to painted2D `peterpan-1-cover.jpg`, while the actual film is3D CGI.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/MEDIA-INSPECTION-by-residual.md",
+   "lines": "5",
+   "quote": "The actual native-video `poster_path` is a CGI nursery frame and matches the viewed film.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/MEDIA-INSPECTION-by-residual.md",
+   "lines": "7",
+   "quote": "The specific decorative story-grammar image-text defect is not established on these pages.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "107-109",
+   "quote": "Roughly half of \"CRITICAL\" audit claims in one session were false, every miss traceable to the same omission.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "110-112",
+   "quote": "Before reporting a divergence as a defect, check whether BOTH `G3-U1-L1` and `G3-U1-L10` do the same thing. If they do, it is house style. This overturned about half the findings it was applied to.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "853",
+   "quote": "These are hypotheses from prior source/runtime inspection. The new run must either produce exact evidence and `ALIGN`, or leave the item `VERIFY`; do not copy them into a final report as proven current defects without replaying the exact `07402...` artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "60-61",
+   "quote": "Reviewer feedback is scoped to its own course: a matching string in another course is NOT a ruling there (no-cross-course-inference).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "205",
+   "quote": "Feedback scoped to its own course is never applied to another on a matching string",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/README.md",
+   "lines": "19",
+   "quote": "Capture correction: the first rapid arrival pass sometimes caught an unpainted image, hydration mode or entry animation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/README.md",
+   "lines": "19",
+   "quote": "Independent agents identified this failure before any missing-art claim was accepted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "292",
+   "quote": "Preserve raw5flagmodelFAIL and4source-boundunsupporteddispositions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "134",
+   "quote": "Inspect images at original detail before treating a renderer preview crop as a product defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/final-u9-review.json",
+   "lines": "87",
+   "quote": "L6 contact-sheet thumbnail appeared clipped, but full1280x720sourceframe showed the title intact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/lesson-review-dispositions.json",
+   "lines": "26",
+   "quote": "False positive: whole-audio transcription exactly matches script; both isolated sentence audio probes also returned exact words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "65",
+   "quote": "Two navy closing-art captures were transient loading states, not filed as missing images.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/README.md",
+   "lines": "35",
+   "quote": "A finding you can't reproduce from raw does not go in the table — it goes in a \"refuted / could not reproduce\" note so the next round doesn't re-chase it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "10-12",
+   "quote": "The measured false-positive rate for unverified agent completion-claims in this workspace is ~15% (arc-audit, 2 of 13 L5 findings were themselves wrong on inspection)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/HANDOVER-2026-08-25-PR27.md",
+   "lines": "118",
+   "quote": "The reported ellipses/reveal defect is not present on a fresh production server.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/MENACING-ITEM-IMPLEMENTATION.md",
+   "lines": "38",
+   "quote": "Four original flags have source-bound unsupported dispositions; this correction addresses the one independently confirmed item defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "277",
+   "quote": "Next after the fan-out: main-loop re-verify survivors (~15% false positives expected), sort FIX-NOW / RULING / PLATFORM / ACCEPTED, fix proven harm with textual JSON edits + course-TTS recuts, full gate, hosted build, register `L5-REVIEW-GAPS-2026-09-17.md`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5040",
+   "quote": "So I wouldn’t describe the opener as missing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "30-32",
+   "quote": "Nine of the twelve serious findings raised across the audits were **refuted** — six of them decisively, on authored exemptions, validator carve-outs, or misread rule scope",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "104-105",
+   "quote": "Audit findings need main-loop re-verification before fixing: 2 of 13 L5 findings did not survive (a ~15% false-positive rate at sonnet-audit level).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/signoff-packet/SIGNOFF-L4-2026-09-01.md",
+   "lines": "234-235",
+   "quote": "The walk's three flagged \"findings\" were all refuted in main-loop review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "47",
+   "quote": "Independent source review rejected four specific flags and confirmed the original menacing defect addressed by `.59`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "5-6",
+   "quote": "**Version skew.** We churned deploys while reviewers were mid-review, so a reviewer's screen and our HEAD were different builds.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/REVIEW-ROUNDS.md",
+   "lines": "5-6",
+   "quote": "We churned deploys while reviewers were mid-review, so a reviewer's screen and our HEAD were different builds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "25-28",
+   "quote": "Measured false-positive rate at sonnet-audit level: ~15% (2 of 13 on L5 — one read only the prompt field, one treated KB inputs as child-facing mandates). Refute first, fix what survives.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "177-178",
+   "quote": "`silent` here is a branch name for \"child gave no response,\" not an audio-completeness flag.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "221-222",
+   "quote": "audit ran against the git-show extraction to guarantee it reflects exactly what's on `origin/main`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "25-27",
+   "quote": "Measured false-positive rate at sonnet-audit level: ~15% (2 of 13 on L5 — one read only the prompt field, one treated KB inputs as child-facing mandates).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/pre-weekend-audit/SKILL.md",
+   "lines": "38-39",
+   "quote": "never the working tree (in-flight work contaminates the verdict)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "5",
+   "quote": "Three of the red-team's most damaging findings rest on checkable factual errors",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_PROTEST_BRIEF.md",
+   "lines": "17",
+   "quote": "**Stale by minutes.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

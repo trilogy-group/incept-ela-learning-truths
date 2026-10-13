@@ -1,0 +1,96 @@
+{
+ "id": "quoting-a-misconception-to-refute-it",
+ "title": "Quoting a misconception to refute it",
+ "statement": "Whether lesson text may quote a misconception's wording to refute it, or a misconception screen should fail that wording even inside a correction, is unsettled.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "wording",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A Grade 5 science misconception gate fails any match of its pinned phrases even when the phrase appears inside a negation, a rejected alternative or a correction, and calls this deliberately stricter than a contextual judgment, so the phrase has to be rewritten before review publication. The red-team taxonomy the reading courses share says to teach random variation first and selection second and to name the misconception ('a sieve, not a sculptor'). Records already here favour refuting a wrong idea, and a word-list check in another project filters negated uses out rather than failing them. Neither rule records an effect on learners.",
+ "against": "The strict rule bans a literal phrase, not the idea, so a refutation that names the misconception in other words can pass it. No source compares the two approaches or measures whether a misconception that is voiced and then refuted misleads students.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md",
+   "lines": "90-92",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected alternative, or correction. This is deliberately stricter than a contextual judgment: the current hard-string policy requires the phrase to be rewritten before review publication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md",
+   "lines": "90-92",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected alternative, or correction. This is deliberately stricter than a contextual judgment: the current hard-string policy requires the phrase to be rewritten before review publication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20719",
+   "quote": "| **Adaptation = genetic choice** | \"animals genetically adapt\" / \"evolved to\" | teach random variation FIRST, selection SECOND, name the misconception (\"a sieve, not a sculptor\"); functional description OK, causal teleology not |",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "8",
+   "quote": "Intentional misconception-distractors (wrong MCQ options + their refuting feedback) are **excluded by design**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "36",
+   "quote": "a negation guard (`not gone` / `never gone` / `not lost`) was added to the allow-list so a correct \"energy is **not** gone, it becomes heat\" is not falsely flagged",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "90-91",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected alternative, or correction.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "91-92",
+   "quote": "This is deliberately stricter than a contextual judgment: the current hard-string policy requires the phrase to be rewritten before review publication.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/KNOWLEDGE-COHERENCE.md",
+   "lines": "180",
+   "quote": "Name-and-refute \"animals choose/try to adapt.\"",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "21",
+   "quote": "a further 5 reintroduced during the teaching-move rework (U4-L6, U5-L4, U5-L7, U6-L1, U6-L2, where the \"model-hard-thinking\" rewrite voiced a misconception to reject it)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,69 @@
+{
+ "id": "a-stand-in-test-matches-its-targets-interactions",
+ "title": "A stand-in test matches its target's interactions",
+ "statement": "A test standing in for another must reproduce its interactions, navigation rules and per-sitting format mix, since a different interface changes how students respond and what scores mean.",
+ "example": "One stand-in reading test requires at least 12 technology-enhanced items in every 40-item session.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A stand-in for an outside reading test follows that test's documented interaction conventions, forward-only navigation, an answer before each advance and all six item interactions, so that its scores stay comparable and the official test measures reading rather than interface novelty (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`). It argues from response-process validity in the testing standards: students who interact with items differently on another platform respond differently, and their scores are not comparable. Its design review makes a floor of 12 technology-enhanced items per 40-item session a hard constraint and counts an all-multiple-choice session as a violation (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md`).",
+ "against": "Parity is partial: of the six formats, three are confirmed for the reference test's reading levels, two are documented only for its other subjects and one only in secondary materials (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`, line 92).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "372",
+   "quote": "If students interact with items differently on our platform than on MAP — different cognitive load from an unfamiliar UI, different navigation affordances, different format rendering — response patterns will differ and scores will not be comparable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "343",
+   "quote": "The interface follows MAP's publicly documented interaction conventions, so that students experience familiar testing conventions and the official test measures reading rather than interface novelty:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "345",
+   "quote": "**Forward-only navigation**: once an item is answered, it is locked; no back button",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "45",
+   "quote": "**TE floor ≥12 per 40-item session** — every format except plain MCQ counts as TE (MSQ, EBSR, hot-text, sequence, match/gap-match)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "45",
+   "quote": "All-MCQ is a violation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "AERA, APA & NCME 2014, Standards for Educational and Psychological Testing",
+   "url": "https://www.testingstandards.net/open-access-files.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

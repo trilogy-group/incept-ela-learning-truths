@@ -1,0 +1,184 @@
+{
+ "id": "spelling-counts-where-the-word-is-taught",
+ "title": "Spelling counts where the word is taught",
+ "statement": "Count spelling only where the word itself was taught: a taught word recalled from memory must be spelled exactly; elsewhere a slip is named but not marked wrong.",
+ "example": "In a sentence said back, a slip is named and passed only in a key word of five letters or more.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "key"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Both rules came over from a 3D version's marking, and both run in code. The key-word deck takes an exact match, does not count another deck word that fits the sentence as a miss, and meets a near spelling with 'Nearly. That is the word, but the spelling is not right yet.', since a taught word is spelled right; the second miss gives the word. The say-it-back task checks that every key word is there and names a slip in a word of five letters or more without counting it as a miss.",
+ "against": "An animated version's export asks the key words as one gap answered by a choice, so spelling is not checked there (`g9/transformer/src/glue/animated.js`, line 152).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "3",
+   "quote": "an exact match; another word of the deck that also fits the sentence is not a miss; a near spelling",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right; the second miss gives the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "119",
+   "quote": "Nearly. That is the word, but the spelling is not right yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "3",
+   "quote": "that every key word is there, and a near spelling of a long word is named but not counted as a miss (the 3D build's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "22",
+   "quote": "/** \"yes\", \"spelling\" (a slip in a word of five letters or more, named but not a miss) or \"no\". */",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "176",
+   "quote": "count at once, a one-letter slip of them too (spelled right back); any other word goes to Jev, generously.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "184",
+   "quote": "(w.length >= 5 ? known.find((x) => x.length >= 5 && slip(norm(x), w)) : undefined)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "151",
+   "quote": "a slip is spelled back",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "One real English word or short phrase (spelling slips are fine)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "3",
+   "quote": "an exact match; another word of the deck that also fits the sentence is not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "152",
+   "quote": "check: { prompt: \"Which word fits?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "41",
+   "quote": "On the same screen a misspelling is silently corrected rather than marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "128",
+   "quote": "Mark misspellings rather than silently correcting them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "338",
+   "quote": "In a vocabulary-led curriculum that is a missed correction.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "93",
+   "quote": "Spelling slips are fine unless the word is a taught word.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "28",
+   "quote": "Spelling slips are fine unless a taught word is misspelled.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/KeyWords.tsx",
+   "lines": "4",
+   "quote": "Spelling must be right (taught words).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "44",
+   "quote": "Spelling slips are fine.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "43",
+   "quote": "A misnamed word class or a spelling slip is never a reason to withhold secure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "338",
+   "quote": "The child writes \"He pretends to be a solder but is lying\" and the Archivist replies \"He is indeed a soldier\", silently using the correct spelling without marking the error. In a vocabulary-led curriculum that is a missed correction.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "128",
+   "quote": "Mark misspellings rather than silently correcting them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb6a406.txt",
+   "lines": "6",
+   "quote": "{\"id\": \"w02\", \"check\": 0, \"cat\": \"misspelled\", \"answer\": \"manipulashun\", \"expected_met\": [\"connected\"]},",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

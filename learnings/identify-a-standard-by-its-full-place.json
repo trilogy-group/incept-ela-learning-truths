@@ -1,0 +1,55 @@
+{
+ "id": "identify-a-standard-by-its-full-place",
+ "title": "Identify a standard by its full place",
+ "statement": "Identify a standard by its full place in the curriculum, not by its code alone, and return every match, because one code can name several standards.",
+ "example": "One curriculum had 284 duplicate standard codes and another had 311.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Standard codes are not unique within a curriculum: the same code can appear in several subjects or courses, which was verified empirically at 284 duplicate standard codes in one curriculum and 311 in another. The curriculum service therefore looks items up with ancestry filters and returns a list of all matches, and its index keeps a list for each code.",
+ "against": "The evaluator's transition plan does the opposite: '4. **Multiple results from /fetch** -- Ancestry filtering minimizes this. If multiple results still appear, pick the first one.' (shadow-bench/plans/02-curriculum-api-transition-plan.md line 302), and when nothing is found it retries without the course: '2. If that returns 0 results or fails, retry with `{curriculum, subject}` only (drop course)' (line 80).",
+ "evidence": [
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-decisions.md",
+   "lines": "260",
+   "quote": "The same `standard_id` can appear in multiple subjects/courses",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-decisions.md",
+   "lines": "260",
+   "quote": "This was verified empirically — CC has 284 duplicate standard IDs, AP has 311.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-decisions.md",
+   "lines": "262",
+   "quote": "**Decision:** Node-centric API with `target_level` + `ancestry` filters. Returns a list of all matches.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-plan.md",
+   "lines": "697",
+   "quote": "The value is a list because IDs are not unique within a curriculum.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

@@ -1,0 +1,98 @@
+{
+ "id": "hints-no-student-can-reach",
+ "title": "Hints no student can reach",
+ "statement": "Whether to write and check hints a student can never reach before the answer is shown, when failures in those hints alone can hold the question.",
+ "example": "One block drafts three hints for each point but shows only the first before the answer, and two of its four held drafts failed only on the second and third.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "hints",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Reading the held open-check records against the code: on a first sure miss the block gives the first hint of the first missing point, and on the next miss it shows the answer, while the 3D export passes only the first hint. Each point's second and third hints are still written, exported and checked. Of the four held open checks, the two held on the hint check named only second or third hints; the other two were held on the give-away question.",
+ "against": "Another build is sent all three hints (g9/transformer/src/glue/animated.js line 160), and its open-check page is described as a nudge \"per try, the answer on the second miss\" (line 23); its hint-ladder code is not in this repo, so whether its students reach the later hints is not known.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "96",
+   "quote": "a sure miss gets its hint, the second miss the answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "117",
+   "quote": "return missed(`${vs.includes(\"holds\") ? \"Part of it is there. \" : \"\"}${item.criteria[k].nudge}`);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "124",
+   "quote": "assert.equal(oc.rubric.max_tries, 2);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "128",
+   "quote": "assert.ok(c.nudge && c.second_nudge && c.third_nudge && c.accept.length === 3);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "158",
+   "quote": "criteria: it.criteria.map((c) => ({ requirement: c.requirement, accept: c.accept, nudge: c.nudge }))",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "51",
+   "quote": "\"second_nudge\": \"Examine the end of line five to see what kind of sneer is sculpted.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "68",
+   "quote": "No hint hands the answer over: a hint uses a word that hands the answer over, or the answer itself",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7bb3a47934432969.json",
+   "lines": "38",
+   "quote": "No hint hands the answer over: a hint uses a word that hands the answer over, or the answer itself",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "160",
+   "quote": "second_nudge: say(c.second_nudge), third_nudge: say(c.third_nudge)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "23",
+   "quote": "per try, the answer on the second miss",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

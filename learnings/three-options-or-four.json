@@ -1,0 +1,191 @@
+{
+ "id": "three-options-or-four",
+ "title": "Three options or four",
+ "statement": "Should a choice question default to three options, as research favours, or include the extra option a course review asked for?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "options",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The assessment packet records the tension: a review asks for at least four options, while the multiple-choice evidence summary says research generally favours three and keeps four as the default only when a third plausible, diagnostically useful wrong option exists (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md`). The packet bars filling a fourth slot with an implausible option and leaves the default to a human decision (the same file; `grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/README.md`). A meta-analysis of 80 years of research found three options optimal (Rodriguez 2005, https://doi.org/10.1111/j.1745-3992.2005.00006.x). To settle it: decide the default, then count how often students choose each fourth option. Either way, no slot is filled with an implausible option, since a weak option only adds cues (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 2006).",
+ "against": "A packager gate that demanded exactly four options was found to over-restrict a delivery format whose real floor is 2-6+ (`grade3-reading/knowledge_bot/knowledge/kb-0241-alpha-read-contract-investigation-and-packager-build-2026-06.qmd`). The course-quality standard declines to fix a number: \"No fixed option count belongs in the universal standard\" (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, line 770).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "40-42",
+   "quote": "The MCQ BrainLift says the research consensus generally favors three options and recommends four as Alpha's default only when a third plausible, diagnostically useful distractor exists. Do not fill a fourth slot with an implausible option.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/README.md",
+   "lines": "94",
+   "quote": "decide the three-versus-four-option MCQ policy when a fourth plausible distractor cannot be written;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0241-alpha-read-contract-investigation-and-packager-build-2026-06.qmd",
+   "lines": "109",
+   "quote": "arpack's \"exactly 4 choices\" gate over-restricts vs the API's real 2-6+ floor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2006",
+   "quote": "The discipline: if you cannot write a third plausible distractor for a given item, use three options rather than adding filler. A weak fourth distractor is worse than no fourth distractor because it provides testwiseness cues and wastes time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2082",
+   "quote": "Most items cannot sustain more than two plausible distractors; the third and fourth distractors in 4- and 5-option items are typically non-functioning (selected by fewer than 5% of examinees).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2083",
+   "quote": "First, four options reduce the guess rate from 33% to 25%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "102-105",
+   "quote": "while the MCQ BrainLift reports a research consensus favoring three and recommends four as Alpha's default only when all distractors remain plausible and diagnostically useful. An agent must not resolve this by adding filler",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "52",
+   "quote": "**MCQs need ≥4 options.** A 2-option yes/no is a 50/50 guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "770",
+   "quote": "Claim boundary: No fixed option count belongs in the universal standard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/validate-contracts.mjs",
+   "lines": "366",
+   "quote": "mcq must have exactly 4 options",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "validate-contracts.mjs line 365 requires exactly 4 MCQ options.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Its validators reject three-option MCQs and Grade 9 copy, so build without them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "1",
+   "quote": "three options, exactly one defensible.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "23",
+   "quote": "Exactly three options. Exactly one is right given the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "39",
+   "quote": "deliveries must be a list of three",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "600",
+   "quote": "Four options. Not two, not three.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "619-620",
+   "quote": "- **Default option count:** 4 - **Three-option exception:** Use three options only when an independent cold review finds that a fourth misconception- or error-grounded distractor cannot be written without filler, cueing, or ambiguity; record reviewer, reason, and candidate fourth option rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "85",
+   "quote": "Four options are the default and three require a recorded no-filler exception after independent cold review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "770",
+   "quote": "No fixed option count belongs in the universal standard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/sim-review-2026-09-24/CLOSURE-PLAN.md",
+   "lines": "128",
+   "quote": "Neither is a summative MCQ; the four-option rule applies to the mastery pool.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading-v2/docs/BRAINLIFT.md",
+   "lines": "248",
+   "quote": "| Option count | Four by default; three only with documented independent exception |",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "85",
+   "quote": "Four options are the default and three require a recorded no-filler exception after independent cold review.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rodriguez 2005",
+   "url": "https://doi.org/10.1111/j.1745-3992.2005.00006.x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

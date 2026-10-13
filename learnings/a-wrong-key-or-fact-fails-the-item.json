@@ -1,0 +1,207 @@
+{
+ "id": "a-wrong-key-or-fact-fails-the-item",
+ "title": "A wrong key or fact fails the item",
+ "statement": "Every part of an item, shown to students or not, must be factually right and agree with the key, since a wrong key or fact anywhere fails the whole item.",
+ "example": "Over 1,124 graded rows, an item whose factual accuracy scored zero passed 0% of the time.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "integrity",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A criteria pack built from 1,124 graded rows of one AP model found that when factual accuracy or source quality scored zero, the row passed 0% of the time, and marked both as must-pass gates (the pass-criteria `README.md`, lines 12 and 72). The AP evaluator's scoring table counts a wrong answer or false claim as a critical failure, and with one critical failure an item scores 0.84 at most, below the 0.85 where acceptable begins (`_base_evaluation.txt`, lines 232, 244, 250 and 262). Being right and agreeing with the key applies to explanations, hints, feedback, model answers, marking notes and source details alike, and a failed source fails the item as surely as a wrong key, however good the rest is.",
+ "against": "outside that field, published practice uses a human-in-the-loop acceptance rate with no hard threshold (`icloud-work/ML learnings/research_educational_content_generation.md`). In an earlier AP evaluator one non-critical failure still scored 0.85 to 0.89, a pass, and only a critical failure such as a wrong fact always failed (`icloud-work/evaluator/docs/EVALUATION_PROCESS.md`, lines 97-123), so whether every other flaw sinks an item depends on the grader. The rise from 0.33 to 0.97 came under a release that also tightened leak checks, so the explanation fix alone is not shown.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/ib_pass_criteria_pack/README.md",
+   "lines": "72",
+   "quote": "When `factual_accuracy` or `stimulus_quality` zeros, the row passes 0% of the time (kills=1.0).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/ib_pass_criteria_pack/README.md",
+   "lines": "12",
+   "quote": "(c) empirical decisive-weight from 1,124 real graded rows of v80b (the current chain-final canonical model)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "250",
+   "quote": "| 1 | 0–2 | 0.70–0.84 | INFERIOR |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "232",
+   "quote": "- Wrong answer, false claims → `factual_accuracy`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "244",
+   "quote": "Let **C** = count of CRITICAL metric failures: `factual_accuracy`, `educational_accuracy`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "262",
+   "quote": "- **ACCEPTABLE (0.85–0.98)**: Meets quality standards",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "40",
+   "quote": "This is NOT just overall_score ≥ 0.85. An item can score 0.92 overall and still hard-fail if a single hard-fail dimension drops below 1.0. The hard-fail dimensions are binary gates — they must all be perfect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "86",
+   "quote": "- Must produce 7 distinct documents",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "89",
+   "quote": "- One wrong date in one document = hard fail for the whole DBQ",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "125",
+   "quote": "4. Wrong information in practice questions could hurt student performance on the actual exam",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "128",
+   "quote": "- InceptBench's hard-fail on factual_accuracy is not optional",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "180",
+   "quote": "- **Medical domain** (strictest): 100% factual accuracy required for clinical exam questions; 69% pass rate reported for unconstrained GPT-4 generation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "181",
+   "quote": "- **General educational** (moderate): Human-in-the-loop acceptance rate used; no hard threshold",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md",
+   "lines": "40",
+   "quote": "Mixing one wrong example into a list of three discredits the sample response.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/helpers/oracle/scoring/docs/full_docs/internals/ap-evaluation.md",
+   "lines": "135",
+   "quote": "These dimensions must score 1.0 for the question to pass. A score below 1.0 results in automatic failure regardless of overall score.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "29",
+   "quote": "- Factual claims, answer keys, rationales, feedback, and support fields all count for `factual_accuracy`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "38",
+   "quote": "- The keyed answer must be factually correct and internally consistent with all explanations, hints, feedback, and additional details.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/gold_standard.json",
+   "lines": "460",
+   "quote": "\"failure_reason\": \"Factual inconsistency: Question says 1946 (correct), but explanation says 1948 (incorrect)\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "194",
+   "quote": "Answer explanations must not contradict option text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "19",
+   "quote": "The practical rule for the generator is: **do not aim for “mostly good”; produce a checklist-complete item with no score-zero openings.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_unit1_trap_verifier.md",
+   "lines": "17",
+   "quote": "Observed LLM-required failures are mostly not structurally bad items. They are good-looking items poisoned by historically wrong teacher-facing metadata:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "87",
+   "quote": "SAQ can have fine prompts but fail because the sample response contains factual errors.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md",
+   "lines": "27",
+   "quote": "`ap-apush-1-mcq_set-medium-12` improved from `0.33` to `0.97`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/l6-dialogue-ship-wording/SHIP-WORDING-TRIAGE.md",
+   "lines": "32",
+   "quote": "These authored lines provide a plausible source for the model's “took the ship” wording.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "145",
+   "quote": "Iago does follow Othello, but for himself.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "attempts-feedback-and-reveal-as-one-design",
+ "title": "Attempts, feedback and reveal as one design",
+ "statement": "Design and test an item's allowed attempts, feedback steps, marking criteria, reveal and service-failure exit together, so no attempt runs past the written feedback or strands the learner.",
+ "example": "Three spoken-answer turns had gates whose configured attempts, criteria, feedback stages and reveal could not complete the written escalation.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "feedback",
+  "hints"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A case study of one Grade 3 reading lesson found three spoken turns whose configured attempts, rubric shape, criteria, feedback stages and reveal behaviour could not complete the authored escalation; each setting had been checked on its own, and no trace followed wrong, partial, empty and infrastructure-failure answers through every attempt (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`, lines 217-223). The repair gave the turns complete assessment contracts and distinct escalation paths, under the rule that retry count is pedagogy and that attempts, criteria, rubric, support, reveal and the service-failure exit form one behavioural contract, to be checked by live traces of correct, partial, misconception, silent, repeated-failure and unavailable-speech answers (same file, lines 225-233). The course rulebook lists configured attempts that exceed the authored feedback, and speech failures that trap the learner, among its failure signals, and makes retry or reveal behaviour beyond the authored feedback ladder a stop condition for any readiness claim (`grade3-reading/ti-courseplans-wiki/Perfect-Course-Rulebook.md`, lines 387-388 and 535). It also keeps success after repair apart from first-try evidence, and allows an exit from an infrastructure failure only after the learner has had the authored support (same file, lines 391-393).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "219-220",
+   "quote": "Three spoken turns had gates, but configured attempts, rubric shape, criteria, feedback stages, and reveal behavior could not complete the authored escalation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "222-223",
+   "quote": "No trace followed wrong, partial, empty, and infrastructure-failure responses through every attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "228-229",
+   "quote": "Retry count is pedagogy. Attempts, criteria, rubric, support, reveal, and service- failure exit form one behavioral contract.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "388",
+   "quote": "configured attempts exceed authored feedback; unsupported speech failure traps the learner;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "535",
+   "quote": "configured retry/reveal behavior exceeds the authored feedback ladder;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

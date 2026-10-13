@@ -1,0 +1,73 @@
+{
+ "id": "a-vocabulary-floor",
+ "title": "A vocabulary floor",
+ "statement": "When the text supplies a stronger word than an answer uses, treat the answer as unfinished, not wrong: accept it, then push once for the text's word.",
+ "example": "In one design, a child who writes \"nice\" where the text says \"kindest\" is accepted and then asked once for the stronger word.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "wording",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The closing-questions design requires at least one slot in its finding question to carry the text's own words, calling it the place where vocabulary is either held or lost (`grade3-reading/artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt`). An answer in weaker words than the text supplies is unfinished, not wrong: it is accepted, then pushed once for the stronger word the text gives, and the rule is repeated as a floor for all three closing questions.",
+ "against": "A later run found counter-evidence (`grade3-reading/course-renderer/docs/handover/closing-questions/HANDOVER.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/rules/knowledge-and-curriculum.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/handover/closing-questions/HANDOVER.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "82",
+   "quote": "This is where vocabulary is either held or lost.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "83",
+   "quote": "Do not accept an answer in weaker language than the text supplies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "114",
+   "quote": "A vocabulary floor. No answer accepted that uses weaker language than the text supplies, without one push first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "112-113",
+   "quote": "on a phrase slot a one-word follow-up replaced the whole answer). The slot passes on meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "245-247",
+   "quote": "Grade the feedback loop harder too: make the child revise until the answer uses precise vocabulary instead of passing a generic one.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "111-113",
+   "quote": "Vocabulary floor: the \"find the stronger word\" push was built and then REMOVED ... on a phrase slot a one-word follow-up replaced the whole answer). The slot passes on meaning.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

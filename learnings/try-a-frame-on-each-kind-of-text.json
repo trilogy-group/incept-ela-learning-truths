@@ -1,0 +1,171 @@
+{
+ "id": "try-a-frame-on-each-kind-of-text",
+ "title": "Try a frame on each kind of text",
+ "statement": "A question frame designed on one kind of text must be tried on each other kind before it is used there.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "format",
+  "stimulus",
+  "demand"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A closing-question frame whose slots ask \"when\", written and worked through on a story, was used in an informational lesson, and its model answers came out as a part doing its job when it does its job, because that text has no event to point at. A review of a story lesson found the same slot worked there because the text was a story.",
+ "against": "The spec and the checker treat the pattern as text-neutral: \"Nothing in the pattern is fiction-specific.\" (`shadow-content-eval/references/closing_questions_pattern.md`, lines 8-9). The finding rests on one informational lesson, and the review left the fix open: \"Nonfiction probably needs its own frame variant\" (`shadow-content-eval/reports/G3-U2-L1-review.md`, line 83).",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "72",
+   "quote": "That says \"a part does its job when it does its job\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "74",
+   "quote": "- The spec's \"when, not what\" rule is written for narrative, where \"when\" gets the mechanism. Here there is no event to point at.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "49",
+   "quote": "\"When\" works here because the text is a story.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v04/README.md",
+   "lines": "17",
+   "quote": "**Exit criteria:** every component is ready on both samples, or held with a reason; the gallery renders them all.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v04/README.md",
+   "lines": "15",
+   "quote": "A gallery shows every component baked on the same text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "130",
+   "quote": "| `samples/` | public-domain texts: Othello 1.1 (lines 1–75) and Ozymandias |",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/README.md",
+   "lines": "9",
+   "quote": "a universality test: all 16 blocks made for a poem and for prose on 12 October 2026",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.py",
+   "lines": "16",
+   "quote": "b = post(\"/api/block\", {\"text\": texts[k], \"question\": out[\"questions\"][k], \"mechanic\": m, \"n\": 1})",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.py",
+   "lines": "21",
+   "quote": "out[\"blocks\"] = list(ex.map(make, [(k, m) for k in texts for m in mechs]))",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "28",
+   "quote": "- hint: one sentence that points to who speaks or what moment to look at, without quoting the line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/963297774d627c12.json",
+   "lines": "12",
+   "quote": "Look at the description of the face's mouth and expression in the first sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/ozymandias.md",
+   "lines": "4",
+   "quote": "Stand in the desert. Near them, on the sand,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "99",
+   "quote": "`test/fixtures/othello-items.json` and a play in `src/quality/personas.js`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "11",
+   "quote": "{ id: \"othello-opening\", title: \"Othello: the opening (unit film)\", file: \"Othello-opening-full.mp4\", vtt: \"Othello-opening-full.vtt\", poster: \"thumbnail-othello-love.jpg\" },",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.json",
+   "lines": "17, 24, 59, 115, 122, 129, 171, 199, 227",
+   "quote": "\"status\": \"failed\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "187, 794, 1401",
+   "quote": "\"value\": 0.02,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d2d7d0787d6754d9.json",
+   "lines": "97",
+   "quote": "\"The film belongs with this text: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "32",
+   "quote": "6/6 ready, 6 writer calls, 8 judge calls",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "47",
+   "quote": "No word in \"What is Captain Hook like?\" says where to look.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

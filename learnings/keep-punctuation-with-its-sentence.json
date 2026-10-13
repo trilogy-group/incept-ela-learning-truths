@@ -1,0 +1,71 @@
+{
+ "id": "keep-punctuation-with-its-sentence",
+ "title": "Keep punctuation with its sentence",
+ "statement": "When words in a sentence become answer choices, blanks or glossary buttons, keep the sentence's punctuation attached to its word or final choice, and check wrapping before and after selection.",
+ "example": "One staging sweep recorded 13 places where a sentence's comma or full stop fell alone onto a line below the answer choices.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Sentence-final full stops and commas fell onto a line of their own below groups of answer chips, 13 times in one staging sweep, and once after a glossary button at the end of a passage sentence, where the button and the full stop were separate elements. A fix confirmed on the one page first reported did not cover the other sentence-completion layouts. The repair direction keeps trailing punctuation with its sentence or selected ending and checks wrapping before and after a selection.",
+ "against": "A later laptop sweep did not reproduce it at 1100 × 700 on the four pages where the staging sweep had seen it at that width, and limits its own claim: \"No claim about other widths.\" (`grade3-reading/visual-findings-2026-09-07/laptop-student-sweep/README.md`, lines 60-61).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/README.md",
+   "lines": "81",
+   "quote": "The sentence-final period renders alone on a new line below the answer options, visibly detached from the sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/README.md",
+   "lines": "87",
+   "quote": "Repair direction: keep trailing punctuation with its sentence/selected ending instead of leaving it after a block of choices. Verify wrapping before and after a selection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "61",
+   "quote": "Expected: punctuation should stay attached to the sentence or final chip rather than occupy a separate line.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "63",
+   "quote": "This is the same defect family as earlier main finding V3, on additional staging pages. The previously sampled V3 fix does not cover all sentence-completion layouts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "65-81",
+   "quote": "Additional occurrences visually observed in the sweep (each has a saved image; the three above received dedicated re-navigation reproductions):",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "89",
+   "quote": "DOM evidence: the final glossary button uses class 'bk-gw' inside a 'bk-seek' span, followed by a separate period text node.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

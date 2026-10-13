@@ -1,0 +1,128 @@
+{
+ "id": "rewrite-whatever-is-reused",
+ "title": "Rewrite whatever is reused",
+ "statement": "Anything reused from another lesson or item, such as a check, step names, narration or a feedback line, must be rewritten for its new place.",
+ "example": "One narration line that made no sense was the same string in three lessons.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Hand reviews traced defects to pieces carried over from elsewhere: a quick check from a lesson on another skill, which taught the wrong skill; guided practice under another lesson's step names; a narration line that made no sense and was the same string in three lessons; and a feedback line that invented a story detail by copying a sentence from an earlier item.",
+ "against": "A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md`).",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "15",
+   "quote": "**1. p18-intro `skill-check` — the quick check teaches the wrong skill.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "94",
+   "quote": "It is the same string found in L12 and L14.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "18",
+   "quote": "It is the p4c Grandpa sentence (*\"Grandpa whistled and waved to every neighbor\"*) copied over.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "141",
+   "quote": "- step names copied from another lesson's procedure (item 2),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "15",
+   "quote": "Reused Grade 5 lesson IDs inherited unrelated completion and art",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/ASSETS.md",
+   "lines": "52",
+   "quote": "Retain their files/provenance, but none becomes a story scene merely because its colors fit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/RENDERER-PLAN.md",
+   "lines": "39",
+   "quote": "Recovery: 1. Remove the inherited association. 2. Use a truthful simple authored asset. 3. Keep media incomplete if required assets cannot be produced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "382",
+   "quote": "no reply string appears in two lessons",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "383",
+   "quote": "a reply that travels is a template nobody filled in.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2104",
+   "quote": "The reviewer heading says **Why this page: did they do it, or just feel it**, which describes a different distinction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2104",
+   "quote": "The original finite research compared 21 duplicate-label groups and 63 occurrences across the 89 Peter Pan pages. This was the only mismatch in that scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "268",
+   "quote": "**Two defects filed on `reading-9ur.113`, same class — `teacher_recap` copied from the wrong node:**",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/peter-pan/fill/l4-parity/wave30/VERIFY.md",
+   "lines": "38-39",
+   "quote": "No his-words leakage: grepped the new JSON for \"stranger\", \"Aladdin\", \"warm manner\", \"jaw tightened\", \"gift\" — zero hits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "98-100",
+   "quote": "Deliberate repetition across consecutive lessons reinforcing the same taught skill — not a copy-paste error",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

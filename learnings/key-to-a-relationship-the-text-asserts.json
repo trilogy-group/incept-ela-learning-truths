@@ -1,0 +1,86 @@
+{
+ "id": "key-to-a-relationship-the-text-asserts",
+ "title": "Key to a relationship the text asserts",
+ "statement": "In a question meant to show the text was understood, key the answer to a relationship the text asserts, since a single retrievable fact is easy to leak.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "demand",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's anti-leak writer rules ask for keys that hinge on a relationship the passage asserts (a cause it names, a contrast it draws, an inference it licenses) rather than a lone retrievable noun, since denser passages make relational keys both natural and harder to leak. For inference and theme items, the rationale must quote the two or more sentences whose combination licenses the inference, with no single-sentence lift.",
+ "against": "Some in-lesson checks are literal on purpose: a ruling keeps reading checks as retrieval, and whether a literal check must be about the theme's hinge was left open (`grade3-reading/knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd`, lines 64-66).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "48-51",
+   "quote": "At G5, prefer keys that hinge on a … **relationship the passage asserts** (a cause the text names, a contrast the text draws, … an inference the text licenses) rather than a lone retrievable noun — denser passages … make relational keys both natural and harder to leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "53-54",
+   "quote": "For inference/theme items, quote the two-or-more … sentences whose combination licenses the inference (no single-sentence lift).",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "8",
+   "quote": "What facial expressions are visible on the broken statue's head?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d872bc1dfbda65fb.json",
+   "lines": "87",
+   "quote": "a hint uses a word that hands the answer over, or the answer itself:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "42",
+   "quote": "\"third_nudge\": \"the words to read again, quoted exactly, still not the answer\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "63",
+   "quote": "a hint may quote the text, even the line to",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "64",
+   "quote": "read (its third rung), but it uses no leak word and copies no four-word run of the reveal outside a quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "22",
+   "quote": "\"third_nudge\": \"Read the words \\\"little note, nor long remember\\\" alongside \\\"never forget\\\" to see the contrast.\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

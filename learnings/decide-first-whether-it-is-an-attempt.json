@@ -1,0 +1,78 @@
+{
+ "id": "decide-first-whether-it-is-an-attempt",
+ "title": "Decide first whether it is an attempt",
+ "statement": "Decide first whether an answer is a real attempt: never grade nonsense, a joke or a refusal, and if no attempt comes, end with a model answer.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "marking",
+  "feedback",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's closing debate and its end-of-lesson reflection both tell the model to decide first whether the answer is a real attempt, any claim however rough, and to treat nonsense, 'idk', a single unrelated word, a joke or a refusal as no attempt, never pretending it is one and never calling it honest. A non-attempt is never quoted or praised: the debate says plainly that there is no position yet and asks again, and if neither answer is an attempt it closes with a model position, because the student must leave with an answer to the question. A live test of the paragraph task checks that nonsense is shown beside the model answer on return, not filed as plain secure.",
+ "against": "The reading checkpoint in the same build does not keep this apart: after a second try that is not secure it sets the verdict to secure (`othello-archive/src/steps/Reading.tsx`, line 156) and shows \"✓ Accepted\" under the answer (`othello-archive/src/ui.tsx`, line 99), so a second nonsense answer is shown as accepted.",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "48",
+   "quote": "Nonsense, \"idk\", a single unrelated word, a joke or a refusal is NOT an attempt. Never pretend it is one, and never call it honest.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "55",
+   "quote": "The student must leave with an answer to the question.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "70",
+   "quote": "First decide: is the answer NOW a real attempt at the learning question (any claim about it, however rough)? Nonsense, \"idk\", a single unrelated word or a refusal is not.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "72",
+   "quote": "If it is not an attempt: do not quote it and do not comment on it.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/verify-fix2.mjs",
+   "lines": "204",
+   "quote": "l1-ind on return: nonsense shown beside the model, not filed as plain secure",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/01-NON-NEGOTIABLES.md",
+   "lines": "42-43",
+   "quote": "**Refusals are acknowledged, never graded** (PRA-143). A refusal spends the attempt but is not \"wrong\"; zero quality credit, warm ack, beat completes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "45",
+   "quote": "Refusals are recognized locally (acknowledged, never judged).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

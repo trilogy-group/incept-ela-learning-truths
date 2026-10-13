@@ -1,0 +1,164 @@
+{
+ "id": "same-answer-same-verdict",
+ "title": "Same answer, same verdict",
+ "statement": "Make every verdict reproducible: judge at the most deterministic setting and freeze or cache each machine judgment, so the same input always gets the same verdict.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a reading lesson's review round, an identical typed answer was re-judged to a different verdict on resubmit. The fix ran the first judging attempt at the most deterministic model setting and cached identical resubmits so they return the same verdict at once. Freeze each machine judgment with its evidence before the pass-or-fail gate runs, so the same input, a resubmitted answer included, always gets the same verdict.",
+ "against": "The standard sits in a staged proposal, and nothing cited here shows its gate in use (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/README.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "39-40",
+   "quote": "running the first judging attempt at the most deterministic model setting and caching identical resubmits to return the same verdict instantly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "37-38",
+   "quote": "an identical typed answer getting re-judged to a different verdict on resubmit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/README.md",
+   "lines": "60",
+   "quote": "Same `course_id` + same `COMPLIANCE.md` + same referenced artifacts → same verdict and exit code. No model calls in the gate path; any machine-judged input must already be frozen into the ledger with its evidence tag before the gate runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/README.md",
+   "lines": "57",
+   "quote": "**Exit code:** `0` iff every required row is `PASS` (`all_green == true`); non-zero otherwise. This is the CI-gateable signal.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "108",
+   "quote": "a word in focus keeps the class Jev gave it, so the same lesson exports the same files and its render is reused",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "111",
+   "quote": "const hit = store.loadDoc(\"threejs-class\", b.key); if (hit?.cls) out[b.id] = hit.cls; else ask.push(b);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CURRENT-ACCOUNT-CACHE-INDEPENDENT-FINDING-by-film.md",
+   "lines": "5",
+   "quote": "Their different history strings have equal length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CURRENT-ACCOUNT-CACHE-INDEPENDENT-FINDING-by-film.md",
+   "lines": "7",
+   "quote": "Observed: first score 1; second score 1, with only one synthetic fetch across both requests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CURRENT-ACCOUNT-CACHE-INDEPENDENT-FINDING-by-film.md",
+   "lines": "9",
+   "quote": "`verdictCacheKey` uses instruction length, its first 200 characters and latest text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/FINAL-IMPLEMENTATION-AND-VERIFICATION-v3.md",
+   "lines": "9",
+   "quote": "its key now encodes the complete instruction and the existing trimmed, lowercased typed answer as a JSON tuple.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/FINAL-IMPLEMENTATION-AND-VERIFICATION-v3.md",
+   "lines": "11",
+   "quote": "Both required recounts distinguish equal-length changed histories in both verdict directions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/FINAL-IMPLEMENTATION-AND-VERIFICATION-v3.md",
+   "lines": "11",
+   "quote": "Identical complete asks reuse their verdict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/PROPOSAL.md",
+   "lines": "5",
+   "quote": "QA16 says an exact unedited resubmission must retain its verdict; a different result is a scorer bug, not the child's fault",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/PROPOSAL.md",
+   "lines": "9",
+   "quote": "A→B→A forgets A and calls judgeSlotTurn again with attempt3, both prior answers in history and the current metAlready.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/IMPLEMENTATION.md",
+   "lines": "7",
+   "quote": "Each scoped owner now maps a judged, trimmed exact answer to its original settled turn ID.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "97",
+   "quote": "A different result the second time is a scorer bug, not the child's fault.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2893",
+   "quote": "Current lastScoredRef forgets A and makes a third judged request, allowing contradictory verdict or premature floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "158-162",
+   "quote": "**The same answer must earn the same verdict.** An open-response scorer that returns \"Almost\" and then accepts the identical word on resubmission teaches a child that grading is a slot machine. Judgment retries must not resample at a different temperature; only PARSE failures may re-ask, and a scored verdict for identical answer text within an attempt session should be sticky.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/evidence/GATE-TRANSCRIPT.md",
+   "lines": "8",
+   "quote": "(Compounding is LLM/stochastic — not byte-reproducible like the deterministic gates below.)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

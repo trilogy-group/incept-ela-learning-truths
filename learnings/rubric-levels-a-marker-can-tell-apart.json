@@ -1,0 +1,86 @@
+{
+ "id": "rubric-levels-a-marker-can-tell-apart",
+ "title": "Rubric levels a marker can tell apart",
+ "statement": "A scoring rubric needs levels a marker can tell apart, every level reachable from the question, and less credit for a plausible misreading than for a correct reading.",
+ "example": "A marker must be able to tell a score of 2 from a 1 without re-reading the passage.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's audits of short and extended written-response items check a rubric's levels (`shadow-bench/src/inceptbench/prompts/question/scr_evaluation.txt`, `shadow-bench/src/inceptbench/prompts/question/ecr_evaluation.txt`). A marker must be able to tell a 2 from a 1 without re-reading the passage, the 0 level must describe what makes a response wrong or irrelevant, and all three levels must be achievable from the stem and the passage. A rubric fails when a plausible but wrong reading of the passage earns the same credit as the right one, and the extended audit gives the reason levels must differ: vague or overlapping descriptors hurt agreement between markers.",
+ "against": "A missing rubric is only flagged: '- Prompts missing a rubric or scoring guidance are Partial — flag but do not auto-fail.' (`shadow-bench/src/inceptbench/prompts/question/ecr_evaluation.txt`, line 130). In the short-response audit only indistinct or unreachable levels must fail; a 0 level that says only that the student did not respond fails nothing on its own (`shadow-bench/src/inceptbench/prompts/question/scr_evaluation.txt`, lines 61-62).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "38-39",
+   "quote": "- Score 2 and Score 1 must be distinguishable: a scorer must be able to tell them apart without re-reading the passage. If they collapse to the same criterion (\"uses evidence\"), fail.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "40",
+   "quote": "- Score 0 must describe what makes a response wrong or irrelevant, not just \"student did not respond.\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "41",
+   "quote": "- All three levels must be achievable given the question stem and the passage content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "141-142",
+   "quote": "- Fails if a plausible but wrong interpretation of the passage would earn the same credit as the correct interpretation, OR if all reasonable interpretations earn full credit.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "151-153",
+   "quote": "- Checks whether the rubric tiers are distinguishable: can a scorer tell the difference between a Score 2 and a Score 3 response? If descriptors are vague or overlapping, inter-rater reliability suffers → distractor_quality = 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "130",
+   "quote": "- Prompts missing a rubric or scoring guidance are Partial — flag but do not auto-fail.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "61-62",
+   "quote": "**MUST-FAIL** (`distractor_quality = 0.0`) if `score_2_vs_1_distinguishable: NO` OR `all_levels_achievable: NO`. Rubric tiers that collapse make fair scoring impossible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1926",
+   "quote": "Levels beyond ~4 often become subjective and unstable; collapse or re-author as two simpler items.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

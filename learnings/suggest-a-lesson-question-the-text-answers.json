@@ -1,0 +1,72 @@
+{
+ "id": "suggest-a-lesson-question-the-text-answers",
+ "title": "Suggest a lesson question the text answers",
+ "statement": "For a text without a lesson question, draft several and keep one only on a judge's positive evidence that the text answers it.",
+ "example": "In the 12 October run a poem and a speech each got a usable open question this way, and all 32 blocks were made from those two questions.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "alignment",
+  "stem"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "For a text that comes without a question, the lesson engine asks a writer for three open questions answerable from the text alone, keeps those code finds well formed, and keeps the first one a judge finds answerable from the passage and worth a lesson of about an hour, on positive evidence. The result is cached under a hash of the text, so the same text is always given the same question. In the 12 October run both new texts got a usable open question this way, and every block on each was made from it.",
+ "against": "The judge is asked two things at once, whether the question can be answered from the passage alone and whether it is worth a lesson of about an hour. The poem's suggested question was also narrower than the sample question it came with: 5 of its 14 lines were ranked for it, against 13 lines judged relevant to the sample question in the 9 October proof. With no judge present, the lesson engine keeps and caches the first well-formed draft unchecked (`g9/transformer/src/question.js`, lines 31-37).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "3",
+   "quote": "positive evidence. Cached by text, so the same text is given the same question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "34",
+   "quote": "Can question_${i} be answered from passage alone, and is it worth a Grade 9 lesson of about an hour?",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.json",
+   "lines": "4",
+   "quote": "\"gettysburg\": \"How does the speaker contrast the actions of the soldiers with the words spoken at the dedication?\"",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test.py",
+   "lines": "16",
+   "quote": "b = post(\"/api/block\", {\"text\": texts[k], \"question\": out[\"questions\"][k], \"mechanic\": m, \"n\": 1})",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/index.json",
+   "lines": "6",
+   "quote": "\"question\": \"What does the poem suggest about power and time?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "32",
+   "quote": "13 lines judged relevant to the question.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

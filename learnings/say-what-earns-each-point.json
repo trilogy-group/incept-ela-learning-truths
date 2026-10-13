@@ -1,0 +1,279 @@
+{
+ "id": "say-what-earns-each-point",
+ "title": "Say what earns each point",
+ "statement": "Write marking criteria for each question that say exactly what earns each point, not a generic category or task-type rubric, so vague answers fail and valid wordings pass.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP evaluator scores the marking criteria of a short-answer item as a binary check, in the slot it uses for distractor quality on choice items. It passes with clear criteria for what earns each point and well-defined acceptable answers, and fails with ambiguous criteria, where it is unclear what a correct response is. Generic wording passes a judge as clear criteria without separating a vague answer from a good one, though every fact the guide lists is another chance to be wrong.",
+ "against": "an AP generator's spec requires specific evidence for each point, and a smaller model told not to list specific facts listed wrong ones instead. the study marked code, not written answers, and in the AP work the named evidence items written into each question's scoring notes were where errors gathered: 15 of 17 factual-accuracy failures were in the scoring notes, and the fix was notes that describe the reasoning that earns the point instead of listing evidence. Naming facts in a guide adds chances to be wrong: one wrong example in a list of three discredited a sample answer (`icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md`). Rubrics do not by themselves make the judgement of complex work valid; that depends on how well they fit the construct and the task (`grade3-reading/knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd`). The 15 of 15 came from five changes made at once on a 15-item set, so how much the topic-specific guide contributed is unknown.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "55",
+   "quote": "**What it measures (reinterpreted for SAQ):** Are scoring criteria clear and unambiguous?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "56",
+   "quote": "- Score 1.0: Clear criteria for what earns each point; acceptable answers are well-defined",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "57",
+   "quote": "- Score 0.0: Ambiguous scoring criteria; unclear what constitutes a correct response",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/saq_evaluation.txt",
+   "lines": "41",
+   "quote": "Parts require specific evidence, examples, or reasoning; generic answers would not earn points",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "5",
+   "quote": "34/34 = 100%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "94",
+   "quote": "which it scores as \"clear criteria\" even when X is generic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "123-124",
+   "quote": "the criterion must specify a SPECIFIC, NAMED historical fact that the example must satisfy, not a generic category.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "66-67",
+   "quote": "were all chronology errors in scoring_notes",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "122",
+   "quote": "15 of 17 factual_accuracy failures were in the scoring notes, not in the question content itself.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "124",
+   "quote": "Describe analytical reasoning that earns the point (no evidence lists).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "126",
+   "quote": "15 of 17 factual_accuracy failures in SAQ disappeared immediately.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "181",
+   "quote": "The single biggest per-change jump",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "56",
+   "quote": "no_source | 50% | 70% | Best factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "baseline | 45% | 60% | Standard prompt",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/AP_GENERATOR_SPEC.md",
+   "lines": "69",
+   "quote": "exactly 3 parts, 1 point each, specific evidence required",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "62",
+   "quote": "Telling the model \"don't use specific facts\" just means it uses wrong specific facts instead of right ones.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md",
+   "lines": "131",
+   "quote": "- specify what earns credit without narrowing valid student phrasing too much.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "60",
+   "quote": "Question-specific rubrics: Spearman correlation 0.763-0.906 with human grades vs 0.510 for generic rubrics",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "59",
+   "quote": "Compares question-specific vs question-agnostic rubrics for code evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "61",
+   "quote": "Our rubrics already follow this principle (per-question evidence examples)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-06T0825Z_synapse_enrolled_learnings_published.md",
+   "lines": "23",
+   "quote": "LLM judge requires cell-type-specific rubric overlays, not generic rubric",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "122-124",
+   "quote": "Add a check: the criterion must specify a SPECIFIC, NAMED historical fact that the example must satisfy, not a generic category.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "323",
+   "quote": "rubric use can increase scoring consistency, especially when rubrics are analytic, task- or topic-specific, and supported with exemplars and/or rater training.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "322",
+   "quote": "Corpus: the review identified ~75 relevant studies on rubric use.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "320",
+   "quote": "Jonsson & Svingby (2007) — “The use of scoring rubrics: Reliability, validity and educational consequences,” Educational Research Review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "325",
+   "quote": "Educational consequences: reported benefits include greater transparency of criteria and support for learning (e.g., through feedback, self-/peer assessment), though effects depend on implementation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "324",
+   "quote": "Validity: rubrics do not, by themselves, guarantee valid judgement of complex performances; validity depends on alignment to the construct and task.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "171",
+   "quote": "- rubric must match prompt scope;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "211",
+   "quote": "LEQ needed topic-specific rubric notes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "224",
+   "quote": "- LEQ repair is topic-specific instead of using a generic regional-economic rubric.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "218",
+   "quote": "15/15 = 100%, avg overall 0.998667.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T000424Z_exploits_EXPLOIT-004-saq-no-stimulus/source_report.md",
+   "lines": "122-124",
+   "quote": "Add a check: the criterion must specify a SPECIFIC, NAMED historical fact that the example must satisfy, not a generic category.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T000424Z_exploits_EXPLOIT-004-saq-no-stimulus/source_report.md",
+   "lines": "119-122",
+   "quote": "The current SAQ-reinterpretation of distractor_quality accepts the \"Simply naming X without Y\" counterexample template as sufficient \"clear criteria\" — even when the template's X/Y are generic.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "247",
+   "quote": "Two of three authored criteria. Counted over the AUTHORED criteria, never over whatever the model chose to mention.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rubric Is All You Need: Improving LLM-Based Code Evaluation (arXiv 2503.23989)",
+   "url": "https://arxiv.org/html/2503.23989v1"
+  },
+  {
+   "ref": "Jonsson & Svingby 2007",
+   "url": "https://doi.org/10.1016/j.edurev.2007.05.002"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

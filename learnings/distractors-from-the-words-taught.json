@@ -1,0 +1,50 @@
+{
+ "id": "distractors-from-the-words-taught",
+ "title": "Distractors from the words taught",
+ "statement": "In a word-meaning check, make every wrong option a word the lesson taught, because an untaught word can be ruled out by unfamiliarity alone and so tests nothing.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course's content-failure log adds this to its vocabulary gate: a meaning-check distractor must be a word the lesson teaches, since a distractor naming an untaught word can only be eliminated by unfamiliarity (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md`, lines 73-74). It is one rule from one log, with no count of how many checks broke it.",
+ "against": "A later run found counter-evidence (`grade3-reading/engine/reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "73",
+   "quote": "Also: a meaning-check distractor must be a word **this lesson teaches**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "73-74",
+   "quote": "A distractor naming an untaught word can only be eliminated by unfamiliarity, so it tests nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "10-11",
+   "quote": "Fix: distractors in the same form (enchanting → boring, puzzling, soothing; menacing → comforting, welcoming, charming).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

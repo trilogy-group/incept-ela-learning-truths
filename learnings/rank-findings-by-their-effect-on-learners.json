@@ -1,0 +1,83 @@
+{
+ "id": "rank-findings-by-their-effect-on-learners",
+ "title": "Rank findings by their effect on learners",
+ "statement": "Rank findings by effect on learners: anything that can mislead, falsely reject, block or wrongly advance a learner holds the work, polish comes last, and preferences aren't defects.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The Grade 5 instruction-review profile ranks findings by what they do to learners (`grade3-reading/edullm-review-hub/course-packages/courses/g5-reading/review/generated/instruction-review-profile.json`, lines 129-133). Its top priority blocks bounded review because a learner can be misled, falsely rejected, unable to complete the intended work or given invalid progression; the next must be corrected before external submission because instruction, feedback or transfer is materially weaker than the intended design; presentation polish comes last and cannot override either.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "130",
+   "quote": "Blocks bounded review because a learner can be misled, falsely rejected, unable to complete the intended work, or given invalid progression.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "131",
+   "quote": "Must be corrected before external submission because instruction, feedback, or transfer is materially weaker than the intended learning design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "132",
+   "quote": "Presentation polish required before production; it cannot override a P0 or P1 student-outcome requirement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "103",
+   "quote": "Tier 1: semantic student-task validity, truthful gate/score meaning and complete evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "103",
+   "quote": "Tier 2: consistency, readable layout, keyboard flow, recoverable errors",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "103",
+   "quote": "Tier 3: secondary viewport/aesthetic refinements.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "73",
+   "quote": "Use P0 for blocked completion, P1 for a materially confusing/broken task, P2 for a usable but harmful inconsistency, P3 for an optional refinement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "73",
+   "quote": "Do not inflate a subjective preference into a defect.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

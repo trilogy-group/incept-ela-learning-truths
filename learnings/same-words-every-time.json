@@ -1,0 +1,388 @@
+{
+ "id": "same-words-every-time",
+ "title": "Same words every time",
+ "statement": "Give each taught word or concept one complete definition of its real meaning, not an incidental property, used word for word wherever it returns, keeping words taught together distinct.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A rebuilt lesson keeps each word's definition identical, word for word, on its card, in every passage glossary and in the wrap, under a one-definition rule that a validator enforces, because definition drift makes the child re-learn the word each time. A research summary on intro videos says to use the same vocabulary for an idea already taught, and the curriculum's coherence guidance asks a reading lesson to stay consistent with how the subject app framed a topic: vocabulary, level of nuance and framing. The science misconception synthesis shows what loose wording costs: biology's \"high-energy phosphate bonds\" language contradicts the chemistry and re-teaches the misconception even to students who learned the chemistry correctly. The definition gives the word's real meaning, and the wording carries from card, glossary, narration, feedback and review to other lessons, units and courses, checked in code. Words taught together are kept distinct, with none inside another's definition.",
+ "against": "Keeping the same words is not always the aim: sometimes testing whether students can transfer across surface variation is the point. The lesson engine glosses each word for the sense its own line uses (see 'Words that carry the knowledge'), so one fixed definition could be wrong where a word changes sense. whether taught words are distinct is not checked in code. One wording used everywhere spreads its errors too: one wrong definition sat on every visible passage of a lesson (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). The comparison needs stemming: \"Without stemming, L5 *menacing* was a false positive.\" (`shadow/content-eval/SKILL.md`, lines 314-315). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/VOCABULARY-CONSISTENCY-PROPOSAL.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "79",
+   "quote": "definition identical, word for word, on the card, in every passage glossary, and in the wrap — the one-definition rule from your reviews, enforced by a validator.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "37",
+   "quote": "One definition per word, identical everywhere it appears | Definition drift makes the child re-learn the word each time",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "338",
+   "quote": "Always use the same vocabulary to talk about an idea already taught so as not to confuse.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Brainlift social science and science coherence.md",
+   "lines": "14",
+   "quote": "the Read/Write lesson should be consistent with how it was framed in the subject app — vocabulary, level of nuance, framing.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "31 (textutil text)",
+   "quote": "Biology textbooks use \"high-energy phosphate bonds\" language that directly contradicts the correct chemistry.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "31 (textutil text)",
+   "quote": "Even students who learned the correct chemistry are re-taught the misconception in biology class.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "38-39",
+   "quote": "One definition per word, used everywhere it recurs — reading goal, passage glossary, feedback",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "39-40",
+   "quote": "choose the best definition and make sure your LLM uses the same one throughout",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "157-158",
+   "quote": "fixed by using one card definition everywhere the word recurs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd",
+   "lines": "34",
+   "quote": "Reinforce, do not redefine",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd",
+   "lines": "36",
+   "quote": "Where a topic has already been covered, the Read/Write lesson should be consistent with how it was framed in the subject app, including its vocabulary, level of nuance, and framing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "65",
+   "quote": "3,003 child-facing strings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "65-66",
+   "quote": "regex-hunting for number-word/countable-noun mismatches, same-term double-meanings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "67",
+   "quote": "Result: 0 live contradictions",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "132",
+   "quote": "sometimes testing whether students can transfer across surface variation is the point",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "38",
+   "quote": "One definition per word, used everywhere it recurs — reading goal, passage glossary,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "30-31",
+   "quote": "Taught words in one lesson must be distinct — never overlapping in meaning, never one appearing inside another's own definition",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "32",
+   "quote": "Not enforced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "105",
+   "quote": "*blend* even appears inside the definition of *camouflage*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "105",
+   "quote": "- Choose distinct vocabulary words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "105",
+   "quote": "overlap too much; *blend* even appears inside the definition of *camouflage*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "43",
+   "quote": "One definition per word, verbatim everywhere",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "19",
+   "quote": "three different trait rules; feelings keyed as traits; invented \"again and again\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "24",
+   "quote": "\"triumphant\" two meanings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/KB_FURTHER_IMPROVEMENTS.md",
+   "lines": "46",
+   "quote": "Canonical hinge proposition per weak skill** propagated verbatim teach→CFU→review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "217",
+   "quote": "subject and verb\" fails the rubric for being right. If the card must exist, define",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/VOCAB-DECISIONS-U1.md",
+   "lines": "31",
+   "quote": "the canon defines `evidence` three different ways",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "186",
+   "quote": "A2 one verbatim definition per concept",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "805",
+   "quote": "J16-SCI-003: Reinforce rather than silently redefine established domain knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "805",
+   "quote": "J16-SCI-006: Keep cross-domain terminology and mechanisms consistent.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "148",
+   "quote": "energy language in one unit contradicting another (ATP archetype)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "148",
+   "quote": "scan all units together; flag conflicting framings of energy/conservation",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "149",
+   "quote": "reinforce-don't-redefine (consistent with the subject app's framing)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "95",
+   "quote": "The glossary and the video also define things differently: jewels are \"Rare stones\" vs \"precious stones\", and the glossary adds that a genie \"lives in a lamp or ring\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "281",
+   "quote": "the card, glossary, review frame and meaning lines define the word differently (stemmed word overlap under 0.34)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "280",
+   "quote": "| `VOCAB-DEF-CIRCULAR` | med | the definition uses the word itself |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "106-107",
+   "quote": "A taught concept has exactly **one** authored definition string, and every surface that defines it uses that string verbatim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "111-113",
+   "quote": "A definition that omits the load-bearing part of the concept teaches a wrong one even though every word in it is true.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "137-138",
+   "quote": "Prefer a definition by **method** (what the character *does*) over one by **property** (what they *are*).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "126",
+   "quote": "*trickster* carried **four** definitions in one lesson",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v10/README.md",
+   "lines": "7",
+   "quote": "Consistency sweeps across a unit: terms, glossary priorities, key quotations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "94-98",
+   "quote": "Distractor 3 is the only one that already contains the word \"poem\", so it is the one distractor a child picks *because* they heard the video say poem and reached for the vocabulary. The correction they read answers a length objection and drops the genus, so the child who was closest to right is the only one whose feedback never tells them an epic is a poem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "101",
+   "quote": "Rewrite feedback[3] so it carries the genus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "41",
+   "quote": "maintain one definition across cards, text, feedback and media.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "880",
+   "quote": "Choose one definition for a taught word and use exactly it in every later mention, including the reading goal, the passage glossary and any feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/VOCABULARY-CONSISTENCY-PROPOSAL.md",
+   "lines": "16",
+   "quote": "That depicts anticipation in their fight; it does not establish a particular plan or prove that nobody notices it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/subjects/reading.md",
+   "lines": "34-36",
+   "quote": "**Define by method, not by property.** Define the word by what the thing DOES (\"wins by using smart tricks, not by fighting\"), never by a property (\"wins because he is small and clever\") that excludes cases that fit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "32",
+   "quote": "The reviewer found two definitions. There are **four**:",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "104-106",
+   "quote": "It caught one the day it was written: shortening `trial`'s card left the story's glossary still handing a child the old three-sentence version.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "194",
+   "quote": "define the word by what the thing DOES, never by what it IS. 'wins by using smart tricks, not by fighting' is right; 'wins because he is small and clever' is wrong, because it makes a property part of the meaning and excludes cases that genuinely fit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "152",
+   "quote": "validate-vocab-earned.mjs requires every instance of a term to agree word for word, so all seven must change together or the check goes red",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

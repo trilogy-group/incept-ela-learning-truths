@@ -1,0 +1,134 @@
+{
+ "id": "keep-the-answers-out-of-the-test",
+ "title": "Keep the answers out of the test",
+ "statement": "Keep expected verdicts, answer keys, flaw names and split labels out of everything a model under test sees, file names and retrieval queries included.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An evaluation design for a model that judges lesson fragments against one rule gives the judge only the objective, the fragment and the resolved rule, never the family, the split, the private annotation, an expected verdict or a flaw name, and it forbids expected labels, rationales or flaw names in retrieval queries, file names shown to the model, prompts or tool responses (`uae-education-ai/EVALUATION.md`). A plan for a model that decides whether to release a hint keeps family IDs, answer keys and gold decisions outside model input and retrieval in the same way (`uae-education-ai/HERETIC_PLAN.md`). Both are designs; neither has been run as an evaluation.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "12",
+   "quote": "It does not see `family_id`, `split`, `reviewer_annotation`, any expected verdict, or a flaw name.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "40",
+   "quote": "Do not put expected labels, rationales, or flaw names in retrieval queries, filenames shown to the model, prompts, or tool responses.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "14",
+   "quote": "Never load the whole annotated record into a model prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "7",
+   "quote": "Family IDs, answer keys, gold decisions, reviewer annotations, and case-type labels stay outside model input and retrieval.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "3",
+   "quote": "**Status:** Experiment design only. No model has been run or trained, and no performance or learning outcome is claimed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "323-325",
+   "quote": "- student-mode screenshots and action traces only; - no rules, `OJ-*`, `RP-*`, Golden IDs, answer keys, source files, hidden DOM, debug API, reviewer controls, adult help, or other persona results; - actual developmental suitability remains `VERIFY` until human learner evidence exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "367",
+   "quote": "8. **Student projection leaked forbidden context.** The full character object exposed owner/evidence/anti-vacuity content and the raw HTML exposed source/hidden state.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5074",
+   "quote": "With a ranker, it scored 91.6% to 97.2% on every habit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5076",
+   "quote": "On inspection, our test problems often described the flaw.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5081",
+   "quote": "our model scored 63% with the ranker, against 11% for an untrained 14B (100 questions; p under 0.001);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5083",
+   "quote": "This is not proof. Our model trained on leaky data, so only good data can show how far the recipe goes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/unit9-l1-l4/README.md",
+   "lines": "13",
+   "quote": "Assessment rubrics, answer indices, answer/reveal fields and feedback variants were excluded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "64",
+   "quote": "blind_probe_sample.py emitted blind_text beginning with the correct-response tokens ('ChoiceC ChoiceA') plus 'Great/you picked' feedback for 5/5 live EBSR items, making the attempt-before-key protocol impossible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/03_AUDIT_FINDINGS_AND_OPEN_RISKS.md",
+   "lines": "128",
+   "quote": "- Calibration's static expected-answer constants make gaming easier and do not demonstrate general evidence fidelity.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5251",
+   "quote": "Keep labels such as “unsupported claim” out of the model-facing prompt.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

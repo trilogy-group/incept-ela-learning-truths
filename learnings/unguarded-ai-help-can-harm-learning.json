@@ -1,0 +1,62 @@
+{
+ "id": "unguarded-ai-help-can-harm-learning",
+ "title": "Unguarded AI help can harm learning",
+ "statement": "Unrestricted AI help can raise practice scores while lowering later unaided performance, and in one high-school mathematics experiment guardrails reduced that harm.",
+ "group": "how-people-learn",
+ "role": "context",
+ "facets": [
+  "hints",
+  "practice",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The Grade 9 unit's design brief cites a high-school mathematics experiment in which unrestricted GPT assistance improved practice performance while reducing later unaided performance, and in which guardrails mitigated the harm (`g9/transcript/chat-transcript.redacted.txt`, line 3077). The brief reads it as a warning to test independent learning. Its plan for independent practice keeps agents from suggesting interpretations, selecting evidence or improving the answer during the attempt, and records any requested help as assisted before offering a fresh independent attempt (line 2881).",
+ "against": "The brief calls it \"a warning to test independent learning, not proof of the same effect in English\" (`g9/transcript/chat-transcript.redacted.txt`, line 3077): it was measured in mathematics only.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3077",
+   "quote": "A high-school mathematics experiment found that unrestricted GPT assistance improved practice performance while reducing subsequent unaided performance.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3077",
+   "quote": "guardrails mitigated the harm.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2881",
+   "quote": "Agents do not suggest interpretations, select evidence or improve the answer during the independent attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2881",
+   "quote": "If the student requests instructional help, we record the attempt as assisted and later offer a fresh independent opportunity.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Generative AI without guardrails can harm learning: Evidence from high school mathematics (PNAS, 2025)",
+   "url": "https://doi.org/10.1073/pnas.2422633122"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,363 @@
+{
+ "id": "no-pass-by-default",
+ "title": "No pass by default",
+ "statement": "No check passes by default when what it inspects or needs is missing, because otherwise leaving a part out becomes the easiest way to pass.",
+ "example": "Two automatic passes for leaving out the source lifted first-try pass rates from about 50% to 76-92% on three item types.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Red-team runs against a content judge found that an item with no source earned two automatic passes, \"no stimulus = PASS\" and \"N/A → pass\", and that leaving the source out moved first-try rates from about 50% to 76-92% on three item types (`icloud-work/aptraining/Cheater/reports/FINAL_REPORT.md`; `icloud-work/aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md`). It also switched off the judge's costliest check, the one for answers a student could reach without the subject knowledge, which runs only when a source is present (`icloud-work/aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md`). A reading of the same judge's code found that when its curriculum reference came back empty it kept grading rather than failing the row, and its alignment checks default-passed on the missing data (`icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md`). A missing required part fails the item, a judge without its reference gives no verdict, and 'not applicable' is recorded apart from 'pass'.",
+ "against": "Some item types legitimately have no source, so what counts as required has to come from each type's specification: \"Many textbook drills and formative-assessment items omit stimuli for the same reason (faster recall practice).\" (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md`, lines 212-214). items without a source are legitimate for quick recall practice, as the exploit study itself notes. On fresh items the source-free version passed 45 of 50, 90%, only 4 points above the raw model's 86% (icloud-work/aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/cheater_validation_verdict.md, line 3; icloud-work/aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/SECOND_TIER_REASON.md, line 10). Source-free items suit stem-only practice drills (same file, line 19), and the project's own generator checklist said '- [ ] If unsure of a source — drop the stimulus, write a non-stimulus item' (icloud-work/aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md, line 24).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FINAL_REPORT.md",
+   "lines": "96-99",
+   "quote": "The single most exploitable rubric default is **stimulus_quality Mode C \"no stimulus = PASS\"** combined with **passage_reference \"N/A → pass\"**. This grants 2 free metrics to any MCQ/SAQ/LEQ that simply omits a stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md",
+   "lines": "34-35",
+   "quote": "This alone moves single-shot rates from ~50% (baseline v80b trained to emit stimuli) to ~76-92% across the 3 cells.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "33-35",
+   "quote": "But it is *only* run when a stimulus is present. Strip the stimulus and the probe never fires.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md",
+   "lines": "121",
+   "quote": "Critical: `_get_ap_curriculum_context` is \"fail-closed\" — but \"fail-closed\" here means \"return empty context and continue grading,\" NOT \"fail the row.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md",
+   "lines": "19",
+   "quote": "because tier-2/3 metrics (`curriculum_alignment`, `difficulty_alignment`) default-pass on missing data per R20.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "212-214",
+   "quote": "Many textbook drills and formative-assessment items omit stimuli for the same reason (faster recall practice).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "414",
+   "quote": "No stimulus = PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "33",
+   "quote": "catches almost all of the v50 failures",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/EXPLOIT_CATALOG.md",
+   "lines": "74",
+   "quote": "v50 K=1 (baseline, with stimulus) | 150 | ~56%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/EXPLOIT_CATALOG.md",
+   "lines": "76",
+   "quote": "Hand-crafted EXPLOIT-002 | 30 | 100%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "23",
+   "quote": "Banned stimulus entirely — stimulus SAQs consistently fail evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "14",
+   "quote": "SAQ | 50% | 95-100% | Ban stimulus, force \"Explain\" verb, recall detector",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "63",
+   "quote": "- B1: `stimulus_quality` Mode C default-pass when no curriculum `requires_stimulus` flag is present.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "64",
+   "quote": "- B2: zero-knowledge educational probe runs only when a stimulus is present.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "27",
+   "quote": "- If no difficulty definitions are provided, `difficulty_alignment` defaults to pass.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/evaluator.py",
+   "lines": "168",
+   "quote": "return DimensionScore(score=1.0, reasoning=default_reasoning, issues=[])",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "16-18",
+   "quote": "For APUSH MCQs, the curriculum data does **not** carry that flag, so Mode C applies and \"no stimulus = PASS\" — even though every real AP US History MCQ includes a primary-source stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "32-35",
+   "quote": "The probe is the single most expensive check in the MCQ rubric — it catches almost all of the v50 failures. But it is *only* run when a stimulus is present. Strip the stimulus and the probe never fires.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "7",
+   "quote": "- Hand-crafted control batch: **30/30 = 100%** (avg 0.9987; 28 SUPERIOR, 2 ACCEPTABLE)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T000424Z_exploits_EXPLOIT-004-saq-no-stimulus/source_report.md",
+   "lines": "5",
+   "quote": "**Pass rate**: **34/34 = 100%** on n=34 items (17 distinct APUSH SAQ KCs × 2 variants) via v80bchain (avg overall score **0.994**)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "When the mirror is missing, fall back to src/text.js findQuote instead of passing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "54",
+   "quote": "Without its tools, src/text.js findQuote, so a missing mirror never passes a quote",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "73",
+   "quote": "if (!available) return text;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "64",
+   "quote": "[] if its tools are absent.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/tools/blind_solve.py",
+   "lines": "20",
+   "quote": "``blind_solvable=False`` (never a false gameable flag), so it can only *tighten*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "139",
+   "quote": "The explicit applicability predicate is false and evidence proves why; missing evidence cannot justify this verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "138",
+   "quote": "Required source or runtime evidence is missing, broken, or inaccessible; this is never a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "160",
+   "quote": "A missing passage, inaccessible runtime, broken flow, or absent teaching layer is NOT_EVALUABLE.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "21",
+   "quote": "Applicability is separate from the decision. A non-applicable conditional requirement records a reason; it does not create a fourth decision.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "49-50",
+   "quote": "The gate owns the fixed 27-ID expectation independently, so deleting a row cannot make a lesson disappear from the check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "13",
+   "quote": "Validate an expected source inventory as well as present fields. Missing work must fail explicitly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/static-scoring-audit.md",
+   "lines": "21",
+   "quote": "Missing routes, HTML fallback pages, HTTP error responses, malformed result objects and explicit unscored verdicts cannot become passes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "58",
+   "quote": "Automatically mark the activity done on failure: weakens the existing outage allowance and hides the service defect.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "49",
+   "quote": "Detect: missing cue fields, unknown module IDs, or changed G9 working tree.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "39",
+   "quote": "- Missing or unreadable target bytes are a hard runner error. Missing specialist evidence on an otherwise inspectable target becomes `VERIFY`, never a fabricated pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md",
+   "lines": "49-50",
+   "quote": "`canonical/science-misconception-scope.json` is the single scope ledger. The gate owns the fixed 27-ID expectation independently, so deleting a row cannot make a lesson disappear from the check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "315-316",
+   "quote": "it silently makes the first option the answer** — so a missing `answer` key does not fail loudly, it ships a wrong key.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "181-184",
+   "quote": "a compare turn once shipped grounding keyed by trick instead of a plain array, so `grounding?.length` silently evaluated to nothing and a scored lesson could praise a child for naming an animal absent from the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "104-107",
+   "quote": "**A gate whose subject is MISSING fails loudly.** `gates/resolve.mjs` throws rather than returning `undefined`, because this project has been burned by the opposite more than once: a gate asserting something true about the wrong subject, green all the way, while the defect it was written for shipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "20",
+   "quote": "The old verifier omitted 30 nested objects and could report success after missing-file filtering or a wrong stamped model.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "100",
+   "quote": "verdict: ['secure', 'partial', 'off'].includes(r.verdict) ? r.verdict : 'partial'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/op-lint/README.md",
+   "lines": "75-76",
+   "quote": "an atom that does not declare itself blocking is treated as skippable (absence of a guarantee is not a guarantee).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-quality-review/references/rubric.md",
+   "lines": "21-22",
+   "quote": "evidence to judge this dimension was not provided (e.g. `atom_fidelity` with no script). Never silently upgraded to PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "104-107",
+   "quote": "`gates/resolve.mjs` throws rather than returning `undefined`, because this project has been burned by the opposite more than once: a gate asserting something true about the wrong subject, green all the way, while the defect it was written for shipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "59",
+   "quote": "The source gate fails closed. Missing provenance produces an open source task, not a best-effort citation or a readiness claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "174-175",
+   "quote": "unconditionally accepts anything including empty strings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "194-195",
+   "quote": "gate on non-empty input (`words(t)>=1`) before accepting, so a blank submission cannot silently pass",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

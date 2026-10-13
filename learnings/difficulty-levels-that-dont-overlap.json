@@ -1,0 +1,41 @@
+{
+ "id": "difficulty-levels-that-dont-overlap",
+ "title": "Difficulty levels that don't overlap",
+ "statement": "Define a standard's difficulty levels so they don't overlap, and check that every learning objective still maps to at least one of them.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "demand",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The curriculum review skill lists reworking a standard's difficulty definitions so that easy, medium and hard partition the input space as a recurring kind of change, approved if every learning objective still maps to a tier. The evaluator relies on these definitions: when none are provided, its base rules tell the judge not to fail difficulty on its own judgment and to score it 1.0.",
+ "against": "One row of a review table, with no measurement behind it.",
+ "evidence": [
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "46",
+   "quote": "| **Disjoint difficulty tiers** | Reworks `difficulty_definitions` so easy/medium/hard partition the input space | **Approve** if every learning objective still maps to a tier |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "35",
+   "quote": "Failing `difficulty_alignment` using your own judgment when no curriculum difficulty definitions are provided. Without definitions → 1.0.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

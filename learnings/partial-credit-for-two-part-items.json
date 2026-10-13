@@ -1,0 +1,129 @@
+{
+ "id": "partial-credit-for-two-part-items",
+ "title": "Partial credit for two-part items",
+ "statement": "Whether a two-part claim-and-evidence item should give credit for a right first part alone, or only when both parts are right.",
+ "example": "On a published test, the first part alone earns 1, both parts 2 and a wrong first part 0.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "key",
+  "format",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A review of an outside measurement project found that the published test scores two-part items with partial credit, the first part alone earning 1, both 2 and a wrong first part 0, and that the project's own binary scorer biased ability estimates; it recommended partial-credit scoring with per-part keys for the reading project's own standard (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`). That project later moved to partial credit (`grade3-reading/knowledge_bot/HOTBUCKET.md`), while a reading app's server scorer and the staged item standard still score a two-part item only when both parts are right (`grade3-reading/knowledge_bot/knowledge/kb-0024-beyond-alpharead-pr45-all-qti-types.qmd`, `grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md`). No measured comparison of the two rules was found; to settle it, score the same answers both ways and see which better tracks the published test.",
+ "against": "A later run found: one package records that the reference test's own technical report scores two-part items all-or-nothing, each part right for credit, and treats its own partial credit as a deviation, its partial-credit confirmation coming from a state test's paper answer keys (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "85-88",
+   "quote": "**EBSR/Composite = PARTIAL CREDIT (0/1/2)** … Their own MLEF scorer is binary → biases ability. Our standard is SILENT on the scoring model. Action: require polytomous Partial-Credit scoring for EBSR/Composite + per-part answer keys; FAIL binary EBSR scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "354",
+   "quote": "kb-0072's divergences RESOLVED (bank 38→650; EBSR now PCM 0/1/2)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0024-beyond-alpharead-pr45-all-qti-types.qmd",
+   "lines": "36-37",
+   "quote": "**EBSR requires both parts**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "46",
+   "quote": "**EBSR** — Part B uses **verbatim** passage sentences as evidence; **both parts** required to score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "136",
+   "quote": "Our EBSR partial-credit scoring (PCM 0/1/2) is a disclosed deviation from MAP's dichotomous composite rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "138",
+   "quote": "the pilot scores every EBSR both ways in parallel — PCM 0/1/2 and dichotomous",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "139",
+   "quote": "the mean absolute linking-residual difference between the two scoring rules, computed on EBSR-heavy sessions (≥3 EBSR items), with a bootstrap 95% confidence interval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "140",
+   "quote": "- **Criterion:** dichotomous scoring wins if its linking residuals are lower *and* the CI excludes zero; otherwise PCM is retained. The decision is made before RIT output is unlocked, so the shipped RIT transformation is fitted under the winning rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "141",
+   "quote": "- **Selection caveat, flagged for item-fit analysis:** the PCM step Δ=0.5 also affects Fisher information and therefore item *selection*, not just scoring — the item-fit analysis will examine whether EBSR selection behavior differs materially between rules.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "146",
+   "quote": "NWEA's Technical Report states composite items are scored dichotomously (students must answer each part correctly for credit).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/06_SOURCES.md",
+   "lines": "43",
+   "quote": "Composite Item (EBSR) partial credit scoring confirmation: Part A only = 1 point, both parts = 2 points.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/06_SOURCES.md",
+   "lines": "42",
+   "quote": "*NSCAS Growth paper answer keys*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-staar-writing-research.md",
+   "lines": "147",
+   "quote": "**2:** accurate answer AND relevant text evidence. **1:** one part only. **0:** incorrect/blank.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "103",
+   "quote": "Note that this is a deliberate deviation from MAP: NWEA's Technical Report states that composite items are scored dichotomously (students \"must answer each part correctly\" for credit).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

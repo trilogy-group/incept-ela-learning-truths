@@ -1,0 +1,226 @@
+{
+ "id": "a-rule-nothing-checks-is-a-reminder",
+ "title": "A rule nothing checks is a reminder",
+ "statement": "Record each content rule's scope and what checks it, because a rule nothing checks is only a reminder.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading workspace's laws file pairs each law with a check that the pre-commit hook runs, and says a law without a check is not a law but a memory. A plan to centralise the reading standards binds each rule to one or more evidence lanes: deterministic code, a model judge that is advisory until calibrated, the live student or runtime surface, and expert human review. A rule-by-rule audit found rules whose enforcement notes scoped them far narrower than they read, and recommended a consistent scope line on each.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "96-97",
+   "quote": "A law without a check is not a law here — it is a memory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0173-edullm-standards-centralization-plan.qmd",
+   "lines": "94",
+   "quote": "2. semantic LLM judge, advisory until calibrated;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "109",
+   "quote": "recommended a consistent `SCOPE:` line on its own",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "34-35",
+   "quote": "Each checks one fact or idea the narration has just given that matters for the lesson question",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/c36730609689f122.json",
+   "lines": "13",
+   "quote": "\"stem\": \"What is the student expected to trace across this unit?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "32",
+   "quote": "- stem: a question about what it means or does in this line, ending in \"?\", not containing the gloss.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "33-34",
+   "quote": "feedback: one sentence per option (wrong ones send the reader back to the line without naming the answer).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "55",
+   "quote": "check(\"stem-question\", \"The question ends in a question mark\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "52",
+   "quote": "check(\"stem-no-answer\", \"The stem does not contain the answer\", !norm(item.stem).includes(norm(right)), \"the right option appears in the stem\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "40",
+   "quote": "Examine the sixth line again to consider how the text distinguishes ceremonial speech from making land sacred.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "57",
+   "quote": "Re-read the tenth line to consider the permanent claim of power in the title.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "23",
+   "quote": "the other two are tempting to a skimmer but the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "id: `tempting-${letters[i]}`, label: `Option ${letters[i]} would tempt a reader who skimmed`, required: false,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "144",
+   "quote": "\"value\": 0.39,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "161",
+   "quote": "\"value\": 0.38,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "364",
+   "quote": "\"value\": 0.46,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "144",
+   "quote": "\"value\": 0.37,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "161",
+   "quote": "\"value\": 0.35,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "348",
+   "quote": "\"value\": 0.36,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "365",
+   "quote": "\"value\": 0.48,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "150",
+   "quote": "The whole of the 2026-07-29 audit was measured **by hand**, on five lessons out of eighteen, in one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "151",
+   "quote": "afternoon, and nothing stopped it drifting back the next morning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "151-152",
+   "quote": "That is why the audit's own findings were turned into gates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "147",
+   "quote": "A claim not held by a gate is a claim that will regress.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/XP-SIM.md",
+   "lines": "30",
+   "quote": "a caveat nobody asserts is a caveat that disappears at the next",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "963",
+   "quote": "Nothing in the pack covered msq, so six passed every gate unchallenged.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "63-65",
+   "quote": "The first July 24 response was only partial: it had added oral source fields, but the maintained validator did not enforce them, the full-course review did not render them",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "51-53",
+   "quote": "it is not yet enforced by any validator and no build currently targets it; treat it as the north star for future reading-surface chrome decisions, not as a gate that fails today's build.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

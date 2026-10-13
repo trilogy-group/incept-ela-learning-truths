@@ -1,0 +1,362 @@
+{
+ "id": "assume-and-test-only-what-was-taught",
+ "title": "Assume and test only what was taught",
+ "statement": "An item, its options, hints and pointers may require only what the student has met by then on every path, common knowledge, or what the item or reference materials supply.",
+ "example": "One item's third part required specific knowledge of an 1873 act that is not a standard topic in its course.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's lint checks that what a lesson assumes is a subset of what earlier lessons in the unit added, in unit order. A weekly quality check still found a taught word that never appears in its lesson's passage, while three of that lesson's checks assessed the child on it. What the item supplies includes the student's reference materials, and a further value or principle must be given too. The same bound covers response forms: no item may require or grade a response form the lesson hasn't taught and modelled.",
+ "against": "The lint has no baseline across units, so a unit's first lesson must assume nothing, and the spec says nothing about what a unit may assume on entry. What counts as standard course content was judged by a model, not checked against the course framework. The same contract loosens the rule for short-answer items, which may draw on the target fact plus reasonable outside knowledge (`APinceptbench/docs/GENERATOR_API_SPEC.md`), and the essay rubric gives a point for specific evidence beyond the documents (`APinceptbench/ap_benchmark/prompts/official_ap_prompts.py`). Read together, the bound is what the course taught, not a single fact or a single set of documents. It holds where the assessment supplies reference materials or a passage; where recall is the skill being tested, a recalled fact is the point. The check deliberately leaves out taught vocabulary and invented practice scenarios, which would otherwise be flagged falsely (`grade3-reading/knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "16",
+   "quote": "`lesson.assumes` is a subset of the union of prior lessons' `adds`, in unit order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "74",
+   "quote": "Taught word \"betrayal\" never appears in the L1 passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "75-76",
+   "quote": "yet p23/p27b/p28 assess the child on \"betrayal.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "67-68",
+   "quote": "no cross-unit baseline exists in the contract, so a unit's first lesson must have empty `assumes`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter2.md",
+   "lines": "58",
+   "quote": "However, Part (c) requires specific knowledge of the Timber Culture Act (1873), which is not a standard APUSH curriculum topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "247",
+   "quote": "• ALL parts must be answerable using CORE AP curriculum content",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "76",
+   "quote": "That fact must be provided in the stem; students should not be required to supply it from outside knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "190",
+   "quote": "Testing the physics of the tool rather than its application is outside the standard's scope.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/leq_evaluation.txt",
+   "lines": "22",
+   "quote": "- Score 0.0: Rubric is unachievable (e.g., requires evidence that doesn't exist in the curriculum)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "163",
+   "quote": "**PASS if**: the question exercises the standard's named skill, OR any prerequisite/component/application within the same subject domain and grade-level topic.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "123",
+   "quote": "- A student who knows this fact MUST be able to answer the question correctly",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "124",
+   "quote": "- The question MUST NOT require knowledge outside the scope of this fact (except for scaffolding context)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "237",
+   "quote": "- Can each part be answered with AP course content?",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "239",
+   "quote": "- FAIL if parts require obscure knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "242",
+   "quote": "- All parts MUST be answerable based on `curriculum_fact` + reasonable outside knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "309",
+   "quote": "| **Evidence (Outside)** | 0-1 | Uses specific evidence beyond the documents |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Practice BrainLift.md",
+   "lines": "38",
+   "quote": "if the feedback needed to correct the response is longer and more complex than the original instruction, the item has crossed the boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "452",
+   "quote": "Retrieval may activate prior knowledge, but it must not grade content the course has not taught or established as a prerequisite.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "82",
+   "quote": "| You-do requires untaught knowledge | round 1 F3 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "404-406",
+   "quote": "the lesson grades the child on producing `The text says \"…\"` while the modelling omits the quote marks, so we grade a form we do not demonstrate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "398",
+   "quote": "Reproduced passage text carries quote marks; quote frame punctuated consistently | 60",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/alpha-read/modelling-moment-procedures-v2/INDEX.qmd",
+   "lines": "147-149",
+   "quote": "it does not introduce an untaught response routine.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "38-40",
+   "quote": "Any value the solution needs must be derivable, on the reference materials, or supplied in the stem. An item that hinges on a recalled constant is broken.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "122",
+   "quote": "A part that secretly requires a recalled constant is broken →",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "5",
+   "quote": "rely only on the stimulus plus reference materials a student would have available (a periodic table and standard constants), not on a memorized constant.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "112",
+   "quote": "- Fails if: (a) the question requires outside knowledge not available from the passage,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "86-87",
+   "quote": "a question/option/hint on page N must not depend on a concrete story noun the child has not read yet",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0225-g3-closing-questions-adoption-2026-09-24.qmd",
+   "lines": "60",
+   "quote": "or WITW points at content the child never met.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "88-89",
+   "quote": "explicitly excludes taught vocabulary and invented practice scenarios from false-positiving.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "123",
+   "quote": "- N2: relational-reference factuality. \"As you saw last lesson\" claims must be true against order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "87-89",
+   "quote": "explicitly excludes taught vocabulary and invented practice scenarios from false-positiving",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "73-74",
+   "quote": "not referenced by `npm run check` or any other known gate at ingestion time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "141-142",
+   "quote": "A child who learned L5 **correctly** was marked wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "144-145",
+   "quote": "every other gate reads one lesson at a time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "152",
+   "quote": "> **\"Already seen\" must be an INTERSECTION over branch points, never a union.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "163",
+   "quote": "The intersection changed the finding from *\"39 of 46 clean\"* to **6 more real defects**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Generic Instruction BrainLift.md",
+   "lines": "47",
+   "quote": "or use a safely-true vague form (\"earlier in the course\") when the exact neighbour is uncertain.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Generic Instruction BrainLift.md",
+   "lines": "47",
+   "quote": "an unverifiable relational claim is a defect, not a flourish.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "64",
+   "quote": "small bugs jar (\"remember last time\" on the first story; \"inspiration tap\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "88-89",
+   "quote": "Assessment never introduces the knowledge required to pass itself. A cold source may be new, but the historical knowledge and reasoning operation it demands must have been taught and practiced.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5162",
+   "quote": "You come across this question before you have been informed about where acts 2-5 are set",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-internal-review-2026-08-12.md",
+   "lines": "18-20",
+   "quote": "for someone who hasn't been through the lesson yet, these statements as feedback sounds a little confusing since they refer to knowledge that will be taught in next sections.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v03/CHANGES.md",
+   "lines": "17",
+   "quote": "the list of the dead names two characters now introduced in Lesson 1; \"the fall ends in death\" keeps the genre fact",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "173",
+   "quote": "Before Unit 6 the language device slot is empty, because no device terminology has been banked yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L5d411f.txt",
+   "lines": "6",
+   "quote": "Without it, check 1 part 2 (\"who holds power there?\") was inferable but never stated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "240-241",
+   "quote": "was last swept via an audit of 46 strings that found 6 further real defects (e.g. the Raven name leak)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "244-247",
+   "quote": "a plain content-fix pass found and corrected forward-referencing MCQ options and feedback text (Aladdin/Peter Pan quick-check items) where an option or its feedback assumed something the child had not yet seen by that page",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

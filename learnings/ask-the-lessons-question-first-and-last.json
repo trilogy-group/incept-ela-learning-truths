@@ -1,0 +1,192 @@
+{
+ "id": "ask-the-lessons-question-first-and-last",
+ "title": "Ask the lesson's question first and last",
+ "statement": "Ask the lesson's question at the start and again at the end, keeping both answers side by side and marking neither.",
+ "example": "One lesson engine opens the question with two or three of its phrases explained, keeps a first answer unmarked, and saves the end-of-lesson answer beside it.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "evidence-of-learning",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of the Grade 9 lesson engine found its export asked the lesson's question only as first thoughts, and proposed the bookends a 3D version draws: the question shown on its own with its key phrases explained, then answered again at the end (`g9-transformer-audit/2026-10-09-best-of-everything.json`). The learning-question block built on 9 October explains two or three phrases, and a judge checks that each note says what its phrase asks or means without answering the question. A first answer may be kept and is never marked; at the end the question is answered again and saved beside the first, also unmarked, and the judge may name what the second answer adds, in a line that quotes neither, only when it is sure (`g9/transformer/src/mechanics/learning-question.js`).",
+ "against": "The export to a 3D version leaves out the return at the end: \"its return at the end of the lesson is a closing step, not exported\" (`g9/transformer/src/glue/threejs-render.js`, line 234; `g9-transformer-audit/2026-10-09-builders.json`, line 1). The design comes from another build, and the sources give no measure of what the second answers add. The first answer is optional (\"Code only: both answers are saved, never marked; the first is optional.\", `g9/transformer/src/mechanics/learning-question.js`, line 89).",
+ "evidence": [
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "One is the question shown on its own with its key phrases explained, then answered again at the end.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "2",
+   "quote": "never the answer), and a first answer the student may keep, never marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "3",
+   "quote": "again, saved beside the first and never marked (the 3D build's bookends)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "64",
+   "quote": "Does note_${i} say what phrase_${i} asks or means in question, without answering question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "99",
+   "quote": "Saved, beside your first answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "468",
+   "quote": "be kept, never marked; at the end of the lesson it is answered again, saved beside the first",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "141",
+   "quote": "Saved, beside your first thoughts from the start of the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "508",
+   "quote": "One sentence. There is no wrong answer yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "234",
+   "quote": "the learning question's notes on its phrases; its return at the end of the lesson is a closing step, not exported",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "74",
+   "quote": "the learning question opens the lesson after the openers, its phrases noted where the question has them, and is asked again, unmarked, before the end",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "89",
+   "quote": "Code only: both answers are saved, never marked; the first is optional.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "85",
+   "quote": "saved, never marked: the build's guards only",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "3",
+   "quote": "saved beside the first and never marked (the 3D build's bookends); Jev may name what the second answer adds",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "4",
+   "quote": "in a line that quotes neither, and only when it is sure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "2-3",
+   "quote": "At the end of the lesson it is answered … again, saved beside the first and never marked (the 3D build's bookends)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "96",
+   "quote": "\"Kept. You will come back to it at the end of the lesson.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "99",
+   "quote": "\"Saved, beside your first answer.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md",
+   "lines": "14",
+   "quote": "The first lesson’s explicitly optional prediction receives a neutral acknowledgment without scoring; later required recall questions still gate Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-01.md",
+   "lines": "9",
+   "quote": "Accept all attempts. Do not mark missing theatre knowledge as failure. After reading, return to this prediction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PRE-READING-FIX.md",
+   "lines": "23",
+   "quote": "Tier 1: source lesson explicitly makes L1 prediction ungated and non-evaluative.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/retrieval.ts",
+   "lines": "201",
+   "quote": "Your first answer, if you want one. One sentence. There is no wrong answer yet.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "7",
+   "quote": "The lesson's final closing task then returns to the learning question: first instinct beside the answer now.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

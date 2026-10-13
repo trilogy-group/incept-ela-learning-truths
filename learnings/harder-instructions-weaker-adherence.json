@@ -1,0 +1,77 @@
+{
+ "id": "harder-instructions-weaker-adherence",
+ "title": "Harder instructions, weaker adherence",
+ "statement": "Writer models keep to constraints less reliably as instructions get harder, and whether giving a writer only the rules its task needs, not the whole rulebook, fixes that is untested.",
+ "example": "Across 18 models, average accuracy fell from 80.82% on the easiest constraint level to 36.76% on the hardest.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "research",
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A published evaluation of 18 models from six families found average accuracy falling from 80.82% at the easiest constraint level to 36.76% at the hardest (Ye et al. 2026, https://aclanthology.org/2026.findings-acl.99/). A Grade 3 proposal for steering a writer with explicit rules cited it as the strongest counter-evidence it faced, and drew its own inference, labelled as one: compile a small active contract rather than prompt with the full rule base (`grade3-reading/knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd`). The comparison the proposal planned never ran, because its experiment was stopped with those stages unrun (`grade3-reading/knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd`). To settle it: the same tasks written from the whole rule base and from only the rules that apply, across model families, scored on the same held-out artifacts.",
+ "against": "The same study found that targeted training improved adherence, a remedy other than trimming the rules, and the proposal marks its own success estimate as personal confidence, not a research result (`grade3-reading/knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "73-74",
+   "quote": "across 18 models, constraint adherence fell materially as instruction difficulty increased, and targeted training improved it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "74-76",
+   "quote": "**Our architectural inference:** compile a small active contract rather than prompt with the full rule base",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "50",
+   "quote": "Formal artifact-renderer A was not run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "103",
+   "quote": "**Personal confidence, not a research result:**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "73-74",
+   "quote": "across 18 models, constraint adherence fell materially as instruction difficulty increased, and targeted training improved it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "313",
+   "quote": "Constraint interactions, ordering, and active-rule count create a measurable compliance ceiling.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Ye et al. 2026, MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models, Findings of ACL 2026",
+   "url": "https://aclanthology.org/2026.findings-acl.99/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

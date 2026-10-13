@@ -1,0 +1,405 @@
+{
+ "id": "every-count-from-one-dated-pull",
+ "title": "Every count from one dated pull",
+ "statement": "Keep every count, figure, rule and setting in one named, dated, re-runnable source, and derive every document and copy from it rather than editing each by hand.",
+ "example": "One course's email said 52 lessons and 745 items and its infographic 47 lessons and 713, all citing one data pull.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An outside review of the reading project's first course found its own materials disagreeing on lesson and item counts, though all of them cited the same data pull dated 18 June 2026 (`grade3-reading/knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd`). The next course's rule was that every count in every document traces to one named pull with a date, with a render-truth manifest as the one source (`grade3-reading/knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd`). A consistency linter for stale numbers helped but was not enough: stragglers survived green runs, so a broad search followed it, and downstream counts were recomputed after every fix wave (`grade3-reading/knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd`). Errors are fixed in the one source and counts recomputed after each fix, and no number is carried over from another group or slice.",
+ "against": "The fix that removes the registries sat on an unpushed branch when it was recorded, so staging still carried them (`grade3-reading/knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "136",
+   "quote": "The course's own materials disagree with each other.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "134",
+   "quote": "all of them cite the same data pull dated 18 June 2026.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "136",
+   "quote": "The email says 52 lessons, 745 items and 56 cold passages; the infographic says 47 lessons and 713 graded items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "46-47",
+   "quote": "Every count in every doc must trace to one named pull with a date",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "260",
+   "quote": "A green linter is necessary, not sufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "11",
+   "quote": "| 3 | The item-bank source table summed to 520 while claiming 650 | Replaced with the verified 13-file breakdown; the fixtures were counted programmatically and sum to exactly 650 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_API.md",
+   "lines": "286",
+   "quote": "- ✅ `questions` - Required, must have **exactly 3** questions",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/AP_GENERATOR_SPEC.md",
+   "lines": "44",
+   "quote": "**Rules**: 3-4 questions, different skills, independent answers",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_INPUTS.md",
+   "lines": "36",
+   "quote": "| `mcq_set` | Stimulus + 2-3 questions | I-A |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "115",
+   "quote": "- Would be 58% pass rate without fill-in",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "137",
+   "quote": "| Pass Rate | 49.4% | **66.1%** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "111",
+   "quote": "The email says 52 lessons, 745 items and 56 cold passages; the infographic says 47 lessons and 713 graded items; and the “45 instructional tests” are tests, not instruction. The course’s own materials disagree with each other.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "18",
+   "quote": "Every count in every doc must trace to one named pull with a date.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/package/RED_TEAM_FINDINGS.json",
+   "lines": "34",
+   "quote": "is enumerated FOUR mutually incompatible ways",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/package/RED_TEAM_FINDINGS.json",
+   "lines": "35",
+   "quote": "\"severity\": \"fatal\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "111",
+   "quote": "The email says 52 lessons, 745 items and 56 cold passages; the infographic says 47 lessons and 713 graded items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "18",
+   "quote": "- Every count in every doc must trace to one named pull with a date.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/takeover-audit-2026-07-13/g5-clean-baseline.md",
+   "lines": "160",
+   "quote": "should be derived from one structured source rather than hand-edited independently.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "G3's email said 52/745/56 while the infographic said 47/713",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "G5 certified-count drifted **541 vs 549 vs 559** across docs; MAP-proxy summary tables summed to 520 while claiming 650.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "the MAP-proxy shipped a retired \"206.4 / 72nd percentile\" baseline that was a biased slice; the real figure was **196.0 / 46th pctile (n=915)**.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "Every artifact must quote identical numbers off **one dated pull**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "263",
+   "quote": "G4's package cited `course_bank.json`, `item_ledger_manifest.json`, `EVIDENCE_AND_CRITERIA.qmd` etc. but bundled **none** of them",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "263",
+   "quote": "Package the ledger + a dated pull + read-only recompute tooling",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "65",
+   "quote": "**Prose drifts; data doesn't.** Hand-typed figures across ~15 artifacts WILL drift.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "29-30",
+   "quote": "**Never invent a magnitude.** Do not carry another grade's/cohort's numbers as if they were this one's.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "100-103",
+   "quote": "their biggest systemic failure is spec INCOHERENCE (scoring method, TEI floor, blueprint, item count specified ≠ across files; a wrong string reached machine-consumed gradebook fields). Our kb-0069 drift risk, concrete. Action: one canonical numbers block per course; all other docs POINT to it; a cheap CI consistency check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/assessments/G5_PARAMETERS.md",
+   "lines": "78",
+   "quote": "18 codes after excluding RL.5.7 / RI.5.7 as not cold-text-assessable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/COURSE_SKELETON.md",
+   "lines": "208",
+   "quote": "`RL.5.1, RL.5.2, RL.5.3, RL.5.4, RL.5.5, RL.5.6, RL.5.7, RL.5.9, RI.5.1, RI.5.2, RI.5.3, RI.5.5, RI.5.6, RI.5.7, RI.5.8, RI.5.9, L.5.4, L.5.5, L.5.6`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "91-92",
+   "quote": "a lesson JSON reshape left three hand-maintained src registries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "93-94",
+   "quote": "The failure mode was NOT an error: evidence simply wrote a no-op and provenance came back empty, so nothing looked broken until a human noticed missing credit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "96-98",
+   "quote": "\"this is a bandaid, not the solution\" — it fails loud, which is strictly better than silence, but it leaves the duplication in place and adds a fourth thing to maintain. **Real fix:** delete the registry; derive ownership from the node's own shape",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0191-g3-book-lesson-anatomy.qmd",
+   "lines": "32-36",
+   "quote": "Reintroducing an author script that emits `grade-N.json` is explicitly forbidden (AGENTS.md): it happened once, and a unit's lesson-title summary disagreed with the lesson's own title because the emitted JSON had drifted from the hand-edited contract.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "44-46",
+   "quote": "Upstream generation specifications are active content authorities. Include them in governed Course JSON extensions. A rendered lesson that silently fixes a bad specification does not close the upstream defect because regeneration can reintroduce it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "100",
+   "quote": "Done on local branch `codex/registry-deletion` (2026-09-11 night, unpushed pending sign-off)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "103",
+   "quote": "until that branch merges, staging still carries the registries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "48",
+   "quote": "- More red-team rounds instead of killing the generators: REGISTER.md headline — 'this is a CHURN problem, not a bug list... The exit is not more rounds. It is: (1) freeze an RC, (2) single-source the numbers, (3) fix the gate' — rounds kept re-finding the same ~15 hand-typed count copies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/REGISTER.md",
+   "lines": "21",
+   "quote": "the count is hand-typed into ~15 artifacts; a change updates some copies, not all. 62% of all findings.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/G5-Coverage-Pipeline-Findings-2026-08-17.md",
+   "lines": "15",
+   "quote": "exist simultaneously with no stated relationship between them",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "58",
+   "quote": "certified count churned 541→551→549→624→559 across five values, hand-typed into ~15 artifacts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-06-29.md",
+   "lines": "114",
+   "quote": "The email says 52 lessons, 745 items and 56 cold passages; the infographic says 47 lessons and 713 graded items; and the “45 instructional tests” are tests, not instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "252-254",
+   "quote": "(it did: a unit's lesson-title summary disagreed with the lesson's own title, so the start button promised a different lesson than the child landed on).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "README.md",
+   "lines": "48",
+   "quote": "generated by `scripts/build_content.py` from `sources/`. Do not hand-edit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/approval-package/RED_TEAM_ROUND3.md",
+   "lines": "16",
+   "quote": "the team **diagnosed the recurring-drift root cause** (every figure hand-typed into ~15 artifacts) and shipped a **consistency linter** as the pre-claim gate.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/academics-review-2026-06-29.md",
+   "lines": "114",
+   "quote": "The email says 52 lessons, 745 items and 56 cold passages; the infographic says 47 lessons and 713 graded items; and the “45 instructional tests” are tests, not instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "316",
+   "quote": "Maintain a separate visual edit list and app cue list, each grounded in the same exact spoken script.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "485",
+   "quote": "Version each text, media, and integration change and state which one is authoritative.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "760",
+   "quote": "Generated documents, HTML, and ZIPs are projections. They cannot override canonical content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/prompts/u01.md",
+   "lines": "5-6",
+   "quote": "Every entry routes to a complete canonical lesson object. This index is navigation metadata only and must not replace or summarize the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "833-835",
+   "quote": "Fixed: the collector now mirrors the page's build from `C.word_power.words`, so a word swap can never desync it again.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "194",
+   "quote": "computed from `vocab.length`, so the count can never go stale in a cached clip",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "419-420",
+   "quote": "into the inlined `CONTENT` const, which was still the pre-audit copy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "123",
+   "quote": "**stale even for the 650-item bank**: items added in `bank_gap_fixes.json`",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

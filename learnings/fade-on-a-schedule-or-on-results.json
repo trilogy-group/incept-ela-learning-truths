@@ -1,0 +1,113 @@
+{
+ "id": "fade-on-a-schedule-or-on-results",
+ "title": "Fade on a schedule or on results",
+ "statement": "Whether a scaffold should fade on a fixed schedule or on the learner's results is unsettled: a miss may mean missing knowledge, not a need for the steps.",
+ "example": "One static option collapses a procedure into a model the child can open or ignore after about five exposures.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "sequence",
+  "hints",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "On a course call, the question of when a child is ready for less support came with a warning: getting questions wrong doesn't mean a child still needs all the steps, since it could be a knowledge issue, not a steps issue. Two options were offered: static, where a procedure collapses into a model the child can open or ignore after about five exposures, and dynamic, where fading follows a signal from what the child does. The course repo fades nothing yet and calls static the honest first move, since it needs no inference about why a child missed an item, while its procedure specification proposes, still to be confirmed, releasing support in line with success in the app, such as moving from model to prompt at 80% success.",
+ "against": "A model curriculum's fading rules already mix the two, a fixed first-appearance rule with an automatic return of the model after a wrong answer: \"if the child got the previous same-procedure task wrong, the model is shown automatically next time\" (`grade3-reading/course-renderer/docs/extras/alpharead-fading-guidance.md`, line 26).",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/ela-weekly-call-2026-08-13.md",
+   "lines": "530",
+   "quote": "just because they're getting the questions wrong, it doesn't mean that they still need all those steps. It could be a knowledge issue, not a steps issue.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "62-63",
+   "quote": "**Static.** After the child has seen the FIND procedure about five times, it collapses into an I-do they can open or ignore.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "64-65",
+   "quote": "**Dynamic.** Track something the child does and fade on that signal, or collapse four steps into two.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "67-69",
+   "quote": "Nothing in this repo fades anything yet. Static is the honest first move, because it needs no inference about why a child missed an item, and it is the one we can ship without a performance model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "826",
+   "quote": "Across the year, the level of support the child receives gradually releases in line with their success within the app, e.g. 80% success and they move from model to prompt. TBC.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "26",
+   "quote": "if the child got the previous same-procedure task wrong, the model is shown automatically next time",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "58-60",
+   "quote": "just because they're getting the questions wrong, it doesn't mean that they still need all those steps. It could be a knowledge issue, not a steps issue.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "62-63",
+   "quote": "**Static.** After the child has seen the FIND procedure about five times, it collapses into an I-do they can open or ignore.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "64-65",
+   "quote": "**Dynamic.** Track something the child does and fade on that signal, or collapse four steps into two.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "67-69",
+   "quote": "Static is the honest first move, because it needs no inference about why a child missed an item, and it is the one we can ship without a performance model.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "201-202",
+   "quote": "fade \"based on real-time student performance data\", with a static fallback: the FIND procedure \"collapses into a two-step option after five successful uses\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "826",
+   "quote": "Across the year, the level of support the child receives gradually releases in line with their success within the app, e.g. 80% success and they move from model to prompt. TBC.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

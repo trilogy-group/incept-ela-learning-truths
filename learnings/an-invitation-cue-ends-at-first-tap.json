@@ -1,0 +1,55 @@
+{
+ "id": "an-invitation-cue-ends-at-first-tap",
+ "title": "An invitation cue ends at first tap",
+ "statement": "Stop a cue inviting a first tap once the student has tapped that surface, and never restart it after a miss, where it reads as 'tap me again'.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a Grade 3 reading course saw wrong clues blink again after a child tapped them and tapped outside, which read as an invitation to tap them again. The ruling makes the pulse an attract cue for before first engagement only: it switches off on each surface after the child's first tap there and never restarts on a miss or a change of state. A beat that arrives later on the same passage still gets its own one-time invitation on its own surface.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "148-149",
+   "quote": "the wrong clues blink again after tapping them and tapping outside, which reads as 'tap me again'.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "141-142",
+   "quote": "The attract pulse latches off per surface, not per passage, after the child's first tap on that surface, and never restarts on a miss or state swap",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "142-143",
+   "quote": "the pulse is an attract cue for before first engagement only; blinking again after a wrong tap reads as \"tap me again.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "143-145",
+   "quote": "A later-arriving beat on the same passage still earns its own one-shot invitation on ITS surface.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

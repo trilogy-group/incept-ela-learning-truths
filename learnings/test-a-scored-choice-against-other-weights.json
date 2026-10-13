@@ -1,0 +1,78 @@
+{
+ "id": "test-a-scored-choice-against-other-weights",
+ "title": "Test a scored choice against other weights",
+ "statement": "When a choice rests on judged scores and weights, rerun it across the plausible weightings and with noise added to the scores, and report which choices hold and which flip.",
+ "example": "In one grade's topic scorecard, the same five topics stayed on top at every weight from 0.50 to 1.00.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A grade-4 reading plan answered the objection that its 0.75 weighting of load against frequency was an unratified choice by sweeping the weight from 0.50 to 1.00: the same five topics stayed on top at every value (`grade3-reading/ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md`, lines 128-138). It then jittered every load score by ±1.5 points over 10,000 trials: the anchor topic stayed first in 89.1% of them, while the exact top-tier set held in 35%, so the tier's membership was robust and its internal order was not (the same file, lines 155-164). A grade-5 simulation lab ran a 20-cell grid of cutoffs and penalty weights and found its ranking of design variants never changed (`grade3-reading/ti-courseplans/courses/g5-reading/analysis/student-sim-lab-2026-07-09/decision-record.qmd`, line 37).",
+ "against": "A later ruling on the boundary between grades moved the anchor topic to the next grade, so the robustness proofs now describe a superseded decision, though they remain valid for the six unchanged units (`grade3-reading/ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R2.md`, lines 62-65).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md",
+   "lines": "135-136",
+   "quote": "**American Revolution, Geology, Odyssey, Poetry, Animal Defenses are the top 5 at every weighting from pure-frequency-blind (1.00) down to a frequency-heavy 0.50.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md",
+   "lines": "157-158",
+   "quote": "jitter **every** load score by ±1.5 points — a large error band, far wider than the [TO SOURCE] gap could plausibly cause — 10,000 times, and watch the structure:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md",
+   "lines": "160",
+   "quote": "**American Revolution stays the #1 anchor in 89.1% of trials.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md",
+   "lines": "163-164",
+   "quote": "The *exact* 3-Deep-spine set holds in 35% of trials — meaning the **membership of the top tier is robust but the internal ordering within it is not**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/student-sim-lab-2026-07-09/decision-record.qmd",
+   "lines": "37",
+   "quote": "Across a 20-cell grid (GREEN cutoff 2.0-2.6 x penalty weights x0.5-x2.0) the variant ordering never changes; no conclusion rests on the rule set's numeric constants.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R2.md",
+   "lines": "62",
+   "quote": "The critique/robustness docs now describe a superseded decision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R2.md",
+   "lines": "65",
+   "quote": "the proofs remain valid for the 6 unchanged units.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

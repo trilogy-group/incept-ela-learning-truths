@@ -1,0 +1,70 @@
+{
+ "id": "text-equivalents-match-the-picture-no-more",
+ "title": "Text equivalents match the picture, no more",
+ "statement": "Give every diagram a task uses a text equivalent carrying the same information as the picture and no more, since a rule or role word there gives the answer away.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "integrity",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 lesson built on a food-web diagram required a hidden table so that a non-visual reader gets the same information a sighted reader gets from the diagram, without it becoming a second copy of the answer-giving key text removed from the picture. While fixing the diagram, the build found that its accessible label still stated the very rule under test, and cut it to describe only which elements connect. The hidden table likewise states only connections, with no role words such as eater, food or producer, so it leaks no more than the picture does.",
+ "against": "An earlier build waived the table, relying on the picture's role, title and full label and leaving the table with the canonical lesson (grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md, lines 141-143). The audit's own spec asked for each node's role in the table, \"name, role: producer/eater/decomposer/diet unknown\" (grade3-reading/artifacts/u4l2-build/GRADE5-AUDIT.md, lines 317-318), which the build left out because those words would give the answer away.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "319-321",
+   "quote": "so a non-visual reader gets the same information a sighted reader gets from the diagram, without it being a second copy of the in-diagram key text removed in F1.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "44",
+   "quote": "sub-label that pre-answers \"which one is the eater\" and \"is this a food source\" must go.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "365-368",
+   "quote": "Updated the `<svg aria-label>` (old line 911) to drop \"point from food to eater,\" describing only connectivity (\"Solid arrows connect kelp to sea urchin, …\") — it no longer states the rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "385-388",
+   "quote": "states only connectivity, the same neutral information the visual gives a sighted reader, so it does not leak more than F1 leaves on the map (no \"eater\"/\"food\"/\"producer\" role words in the table).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "141-143",
+   "quote": "the SVG carries `role=\"img\"`, `<title>`, and a full `aria-label`; the canonical `diagram_contract` table lives with the canonical lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "317-318",
+   "quote": "with one row per node (name, role: producer/eater/decomposer/diet unknown — reuse only the FACTUAL content, not the removed F1 sub-labels)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

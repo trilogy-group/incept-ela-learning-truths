@@ -1,0 +1,301 @@
+{
+ "id": "short-feedback-or-fix-the-item",
+ "title": "Short feedback, or fix the item",
+ "statement": "Keep corrective feedback short and aimed at the error; a correction that needs more is new teaching, so fix the item or its placement instead.",
+ "example": "One later course never lets feedback run past 60 words.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A second-round outside review of a Grade 3 reading course found corrective feedback on many wrong answers but far too long, at times longer than the passage itself, and said a grade-3 child would not read it (`grade3-reading/artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt`). The reading project's audit of its practice principles records the rule that when the feedback needed to correct a response is longer and more complex than the original instruction, the item has crossed the acquisition boundary, so the item or its placement is fixed, not the feedback (`grade3-reading/artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md`). A later Grade 5 course's authoring rules set feedback at a 40-word target, never more than 60 (`grade3-reading/artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md`). Feedback is never longer or harder than the passage or the teaching it corrects, and its length is checked in code.",
+ "against": "It is a rule borrowed from a practice framework; nothing in these sources measures it. The word counts are a proposed lint for one grade band, not a built check. The lint is a local reference implementation, not wired into any repository or pipeline (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md`). none found; the 40- and 60-word figures were set for grade 3 readers (`ti-courseplans-audit/docs/instruction-quality-standard.md`). Enforced only when more than a fifth of items fail: 'feedback_quality -> 0.0 when >20% of items-with-feedback carry a hard defect.' (`shadow-bench`, git commit 9c9d00c, line 15). The per-option check is 'Report-only by design' (git commit 6e7af07, line 22). The word limits are one team's bar, not a measured threshold.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "12",
+   "quote": "Corrective feedback now appears on many wrong answers, but it is far too long — at times longer than the passage itself",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md",
+   "lines": "52",
+   "quote": "If the feedback needed to correct a response is longer and more complex than the original instruction, the ITEM has crossed the acquisition boundary — fix the item or the placement, not the feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "201",
+   "quote": "evidence-anchored, ≤40 words target, never >60 (G5-POL-INS-008); wrong-",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "58",
+   "quote": "Corrective feedback must be short, misconception-naming, evidence-anchored, and delivered with the text visible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "59",
+   "quote": "it is too long, sometimes longer than the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "89",
+   "quote": "target <=40 words;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "90",
+   "quote": "cap around 60 words;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "94",
+   "quote": "feedback longer than the passage is a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "96-97",
+   "quote": "if corrective feedback is longer or more complex than the original instruction, the item has crossed into new instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "131",
+   "quote": "Feedback must reveal the failure mode, not merely mark the answer wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "59",
+   "quote": "it is too long, sometimes longer than the passage, and has basic capitalization defects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "94",
+   "quote": "- feedback longer than the passage is a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "71",
+   "quote": "≤40 words target / 60 hard cap",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "71",
+   "quote": "reads at or below grade band",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/publish/README.md",
+   "lines": "55",
+   "quote": "≤40-word misconception-keyed feedback",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "96-97",
+   "quote": "This incorporates the Practice BrainLift boundary rule: if corrective feedback is longer or more complex than the original instruction, the item has crossed into new instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "15",
+   "quote": "feedback must carry a `misconception_id` and be <= 60 words (hard cap); 41-60 words emits a non-blocking warning (40 is the standard's target).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "283",
+   "quote": "Long feedback text is itself a failure for Grade 3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "6",
+   "quote": "Local pre-PR artifact -- not wired to any repo or pipeline.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "31-32",
+   "quote": "Target ≤ 40 words; hard cap 60. A grade-3 child will not read feedback longer than the passage (round-2 verified: our generator's median was ~91 words).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "75",
+   "quote": "G3 round-2: feedback longer than the passage, lowercase after full stops; G5 generator lineage measured at ~91-word median",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "383",
+   "quote": "Failure signals: Generic right or wrong; praise only; feedback longer than the task; same reply for every response.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "23",
+   "quote": "If the corrective feedback needed exceeds the original instruction in length/complexity, it's new instruction, not practice",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "16",
+   "quote": "≥90% acquisition gate; failure → intensive instruction → delayed (~24h) retest on NEW items, never an endless loop",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "31",
+   "quote": "**Short.** Target ≤ 40 words; hard cap 60.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "31-32",
+   "quote": "A grade-3 child will not read feedback longer than the passage (round-2 verified: our generator's median was ~91 words).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "33",
+   "quote": "Sentences start uppercase after full stops",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "35",
+   "quote": "**Grade readability.** Feedback reads at or below the course's grade band.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "94-95",
+   "quote": "if corrective feedback is longer or more complex than the original instruction, the item has crossed into new instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "9c9d00c",
+   "lines": "5-8",
+   "quote": "The LLM feedback_quality metric checks only that feedback explains WHY; it never measures length or mechanics, so a wall-of-text explanation (even longer than the passage) passes. Adds a shared deterministic lint mirroring the academics bar: <=40-word target / 60-word hard cap, \"longer than the passage\" defect, bare-generic",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "6e7af07",
+   "lines": "9-10",
+   "quote": "- per-distractor feedback: each wrong option should carry its own non-generic feedback (bare \"Incorrect.\" / absent → flagged).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "119",
+   "quote": "Fail: feedback is absent on the majority of items, OR feedback consists only of \"Correct!\" / \"Incorrect!\" with no explanation.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "9c9d00c",
+   "lines": "15",
+   "quote": "feedback_quality -> 0.0 when >20% of items-with-feedback carry a hard defect.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "6e7af07",
+   "lines": "22",
+   "quote": "Report-only by design",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/subjects/science.md",
+   "lines": "23-25",
+   "quote": "Where a correction needs a home and no single item can carry it, put it in the guide's own voice as a plain statement near the vocabulary work (\"say it here\"), not buried in feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20657",
+   "quote": "| **Feedback too long / mechanically dirty** | G3 round-2: feedback longer than the passage, lowercase after full stops; G5 generator lineage measured at ~91-word median | word-count distribution over feedback texts (bar: ≤40 target/60 cap); regex lint `\\. [a-z]`; grade readability |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-07-08.md",
+   "lines": "27",
+   "quote": "**Corrective feedback** now appears on many wrong answers, but it is far too long — at times longer than the passage itself (see the attached \"Nibbles\" warm-up) — and is repeatedly mis-capitalised (sentences start lower-case after a full stop). A grade-3 child will not read it.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1351",
+   "quote": "targeted at forty words, and never longer than sixty words.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

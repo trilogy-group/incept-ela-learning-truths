@@ -1,0 +1,73 @@
+{
+ "id": "keep-checks-from-becoming-the-target",
+ "title": "Keep checks from becoming the target",
+ "statement": "Keep the checks from becoming the target: attack the judge with a deliberate cheater, rotate the probes each round, and hold a frozen set back to catch gaming.",
+ "example": "A re-probe over many shuffles decertified 72 ordering items that had been certified against a single seeded shuffle.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The course-plan training skill's anti-Goodhart discipline rotates probe seeds and personas every round, holds out one probe family per promotion, uses judges from unseen model families, re-anchors them to human judgment periodically, and red-teams the gauntlet itself (`ti-courseplans-audit/skills/train-teacher/SKILL.md`). Its standing reminder is its own gate bug: ordering items had been certified against one seeded shuffle, and a re-probe over many shuffles decertified 72, one of them at exactly 1.000 (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`). Attack the judge before tuning against it, to find what it passes by default.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/SKILL.md",
+   "lines": "116-117",
+   "quote": "Rotate probe seeds and personas every round; hold out one probe family per promotion; judges from unseen model families",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/SKILL.md",
+   "lines": "117-119",
+   "quote": "red-team the gauntlet itself with `course-red-team` (our own single-shuffle gate bug is the standing reminder that the gate can be the bug).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "20",
+   "quote": "sequence items certified against one seeded shuffle; multi-shuffle re-probe decertified 72 incl. one exact 1.000",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "61",
+   "quote": "Cheater reports identify five exploitable surfaces:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "69",
+   "quote": "Training implication: do not teach exploit text. Teach defensive generation patterns:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/plans/2026-05-25-ib-criteria-brain-model.md",
+   "lines": "98",
+   "quote": "- Keep a frozen holdout to detect grader overfit and \"cheater\" behavior.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

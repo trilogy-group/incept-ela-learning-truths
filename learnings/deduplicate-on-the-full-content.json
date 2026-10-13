@@ -1,0 +1,94 @@
+{
+ "id": "deduplicate-on-the-full-content",
+ "title": "Deduplicate on the full content",
+ "statement": "Deduplicate and count items on their full content, not on an opening prefix or an earlier step's count.",
+ "example": "Hashing only the first 200 characters wrongly marked 34% of distinct records as duplicates.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A training-set build hashed the first 200 characters of each record, so different records that open alike, such as multiple-choice items with the same question opening, counted as duplicates: it seemed to hold 37k unique records, a 34% false duplicate rate, until full-content hashing found 56,554 in one source file alone (`training_data_70k.md`, lines 30-33). A source pool reported as about 31 candidates per objective held 12-14 unique documents once deduplicated, because the reported count included repeats across rounds (`feedback_cache_pool_count_vs_unique_doc_count_distinct_2026_06_01.md`, lines 7-9).",
+ "against": "A whole-item hash catches only exact copies; near-duplicates need another test, and the folder has none.",
+ "evidence": [
+  {
+   "source": "home-agent-memory",
+   "path": "training_data_70k.md",
+   "lines": "30",
+   "quote": "`build_70k_dataset.py` used MD5 hash of first 200 chars of assistant content for dedup. This caused massive FALSE POSITIVES — many different records share the same first 200 chars (e.g., MCQs with the same question opening). Fixed to use **full content MD5 hash**.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "training_data_70k.md",
+   "lines": "32",
+   "quote": "**Before fix:** appeared to have only 37k unique records (34% false dedup rate)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_cache_pool_count_vs_unique_doc_count_distinct_2026_06_01.md",
+   "lines": "9",
+   "quote": "Actual unique-doc pool was 12-14 per KC after dedup, not 31.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "7",
+   "quote": "**Bug:** Used MD5 hash of first 200 chars of assistant content for deduplication.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "9-12",
+   "quote": "This caused massive FALSE POSITIVES. Many different records share the same opening 200 characters:\n- MCQs starting with \"Which of the following best describes...\"\n- LEQs starting with \"Evaluate the extent to which...\"\n- DBQs starting with \"Using the documents...\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "14",
+   "quote": "Result: Appeared to have only 37k unique records from what should have been 59k+. A 34% false dedup rate made the dataset look much smaller than it was, and caused us to think we needed to generate more data.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "16",
+   "quote": "**Fix:** Full content MD5 hash of the entire assistant response.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "17",
+   "quote": "**After fix:** 56,554 from raft_combined alone were correctly unique. We didn't need to generate anything.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CORPUS-AND-SAMPLING-CONTRACT.md",
+   "lines": "80",
+   "quote": "Row identifiers, wrappers, scores, metadata, and difficulty labels do not create a new candidate identity. This prevents repeated packaging or rescoring from inflating the unique count.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,178 @@
+{
+ "id": "buttons-tell-the-truth",
+ "title": "Buttons tell the truth",
+ "statement": "A button tells the truth: it names what it does, never claims understanding or previews the next page, and when locked stays visible and says in words what unlocks it.",
+ "example": "One lesson's Next sat padlocked for six screens with no reason given and no cue that it would unlock.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "wording",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A UI review of a Grade 3 reading lesson found a forward button labelled 'I know what to watch for', a claim the child cannot fail to make, so it asserted understanding without checking any, and a Next control padlocked for six screens with no reason given, which an eight-year-old reads as 'you are not allowed'. The course renamed the label to a plain 'Next page' and kept its reading and answer gates independent of it, and its repair shows the current action's status beside Back with a labelled held Next. Its QA checklist, under 'Buttons tell the truth', fails a locked forward control that vanishes or gives no reason, and its published rules bar a button that announces the next page's content.",
+ "against": "The rule rests on one supplied review's judgment of how a child reads a padlock, not on observed learners. The final verification marks both the relabel and the explained lock implemented, but warns not to read that as full academic, listening, assistive-technology or every-possible-interaction acceptance (`grade3-reading/ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md`, lines 11, 41 and 57).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "46",
+   "quote": "is a claim the child cannot fail to make. They will tap it regardless, so it asserts understanding without checking any.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "28",
+   "quote": "A navigation click is not comprehension proof.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md",
+   "lines": "57",
+   "quote": "“I know what to watch for” asserts mastery",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md",
+   "lines": "57",
+   "quote": "Reading/answer gates remain independent. V and source do not award comprehension from this label.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "496",
+   "quote": "Do not make the current page announce the next page's content in its button.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "22",
+   "quote": "sits padlocked for six screens with no reason given and no cue that it will unlock.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "22",
+   "quote": "To an eight-year-old a padlock reads as \"you are not allowed\", not \"this comes after the video\". If the gate is deliberate, say it in words: \"Watch the video to keep going\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "84",
+   "quote": "Buttons tell the truth",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "85",
+   "quote": "No Finish-the-lesson before the end; a locked forward pill shows grayed with its reason, never vanishes; counters agree with the instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "11",
+   "quote": "One current primary action beside Back, disabled with a reason when necessary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/ALADDIN-STANDARD-REVIEW.md",
+   "lines": "41",
+   "quote": "provides current-action/reading/film/task status and labelled held Next",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "28",
+   "quote": "Change scoped navigation label to Continue while retaining actual lesson task/gate. A navigation click is not comprehension proof.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "22",
+   "quote": "\"Next\" sits padlocked for six screens with no reason given and no cue that it will unlock.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "22",
+   "quote": "To an eight-year-old a padlock reads as \"you are not allowed\", not \"this comes after the video\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "22",
+   "quote": "If the gate is deliberate, say it in words: \"Watch the video to keep going\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "12",
+   "quote": "G3 shows a lock alone and reason only after click. Reuse actual readingStatus as persistent brief guidance; show disabled labelled Next when waiting.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md",
+   "lines": "16",
+   "quote": "Locked Next remains understandable and explainable; handler/readiness logic is not replaced by CSS.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "10",
+   "quote": "If a step is not finished, the Next button says why in words",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "10",
+   "quote": "Never a bare padlock.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "38",
+   "quote": "Explain any lock in words.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/verify-fix2.mjs",
+   "lines": "138",
+   "quote": "log('l1-guided locked Next label', /3 more words to go on/.test(await foot(page)), await foot(page))",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

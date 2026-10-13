@@ -1,0 +1,63 @@
+{
+ "id": "one-push-back-in-a-debate",
+ "title": "One push-back in a debate",
+ "statement": "In a debate, push back once on the side the student took, only when the judge is sure of it, then offer a position they could defend, and mark nothing.",
+ "example": "The student answers one push-back that cites the text, and the task is never marked.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's debate block asks for a position and a reason, gives one push-back for the side taken, then offers a position the student could defend, and never marks any of it (`g9/transformer/web/lesson.js`; `g9/transformer/README.md`). Only a side the judge is sure of gets its push-back, which cites the text and which the student's next answer replies to. The rubric it exports to an animated version also asks the student to answer the other reading, saying why someone could see it the other way.",
+ "against": "In an animated version's player the same debate is judged on three criteria over two tries, closing with \"You took a side, gave a reason from the text, and answered the other reading.\" (`g9/transformer/src/glue/animated.js`, line 174).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "642",
+   "quote": "Practice.tsx Evaluate: the question, a position and a reason; one push-back for the side taken, then a position",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "663",
+   "quote": "a side Jev is sure of gets its push-back, which the next answer replies to",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "51",
+   "quote": "says where they stand and why, answers one push-back that cites the text; never marked",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "172",
+   "quote": "Answers the other reading: says why someone could see it the other way, and answers them. One clause is enough.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "174",
+   "quote": "You took a side, gave a reason from the text, and answered the other reading.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

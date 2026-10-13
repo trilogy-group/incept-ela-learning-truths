@@ -1,0 +1,235 @@
+{
+ "id": "a-stem-that-stands-on-its-own",
+ "title": "A stem that stands on its own",
+ "statement": "Write each stem as a full question that names everything it asks students to relate, so that a student who knows the material can answer it with the options covered.",
+ "example": "An item with no question in it passed even the judge that noticed, at 0.88.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP generator's item checklist asks for a stem understandable without reading the options, and its guidance answers stem ambiguity by reviewing stems before options are added (`icloud-work/ap-social-studies-generator/docs/analysis/best_practices.md`). A cross-review found an item with no question stem at all, which both model judges passed (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md`). A review of generated questions listed comparisons with one side missing among its clarity issues, and a judge failed a part for a vague region label (`icloud-work/k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md`; `icloud-work/ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md`). The writer rules require naming both things compared (`icloud-work/ap-social-studies-generator/python/generators/saq.py`). Write it as a question, not a sentence to complete.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "381",
+   "quote": "- [ ] **Clear stem**: Question understandable without reading options",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "159",
+   "quote": "**Fix**: Review stems independently before adding options",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "80",
+   "quote": "- ⚠️ Missing question stem (what exactly is being asked?)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "82",
+   "quote": "- **Claude Score:** 0.88 - Pass with minor issues",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md",
+   "lines": "259",
+   "quote": "| **Unclear comparisons** | \"More significant than...\" (than what?) | Complete the comparison |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "76",
+   "quote": "Part C of the prompt uses the vague descriptor 'southern regions,' which is imprecise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "282",
+   "quote": "RULE: A student should never need to infer WHAT is being compared — name both items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "65",
+   "quote": "read the stem, cover the options, and ask whether a knowledgeable student could formulate an answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "92",
+   "quote": "confirm that a knowledgeable student could answer the question from the stem alone (cover-the-options test).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "103",
+   "quote": "Before submitting: re-read the stem with options covered. If you cannot answer from the stem alone, revise the stem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L4-REVIEW-GAPS-2026-09-16.md",
+   "lines": "117",
+   "quote": "Item stems are questions, not completion fragments (D5.11)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/L5-REVIEW-GAPS-2026-09-17.md",
+   "lines": "7",
+   "quote": "was a completion fragment (\"…staying here could mean ___\"), the only fragment stems in L5",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "54",
+   "quote": "a quick check is asked open, an evidence hunt asks for the words; their lines stay on the server",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "63",
+   "quote": "stem: \"Which of these is true?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "64",
+   "quote": "assert.match(skip.skipped[0].reason, /beside its options/);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "33",
+   "quote": "// a question that only works beside its options (\"Which of these…\") is not asked open",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "34",
+   "quote": "const OPTIONS_ONLY = /\\b(which of (these|the following|the options)|which option|all of the above|none of the above|true or false)\\b/i;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "145",
+   "quote": "skipped.push({ id: b.id, reason: \"its question only works beside its options\" })",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "147",
+   "quote": "entry: { q: it.stem, expects: [right], source: \"draft\" }",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-scope/REPAIR.md",
+   "lines": "5",
+   "quote": "The question says Who flew first? with Peter Pan among the options, while the prior story says Peter already floated and its wrong-Peter feedback explicitly confirms he was already airborne.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-scope/REPAIR.md",
+   "lines": "7",
+   "quote": "Cause: the question omitted the comparison group; answer-index testing alone never tests competing interpretations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-scope/REPAIR.md",
+   "lines": "7",
+   "quote": "Change only the silent stem to Which of the Darling children flew first?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3052",
+   "quote": "The question says Who flew first? with Peter Pan among the options, while the prior story says Peter already floated and its wrong-Peter feedback explicitly confirms he was already airborne.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3052",
+   "quote": "Change only the silent stem to Which of the Darling children flew first?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "54",
+   "quote": "three stems are completion fragments — p2 `vocab-nursery-form2` (\"…is called a...\", has a clip → recut), p17 `skill-check` (\"…are there to show ___\", silent), p24 follow-up full/brief (\"…tells us she is ___\", no clip)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5159",
+   "quote": "The following feels a little disconnected - \"You job is to trace how he goes from one to another - from A to B\" - A and B have non definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-internal-review-2026-08-12.md",
+   "lines": "69-71",
+   "quote": "When I read the story and went to answer \"Right after the Sky-God named his price, what did he do?\" nothing came to mind, and then when I read options I got some idea.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "12",
+   "quote": "I censused every stem in L1 (13) and L2 (19) — 32 for 32 are direct questions, zero ellipsis or blank-completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "97",
+   "quote": "D5.11 (three completion-fragment stems): DONE — rewritten as questions",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,65 @@
+{
+ "id": "a-copy-guard-catches-recitation-not-overlap",
+ "title": "A copy guard catches recitation, not overlap",
+ "statement": "Flag an answer as copied only when it recites a long unbroken run of the source, not for shared words, which correct answers about a short text will reuse.",
+ "example": "A check counting words shared with a two-word definition, 'to forgive', rejected accurate explanations of two taught words.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a full student sweep of the rebuilt Grade 5 lessons, correct explanations of two taught words were rejected by a deterministic client check that counted words shared with the definition and ignored the explanation around them. With a two-word definition, an accurate explanation was especially likely to fail. The repair limited the check to definition-only recitation and left meaning to the judge; the rejected explanations were then accepted unchanged, and the repaired code passed 19 regression cases, copy-only negatives among them.",
+ "against": "Narrowing the guard is safe only while a judge still checks meaning: \"It does not grant a pass merely for adding words.\" (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/rehearsal-pardon-scoring-review.md`, line 5). The thresholds, a run of at least 8 tokens and 0.85 total overlap, are design values for answers in an early-grade reading app; no measured false-flag rate is recorded.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/rehearsal-pardon-scoring-review.md",
+   "lines": "3",
+   "quote": "The revised rehearsal answer and the pardon answer were rejected by a deterministic client check that counted shared definition words. It ignored the original explanation around those words. With a two-word definition such as “to forgive,” an accurate explanation was especially likely to fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/README.md",
+   "lines": "25",
+   "quote": "7f32fd95 narrows the Grade 5 copy guard. Definition-only copies still fail; elaboration is judged for meaning. Actual rehearsal/pardon explanations accepted unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/rehearsal-pardon-scoring-review.md",
+   "lines": "9",
+   "quote": "The actual hook passed 19 regressions, including the reported answers, copy-only negatives and an incorrect elaboration rejected by the scorer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/apps/broker/WRITING-SCORE.md",
+   "lines": "130-132",
+   "quote": "verbatim-copy = a contiguous verbatim run ≥ 8 tokens AND ≥ 0.85 total n-gram overlap, so a correct short-passage answer that reuses topic words is not falsely flagged",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "113-114",
+   "quote": "**Pre-gate + garbage flag:** too-short, verbatim-copy, and non-attempts (gibberish, repeated filler, \"idk\") are caught and forced to a re-type before the LLM even scores.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

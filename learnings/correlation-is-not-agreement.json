@@ -1,0 +1,98 @@
+{
+ "id": "correlation-is-not-agreement",
+ "title": "Correlation is not agreement",
+ "statement": "Judge whether one measure, such as a model marker, can replace another by how far and which way individual scores differ, not by correlation, which misses a uniformly generous marker.",
+ "example": "In one simulation, two item banks' scores for the same students correlated at 0.902 yet had 95% limits of agreement of −11.4 to +11.1 points.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading assessment's simulation scored the same 2,000 simulated students on its own bank and on a synthetic bank modelled on the reference test's pool, using the standard method-comparison approach: the two scores correlated at 0.902, but the 95% limits of agreement ran from −11.4 to +11.1 points. Its authoritative later run gave 0.918 with limits of −10.0 to +10.0. The package also notes that its ability-recovery correlation of 0.948 measures ranking accuracy, not absolute accuracy.",
+ "against": "The second bank was synthetic, so this measures the engine's internal consistency, not agreement with the real test: \"It is emphatically not a measurement of agreement with NWEA MAP — the comparison bank is synthetic.\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`, line 220). The narrower band expected after linking is \"a hope stated in advance, not a result\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md`, line 25). The generosity is a prediction carried over from research on estimating item difficulty, not a measurement of this marker, and the harness makes no certification claim until a real gold set replaces its synthetic seed (`grade3-reading/ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md`, lines 122-123).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "235",
+   "quote": "| Correlation (r) | **0.902** | Strong agreement in ranking |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "238",
+   "quote": "| 95% Limits of Agreement | **[−11.4, +11.1] RIT** | Individual scores may differ by up to ±11 RIT |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "223",
+   "quote": "N = 2,000 students",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "229",
+   "quote": "Statistical basis: the Bland-Altman method [ACADEMIC] is the standard approach for comparing two measurement instruments that measure the same construct on the same scale [AERA-2014; Kolen-Brennan-2014].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "21",
+   "quote": "**0.918 / [−10.0, +10.0] RIT** | r ≥ 0.85 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "144",
+   "quote": "The r=0.948 measures ranking accuracy, not absolute accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "57-59",
+   "quote": "predicts the LLM is **systematically too generous, and a bigger model makes it worse** — **a 0.8 correlation with a +0.7-band offset is a broken scorer.** Report false-high (safety- critical: a weak response scored 2) separately from false-low",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "55",
+   "quote": "**Agreement report — the SIGNED gap, not just correlation.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "102",
+   "quote": "**87.5% agreement (42/48), 1 false-high, 0 concerning**",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Statistical methods for assessing agreement between two methods of clinical measurement (The Lancet, 1986)",
+   "url": "https://doi.org/10.1016/S0140-6736(86)90837-8"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

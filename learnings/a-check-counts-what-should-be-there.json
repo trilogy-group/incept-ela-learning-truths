@@ -1,0 +1,92 @@
+{
+ "id": "a-check-counts-what-should-be-there",
+ "title": "A check counts what should be there",
+ "statement": "Give a check an expected count from the content, code or a fixed list, never from what it finds, and fail by name on anything missing or unknown.",
+ "example": "A test script driving a lesson reported 0 problems while leaving one item unanswered; only an unrelated count, reading 6 of 7, showed it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 reading build's rulebook found that an assertion over everything a walker found is true whenever it finds nothing: after an interaction changed shape, a walker reported every gate answered with 0 problems while leaving an item unanswered, and only an unrelated count of answered items, reading 6 of 7, showed it. The fix has the walk say how many items it reached and compares that with a number taken from the content, never from the walk's own tally, and ends the type dispatch with a branch that names any new item type instead of skipping it. The rulebook generalises that a check walking what it found notices things appearing but never disappearing, so a table of expected things needs assertions in both directions; a Grade 5 course's science gate likewise holds its fixed list of 27 passage IDs apart from the scope ledger, so deleting a row cannot hide a lesson. The Grade 3 package derives its response floors from the player's own call sites and the authored content rather than pinning them, so a response kind the table doesn't know fails by name instead of being under-counted.",
+ "against": "A count taken from content the delivery code never consults can agree with the bug: \"Deriving a count from content the player does not consult is not the conservative choice; it makes the gate agree with the bug.\" (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md`, lines 622-623).",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "518",
+   "quote": "An assertion over \"everything the walker found\" needs a companion assertion over how many things it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "765",
+   "quote": "anyone noticed was an unrelated downstream assertion counting answered items, which read 6 of 7.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "526",
+   "quote": "Take the denominator from the CONTENT, never from the walk's own",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "527-528",
+   "quote": "so a newly authored item type is a named problem instead of a silent no-op",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "50",
+   "quote": "27-ID expectation independently, so deleting a row cannot make a lesson disappear from the check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "594",
+   "quote": "only notice things APPEARING, never things DISAPPEARING.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "601",
+   "quote": "both directions; one of them is usually missing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "186",
+   "quote": "The floors are derived, not pinned.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "188",
+   "quote": "rather than under-counting silently.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

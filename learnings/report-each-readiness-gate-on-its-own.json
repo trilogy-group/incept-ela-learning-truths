@@ -1,0 +1,256 @@
+{
+ "id": "report-each-readiness-gate-on-its-own",
+ "title": "Report each readiness gate on its own",
+ "statement": "Report each readiness gate on its own, with how it was verified and what is still open, never averaging gates or letting one stand in for another.",
+ "example": "One course was 100% authored while its other readiness gates stood at 0%.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "review"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A locally authored AP course was reported as 100% authored, with human content review, source and rights review, accessibility review, independent item certification and runtime verification each at 0%, and its ledger says not to average those gates into a single quality score; the zero rows are later acceptance gates, not missing lessons. A plan to centralise the reading standards makes missing required data produce a not-evaluable verdict that names the missing inputs and blocks any completion claim. A reading release's deployment proof states that it proves only one part's vertical slice. The gates run from file checks and the live player to rights, accessibility, certification and human review, and missing evidence counts as not evaluable.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0171-apush-full-course-local-authoring-review-hub-archive.qmd",
+   "lines": "50",
+   "quote": "Do not average the independent readiness gates into a fake single quality score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0171-apush-full-course-local-authoring-review-hub-archive.qmd",
+   "lines": "51",
+   "quote": "the honest answer is **100% authored**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0171-apush-full-course-local-authoring-review-hub-archive.qmd",
+   "lines": "52",
+   "quote": "The zero-percent rows are later acceptance gates, not missing lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0173-edullm-standards-centralization-plan.qmd",
+   "lines": "99-100",
+   "quote": "`NOT_EVALUABLE` with named missing inputs and blocks any rejection-grade completion claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0210-aladdin-2508-feedback-and-pr27-safety-snapshots.qmd",
+   "lines": "142-143",
+   "quote": "this release proves only the Part-1 (L4) vertical slice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "36-38",
+   "quote": "**NEXT GATES:** named human academic/historical review, source-line and rights review, accessibility, independent assessment certification, and target-runtime import/render/scoring. These are later readiness gates, not missing lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "48-50",
+   "quote": "**APUSH:** nine-unit architecture and deterministic Unit 1 contracts pass, but the independent read says BLOCKED FOR REPLICATION on six concrete content, release, source, correction, rubric, and student-projection buckets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "43",
+   "quote": "the six repair buckets below are now closed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "52-53",
+   "quote": "This boundary matters. InceptBench should not overclaim runtime behavior or package truth. It should get the artifact-checkable layer much stronger.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/TOOLING.md",
+   "lines": "58-59",
+   "quote": "Neither tool replaces item anti-leak certification, live student-seat verification, formal accessibility review, academics approval, or learner-outcome evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "63",
+   "quote": "verdicts are PASS-with-named-gaps, never bare PASS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0171-apush-full-course-local-authoring-review-hub-archive.qmd",
+   "lines": "51-52",
+   "quote": "the honest answer is **100% authored**. The zero-percent rows are later acceptance gates, not missing lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0009-timeback-alpha-read-packager.qmd",
+   "lines": "107-108",
+   "quote": "Confidence tags: `[LIVE]` walked in the student app · `[CENSUS]` exhaustive content check · `[PROBE]` one live probe per format · `[CODE]` enforced in code+tests · `[OPEN]` not yet verified.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Anatomy-of-a-Perfect-Course.md",
+   "lines": "57-58",
+   "quote": "Authored, mechanically validated, semantically reviewed, runtime verified, human accepted, production verified, and outcome validated are distinct states.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "61-62",
+   "quote": "A later state does not erase a failed earlier state. A deployment is not acceptance. Acceptance is not an outcome study.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "379-380",
+   "quote": "**The mapped/filled/authored/asset/validated/rendered/deployed/accepted ladder** prevents a skeleton or a preview from being called a finished course.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "3-4",
+   "quote": "disclose the one deferred number in the same breath",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "12",
+   "quote": "honesty survives audit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "156",
+   "quote": "Overclaiming has a specific cost: this course's history is that overclaims get caught.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "157-158",
+   "quote": "Both remaining open items in this package are stated as open, with no mitigation beyond the gate that stops them getting worse.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "12-14",
+   "quote": "A reviewer who finds a gap themselves trusts nothing else in the package; a reviewer we tell trusts the whole thing.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/agent-skill/SKILL.md",
+   "lines": "24-26",
+   "quote": "report them verbatim; never round them up.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "9-11",
+   "quote": "Preserve every open human and runtime gate, and every honesty flag (Asserted / Open / [TO SOURCE]), exactly as written.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "27",
+   "quote": "This is not a full-check pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "113",
+   "quote": "Separate source tests, settled visual arrivals, actual transitions, real grading, real pronunciation/listening and human academic decisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/ACCEPTANCE-MATRIX.md",
+   "lines": "9",
+   "quote": "A reader should not add these statuses into one completion percentage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "36",
+   "quote": "The table deliberately has no overall pass percentage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/kb-authorities.md",
+   "lines": "16",
+   "quote": "kb-0171 percentage ledger forbidding averaging readiness gates 'into a fake single quality score'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "skills/edullm-review-hub/SKILL.md",
+   "lines": "99",
+   "quote": "Do not turn check coverage into a percentage or additive quality score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "175",
+   "quote": "These states must be reported separately:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "372",
+   "quote": "Say which tests passed, which academic decisions remain open, and whether the app was changed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "64",
+   "quote": "If any box fails, the lesson is not ready. A deployment cannot compensate for it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

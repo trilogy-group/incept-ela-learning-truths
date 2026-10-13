@@ -1,0 +1,69 @@
+{
+ "id": "pin-the-exam-specification-by-date",
+ "title": "Pin the exam specification by date",
+ "statement": "Pin the official exam specification a course targets by effective date and digest, and re-check every item type and generator schema against it whenever it changes.",
+ "example": "A legacy short-answer generator still set its stimulus to null, though every short-answer question on the May 2027 exam is sourced.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "format",
+  "alignment",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of an AP history course found that its legacy short-answer generator's schema set the stimulus to null, although every short-answer question on the May 2027 exam is sourced, so its items fit only the old format, and the course then accepted no legacy short-answer item by shape alone. The course's design notes hold that an exam-format change is not only a schema issue: an author who silently uses the prior format makes a whole practice sequence teach the wrong task. Pinning the official authority, effective date, retrieval date and digest is therefore treated as part of instructional quality, and the framework's frozen digest and retrieval date are kept in a source manifest.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "301-305",
+   "quote": "An exam-format change is not only a schema issue. If all SAQs become sourced, students need repeated instruction in reading different source modalities under short-answer timing. If an author silently uses the prior format, a whole practice sequence teaches the wrong task. Pinning official authority, effective date, retrieval date, and digest is therefore part of instructional quality, not clerical overhead.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "46",
+   "quote": "The local APUSH SAQ generator schema sets `stimulus` to `null`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "46",
+   "quote": "No legacy SAQ is accepted by shape alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CASE-FOR-PLAN-REVIEW.md",
+   "lines": "28",
+   "quote": "The legacy SAQ schema still allowed no stimulus even though every May 2027 SAQ is sourced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "9",
+   "quote": "Its frozen digest and retrieval date live in `../canonical/source-manifest.json`.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

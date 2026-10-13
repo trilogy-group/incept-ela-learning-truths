@@ -1,0 +1,63 @@
+{
+ "id": "mark-where-an-assigned-reading-ends",
+ "title": "Mark where an assigned reading ends",
+ "statement": "When assigning part of a longer text, mark where the part ends as well as where it starts, so the learner need not work out the end from paragraph numbers.",
+ "example": "An assigned reading in a Grade 5 novel unit ran from its last paragraph, 25, straight into 26 with no end label.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 course built on a full novel found that the link to an assigned reading marked where it started, but the chapter ran on past its last assigned paragraph with no end label, and the assignment list gave only start points. The accepted repair names each selected part with its paragraph range, puts an end marker after its last paragraph with a link to the next selected part, and leaves the whole original chapter in place. A browser review then saw a visible ending and a next-part link on the selected range.",
+ "against": "A marked range shows where to read, not that it was read: 'Neither link traversal nor the returned context establishes that the child read the assigned text.' (`grade3-reading/ui-audit-2026-09-08/round-3/g5-u1/READER-PATH-ACCEPTANCE-by-unit9.md`, line 25).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/REPORT.md",
+   "lines": "25",
+   "quote": "normal Lesson5 reader entry marks the selected start, but paragraph25 flows directly into26+ with no end label.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/REPORT.md",
+   "lines": "25",
+   "quote": "The assignment list also provides only starts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "53",
+   "quote": "the student should not need to infer an end from paragraph numbers alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g5-u1/IMPLEMENTATION.md",
+   "lines": "11",
+   "quote": "the exact final paragraph is followed by an end marker and the next source-selected moment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g5-u1/READER-PATH-ACCEPTANCE-by-unit9.md",
+   "lines": "14",
+   "quote": "The selected range has a visible ending and a next-selected-moment link.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

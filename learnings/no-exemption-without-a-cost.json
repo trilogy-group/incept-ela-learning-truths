@@ -1,0 +1,162 @@
+{
+ "id": "no-exemption-without-a-cost",
+ "title": "No exemption without a cost",
+ "statement": "An exemption from a check is granted by someone other than whoever claims it, never self-declared, and must put a measured outcome in place of each one it waives.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A self-audit of the reading project's quality gate found a latent escape: any course could declare itself engagement-primary in its README and mark every outcome row not applicable; its proposed fix makes the exemption granted rather than self-declared, with a measured engagement outcome replacing each row it nullifies, so it costs an outcome instead of waiving one (`grade3-reading/knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd`). A draft certification standard keeps a known-debt list that can only shrink and is never padded to pass a build (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`).",
+ "against": "Neither is recorded as in force: one is an audit's recommendation and the other sits in a draft standard that binds nobody (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "52-53",
+   "quote": "any course can declare it in its README and legally N/A every MAP/item-quality/cold-transfer row",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "54-55",
+   "quote": "requiring a measured engagement OUTCOME to REPLACE each nullified row",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "55",
+   "quote": "so it costs an outcome, not waives one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "67-68",
+   "quote": "known-debt list (can only shrink, never padded to pass a build).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "25-26",
+   "quote": "each nullified MAP row must be **replaced by a measured engagement OUTCOME** (retention / completion-quality) so \"engagement-primary\" costs an outcome rather than waiving one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/templates/COMPLIANCE.template.md",
+   "lines": "25",
+   "quote": "so the hatch *costs* an outcome rather than *waiving* one;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "121-123",
+   "quote": "It is an exact-string list of content that predates a rule. An unlisted violation hard-fails; an entry that matches nothing also fails, so fixing something forces its entry deleted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "103",
+   "quote": "- **`known-debt.mjs` may only SHRINK.** Never add to it to make a build pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/HANDOVER-2026-08-25-PR27.md",
+   "lines": "202-203",
+   "quote": "`scripts/known-debt.mjs` currently contains `G3-U1-L4 p2 vocab#word: enchanting`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "106",
+   "quote": "reverted in favour of an honest debt entry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "37-39",
+   "quote": "Do not add a suppression list — the whole file is four lines of prose and re-reading it is cheaper than maintaining exact-string exemptions that rot the moment a lesson is edited.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "44-47",
+   "quote": "Content that predates a rule is not an exception — it is listed item by item; the list WARNS on every run instead of failing (so debt stays visible); an unlisted violation still FAILS; an entry nothing currently matches FAILS (an exemption that outlived its cause is a silencer); and the list may only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PP-DEFENSE-2026-09-22.md",
+   "lines": "68-69",
+   "quote": "Pre-existing findings ride `voice-laws-debt.json` with shrink-only semantics: listed warns, unlisted fails, a stale entry fails.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "216",
+   "quote": "inverted, and only declared via a waiver, not resolved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "220",
+   "quote": "and the `_mismatch_note` (line 36) that self-declares the gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "215-216",
+   "quote": "The stage, exposure count, and mismatch are declared in the data itself (`_mismatch_note`).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "142-143",
+   "quote": "a declared, open decision needing sign-off, not itself a violation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "37",
+   "quote": "sanctioned \"encapsulating\": {reason, authority} field on the vocab node",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "233-234",
+   "quote": "Do not silently re-label item counts to match a row without picking one of these two paths — that would just move the waiver, not resolve it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

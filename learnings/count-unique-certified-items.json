@@ -1,0 +1,361 @@
+{
+ "id": "count-unique-certified-items",
+ "title": "Count unique certified items",
+ "statement": "Count banks and rates by distinct, independently certified items per type, not rows, which hide repeats, treating an item's variants as that item and keeping them in one split.",
+ "example": "One bank of 143,026 rows held 49,571 unique candidates and 0 independently certified ones.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An inventory of the AP history question substrate found 143,026 gross rows, 49,571 sampling-eligible unique candidate bodies and 0 independently certified rows, so a claim of 100,000 usable items was rejected (`grade3-reading/knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd`). Its deterministic split kept 606 lineage-connected groups whole, with zero collisions across strata, and its remaining work includes rejecting contamination between training, development and audit sets. Every variant of one item, its paraphrases, number swaps and shared templates, is kept in the same split.",
+ "against": "The split is discovery evidence, not training, certification or model-performance evidence (the same file). The near-duplicate count hashed only the first 200 characters, so items sharing a passage but asking different questions counted as duplicates, and several questions on one source is normal exam practice (`icloud-work/ap-social-studies-generator/data/analysis_report.md`). Variety and pass rate can pull apart: the variety fix was described as 'a quality/variety repair, not a guaranteed score-only patch' (icloud-work/aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/run_0506c1fd_v2_final_variety_static.md, line 41). Variety needs enough samples to measure: a seven-response smoke showed one duplicate in two set samples, and the lab asked for at least five extra samples of each repeating type before a live check.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "73-75",
+   "quote": "143,026 gross APUSH rows; - 49,571 sampling-eligible exact unique candidate bodies; - 0 independently certified rows; and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "78",
+   "quote": "The 100,000 unique/usable-sample claim is therefore rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "78-79",
+   "quote": "The deterministic split has 606 indivisible lineage-connected groups and zero cross-stratum collisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "81-82",
+   "quote": "This partition is discovery evidence, not training, item certification, or model-performance evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "139",
+   "quote": "reject train/dev/audit contamination",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-20T0821Z_PIL_WEEKLY_APUSH_REPORT.md",
+   "lines": "26",
+   "quote": "- A0F static issue: DBQ had 216 successful rows but only 6 unique payloads; MCQ_SET had 211 successful rows but only 13 unique payloads.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-20T0821Z_PIL_WEEKLY_APUSH_REPORT.md",
+   "lines": "25",
+   "quote": "- A0F completed run: 848/1067 = 79.48%; MCQ_SET remains binding at 123/211 = 58.29%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-26T0822Z_topN_variants_DELIVERED.md",
+   "lines": "132",
+   "quote": "- (b) ≥2 distinct items per KC across 3 requests for ≥90% of KCs → MCQ 96.7%, SAQ 93.3%, LEQ 90.0% (right at floor)",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "15",
+   "quote": "Split by underlying problem and template generator, including near-duplicate wording and number substitutions, never by quartet row.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "40",
+   "quote": "Assign related paraphrases, common source excerpts, shared templates, and adversarial variants to the same `family_id`.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "data/heretic_synthetic_v3/manifest.json",
+   "lines": "372",
+   "quote": "The 96 numeric task quartets use 48 candidate calculation graphs; the 48 locked quartets use 24 candidate graphs. Algebraic aliases and control lineage overlap remain unreviewed. Do not claim 48 distinct locked templates or independent template-level observations.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "15",
+   "quote": "Five potential cross-split task aliases, 12 control-to-task math aliases, and three repeated safety proposal archetypes are recorded in the v3 manifest.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "14",
+   "quote": "488 inputs and separate gold rows: 96 task quartets, 104 singleton controls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "73",
+   "quote": "143,026 gross APUSH rows;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "74",
+   "quote": "49,571 sampling-eligible exact unique candidate bodies;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "75",
+   "quote": "0 independently certified rows;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "74-75",
+   "quote": "0/8,937 sequence/match survive strict QA",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "75",
+   "quote": "ONE template stamped 1,475×",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/analysis_report.md",
+   "lines": "403",
+   "quote": "- Duplicate rate: 24.53%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/analysis_report.md",
+   "lines": "406",
+   "quote": "- Count 50: [mcq/apush] Use the excerpt below to answer the question.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/IRONCLAD_BATCH_50.md",
+   "lines": "8",
+   "quote": "- Attempts: 62",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/IRONCLAD_BATCH_50.md",
+   "lines": "12",
+   "quote": "- Duplicates Caught: 12",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/run_0506c1fd_v2_final_variety_static.md",
+   "lines": "15",
+   "quote": "| DBQ | 216 | 88.4% | 6 | 2.8% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/run_0506c1fd_v2_final_variety_static.md",
+   "lines": "18",
+   "quote": "| MCQ_SET | 216 | 67.1% | 11 | 5.1% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/run_0506c1fd_v2_final_variety_static.md",
+   "lines": "27",
+   "quote": "- The showcase architecture generated multiple candidates, but the underlying all-units generator was still effectively deterministic because `apush_all_units_generator.call_fireworks()` hard-coded `temperature=0.0` and ignored the showcase profile temperature hints.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "62",
+   "quote": "Takeaway: K was not producing useful diversity for MCQ_SET in this archive. It produced duplicate payloads. Anti-static guard must treat identical candidates as one candidate, not six chances.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "73-75",
+   "quote": "- 143,026 gross APUSH rows; - 49,571 sampling-eligible exact unique candidate bodies; - 0 independently certified rows; and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "48-49",
+   "quote": "340 stem clusters duplicated (2,233 excess copies, 28% of pool)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "87-89",
+   "quote": "They reduce retrieval and authoring cost but remain candidate substrate. None bypasses source identity, current-format, factuality, answerability, independence, or human review gates.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/A0F_COMPLETED_RUN_READINESS_20260520.md",
+   "lines": "44",
+   "quote": "| DBQ | 216 | 6 | 72 identical payloads |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/A0F_COMPLETED_RUN_READINESS_20260520.md",
+   "lines": "45",
+   "quote": "| MCQ_SET | 211 | 13 | 39 identical payloads |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/A0F_COMPLETED_RUN_READINESS_20260520.md",
+   "lines": "50",
+   "quote": "DBQ and MCQ_SET are behaving like static template banks. That can pass many rows, but it is exposed by variety scoring and by substandard-specific alignment failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_324d5e51_live_update_decision.md",
+   "lines": "21",
+   "quote": "- MCQ_SET fingerprint uniqueness is below 30%; static stimulus templates are still active.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/request_trace/2026-05-21T075822Z_2926c4107df0.md",
+   "lines": "27",
+   "quote": "The small sample showed MCQ_SET duplicate fingerprint `1/2`, so future pre-live diversity smoke should use at least 5 extra DBQ/MCQ_SET samples.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "689-695",
+   "quote": "For any future expansion, five counts should remain distinct: 1. gross rows discovered; 2. schema-valid rows; 3. content-hash-unique candidate bodies; 4. source-cleared and current-format bodies; 5. package-eligible or serving-eligible bodies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/DELIVERABLE-CONTRACT.md",
+   "lines": "162-164",
+   "quote": "Item candidates, prompt-response training examples, item contracts, evaluator observations, selected or cache winners, source stimuli, and curriculum facts use different counting units. They are never added together into one “sample” number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "685-687",
+   "quote": "The inventory reports different object kinds separately. Curriculum facts, item contracts, generated candidates, prompt-response training examples, evaluator observations, selected winners, and source stimuli are not additive.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "669-671",
+   "quote": "Gross APUSH rows reach 143,026. That number is not a unique usable corpus. It includes derived training sets, repeated wrappers, difficulty variants, preference pairs, and related descendants.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "673-674",
+   "quote": "After canonical candidate-body parsing and exact deduplication, the inventory contains 49,571 sampling-eligible unique bodies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "675-676",
+   "quote": "Those are membership counts across the deduplicated pool, not certified item counts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "676-677",
+   "quote": "Rights, current format, answerability, and academic review remain unassessed for all 49,571 inventory bodies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "45",
+   "quote": "The final intake sealed 13,120 distinct questions; the 50,000-row set was derivative permutation reuse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "429-430",
+   "quote": "Decode seeds are repeated measurements, not extra sample size.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/GATE4_COHERENCE_REPORT.md",
+   "lines": "11",
+   "quote": "CRITICAL: 340 stems appear more than once, accounting for 2,233 extra (redundant) copies of items — 28% of the pool is duplicate content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "697-700",
+   "quote": "Train, development, audit, and blind holdout splits must be assigned by source or stimulus lineage and near-duplicate group before model exposure. Related variants stay in one split. Otherwise a large corpus can produce impressive evaluation through shared sources or paraphrases rather than generalization.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "10",
+   "quote": "the `load_bank()` build dedups to 786 unique items (which differs from the naive fixture sum)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

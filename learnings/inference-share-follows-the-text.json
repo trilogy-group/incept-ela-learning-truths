@@ -1,0 +1,70 @@
+{
+ "id": "inference-share-follows-the-text",
+ "title": "Inference share follows the text",
+ "statement": "Fit the share of inference questions to what the text affords: a very easy text supports few honest inferences, and a flat target manufactures forced or unsupported items.",
+ "example": "One review judged a fair early-reader quiz to be about 15–30% inferential, against the 4% it found.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A pedagogy red team on a second-grade item rebuild argued that highly decodable text at a very low readability level is low-inference by design, so the quiz's 4% inference share was partly a text-level floor, not only weak item writing (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md`, lines 116-120). On such text, inference items risk becoming trivial, with the answer stated, or artificially hard inferences the text doesn't support, so pushing the share up can manufacture bad items (the same file, line 122). It asked for an inference target per band or reading level, accepting that the easiest band should be inference-light, while judging 4% too low even so (the same file, line 124).",
+ "against": "The narrowed rebuild that followed still set one target for every passage: \"Per passage: ~30–40% inference (vs 4%)\" (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md`, line 82).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "120",
+   "quote": "**Highly decodable text at FK 0.9–2.2 is, by design, low-inference text.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "122",
+   "quote": "On FK-0.9 decodable fiction, \"inference\" items risk becoming either (a) trivial/forced (\"why is the boy happy?\" → \"because he got a dog,\" stated), or (b) artificially hard inferences the *text doesn't support*, which is a worse item-quality failure than literal recall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "122",
+   "quote": "Pushing inference share up against a too-easy corpus can manufacture bad items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "124",
+   "quote": "The design should **set the inference target per band/Lexile**, not a flat blueprint share, and accept that Band A *should* be inference-light.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "124",
+   "quote": "4% is genuinely *too* low even accounting for text level — a fair early-reader quiz lands more like 15–30% inferential",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "82",
+   "quote": "Per passage: ~30–40% inference (vs 4%)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

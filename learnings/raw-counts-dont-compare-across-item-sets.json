@@ -1,0 +1,106 @@
+{
+ "id": "raw-counts-dont-compare-across-item-sets",
+ "title": "Raw counts don't compare across item sets",
+ "statement": "When students took different items or forms, never compare or correlate their raw or percent-correct scores; first equate them, or estimate ability from the answers and each item's difficulty.",
+ "example": "20 right answers on easy items and 20 on hard ones give the same raw score but different abilities.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment's scoring design rejects the sum score because it treats every correct answer alike whatever the item's difficulty, so a student with 20 easy items right and one with 20 hard items right get the same raw score for different abilities (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). It estimates each student's ability on the logit scale from the responses and the difficulties of the items that student took, the method the reference test documents (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`).",
+ "against": "Under the one-parameter model the package uses, students who took the same items and got the same number right receive the same estimate whichever items those were, so the gain over a raw count lies in comparing different item sets, not in weighting responses within one.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "52",
+   "quote": "**Sum score:** Treats every correct answer identically regardless of item difficulty. A student who answered 20 easy items correctly and a student who answered 20 hard items correctly receive the same raw score — which maps to different ability levels. MLEF weights each response by the information content of that item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "86",
+   "quote": "A raw sum score treats a correct answer on a b=−2.0 item identically to a correct answer on a b=+1.0 item — MLEF does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "216",
+   "quote": "its **existence** (60 dual-tested students, real)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "217",
+   "quote": "so the bridge currently supports **neither** a direction nor a magnitude claim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "222",
+   "quote": "a correlation on the 60 returned r≈−0.16 / ρ≈−0.06 — a confounded artifact, not a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "223",
+   "quote": "percent-correct on released forms of differing difficulty across years (range",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "224",
+   "quote": "not an equated scale score, while MAP is RIT averaged across seasons; the scales aren't comparable, so a valid",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "225",
+   "quote": "proxy correlation needs equated STAAR scale scores (or per-form raw→scale conversion)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "222-223",
+   "quote": "a correlation on the 60 returned r≈−0.16 / ρ≈−0.06 — a confounded artifact, not a finding.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "223-224",
+   "quote": "percent-correct on released forms of differing difficulty across years (range 0.8–97.5)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "224-225",
+   "quote": "the scales aren't comparable, so a valid proxy correlation needs equated STAAR scale scores (or per-form raw→scale conversion)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

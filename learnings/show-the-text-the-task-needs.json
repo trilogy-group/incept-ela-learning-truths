@@ -1,0 +1,225 @@
+{
+ "id": "show-the-text-the-task-needs",
+ "title": "Show the text the task needs",
+ "statement": "Whenever a task, prompt or feedback asks a student to find or cite evidence or sends them back to the text, keep the text on screen.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An outside review of a course found prompts asking students to cite the text while the passage was hidden, so they were told to look back at a text that was gone (`grade3-reading/artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt`). A walkthrough of a later course found the transfer items of most lessons shown beside the wrong pinned passage, with the open-response marker handed that same wrong text (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md`), and an earlier review found a pinned excerpt that held only the lines of wrong answers (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md`). The text sits beside the live question and steps, showing the part that holds the evidence.",
+ "against": "What stays in view is what has been read: the project's engine offers back only the earlier parts of a story on a passage page, never a later one (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, lines 61-62); and a film is a different case, where few words on screen help (see the record on few words on screen).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "45",
+   "quote": "Prompts ask students to cite text evidence, but the passage is hidden at that point (\"try looking back at the text\" — but the text is gone).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "76",
+   "quote": "WRONG pinned passage, and the open-response scorer is handed that wrong text.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "124",
+   "quote": "the pin shows only wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "86",
+   "quote": "- Prompts ask for textual evidence, but the passage is hidden when the student needs to cite it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "56",
+   "quote": "## Feedback table: direct blockers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "13",
+   "quote": "| L2 | passage visibility | `cites_text` implies `passage_visible` on every atom. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "281-282",
+   "quote": "evidence-writing hides the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0191-g3-book-lesson-anatomy.qmd",
+   "lines": "70-73",
+   "quote": "A page's own passage wins over an earlier one — this was a real, fixed bug: the renderer used to pin whichever passage came last in the whole lesson and drop the page's own passage on the floor, which could show a different part of the story than the one a proof-question was asking about.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "86",
+   "quote": "Prompts ask for textual evidence, but the passage is hidden when the student needs to cite it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "84",
+   "quote": "The steps and live question must remain visible, and the model should surface one thing at a time; the current screen contains too much at once.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "38-39",
+   "quote": "Whenever feedback or a prompt asks the student to cite or look back at the text, the text must be visible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "39-40",
+   "quote": "\"Try looking back at the text\" with the passage hidden is a defect class, not a UX nit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "140",
+   "quote": "15. Put the check **next to** the text, not below (below = split attention, scrolling up to find the answer).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "90",
+   "quote": "A complete encounter precedes close analysis; evidence remains available;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "112-113",
+   "quote": "6. Corrective feedback must be short, misconception-naming, evidence-anchored, and delivered with the text visible",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "356",
+   "quote": "**6.2 previous text stays accessible while answering**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v06/README.md",
+   "lines": "20-21",
+   "quote": "Also: the unit words are bold in the captions, and the player blurs the film while a check is open, because two checks now pause over plates that show their answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/IMPLEMENTATION-HANDOFF.md",
+   "lines": "11",
+   "quote": "Fifteen added silent source copies fix the incorrect assumption that /book carried preceding text forward.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "10",
+   "quote": "Practice keeps the source text beside the task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "53",
+   "quote": "links the passage so the child can read it while writing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/findings.json",
+   "lines": "145",
+   "quote": "grounding sent to a grader is not text visible to the learner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/REPORT.md",
+   "lines": "10",
+   "quote": "L7 p17 asks for the story’s own words but provides neither text nor reread access.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "246",
+   "quote": "text persists while the child answers\" rule (6.2) carried to the film",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "334",
+   "quote": "The invariant is that the text stays visible; its position follows its length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "116",
+   "quote": "Keep the Check Part 1 pattern: text and question on screen together, text persists, answer in the student’s own words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "334",
+   "quote": "The invariant is that the text stays visible; its position follows its length.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "101",
+   "quote": "Ginns (2006) meta-analysis of 50 studies: spatial contiguity effect about d = 0.72, larger for complex material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "254-255",
+   "quote": "The story stays beside the check (split-attention fix) — never scrolled away.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

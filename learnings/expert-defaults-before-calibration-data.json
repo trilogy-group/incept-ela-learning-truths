@@ -1,0 +1,171 @@
+{
+ "id": "expert-defaults-before-calibration-data",
+ "title": "Expert defaults before calibration data",
+ "statement": "When few students take each item, set item parameters from expert defaults and choose items by simple rules, because a statistically optimal method running on uncalibrated items does no better.",
+ "example": "Calibrating one item takes at least 100 to 200 responses, which at about 10 students per course is 10 to 20 cohorts.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "sequence"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The diagnostic guide in the reading project's knowledge base notes that estimating one item's difficulty and discrimination needs at least 100 to 200 responses, and slip and guess parameters typically 500 or more; with about 10 students in a course at a time, even 100 responses per item takes 10 to 20 cohorts, and revising an item resets the clock (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`). It sets parameters from expert judgment and structural defaults instead, such as a guess rate of 0.25 for a four-option item and a slip rate of 0.10 to 0.15, and selects items by prerequisite structure, cluster sampling and sentinel items. On uncalibrated items, selection by expected information gain is no better than such rules and may be worse.",
+ "against": "A later run found: A reading assessment's adaptive engine takes its uncalibrated difficulties from authoring bands, as this record advises, but picks each next item by information at the current estimate rather than by simple rules, following published adaptive-testing work; nothing in its package compares the two ways of selecting (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "114",
+   "quote": "requires at minimum 100-200 student responses to that item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "114",
+   "quote": "Estimating item-specific slip and guess parameters (as G-DINA requires) needs more — typically 500+ responses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "115",
+   "quote": "perhaps 10 students going through a given course at a time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "115",
+   "quote": "it takes 10-20 cohorts to accumulate even 100 responses per item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "115",
+   "quote": "If items are revised (as they should be, based on early evidence), the clock resets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "116",
+   "quote": "It means the parameters must come from expert judgment and structural defaults, not from data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "116",
+   "quote": "set guess rates by format (0.25 for 4-option MCQ, 0.5 for T/F, ~0 for free recall).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "116",
+   "quote": "Set slip rates by a conservative global default (0.10-0.15)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "117",
+   "quote": "will outperform a statistically \"optimal\" approach running on uncalibrated data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "117",
+   "quote": "the \"optimal\" selection is no better than heuristic selection, and may be worse",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "32",
+   "quote": "estimating a and c reliably requires at minimum 500–1,000 responses per item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "32",
+   "quote": "Without this data, 3PL would mean assigning invented discrimination and guessing parameters — not measuring them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "82",
+   "quote": "using 3PL pre-calibration would mean inventing parameters, not measuring them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "82",
+   "quote": "requires only the difficulty parameter b, which can be provisionally assigned from Lexile and domain information while awaiting empirical calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "100",
+   "quote": "MCQ items have a 25% guess floor that the Rasch model will underestimate for very low-ability students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "23",
+   "quote": "simulations assume the Rasch model is correctly specified — that all items discriminate equally and no guessing occurs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "270",
+   "quote": "All items in the bank carry provisional difficulty parameters (b_provisional) assigned at authoring time using two inputs:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "14",
+   "quote": "Item selection uses b_provisional values to compute Fisher information.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "200",
+   "quote": "select the item that maximizes Fisher information at the current θ̂",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "43",
+   "quote": "Rasch requires only difficulty, which can be provisionally assigned and then empirically corrected",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

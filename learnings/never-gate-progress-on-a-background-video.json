@@ -1,0 +1,72 @@
+{
+ "id": "never-gate-progress-on-a-background-video",
+ "title": "Never gate progress on a background video",
+ "statement": "Never gate progress on a background video that repeats on-screen teaching, since a required video walls off the learners who most need the lesson.",
+ "example": "Each unit's background video ran about 56 seconds, and the Next button was live before its first frame played.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "accessibility",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading build gave each unit one narrated background video of about 56 seconds on the unit's first lesson, after a review found that a child who skips text reaches the passage without the knowledge the level-set screens teach, so the same knowledge is taught again in moving pictures. Its rules never gate progress on watching: the step is informational, so Next is live before a single frame plays. The video never autoplays and plays only from one large child-triggered overlay, and on a load error the frame and its skip button remove themselves, so a missing file degrades to the level-set screens rather than a broken box.",
+ "against": "A record already there says young learners shouldn't skip or speed up instruction on their own judgment; this video may be passed over only because the same knowledge is taught again on the narrated screens that follow it.",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "179-180",
+   "quote": "each UNIT has one ~56s narrated video",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "183-184",
+   "quote": "so the same knowledge is taught again in moving pictures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "189-190",
+   "quote": "PROGRESS IS NEVER GATED ON WATCHING. The beat is `info:true`, so Next is live before a single frame plays;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "190-191",
+   "quote": "A required video is a wall in front of the lesson for exactly the children who most need the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "192",
+   "quote": "Never autoplays. Poster frame + one large child-triggered play overlay",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "194-195",
+   "quote": "On `error` the frame and skip button REMOVE themselves, so a missing mp4 degrades to the level-set screens rather than to a broken box.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

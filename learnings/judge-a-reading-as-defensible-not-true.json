@@ -1,0 +1,83 @@
+{
+ "id": "judge-a-reading-as-defensible-not-true",
+ "title": "Judge a reading as defensible, not true",
+ "statement": "Check an interpretation by whether the text contradicts it and whether a careful reader could defend it from the passage, keeping truth checks for plain claims.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's video essay can pose two readings of a passage as an argument. Drafts were held when an argument beat's narration failed a check that everything it said was true, and when the judge could not defend a reading from the lines (`g9/transformer/v02/QA.md`, lines 177-178). Now an argument beat's narration has only to avoid saying anything the passage contradicts and each reading must be one a careful reader could defend from the passage as an answer to the lesson question, while other beats keep the check that everything they say is true to the passage (`g9/transformer/src/mechanics/video-essay.js`, lines 122-134); a reading's points now keep close to the lines' own words (`g9/transformer/v02/QA.md`, line 178). It bears on When reference facts don't cover a claim, which asks whether a judge should fail only a claim its facts contradict.",
+ "against": "Narration that states what the text says is still held to being true: \"Is everything narration_${k} says true to passage?\" (g9/transformer/src/mechanics/video-essay.js line 126).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "123",
+   "quote": "two readings pose a question, which is neither true nor false: there, nothing said may go against the passage",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "132",
+   "quote": "Could a careful reader defend left_${k} from passage, as an answer to lesson_question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "126",
+   "quote": "Is everything narration_${k} says true to passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "177",
+   "quote": "an argument beat's narration that was not \"true\": it now has only to say nothing the text goes against",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "177",
+   "quote": "an argument beat's narration that was not \"true\": it now has only to say nothing the text goes against;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/4370894c30725db3.json",
+   "lines": "837",
+   "quote": "\"value\": 0.57,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/4370894c30725db3.json",
+   "lines": "848",
+   "quote": "\"top<0.6\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/4370894c30725db3.json",
+   "lines": "300",
+   "quote": "\"value\": 0.61,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

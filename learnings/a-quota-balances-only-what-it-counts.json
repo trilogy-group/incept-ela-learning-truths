@@ -1,0 +1,85 @@
+{
+ "id": "a-quota-balances-only-what-it-counts",
+ "title": "A quota balances only what it counts",
+ "statement": "A quota balances only the level it counts, so set and check targets for the standards and formats inside each domain, not only for the domains.",
+ "example": "One adaptive test came within one item of its domain quotas in every simulated session while its bank held 28 items on one standard against a target of 8.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "measurement",
+  "format"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading assessment's simulation held its domain quotas to within one item in 100% of sessions, and its write-up says this does not guarantee balance across the standards inside a domain, which bank composition and the item-selection rule decide (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`). Its bank held 28 items on one third-grade standard and 19 on another, each against a target of 8, and 31 on a third, 26 of them on prefix meaning (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`, `grade3-reading/ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md`). Two formats were stocked above their per-form targets as well, so they will be seen more often than intended even though the engine enforces per-session quotas. A cap of two items per standard per session was proposed, not shipped.",
+ "against": "A topic cap limits how often any one topic appears in a session, which the package counts as some mitigation (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`, line 268), and the over-testing is its expectation, not a measured serving rate. The per-standard counts come from a matrix the same file marks as stale, though it undercounted rather than overcounted (lines 121–132).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "284",
+   "quote": "Blueprint adherence at the domain level does not guarantee standard-level balance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "284",
+   "quote": "the distribution across RL standards is determined by bank composition and Fisher-information selection",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "233",
+   "quote": "Domain quota enforcement verified across 1,000 simulated sessions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "233",
+   "quote": "Blueprint adherence: **100% of sessions within ±1**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "268",
+   "quote": "Three G3 standards are over-represented: RL.3.3 (28 items vs. target 8), RI.3.3 (19 items vs. target 8), and L.3.4 (31 items with 26 marked deprioritized).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "268",
+   "quote": "A per-standard session cap (max 2 items per standard per session) is proposed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "85",
+   "quote": "The bank's MSQ and hot-text counts are above the per-form targets. This does not block delivery — the CAT enforces per-session quotas — but means these formats will be seen more frequently than intended before additional MCQ/EBSR items are added.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "282",
+   "quote": "- L.3.4 is over-concentrated on prefix meaning specifically (26 of 31 items)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

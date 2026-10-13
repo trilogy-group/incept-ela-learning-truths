@@ -1,0 +1,999 @@
+{
+ "id": "spread-the-right-answers-position",
+ "title": "Spread the right answer's position",
+ "statement": "Spread the right answer's position evenly across a set, and check it in code.",
+ "example": "In one set, 29 of 40 had it first.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Across one four-lesson arc in the reading project, 29 of 40 multiple-choice questions had the right answer first and\nthe fourth position appeared once; a child who noticed would beat a 72% base rate by always choosing A\n(`grade3-reading/artifacts/arc-audit/SIM-REVIEW-D5-D6-D11-D13.md`). Rebalanced, another set went from 56% choice A to\nan even spread over 117 questions\n(`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/RESPONSE-MATRIX.md`). My own\nfilm player lists the right option first in 5 of its 7 choice steps and never shuffles them\n(`g9/player/content/archivist-checks-v7.json`, `g9/player/index.html`).",
+ "against": "the reading project's blind-solve\nchecks never tested position (the same review), and the lesson engine doesn't check it yet. A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/process/CONTRACT-SIGNOFFS.md`). A later run found counter-evidence (`grade3-reading/artifacts/u4l2-build/BEAT-SPEC.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D5-D6-D11-D13.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/RESPONSE-MATRIX.md"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks-v7.json"
+  },
+  {
+   "source": "g9",
+   "path": "player/index.html"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "106",
+   "quote": "Fixed answer bias (all answers were \"B\") by shuffling options after generation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "74",
+   "quote": "chi-square answer balance analysis",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "50",
+   "quote": "correct answers were ~75% option \"A\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "56",
+   "quote": "Key-position/length balance needs an authoring-time check (12/19 A-keys shipped before the lens).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "224",
+   "quote": "### 3.8 Answer Balance (Non-critical) — Chi-Square Gate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "226",
+   "quote": "This is computed **programmatically** before the LLM evaluator runs. The LLM is instructed to use the programmatic score exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "228",
+   "quote": "**Pass (1.0) if**: Chi-square goodness-of-fit p-value ≥ 0.60",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "201",
+   "quote": "Use locked answer keys A, C, and B in that order.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/EXPERIMENT_RESULTS_2026-02-18.md",
+   "lines": "118",
+   "quote": "- Lower temperature made answer bias worse (9/10 picked \"B\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "77",
+   "quote": "79% of correct answers in a generated course sat at option position A, and the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "179",
+   "quote": "- `answer_balance`: Are answer positions distributed well? (Collection property)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "241",
+   "quote": "- Non-critical metrics: `concept_coverage`, `difficulty_distribution`, `non_repetitiveness`, `test_preparedness`, `answer_balance`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "253",
+   "quote": "| 0 | 1-2 | 0.75 - 0.84 | INFERIOR |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/fewshot_mcqset.py",
+   "lines": "7-8",
+   "quote": "This lifted IB MCQ_SET 3.3% -> 26.7% and fixed answer_balance 0 -> 30/30.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "60",
+   "quote": "| MCQ answer-A bias | A=64.5%, B=27%, C=7.8%, **D=0.7%**, E=0% (vs uniform 25% expected) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_data_session/HANDOVER.md",
+   "lines": "287",
+   "quote": "Build ran, validated row-count, missed the structural defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "93-94",
+   "quote": "- answer position, option length, distractor function, enemy items, blueprints, and independent cold review are form-level obligations;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "66",
+   "quote": "79% of correct answers in a generated course sat at option position A, and the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "51",
+   "quote": "Form-level answer-position, option-length, duplicate, enemy-item, and blueprint reports.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "151-152",
+   "quote": "does not detect within-lesson position *runs* (a student-visible streak that a course-wide histogram averages away).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "168",
+   "quote": "**12 of 19 single-select keys at A, with a 5-run.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "169-170",
+   "quote": "Post-fix (independently recomputed): spread **A8/B6/C4/D4 over 22 items, max within-lesson run 2**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "165-166",
+   "quote": "**79% of correct answers sat at position A and the key was systematically the longest**",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "10 (textutil text)",
+   "quote": "The correct option rotates across A/B/C/D",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "10 (textutil text)",
+   "quote": "Correct positions in order of appearance: B, D, A, C, B.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "8 (textutil text)",
+   "quote": "The two \"incorrect\" statements land in different positions in every REFINE",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "225",
+   "quote": "the G4 pull found **79% of MCQ correct answers at Choice A**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "153-154",
+   "quote": "79% of correct answers in a generated course sat at option position A, and the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "119-120",
+   "quote": "Dose teach MCQs bypassed the QTI debias pass, so rebalancing the graded bank never touched them: hook 69% A, we-do 53% A, **vocab 98% A** (53 of 54).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "123",
+   "quote": "fails above 40% for any item type",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v39_dataset_corruption_smoking_gun.md",
+   "lines": "24",
+   "quote": "**Defect 2 — MCQ answer distribution (n=293 MCQ rows):**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v39_dataset_corruption_smoking_gun.md",
+   "lines": "25",
+   "quote": "- A: 64.5% (189) — vs expected 25%",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v39_dataset_corruption_smoking_gun.md",
+   "lines": "56",
+   "quote": "3. Enforce uniform answer distribution at row-emit time for MCQ/MCQ_SET (rotate correct-answer position deterministically across A/B/C/D)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "9-10",
+   "quote": "- G9 position skew: the correct answer sitting in the same slot too often (e.g. 79% Choice A in a real G4 audit) lets a student guess by position.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "15-17",
+   "quote": "Report-only at lesson scale — a single lesson has too few items to gate reliably; score-gating happens course-side (#1104) where item counts are large",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "19-20",
+   "quote": "- tools/item_tells.py: pure functions + is_tell/is_skewed thresholds (>=4 items & >60% for length; >=8 items & >50% for position).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "7-9",
+   "quote": "BAML hallucinated A/B/C/D answer positions, the chi-square test then reported a non-random distribution",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "256",
+   "quote": "**The golden rule: for sets of ≤4 questions, every question MUST have a different correct answer position.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/convert_quiz_format.py",
+   "lines": "43",
+   "quote": "random.shuffle(options)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-014-timeline-AND-015-cartoon-FAILED.md",
+   "lines": "22",
+   "quote": "- 3 of 4 fail answer_balance (my hand-crafted A/B/C/D distribution wasn't varied enough)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "107",
+   "quote": "- Answer balance for MCQ_SET uses structured extraction plus chi-square; p >= 0.60 passes, otherwise fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_repair_loop_clean3/loop_summary.jsonl",
+   "lines": "1",
+   "quote": "\"failed\": 32, \"pass_rate\": 0.68, \"zero_metrics\": {\"answer_balance\": 15",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "528",
+   "quote": "**CRITICAL INSIGHT:** MCQ_SET is failing almost entirely because all 3 questions have the same correct answer letter (e.g., A/A/A or B/B/B).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "615",
+   "quote": "- **answer_balance: NOT PRESENT** ← constraint completely fixed this",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "372",
+   "quote": "- Chi-square probability >= 60% (if provided)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "47",
+   "quote": "79% of correct answers sat at option position A",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "50-51",
+   "quote": "(correct answers were ~75% option \"A\" → shuffled ~even A/B/C/D)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "56",
+   "quote": "positional bias of B ≈ 30%, C ≈ 29% vs. A ≈ 19%, D ≈ 22%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "58",
+   "quote": "**Symptom**: 62 of 71 MCQ_SET failures fire `educational_accuracy` aggregate; 61 fire `answer_balance` (children share correct letter); 47 fire `redundant_questions` (children test same skill).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd",
+   "lines": "97",
+   "quote": "\"first run caught a recurring rail defect and a 72.5% answer-position skew.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "47",
+   "quote": "L4's first round had 72.5% on one position",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "29",
+   "quote": "| LENS1-03 | Key-position imbalance, 12/19 A with a 5-run (must-fix)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/census-pp-L4-L7.txt",
+   "lines": "6",
+   "quote": "every blank's answer sits at option 0: [0, 0, 0]",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "119",
+   "quote": "The word bank lists answers in the same order as the blanks",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/KB_FURTHER_IMPROVEMENTS.md",
+   "lines": "117",
+   "quote": "The correct fix is *re-keying Form A's static options*, not shuffling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md",
+   "lines": "96",
+   "quote": "79% (correct at position A, G4 census n=100 MCQ + 116 EBSR)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "29",
+   "quote": "Key-position imbalance, 12/19 A with a 5-run (must-fix)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "119",
+   "quote": "The word bank lists answers in the same order as the blanks (free, swords, sea), so tapping the first three words in order gets everything right without reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-28-R13.md",
+   "lines": "40",
+   "quote": "12 pass distinct-letters / 40%-cap / no-triple-run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "60-62",
+   "quote": "classifies answers 5 ways (full/partial/off/brief/silent), 120 clips on the pinned course-TTS route, all Puck-stamped; the off-branch answer no longer sits last in every lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "225",
+   "quote": "the G4 pull found **79% of MCQ correct answers at Choice A**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "255",
+   "quote": "`shuffle=\"true\"` in the authored XML neutralizes an answer-position skew ONLY if each renderer honors it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "50-51",
+   "quote": "**answer-position bias fixed** (correct answers were ~75% option \"A\" → shuffled ~even A/B/C/D)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "8 (textutil text)",
+   "quote": "The two \"incorrect\" statements land in different positions in every REFINE, and the Modelling Moment set and the Part 3 set use different orders from each other.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "53",
+   "quote": "79% of MCQ correct answers sit at Choice A (expected ~25%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "151-152",
+   "quote": "and does not detect within-lesson position *runs* (a student-visible streak that a course-wide histogram averages away).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2020",
+   "quote": "Test makers systematically over-place correct answers in middle positions (B ≈ 30%, C ≈ 29% vs. A ≈ 19%, D ≈ 22% across large-scale exams).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "86",
+   "quote": "12. **Answer position: A is the answer in 10 of 20 visible four-option items, and D in only 1.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "79",
+   "quote": "All 7 blanks (p15b ×4, p24b ×3) put the correct word as option 1: Mole, Rat, underground, Toad, timid, cheerful, eerie.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "70",
+   "quote": "The script's ANSWER-BIAS check skips routine checks and dialogue items, so it missed two runs:",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "238",
+   "quote": "| 1 | Answer position (12 of 18 keyed B) | **Fixed.** Keys are spread across positions. |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "46",
+   "quote": "Each block traces to a Gate finding (\"Gate 3: 80% of MCQ_SET failures were answer_balance\").",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v39_dataset_corruption_smoking_gun.md",
+   "lines": "37",
+   "quote": "Defect 2 → degrades `distractor_quality` + `difficulty_alignment` (2/11 dimensions) because the model learns answer-position bias real AP exams don't have.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "59",
+   "quote": "All children sharing one correct letter is a set-level smell.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "89",
+   "quote": "Q2 content was fixed, but answer keys clustered on A/B and scored 0.84.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "75",
+   "quote": "Record answer-key distribution for MCQ_SET and repair when balance caps otherwise-good sets.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/4c5df03f78a26e6e.json",
+   "lines": "22",
+   "quote": "\"best\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/8d4652dbccf037b9.json",
+   "lines": "23",
+   "quote": "\"best\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/e47511c58b5dd64c.json",
+   "lines": "23",
+   "quote": "\"best\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/eb9231d930fa07c4.json",
+   "lines": "23",
+   "quote": "\"best\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "68",
+   "quote": "context: before, deliveries: item.deliveries",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "120",
+   "quote": "rebuild: item.rebuild.parts.map((p) => (p.options ? { options: p.options } : { text: p.text }))",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "30",
+   "quote": "\"best\": 0, \"why\": \"\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "27",
+   "quote": "best: the index of the delivery that fits.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "146",
+   "quote": "in alphabetical order, so neither the first card nor the first option is the gap's word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "94",
+   "quote": "in alphabetical order: the first card is not the gap's word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "100",
+   "quote": "the study set in alphabetical order, and the gaps with their cues, so no gap lines up with its word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "100",
+   "quote": "// the study set in alphabetical order, and the gaps with their cues, so no gap lines up with its word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "146",
+   "quote": "// in alphabetical order, so neither the first card nor the first option is the gap's word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "149",
+   "quote": "const g = it.words[0], at = g.gap.indexOf(BLANK);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/cd006e767ac5b219.json",
+   "lines": "10",
+   "quote": "\"word\": \"consecrate\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/cd006e767ac5b219.json",
+   "lines": "65",
+   "quote": "\"word\": \"consecrate\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/fa497dafbb0eb7c2.json",
+   "lines": "14",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/9a28237802fccd82.json",
+   "lines": "14",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "53",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "36",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The 9 cached QC blocks have the key at positions 0, 1 and 2 three, five and one times.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "83",
+   "quote": "view(item) { return { kind: \"choice\", stem: item.stem, options: item.options }; },",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Order options with seededOptionOrder(options), with no avoidFirst, read from the course-renderer mirror.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Map indices back in respond(), and log the order with the tick.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "19",
+   "quote": "79% of MCQ corrects at Choice A",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "19",
+   "quote": "skew is only exploitable if a renderer serves authored order; either way it fingerprints generator bias",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A grep finds no shuffle in src or web, nor in the animated build.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "63",
+   "quote": "the correct option first far more often than not — so the answer sat on the rendered A in",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "64",
+   "quote": "13 of 18 meaning checks (72%) under tidy letters. Re-lettering is not debiasing. If you add",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "274",
+   "quote": "Option order is AUTHORED order and is never shuffled",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "359-360",
+   "quote": "nothing pins its options' position distribution (correctly so — the order is authored on purpose and never shuffled)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "1081",
+   "quote": "The book renders MCQ, routine checks, dialogue and video checkpoints in AUTHORED order (verified by screenshot + src: questions.tsx Mcq/CheckpointQuestion use ABCD[i], vocabRoutine and dialogue map in order); validate-contracts scores the SEEDED order (seeded-option-order.mjs).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "1081",
+   "quote": "B fell from 12/18 to 6/18.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "748",
+   "quote": "The engine re-orders every option set at render time through the course-wide seeded debias shuffle, so the AUTHORED positions are not the positions a child sees, and both sets first landed on 3 and 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "62",
+   "quote": "Tracked per item family, because a lesson whose four story checks rotate while its two vocabulary forms both sit on A is exactly what a pooled count hides.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "182-183",
+   "quote": "Position-fingerprint check (G4 red team found 79% of correct answers at Choice A)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "35",
+   "quote": "Full-course choice order is balanced: direct keys A/B/C/D = 41/41/41/40; EBSR Part A = 14/14/14/13; Part B E/F/G/H = 14/14/14/13; all six MSQ pairs occur 9 or 10 times.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "37",
+   "quote": "I07 authored keys cover all nine derangements within one count, and target rows cover all 24 source-order permutations within one count.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "17",
+   "quote": "Balanced authored order is an authoring safeguard, not proof that the production delivery application's runtime shuffles.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "62",
+   "quote": "Tracked per item family, because a lesson whose four story checks rotate while its two vocabulary forms both sit on A is exactly what a pooled count hides.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "171-172",
+   "quote": "**F4. The rendered answer key is unbiased**: ≥3 letters, no letter above 40%, never three in a row, in the child's walk order.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "172-174",
+   "quote": "*Check: validate-contracts distribution gate (salt is the tunable, the gate never is).*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "456",
+   "quote": "The rendered answer key is unbiased : ≥3 letters, no letter above 40%, never three in a row, in the child's walk order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "35",
+   "quote": "- Full-course choice order is balanced: direct keys A/B/C/D = 41/41/41/40; EBSR Part A = 14/14/14/13; Part B E/F/G/H = 14/14/14/13; all six MSQ pairs occur 9 or 10 times.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "The authored direct-response groups are balanced within one across positions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/signoff-packet/FIXES-CURATED-2026-08-31.md",
+   "lines": "33",
+   "quote": "Authored answer-key positions rebalanced (72.5% at A → ≤31% per lesson)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-23.md",
+   "lines": "9-11",
+   "quote": "**The off-branch answer sat last in all four lessons.** D5.13 / D11. `answer_index` was 3 on L4, L5, L6 and L7, so a child routed to the `off` branch after a wrong answer could pick the last option every time and be right.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "171-172",
+   "quote": "**F4. The rendered answer key is unbiased**: ≥3 letters, no letter above 40%, never three in a row, in the child's walk order.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/practice.ts",
+   "lines": "44",
+   "quote": "{ options: ['to obey a leader', 'to run away', 'to give orders'], answer: 'to obey a leader' }",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/brainlifts/v0.3.md",
+   "lines": "84-85",
+   "quote": "incumbent AlphaLiteracy question bank is **4% inference, sequence-schema in only ⅓ of stories, 48% of answer keys on option A, templated stems**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/generation-contract.md",
+   "lines": "63",
+   "quote": "across positions, **not 79% Choice A** (the G4 red-team fingerprint); verify shuffle on both",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "182-183",
+   "quote": "(G4 red team found 79% of correct answers at Choice A)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "288-289",
+   "quote": "validate-contracts holds it to the mcq bar (four options, the answer never first, never the single longest, a 1.3x length band)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "36",
+   "quote": "two original source-based MCQ sets, eight questions total, with balanced A/B/C/D answer positions and answer and distractor rationales;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "67",
+   "quote": "L4's 13 MCQ items split A/B/C/D = 4/3/3/3 (30.8%/23.1%/23.1%/23.1%) — close to uniform, and markedly better-balanced than L2's own precedent distribution (7/4/1/0, position D never correct).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "3",
+   "quote": "first run caught a recurring rail defect and a 72.5% answer-position skew",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "28-29",
+   "quote": "anti-gaming: answer never the longest/shortest, no CCC key runs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "116",
+   "quote": "key never first",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

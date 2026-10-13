@@ -1,0 +1,73 @@
+{
+ "id": "borrowed-data-stays-a-placeholder",
+ "title": "Borrowed data stays a placeholder",
+ "statement": "Mark data borrowed from another group of students, such as another grade's weak skills, as a placeholder, never as measured for the students in hand.",
+ "example": "Until its own data arrived, one new grade's generator could target the earlier grade's three weak skills only as a flagged placeholder.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The generator harness for a new grade lists the cohort data that must come from that grade and must not be made up (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md`). Until the new grade's weak-skill data lands, it targets the earlier grade's weak skills as a marked placeholder, explicitly flagged and never presented as measured, and it must not reuse the earlier grade's test norms of 186.6, 193.9 and 197.1 (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "275",
+   "quote": "**G5 cohort numbers are TO-SOURCE, NOT invented.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "277-279",
+   "quote": "target the G3 weak-skills — compare/contrast, cause/effect, sequence — as a *marked placeholder*, explicitly flagged, never presented as measured G5 data); **G5 MAP norms** (do NOT reuse G3's 186.6 / 193.9 / 197.1);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/axis-decision-memo.md",
+   "lines": "10",
+   "quote": "The G2 BrainLift v0.1 inherited G3's premise — *students pass internal mastery but stay flat on MAP (a test-rigor problem)*. We then pulled the live G2 data (1,597 students, `rpt2_*` views, 2026-06-23). **The premise does not hold for G2.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/axis-decision-memo.md",
+   "lines": "23",
+   "quote": "The students who pass our internal test **transfer well** (85th percentile). The rigor gap is ~8 students. The premise is refuted for G2.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "86",
+   "quote": "The \"EGM=0 / students can't pass grade-level tests\" premise that the original build rested on was **falsified by the team's own data**: passing is rare because of *non-participation*, not test failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "508",
+   "quote": "all labelled as G8 facts / G5 facts, never as G7 magnitudes",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

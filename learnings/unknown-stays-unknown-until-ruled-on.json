@@ -1,0 +1,222 @@
+{
+ "id": "unknown-stays-unknown-until-ruled-on",
+ "title": "Unknown stays unknown until ruled on",
+ "statement": "Keep missing, ambiguous and conflicting answers, sources and rules open until one dated, named decision settles them, never inferring, averaging or widening them, and label anything built on them provisional.",
+ "example": "In one corpus of rulings, 1,715 records could not show both a date and an authority or were marked pending, against 876 that could.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The intake rules for a pedagogy decision bank say no answer may be inferred merely because a question is phrased yes or no: missing stays missing, ambiguous stays ambiguous, and conflicting sources stay in conflict until adjudicated. A corpus of rulings marked 876 records binding, with both a date and an authority extractable and no pending mark, and kept the other 1,715 as domain knowledge for lookup, but any evaluation probe built on them must be labelled provisional.",
+ "against": "Some conflicts are settled by a standing order of authority instead, as in a ruling that per-lesson documents outrank the generic spec, itself a recorded decision (`grade3-reading/artifacts/DECISIONS-2026-08-24.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "151-152",
+   "quote": "No answer may be inferred merely because a question is phrased yes/no. Missing stays `missing`; ambiguous stays `ambiguous`; conflicting sources stay in conflict until adjudicated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0242-decision-matrix-judgment-corpus.qmd",
+   "lines": "67-68",
+   "quote": "876 records `binding=true` (both a date AND an authority are extractable from the source text, and the text is not explicitly marked pending); **1715 `binding=false`**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0242-decision-matrix-judgment-corpus.qmd",
+   "lines": "69-70",
+   "quote": "kept as honest domain knowledge with a `gap_note`, usable for human triage/lookup but any eval probe built on them must be labeled provisional.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/AUTHORITY.qmd",
+   "lines": "10",
+   "quote": "Source atoms are never silently deleted, merged, universalized, or promoted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/AUTHORITY.qmd",
+   "lines": "23",
+   "quote": "Conflicts remain open and source-faithful until an evidence-bound decision resolves them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/README.qmd",
+   "lines": "29-30",
+   "quote": "not receive `PRIORITY` retrieval metadata or become accepted requirements merely because they were indexed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/crosswalk/CONFLICT-LEDGER.qmd",
+   "lines": "8",
+   "quote": "open decisions and fixes are explicit; no conflict was flattened.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/crosswalk/CONFLICT-LEDGER.qmd",
+   "lines": "20",
+   "quote": "DECODE Step 2 and Step 3 appear in conflicting orders; do not enforce an ordered DECODE sequence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/train-teacher-requirements.md",
+   "lines": "253-254",
+   "quote": "the conflict is logged as a named tension and reserved for a working session — never silently resolved in either direction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-standards-centralization-2026-08-05/IMPLEMENTATION-PLAN.md",
+   "lines": "227",
+   "quote": "### F5 - conflict is silently flattened",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-brief-2026-09-10/DECISION-BRIEF.md",
+   "lines": "43",
+   "quote": "*requested* the \"The story says / so my answer is\" frame the 09-10 report proposes replacing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "115",
+   "quote": "Rulings are dated; a newer ruling beats an older register; contradictions between reviewers go",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "118",
+   "quote": "- **D4 — RULED: the ladder wins.** Per-lesson docs outrank the generic spec (tier rule);",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/SKILL.md",
+   "lines": "47-48",
+   "quote": "Conflicts are recorded in `tensions.md`, never averaged.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/crosswalk/CONFLICT-LEDGER.qmd",
+   "lines": "8",
+   "quote": "open decisions and fixes are explicit; no conflict was flattened.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/profiles/base/RED_TEAM_BASE.source.json",
+   "lines": "1408",
+   "quote": "record conflicts for a named decision",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "191",
+   "quote": "a domain scoring high on frequency but low on load-bearing (present the tension, don't average it away).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/AUTHORITY.qmd",
+   "lines": "31-32",
+   "quote": "A scoped overlay never silently becomes universal; a runtime or context asset never silently becomes a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "231-233",
+   "quote": "The current G3 profile requires at least four options on every MCQ, prohibits mastery True/False, and prohibits EBSR; do not generalize those thresholds to another profile.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "770",
+   "quote": "No fixed option count belongs in the universal standard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "111-113",
+   "quote": "1. Cite the conflicting rule and freeze the implementation field. 2. Prefer the stricter outcome-integrity interpretation. 3. Add a mutation test and rerun the contract suite.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "51",
+   "quote": "Target-runtime mastery, XP, event, and accessibility behavior | Contracted, not run",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "370",
+   "quote": "Do not silently select whichever count makes the current lesson green",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "68",
+   "quote": "Do not silently resolve a contradiction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "151",
+   "quote": "No answer may be inferred merely because a question is phrased yes/no.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "79-81",
+   "quote": "An absent lesson policy is reported as absent; do not invent prohibitions to make a gate green.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "37",
+   "quote": "If an academic ruling conflicts with the proposed design, record it for disposition.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

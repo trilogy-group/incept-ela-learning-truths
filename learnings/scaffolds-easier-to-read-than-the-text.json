@@ -1,0 +1,129 @@
+{
+ "id": "scaffolds-easier-to-read-than-the-text",
+ "title": "Scaffolds easier to read than the text",
+ "statement": "Write instructions, prompts, feedback and anything a lesson's guide says at an easier reading level than the text they support, and keep internal design terms out of them.",
+ "example": "One course's checklist keeps every passage within 420 to 650 on a reading-level scale and every instruction below that band.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The walkthrough of a built Grade 3 lesson sets child-facing prose at 420–650L, below the passage, warm and without jargon, because the scaffold must be easier to read than the thing it scaffolds (`downloads/SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md`, line 38). The internal name of the procedure the lesson teaches never reaches the child; its introduction speaks in what-we-will-do terms instead (`downloads/SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md`, line 181). A checklist for the same lessons gives 420–650L as the passage band and puts instructional lines below it (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, line 64).",
+ "against": "The script the row cites as its verifier was not found, so until it is the row runs as an agent's reading (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "38",
+   "quote": "Child-facing prose at 420–650L, below the passage; warm, no jargon | The scaffold must be easier to read than the thing it scaffolds",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "181",
+   "quote": "No rail jargon reaches the child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "64",
+   "quote": "Passage band 420–650L",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "64",
+   "quote": "Every passage slice inside the teaching band",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "64",
+   "quote": "instructional/Scout lines BELOW the passage band",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "64",
+   "quote": "Until the real path is named and confirmed, this row runs as an agent lens",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "65",
+   "quote": "No child-facing sentence over 25 words",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "111-112",
+   "quote": "What a viewer reads at a film's stops (the questions, options and feedback) speaks of the film, never of how it is … made: no beat, cue, caption or frame.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "179",
+   "quote": "an untrue feedback line, \"the second frame\", and wrong-option feedback that named the answer: new checks, below;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "187",
+   "quote": "code: no \"beat\", \"cue\", \"caption\" or \"frame\", and no wrong-option feedback that names the answer;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "49",
+   "quote": "what a viewer reads at a stop: no making words, and a wrong option's feedback does not name the answer",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "103",
+   "quote": "Note that NN/g's \"write at a 6th-grade level\" advice is for interface copy, *not* for the grade 9 passages.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "178-179",
+   "quote": "Interface copy is instruction. Internal organizer names are not neutral when a child must decode them before acting.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/record.ts",
+   "lines": "18",
+   "quote": "Step names (\"Retrieval\") are our jargon, not the student's",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,375 @@
+{
+ "id": "examples-teach-form-not-facts",
+ "title": "Examples teach form, not facts",
+ "statement": "Use a few vetted examples to show a writer an item's form, never its facts, since it copies their content and flaws: take them from other topics, stripped to structure.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP project's literature review concluded that examples in a prompt work through the format and spread of inputs they show, not by conveying correct facts, so it ruled out few-shot examples as a fix for document-based questions that failed on fabricated content (`icloud-work/auto-memory-backup/research_fewshot_format_not_facts.md`; `icloud-work/aptraining/.agent/memory/MEMORY.md`). Its failure analysis reached the same verdict on tuning: fine-tuning taught structural patterns, not facts (`icloud-work/aptraining/.agent/research/failure_taxonomy.md`). In one later run, examples about one period carried over into items on a much earlier one (`icloud-work/aptraining/.agent/memory/spec_v97_dbq_focused_criterion_grounded_dpo_2026_05_25.md`). Vet every example, and strip examples from other topics down to their structure or leave them out.",
+ "against": "The +3 to +8 point lift the review expected for some item types is a forecast, and its audit note says no published measurement exists on such tasks (`icloud-work/auto-memory-backup/research_fewshot_format_not_facts.md`). The review rests on published studies rather than a test on these items, and the carry-over is a single observation. The same records are called sound elsewhere: \"Quality: High. All passing InceptBench or close to it.\" and \"Real primary sources, well-reasoned explanations.\" (`icloud-work/ML learnings/training_data_journey.md`, lines 26 and 31). The cross-team summary ranks volume first: \"More data > better data > architecture tricks.\" (`icloud-work/ML learnings/cross_team_learnings_full.md`, line 162). No audit of the examples was done (`icloud-work/ML learnings/what_to_do_next.md`, line 65). Each variant ran on 20 items, so the gap is one item in twenty (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`, line 50). Examples of a format are still used to teach structure: a grounding method in the research summary gives \"3-5 examples of the desired citation format\" (`icloud-work/ML learnings/research_rag_factual_grounding.md`, line 202). A structural validator with one retry and two new constraints came in the same version, so the drop is not the example's alone: \"2. Added a structural validator (3 questions, 4 options, varied keys A/C/B, ≥6 bullet labels, relational Q3) with ONE retry on validator failure.\" (icloud-work/aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md, 11-13) One sweep, where with and without examples differ by one item of 20 (`sft_v4_prompt_engineering.md`, lines 23 and 24). The gain the research note expects from examples on multi-question sets, +3 to +8 points, is a projection, not a measurement (`research_fewshot_format_not_facts.md`, lines 12 and 36). One example-based style was the best stable style for question sets, though only at 4 of 13. The best fresh pipeline still used curated examples: \"-> apply satisfaction kit + curated few-shots\" (icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md, line 20). Example banks can make output static: in one run document-based items and question sets fell into extreme duplicate groups, which 'can inflate short-slice scores and then collapse on variety/focus' (icloud-work/aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md, line 492); and another report found that for dense courses too many prompt examples can hurt, preferring exact facts and source packs (icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md, line 186). A later run found: A lesson engine's prompts for any text carry examples from its first play, such as that play's themes as sample centre words for a word web and a paraphrase of one of its lines as a sample point. On a poem and a speech no draft showed a pull toward them (the poem's web took 'arrogance'), though one run per text cannot rule a pull out (`g9/transformer/src/mechanics/word-web.js`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "154",
+   "quote": "ICL works via format/distribution; refutes \"few-shot fixes DBQ veracity\"; lifts mcq_set/saq +3-8pp at K=3 with chat-template-aligned demos.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "314",
+   "quote": "Fine-tuning teaches structural patterns, not facts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/spec_v97_dbq_focused_criterion_grounded_dpo_2026_05_25.md",
+   "lines": "153",
+   "quote": "v80b's factual reliability on synthetic Unit-1 content is the bottleneck (Civil War few-shot transferred to pre-contact KCs in Cheater v6).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "20",
+   "quote": "ICL works because demos show **input distribution + output format**, NOT because they convey correct facts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "28",
+   "quote": "Do NOT inject new factual claims into the model (Park et al. ICLR 2025 confirms: ICL reorganizes representations, doesn't write new knowledge)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "72",
+   "quote": "**Do NOT use few-shot to fix DBQ.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "36",
+   "quote": "| apush/mcq_set, apwh/mcq_set | Multi-question MCQ_SET shape inconsistency | +3 to +8 pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "12",
+   "quote": "medium on magnitude of mcq_set/saq lift (T3 magnitude — no published measurement on AP-history-shaped tasks)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "15",
+   "quote": "This is *not* a model size problem. A 14B model has ~28B bits of theoretical capacity — more than all of English Wikipedia. The gap to 70B is 6-8 MMLU points, not an order of magnitude. **The problem is that our training data contained fabricated attributions, and we taught the model exactly the wrong pattern.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "**Why 40% might be the new ceiling:** The training data (raft_combined) itself has fabricated attributions. Some of the 18,768 MCQ_SET records have slightly wrong dates or sources — they just passed InceptBench at the time, which has a 50% flip rate. Training on data that sometimes has wrong attributions = training on signal + noise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "73",
+   "quote": "The model learned to produce source attributions from training data that had fabricated attributions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "108",
+   "quote": "| Knowledge distillation (from Gemini) | Teaches format/style | Inherits hallucinations from teacher | Medium — we're already doing this and it's the source of the problem |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "120",
+   "quote": "**Result:** 40% pass rate — worse than the 45% baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "122",
+   "quote": "**Why:** The few-shot examples gave the model specific historical content (dates, sources, attributions from the examples) that contaminated its generation. The model sometimes referenced elements from the example questions in its generated questions, or the examples biased its style toward those specific historical periods.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "58",
+   "quote": "| fewshot | 40% | 55% | Few-shot examples added |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "| baseline | 45% | 60% | Standard prompt |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md",
+   "lines": "4",
+   "quote": "**Fresh Unit-1 single-shot n=25: 8/25 = 32%, avg 0.608**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md",
+   "lines": "5",
+   "quote": "**vs v4 (no few-shot): 11/23 = 47.8%, avg 0.738** — **−16pp regression**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md",
+   "lines": "22-25",
+   "quote": "v80b appears to over-anchor on the Civil War example's CONTENT, generating Civil War-style regional comparisons even for Unit-1 (1491-1607) KCs about pre-contact Indigenous societies.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md",
+   "lines": "25-28",
+   "quote": "Some generated maps had regions like \"Union states\" or \"Reconstruction districts\" bleeding into Unit-1 sets where they make no sense — IB judge correctly flagged factual_accuracy fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T0938Z_ESCALATE_MCQSET_95_infeasible.md",
+   "lines": "99-100",
+   "quote": "The Civil War few-shot example LITERALLY transferred its content to unrelated KCs",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-v6-FAILED.md",
+   "lines": "11-13",
+   "quote": "2. Added a structural validator (3 questions, 4 options, varied keys A/C/B, ≥6 bullet labels, relational Q3) with ONE retry on validator failure.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "20",
+   "quote": "**Key variant ranking (MCQ, N=20):**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "23",
+   "quote": "3. baseline: 45% pass, 60% factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "24",
+   "quote": "4. fewshot: 40% pass, 55% — examples don't help",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "26",
+   "quote": "6. bare (no schema): 5% — model requires format spec",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_fewshot_format_not_facts.md",
+   "lines": "20",
+   "quote": "- ICL works because demos show **input distribution + output format**, NOT because they convey correct facts",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_fewshot_format_not_facts.md",
+   "lines": "76",
+   "quote": "*Rethinking the Role of Demonstrations* — EMNLP 2022 (https://aclanthology.org/2022.emnlp-main.759/)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_fewshot_format_not_facts.md",
+   "lines": "12",
+   "quote": "medium on magnitude of mcq_set/saq lift (T3 magnitude — no published measurement on AP-history-shaped tasks)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_fewshot_format_not_facts.md",
+   "lines": "36",
+   "quote": "| apush/mcq_set, apwh/mcq_set | Multi-question MCQ_SET shape inconsistency | +3 to +8 pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "71",
+   "quote": "Local IB correctly failed it for period misalignment and stimulus-only answer leakage.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "74",
+   "quote": "- Strip historical substance from few-shot examples so they cannot donate wrong content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "144",
+   "quote": "- Same-unit few-shots can supply real content patterns; cross-unit examples are scrubbed to structure only so Unit 6/8 content cannot contaminate Unit 3.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "60",
+   "quote": "- Do not trust high-scoring few-shot/pattern rows blindly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "64",
+   "quote": "- leak the answer through the stem,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "66",
+   "quote": "- use overly broad \"best explains\" stems with multiple defensible answers.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "548",
+   "quote": "- Primary-source few-shot with long examples: `0/13`; likely overfits to source shape and drifts from the target objective.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/runs/fewshot_goldshape_v3_t0.0_p1.0/analysis.md",
+   "lines": "3",
+   "quote": "Passed: 83/150 (55.33%)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/runs/historians_only_v3_t0.0_p1.0/analysis.md",
+   "lines": "3",
+   "quote": "Passed: 113/150 (75.33%)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "538",
+   "quote": "- Exam-writer few-shot MCQ_SET prompts are the best stable MCQ_SET style so far:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "100",
+   "quote": "Few-shot MCQ examples worsened performance by contaminating generations with example-specific historical content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "285",
+   "quote": "Few-shots help only when they do not contaminate the historical content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "76",
+   "quote": "Keep prompt-kit field names subordinate to original IB schema authority to avoid illustrative examples leaking into output shape.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/fewshot_mcqset.py",
+   "lines": "5-7",
+   "quote": "for MCQ_SET, sample 3-5 verified exemplars (IB-graded 1.0) from the 669-pool, picking exemplars whose KC DIFFERS from the target KC so the output stays fresh, and prepend them as a TEMPLATE SEED.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/fewshot_mcqset.py",
+   "lines": "7-8",
+   "quote": "This lifted IB MCQ_SET 3.3% -> 26.7% and fixed answer_balance 0 -> 30/30.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "36",
+   "quote": "lesson question: an abstract noun a Grade 9 reader knows or can learn (for example deceit, ambition, loyalty, grief).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "47",
+   "quote": "says what the lines show, close to their own words (for example \"He serves only to line his own coat\"), never an",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/4e79a689a9ff89da.json",
+   "lines": "8",
+   "quote": "\"centre\": \"arrogance\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Min et al. 2022",
+   "url": "https://aclanthology.org/2022.emnlp-main.759/"
+  },
+  {
+   "ref": "Park et al. 2025",
+   "url": "https://arxiv.org/abs/2501.00070"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

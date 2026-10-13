@@ -1,0 +1,50 @@
+{
+ "id": "a-green-gate-doesnt-predict-a-clean-review",
+ "title": "A green gate doesn't predict a clean review",
+ "statement": "Don't expect a gate on which every check passes to predict a clean review: most findings on green lessons needed human judgment that no check could supply.",
+ "example": "Of 26 review findings on lessons whose checks were all green, 3 later became machine-checkable and 23 stayed human calls.",
+ "group": "making-and-reviewing",
+ "role": "context",
+ "facets": [
+  "review",
+  "evaluation",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading course kept a calibration log to test whether a green gate predicts that review finds nothing, matching each review round with the state of the course's checks when the review happened. On 5 rows where every check was green, 26 findings landed: 3 have since become machine-checkable, a check on where the key sits and a cap on task-opener length, and 23 remained human calls, such as layout taste, sibling questions whose answers crack each other, where audio marks fall, whether a story frame makes sense and whether a word-part gloss is right. A further 29 findings, on lessons whose checks were not yet green, were all mismatches between a design document and the shipped lesson, which no check in the course compared.",
+ "against": "The gate state at each review was reconstructed afterwards from commit messages rather than recorded at the time, and the log holds only 9 rows from a few lessons (`grade3-reading/artifacts/calibration/ROUNDS.md`, lines 16-27, 51 and 101-112).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "60-62",
+   "quote": "**26 findings landed on lessons whose gate was green at review time** (5 rows: L4/L5 @ 27.08, arc-level sim-review @ 28.08, L4/L5 @ 30.08). Of those 26, **3 have since become machine-catchable**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "65-66",
+   "quote": "**23 remain irreducibly human** as of this writing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "3-5",
+   "quote": "Purpose: build the dataset that will eventually let us claim \"gate-PASS predicts reviewers finding nothing\" — honestly, which for now means mostly disproving it and measuring the gap.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

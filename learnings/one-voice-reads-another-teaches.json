@@ -1,0 +1,127 @@
+{
+ "id": "one-voice-reads-another-teaches",
+ "title": "One voice reads, another teaches",
+ "statement": "Read the text in one voice and the teaching around it in another, keeping each role's voice the same in every lesson so students hear them as different things.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's voice table gives each grade deliberate voices for the voice that teaches and the voice that reads the book, with the reason written in the code: keeping the two voices distinct is how a student hears the story and the teaching as separate things. One grade's reading voice was chosen so that a made-up teaching case and real evidence sound different. A voice law fails the same role cut in different voices across lessons, the shape of an incident in which one word's card came out in a completely different voice, while a single page may still mix voices across roles.",
+ "against": "one grade keeps a single voice for every role, only because its audio had already shipped and re-keying would invalidate measured clips; and one grade's shipped voices differ from its row in the voice table, kept for consistency within the unit as an open ruling (`grade3-reading/knowledge_bot/knowledge/kb-0195-g5-book-lane-secret-garden-closed.qmd`, lines 73-77). One grade keeps a single voice for every role, only because its audio had already shipped (`grade3-reading/knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd`), and the same voice across pages is checked only in part, by a validator that rejects unknown role names (`grade3-reading/knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "58-59",
+   "quote": "keeping the two voices distinct is how a student hears 'the story' and 'the teaching' as separate things.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "61-62",
+   "quote": "mixes a made-up teaching case with real evidence and the two must be audibly distinguishable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "64-66",
+   "quote": "The violation is the SAME role (derived from filename stripped of page-prefix/trailing-index) cut in DIFFERENT voices across lessons",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "59-60",
+   "quote": "Grade 4 keeps one voice for every role only because its audio had already shipped and re-keying would invalidate measured clips",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0195-g5-book-lane-secret-garden-closed.qmd",
+   "lines": "75-77",
+   "quote": "Kept for unit consistency even though it contradicts `VOICE_BY_GRADE[5]` (Leda/Rasalgethi) in the tts-clips skill — recorded as an open ruling line, not resolved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "82-83",
+   "quote": "are deliberately DIFFERENT voices so a child hears \"the story\" and \"the teaching\" as distinct",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "84",
+   "quote": "One voice per role, consistent across pages",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "59-60",
+   "quote": "Grade 4 keeps one voice for every role only because its audio had already shipped and re-keying would invalidate measured clips — not a model to copy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "86-88",
+   "quote": "actual voice consistency of the generated audio across pages is NOT independently verified by that validator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-07.md",
+   "lines": "78-81",
+   "quote": "- **Validator:** `scripts/verify/voice-provenance.mjs` in `npm run check` — fails a lane clip missing the stamp (fallback: foreign encoder) or whose stamped voice contradicts the authored role (coach/character→Puck, narrator→Leda). Negative-probed both directions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PP-DEFENSE-2026-09-22.md",
+   "lines": "66-68",
+   "quote": "It reads every mp3 the lessons reference, which is the set `voice-provenance` excludes by its own admission and where all four wrong-voice reports originated.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "298",
+   "quote": "Use one consistent storyteller across all eight clips.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "40-41",
+   "quote": "L4's purpose clips are the book reader (Leda); L5, L6 and L7 use Scout (Puck). Open, needs an ear.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "138-139",
+   "quote": "ONE ROLE, ONE VOICE — the same line, compared ACROSS the four lessons by its filename family, is cut in one voice.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

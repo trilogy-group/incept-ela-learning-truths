@@ -1,0 +1,86 @@
+{
+ "id": "reference-values-come-from-a-cited-table",
+ "title": "Reference values come from a cited table",
+ "statement": "Take reference values such as test norms from a cited, versioned table, never from a model's memory.",
+ "example": "One predictor had no table of test norms, so a model's memory supplied them, wrongly anchored between 200 and 214.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A proposal for a shared course-planning repository found that its outcome predictor had a flag for test norms but no norm values behind it, so the meaning of a score floated on pre-training, with wrong anchors (`grade3-reading/artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md`). It proposed a versioned norms table with the 2025 values, the discredited anchors marked not to be used, under the rule to ground from a table, not priors (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "18",
+   "quote": "RIT meaning free-floats on pre-training (wrong 200-210 / 208/214 anchors)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "18",
+   "quote": "with `do_not_use` for the discredited anchors",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "18",
+   "quote": "the \"ground from a table, not priors\" discipline",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "47",
+   "quote": "BOTH older figures are wrong: 207/213/+6.0 (much older grade) AND the interim \"spring ~197 / +10.5\" (2020 spring carried forward by mistake). Flag either.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "127",
+   "quote": "Uses correct G3 RIT norms (fall ~185 / spring ~197 / +10.5); no 207/213/+6 figures",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "145",
+   "quote": "any context display that juxtaposes those fields with 2025-norm figures must reinterpret them under the 2025 norms first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "138",
+   "quote": "Implication: all norm-referenced computations must state their norm year; the proxy uses 2025.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "109-110",
+   "quote": "So 770L is a real published boundary: it is the floor of the **superseded** 2010 band. The package is not sloppy, it is out of date.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

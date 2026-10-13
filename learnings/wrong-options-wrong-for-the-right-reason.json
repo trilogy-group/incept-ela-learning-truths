@@ -1,0 +1,41 @@
+{
+ "id": "wrong-options-wrong-for-the-right-reason",
+ "title": "Wrong options wrong for the right reason",
+ "statement": "In science content, make each wrong option wrong only as its named misconception is, never garbled some other way, since a garbled option teaches its garble to every reader.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's generator rules for lessons whose text carries science make the supplied misconception cards binding and require each wrong option to encode its named misconception exactly, because an option scientifically garbled in some other way teaches that garble to every child who reads it (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/subjects/science.md`, lines 3-19). The course's fact-check judge fails any child-facing string that states something false, wrong options and feedback included, because a wrong option must be wrong for the right reason (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/judge/factual-accuracy.md`, lines 7-10).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/subjects/science.md",
+   "lines": "17-19",
+   "quote": "A wrong option must encode the named misconception exactly; an option that is scientifically garbled in some OTHER way teaches that garble to every child who reads it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/judge/factual-accuracy.md",
+   "lines": "8-10",
+   "quote": "states something factually false, in any field, including wrong options and feedback (a wrong option must be wrong for the RIGHT reason: a distractor that is garbled science teaches the garble);",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

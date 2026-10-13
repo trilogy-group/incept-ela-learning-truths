@@ -1,0 +1,109 @@
+{
+ "id": "measure-what-a-forced-format-costs",
+ "title": "Measure what a forced format costs",
+ "statement": "Force a strict output format only on kinds of item where its cost has been measured, because it can cut accuracy sharply on reasoning-heavy content while helping classification-like tasks.",
+ "example": "Forcing a strict output format dropped one model's single-try pass rate from 82.67% to 74.0%, on a day when none of its failures were format failures.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "On one day in the AP work, a model's single-try baseline passed 124 of 150 items, and all 26 failures were content failures, none a parse failure (`icloud-work/aptraining/.agent/memory/SESSION_DECISIONS_2026_05_11.md`; `icloud-work/aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md`). Constrained decoding then dropped the pass rate to 74.0%, while a schema set per course and item type gave 84.0%, within noise (`icloud-work/aptraining/.agent/memory/SESSION_DECISIONS_2026_05_11.md`). The project's literature note cites a study in which three of four mainstream models lost 25 to 63 points on a reasoning task in JSON mode, while the same mode helped on classification (`icloud-work/auto-memory-backup/research_constrained_decoding_per_cell.md`). It set strict modes off by default for free-form item types (`icloud-work/aptraining/.agent/memory/MEMORY.md`).",
+ "against": "A structured-output benchmark cited in the project's strategy review reported about 3% improvement with guidance or constrained decoding (`icloud-work/aptraining/.agent/research/sota_strategy.md`), and in the study behind the 25-to-63-point figure one of four models lost only 0.1 points (`icloud-work/auto-memory-backup/research_constrained_decoding_per_cell.md`). The project's own drop is a single run. Not every model lost: \"| Gemini-1.5-Flash | 89.3% | 89.2% | −0.1pp |\" (`icloud-work/auto-memory-backup/research_constrained_decoding_per_cell.md`, line 26). The per-type comparison the project recommended has no recorded result.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/SESSION_DECISIONS_2026_05_11.md",
+   "lines": "27",
+   "quote": "UPLIFT-1 single-seed K=1 T=0 = 82.67% on `ty16vgj9` (124/150).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/SESSION_DECISIONS_2026_05_11.md",
+   "lines": "28",
+   "quote": "UPLIFT-3 constrained decode = 74.0% (-8.67pp, Synapse Item 25 predicted), UPLIFT-3b per-cell schema = 84.0% (+1.33pp, within noise).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "27",
+   "quote": "26/26 today's failures are `status:fail rating:INFERIOR` with content-quality dimensions zeroed (`factual_accuracy`, `stimulus_quality`, `difficulty_distribution`). **Zero parse_fail.** Format-fragility hypothesis is dead.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "150",
+   "quote": "JSON mode loses 25-63pp on reasoning tasks; per-cell decision; default OFF for free-form cells.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_constrained_decoding_per_cell.md",
+   "lines": "28",
+   "quote": "Three of four mainstream models lose 25–63pp on a reasoning task in JSON mode.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_constrained_decoding_per_cell.md",
+   "lines": "30",
+   "quote": "Same paper shows JSON mode *helps* on classification (Gemini-1.5-Flash 41.6% → 60.3% on DDXPlus). **Direction depends on task.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_constrained_decoding_per_cell.md",
+   "lines": "26",
+   "quote": "| Gemini-1.5-Flash | 89.3% | 89.2% | −0.1pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/sota_strategy.md",
+   "lines": "142",
+   "quote": "Reports ~3% improvement using guidance/constrained decoding.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_constrained_decoding_per_cell.md",
+   "lines": "28",
+   "quote": "Three of four mainstream models lose 25–63pp on a reasoning task in JSON mode. **This is a capability tax, not a measurement-fairness adjustment.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_constrained_decoding_per_cell.md",
+   "lines": "62",
+   "quote": "- [Tam et al., *Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models*, EMNLP 2024 Industry Track](https://aclanthology.org/2024.emnlp-industry.91/)",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Tam et al. 2024",
+   "url": "https://aclanthology.org/2024.emnlp-industry.91/"
+  },
+  {
+   "ref": "Generating Structured Outputs from Language Models: Benchmark and Studies (2025)",
+   "url": "https://arxiv.org/abs/2501.10868"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

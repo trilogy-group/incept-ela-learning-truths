@@ -1,0 +1,70 @@
+{
+ "id": "how-far-a-learner-may-seek-ahead",
+ "title": "How far a learner may seek ahead",
+ "statement": "Whether a narrated lesson should let learners seek forward only through narration already heard, or anywhere short of the next unanswered check, is untested.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "media",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The narration handoff for one build of a narrated opening let the learner pause, seek within heard audio and replay, and real-browser QA measured it: a seek to 40 s with 29.68 s heard landed at 30.25 s, and the slider's maximum equalled the time heard. The handover's acceptance list asked that seek restrictions match the heard-audio design without making replay impossible. The film player tested the same day stops a seek only at an unanswered check instead: after the first check, a seek to 120 s was allowed and a seek to 190 s was clamped to 172 s, the second check. Nothing has compared the two designs with learners.",
+ "against": "A testing limit, not a counter: \"under `python3 -m http.server`, which does not honour Range requests, Chrome cannot seek inside the AAC clips: rewind and seek reset `currentTime` to 0.\" (g9/prototypes/app-narrated-qa/QA.md, line 7), so a seek test needs a server that supports range requests.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated/AUDIO-HANDOFF.md",
+   "lines": "3",
+   "quote": "The learner can pause, seek within heard audio, and replay.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "14",
+   "quote": "Seek limited to heard audio | PASS | tried 40 s with 29.68 s heard → landed 30.25 s; slider max = heard (30.18)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "399",
+   "quote": "Seek restrictions match the intended heard-audio behavior and do not make replay impossible.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/README.md",
+   "lines": "37",
+   "quote": "Scrubbing cannot pass an unanswered check.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "14",
+   "quote": "After check 1 done: seek to 120 s allowed; seek to 190 s clamped to 172 s (check 2)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "1",
+   "quote": "Video lesson · browser QA · 2026-10-06",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

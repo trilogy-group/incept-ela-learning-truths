@@ -1,0 +1,43 @@
+{
+ "id": "turn-fragile-coupling-notes-into-checks",
+ "title": "Turn fragile-coupling notes into checks",
+ "statement": "Turn every note in the content that warns of a fragile coupling, such as \"must match\" or \"silently\", into an automatic check, since each marks a silent failure.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A red-team skill for the reading course plans found a shipped note saying a string must match the passage sentence character for character or the tap target silently falls back to buttons, and no check enforced it (`grade3-reading/ti-courseplans/skills/course-red-team/SKILL.md`, rule 15). Such notes sit exactly where a coupling is known to be brittle, so each one is a free specification for a check nobody wrote, guarding a silent failure. The skill's rule is to search note fields for \"must match\", \"character for character\", \"silently\" and \"or it will\", and turn each into an assertion.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "121-123",
+   "quote": "a free specification for a check nobody wrote, guarding a **silent** failure mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "123-125",
+   "quote": "Grep note keys for \"must match\", \"character for character\", \"silently\", \"or it will\", and convert each into an assertion.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

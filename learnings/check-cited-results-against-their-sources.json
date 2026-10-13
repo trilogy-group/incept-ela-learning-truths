@@ -1,0 +1,256 @@
+{
+ "id": "check-cited-results-against-their-sources",
+ "title": "Check cited results against their sources",
+ "statement": "Before acting on a cited result, requirement or analysis of what a test measures, check it against its original source, because summaries merge, move and relabel what they cite.",
+ "example": "A 13.83% gain in citation grounding was later cited as a \"13-50% grounding improvement\".",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Comparing the AP question work's summaries with the sections they summarise turned up several drifts. A 13.83% gain in citation grounding, with only about half the sentences fully covered (`icloud-work/ML learnings/research_rag_factual_grounding.md`), became an expected \"13-50% grounding improvement\" in the same summary and \"Published results\" in the strategy note (`icloud-work/ML learnings/master_strategy_apr24.md`). A 96% validity result belongs to custom-chunked retrieval in one study, but the index credits it to graph retrieval (`icloud-work/ML learnings/research_educational_content_generation.md`, `icloud-work/ML learnings/INDEX.md`). An internal team result was called published, and a verification method's result was cited for a pre-writing step it never tested (`icloud-work/ML learnings/research_qwen3_structured_multistage.md`). For a requirement, the source to check against is the official one.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "204",
+   "quote": "Results: Citation grounding improved by **13.83%** on production benchmarks versus standard RAG prompting. However, only ~50% of sentences achieved perfect citation coverage without fine-tuning, suggesting a ceiling that requires SFT to overcome fully.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "359",
+   "quote": "Expected result: 13-50% grounding improvement based on the SIGIR 2025 paper.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "30",
+   "quote": "Force the model to emit `[FACT: <exact quote from curriculum_facts>]` before each specific historical claim in scoring notes. Zero cost to try. Published results: 13-50% grounding improvement. Ceiling ~50% without training, but combined with the existing anchor-fact constraint this should push SAQ above 0%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "90",
+   "quote": "| Manual RAG with custom chunking | 0.89 | 96% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/INDEX.md",
+   "lines": "85",
+   "quote": "| [research_educational_content_generation.md](research_educational_content_generation.md) | GraphRAG (96% curriculum validity), VeriFact-CoT (83% vs 72%), frontier baseline 69% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "231",
+   "quote": "Published results show 93→97% pass rates after DPO in our own session logs (team_learnings_20260422.md).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "60",
+   "quote": "VeriFact-CoT paper shows this halves hallucination rate from ~25% to ~12%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_qwen3_structured_multistage.md",
+   "lines": "281",
+   "quote": "The VeriFact-CoT and FADER research both show that explicitly surfacing relevant facts before the generative call reduces hallucination from ~25% to ~12%.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/provenance/original-prep-index.md",
+   "lines": "19-21",
+   "quote": "The official rule (19 TAC §110.70, June 2026) names *Animal Farm* and *Great Expectations* for English I. The spec's \"TEA mandatory literary works list\" wording overstates it; Othello is the course's own choice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "86 (textutil plain-text output)",
+   "quote": "MAP Growth Reading 2–5 measures three things only: Literary Text, Informational Text, and Vocabulary",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "86 (textutil plain-text output)",
+   "quote": "not phonics/grammar/conventions, which a broken curriculum API had falsely elevated to 68% of the course focus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "88 (textutil plain-text output)",
+   "quote": "produced by a pipeline bug that dropped the entire RI domain",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "9",
+   "quote": "the incumbent's own 684-item benchmark shows a high-fidelity proxy of the WRONG construct (RI=0, 68% grammar) is worse than useless",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "114",
+   "quote": "**Decision record:** An earlier version of this spec used 18/16/6 (45/40/15) based on CCSS text complexity guidance. This was corrected upon locating NWEA Tech Report 2025 Table 3.2, which explicitly states 13 scored items per goal area.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "21",
+   "quote": "| Domain weights | **13 / 13 / 13 items (equal thirds)** | NWEA Tech Report 2025 Table 3.2 [NWEA-VERIFIED] |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "61",
+   "quote": "NWEA's Technical Report Table 3.2 shows an *example* blueprint of 13/13/13 + up to 4 field-test items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "46",
+   "quote": "NWEA TR Table 3.2's 13/13/13+4FT is an *example* blueprint, not a requirement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/README.md",
+   "lines": "30",
+   "quote": "Actual play controls exact agency. Our account correctly gives Oberon the Demetrius application, rather than the overview's simplified attribution to Puck.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "344-345",
+   "quote": "the 40/40/20 figure is a *question-type* mix, not a text-type quota",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "21",
+   "quote": "Half the validations returned a correction. Findings from a single researcher pass, in this run, were roughly a coin flip on the details even when the headline held",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "532",
+   "quote": "In the research, \"faded examples\" usually means steps removed for the learner to complete.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lf97671.txt",
+   "lines": "1",
+   "quote": "The working spec’s phrase “using the TEA mandatory literary works list” should be read against the actual rule: Othello can be a chosen course text without being a mandated English I work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R2.md",
+   "lines": "33",
+   "quote": "Independent PDF check: **W&W's *Narrating the Unknown: Jamestown* sits at GRADE 6** in the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R1.md",
+   "lines": "17",
+   "quote": "zero-rates were **spring-2023 human-graded**, not the automated scorer (the auto-scoring spike is",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "63-65",
+   "quote": "An earlier decision-log record claiming a per-dimension IB breakdown was caught by our own red-team as mis-cited and mis-scoped, and **retracted**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "345",
+   "quote": "*question-type* mix, not a text-type quota",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/TOPIC-SELECTION.md",
+   "lines": "162-163",
+   "quote": "\"The research prescribes Rome/Human Body/Astronomy\" — **false**; that was one program's specific",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "21",
+   "quote": "Half the validations returned a correction. Findings from a single researcher pass, in this run, were roughly a coin flip on the details even when the headline held",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "62",
+   "quote": "`RIT = 200 + 10θ` — the exact NWEA transformation formula (NWEA Tech Report 2025).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "310",
+   "quote": "It is an approximation of NWEA's proprietary transformation. The exact NWEA coefficients are not publicly available.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Cite Before You Speak: Enhancing Context-Response Grounding in E-commerce Conversational LLM-Agents (arXiv:2503.04830, SIGIR 2025)",
+   "url": "https://arxiv.org/abs/2503.04830"
+  },
+  {
+   "ref": "Automated Generation of Curriculum-Aligned MCQs for Malaysian Secondary Mathematics (arXiv:2508.04442)",
+   "url": "https://arxiv.org/html/2508.04442"
+  },
+  {
+   "ref": "Enhancing Factual Accuracy and Citation Generation via Multi-Stage Self-Verification (VeriFact-CoT, arXiv:2509.05741)",
+   "url": "https://arxiv.org/html/2509.05741v1"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

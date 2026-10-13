@@ -1,0 +1,65 @@
+{
+ "id": "placement-and-gap-finding-are-different-diagnostics",
+ "title": "Placement and gap-finding are different diagnostics",
+ "statement": "Treat placement and gap-finding as different diagnostics: placement in an ordered course needs only a short binary search, while finding gaps needs sampling across the course.",
+ "example": "A binary search finds the starting unit of a 9-unit course in 3-4 items.",
+ "group": "how-people-learn",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement",
+  "sequence"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A diagnostic BrainLift written around AP courses, one of the assessment BrainLifts given to the reading course plans, separates placement, a search for one cut-point on a roughly ordered course, from hole-filling, which assumes no order and needs the full knowledge-mapping machinery at 40-60+ items and 15-30 minutes (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`). For a 9-unit course the search takes 3-4 items (log₂(9) ≈ 3.2). For gaps it advises finding one, sizing it, filling it and repeating, instead of mapping every hole at once.",
+ "against": "The same BrainLift rules the search out for a course with no sequential structure, which goes straight to full knowledge-mapping, and it sizes a placement two ways: 10-15 items and 5 minutes in one place, 7-10 items and 3-5 minutes in another.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "370",
+   "quote": "A placement diagnostic can be done in 10-15 items and 5 minutes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "418",
+   "quote": "This typically takes 3-4 items for a 9-unit course (log₂(9) ≈ 3.2).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "373",
+   "quote": "**Insight 6: You don't need to find all the holes at once — find a hole, size it, fill it, repeat.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "420",
+   "quote": "Total items: typically 7-10 items. Total time: 3-5 minutes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "414",
+   "quote": "If the course genuinely lacks sequential structure (e.g., a collection of independent topics with no progression), this diagnostic is inappropriate — go straight to full knowledge-mapping.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

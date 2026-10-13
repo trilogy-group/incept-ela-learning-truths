@@ -1,0 +1,50 @@
+{
+ "id": "check-where-spacing-rules-put-questions",
+ "title": "Check where spacing rules put questions",
+ "statement": "When a rule spaces a film's questions apart, check which placements it leaves: a rule that bars neighbouring parts can leave a short film only one.",
+ "example": "With three parts, all five films one engine made stopped after their first and last parts, the second stop 0.5 s before the end.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "media"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Both film blocks in the lesson engine enforce spacing in code: the film check wants stops at least 20 seconds apart, and the video essay wants its two questions after parts that are not next to each other (`g9/transformer/src/mechanics/film-check.js`, `g9/transformer/src/mechanics/video-essay.js`). With three parts the second rule leaves a single placement, so each of the five films the engine made stopped after its first and last parts, never after the middle one, and each second question came 0.5 s before the film ended (stops and durations in each film's `manifest.json` under `g9-transformer-runs/films/`). One of them, recorded in the engine's QA, ran 36.8 s with stops at 10.82 s and 36.26 s.",
+ "against": "No source gives a reason for either rule; the video tool's handoff only restates the first: \"That mechanic requires two to four stops spaced at least 20 seconds apart\" (g9/tools/unit-video-essay/HANDOFF.md line 31). A four-part film would leave three placements.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "105",
+   "quote": "check(\"checks-apart\", \"The checks follow different beats, not one after the other\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "70",
+   "quote": "check(\"spaced\", \"Stops at least 20 seconds apart\", gaps.every((g) => g >= 20), \"two stops are less than 20 seconds apart\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "174",
+   "quote": "Film `7fc2d6f7b8e85a6b`: 36.8 s, stops at 10.82 s and 36.26 s.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

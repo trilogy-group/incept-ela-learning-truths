@@ -1,0 +1,84 @@
+{
+ "id": "run-your-own-review-standard-first",
+ "title": "Run your own review standard first",
+ "statement": "Before content goes to an outside review, run your own review standard over the exact build being sent, as an adversarial pass split by dimension, and fix what it finds.",
+ "example": "The first run of a 285-criterion pre-review caught a recurring defect and a 72.5% skew in answer positions.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course ran its own 285-criterion standard as a simulated review before the real one, with agents split by dimension, each attacking its own findings before reporting. The first run caught a recurring defect and a 72.5% answer-position skew, and running it turned the question of readiness into a findings list fixed on the team's own clock. After an outside round's main finding was that the team should review its own work first, the course made the pass binding: nothing goes out without its walk-through harness passing, the full gate and a dimension-split adversarial pass on the exact build being sent.",
+ "against": "A pre-review is noisy unless it is briefed on what is already settled: an unbriefed simulated review \"re-discovers your own decisions and drowns the real gaps\" (grade3-reading/.claude/skills/sim-review/SKILL.md, lines 35-36). It does not replace a person's pass: \"no submission is exempt on the theory that the machine gate + adversarial pass was sufficient on its own\" (grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md, lines 360-361).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "3",
+   "quote": "Applies our own 285-criterion D1-D13 red-team standard as the reviewer before the real one; first run caught a recurring rail defect and a 72.5% answer-position skew.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "15-16",
+   "quote": "Running it ourselves converts \"are we ready\" into a findings list we fix on our own clock instead of the reviewer's.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "37-38",
+   "quote": "every agent adversarially attacks its own findings before reporting",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "273-274",
+   "quote": "You can do a lot better than what you're showing us if you do some human review yourselves",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "277-278",
+   "quote": "nothing goes to the external reviewers without the walker harness green + the full gate + a dimension-split adversarial pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "279",
+   "quote": "on the exact build being sent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "35-36",
+   "quote": "An unbriefed simulated reviewer re-discovers your own decisions and drowns the real gaps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "360-361",
+   "quote": "no submission is exempt on the theory that the machine gate + adversarial pass was sufficient on its own",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

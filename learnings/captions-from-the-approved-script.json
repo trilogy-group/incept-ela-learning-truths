@@ -1,0 +1,122 @@
+{
+ "id": "captions-from-the-approved-script",
+ "title": "Captions from the approved script",
+ "statement": "Make captions in code from the approved script and the clip's measured length, never by hand, and fail any video that gates progress if it has no captions.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "accessibility",
+  "media"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In the reading project's course, captions are never hand-written: a script derives each caption track from the signed-off transcript and the clip's duration as measured by ffprobe (`grade3-reading/knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd`). Its contract validator fails a unit video with no caption track, because that video gates the way into the first lesson and captions are the only way through for a child who cannot hear (the same file).",
+ "against": "A later run found counter-evidence (`grade3-reading/artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "182-183",
+   "quote": "captions are NEVER hand-written. `scripts/generate-video-captions.mjs` derives a WebVTT track from the authored `transcript[]`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "184-189",
+   "quote": "plus the clip's real measured duration via `ffprobe`, written next to the clip and pointed at by `captions_path`. `validate-contracts.mjs` fails a unit video with no caption track, because a unit video gates the hero pick, which gates lesson one — captions are the only way through for a child who cannot hear, not an accessibility nicety.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "10",
+   "quote": "has 10 cues, no line longer than 42 characters, and reassembles to the source script exactly. Its last caption ends at 21.860 seconds, within the 22.120-second narration.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/render-essay.py",
+   "lines": "652",
+   "quote": "textwrap.wrap(phrase, width=42, break_long_words=False, break_on_hyphens=False)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/render-essay.py",
+   "lines": "656",
+   "quote": "raise RuntimeError(\"caption text differs from aligned script\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/7fc2d6f7b8e85a6b/captions.vtt",
+   "lines": "13",
+   "quote": "This division allows us to read Iago either as a pragmatist seeking material wealth or as a deeper strategist whose primary goal is absolute self-determination.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/media/Othello-opening-full.vtt",
+   "lines": "27",
+   "quote": "in love with his wife, Desdemona,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7189",
+   "quote": "Caption timing is provisional until the voiceover is recorded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "163-165",
+   "quote": "Captions are never hand-written: the transcript is the script a reviewer signed off, so deriving the cues from it is what stops the two disagreeing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "74",
+   "quote": "- Cue start = aligned first-word time − 0.05 s; cue end = last-word end + 0.3 s, clipped to the next cue.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/unit_film_audio.py",
+   "lines": "9",
+   "quote": "Sentences are split exactly as src/film/script.ts splits them (same regex), so caption i == take i.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "314",
+   "quote": "Measure the new speech, then align the 19 visual cuts, eight scene boundaries, and caption cues to actual audible words and pauses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext line 171)",
+   "quote": "On subtitles, no change was needed - captions have been disabled for Grade 3 since 24 August, in both this branch",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

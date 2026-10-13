@@ -1,0 +1,380 @@
+{
+ "id": "give-the-writer-the-whole-objective",
+ "title": "Give the writer the whole objective",
+ "statement": "Give a writer the exact objective, not just the topic: its official statement, its limits and exclusions, and the criteria and difficulty definitions its judge will check.",
+ "example": "In a sweep of 67 prompt recipes on 25 items, the only one to pass 23 had added a directive to aim at the judge's criteria for each item type.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "contested",
+ "detail": "In a one-seed sweep of 67 prompt recipes on 25 items, the recipe that added a directive to aim at the judge's main criteria for each item type was the only one to pass 23 of 25, with a mean score of 0.978 (`aptraining-local/parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md`, lines 5-22 and 49). In a run of 1,080 requests, 98% of the document-question failures (122 of 125) scored zero on curriculum alignment, against 2% (3 of 125) on factual accuracy (`aptraining-local/analyzer/reports/run_f54d5849_what_is_going_wrong.md`, line 20). The response was to put the expanded objective and its knowledge-point description into that writer's prompt, so the alignment signal lands in the input and not only in the rubric (`icloud-work/aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md`, lines 26-28). The multiple-choice writer's prompt already took the target standard, the specific fact to assess, and boundaries saying what to assess and what not to (`icloud-work/aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md`, lines 43-45). The formats its judge will check belong in the prompt too, because a writer breaks what it never sees.",
+ "against": "Before the sweep the same directive was predicted to cost five passes (`aptraining-local/parallel-ideas-lab/reports/rubber_ducks/sweep_pre_score_analysis_20260526.md`, line 93). The sweep's own verdict still wanted n=50 or a random 100 before calling its 92% production-validated (`aptraining-local/parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md`, line 93), and the winning recipe also carried the source-free directive the lab filed as a rubric exploit (line 73). The request to re-measure after the description went into the document-question prompt (`icloud-work/aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md`, line 34) has no reply in the folder of replies, which holds two notes, both from 27 May. The gain is approximate and overall (~1%), with no counts for the pair. The gain from supplying the specification is not isolated: the fix was logged with an expected rise in pass rate from 8% to 60-75% (`icloud-work/incept/inceptlm/README.md`, line 103), and a later scored run on a different set of 295 items passed 41.0% (`icloud-work/incept/nova_forge/RUN_LOG.md`, line 44). The failure table words the cause as \"Model ignores difficulty_definition\" (`icloud-work/incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md`, line 129), which could also mean a writer that ignored a definition it had. More context is not always better: \"SAQ: statement only (no RAG; verbose context regresses)\" (icloud-work/aptraining/workspace/comms/to_main/2026-05-12T0710Z_AUTONOMOUS_FAILURE_ANALYSIS_PIPELINE_UPGRADE.md, 78), and after a richer curriculum pack \"- **MCQ_SET -10pp** (85→75): regressed; possibly n=20 variance, or v2\" (icloud-work/aptraining/workspace/comms/from_pil/2026-05-28T1715Z_V056_RESULT_89pct_curriculum_v1.8.0.md, 46). The 46.1% topics also differ from the others in how their records were made, not only in the limits field. Even with the statement, the writer strayed beyond it, for example adding Syria and Libya where the curriculum specified Iraq and Afghanistan only. The 70%+ share is given without a breakdown, and the same report's failure table ranks factual accuracy first: \"| 1 | **Factual Accuracy** | 650 | 46.1% |\" (`icloud-work/incept/ML_TRAINING_INSIGHTS_REPORT.md`, line 301). The probe was 9 items, and the boundary notes themselves were model-written ('same record mixes CB-canonical statement with Haiku-generated misconceptions/assessment_boundaries', `icloud-work/aptraining/.agent/memory/MEMORY.md`, line 210). The 100%-to-43% figure was carried over from a prior plan, not re-measured. There was one output per item and no fresh control (`project_richer_rag_resolves_stable_fails.md`, line 20). Its table goes against its near-miss reading: one resolved item had scored 0.0 in all three runs, while two near 0.8 stayed failing (lines 30, 34 and 35). The note itself suspects the grader's rubric and the scope text come from the same source (line 59).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "49",
+   "quote": "1. **`ib_rubric_criterion_alignment` is the breakthrough duck.** Adding it to G yields the unique top recipe at 23/25 with the highest avg score (0.978) AND MCQ_SET 4/5. Predicted at -5 from n=15, actual at +3.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md",
+   "lines": "28",
+   "quote": "injects expanded LO + KC-description text into the DBQ generator prompt directly, so curriculum-alignment signal lands in the input, not just the rubric.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "45",
+   "quote": "- `assessment_boundaries`: `{{assessment_boundaries}}` (what to assess; what NOT to assess)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "20",
+   "quote": "Of 125 DBQ failures: **`curriculum_alignment = 0` in 98 % (122 / 125); `factual_accuracy = 0` in only 2 % (3 / 125).**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_pre_score_analysis_20260526.md",
+   "lines": "93",
+   "quote": "| add_ib_rubric_criterion_alignment | **-5** |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "93",
+   "quote": "still want n=50 or random100 before calling 92% production-validated.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "105",
+   "quote": "**The confusion:** When a prompt says \"Unit 4, 1450-1750,\" the model sometimes generated content about land-based empires (Unit 3 material) because both units share the same time period string.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "110",
+   "quote": "**Why this works:** The model already knows the content of both units. The disambiguation doesn't teach new facts — it removes ambiguity about which unit to draw from given a shared time period.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "112",
+   "quote": "**Impact:** Reduced curriculum_alignment failures on APWH Unit 3/4 overlap. ~1% improvement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "25",
+   "quote": "2. **Adjacent-topic drift**: Content from a nearby era/domain bleeds in despite topic constraints",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "47",
+   "quote": "\"curriculum_metadata\": {}  // EMPTY!",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "62",
+   "quote": "The model generates a 3-year interest problem because it doesn't know about the \"single year\" constraint. The evaluator fails it for violating a boundary the model never saw.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "125",
+   "quote": "### Run: 3f480de7 (197 questions, 3.6% pass rate)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "129",
+   "quote": "| Difficulty mismatch | 139 | Model ignores difficulty_definition |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "130",
+   "quote": "| Constraint violation | 114 | Model ignores assessment_boundaries |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PROMPT_LENGTH_HANDLING.md",
+   "lines": "49",
+   "quote": "**Approach:** Strip verbose fields under `skills.substandard_metadata` before prompt construction:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptlm/README.md",
+   "lines": "103",
+   "quote": "- Pass rate improved from 8% → 60-75% (expected)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/RUN_LOG.md",
+   "lines": "44",
+   "quote": "- **Pass Rate:** 41.0% (121/295)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_main/2026-05-01T1708Z_MASTER_PATH_TO_97_analysis.md",
+   "lines": "37",
+   "quote": "### B. Richer-RAG (assessment_boundaries injection) = +5 passes on soft fails, REAL",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_main/2026-05-01T1708Z_MASTER_PATH_TO_97_analysis.md",
+   "lines": "38",
+   "quote": "- 9 stable-fail items (0/3 baseline) → 17/27 with richer-RAG (5/9 resolved outright, 2 improved)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_main/2026-05-01T1708Z_MASTER_PATH_TO_97_analysis.md",
+   "lines": "39",
+   "quote": "- Mechanism: `assessment_boundaries` field aligns model output with grader scope expectation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-04-30T0700Z_v37c_DONE_postmortem.md",
+   "lines": "96",
+   "quote": "the 100 KC-prefix KCs pass at 63-82% (no unit cliff — even Unit 8/9, the historically weak cells from the v29 audit, hit 63-65%). The 106 c_/s_ style KCs pass at 46.1% — these are KCs without the structured `KC-N.x.X.X+y` provenance prefix. Most lack one or more of the 4-part richer-RAG fields (especially full `assessment_boundaries`), so the verifier scope-fails them more often.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_main/2026-05-12T0710Z_AUTONOMOUS_FAILURE_ANALYSIS_PIPELINE_UPGRADE.md",
+   "lines": "78",
+   "quote": "SAQ: statement only (no RAG; verbose context regresses)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-28T1715Z_V056_RESULT_89pct_curriculum_v1.8.0.md",
+   "lines": "46",
+   "quote": "- **MCQ_SET -10pp** (85→75): regressed; possibly n=20 variance, or v2",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "33",
+   "quote": "The generator ignores the specific `learning_objective` and `statement` provided in the request. Instead, it produces generic questions about the broad topic area.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "15",
+   "quote": "| **Passed** | 35 (30.7%) | 76 (65.0%) | **+34.3%** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "25",
+   "quote": "| Curriculum Alignment | 43.0% | 88.9% | **+45.9%** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "30",
+   "quote": "The dramatic improvement in curriculum alignment (43% → 89%) confirms the endpoint is now properly utilizing the `learning_objective` and `statement` fields provided in requests.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "123",
+   "quote": "- A student who knows this fact MUST be able to answer the question correctly",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/website/content/english/pages/release-notes.md",
+   "lines": "23",
+   "quote": "- Fixed substandard matching logic that was incorrectly aligning content to the wrong curriculum standards.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "60",
+   "quote": "- Scope expansion beyond provided curriculum (e.g., adding Syria/Libya when curriculum specifies Iraq/Afghanistan only)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "309",
+   "quote": "The single biggest discovery was that InceptBench evaluates questions against **curriculum metadata that the model never sees during generation**:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "310",
+   "quote": "- The model receives a bare request (grade, topic, type)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "312",
+   "quote": "- This mismatch caused 70%+ of failures",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "314",
+   "quote": "**Fix implemented:** Lambda v5.1.0 auto-injects curriculum metadata from a 1,191-entry lookup table, closing the information gap.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "422",
+   "quote": "The biggest pass-rate improvement came not from model training but from **closing the information gap** between what the model sees (bare request) and what the evaluator checks (full curriculum metadata).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "121",
+   "quote": "Targeted 9-item probe: assessment_boundaries injection resolves 5 stable APUSH fails outright + 2 improved.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/plans/PLAN-mission-2026-04-26.md",
+   "lines": "71",
+   "quote": "Without it, APWH u3 dropped 100% → 43% in prior runs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "233",
+   "quote": "as evidence for a prompt limited to 1800-1848, which is chronologically incorrect for this question's time period.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "322",
+   "quote": "The model lacks a constraint to treat the unit's time window as a hard filter.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "3",
+   "quote": "lifts pass rate from 0/27 (3 runs × 9 items) to 17/27 = 63%",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "56",
+   "quote": "- `assessment_boundaries` (the killer field — explicit \"should NOT include X\" scope guard)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "19",
+   "quote": "| apush/mcq | 93.3% | **100.0%** | +6.7pp | ±0.5pp | ✓ REAL LIFT |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "23",
+   "quote": "| apush/saq | 77.8% | **68.3%** | **-9.5pp** | ±3.8pp | ✗ REAL REGRESSION |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "28",
+   "quote": "Despite the targeted 9-item probe showing richer-RAG resolves 5 stable APUSH fails (+5 passes), at the FULL distribution it BREAKS ~17 saq items that v29 had been passing.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "20",
+   "quote": "4. Generated 9 prompts × 1 sample each against v29 with the richer system prompt",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "30",
+   "quote": "| 58090 | apush/saq | 0/3 (0.0/0.0/0.0) | 3/3 (1.0/1.0/1.0) | RESOLVED |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "34",
+   "quote": "| 68490 | apush/saq | 0/3 (0.8/0.78/0.78) | 0/3 (0.55/0.8/0.8) | unchanged |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "35",
+   "quote": "| 58794 | apush/saq | 0/3 (0.8/0.8/0.8) | 0/3 (0.8/0.8/0.8) | unchanged |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "59",
+   "quote": "The grader rubric and the boundaries text are likely both authored from the same canonical CB scope spec",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

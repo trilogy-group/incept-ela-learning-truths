@@ -1,0 +1,101 @@
+{
+ "id": "judge-what-the-task-demands",
+ "title": "Judge what the task demands",
+ "statement": "Judge an item by what it actually asks students to do, not by its command verb or what its notes and explanation claim.",
+ "example": "A templated explanation that steered the judge's reasoning toward 'content is correct' forced the score to 1.0.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "demand",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Attempts to game the AP grader found a rule that turned a failed check into a pass whenever the judge's own reasoning concluded the content was correct, so an explanation written to prefill that reasoning forced a 1.0. Essay items earned credit for 'multiple defensible positions' when their marking notes listed two opposing theses, and for sophistication when the notes merely listed the moves. Short-answer items met the analytical-thinking checks by opening with 'Explain ONE way', with no rise in demand, though the rubric itself says such verbs describe the cover, not the demand. Another AP generator's report found the reverse fault, 'describe' and 'identify' items treated as recall whatever surrounded them. Notes that merely list a counterexample, two positions or moves of sophistication can satisfy checks the task does not support.",
+ "against": "Explanations are not the fault in themselves: the grader's base rubric says 'Genuine educational explanations in answer/rationale fields are NOT violations.' (icloud-work/aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt, line 29), and one training-data build wrote the grader's own criteria text into items' marking notes (icloud-work/aptraining/helpers/data/build_u1_maximal_corpus_v6_curriculum_enriched.py, line 15). none found (no ablation in the files read isolates the templates' own effect)",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "51-55",
+   "quote": "But because the judge writes reasoning BEFORE the score is applied, a template-driven explanation that prefills the judge's reasoning toward \"content is correct\" will force the score to 1.0 even when the judge's gut would have failed it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T082229Z_exploits_EXPLOIT-005-leq-no-stimulus/source_report.md",
+   "lines": "95-97",
+   "quote": "\"Multiple defensible positions\" currently passes if rubric_notes literally lists two opposing thesis sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T082229Z_exploits_EXPLOIT-005-leq-no-stimulus/source_report.md",
+   "lines": "102-103",
+   "quote": "Current rubric passes if sophistication moves are LISTED in rubric_notes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T000424Z_exploits_EXPLOIT-004-saq-no-stimulus/source_report.md",
+   "lines": "27-29",
+   "quote": "Using \"Explain ONE way\" hits the analytical sweet spot on the rubric's wording without any actual increase in cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "88",
+   "quote": "Verbs like *evaluate / claim / analyze / explain / justify* in the question stem do **not** rescue the item — they describe the cover, not the actual cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "159",
+   "quote": "- “Describe” and “Identify” verbs were treated as recall even when surrounded by analytical language.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "92-94",
+   "quote": "The \"Simply naming X without Y earns no point\" counter-example template gives the judge a concrete failure mode to point at, which it scores as \"clear criteria\" even when X is generic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-005-leq-no-stimulus.md",
+   "lines": "95-97",
+   "quote": "**P-LEQ-1 — Tighten LEQ Distractor Quality.** \"Multiple defensible positions\" currently passes if rubric_notes literally lists two opposing thesis sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-005-leq-no-stimulus.md",
+   "lines": "102-103",
+   "quote": "Current rubric passes if sophistication moves are LISTED in rubric_notes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "518",
+   "quote": "but this note's wording mischaracterizes the design as elicit-only.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

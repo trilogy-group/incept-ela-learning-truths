@@ -1,0 +1,55 @@
+{
+ "id": "log-what-learners-did-not-inferences",
+ "title": "Log what learners did, not inferences",
+ "statement": "Log what learners did as raw events and compute any model's reading of them later, so the record doesn't change when the model does.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's item-level telemetry schema was written before any pilot, so that outcome data would exist from the first day, and it stores no inference fields such as predicted mastery, a risk score or an engagement index, which are analysis on top of the raw events (`grade3-reading/artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md`). Its reason is that a model's opinion baked into the log would make the log disagree with itself the day the model changes, while an append-only raw log never has to be collected again when the analysis improves (the same file).",
+ "against": "The schema is a design only, and nothing in the app imports it yet (`grade3-reading/artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md",
+   "lines": "365",
+   "quote": "- **No inference fields computed and stored ahead of need**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md",
+   "lines": "369",
+   "quote": "disagree with itself the day the model changes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md",
+   "lines": "3-4",
+   "quote": "Written before any pilot exists, so outcome data exists from day one instead of being bolted on after the fact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/TELEMETRY-SCHEMA-v0-2026-08-31.md",
+   "lines": "6",
+   "quote": "Status: design only. Nothing in this doc is imported by the app.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

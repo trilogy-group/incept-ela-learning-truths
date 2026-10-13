@@ -1,0 +1,105 @@
+{
+ "id": "enforce-a-standard-only-as-far-as-known",
+ "title": "Enforce a standard only as far as known",
+ "statement": "Enforce a standard strictly only when the request names it, treat an inferred one as guidance, and use none rather than a near match when the named one is missing.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The evaluator tags its curriculum context GUARANTEED when explicit skills metadata names it, HARD when it comes from the generation prompt and SOFT when it is inferred from the content, and scales enforcement to match: guaranteed boundaries are strictly enforced, hard ones fail clear violations, and soft ones are guidance that fail only clear, unambiguous violations. For its AP courses matching is fail-closed, with no random, text-search or cross-course fallback, and a plan for the newer curriculum interface says 'exact ID lookup only'.",
+ "against": "For other curricula the evaluator keeps a near match: \"If no exact match exists, log a warning and return the first section\" and \"using best RAG match instead\" (`icloud-work/incept/inceptbench/src/inceptbench/tools/curriculum_search.py`, lines 161 and 178), and it keeps the GUARANTEED label whenever skills metadata is present: return (\"GUARANTEED\", search_query, \"explicit skills metadata\") (line 201). The calibration harness never gave the judge a target: its loader builds each case without the curriculum_info or difficulty the gold cases carry (`icloud-work/evaluator/ap_benchmark/calibration/validator.py`, lines 81-87), so 'curriculum_info=example.question_dict.get(\"curriculum_info\", \"\"),' (line 117) is always empty, and every calibration case ran in the lenient inferred mode.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "149",
+   "quote": "- **GUARANTEED** (from explicit skills metadata): Assessment boundaries strictly enforced. No exceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "151",
+   "quote": "- **SOFT** (from content inference): Boundaries are guidance. Only fail for clear, unambiguous violations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/CONTRIBUTING.md",
+   "lines": "116",
+   "quote": "4. Keep IDs exact and course-specific. AP matching is fail-closed:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/plans/01-data-comparison-old-vs-new-api.md",
+   "lines": "158",
+   "quote": "1. **No RAG search** - exact ID lookup only (must have the standard/substandard ID)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/curriculum.py",
+   "lines": "99",
+   "quote": "\"Any deviation from the target standard is a curriculum_alignment FAILURE.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/curriculum.py",
+   "lines": "110",
+   "quote": "\"Curriculum standards are inferred from content. Be conservative in evaluation - \"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/curriculum.py",
+   "lines": "111",
+   "quote": "\"only fail curriculum_alignment for clear mismatches with AP curriculum.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "206",
+   "quote": "- **GUARANTEED** (from explicit skills metadata): Assessment boundaries strictly enforced. No exceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "207",
+   "quote": "- **HARD** (from generation prompt): Clear violations should fail. Exceptions only for demonstrable data mismatches (document in reasoning).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "208",
+   "quote": "- **SOFT** (from content inference): Boundaries are guidance. Only fail for clear, unambiguous violations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "209",
+   "quote": "- Default to SOFT if not indicated.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

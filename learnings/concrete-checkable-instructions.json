@@ -1,0 +1,55 @@
+{
+ "id": "concrete-checkable-instructions",
+ "title": "Concrete, checkable instructions",
+ "statement": "Tell a writer in concrete, checkable terms what the item must make the student do, not in abstract labels such as a taxonomy level or 'be specific'.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "demand"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "After several prompt runs, the AP generator's blueprint concluded that a model interprets abstract instructions differently, that 'be specific' means different things in different contexts, and that every instruction should be checkable (`icloud-work/ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md`). Cognitive-level labels in the prompt did not constrain what the model made and were replaced by behavioural constraints (`icloud-work/ap-social-studies-generator/docs/archive/PROMPT_EVOLUTION.md`). The blueprint's rule is to describe the behaviour wanted, not the classification, because the model doesn't reliably map taxonomy levels to behaviours (the same blueprint).",
+ "against": "The evidence compares whole runs that changed several things at once, and the blueprint itself warns that such comparisons can't isolate which change caused a regression (`icloud-work/ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "612",
+   "quote": "- Every instruction should be checkable",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "637",
+   "quote": "- Describe the BEHAVIOR you want, not the classification",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "607",
+   "quote": "- Model interprets abstract instructions differently",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "634",
+   "quote": "- Model doesn't reliably map taxonomy levels to behaviors",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

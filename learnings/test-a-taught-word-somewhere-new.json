@@ -1,0 +1,130 @@
+{
+ "id": "test-a-taught-word-somewhere-new",
+ "title": "Test a taught word somewhere new",
+ "statement": "A check on a taught word must put it in a new situation, because a key that repeats the teaching example can be picked from memory without knowing the meaning.",
+ "example": "In four lessons the key of a word check copied or nearly copied the teaching card's own example.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "key",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Hand reviews of four reading lessons found word checks whose keyed sentence copied or nearly copied the example on the word's teaching card, so a student could answer from memory of the card without knowing the word. In each case the fix the review proposed was a new situation for the key.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "64",
+   "quote": "A student can answer from memory of the card, without knowing what eerie means.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "95",
+   "quote": "Memory of the example answers both, with no need to know the meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "79",
+   "quote": "This tests memory of the card, not the meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "20",
+   "quote": "Half sunk a shattered visage lies, whose frown,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "454",
+   "quote": "\"gap_0\": \"A shattered ______ lies half sunk in the desert sand near the stone legs.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "581",
+   "quote": "\"value\": 0.99,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "649",
+   "quote": "\"value\": 0.98,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "241",
+   "quote": "\"value\": 0.81,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/1ed330c52090f0fc.json",
+   "lines": "666",
+   "quote": "\"value\": 0.97,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "49",
+   "quote": "to study and then recall from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "292",
+   "quote": "G3U1L5p2 teaches a stranger with cold stare and slow heavy steps. p3 correct option repeats those distinctive phrases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "14",
+   "quote": "The keyed stranger/shadows/cold-stare/slow-heavy-steps sentence closely copies p2's teaching example. That distinctive wording creates a recognition shortcut unrelated to applying the definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "24",
+   "quote": "The keyed choice copied p2's stranger example; a rollercoaster distractor plausibly fit “dangerous,” while feedback invented fun/laughter.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "198-199",
+   "quote": "bold stem (novel-context scenario)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

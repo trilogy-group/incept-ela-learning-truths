@@ -1,0 +1,100 @@
+{
+ "id": "moderate-line-length-for-screen-passages",
+ "title": "Moderate line length for screen passages",
+ "statement": "Keep an on-screen reading passage's lines to about 55–75 characters, even on a wide screen.",
+ "example": "One study found 55 characters per line gave better comprehension than 100.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The Grade 9 desktop design brief gathers studies on screen text. Lines of 55 characters gave better comprehension than lines of 100, so it caps the reading column at about 55–75 characters even on a wide screen, and for 28 readers with dyslexia readability improved up to 18 pt, so 18 px or more is its floor for the passage. Each reader's fastest font was 35% faster than their slowest with no loss of comprehension, and a dyslexia font gave 12 students in grades 3–6 no gain in speed or accuracy, so it offers a small font chooser instead of one dyslexia font. The voice and interface brief adds that light mode reads better for normal vision and that dark mode belongs as an option for long-form reading, not the default.",
+ "against": "Longer lines are read faster, although readers prefer moderate lengths (`othello-course-renderer-draft/repo/docs/design/grade-9/research/edtech-desktop-design.md`, line 104); light mode's advantage shrinks with larger fonts and brighter rooms (`othello-course-renderer-draft/repo/docs/design/grade-9/research/learners-voice-guide.md`, line 105); and the type-size and dyslexia-font studies are small, with 28 and 12 readers.",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "103",
+   "quote": "Dyson & Haselgrove (2001): 55 characters per line gave better comprehension than 100.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "105",
+   "quote": "*Implication:* cap the reading column at about 55–75 characters even on a 1536-wide screen.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "106",
+   "quote": "Rello et al. (2013), 28 readers with dyslexia: readability improved up to 18 pt, and line spacing had no significant effect. *Implication:* body text of 18 px or more is a reasonable floor for the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "107",
+   "quote": "Wallace, Bylinskii et al. (2022, ACM TOCHI): each reader's fastest font was 35% faster than their slowest, with no loss of comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "108",
+   "quote": "Wery & Diliberto (2017), n = 12, grades 3–6: OpenDyslexic gave no gain in speed or accuracy, and no student preferred it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "105",
+   "quote": "Light mode reads better for normal vision; offer dark mode as an option.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "105",
+   "quote": "NN/g recommends offering dark mode optionally, especially for long-form reading, rather than making it the default.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Dyson & Haselgrove 2001",
+   "url": "https://stu.westga.edu/~ssynan1/literacy/Dyson.pdf"
+  },
+  {
+   "ref": "Rello et al. 2013",
+   "url": "https://pielot.org/pubs/Rello2013-W4A-SizeMatters.pdf"
+  },
+  {
+   "ref": "Wallace, Bylinskii et al. 2022",
+   "url": "https://readabilitymatters.org/articles/towards-individuated-reading-experiences"
+  },
+  {
+   "ref": "Wery & Diliberto 2017",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5629233/"
+  },
+  {
+   "ref": "Budiu 2020",
+   "url": "https://www.nngroup.com/articles/dark-mode/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

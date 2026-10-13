@@ -1,0 +1,56 @@
+{
+ "id": "read-failure-causes-from-the-scores",
+ "title": "Read failure causes from the scores",
+ "statement": "Read why items failed from the judge's structured scores, not by matching keywords in its prose.",
+ "example": "A pattern match tagged 71 of 72 failed rows with a fault almost none of them had.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one failure analysis, a regex over the judge's narrative matched the name of a check, as in 'Integrity check passed', and tagged 71 of 72 failed rows as integrity violations; reading the narratives showed almost none were. Another pattern flagged 154 rows for echoing request metadata, and a spot check of 5 failed rows found none that named it as a cause. The fix replaced the regex tag with the judge's own sub-score, present only when that score is below 1.0.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "107-108",
+   "quote": "**Symptom**: 71 of 72 failed rows tagged `integrity_violation`; reading the underlying narrative shows almost none are actual violations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "110-111",
+   "quote": "**Root cause**: my regex matched the *metric name* (e.g. \"Integrity check passed\") in evaluator reasoning text, not actual violations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "113-115",
+   "quote": "**Fix**: `scripts/failure_deep_dive.py` drops the `integrity_violation` tag from the clean failure-mode list and replaces it with the sub-score signal `sub:integrity_check` (only present when the score is < 1.0).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "87",
+   "quote": "**`grade_echo_mismatch`** (154 rows in repair queue): regex false-positive. Spot-check of 5 randomly-sampled failed rows showed 0 actually mention \"grade 1\" as a failure cause.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

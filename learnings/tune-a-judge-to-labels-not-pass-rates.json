@@ -1,0 +1,162 @@
+{
+ "id": "tune-a-judge-to-labels-not-pass-rates",
+ "title": "Tune a judge to labels, not pass rates",
+ "statement": "Change a judge only to agree better with labelled or official cases, never to move the pass rate.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's process ties every change to it to benchmark accuracy, not pass rate (`icloud-work/evaluator/docs/EVALUATION_PROCESS.md`). On the day a comparison of runs named cognitive demand the primary driver of failures (`icloud-work/evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md`), the judge's prompt was relaxed to accept recall (`icloud-work/evaluator/ap_benchmark/prompts/base.py`), while the calibration set still labels recall-only items as failures (`icloud-work/evaluator/ap_benchmark/calibration/gold_standard.json`) and a pattern rule that runs before the judge still fails stems that begin \"What year\" (`icloud-work/evaluator/ap_benchmark/hard_fail/rules.py`). That left three definitions of one criterion, and no source records why the prompt changed. The rule also fixes the pass mark in advance, re-labels the calibration cases when a rule changes, and, when the judge fails forms the real assessment uses, fixes the judge rather than dropping the forms.",
+ "against": "none found; no source records whether the relaxation was tested against labelled cases. Some judge changes fixed real judge bugs rather than lowering the bar, such as pass logic that failed items whose score met the threshold (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md`). The AP program forbade changing its judge, which left changing the items as the only lever (`icloud-work/ap-social-studies-generator/docs/03-ARCHITECTURE.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "159",
+   "quote": "- Changes to evaluator based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "88",
+   "quote": "| cognitive_demand | 38 | **PRIMARY DRIVER** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "15",
+   "quote": "PROMPT_VERSION = \"2026.02.24.1\"  # Relaxed cognitive demand - recall is OK",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/gold_standard.json",
+   "lines": "194",
+   "quote": "\"failure_reason\": \"Recall-only question - just asks for a date without any analysis\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/hard_fail/rules.py",
+   "lines": "45",
+   "quote": "r'^what\\s+year\\s+',",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/docs/EVALUATION_PROCESS.md",
+   "lines": "159",
+   "quote": "- Changes to evaluator based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/docs/EVALUATION_PROCESS.md",
+   "lines": "158",
+   "quote": "- Evaluator criteria should NOT be influenced by generator output",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/docs/EVALUATION_PROCESS.md",
+   "lines": "156-157",
+   "quote": "- Generator uses Gemini API\n- Evaluator uses Claude API",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/core/scorer.py",
+   "lines": "24",
+   "quote": "# Fixed pass threshold - NEVER CHANGE THIS",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/aplit-quiz-generator/quality_control.py",
+   "lines": "29",
+   "quote": "A class for ensuring the quality of generated quiz questions using Claude.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "14",
+   "quote": "| **SAQ** | 50% | **95-100%** | Ban stimulus, force \"Explain\" verb, recall detector |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "20",
+   "quote": "**Root cause:** The evaluator treats \"Describe\" and \"Identify\" as recall-level verbs regardless of analytical keywords in the question.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "68",
+   "quote": "1. **SAQ: No stimulus ever.** Stimulus-based SAQs always fail Part (a) as \"reading comprehension\" instead of \"historical thinking.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf",
+   "lines": "pdftotext -layout output, line 12078",
+   "quote": "(A) Describe the historical situation in Spain reflected in the poster.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/.claude/skills/monitor-evaluator.md",
+   "lines": "46",
+   "quote": "- Changes to evaluator should be based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md",
+   "lines": "168",
+   "quote": "cognitive_threshold = 0.70  # Relaxed from 0.85",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TEST-FINDINGS-2026-02-17.md",
+   "lines": "55",
+   "quote": "**Fix:** Updated evaluation prompts to focus on CONTENT quality only,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/g3-control-protocol.md",
+   "lines": "160-162",
+   "quote": "that is a content finding about the live G3 course (encyclopedic construction), not a bar finding — escalate as a course-content signal and do not tune the bar to absorb it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "3",
+   "quote": "A judge moved to Jev only where it matched or beat the current judge on labelled cases.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

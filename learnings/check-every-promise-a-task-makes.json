@@ -1,0 +1,100 @@
+{
+ "id": "check-every-promise-a-task-makes",
+ "title": "Check every promise a task makes",
+ "statement": "Where a task promises all of something or a range, check that every member is there.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "scoring-guide",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A content-integrity check written for the course plans expands ranges and words such as all or every into canonical IDs, treats them as exhaustive, and compares the promised lessons, entities, operations, sources, chart rows, tasks and rubric categories with what is actually present (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md`). It requires chart and rubric closure, so anything shown as valid is accepted consistently, and it fails missing entities, omitted operations, inconsistent row logic and a rubric that rejects its own chart (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "177",
+   "quote": "expand ranges such as `L1-L7` and words such as `all` or `every` into canonical IDs;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "179",
+   "quote": "treat explicit ranges and `all`/`every` as exhaustive;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "180-181",
+   "quote": "compare promised lessons, entities, operations, sources, chart rows, tasks, and rubric categories with what is actually present;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "183",
+   "quote": "require chart and rubric closure: anything represented as valid must be accepted consistently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "185-186",
+   "quote": "Missing required entities, omitted operations, inconsistent row logic, or a rubric that rejects its own chart are `FAIL`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "277-278",
+   "quote": "Deleting a step removed the comparison, so the check stayed green.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "284",
+   "quote": "Pairwise equality checks cannot prove completeness.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "119-120",
+   "quote": "that `base-stems-full.jsonl` has 2,230 rows but covers only 554/562 principle IDs.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "17",
+   "quote": "a fresh render and independent probes confirm duration, frame size, module coverage, and an unchanged G9 working tree.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "31",
+   "quote": "validator invariant (no receipt drops a vocab-card word; red-first proven)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

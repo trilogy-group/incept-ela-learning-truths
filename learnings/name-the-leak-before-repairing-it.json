@@ -1,0 +1,60 @@
+{
+ "id": "name-the-leak-before-repairing-it",
+ "title": "Name the leak before repairing it",
+ "statement": "To repair an item answerable without its text, name how it leaks, such as world knowledge, a keyword cue, option symmetry or chronology, then change what it asks.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "format",
+  "stem"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 reading item-conversion retrospective lists what failed in its repair campaign, raw selected-response items kept as they were and wording polish without leak-vector diagnosis, and among what worked, changing the construct rather than only the wording. Its reusable recipe first classifies the leak vector (world knowledge, keyword or title cue, option symmetry, real-world chronology, Part A/Part B coupling, signposted evidence, a response-processing trap or a renderer or protocol artifact) and then chooses a construct that attacks it instead of paraphrasing. In a Grade 3 fix list, one item built on world-famous facts was rejected as unfixable by distractor surgery and in need of content replacement.",
+ "against": "A Grade 3 mastery gate hardened in place went from 84.2% to 64.0% blind-solvable after 47 hardened items were deployed (`grade3-reading/_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch`, line 610): a partial gain, and that line does not say how the items were hardened.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "448-451",
+   "quote": "2. Classify the leak vector: world knowledge, keyword/title cue, option symmetry, real-world chronology, Part A/Part B coupling, signposted evidence, response processing trap, or renderer/protocol artifact. 3. Choose a construct that attacks that leak vector. Do not merely paraphrase.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "116-119",
+   "quote": "What failed: - raw selected-response as-is; - wording polish without leak-vector diagnosis;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "111",
+   "quote": "- change the construct, not just the wording;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "8",
+   "quote": "(a) `cc-camels-mcq-04` rejected — needs content replacement (world-famous facts, unfixable by distractor surgery);",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

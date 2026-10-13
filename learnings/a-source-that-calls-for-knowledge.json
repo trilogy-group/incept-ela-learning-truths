@@ -1,0 +1,67 @@
+{
+ "id": "a-source-that-calls-for-knowledge",
+ "title": "A source that calls for knowledge",
+ "statement": "When a source is there to call up knowledge rather than to test reading, each question should need both the source and that knowledge.",
+ "example": "A leak probe failed a whole set when more than 20% of its questions could be answered from the source alone.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "demand",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In AP history question sets the source is there to prompt course knowledge: the judge's leak probe failed a set when more than 20% of its questions could be answered from the source alone, and a pipeline's checks required outside knowledge as well as that every question depend on the source. The eight sets still failing after known rescues needed outside-knowledge hooks, distractors from the same period and no dependence on the source's phrasing. For such sources this narrows 'A question must need the text' and 'One answer the text settles': the text is needed, but it must not settle the answer alone. Check that each question fails with the source hidden and that the source alone doesn't settle it.",
+ "against": "\"The first version over-blocked known passing rows because InceptBench tolerates some source-referential wording.\" (aptraining-local/den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md, line 24).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "7",
+   "quote": "The eduacc leak-probe fails a set when >20% of child questions are answerable **from the stimulus alone**.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "109",
+   "quote": "Fix generation/selector semantics for the eight remaining rows: outside-knowledge hooks, same-period distractors, no stimulus phrase dependency, and compact payloads to avoid score timeouts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "229",
+   "quote": "APUSH outside knowledge required",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "230",
+   "quote": "all child questions depend on stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "166-167",
+   "quote": "8. **Leak gate:** Removing subject knowledge must break the path to the correct response. Removing a required stimulus must also break the path. Passing one condition does not excuse failing the other.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

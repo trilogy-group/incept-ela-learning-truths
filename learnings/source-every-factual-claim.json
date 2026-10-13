@@ -1,0 +1,164 @@
+{
+ "id": "source-every-factual-claim",
+ "title": "Source every factual claim",
+ "statement": "Back every real-world claim, and every non-fiction text, with a recorded, reputable source, and check each claim against that source, never against what sounds plausible.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The course content-integrity skill ranks sources for every external-world claim (an official agency, standards body, museum, university or primary research first, then a domain reference chosen for the course, then a named fallback) and records each one's title, publisher, URL, retrieval date, exact locator, bounded fact, scope boundary and content digest; search snippets, unsourced summaries, blogs and model memory cannot support a pass (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md`). The cross-subject guidance warns that a vivid but factually loose passage risks embedding misconceptions that are hard to undo (`grade3-reading/knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd`), and the reading project requires reputable sources for every science-bearing object (`grade3-reading/knowledge_bot/HOTBUCKET.md`). The source is of the strongest kind available, and checking each claim against it is a check of its own.",
+ "against": "The claim checker was not referenced by any known gate when it was found, so nothing enforced the rule.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "115",
+   "quote": "official agency, standards body, museum, university, or primary research;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "119-121",
+   "quote": "Record source title, publisher, direct URL, retrieval date, exact locator, bounded fact, scope boundary, and content digest when bytes are available. Search snippets, unsourced summaries, blogs, and model memory cannot support `PASS`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "11-12",
+   "quote": "use sources rather than model memory as authority, and never turn missing evidence into `PASS`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd",
+   "lines": "40",
+   "quote": "Nonfiction passages should be factually accurate and traceable to reputable sources. A vivid but factually loose passage creates downstream work for the subject team and risks embedding misconceptions that are hard to undo.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "96",
+   "quote": "every science-bearing Read/Write object must use reputable sources and pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "41",
+   "quote": "CRITICAL — fabricated claim printed as textual fact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "76-77",
+   "quote": "anything a lesson presents to the child as being IN the story must actually be in that lesson's own passage text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "79",
+   "quote": "the shape that hides the worst defects, since unquoted claims look like nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "65-66",
+   "quote": "merciless and stranger are the two teaching a flatly wrong rule on screen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0141-cross-cutting-science-misconception-synthesis.qmd",
+   "lines": "140",
+   "quote": "Every model should carry an explicit health warning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "73-74",
+   "quote": "not referenced by `npm run check` or any other known gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "135-138",
+   "quote": "test definitions for missing categories and qualifiers; - test ontology/category mistakes, unsupported mechanisms, causal overclaims, and contradictions; - flag teleology or conscious intent attributed to evolved traits or impersonal processes; - compare the claim with the frozen source boundary, not with what sounds plausible.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "140-142",
+   "quote": "Examples of blocking shapes include defining a broad category as only one subtype, calling a process a body part, treating an animal as a producer, or replacing a causal definition with \"most connected.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "267-269",
+   "quote": "Anti-leak (kb-0064) means \"you must read the passage to answer\" — it does NOT mean the passage's own facts are sourced or true. A perfectly anti-leak item can sit on an unsourced machine-authored passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "186",
+   "quote": "**Note:** you grade **anti-leak + G5 compliance**, not source truth.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Brainlift social science and science coherence.md",
+   "lines": "16",
+   "quote": "Non-fiction passages should be factually accurate and traceable to reputable sources.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'Sources & Inspiration', cell D41",
+   "quote": "AI-generated from general knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'Sources & Inspiration', cell E41",
+   "quote": "General botanical knowledge (photosynthesis, plant parts, life cycles)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T16-21-46-019f7fe7-80b5-7e61-bdfc-c5a7748f703b.md",
+   "lines": "16",
+   "quote": "- 8 disclosed science failures remain, plus additional errors verified against [USGS](https://www.usgs.gov/faqs/what-earths-water-cycle), [NOAA](https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-coriolis-effect), and [NPS](https://www.nps.gov/yell/learn/nature/cyclesprocesses.htm).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

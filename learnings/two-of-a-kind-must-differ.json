@@ -1,0 +1,462 @@
+{
+ "id": "two-of-a-kind-must-differ",
+ "title": "Two of a kind must differ",
+ "statement": "Two blocks of one kind in a lesson must test different things; tell the writer what the earlier one covers.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A second block of a kind on the same text is told what the earlier ones cover and must not repeat or reword them, and\ncode holds a block that is about what an earlier one was (`g9/transformer/src/mechanics/util.js`, `avoidNote`,\n`houseChecks`). The rule came after a second quick check came out as a copy of the first (`g9/transformer/v02/QA.md`,\n\"Found and fixed\").",
+ "against": "the repeat test compares words, so a reworded repeat can pass\n(`g9/transformer/src/mechanics/util.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "53",
+   "quote": "22% of INFERIOR MCQ_SETs fail `non_repetitiveness`. Pipeline doesn't enforce question-set diversity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Non-repetitiveness is by far the weakest dimension: avg 0.14; 65 of 76 bundles scored exactly 0 on it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "175",
+   "quote": "- `concept_coverage`: Do questions cover different aspects/skills of the stimulus? (Collection property)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json",
+   "lines": "12",
+   "quote": "Existing Questions to Avoid Duplication:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/README.md",
+   "lines": "198",
+   "quote": "- `{existing_questions}` - Previously generated questions for same passage",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "504",
+   "quote": "If the majority of items in a Medium question are recycled from its Easy counterpart, set `difficulty_alignment = 0.0` for the Medium question — it is not genuinely harder, just relabelled.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "288",
+   "quote": "8. **Cross-difficulty recycling** — The evaluator still can't detect cross-difficulty item recycling (same facts rephrased across easy/medium/hard) because each question is evaluated independently.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "317",
+   "quote": "- Questions test different skills/aspects of the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "322",
+   "quote": "- Questions all test the same skill",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "81",
+   "quote": "Redundancy enemies: two items test the same narrow content, distorting the blueprint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-24/FINDINGS.md",
+   "lines": "24",
+   "quote": "**The same question is asked twice in a row.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "16",
+   "quote": "Two questions in a row asking the same thing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "29",
+   "quote": "a pairwise semantic-overlap check across every consecutive question in a lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "33",
+   "quote": "the we-do must **extend** the modeled skill, never replay it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "328",
+   "quote": "**Manifestation:** ~70-99% of MCQ_SET failures fail `cognitive_demand` (specifically `difficulty_distribution` + `concept_coverage`).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "329",
+   "quote": "the Plan step in MCQ_SET generation does not enforce multi-entity coverage. The model picks the most prominent/salient entity in the topic and concentrates there.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "330",
+   "quote": "Plan step must enumerate `nations_to_cover: [\"Portugal\", \"Spain\", \"France\", \"England\"]` and Question step must be locked to \"each question MUST address a different nation from this list\" (postmortem prescription).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "100",
+   "quote": "Pass: no two questions test the exact same skill on the exact same piece of content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "101",
+   "quote": "Fail: two or more questions are functionally redundant — a student who answers one correctly gains no additional information from the other.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "55-57",
+   "quote": "The deterministic detector (#30) is high-precision + zero-variance but misses SEMANTIC duplicates … token overlap 0.5, below the 0.85 bar",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "106",
+   "quote": "Pass: questions collectively probe multiple distinct comprehension skills",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "5",
+   "quote": "A strong set probes different skills off one stimulus — e.g. reading the data, a calculation, and an explanation/prediction.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "63",
+   "quote": "- No two questions have the same correct answer or test the same fact.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_324d5e51_failure_modes.md",
+   "lines": "18",
+   "quote": "| `redundant_questions` | 17 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "121",
+   "quote": "For MCQ_SET, add explicit coverage fields to the plan step, such as entities/nations/themes to cover, then bind child questions to that plan.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "75",
+   "quote": "MCQ_SET works better when the plan step constrains what each child question must cover.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "37",
+   "quote": "**MCQ_SET:** One shared stimulus, THREE questions that all reference that same stimulus, each testing a different historical thinking skill.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md",
+   "lines": "52",
+   "quote": "These are functionally the same question.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "97-98",
+   "quote": "- Each question should test a distinct aspect of the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "74",
+   "quote": "There is significant overlap between parts (a) and (c).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md",
+   "lines": "42",
+   "quote": "The three questions do not adequately cover distinct AP historical thinking skills.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "345",
+   "quote": "- Each question tests a distinct aspect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Non-repetitiveness is by far the weakest dimension: **avg 0.14; 65 of 76 bundles scored exactly 0** on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-pp-2026-08-27/REGISTER.md",
+   "lines": "10",
+   "quote": "Cracked both usage checks via \"baby\"+\"sleep\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/eval-suite/RANKING.md",
+   "lines": "16",
+   "quote": "two-forms-same-job defect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Q4, Q9, Q12, and Q13 all ask why ice floats.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "33",
+   "quote": "> **Design rule:** the we-do must **extend** the modeled skill, never replay it.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "89",
+   "quote": "- **p4:** the two items are clones of each other (a sleeping pet in both). No wrong option tests a near-miss meaning of \"determined\".",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "62",
+   "quote": "Pairwise stem cosine catches redundant child questions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/B0045_STAGED_MCQSET_INTERIM_20260519.md",
+   "lines": "24",
+   "quote": "passed rows have balanced distractors, historically accurate content, concise stimulus use, and distinct child-question jobs.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "49",
+   "quote": "The same point, near enough: equal, or (for a sentence) most of its words shared.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "55",
+   "quote": "return [...sa].filter((w) => sb.has(w)).length / new Set([...sa, ...sb]).size >= 0.6;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "64-65",
+   "quote": "QC-2 was a copy of QC-1",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "141",
+   "quote": "do not repeat or reword those",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "67",
+   "quote": "what the lesson's earlier blocks of this kind cover: those made or being made (a lone QC-3 makes no QC-1 first);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "41",
+   "quote": "The lines most relevant to the lesson question are ${top}. Prefer them, but use any line that fits the task.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/9a28237802fccd82.json",
+   "lines": "16",
+   "quote": "will little note, nor long remember what we say here",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/cee942a6baad8233.json",
+   "lines": "21",
+   "quote": "\"prompt\": \"Find the line that shows this.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/ed2f90f660c18774.json",
+   "lines": "27",
+   "quote": "Not about what an earlier Compare two answers block was: already in this lesson:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "16",
+   "quote": "what this block is about, so a second block of the same kind on the same text is told to differ",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "20-21",
+   "quote": "QC-1 and QC-2 are two blocks: n is the number in the block's label, and block n is told what the blocks below it that … exist cover.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "544",
+   "quote": "the number in the label tells the server which of its kind this is (QC-2 is told what QC-1 covers)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "64-65",
+   "quote": "QC-2 was a copy of QC-1;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "22",
+   "quote": "// what this block is about, so a second block of the same kind on the same text is told to differ",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "75",
+   "quote": "QC-2's writer is told what QC-1 asks",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "13",
+   "quote": "// what this block is about, so a second block of the same kind on the same text is told to differ",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "67",
+   "quote": "what the lesson's earlier blocks of this kind cover",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "257",
+   "quote": "Narrative. Pairs badly with the cloze; pick one.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "257",
+   "quote": "Narrative. Pairs badly with the cloze; pick one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "258-259",
+   "quote": "do not build two separate production prompts.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

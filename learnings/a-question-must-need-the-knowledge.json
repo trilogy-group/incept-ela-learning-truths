@@ -1,0 +1,284 @@
+{
+ "id": "a-question-must-need-the-knowledge",
+ "title": "A question must need the knowledge",
+ "statement": "A question meant to test subject knowledge fails if a reader without that knowledge can reach the answer from what the item gives.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "demand",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Disagreement reports on an item evaluator showed its judge passing items whose stimulus already gave the answer away; in one, the judge ran a zero-knowledge probe and still passed the item, because a technical word (\"pipes\") was missing from the passage (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_976.py`). The rubric now asks whether grade-level subject reasoning is still needed once the stimulus is absorbed, counts a task that collapses to looking and reporting as a leak, and calls it an evaluation error to clear an item only because the literal answer word is absent (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`). The probe and the ban on that defense were added after version 2.5.3. Such a reader may match or paraphrase the source's wording, name what it describes, read a label or arrow, or rule out options by common sense. To fix such an item, change what it asks rather than swapping in synonyms.",
+ "against": "The probe is skipped for reading items, and it must pass items whose targeted skill is reading or interpreting the stimulus (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, lines 102 and 120). It over-fired on a question asking for the category an instance belongs to (issue 972) and on a science phenomenon diagram (issue 977) (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_972.py`, `icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_977.py`). the same rubric exempts items whose skill is reading, interpreting or measuring the stimulus, and one failure report asks for 60-70% of the answer to be derivable from the stimulus alone. The check is defined for knowledge-testing items, \"non-ELA subjects **with a stimulus of any modality**\" (`icloud-work/aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md`, line 29); in a reading item the text is meant to supply the answer. With sources written to fit the item the safe zone is narrow, a bare source reading as decorative and a rich one leaking the key's words: \"Every stimulus form I've tried lands on ONE failure side or the other\" (`icloud-work/aptraining/workspace/comms/from_cheater/2026-05-25T1029Z_ESCALATE_FINAL_10_mechanisms.md`, lines 33-35). The probe runs only when a source is present, so items without one were never checked: '- B2: zero-knowledge educational probe runs only when a stimulus is present.' (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md`, line 64). The probe does not apply to reading items, where the text is the point: the rubric skips it for reading subjects and for fiction, nonfiction and article content, since those are reading comprehension by design (icloud-work/aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt, line 80). A rubric-derived writer prompt pulls the other way, asking the stem to refer to the stimulus explicitly ('According to the source...'), and a warning to the writer alone did not help: answer-hiding phrasing on its own did not improve the sets it was tried on (`prompt_perfection/NOTES.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "125",
+   "quote": "Discriminator: after fully absorbing the stimulus, is grade-level `{request.subject}` reasoning **still required** to pick the answer? If the cognitive demand collapses to \"look and report\" or \"match restated description to its conventional name\", it is a leak. → `educational_accuracy`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "110",
+   "quote": "It is an evaluation error to claim an item is NOT a mechanism-naming leak simply because the literal answer word does not appear in the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_976.py",
+   "lines": "4-6",
+   "quote": "Root cause: evaluator performed the zero-knowledge counterfactual probe but rationalized past a connect-the-paragraphs leak by claiming a missing technical word (\"pipes\") in the stimulus meant subject knowledge was still required.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "97",
+   "quote": "If the cognitive demand collapses to \"look and report\" or \"match restated description to its conventional name\", it is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/ITERATION_ANALYSIS.md",
+   "lines": "176-177",
+   "quote": "→ The question TELLS the student what the Progressive Era was about. → Student can answer by reading, not by KNOWING.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md",
+   "lines": "140",
+   "quote": "Hard difficulty broken - 58% → 38% (-20%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "94",
+   "quote": "the targeted skill IS reading / interpreting / measuring the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "408",
+   "quote": "Ensure 60-70% of answer derivable from stimulus alone",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "69-72",
+   "quote": "Inspecting v12's two stuck KCs revealed the rubric was failing child-Q1 educational_accuracy because the stimulus contained literal vocabulary that lexically matched the keyed answer (\"plains\" → \"Plains farmers\", \"laborer\" → \"industrial laborers\").",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "73-74",
+   "quote": "Adding an explicit blacklist of constituency-vocabulary to the prompt turned both KCs from 0/19 attempts to PASS within K=6.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "33-35",
+   "quote": "But it is *only* run when a stimulus is present. Strip the stimulus and the probe never fires.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "37-40",
+   "quote": "add a stem-only variant of the probe that asks \"could a student with no APUSH knowledge eliminate three of these four options purely from common-knowledge / lay-vocabulary reasoning?\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "167",
+   "quote": "**EX002-04 — Market Revolution transportation (score 1.00, SUPERIOR)**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "176",
+   "quote": "- D. \"The federal mandate that all interstate goods travel by horse-drawn wagon\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "29",
+   "quote": "non-ELA subjects **with a stimulus of any modality**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1029Z_ESCALATE_FINAL_10_mechanisms.md",
+   "lines": "33-35",
+   "quote": "Every stimulus form I've tried lands on ONE failure side or the other: - bare/generic stim → \"decorative\" (stim_quality, test_preparedness fail) - rich/specific stim → vocab leak (educational_accuracy fail via child evaluations)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "28",
+   "quote": "- Stimulus answer leaks fail `educational_accuracy` when a zero-knowledge student can reach the answer from the stimulus and stem alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "41",
+   "quote": "- Avoid stimulus leaks: mechanism-naming, connect-the-paragraphs, visual-depicts-answer, and numbered-path mechanism-labeling leaks.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build2_eval/evaluation_report.md",
+   "lines": "16",
+   "quote": "- Zero metrics: {'concept_coverage': 1, 'difficulty_alignment': 1, 'difficulty_distribution': 3, 'educational_accuracy': 14, 'mastery_learning_alignment': 2, 'non_repetitiveness': 2, 'specification_compliance': 3, 'stimulus_quality': 2, 'test_preparedness': 3}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build2_eval/evaluation_report.md",
+   "lines": "9",
+   "quote": "- Failed: 15",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "76",
+   "quote": "Working only from the stimulus (including any image-analysis content) and the question stem, attempt to pick the correct answer step by step.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "86",
+   "quote": "1. **Mechanism-naming leak.** The stimulus describes a process / mechanism / scenario in lay vocabulary; the question asks the student to supply the conventional label or technical term *for that exact described thing*.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/_logs/watcher_replay_dupes_20260522T2018Z/2026-05-22T201819Z_exploits_EXPLOIT-001-historian-frame-self-leak/source_report.md",
+   "lines": "26-28",
+   "quote": "Across 10 items (mixed APUSH units 4–8): 40% pass, dimension fails dominated by `educational_accuracy` (5/10), `clarity_precision` (5/10), and `mastery_learning_alignment` (5/10).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/_logs/watcher_replay_dupes_20260522T2018Z/2026-05-22T201819Z_exploits_EXPLOIT-001-historian-frame-self-leak/source_report.md",
+   "lines": "32-34",
+   "quote": "1. **Vocabulary / paraphrase leak.** The judge's zero-knowledge counterfactual probe (per `_base_evaluation.txt` Checklist B1) found that the abstract historian claim word-matched one option:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "37-40",
+   "quote": "**Patch:** for closed-form history MCQs without a stimulus, add a stem-only variant of the probe that asks \"could a student with no APUSH knowledge eliminate three of these four options purely from common-knowledge / lay-vocabulary reasoning?\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "109",
+   "quote": "- `mcqset_repair_offline_v2`: changed Q2 wording away from \"supremacy\"; score 0.78 because \"taking precedence\" was still treated as a synonym leak for \"supreme.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "110",
+   "quote": "- `mcqset_repair_offline_v3`: changed Q2 to ask why the principle mattered historically under the Articles rather than asking students to name/paraphrase the principle. Local IB scored 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "56",
+   "quote": "Penalize keyed answers sharing words with labels; otherwise IB sees decorative/source-cued items.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "130",
+   "quote": "- no correct answer copied or synonym-mapped from stimulus;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/official_exports/local_eval/local_eval_report.md",
+   "lines": "39",
+   "quote": "- `31`: mcq answer copies stem terms",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "91",
+   "quote": "- The stem must reference the stimulus explicitly (\"According to the source...\", \"The passage above suggests...\").",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "807",
+   "quote": "- Answer-hiding phrasing alone did not improve MCQ_SET.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/generator_review/leak_control_and_certification_schema.md",
+   "lines": "13-15",
+   "quote": "In a knowledge subject, an answer you can find *in the source* is a leak. **In reading, finding the answer in the passage *is* the skill** — so we deliberately **skip the history-style \"answer is in the source\" check.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.3 (pdftotext lines 146-148)",
+   "quote": "The check tests the paraphrase 'lovely', so a child who never learned 'enchanting' can answer it correctly. Compare Aladdin, whose stem names its word outright: 'Which sentence uses the word betrayal correctly?' Ours should name the word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L7.md",
+   "lines": "31",
+   "quote": "stem \"Which sentence uses the word triumphant correctly?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT-SPECS.md",
+   "lines": "71-72",
+   "quote": "Do not use a later event as period evidence, invent a direct quotation, treat Indigenous societies as interchangeable, or make the stimulus itself reveal the answer.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

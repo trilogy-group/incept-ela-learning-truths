@@ -1,0 +1,103 @@
+{
+ "id": "every-instruction-legible-at-451",
+ "title": "Every instruction legible at 4.5:1",
+ "statement": "Set every line that tells a learner what to do, hints and help included, at a contrast of at least 4.5:1, in sentence case and upright type.",
+ "example": "An active help control measured 2.52167:1 and a textarea placeholder about 3.15:1, below the 4.5:1 normal text needs.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A supplied UI review found the labels that tell a child what to do set in small gold, some in all capitals and one in italics, and called them the hardest lines on the screen to read (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, lines 20 and 52). Computed styles then measured an active help control at 2.52167:1 and a textarea placeholder at approximately 3.15:1, where normal-size instructional text needs 4.5:1 under the course's design contract and WCAG 1.4.3 (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, lines 1769 and 1551). The repairs set the labels in ink and their natural case at weight 600, with the smallest raised to 14px, and the placeholder later measured 7.111:1 (`grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 13; `grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 1563).",
+ "against": "The 4.5:1 bar is WCAG's for normal-size text, and large text needs 3:1: \"WCAG AA asks for 4.5:1 for body text and 3:1 for large text, so they fail both.\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, line 20).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "20",
+   "quote": "The lines that tell a child what to do are currently the hardest lines on the screen to read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "20",
+   "quote": "Several of them are also all caps, and one instruction is in italic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "52",
+   "quote": "Instructional copy gets the least legible treatment available",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1769",
+   "quote": "Native computed style gives15px faint text on paper (2.52167:1) with57.96875x24.5px box.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1551",
+   "quote": "The placeholder composites to approximately 3.15:1 on white.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1551",
+   "quote": "This is normal-size instructional text, requiring 4.5:1 under the existing design contract and WCAG 1.4.3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "10",
+   "quote": "use ink for labels, sentence case and display sans for instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "13",
+   "quote": "Existing ink, natural authored case, normal tracking, weight600; the three13px-or-smaller instructional labels use14px and1.45 leading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "19",
+   "quote": "upright instructional sans note.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1563",
+   "quote": "Eligible actual L6 enabled empty/focused textarea measures7.111:1",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "W3C Web Accessibility Initiative, Understanding WCAG 2.2: Understanding SC 1.4.3 Contrast (Minimum) (Level AA)",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

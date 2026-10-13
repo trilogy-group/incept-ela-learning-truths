@@ -1,0 +1,450 @@
+{
+ "id": "spoken-words-match-printed-words",
+ "title": "Spoken words match printed words",
+ "statement": "Check that a read-along voice says only the words its page prints, exactly as printed, by tying each clip to its exact text and comparing whole transcribed lines.",
+ "example": "After one round of edits, 117 of 179 narrated strings no longer had matching audio.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading course's build rules record a check that compared its narration manifest with the content after a round of rewrites and found 117 of 179 narrated strings already orphaned by the round's own rewrite (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md`). A substring test counted 116: one screen's text had grown from 414 to 683 characters, so the child heard the old text and the new sentences had no audio, while the substring check called it fine. The rule since then is exact whole-line set membership, never a substring or prefix test, with orphans reported by path, and the course plans' gate list keeps printed equal to spoken (`grade3-reading/ti-courseplans/docs/key-quality-gates.md`). The page may print more than is read, and each clip is keyed to a hash of its words so that any edit marks it stale.",
+ "against": "A recap narration that speaks three sentences not printed on its page was accepted by precedent (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-C-D7-D8-D10-D12.md`, line 40). The rule is for read-along pages; in a film, few words go on screen. The project's own learning-science note says to combine verbal and visual when both add value and to avoid redundancy (`grade3-reading/knowledge_bot/knowledge/kb-0027-learning-science.qmd`), which sits uneasily with printing every word that is spoken. The checks fail too: half of the audio defects the project once filed were defective checks (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`, lines 72-73), so a flagged mismatch still needs confirming. In one study, on-screen text identical to the narration impaired learning (see Captions and redundancy); there the text repeated a narration, while here the printed text is what the student is learning to read. A later run found: a reading course records whether everything its guide says must be printed as undecided, since printing it all clutters the screen, and its audio rules print only the lines that carry the lesson and caption the rest (`grade3-reading/artifacts/qc-2026-09-30-staging/contradictions.md`). A later run found: A design ruling of 2026-08-06 says not everything the guide says should be written on screen, or it will be cluttered; the reading course renderer follows its read-along validator and prints everything, and records the clash as awaiting a decision on whether a smaller printed treatment or unprinted guide lines are allowed (`grade3-reading/course-renderer/docs/rules/ui.md`, lines 269-278). Its attention standard already moves a deferred hint's printed copy behind one tap while the line is still narrated (`grade3-reading/course-renderer/docs/process/ATTENTION-HIERARCHY.md`, lines 65-67) (`grade3-reading/course-renderer/docs/rules/ui.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1085-1086",
+   "quote": "found 117 of 179 narrated strings already orphaned by the round's own rewrite",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1099-1100",
+   "quote": "**a drift check that tolerates prefixes silently exempts every string that was EXTENDED, and extension is the most common shape of a feedback edit.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "115",
+   "quote": "- Audio: printed==spoken; frozen TTS voice/style prompts; holds land ON mark",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "151-152",
+   "quote": "a page may print words nobody reads aloud",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "153",
+   "quote": "**never speak words it does not print**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "153-154",
+   "quote": "a spoken line with no printed home highlights nothing and cannot be tapped to hear again",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "155-156",
+   "quote": "two pages had drifted into a paraphrase of their own spoken script, 16 lines between them, while every other validator passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "79",
+   "quote": "audio\\_of \\= sha256 of the spoken text for every clip; zero mismatches",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "84",
+   "quote": "Every measured voiceover mark must locate inside the prose displayed on the same page",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "85",
+   "quote": "a missing clip means silence + captions, never browser TTS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "151-152",
+   "quote": "Enforced by `validate-read-along.mjs`: a page may print words nobody reads aloud (question stems are deliberately silent per R-AUD-6)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "153-156",
+   "quote": "**never speak words it does not print** — a spoken line with no printed home highlights nothing and cannot be tapped to hear again. This was a real, fixed bug: two pages had drifted into a paraphrase of their own spoken script, 16 lines between them, while every other validator passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "129",
+   "quote": "(the read-along rule — nothing may be spoken that is not printed, sentence for sentence);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "64-65",
+   "quote": "audio truth (spoken=printed, clip-hash match, no \"Name:\" opener — speaker-label trap)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "113-114",
+   "quote": "a deliberate printed/spoken split (printed \"ry,\" spoken \"ree\") was being flagged as a missing part-read",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "116-117",
+   "quote": "All three folded into `listen-clips.mjs` as standing rulings.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0230-late-sept-incidental-findings.qmd",
+   "lines": "29-31",
+   "quote": "a text edit (e.g. a definition rewording) leaves the clip silently stale with nothing in the validator suite able to detect it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0188-feedback-round-pipeline-end-to-end.qmd",
+   "lines": "124-125",
+   "quote": "written only if the transcript matches the printed line word-for-word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0228-g3-listen-qa-transcript-receipts-2026-09-24.qmd",
+   "lines": "43-44",
+   "quote": "machine transcripts needing human disposition before any claim about audio quality is made from them",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "39",
+   "quote": "Read-to-me audio matches the printed words exactly, word-highlighted | Any mismatch breaks decoding support and the child’s trust in the voice",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "14 (textutil text)",
+   "quote": "The full text read aloud with word-by-word highlighting at a fixed pace (110–120 wpm, no per-student speed).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-p3-stale-clip-2026-09-29/README.md",
+   "lines": "7",
+   "quote": "**STALE** (older definition)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "185",
+   "quote": "one real lesson had 117-179 narrated strings orphaned by a same-day rewrite whose",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-run-2026-09-04/QC Run Report — Peter Pan L4-L7 + G5 (2026-09-04).md",
+   "lines": "28",
+   "quote": "the 02.09 course-tts re-voice then cut the regressed text. Whisper part-read check caught",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "62",
+   "quote": "- Clip hashes must match the authored text (`audio_of` on `voiceover.text` alone), so silent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "107",
+   "quote": "every cut is followed by listen-qa: whisper transcript against authored text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "14",
+   "quote": "Decode every complete exported audio file and independently transcribe the entire file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "15",
+   "quote": "Review every difference. Orthography is distinct from omitted words, altered claims and invented continuation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "15",
+   "quote": "Isolated probes can resolve ASR mistakes; a similarity percentage alone cannot approve audio.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "4",
+   "quote": "Match final asset hashes and measured anchors to source; no similarity-score-only approvals",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/FINAL-HANDOFF.json",
+   "lines": "20",
+   "quote": "\"complete_narration_blind_transcriptions\": 118,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/FINAL-HANDOFF.json",
+   "lines": "21",
+   "quote": "\"focused_narration_probes\": 43,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "63",
+   "quote": "Model inspection remains advisory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1028",
+   "quote": "Write the script as speech. Do not simply read the words already printed; signpost the steps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1084",
+   "quote": "Every spoken line has a printed home on the page, sentence for sentence. A page may print words nobody reads aloud; it may not say words it does not print.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1085",
+   "quote": "Applies to every spoken node and clip",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "65",
+   "quote": "If Scout says it and you can't read it on the page, fail. That includes vocabulary-routine instructions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "22",
+   "quote": "Everything spoken is printed, sentence for sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "20",
+   "quote": "Narration is pregenerated and tied to printed authored lines.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "15",
+   "quote": "not everything Scout says needs to be on screen or it will be cluttered. This repo's read-along rule: nothing is spoken that is not printed, enforced by a validator.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "59-60",
+   "quote": "Not everything Scout says is printed (stamp the load-bearing lines; the rest is audio) — and captions cover the unprinted (below).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "271-272",
+   "quote": "not everything the guide says should be written on screen, or it will be cluttered.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "275-278",
+   "quote": "The repo currently follows the validator and prints everything. Needs a decision on whether \"stamped\" can mean a smaller, secondary treatment that still satisfies read-along, or whether some guide lines may go unprinted and therefore unhighlighted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "65-67",
+   "quote": "a deferred context/hint line is still narrated when its clip plays. Deferral only re-homes the printed copy behind one tap",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "7",
+   "quote": "A valid WAV, correct voice ID and reasonable volume do not prove faithful narration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "helpers/verify/CLAUDE.md",
+   "lines": "137-138",
+   "quote": "A file existing at the right path with the right length is not evidence of correct content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/HANDOVER-2026-08-25-PR27.md",
+   "lines": "166",
+   "quote": "p8 and p12 audio files and measured marks still describe the amended prose;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/reading-phases/READING-PHASE-PROPOSAL.md",
+   "lines": "24",
+   "quote": "Exact printed row values do not match that clip's marks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/README.md",
+   "lines": "21",
+   "quote": "L7's triumphant card had an empty teaching stage and audible family words absent from the page.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "65",
+   "quote": "If Scout says it and you can't read it on the page, fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "257",
+   "quote": "the enchanting review clip speaks an OLD definition ('so charming and delightful that it feels almost magical') while the page shows 'so magical and lovely that it seems to put you under a spell' — stale, confirmed;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "272-273",
+   "quote": "two pages had drifted into a paraphrase of their own script, 16 lines between them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "127-130",
+   "quote": "\"Audio is the one asset that cannot be checked by looking at it. A clip recorded from an earlier draft is the right size, plays without error, and has a plausible duration.\" It shipped: rewriting three passages left all four passage clips reading the previous draft.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "21",
+   "quote": "Each take folder holds `vo_intro_01.wav` (24 kHz 16-bit mono), `narration-manifest.json` (model, voice, style, route, text hash, duration) and `vo_intro_01.transcript.json`.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "public/audio/play/check.json",
+   "lines": "3-7",
+   "quote": "\"min_acc\": 0.938,",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "99-100",
+   "quote": "Two pages had drifted into a paraphrase of their own script, 16 lines between them, with every other validator passing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "126",
+   "quote": "If the fix is applied without updating this hash the clip reads as stale.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "114-115",
+   "quote": "Read-along: nothing spoken that is not printed on the same page (text/passage/verse scope)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "6-7",
+   "quote": "split with a byte-for-byte port of the page's `sentSplit()` so every clip text is exactly the string the player would pass to speech.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "95",
+   "quote": "so narration can never read a section the child cannot see.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

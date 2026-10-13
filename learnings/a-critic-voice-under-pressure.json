@@ -1,0 +1,52 @@
+{
+ "id": "a-critic-voice-under-pressure",
+ "title": "A critic voice under pressure",
+ "statement": "Whether a critic voice in a panel of AI agents softens its disagreement when a student pushes back is untested.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "integrity",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Research for the Grade 9 lesson ideas listed sycophancy among the risks of AI voices in a lesson: a 2026 position preprint frames it as an educational safety risk for language models that teach, and a 2025 simulated-tutoring study measured models conforming to a student's stated wrong view (`grade3-reading/knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd`). Nothing it found tests whether a critic voice in a multi-agent panel softens its disagreement under social pressure from the student, and it flags that as an open risk (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "328-329",
+   "quote": "Untested anywhere found: whether a \"critic\" voice in a multi-agent panel softens its disagreement under social pressure from the student — flag as an open risk.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "327",
+   "quote": "a 2025 simulated-tutoring study measured models conforming to a student's stated (wrong) view",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Check My Work? Measuring Sycophancy in a Simulated Educational Context (2025)",
+   "url": "https://arxiv.org/abs/2506.10297"
+  },
+  {
+   "ref": "Sycophancy is an Educational Safety Risk (2026)",
+   "url": "https://arxiv.org/abs/2605.14604"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

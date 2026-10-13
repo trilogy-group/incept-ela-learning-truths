@@ -1,0 +1,527 @@
+{
+ "id": "choose-the-format-the-target-needs",
+ "title": "Choose the format the target needs",
+ "statement": "Fit each item's format to its target and learners: production wherever the target is to produce, and the formats of the test the course prepares for that suit their grade.",
+ "example": "An incumbent course's top measured failure was that 100% of its items were single-select multiple choice.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "demand",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The course plans' generator notes record an incumbent course's top measured failure as 100% single-select multiple choice against the test's 6 formats, and say their own generator output spans all six (`grade3-reading/ti-courseplans/docs/generator-insights.md`). An evaluator gap analysis treats recognition-versus-production match as binding: write, explain and draw targets cannot be assessed by multiple choice alone (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd`). The instruction-quality standard gates formats by development: two-part evidence items are about grade 4 and up and do not ship at grade 3 (`grade3-reading/ti-courseplans/docs/instruction-quality-standard.md`). Leave out formats above the learners' level, and have them produce an answer where the target is to produce one.",
+ "against": "An audit of an assessment's approval case found the claim that all six formats were confirmed for the test's reading levels overstated its source, which confirmed three (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md`), and notes from the same review, on two dates, called two-part items \"well built\" and then \"likely developmentally inappropriate for grade 3\", a ruling still pending (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md`). A grade 5 design required every format of its target test to be practised from the start, two-part items included (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`, line 290); that follows the same test-led rule at a grade where the type belongs. The project's diagnostic-assessment BrainLift argues that for diagnosis multiple choice is the optimal format, fast and isolating one piece of knowledge; that fits matching the response to the target, not a general preference for producing over choosing. a model's review of 6 matching items found them well designed, with descriptions that required understanding rather than memorization. the research is cited without a link, and a settled call in the same project keeps free-response items out of the course. The judge's rubric was later relaxed to accept recall, so the measured failure rate depends on the rubric version: '- Recall and memorization questions ARE ACCEPTABLE' (`icloud-work/evaluator/ap_benchmark/prompts/base.py`, line 88). Fill-in also passed 65.6% in one run (`icloud-work/evaluator/docs/reports/BENCHMARK_RUN2_REPORT.md`, line 121). Every verdict came from one model judge whose own context described fill-in as testing key vocabulary while requiring questions to test historical thinking, not just factual recall, so part of the failure was built into the rubric. The cognitive-demand rule was later relaxed to accept recall, and in an earlier run fill-in passed 65.6%, above multiple choice at 60.9%. This is a secondary citation with no DOI or URL in the source, and nothing here re-measured it. Production shows understanding at the moment, not that it lasts: the same lesson's walkthrough says \"whether they own them durably is a different question the course answers with spaced returns, not with a medal\". The early-reading synthesis also holds that \"Neither type is better than the other; each belongs to a different job.\", and the physics note is an uncited assertion about one exam's format. Stated for one exam's section design. The curriculum's per-standard format declaration is optional and lists only selected-response and fill-in formats: 'Keys must be one of the supported format identifiers: 'fill-in', 'mcq', 'msq'.' (`shadow-curriculum/schemas/_shared/supported-formats.schema.json`, line 7). A later run found counter-evidence (`grade3-reading/artifacts/g5-course-candidate-v0/ASSEMBLY_REPORT_V2.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/generator-insights.md",
+   "lines": "102",
+   "quote": "The incumbent's #1 measured failure was 100% single-select MCQ vs MAP's 6 formats.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "122",
+   "quote": "\"Write/explain/draw\" targets cannot be assessed by MCQ alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "77-78",
+   "quote": "**EBSR / two-part evidence items are ~grade-4+**; do not ship them at G3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "56",
+   "quote": "the added two-part (Part A / Part B) evidence items are likely developmentally inappropriate for grade 3 — that type generally appears on state tests around grade 4 and above.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "135",
+   "quote": "Current: ruled off-construct (~grade-4+), 56 items declared",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-agent-entrypoint-g3-practical-test-2026-08-06/REPORT.qmd",
+   "lines": "36",
+   "quote": "- 48/48 lessons include banned G3 EBSR items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "124",
+   "quote": "N3: recognition-vs-production match. \"Write/explain/draw\" targets cannot be assessed by MCQ alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "86-87",
+   "quote": "match the task family to the knowledge: recognition is not enough for productive, representational, justificatory, or integrative constructs;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "51-52",
+   "quote": "Vocabulary requires **production**, not recognition — say it back, use it in a sentence, type it; multiple-choice alone is not enough",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "38-39",
+   "quote": "judge a lesson by *production* (say/write/type) over *selection* (click)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "86",
+   "quote": "For diagnostic assessment, the much-maligned MCQ is not a compromise — it is the optimal format.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "134",
+   "quote": "51% avg, no improvement over 7 runs",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "135",
+   "quote": "38% avg, dropped to 21% in Run 4",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "390",
+   "quote": "1:1 format eliminates analytical challenge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "391",
+   "quote": "No distractors = simple elimination",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "87",
+   "quote": "90% of fill-in questions fail cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/archive/OPENCLAW_HUMAN_REVIEW.md",
+   "lines": "72",
+   "quote": "Well-designed matching with complex descriptions that require understanding, not just memorization",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "72",
+   "quote": "~80% of students check a word as \"known,\" ~50% can give an example, ~20% can explain it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "124",
+   "quote": "\"Write/explain/draw\" targets cannot be assessed by MCQ alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "29",
+   "quote": "Practice must require recall, not just recognition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "49",
+   "quote": "FRQ-stays-out",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "132",
+   "quote": "- Learning objectives require \"explain how and why\" but questions only test \"what\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "99",
+   "quote": "| **Cognitive Demand** | **35** (90% of fill-in!) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/GENERATOR_API_SPEC.md",
+   "lines": "128",
+   "quote": "- Use the action verbs in the objective to guide question construction (e.g., \"Explain\" → requires explanation, \"Compare\" → requires comparison)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "108",
+   "quote": "| \"Explain causes of the Columbian Exchange and its effects\" | Fill-in-blank for term \"Atlantic World\" | Tests vocabulary, not causation |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "78",
+   "quote": "- Tests recall regardless of difficulty setting",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "105",
+   "quote": "**90% of fill-in questions fail cognitive demand.** The format is fundamentally incompatible with AP-level analytical requirements.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "107",
+   "quote": "| fill-in | 66% | 50% | **21%** | 25% | 23% | 45% | **38%** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/core/curriculum.py",
+   "lines": "335",
+   "quote": "\"fill-in\": \"Fill-in-the-blank testing key vocabulary/concepts\",",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/core/curriculum.py",
+   "lines": "351",
+   "quote": "lines.append(\"  - Questions should test historical thinking, not just factual recall\")",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "15",
+   "quote": "PROMPT_VERSION = \"2026.02.24.1\"  # Relaxed cognitive demand - recall is OK",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "121",
+   "quote": "| **Fill-in** | 21 | 11 | 65.6% |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "122",
+   "quote": "| **MCQ** | 14 | 9 | 60.9% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "86-87",
+   "quote": "- match the task family to the knowledge: recognition is not enough for productive, representational, justificatory, or integrative constructs;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "143",
+   "quote": "MCQ recognition alone — however many options — never counts as a cash",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "135-136",
+   "quote": "never cashed in L6/L7 — merciless/triumphant were acquired but no graded surface required using them",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "61",
+   "quote": "Word knowledge is a continuum: \\~80% of students check a word as \"known,\" \\~50% can give an example, \\~20% can explain it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "21",
+   "quote": "2. **Enforce mastery gates at ≥90% accuracy.** Do not advance students based on time, completion, or self-report.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "132",
+   "quote": "Production targets get production formats.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "49",
+   "quote": "If the target is production, the format requires production (MCQ ≠ constructed response)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "30",
+   "quote": "If a child never has to compose or explain an answer, the app cannot tell whether the child understood",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Physics Misconception Prevention Guidance.docx",
+   "lines": "125 (textutil text)",
+   "quote": "The free-response format specifically exposes conceptual misconceptions because students must explain their reasoning, not just calculate.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "30",
+   "quote": "If a child never has to compose or explain an answer, the app cannot tell whether the child understood",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "285",
+   "quote": "Vocabulary is only owned when it is produced about new content",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "285",
+   "quote": "makes it word *plus evidence*, so a bare echo of the definition does not pass.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "19",
+   "quote": "Recognition can be guessed; production shows the word or idea is owned",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "353",
+   "quote": "whether they own them durably is a different question the course answers with spaced returns, not with a medal",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "23",
+   "quote": "Neither type is better than the other; each belongs to a different job.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "32-33",
+   "quote": "a discrete MCQ whose task is purely to *produce* a graph or representation is mis-aligned to its section.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/ap-evaluation.md",
+   "lines": "144-145",
+   "quote": "Science Practice 3 (Representing Data) is free-response-only, so a pure \"produce a representation\" MCQ is mis-aligned to its section.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "schemas/_shared/supported-formats.schema.json",
+   "lines": "7",
+   "quote": "Optional. Declares which (format, difficulty) combinations this leaf supports for downstream assessment/benchmark generation. Keys must be one of the supported format identifiers: 'fill-in', 'mcq', 'msq'.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "628-630",
+   "quote": "- **mcq:** Use for recognition or discrimination when every option represents a plausible misconception or error and the stem alone states the intended decision. - **msq:** Use only when the construct requires an exact set and the scoring contract makes omission and over-selection visible. - **hot_text:** Use for passage-span selection when selecting evidence is part of the construct; do not substitute it for explaining the evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "633-635",
+   "quote": "- **sequence:** Use when ordered relations are the construct and every element is required exactly once. - **ebsr:** Use when the second response supplies evidence for the first and both parts are scored as one declared claim-evidence contract. - **scr:** Use for production, justification, or integration with a human-calibrated rubric; uncalibrated prose scoring cannot advance a learner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "209",
+   "quote": "No EBSR / two-part evidence items at G3 (state blueprints introduce them ~G4+).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "210",
+   "quote": "EBSR/two-part evidence items are banned at G3 but enter blueprints ~G4+ — at G5 they are in scope, so the G3-derived format must not exclude them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "113-114",
+   "quote": "NO EBSR at G3 (grade-4+ format).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "17",
+   "quote": "2026-06-29: \"well built\", a strength. 2026-07-08: \"likely developmentally inappropriate for grade 3 — that type generally appears on state tests around grade 4 and above\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "17",
+   "quote": "This course is Grade 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "203-204",
+   "quote": "the second note's own reasoning allows them for grade 4+, and this course is grade 4",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "205-206",
+   "quote": "Left pending; ebsr is a supported bank type in the meantime.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "28",
+   "quote": "Calculation/multi-step defaults to short constructed-response unless distractors are diagnostic",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2037",
+   "quote": "Default to short constructed-response for calculation-heavy items unless the distractors map to specific procedural errors you want to detect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2099",
+   "quote": "When the same problem is presented as an MCQ, each option invites a separate mental simulation — \"could 24 be right? what about 36?\" — creating competing representations that load working memory simultaneously.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2099",
+   "quote": "The MCQ format adds cognitive demand rather than reducing it.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "112-113",
+   "quote": "Where the target knowledge is representational or justificatory rather than a single fact, prefer a short constructed response over an MCQ.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/ASSEMBLY_REPORT_V2.md",
+   "lines": "119-120",
+   "quote": "Standard NWEA MAP G5 Reading uses MCQ throughout. Our MAP-equiv uses hot-text / match / sequence / EBSR / vocab-MCQ.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "267",
+   "quote": "\"Answer in your own words\" is production rather than selection.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "39",
+   "quote": "Production, not selection, wherever the student is asked to think: they say or type. Selection is fine for quick factual checks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "267",
+   "quote": "\"Answer in your own words\" is production rather than selection.** Worth naming as a standard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "95",
+   "quote": "The incumbent measurement layer is 100% single-select MCQ — all 1,077 incumbent course items and the 33-item STAAR test (Direct-pull).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

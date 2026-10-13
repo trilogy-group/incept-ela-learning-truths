@@ -1,0 +1,192 @@
+{
+ "id": "check-curriculum-records-against-the-framework",
+ "title": "Check curriculum records against the framework",
+ "statement": "Before adopting or generating from curriculum sources, compare candidates item by item on content and check their facts and labels against the official framework, because derived copies shift labels.",
+ "example": "An audit of 30 records against the published framework found 6 (20%) paired with an objective from a neighbouring topic.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A model compared 30 records from a curriculum service with the published course framework and found 6/30 (20%) of objectives taken from a neighbouring topic. Later, items for topics whose period and content disagreed could not satisfy the judge's chronology check, and a cross-check named that mismatch as the root cause. One such topic had been tagged unit=1 by a processing step that mis-mapped a Unit 2 standard; the upstream curriculum was right. Do the check course by course and record the version of the framework checked against.",
+ "against": "The same 30-record audit, itself a model's comparison with the framework, found no topic in the wrong period: \"- **Off-by-period drift (the InceptBench APEURO disease):** **ZERO instances detected.**\" (icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-04-28T1500Z_api_vs_cb_ced_verdict.md, 15). A date-only screen over-flags: \"**12 of the 18 \"flagged\" are false-positives** (date range starts pre-1607; remap was wrong call by date-only heuristic).\" (icloud-work/aptraining/workspace/comms/from_data/2026-05-28T1549Z_u1_kc_audit_report.md, 95) The audit called it a single-record fix and not a systemic issue (`icloud-work/auto-memory-backup/project_grader_audit_results_2_of_3_pass.md`, line 63), and what it did to items built from that record is not in this evidence. The period sweep's suggestions are best-effort and need review before any data change (icloud-work/aptraining/helpers/data/output/curriculum_kc_period_audit.md, line 69). The shifted labels did not reach the curriculum service used for generation, which an audit found free of the shift (`MEMORY.md`, line 82). The fixes were still open at a later handover (`project_oracle_session_20260501.md`, lines 22 and 24), and no effect on generated items was measured.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-04-28T1500Z_api_vs_cb_ced_verdict.md",
+   "lines": "16",
+   "quote": "- **Real systematic drift:** **`lo_drift` in 6/30 (20%)** — the API attaches a Learning Objective from a neighboring topic / LO, not the LO that CB CED actually pairs with that KC.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-28T1645Z_incept_curriculum_pull_report.md",
+   "lines": "87",
+   "quote": "**Root cause of the bug**: inceptbench's KC-derivation pipeline mis-mapped this upstream U2 substandard to its `c_Qbro` short code and tagged it `unit=1` during processing. The bug is in the inceptbench-side conversion script, not in upstream curriculum.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1631Z_DBQ_cross-check_vs_Quill_pass-criteria_pack.md",
+   "lines": "68-70",
+   "quote": "Period mismatch is the root cause — v80b can't satisfy chronology guardrail when the KC's period and content disagree.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-04-28T1500Z_api_vs_cb_ced_verdict.md",
+   "lines": "15",
+   "quote": "- **Off-by-period drift (the InceptBench APEURO disease):** **ZERO instances detected.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-28T1549Z_u1_kc_audit_report.md",
+   "lines": "95",
+   "quote": "**12 of the 18 \"flagged\" are false-positives** (date range starts pre-1607; remap was wrong call by date-only heuristic).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "230",
+   "quote": "3. **Fact verification:** Each fact in curriculum_facts.json should be verified against AP curriculum documents. Some facts may be outdated or approximate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "234",
+   "quote": "None of these are implemented yet.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "150",
+   "quote": "The following are VERIFIED correct facts for this topic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "14",
+   "quote": "**Size:** 4,177 facts (as of April 2026; earlier sessions showed 3,347 facts)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "108",
+   "quote": "Our existing `curriculum_facts.json` (3,347+ facts) is a form of RAG grounding. The literature suggests more structured retrieval (graph-based or with explicit entity matching) would improve factual accuracy beyond what flat keyword retrieval achieves.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "26",
+   "quote": "- 1 wrong_unit: APWH `c_lAtP` Columbian Exchange tagged Unit 0 instead of Unit 4 — single-record fix needed in API",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/curriculum_kc_period_audit.md",
+   "lines": "8",
+   "quote": "- **76 KCs** flagged as period-mismatched.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/.agent/memory/data_quirk_apwh_period_table.md",
+   "lines": "28",
+   "quote": "Concrete observed failure: an apwh/leq Unit 6 prompt had `LEARNING OBJECTIVE: Explain how the development of new technologies changed the world from 1900 to present` paired with `TIME PERIOD: c. 1750 to c. 1900 (STRICT -- nothing outside this range)`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "59",
+   "quote": "| Non-canonical KC IDs | 77.5% (803/1036) use opaque hashes (`c_4EvW`, `s_saxW`); only 14% match `KC-X.Y.Z+N` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_oracle_session/HANDOVER.md",
+   "lines": "343",
+   "quote": "InceptBench APEURO IDs off by one period vs CB CED. Curriculum repo IDs match official CB CED.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_oracle_session/HANDOVER.md",
+   "lines": "345",
+   "quote": "39% of curriculum has no IB match; 99.8% of IB has no curriculum match.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/curriculum_facts_bundle_v1/README.md",
+   "lines": "51",
+   "quote": "# Same node_id can exist in multiple courses (e.g. KC-1.1.I.A in APUSH + APEURO).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_oracle_source_reconciliation.md",
+   "lines": "12",
+   "quote": "across all 239 InceptBench APEURO entries vs curriculum repo APEURO; 224 matched by content but 218 at different IDs, with systematic off-by-one-period shift confirmed against official CB CED.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_oracle_source_reconciliation.md",
+   "lines": "12",
+   "quote": "APUSH analysis: 39% of curriculum has no InceptBench match, 99.8% of InceptBench atomic facts have no curriculum match — different hierarchy tiers.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "116",
+   "quote": "**APUSH** = MERGE (curriculum repo skeleton + InceptBench atomic facts; 39% / 99.8% non-overlap means single-source halves pedagogy). Wrong source per course = silent training corruption.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-oracle-agent-memory",
+   "path": "project_oracle_session_20260501.md",
+   "lines": "12",
+   "quote": "RECONCILIATION ruling per course (APEURO=curriculum-repo, APWH=InceptBench, APUSH=MERGE)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "82",
+   "quote": "zero APEURO off-by-period drift in canonical API; InceptBench bug did NOT propagate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "53",
+   "quote": "The local course vocabulary listed seven reasoning operations, while the CED defines six historical thinking skill categories.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

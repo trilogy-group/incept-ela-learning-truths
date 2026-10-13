@@ -1,0 +1,69 @@
+{
+ "id": "an-interest-counts-only-when-named",
+ "title": "An interest counts only when named",
+ "statement": "When scoring whether an item is personalised to a student's interests, count an interest only when the student-facing text names it, and keep that score out of every correctness score.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator scores interest relevance as a binary metric: it passes only when at least one listed interest is literally named in the student-facing text, and inferred or thematic connections do not pass (`icloud-work/inceptbench-main/src/inceptbench/evaluators/base.py`). The prompt calls it an engagement measure, not a correctness measure, and tells the judge not to let it influence any other metric. A deterministic literal-mention check in the same file backs the rule.",
+ "against": "A literal mention can still fail if it is shoehorned in a way that makes the question incoherent or doesn't engage the interest (`icloud-work/inceptbench-main/src/inceptbench/evaluators/base.py`, L1145-1147).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "1127-1128",
+   "quote": "**Rule:** the content must reference AT LEAST ONE of the listed … interests by literally naming it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "1135-1136",
+   "quote": "No listed interest is literally named. Inferred … or thematic connections DO NOT pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "1140-1141",
+   "quote": "This is an engagement/relevance measure, not a correctness … measure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "1142-1144",
+   "quote": "Do NOT let this metric influence any other metric … (factual_accuracy, educational_accuracy, clarity_precision, … etc.) — those judge correctness, not engagement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "64",
+   "quote": "# interest_relevance — deterministic literal-mention check",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/base.py",
+   "lines": "1145-1146",
+   "quote": "A literal mention can still fail (score 0.0) if it is … shoehorned in a way that makes the question incoherent",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "progress-a-child-can-read",
+ "title": "Progress a child can read",
+ "statement": "Show progress as a labelled count a child can read, such as 'Page X of Y', and name a page's internal steps rather than present them as page progress.",
+ "example": "A row of about 28 page dots with no legend did not move across five content steps.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A supplied UI review found a progress row of about 28 dots, too fine to count and with no legend, that did not advance across five content steps, and suggested a simple count instead (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, line 21). The project found that its dots counted pages, not the steps inside a page, and replaced them with an explicit 'Page X of Y' plus named step text, never calling internal steps page progress (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 11). An independent source review accepted that page number and page purpose stay visible (`grade3-reading/ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md`, line 16).",
+ "against": "The mapped change is marked \"Scoped source changed; browser acceptance pending\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 11).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "21",
+   "quote": "It did not advance across five content steps on `/p2`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "21",
+   "quote": "It uses about 28 dots, too fine to count and far below a usable touch size, in three shapes and colours with no legend.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "11",
+   "quote": "Existing dots represent pages, not the substeps of vocabulary/model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "11",
+   "quote": "Replace in PeterPan with explicit Page X of Y and keep local named step text. Never call internal steps page progress.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md",
+   "lines": "16",
+   "quote": "Page number plus page purpose remain visible; Back sits beside the primary action.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

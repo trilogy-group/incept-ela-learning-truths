@@ -1,0 +1,56 @@
+{
+ "id": "partial-credit-from-yes-or-no-criteria",
+ "title": "Partial credit from yes-or-no criteria",
+ "statement": "How should partial credit work when each criterion is judged yes or no, since an answer short of one named detail comes back not met rather than partial?",
+ "example": "On another build's answer table, 43 answers gave 0 hard fails and 1 soft miss, a partly right answer judged not met for lacking one named detail.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "marking",
+  "scoring-guide"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Another build's own answer table was run through its own page code with this engine's judge answering: 43 answers gave 0 hard fails and 1 soft miss. The soft miss was an answer the table rates partial, which came back not met because its criterion named one more detail than the answer gave. Each criterion is put to the judge as one yes-or-no question, so no criterion can be partly met, and the engine's \"Part of it is there.\" line appears only when another criterion surely holds.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "54",
+   "quote": "43 answers, 0 hard fails, 1 soft miss.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "55-56",
+   "quote": "The soft miss: \"They argue about how Othello married Desdemona\" came back not met where the table wants partial; the criterion asks for \"in secret\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "100",
+   "quote": "Does student_text say requirement_${k}, in meaning?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "117",
+   "quote": "return missed(`${vs.includes(\"holds\") ? \"Part of it is there. \" : \"\"}${item.criteria[k].nudge}`);",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

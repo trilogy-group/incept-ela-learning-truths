@@ -1,0 +1,50 @@
+{
+ "id": "file-a-source-by-when-it-was-made",
+ "title": "File a source by when it was made",
+ "statement": "File each primary source under the period in which it was made, not the period it mentions, and check every period label against the source's date in code.",
+ "example": "A tagger that filed by topic put 76 of 96 documents in one unit's cluster outside that unit's period.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "contested",
+ "detail": "A source-ingest audit found 79% of one unit's 96-row topic cluster tagged to the wrong era, 76 dated outside 1800-1860 and mostly 1904 exposition commemoratives, because the era tagger worked by topic association rather than date of creation. A later re-audit by date found the 211 gross mismatches quarantined and 23 subject-level mismatches still in place. It holds wherever dated primary sources stand in for their period, as in the AP history courses.",
+ "against": "The same re-audit kept later commemorative documents under the era they are about, as date-mismatched but subject-correct (icloud-work/aptraining/helpers/shadow/output/2026-05-22T2308Z_v93_phase3_reaudit_VERDICT_ADJUST.md, line 42).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "39",
+   "quote": "U4 LoC 96-row topic cluster. **79% era-mistag** (76/96 dates outside 1800-1860, mostly 1904 Louisiana Purchase Expo commemoratives). **F-D13-12** = era-tagger doing semantic-association not date-of-creation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-22T2308Z_v93_phase3_reaudit_VERDICT_ADJUST.md",
+   "lines": "28",
+   "quote": "- **0 gross anachronisms** (>50-year mismatch) — the 211 gross violations were successfully quarantined.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-22T2308Z_v93_phase3_reaudit_VERDICT_ADJUST.md",
+   "lines": "29",
+   "quote": "- **23 subject-level anachronisms** remain (±20-year or subject-obvious mismatches).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

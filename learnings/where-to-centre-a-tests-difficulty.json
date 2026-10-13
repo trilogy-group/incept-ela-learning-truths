@@ -1,0 +1,50 @@
+{
+ "id": "where-to-centre-a-tests-difficulty",
+ "title": "Where to centre a test's difficulty",
+ "statement": "Where a predictive test's difficulty should be centred: on the published norm, on the actual cohort or above grade.",
+ "example": "One blueprint centred its item difficulty at 200-210, so it measured most precisely well above where its students sat and an on-grade reader read as failing.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "measurement",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A measurement review found that centring item difficulty at 200-210 puts the most information ~+1.3 logits above where students sit, so an on-grade reader reads as failing; it asked to fail blueprints centred above the verified spring mean and to reconcile with the observed cohort mean of 206.4 (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`). The staged assessment standard still says to centre above grade, because a test centred at the grade median is too easy to confirm above-grade reading (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md`). To settle it: the linking study that standard already calls for, in which students take this test and the published one.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "90-92",
+   "quote": "centering item difficulty at 200-210 (our kb-0059 \"by design\") maximizes info ~+1.3 logits ABOVE where students sit → makes an on-grade reader read as failing and biases logit→RIT regression.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "93-94",
+   "quote": "FAIL blueprints centered above the verified spring mean; reconcile vs the observed cohort mean 206.4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "91-92",
+   "quote": "**Center above grade.** A test centered at the grade median is too easy to confirm above-grade reading.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

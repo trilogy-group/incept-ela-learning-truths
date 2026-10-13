@@ -1,0 +1,244 @@
+{
+ "id": "bind-each-check-to-what-it-checked",
+ "title": "Bind each check to what it checked",
+ "statement": "Tie every check's result to the digest of the build and screen it checked, so a relevant change withdraws the result and reruns the affected checks.",
+ "example": "A package downloaded earlier matched 0 of 55 current lesson digests.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course's quality gates hold one pinned build per round, because changes landing on the main branch mid-round invalidated in-progress rounds three times (`grade3-reading/ti-courseplans/docs/key-quality-gates.md`, lines 148-149). Its quality standard makes every evidence record carry artifact and dependency digests, so that a relevant change forces the affected checks to rerun (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`, line 35). A package downloaded earlier matched 0 of 55 lesson digests and 0 of 7 showcase digests in the current build, and was barred from reuse as a source. Review one frozen, pinned build at a time, and compare versions only on the same base.",
+ "against": "The standard bounds the rule: unrelated changes need not invalidate scoped evidence (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, line 216).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "148-149",
+   "quote": "5. One pinned build per round — including our own internal work; mid-flight main movement has invalidated in-progress rounds three times.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "35",
+   "quote": "Evidence records carry artifact and dependency digests; relevant changes force the affected checks to be rerun.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "136",
+   "quote": "current build it matches 0/55 lesson digests and 0/7 showcase digests",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "200",
+   "quote": "mid-flight main movement voided three internal rounds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "196",
+   "quote": "Silence-by-design class (qa-must-converge): a check that cannot say what it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "86",
+   "quote": "first capture run produced 30 near-byte-identical screenshots before this",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-22/ours-only.html",
+   "lines": "31",
+   "quote": "Both sides are the same staging commit 5d033ac1. The only difference is our work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/beats.js",
+   "lines": "2",
+   "quote": "the film (at the narration's real timing), so what is checked is what is drawn.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "24",
+   "quote": "// what is drawn is in the key (each beat's props), so a change to the drawing makes the film again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v08/README.md",
+   "lines": "5-6",
+   "quote": "a standalone bundle with a manifest that binds the files to their checks (the engine's bundle rule: changed bytes are refused).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/REGISTER.md",
+   "lines": "12",
+   "quote": "no immutable release candidate. Every audit is stale-on-arrival.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/contrib/taxonomy-additions.md",
+   "lines": "13",
+   "quote": "the certified count moved SIX times (541→551→549→624→559→552), twice during a single audit session",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/contrib/taxonomy-additions.md",
+   "lines": "13",
+   "quote": "tag an immutable RC; (2) audit the tag, not the working tree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/.agent/LESSONS_LEARNED.md",
+   "lines": "24",
+   "quote": "Record HEAD, status, timestamps, and package hash",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "350",
+   "quote": "All five were wrong somewhere; L4 and L7 were clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "366",
+   "quote": "what is automated is the impossibility of skipping it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "766",
+   "quote": "A digest re-pin without a recorded re-review is a signed-off defect, not a fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "132",
+   "quote": "A late repair does not invalidate unrelated evidence automatically.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "132",
+   "quote": "An unexplained difference expands the affected scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/README.md",
+   "lines": "14",
+   "quote": "Recheck the fingerprint at the end; if it changed, split the run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "291-294",
+   "quote": "You explicitly WITHDREW the prior model-gate evidence as stale after the science repairs (current_model_gate=false, serving_eligibility=false) instead of letting it ride - that's the right call.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-14.md",
+   "lines": "171-172",
+   "quote": "(verify fixes here, by content hash never HTTP 200)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "578-579",
+   "quote": "Four sweeps were invalidated on 2026-07-29 and every one of them came back GREEN; what made them worthless is that nobody could say which bytes they described.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Bind evidence to exact input hashes and withdraw it when any bound input changes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "163",
+   "quote": "Reuse prior evidence only after checking relevant handler and persistence dependencies, not just unchanged lesson text.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "105-106",
+   "quote": "a passage edit invalidates the approval.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "66",
+   "quote": "The historical model snapshot is WITHDRAWN_STALE_AFTER_SCIENCE_REPAIRS after science-text repairs and supplies zero current model-certification claims.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "431",
+   "quote": "Final screenshots and test notes identify the exact delivered build.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "472",
+   "quote": "They are historical layout references, not proof of the current package’s appearance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "224-225",
+   "quote": "this digest is the current binding target for evidence captures",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

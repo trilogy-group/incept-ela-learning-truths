@@ -1,0 +1,145 @@
+{
+ "id": "text-within-the-grades-reading-band",
+ "title": "Text within the grade's reading band",
+ "statement": "Keep every passage students must read suited to their age and within, or only just above, their grade's reading band.",
+ "example": "Adult-register passages had been passing evaluation at 0.95 before the rule was added.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "wording",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator asks, in its English rubric for grades 3 to 8, that the passage, transcript or writing samples a student must read sit within, or only modestly above, the typical reading band for the grade, and flags a stimulus whose college or adult-professional words run across the passage when a same-skill version could be written in grade-band words (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt`). It does not flag a single domain term, or a term the targeted standard names or teaches. The rule was added after adult-register passages had been passing evaluation at 0.95 despite real grade-band problems (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py`). The closed-ended rubric likewise flags words well above the grade's reading level when a simpler word exists and the word is not a curriculum term being taught (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). Flag a sustained adult register rather than a single hard term or a word the lesson teaches. Check the grade level the code is set to: an early plan for a reading course added an age check to its rubric and fixed a grade-11-to-grade-3 setting found in the code (`grade3-reading/knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd`).",
+ "against": "The standardized-test reading rubric puts task demand ahead of prose complexity and does not fail an item's difficulty only because its prose seems simple (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`, L131-132). A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/REGISTER-2026-09-16.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "43-45",
+   "quote": "For ELA items targeting grades 3–8, the passage, transcript, or writing samples that the student must read should sit within (or only modestly above) the typical reading band for the target grade.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "52-54",
+   "quote": "Do NOT flag because a single domain term appears once; the failure is a sustained register mismatch across the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "54-56",
+   "quote": "Do NOT flag a science or social-studies term that the targeted standard itself names or that is part of the skill being taught.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py",
+   "lines": "10-11",
+   "quote": "adult-register passages were passing evaluation at 0.95 ACCEPTABLE despite real grade-band problems",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "427",
+   "quote": "- **Grade-inappropriate vocabulary**: Uses words or phrases significantly above the target grade's reading level when a simpler, grade-appropriate alternative exists AND the word is NOT a curriculum term being taught in the referenced standard (see Checklist D)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "131-132",
+   "quote": "task demand matters more than prose complexity. Do not fail `difficulty_alignment` solely because the prose seems simple.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd",
+   "lines": "76-77",
+   "quote": "add an age-appropriateness check to the team rubric, fix a grade-11-to-grade-3 setting found in the code;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd",
+   "lines": "147",
+   "quote": "fluency passages regenerated after a first pass leaked Tier-3 vocabulary",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "83-84",
+   "quote": "43/48 passages mechanically fail the G3 text screen",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "39",
+   "quote": "A band for MEASURING a passage, and for gating one only when we wrote it. gen_v3 spent whole refine budgets enforcing a Lexile target on folktales that were never going to reach it",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g3-u2-l1.json",
+   "lines": "159",
+   "quote": "The rule pack does not gate corpus text on readability, so 620 is an authoring reference carried from the shipped Grade-3 plans, not a measurement of this text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/beads-ledger.md",
+   "lines": "4",
+   "quote": "reading-bth 43/48 passages hard-FAIL the G3 text screen (40/48 >1 grade above band, only 3/48 in 1.5-4.5 band);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/g4-crosswalk-2026-08-17.md",
+   "lines": "82",
+   "quote": "Their 84 texts average Flesch-Kincaid grade 9.7; seven of their units run 10.5–11.9 — high-school prose in Grade-4 folders, at roughly 540 words against our 340–390-word slots.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/PLAN-EVALUATION.md",
+   "lines": "105-106",
+   "quote": "presence of a poem ≠ a grade-appropriate poem.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/g4-crosswalk-2026-08-17.md",
+   "lines": "82",
+   "quote": "Their 84 texts average Flesch-Kincaid grade 9.7; seven of their units run 10.5–11.9 — high-school prose in Grade-4 folders, at roughly 540 words against our 340–390-word slots.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "44",
+   "quote": "p12 (the final story passage, 'the flight to Neverland') sits above the G3 readability ceiling: Flesch-Kincaid grade 6.0, driven by a 34-word cumulative sentence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,148 @@
+{
+ "id": "make-a-review-loop-converge",
+ "title": "Make a review loop converge",
+ "statement": "In a repeated review loop, act only on findings that show harm rather than preference, keep earlier decisions unless new evidence arrives, and pause after a round with nothing critical.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's quality rules name oscillation as the failure mode of an unsupervised improve-loop, each round fixing what the round before chose. So a finding must prove harm, not preference; recorded decisions are immutable inside the loop, and a later round may escalate a deferred item only with new evidence; and a round with zero critical findings pauses the loop. Its change-control baseline adds that recency, confidence and citation count do not supersede an earlier decision and holds a change of direction for one consolidated decision, and a later review brief downgrades a pattern already in the signed baseline to a note unless it actively harms the child.",
+ "against": "Treating earlier decisions as settled does not resolve two reviews that genuinely conflict: one had asked for a frame that the other proposed replacing, and that conflict was held for a consolidated decision (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`, lines 74-77).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "22-23",
+   "quote": "an unsupervised improve-loop's failure mode is oscillation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "24-25",
+   "quote": "a finding must prove harm, not preference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "26-27",
+   "quote": "recorded decisions (prior rulings, prior rounds' deferred/POLISH lists, any fix a prior round already made) are immutable inside the loop",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "29",
+   "quote": "a round that produces zero CRITICALs pauses the loop",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "70",
+   "quote": "recency/confidence/citation-count do not supersede an earlier academic decision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "72-73",
+   "quote": "**change of direction or conflict** (HOLD — side-by-side, one consolidated decision",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd",
+   "lines": "85",
+   "quote": "downgrade to NOTE unless it actively harms the child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sim-review/SKILL.md",
+   "lines": "38-40",
+   "quote": "anything present identically in the reviewer-SIGNED baseline lesson downgrades to NOTE unless it harms the child (fixing signed content is the reviewer's call, per no-churn).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "56-58",
+   "quote": "A finding present identically in the reviewer-signed baseline is precedent-covered: NOTE unless child-harming (fixing it means touching the signed lesson — that's a reviewer decision, per no-churn).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "115-117",
+   "quote": "in ALL FOUR lessons including reviewer-signed L4, i.e. the new lessons mirror the baseline faithfully. The design docs actually mandate door CTAs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "121",
+   "quote": "Improvements need an existing acceptance criterion plus a demonstrated defect; speculative polish, additional grades and repeated redesign are excluded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "16",
+   "quote": "Recency and strength of wording are not approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "45",
+   "quote": "Requiring every goal to appear first would be an unsupported design rule and could defeat the explicit source-first order. A later change needs actual learner evidence or a deliberate teaching decision, not a broad expansion of `goalCheckShape`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": ".claude/skills/ux-review/SKILL.md",
+   "lines": "71-73",
+   "quote": "Findings ONLY where something is genuinely wrong for the child — no style opinions, no \"could be nicer\", no restating mech noise you could not confirm on the screenshot.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "489",
+   "quote": "They are not a reason to discard existing work or reopen settled creative decisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "75",
+   "quote": "POLISH items are never auto-fixed. A zero-CRITICAL round pauses the loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "34-35",
+   "quote": "A reviewer objection should identify which rule is violated… otherwise, it is a new preference or scope change.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

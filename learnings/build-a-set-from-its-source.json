@@ -1,0 +1,66 @@
+{
+ "id": "build-a-set-from-its-source",
+ "title": "Build a set from its source",
+ "statement": "For questions that share one source, choose the source first, list the distinct reasoning moves it supports, and write each question around a different move.",
+ "example": "In one 100-item build, 12 of 19 shared-source sets failed, against 3 of the other 81 items.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "demand"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The pipeline's expectation matrix and pass contract both tell the writer to choose the source first, then work out distinct reasoning moves and write each question around a different one (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ap-history-ib-expectation-matrix.md`, `icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md`). Shared-source sets failed far more often than other types: in one 100-item build, 12 of 19 sets failed, against 3 failures among the other 81 items (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build2_eval/evaluation_report.md`). The later repair rules fixed one move per question: an outside cause or context, then a comparison or continuity, then a consequence (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`, lines 202-204).",
+ "against": "none found; no run isolates the effect of the build order.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ap-history-ib-expectation-matrix.md",
+   "lines": "122",
+   "quote": "- Choose stimulus first, then create distinct child reasoning moves.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md",
+   "lines": "71",
+   "quote": "- build set backwards from stimulus: identify distinct APUSH reasoning moves first, then write each child around a different move.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build2_eval/evaluation_report.md",
+   "lines": "14",
+   "quote": "- By type: {'dbq': {'total': 21, 'passed': 20, 'failed': 1}, 'leq': {'total': 21, 'passed': 21}, 'mcq': {'total': 21, 'passed': 20, 'failed': 1}, 'mcq_set': {'total': 19, 'passed': 7, 'failed': 12}, 'saq': {'total': 18, 'passed': 17, 'failed': 1}}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "202",
+   "quote": "Question 1 must ask for the outside historical cause or context that best explains the stimulus, not what the stimulus says.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "555-557",
+   "quote": "The set must cover related but nonduplicative operations. A source can support identification, inference, context, value or limit, and causal connection, but four stems should not ask the same question with altered wording.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

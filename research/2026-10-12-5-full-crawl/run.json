@@ -1,0 +1,63 @@
+{
+ "id": "2026-10-12-5-full-crawl",
+ "title": "Run 5: the crawl of the remaining Grade 3, Grade 9 and repository material",
+ "date": "2026-10-12",
+ "kind": "sweep",
+ "status": "assimilated",
+ "method": {
+  "workflow": ".claude/workflows/learnings-sweep.js",
+  "workflow_sha256": "498fa6e52e929c20f65f115fe695fe4dc8960e2ab3932831423085e3b3b43c20",
+  "run_id": "wf_edb31f4f-67b",
+  "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_edb31f4f-67b",
+  "merge": {
+   "run_id": "wf_f0127559-0e6",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_f0127559-0e6",
+   "workflow": ".claude/workflows/learnings-merge.js",
+   "workflow_sha256": "5518ca2a0cca515b3e658a0665a37d0a03257b959d8e1373e5f57891f1dc57fa",
+   "items": 1185,
+   "batches": 48,
+   "batch_size": 25
+  },
+  "review": {
+   "workflow": ".claude/workflows/learnings-review.js",
+   "workflow_sha256": "988527ad3b1a9cfbb2552638981c72b07b03d223e5f8d9996c4a8c9475f67ddb",
+   "batches": 14,
+   "slices": 27,
+   "pairs": 71,
+   "run_id": "wf_ce937c29-25b",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_ce937c29-25b"
+  }
+ },
+ "sources": [
+  "course-renderer-draft",
+  "g9",
+  "grade3-reading",
+  "grade3-reading-course-renderer",
+  "grade3-reading-review-hub",
+  "incept-package-hub",
+  "othello-archive",
+  "unit-video-kit-essay"
+ ],
+ "counts": {
+  "directions": 17,
+  "agents": 47,
+  "candidates": 1207,
+  "kept": 1192,
+  "dropped": 15,
+  "gaps": 6,
+  "merge_batches": 48,
+  "merge_records": 557,
+  "merge_folded": 141,
+  "records_added": 557,
+  "records_updated": 2939,
+  "quotes_checked": 7308,
+  "quotes_dropped": 13,
+  "evidence_unregistered": 0,
+  "review_fixes": 168,
+  "review_drops": 0,
+  "review_folded": 46,
+  "review_flags": 63,
+  "records_after_review": 511,
+  "review_undone": 1
+ }
+}

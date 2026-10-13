@@ -1,0 +1,86 @@
+{
+ "id": "show-the-sequence-dont-claim-it",
+ "title": "Show the sequence, don't claim it",
+ "statement": "Check a claimed knowledge sequence by working through the delivered lessons: the pre-teaching, the link and the deeper revisit must be visible, or the claim doesn't count.",
+ "example": "One course claimed 3 compounding threads across its texts; working through the lessons showed no link, no pre-teaching and no revisit.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "sequence"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One reading course claimed 3 compounding threads across its texts; working through the lessons showed two unrelated texts with no link, no pre-teaching and no revisit (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`). The course evaluation criteria require knowledge sequencing to be observable in the app, as pre-teaching, a visible link to the passage and a revisit at greater depth, and say claims that can't be seen by clicking through do not count (`ti-courseplans-audit/skills/timeback-course-eval/references/eval-criteria.md`). The evaluation gauntlet's knowledge-sequence probe picks a lesson and asks whether what it assumes was taught earlier and whether anything is revisited at greater depth later (`ti-courseplans-audit/skills/train-teacher/references/gauntlet-spec.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "92",
+   "quote": "\"3 compounding threads\" claimed",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "92",
+   "quote": "with no link, no pre-teach, no revisit",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "92",
+   "quote": "claims that aren't observable don't count",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "151-153",
+   "quote": "**Knowledge sequencing is observable in-app** — pre-teach → visible passage linkage → revisit at greater depth. Claims that can't be seen by clicking through do not count.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "28-29",
+   "quote": "**Knowledge-sequence probe**: pick a lesson; is what it assumes taught earlier? Is anything revisited at greater depth later? (Observable, click-through standard.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/g4-crosswalk-2026-08-17.md",
+   "lines": "86",
+   "quote": "Four ladder claims in our older design documents were found to cite content Grade 3 does not actually teach; all four are corrected in the data, and the swap that removed Human Body II also removed the one true same-depth repeat.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/CRITIQUE-AND-VERIFICATION.md",
+   "lines": "45-46",
+   "quote": "**The plan can promise observable compounding; only the built lessons can prove it.**",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/g4-crosswalk-2026-08-17.md",
+   "lines": "86",
+   "quote": "Four ladder claims in our older design documents were found to cite content Grade 3 does not actually teach; all four are corrected in the data, and the swap that removed Human Body II also removed the one true same-depth repeat.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

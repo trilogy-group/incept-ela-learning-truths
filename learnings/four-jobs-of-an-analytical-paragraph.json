@@ -1,0 +1,127 @@
+{
+ "id": "four-jobs-of-an-analytical-paragraph",
+ "title": "Four jobs of an analytical paragraph",
+ "statement": "Mark an analytical paragraph on four jobs, each checked alone: a claim answering the question, a quotation, what a quoted word suggests, and a link back to the question.",
+ "example": "Only one of the four jobs, the quotation, is settled in code; the judge answers a separate question for each of the other three.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's paragraph task was brought into the lesson engine as its rules and wording, with its four jobs: point, evidence, analysis and link (`g9/transformer/src/glue/threejs-archivist.js`). Evidence is settled in code, as words quoted from the text exactly or nearly, and the judge answers a separate question for each of the other three jobs. A paragraph is secure only when all four hold, and a job counts as missing only on a confident no.",
+ "against": "When the lesson engine's own claim-evidence-reasoning block used this task, it took only the next step, never the verdict, so the answer stayed unmarked (`g9/transformer/v02/QA.md`, lines 32-33). The next-step check has five seed cases, obvious ones only, so how well the judge applies the standard to real paragraphs is not measured, and no lesson has yet been used by a student (`g9/transformer/test/calibration/cer-frame.next-step.json`, `g9/transformer/README.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "206",
+   "quote": "The student's paragraph, the build's four jobs (point, evidence, analysis, link): evidence is code (words quoted from",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "201",
+   "quote": "analysis: zooms in on a word or phrase from a quotation and says what it suggests or shows",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "202",
+   "quote": "link: a closing sentence that ties the paragraph back to question",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "226",
+   "quote": "evidence: exact.length > 0 || near.length > 0",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "208",
+   "quote": "Secure only when all four hold; a job is called missing only on a confident no.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "32-33",
+   "quote": "Only that step is used, never its verdict, so the answer stays unmarked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "24",
+   "quote": "One is clearly stronger: a precise claim, a short exact quotation, and reasoning about a specific word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "25",
+   "quote": "other is weaker but honest: it retells or quotes without explaining.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "76-78",
+   "quote": "the claim does not directly answer prompt … reasoning does not explain what a particular word in evidence suggests … reasoning explains a word from evidence but does not link it back to claim",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "60",
+   "quote": "Does model_reasoning explain how explained_word supports model_claim, rather than just repeating the quotation?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "13",
+   "quote": "The reasoning repeats the quotation and explains no word in it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "44-45",
+   "quote": "one move each (answer the question, give the quotation, analyse a word, analyse a second word, answer again)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "5",
+   "quote": "Seed cases only: obvious ones",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,73 @@
+{
+ "id": "scale-scores-not-percentiles",
+ "title": "Scale scores, not percentiles",
+ "statement": "Measure growth and link tests on an equal-interval scale score, never on percentile ranks, whose steps are unequal and which move whenever the norm set changes.",
+ "example": "One norm update moved the national reference distribution 1–3 points lower while the scale itself did not change.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A reading assessment's design reports on the logit scale because it is equal-interval, one logit meaning the same gain anywhere on it, a property that carries over to the reference test's scale and allows arithmetic that is not meaningful on percentile scales (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). The reference publisher's 2025 norms moved its national reference distribution 1–3 points below the 2020 norms while a given scale score kept the same meaning under both (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`). The package therefore links its scores to the reference test on the raw scale score, which no norm set touches, and requires percentiles and growth projections computed under the 2020 norms to be reinterpreted before they appear beside 2025 figures (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md`).",
+ "against": "The published conversion from logits to the reference scale is only an approximation, since the exact coefficients are not public (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`, line 310), and equal intervals hold only as far as the model fits the data.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "22",
+   "quote": "**Equal-interval property:** The logit scale is equal-interval — one logit represents the same amount of ability gain anywhere on the scale [NWEA-2025-TR]. This property carries forward to the RIT scale (RIT = 200 + 10θ, approximately), enabling arithmetic operations on RIT scores that are not meaningful on percentile scales.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "23",
+   "quote": "A G3 RIT of 210 and a G5 RIT of 210 represent identical absolute reading ability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "118",
+   "quote": "The 2025 norms shifted the national reference distribution 1–3 RIT lower than 2020 norms, reflecting post-COVID learning trends. The RIT scale itself did not change — a score of 185 means the same absolute reading ability under both norm sets [NWEA-2025-NM].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "145",
+   "quote": "The linking regression itself is **norm-independent**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "145",
+   "quote": "on the raw `testritscore` from paired MAP records, which no norm set touches.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "NWEA (2019), MAP Growth Technical Report",
+   "url": "https://www.nwea.org"
+  },
+  {
+   "ref": "NWEA (2025), MAP Growth Norms Technical Manual",
+   "url": "https://teach.mapnwea.org"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

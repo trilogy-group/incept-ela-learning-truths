@@ -1,0 +1,88 @@
+{
+ "id": "one-defect-one-score",
+ "title": "One defect, one score",
+ "statement": "Map each kind of defect to a single criterion and score in one place, so a fault can't fail several criteria or land on different scores across runs.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A base rule and a free-response overlay mapped the same answer-key defects to different scores, and because both layers applied to the same items, one defect could be tagged to different scores across runs, the instability the change targeted. The base layer now defers score assignment to the type layer instead of asserting a competing one. The lesson rubric states that each issue maps to exactly one primary score, and a per-option lint was kept report-only so that it adds detail without double-counting the score. Mapped this way, a fault is also never counted twice.",
+ "against": "The local judge's prompt lets one issue zero several criteria: '2. Every issue MUST result in at least one 0.0 dimension' (`icloud-work/evaluator/ap_benchmark/prompts/base.py`, line 65).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "46-47",
+   "quote": "Both layers apply to FRQ items, so one defect could be tagged to different metrics across runs — the instability this PR targets.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "47-48",
+   "quote": "Base now defers metric assignment to the type layer (overlay for free-response) instead of asserting a competing one.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "159",
+   "quote": "Each issue maps to exactly ONE primary metric. Do not double-count.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "6e7af07",
+   "lines": "23",
+   "quote": "adds the per-option granularity they lack without double-counting the score.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "30",
+   "quote": "- One issue should map to one primary metric. The compiler should label likely failure metric explicitly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "24",
+   "quote": "**15 out of 26 curriculum alignment failures (58%) are due to FORMAT MISMATCH.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "139",
+   "quote": "factual_accuracy: \"Cannot verify factual accuracy because the actual",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "630",
+   "quote": "5. Remove direct `criterion_id` from role-generated output so the model cannot remap itself to favorable rules.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

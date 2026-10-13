@@ -1,0 +1,151 @@
+{
+ "id": "recompute-what-arrives-with-content",
+ "title": "Recompute what arrives with content",
+ "statement": "Never trust a pass label or measured value that arrives with content, such as a certification, a length, a reading level or a verbatim flag; recompute it on arrival.",
+ "example": "A 12-row pilot certified as passing on every row came out 6 pass and 6 fail on local structural checks.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of another reading project's proxy test found it trusted the generator's own word counts and reading levels and a 30-character substring check for verbatim spans, which paraphrase defeats; the action adopted was to recompute them at intake and treat any self-reported field used as a gate as unverified (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`). A received Grade 5 pilot of 12 rows carried embedded certification of pass for anti-leak and MAP-likeness on every row, yet local structural checks passed 6 and failed 6, and an independent passage-blind check was still required (`grade3-reading/knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95",
+   "quote": "**Recompute, never self-report**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "96",
+   "quote": "`word_count`/Lexile and a 30-char substring \"verbatim\" check (defeated by paraphrase).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "98-99",
+   "quote": "any self-reported field used as a gate is UNVERIFIED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "9",
+   "quote": "has good surface shape (12 rows, all six formats, 920L, all RI.5.1, IB 0.98-1.00) but is not scale-ready: missing source_inventory/qa_report/generation_trace, local structural QA is 6 pass / 6 fail",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "227",
+   "quote": "Embedded certification says anti-leak/pass and MAP-likeness/pass for all rows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "231",
+   "quote": "Embedded `certification: pass/pass` is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "29",
+   "quote": "Ready means checked. A block saved as ready with no judge call (before \"unchecked\" existed) is unchecked too.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "30",
+   "quote": "export const isReady = (b) => b?.status === \"ready\" && b.judgeCalls !== 0;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "186",
+   "quote": "Every item in the bank has passed a 14-dimension quality check at a ≥0.85 pass threshold before entering the operational bank.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "238",
+   "quote": "| Dim 6: Passage word count | Length within 150–500w range (format-dependent) | Hard gate |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "53",
+   "quote": "KNOWN CURRENT VIOLATION: all 460 bank passages are ~¼ target length",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "53",
+   "quote": "prod runs an interim 118-item bank until the C10-compliant rebuild.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "17",
+   "quote": "a fresh render and independent probes confirm duration, frame size, module coverage, and an unchanged G9 working tree.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "223-226",
+   "quote": "This was a re-review, so I verified all five of my prior findings independently - ran your gates myself, ran my own scanner on your passages - rather than trusting the disposition table. Then I swept for anything the fix wave introduced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-final-selection/_internal/VERDICT.md",
+   "lines": "55-56",
+   "quote": "**171/191 certified (90%)**, 20 leaked (incl. real-world-orderable sequences like \"cacao→chocolate\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/approval-package/AUDITS_AND_FIXES.md",
+   "lines": "57",
+   "quote": "including Unit-1's June certifications, which had until then been carried forward. 63 items recovered (58 Unit-1 + 3 hot-text + 2 choice).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "110",
+   "quote": "A source is not safe because a generator labeled it `verified`.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

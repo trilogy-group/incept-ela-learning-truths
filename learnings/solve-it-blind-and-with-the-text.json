@@ -1,0 +1,273 @@
+{
+ "id": "solve-it-blind-and-with-the-text",
+ "title": "Solve it blind and with the text",
+ "statement": "Keep a question only when solvers outside the generator's model family all fail it blind and answer it with the text, failure there often meaning ambiguity or a broad key.",
+ "example": "In one unit's gate, 4 items failed the with-text control, one of them genuinely ambiguous with the text.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One unit's gate paired a plain blind solve, with the passage withheld, with a with-passage answerability control, and 4 items failed the control (`grade3-reading/artifacts/demo-unit-2026-07-10/items/02-gate-summary.md`, lines 8-14 and 35-36). A 480-item probe named its missing passage-present control as a gap in its own verdict (`grade3-reading/artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md`, lines 50-55). A course gate used two solver families, both disjoint from the generator, and called an item clean only if every family failed to recover it and leaky if any did (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, lines 14-19).",
+ "against": "The generator itself stayed a single family (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, line 124), and separate agents with shared write access are not enforced independence (`grade3-reading/artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md`, line 47). How strict the bar without the text should be is a choice: both bars in the generation run were designed to avoid frontier-model-proofing a Grade 5 assessment (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`), and a course verdict template accepts a single non-writer family as a named gap rather than a failure (`grade3-reading/artifacts/g5-merged-course/VERDICT_TEMPLATE.md`). A pass holds only for the solver that gave it: after a with-passage calibration, a newer model answered an item 3/3 without its text where an older one had gone 0/3 (`ti-courseplans-audit/docs/handoffs-2026-07-13/course-eval-layer/README.md`, lines 85-92).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "9",
+   "quote": "bar: plain-blind anti-leak (passage withheld) + with-passage answerability control",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "36",
+   "quote": "genuinely ambiguous with the text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "53",
+   "quote": "**No passage-present control.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "18",
+   "quote": "**Intersection rule:** clean iff *every* family fails to recover (rate ≤ 0.5); leaky iff *any*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "11",
+   "quote": "They were accepted only when a different model family could answer them with the passage and could not recover the keyed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "182",
+   "quote": "Control-pass rate did not predict certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "222",
+   "quote": "That second condition matters. It prevented \"anti-leak but broken\" items from entering the final set.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "228",
+   "quote": "417/1,152 source-attribution items failed with-passage control.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "229",
+   "quote": "186/299 first-batch non-match control-pass items leaked under Grade 5 blind gating.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "41",
+   "quote": "clean iff **both** families fail; leaky iff **either** recovers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "52-53",
+   "quote": "the union rule showed 24 \"clean,\" 9 of which rested on gpt-4.1 alone; the real two-family number is **19**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/cross-cutting.md",
+   "lines": "184-186",
+   "quote": "191 choice items certified on a same-family lane while docs said 'every item blind-probed under a different model family'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "204",
+   "quote": "Same-family generation bias (Claude generates + Claude blind-solves) is the one unmitigated risk",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "304",
+   "quote": "Both bars were designed to avoid frontier-model-proofing a Grade 5 assessment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/VERDICT_TEMPLATE.md",
+   "lines": "77",
+   "quote": "A second working non-generator family would harden the leak claim",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-assessor/SKILL.md",
+   "lines": "29-30",
+   "quote": "every item blind-probed (must fail without the passage, succeed with it)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "the solver family must differ from the generator's, blind-solve must fail AND with-passage must pass, and no certification is carried forward from a cached bundle.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "InceptBench scored one gameable item **1.0** — so the gate is dual: an item ships only if a quality score clears **AND** a blind solver cannot answer it without the passage",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "51",
+   "quote": "The rubric gate (item ≥0.85 + lesson-level >20% rule) passed all six of these items — so the rubric is demonstrably not a substitute for the empirical run.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D11-anti-gaming-claim-integrity.md",
+   "lines": "6",
+   "quote": "we've watched an LLM-judge pass items that a blind-solve cracked 6/6.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "80-81",
+   "quote": "IB scoring an item \"high quality\" says nothing about whether the item is gameable, and an IB pass must never be reported as an anti-leak result.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "90-92",
+   "quote": "After a `1/1` with-passage calibration, `gemini-group/gemini-3.5-flash` solved the item `3/3` plain-blind and `3/3` with prior-course context.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "| with-passage Gemini control pass | 735/1,152 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "146-147",
+   "quote": "The 417 with-passage control failures were often ambiguity or broad `Both` keying, not necessarily blind leakage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "167",
+   "quote": "| MCQ | 89/90 = 98.9% | 41/89 = 46.1% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "172-173",
+   "quote": "Measured lesson: control-pass rate did not predict blind certifiability. MCQ/MSQ/hot-text can be answerable with the passage and still blind-solvable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "233",
+   "quote": "5. Always run with-passage control before blind certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "40-41",
+   "quote": "PASS if with-passage correct-rate >= 0.80 AND without-passage correct-rate <= chance-rate + 0.15 margin",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "166",
+   "quote": "The G4 red team found **6/6 sampled EBSR items blind-solvable** on the *existing* v2 build, including",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "167",
+   "quote": "the rubric gate passed all six.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/generation-contract.md",
+   "lines": "82-83",
+   "quote": "No item ships before the **empirical cross-family blind-solve run** (passage-withheld). LLM-judge passage-dependency is not a substitute.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "272-275",
+   "quote": "The 417 source-attribution candidates that failed with-passage control were not mostly \"leaky.\" They were often ambiguous or overbroad around `Both`, frequently missing one statement in an otherwise near-correct match. This is why with-passage control is a quality gate, not just an answerability formality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-clean-course-v1/GATE_REPORT.md",
+   "lines": "39-41",
+   "quote": "36 hot-text items that were \"blind-clean\" but UNanswerable even with the passage were dropped as ambiguous; 18 of those were recovered after a second family (haiku) answered them correctly with the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/course-rationale.json",
+   "lines": "904",
+   "quote": "An empirical cross-family blind-solve run must clear before any build claim.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

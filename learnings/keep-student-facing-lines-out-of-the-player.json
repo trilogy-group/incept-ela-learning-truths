@@ -1,0 +1,78 @@
+{
+ "id": "keep-student-facing-lines-out-of-the-player",
+ "title": "Keep student-facing lines out of the player",
+ "statement": "Keep every line a student sees in the lesson's data, not the player: a line built into a player for one text can show up wrongly on other texts.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "wording",
+  "alignment",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Exporting the Grade 9 lesson engine's lessons into two other players turned up lines written into those players for their own text (`g9-transformer-audit/2026-10-09-builders.json`). In an animated version the mimicry step always gives the same reply and its speech hints name one play's cast, the sentence-rebuild nudge is keyed by option text, so options such as 'noun' or 'adverb' get a nudge about one word on any text, and one character's name is printed beside every quote. In a 3D version a card label is shared, so the engine sends its web links only when the web's centre is the word that label names, and it patches other fixed strings, such as an act and scene, for texts that have none (`g9/transformer/src/glue/threejs-render.js`). The players were read-only to the engine, so its export could work around these limits but not fix them.",
+ "against": "Some leftovers do no harm: \"Its transcriber hints name Othello's characters, which does no harm on other texts.\" (`g9-transformer-audit/2026-10-09-best-of-everything.json`, line 1).",
+ "evidence": [
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "Mimicry always replies 'Yes. Faithless, and false.' and its speech hints name Othello's cast.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "REBUILD_NUDGE is keyed by option text: options 'noun' or 'adverb' get a nudge about 'follow' on any text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "GuidedScreens, ScriptPanel and BothQuotes print 'Iago' beside every quote.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The 'Link to deceit' card label is shared, so our links are shown only when the web's centre is deceit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "These are renderer limits the export cannot fix, in the animated build (read-only):",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "262",
+   "quote": "webLinks: ww?.item.centre === \"deceit\" ? Object.fromEntries(ww.item.keys.map((k) => [k.word, k.link])) : {},",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "374",
+   "quote": "no act and scene for a text that has none",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

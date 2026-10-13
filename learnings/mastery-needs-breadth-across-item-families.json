@@ -1,0 +1,66 @@
+{
+ "id": "mastery-needs-breadth-across-item-families",
+ "title": "Mastery needs breadth across item families",
+ "statement": "Base a mastery decision on several different items from several item families, because passing by retrying near-identical items, or on a handful of items, is practice, not mastery.",
+ "example": "One review treats a gate decision on fewer than 10 items as retrieval practice, not mastery.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "evidence-of-learning",
+  "practice",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The red-team taxonomy's \"grind-through gate\" is passed by retrying near-identical items; its rule is that mastery evidence must span item families, and that a gate decision on fewer than 10 items is retrieval practice, not mastery (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`). The grade 3 item criteria ask for breadth across item families and near-miss contrasts, with recovery verified, and never rest a mastery decision on a single multiple-choice item, with its guess rate of 25% or more (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "168",
+   "quote": "mastery evidence must span item families; a gate decision on <10 items is retrieval practice, not mastery",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "41",
+   "quote": "Mastery evidence needs breadth (item families / near-miss contrasts) + recovery verification",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "42",
+   "quote": "No mastery decision rests on a single MCQ (≥25% guess); use item bundles",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "40",
+   "quote": "≥1 certified gated item across ≥2 question types",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "36-37",
+   "quote": "Headline: **14/15 GATED**, **15/15 TAUGHT+PRACTICED**.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

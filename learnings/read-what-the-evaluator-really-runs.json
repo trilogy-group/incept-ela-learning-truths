@@ -1,0 +1,191 @@
+{
+ "id": "read-what-the-evaluator-really-runs",
+ "title": "Read what the evaluator really runs",
+ "statement": "Learn and report what a judge or gate actually does from its code and saved verdicts, tested on a few items, not from documentation or a published description.",
+ "example": "One report presented a borrowed benchmark's error-correction task score as curriculum alignment, at 10.00 out of 10.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading QC rubric's published page asks feedback on a wrong option to give a path to the right answer 'without giving it away directly' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md`), but the prompt file the pipeline names as 'All quality control prompts' passes feedback that states the correct answer outright (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json`). Separately, a benchmark report gives 'Educational Curriculum Alignment (EC)' as 10.00/10.0 on 873 items (`icloud-work/incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md`). In the borrowed benchmark EC is Error Correction (`icloud-work/incept/incept-multilingual-generation/src/evaluator/EduBench/README.md`), and the evaluator's notes say its task mode tests how well a model can respond to the question (`icloud-work/incept/incept-multilingual-generation/src/evaluator/Readme.md`). Read a judge's criteria, weights and caps in its own source, and test them on a few items. A guess from the failures misled one generator: the judge's failure comments asked for a spread of difficulty, but adding a progression raised difficulty faults from 50% to 86% of that item type's failures, because the judge checks each question against the requested level (`icloud-work/ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md`, line 17; `icloud-work/ap-social-studies-generator/data/model_findings.md`, lines 1125 and 1176). A read of the judge's code found two critical metrics at double weight and a veto cap of 0.84 (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md`, line 133).",
+ "against": "The project's framework document makes the same relabelling openly, describing the Error Correction row as 'Tests curriculum alignment and educational appropriateness. Does content match grade-level standards?' (`icloud-work/incept/incept-uae-api-website/inceptapi.com/INCEPT_Benchmarking_Framework.html`, lines 261-263). The judge flips verdicts on identical item sets often (\"DBQ flips 30%, MCQ_SET 50%\", `icloud-work/ap-social-studies-generator/python/CLAUDE.md`, line 101), so part of the rise from 50% to 86% may be noise. The double weight and the 0.84 cap are reported from a read of the judge's code, not quoted from it.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "144",
+   "quote": "- Provides a path to the right answer without giving it away directly",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The feedback must either explicitly state the correct answer or clearly guide the student to it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/README.md",
+   "lines": "30",
+   "quote": "prompts.json          # All quality control prompts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md",
+   "lines": "41",
+   "quote": "#### 2. Educational Curriculum Alignment (EC) - Weight: 45%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md",
+   "lines": "15",
+   "quote": "- **Educational Curriculum Alignment (EC):** 10.00/10.0 (n=873)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "54",
+   "quote": "- Error Correction (EC)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/Readme.md",
+   "lines": "122",
+   "quote": "1. **`edubench_tasks`** (AI Model Response Testing): Tests how well an AI model (EDU-Qwen2.5-7B) can respond to your question across 6 task types (QA, EC, IP, AG, QG, TMG). This validates that your question is clear enough for AI to understand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1125",
+   "quote": "**Why MCQ_SET regressed (-10.8pp):** Generator prompt mandated uniform difficulty → evaluator's difficulty_distribution hard-fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1137",
+   "quote": "Gate 13 running immediately after fixes. Same model (sft-v3-14b), same N=100, prompt-only changes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1176",
+   "quote": "The progressive difficulty change caused `difficulty_distribution` to jump from **50% → 86%** of MCQ_SET failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1176",
+   "quote": "The evaluator does NOT want Q1<Q2<Q3 difficulty — it wants all 3 at the SAME stated difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "17",
+   "quote": "The difficulty distribution is narrow; there are no 'Easy' questions present, and over 60% of the quiz sits at the Medium level. This lacks the progression needed for effective differentiation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/plans/PLAN-mission-2026-04-26.md",
+   "lines": "57",
+   "quote": "**InceptBench rubric: 5 dimensions, weighted; pass threshold 0.85 (corrected from 0.75 in newer harness).**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/MEMORY.md",
+   "lines": "76",
+   "quote": "**InceptBench rubric — actual 11 metrics for `question` content type** (correction to the earlier 5-dim claim)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "133",
+   "quote": "Identified BAML/Gemini grader, CRITICAL_VETO_CAP=0.84, critical metrics (factual_accuracy + educational_accuracy 2× weight).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "206",
+   "quote": "**Reference for every agent: schema before training rows; rubric before scoring expectations; curriculum before factual claims.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/README.md",
+   "lines": "159",
+   "quote": "3. **Improvement Loop**: If any check scores < 7, feedback is sent back to Claude to regenerate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "960",
+   "quote": "passes = score >= 1",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "790",
+   "quote": "# Force at least one distractor to pass for testing",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/README.md",
+   "lines": "99",
+   "quote": "- **Giveaway answers**: Correct answer contains \"correctly states\", \"accurately describes\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/reviewer-annotations/independent-review-plan.md",
+   "lines": "21",
+   "quote": "`reviewerNotes.ts:149–150` says Speak is aloud-only and proves understanding. Actual open tasks offer typed fallback and judged content, with unscored/floor paths.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "622-623",
+   "quote": "Deriving a count from content the player does not consult is not the conservative choice; it makes the gate agree with the bug.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md",
+   "lines": "7-8",
+   "quote": "by reading the stage source and its gates — not by trusting prior memory.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

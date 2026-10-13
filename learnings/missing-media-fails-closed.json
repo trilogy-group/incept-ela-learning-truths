@@ -1,0 +1,178 @@
+{
+ "id": "missing-media-fails-closed",
+ "title": "Missing media fails closed",
+ "statement": "When a narration clip is missing, fail closed: show its text in silence rather than fall back to a synthetic voice.",
+ "example": "One lesson had 101 of its 177 clips referenced but missing after the voice service ran out of quota.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A plan to recover one course's media, not yet carried out, made its audio packaging fail closed: the builder copies only the clips its manifest declares and rejects absent, duplicate or digest-mismatched ones, and the renderer has no browser speech fallback (`grade3-reading/knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd`). When the voice service's quota ran out in another build, the standing instruction was that a missing clip renders as silence and captions, never browser speech or a synthetic voice (`grade3-reading/knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd`). A silent fallback did slip through elsewhere: three lines with no voice set fell through to the default narrating voice (`grade3-reading/knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd`). Each silent line should also record why it is silent, and no clip that is absent, duplicated or doesn't match its digest should be packaged.",
+ "against": "A later run found: A Grade 5 release contract allows a synthetic fallback after consent: server audio is preferred, but if it cannot play the browser may read the exact authored text after the same learner consent, and if neither path starts the failure must stay visible, offer retry and leave self-reading available (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, lines 50-55) (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`). A later run found: A Grade 5 release gate prefers server audio but, when it cannot play, lets the browser read the exact authored text aloud after the same learner consent; only if neither path starts must the failure stay visible, with retry and self-reading left available (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/04-g5-media-images-and-narration/HANDOVER.md`). A later run found counter-evidence (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`). A later run found counter-evidence (`grade3-reading/artifacts/g5-deploy/audio/GENERATION-REPORT.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "31-33",
+   "quote": "rejects absent/duplicate/digest-mismatched clips, no browser-TTS fallback in the renderer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "126-127",
+   "quote": "a missing clip renders as silence + captions, never browser TTS or synthetic voice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "121-123",
+   "quote": "106 clips on disk against a 177-utterance manifest — 76 present+referenced, 101 referenced-but-missing, 30 on-disk orphans",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "68-69",
+   "quote": "so the generator fell through to the narrator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "33",
+   "quote": "(1) a spoken node plays only a real pre-generated clip from the audio manifest;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "33-35",
+   "quote": "(2) a missing clip is SILENCE with the caption text visible — never a `speechSynthesis` fallback; (3) dynamic strings (interpolated answers, live feedback) render as text bubbles only, never synthetic speech;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "40",
+   "quote": "every silent node must say WHY",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "90",
+   "quote": "status: \"failed\", view: null, reasons: [...(block.reasons ?? []), `the film could not be made:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "104",
+   "quote": "only a checked block is played: an unchecked or failed one never reaches a student",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "52-53",
+   "quote": "If it cannot play, the browser may read the exact authored text after that same learner consent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "53-54",
+   "quote": "If neither path starts, the failure must remain visible, offer retry, and leave self-reading available.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "52",
+   "quote": "Server audio is preferred. If it cannot play, the browser may read the exact authored text after",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "61-62",
+   "quote": "Real clips only; a missing clip is silence plus captions, never browser TTS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/reading-phases/READING-PHASE-PROPOSAL.md",
+   "lines": "37",
+   "quote": "Audio-unavailable fallback remains explicit and must never be labelled heard/full-narration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/04-g5-media-images-and-narration/HANDOVER.md",
+   "lines": "42",
+   "quote": "- Browser speech is an explicit fallback when allowed and server audio fails.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "24",
+   "quote": "manifest pointed at a 404 path: MediaError code 4, banner \"Recording unavailable. The transcript remains available.\", \"I've read this panel\" button → clipDone, Continue enabled",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated/AUDIO-HANDOFF.md",
+   "lines": "3",
+   "quote": "Do not use browser speech synthesis.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "112",
+   "quote": "No synthetic/browser TTS ever; missing clip = silence + captions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "113",
+   "quote": "Dynamic strings = text bubbles, never TTS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "849-850",
+   "quote": "Per the no-synthetic-voice rule this does NOT degrade to browser TTS: missing clip = silence + caption highlight.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "127-128",
+   "quote": "Per the manifest contract, any text not found in `manifest.json` falls back to browser `speechSynthesis`.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

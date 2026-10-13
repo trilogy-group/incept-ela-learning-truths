@@ -1,0 +1,64 @@
+{
+ "id": "match-the-gesture-to-the-answer",
+ "title": "Match the gesture to the answer",
+ "statement": "Match an item's interaction to the shape of its answer, letting learners move what they must order.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "demand",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading build shipped its ordering item as a dropdown of position numbers for each event, so a child on a tablet ordered a story clerically and nothing stopped two events both being numbered 3; the build's rules say the interaction taxed exactly the working memory the item exists to measure comprehension with. Reported live with a screenshot, it became drag-and-drop with a keyboard path, under a general rule: a tap is the honest gesture for picking, and an answer that is an arrangement needs things the learner can move. The conversion left the explicit check, the authored feedback, the two-attempt reveal and the scoring call untouched, because converting an interaction must not quietly convert the assessment.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "723",
+   "quote": "because nothing stopped two events both being \"3\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "723-724",
+   "quote": "The interaction taxed exactly the working memory the item exists to measure comprehension with.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "729",
+   "quote": "Match the gesture to the shape of the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "744",
+   "quote": "A drag control needs a keyboard path in the same commit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "750-751",
+   "quote": "converting an interaction must not quietly convert the assessment.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,103 @@
+{
+ "id": "build-the-student-view-from-an-allowlist",
+ "title": "Build the student view from an allowlist",
+ "statement": "Build what a student sees from an allowlist of the fields meant for students, and test that view for answer leaks.",
+ "example": "An independent read held back copying an AP course's first unit until six repairs were made, this allowlist among them.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An independent read of an AP course's first unit blocked copying it forward on six repairs, one of them a student-only source view holding the student material and approved citation details, with the answer-bearing fields left out (`grade3-reading/knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd`). A later commit closed all six with an explicit student-source allowlist, and the unit's validator passed with zero errors and zero warnings (`grade3-reading/knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd`). Mutation tests for student-answer leakage were still listed as work to do at that pause (the same file).",
+ "against": "At that pause the leak tests were not yet written, and a later record of 13/13 projection tests passing doesn't say whether they cover leaks (`grade3-reading/knowledge_bot/knowledge/kb-0171-apush-full-course-local-authoring-review-hub-archive.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "60",
+   "quote": "It still issued **BLOCKED FOR REPLICATION** on six repair buckets:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "71-72",
+   "quote": "Define a student-only source projection containing `student_material` plus approved citation metadata,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "88-89",
+   "quote": "the explicit student-source allowlist",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "126",
+   "quote": "mutation tests for student-answer leakage",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "83",
+   "quote": "view(item) { return { kind: \"choice\", stem: item.stem, options: item.options }; },",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "9",
+   "quote": "The student view must never carry a key, feedback, evidence or a model answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "30",
+   "quote": "const leaked = keysDeep(m.view(item, ctx)).filter((k) => FORBIDDEN.includes(k));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "6-7",
+   "quote": "every mechanic's shape, code checks and judge questions, that no student view carries a key, feedback, evidence or a model answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "125",
+   "quote": "Student source projection is allowlisted, not subtractive. It copies only source ID, kind, creator,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/review-evidence/README.md",
+   "lines": "23-24",
+   "quote": "The student view is built from an explicit allowlist and omits keys, rubrics, diagnostics, correction routes, models, evaluation state, and internal evidence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

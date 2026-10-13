@@ -1,0 +1,121 @@
+{
+ "id": "every-hint-rung-adds-something",
+ "title": "Every hint rung adds something",
+ "statement": "Each rung of a hint ladder must add information and lead toward what the marking asks for.",
+ "example": "The first hint on all 28 word cards in one course restated the task the student had just failed.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "scoring-guide"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of the reading course found the first hint on all 28 word cards was the same boilerplate, a restatement of the say-back task the child had just failed, so the first rung added no information anywhere in the course. A later round's fix gave one card a second hint about what grass needs to grow, so a stuck child who reasoned correctly from it would talk about light rather than the word's meaning and fail the rubric. The course's draft gate standard now requires every open response to carry a first hint, a second hint that is not the first reworded, and a reveal: three scored turns, escalating, ending in the one line allowed to state the answer. A first hint that restates the task adds nothing, and one that points elsewhere fails the student who follows it.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "117",
+   "quote": "a restatement of the say_back task the child just failed. Rung 1 adds zero",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R7.md",
+   "lines": "119",
+   "quote": "correctly from the hint given (\"light\") will say something about light, not about a home or",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "54",
+   "quote": "first reworded, and a `reveal` — three scored turns, escalating, ending in the one line allowed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "462-467",
+   "quote": "Measured across Unit 1, a `second_hint` shares up to 0.69 of its content words with the hint above it and up to 0.75 with the reveal below, and reading those cases shows the ladder working exactly as R-Q-23 asks: the same missing piece, said more concretely, necessarily in many of the same words. A threshold there would fail good content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "491-493",
+   "quote": "It fails a criterion with no `second_hint`, a `second_hint` identical to its `hint`, an assessment with no `reveal`, and any of them too short to say anything.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "493-494",
+   "quote": "The escalation itself, that the second hint is genuinely more concrete than the first, is a review job.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "410-412",
+   "quote": "**Second miss: a closer hint.** The same missing piece, said more concretely: where in the text to look, or the shape of a sentence that would answer it. It may not be the first hint reworded.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "462-466",
+   "quote": "Measured across Unit 1, a `second_hint` shares up to 0.69 of its content words with the hint above it and up to 0.75 with the reveal below, and reading those cases shows the ladder working exactly as R-Q-23 asks: the same missing piece, said more concretely, necessarily in many of the same words.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "491-493",
+   "quote": "It fails a criterion with no `second_hint`, a `second_hint` identical to its `hint`, an assessment with no `reveal`, and any of them too short to say anything.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "493-494",
+   "quote": "The escalation itself, that the second hint is genuinely more concrete than the first, is a review job.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "367-368",
+   "quote": "Retries escalate by changing support, not by paraphrasing the same hint",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/EIGHT-GAP-ROUND-SPEC-2026-09-11.md",
+   "lines": "27",
+   "quote": "keep the rung, point at where the child already has the words, stop listing acceptable answers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "936-938",
+   "quote": "scaffolding was a 2-step shape (one repeated criterion cue → release), not canon's 3-level `we_do.partial_response.support_ladder` (criterion-cue → evidence-frame → model).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

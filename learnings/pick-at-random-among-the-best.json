@@ -1,0 +1,62 @@
+{
+ "id": "pick-at-random-among-the-best",
+ "title": "Pick at random among the best",
+ "statement": "In an adaptive test, pick at random among the few most informative items, not always the single best, or a fixed starting estimate gives every session the same opening.",
+ "example": "Selection from one fixed starting estimate gave the same first passage in 100% of simulated sessions.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The first run of a reading assessment on its production selection path found the first passage identical in 100% of sessions, because selection ran deterministically from one fixed session-start estimate, and flagged it as an exposure and security issue (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`). The engine then chose at random among the five most informative candidates in both selection phases, a procedure from published work on item selection, and the package records the finding as fixed (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). A later fix to the opening selection widened the distinct opening passages from 2 to 15 per 30 sessions (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_RESPONSE.md`).",
+ "against": "The counts come from different stages: the 100% figure is from the first production-path run, and the widening from 2 to 15 came from a later, separate fix to the opening selection, so how many distinct openings random choice among the top five gave on its own isn't counted.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "84",
+   "quote": "- **(a) Deterministic first passage.** Production selection is deterministic from the fixed session-start prior — the first passage is identical in 100% of sessions, an exposure/security issue. Fix queued: randomize among near-optimal first passages.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "211",
+   "quote": "selection among the top-5 information-ranked candidates, applied in both the quota-filling phase and the precision-extension phase (items 41–43)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "117",
+   "quote": "The v1 deterministic-first-passage finding is **fixed** by randomesque selection",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_RESPONSE.md",
+   "lines": "127",
+   "quote": "that widened distinct opening passages from 2 to 15 per 30 sessions",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Procedures for selecting items for computerized adaptive tests (Applied Measurement in Education 2:4, 1989)",
+   "url": "https://doi.org/10.1207/s15324818ame0204_6"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

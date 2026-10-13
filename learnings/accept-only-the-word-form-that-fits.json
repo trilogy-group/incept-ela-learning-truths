@@ -1,0 +1,49 @@
+{
+ "id": "accept-only-the-word-form-that-fits",
+ "title": "Accept only the word form that fits",
+ "statement": "Accept only the forms of a taught word that fit the blank's sentence, and meet a wrong form of it with a redirect that doesn't supply the right form.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "feedback",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a reading lesson found the taught word passing a blank in a form that did not fit, so the frame printed an ungrammatical sentence. The contract field signed off in response lists the forms of the taught word that fit the slot after its lead; where it is set, an answer from the right word family in the wrong form gets a turn of its own with a redirect that never says the fitting form, and where it is absent the family alone is required. It is the marking side of keeping every fill-in frame grammatical for every value it accepts (instructions-a-literal-reader-can-follow).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "49-50",
+   "quote": "the form(s) of the taught word that fit the word slot after its lead",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "51",
+   "quote": "\"betrayal\" passed L1 p23 blank C and the frame printed \"...were betrayal\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "52-53",
+   "quote": "The route holds a right-family wrong-form turn with a form redirect that never says the fitting form; absent, the family alone is required (#479).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

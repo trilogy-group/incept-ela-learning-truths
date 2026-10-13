@@ -1,0 +1,142 @@
+{
+ "id": "fix-completion-before-accuracy",
+ "title": "Fix completion before accuracy",
+ "statement": "Measure how much of the intended work learners actually finish before tuning accuracy or redesigning content, and when completion is low, fix it and size the course to it first.",
+ "example": "The course one reading project set out to improve had a median completion of 12.5%.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "practice",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "One redesign of a reading course led with daily 25-minute doses and put completion mechanics before accuracy lifts, noting a cohort floor of 12.5% (`grade3-reading/knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd`). A later summary of the project's direction calls completion the first problem: the course it set out to improve had a median completion of 12.5%, with about 30% of the intended work done (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`).",
+ "against": "Completing work is not learning, and nothing here shows that fixing completion first raised accuracy. Completion is necessary, not sufficient: the planning record calls dosage necessary-not-sufficient and pairs every completion claim with an accuracy measure on the same students (`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`). The 83% accuracy beside the completion figures was a blend heavily weighted by easier item types (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`), later corrected as the wrong instrument (`grade3-reading/artifacts/team-direction-2026-09-09/DIRECTION-2026-09-09.md`), so accuracy may bind too. The length rests on one course, and the review left the choice between 98 lessons and 48 to 60 to a group decision. the proposals agreed on the problem but weighed it differently: four made it the primary design constraint, two treated it as an input, and one underweighted it (`grade3-reading/knowledge_bot/knowledge/kb-0244-g3-proposal-bakeoff-seven-proposals-2026-06-15.qmd`, lines 111-112).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd",
+   "lines": "122",
+   "quote": "2. **Dosage-first** — daily 25-min/25-XP doses lead; completion mechanics before accuracy lifts (cohort floor is 12.5%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "37-38",
+   "quote": "**Treats completion as the first problem** — the incumbent's real failure is 12.5% median completion, ~30% of intended work done;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "42",
+   "quote": "Dosage is the measured #1 problem (12.5% completion, 7.6/25 min, ~0 acceleration)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "241",
+   "quote": "of intended work, median completion 12.5%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "241",
+   "quote": "**Volume, not aptitude, is the binding constraint.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "243",
+   "quote": "The completion floor — 12.5% — is much further from acceptable than 39% is.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "192 (textutil plain-text output)",
+   "quote": "the completion failure starts at ~32 lessons in the current course",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "585 (textutil plain-text output)",
+   "quote": "The incumbent has 120 lessons and 12.5% median completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "585 (textutil plain-text output)",
+   "quote": "Recommend: target 50–60 lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "37-38",
+   "quote": "**Treats completion as the first problem** — the incumbent's real failure is 12.5% median completion, ~30% of intended work done",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0244-g3-proposal-bakeoff-seven-proposals-2026-06-15.qmd",
+   "lines": "110-111",
+   "quote": "the dosage crisis (7.5/25 XP, 12.5% median completion, ~0 acceleration) is the real #1 problem",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "68",
+   "quote": "Participation and reading work rise **monotonically with achievement**. The students furthest behind do the *least* reading work, not the most:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "72",
+   "quote": "| <21 (well below) | 144 | **2.8%** | 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "76",
+   "quote": "| 81–99 (high) | 151 | **37.1%** | 299 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "80",
+   "quote": "**Engagement is the binding constraint before content is.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "547",
+   "quote": "the most predictive statistical models show that engagement is a mediator of the effects of instruction on reading achievement",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

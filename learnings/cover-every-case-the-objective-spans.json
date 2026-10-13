@@ -1,0 +1,115 @@
+{
+ "id": "cover-every-case-the-objective-spans",
+ "title": "Cover every case the objective spans",
+ "statement": "When an objective or standard spans several cases or elements, list them in the plan and give each question a different one, since material missing any one fails alignment.",
+ "example": "On a first partial run, question sets passed 1 of 4, with concept coverage the main failure.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "On a first partial AP run, question sets passed 1 of 4, failing mainly on concept coverage: the judge found a quiz concentrated on one nation's motives while its objective covered several nations, and the record's diagnosis is that the writer picks the most prominent case in the topic and concentrates its questions there. The plan step was meant to force coverage but did not enforce it across questions. The planned fix lists the cases to cover in the plan and has each question address a different one; it has not yet been measured.",
+ "against": "This rests on one partial run of 4 question sets, one failing set failed on structure rather than coverage, and the fix has only an expected gain, from 25% to about 40%. The counts were small (1, 3 and 6 coverage failures in units 1 to 3, per the diagnosis headers), and covering every part across a set can pull against keeping each item narrow.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "14",
+   "quote": "| MCQ_SET | 1/4 = **25%** | concept_coverage |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "78",
+   "quote": "But the plan step doesn't enforce concept coverage across questions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "43",
+   "quote": "Add `nations_to_cover: [\"Portugal\", \"Spain\", \"France\", \"England\"]` field to the Plan step output schema. Question step: each question must address a different nation from the plan. Prompt-only change in `mcq_set.py`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "20",
+   "quote": "This is a partial run (unit 1 only, benchmark still in progress). But the failure patterns are clear enough to diagnose.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_to_do_next.md",
+   "lines": "33",
+   "quote": "- MCQ_SET: 25% → ~40%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "114",
+   "quote": "The quiz omits the 'Caste' (Casta) system entirely.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_3/diagnosis.md",
+   "lines": "76",
+   "quote": "While the quiz covers the role of women and 'Republican Motherhood' with great depth, it fails the 70% threshold for concept coverage.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/COMPREHENSIVE-TEST-2026-02-17.md",
+   "lines": "82",
+   "quote": "the question completely fails to address the required sub-topic 'disease'",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "ee21a33",
+   "lines": "8-11",
+   "quote": "#341: curriculum_alignment partial coverage - Add COMPLETENESS CHECK: explicitly listed elements in standard must ALL appear - Add PROPORTIONALITY CHECK: 'various groups' requires 3+ representatives - curriculum_alignment = 0.0 if any explicitly required element is entirely absent",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "111",
+   "quote": "- **curriculum_alignment**: Enumerate the explicit elements listed in the standard and verify EACH one appears in the article.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "282",
+   "quote": "- L.3.4 is over-concentrated on prefix meaning specifically (26 of 31 items)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "176",
+   "quote": "L.3.4 is dominated by prefix-meaning items (26 of 31 marked `deprioritize=True` in bank_forms.json).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

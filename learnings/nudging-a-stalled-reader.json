@@ -1,0 +1,200 @@
+{
+ "id": "nudging-a-stalled-reader",
+ "title": "Nudging a stalled reader",
+ "statement": "How to nudge a reader who stalls or keeps guessing; nothing in my engine does yet.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The lesson engine's playtest refuses idle actions because nothing in the runtime nudges a reader who is stuck, and a\nguesser in a choice block has no attempt ceiling (`g9/transformer/src/quality/playtest.js`); a director that adapts is\nplanned for a later stage (`g9/transformer/v05/README.md`). To settle it: the scripted stuck reader and guesser finish\nwith a nudge, and a person-labelled set shows the nudge comes at the right moment.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v05/README.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "79",
+   "quote": "the \"not so fast\" nudge is non-blocking and can be skipped by clicking Next twice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "63",
+   "quote": "The system needs three outcomes, not two: promote, keep practising, or switch to corrective instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "65",
+   "quote": "A mastery system that lacks an explicit “switch mode” state will inevitably turn persistence into the hidden criterion for passing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0157-mastery-signal-evidence-base.qmd",
+   "lines": "430",
+   "quote": "when a learner is failing, we currently just let them keep attempting items.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "187",
+   "quote": "iter-3 `silent`/\"I don't know\" branch authored + gated in 18/18 but **can never fire** (any tap resolves elsewhere; no timeout / \"I'm not sure\" affordance)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "18",
+   "quote": "scaffold-down (feedback / reframe / supply / model / engage) is actually reachable for the child who freezes or says \"I don't know\"",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "47",
+   "quote": "Open answers route to full / brief / partial / off-track / silent paths | Every path teaches; the silent child is taught first, then re-asked easier",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "90",
+   "quote": "When a child struggles, scaffold down by giving feedback, reframing, supplying an answer, offering a model to mimic, or simply keeping the child engaged (Zucker et al., 2020).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "873-874",
+   "quote": "Now a quiet \"I'm not sure yet\" door routes there.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "876-877",
+   "quote": "**An escape hatch offered up front stops being an escape hatch.** The door is revealed after ~20s (`CFU_UNSURE_MS`), below the tappables, deliberately.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "74-75",
+   "quote": "after 4 wrong taps, Scout offers to find the remaining clues",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/cross-cutting.md",
+   "lines": "200",
+   "quote": "the child who freezes needs scaffold-down",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "63-64",
+   "quote": "Silent branch on L4/L6 models a line from the story and asks its meaning",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "18",
+   "quote": "is actually reachable for the child who freezes or says \"I don't know\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "651-652",
+   "quote": "after 4 wrong taps, Scout (the guide) offers to find the remaining clues",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "102",
+   "quote": "No response or “I don’t know.” | Down (engage, mimic) | “Is Kitten happy or sad?”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "876-879",
+   "quote": "It is the one button on screen that cannot be wrong, so mounted with the options it becomes the *cheap path* and children who would have answered take it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "135",
+   "quote": "the one finding left is a gap (no idle nudge, v05).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "156",
+   "quote": "the runtime has no idle or timer action, so nothing nudges a reader who is stuck",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "37-39",
+   "quote": "They ask which line in the story supports the reason, instead of asking back the sentence Scout just modelled (red team, D5.14).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "112-113",
+   "quote": "silent branch on L4/L6 models a story line and asks its meaning (content-word overlap 1.00/0.80 → 0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "839",
+   "quote": "An escape hatch offered up front stops being an escape hatch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "840",
+   "quote": "~20s (`CFU_UNSURE_MS`), below the tappables, deliberately.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

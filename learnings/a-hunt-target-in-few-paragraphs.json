@@ -1,0 +1,79 @@
+{
+ "id": "a-hunt-target-in-few-paragraphs",
+ "title": "A hunt target in few paragraphs",
+ "statement": "A target the learner hunts for to locate evidence, such as a word, must pick out at most two of the paragraphs searched, since a target found everywhere teaches nothing.",
+ "example": "On approved lessons hunt targets clustered at one paragraph and a known defect at four, so the check fails a target found in three or more.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "key",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading project wrote extra content checkers after eleven defects survived a fully green check suite, seven of them mechanically checkable. Its key-integrity checker requires a hunt target to land in at most 2 of the paragraphs the child is actually searching, counting only the paragraph openings the hunt shows and asks the child to tap, not the whole passage. The checker prints a spread table so the threshold can be seen: good lessons cluster at 1 and the defect at 4, and the check fails at 3 or more.",
+ "against": "The recorded baseline still holds one key-spread finding on an approved lesson (`grade3-reading/curriculum-gen/STATE.md`, line 110) that the sources read never adjudicate, and the threshold was calibrated only on this course's lessons. A later ruling in the same project dropped keyword hunting from the finding procedure, because many texts have no clean keyword to hunt for (`grade3-reading/artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md`, lines 68-69).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-key-integrity.mjs",
+   "lines": "10-12",
+   "quote": "KEY-SPREAD      a hunt target must land in at most 2 of the paragraphs the child is actually searching. A target in many paragraphs points everywhere and teaches nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-key-integrity.mjs",
+   "lines": "114-116",
+   "quote": "A hunt question glows a handful of paragraph openings (`hunt.first_lines`) and asks the child to tap one. That glowing set — not the whole chapter — is the search space, so it is the honest denominator.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-key-integrity.mjs",
+   "lines": "437-438",
+   "quote": "The spread table makes the threshold visible and defensible rather than arbitrary: you can see the good lessons cluster at 1 and the defect at 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-key-integrity.mjs",
+   "lines": "440",
+   "quote": "hunt-target spread (threshold: fail at 3+)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "75-77",
+   "quote": "**Green is the floor, not the bar.** On 2026-08-21 eleven defects survived a fully green `npm run check`, and seven of them were mechanically checkable — nobody had written the check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/witw-feedback-2026-08-24.qmd",
+   "lines": "17-19",
+   "quote": "In L14's last task, the word the child is asked to hunt for is \"Toad\". It appears in thirteen of the paragraphs they are searching, so it points everywhere at once.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md",
+   "lines": "68-69",
+   "quote": "\"hunt\" (keyword spotting) was ruled out 2026-08-25 because many texts have no clean keyword to hunt for",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,548 @@
+{
+ "id": "wrong-options-only-knowledge-can-reject",
+ "title": "Wrong options only knowledge can reject",
+ "statement": "Each wrong option must attract a student who misunderstood, and only the tested knowledge or the text may rule it out, never common sense or surface cues.",
+ "example": "With the rule and a scoring fix, a question whose wrong options were giveaways went from passing at 0.9143 to failing about 80% of runs.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "integrity",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP evaluator's rubric fails a question when a wrong option can be ruled out by general reasoning, test-taking instinct or surface cues without the content the item assesses, which turns it into a logic puzzle; it names absolutes that carry the claim, self-contradiction with the stem, claims false on their face and options off the stem's named topic, and a guard catches the right answer being the only option that repeats a distinctive word from the stem. Before the fix, a question whose wrong options were all implausible or giveaways still passed at ~0.91, because one zeroed score was averaged away; after it, the reproducer went from PASS@0.9143 to failing ~80% of runs, with distractor_quality=0.0 in 23-25/30. No wrong option may be rejectable by common sense, a sweeping absolute, a contradiction of the stem or of another option, being true of any text on the topic, or lying outside the question's topic, period or category, and none may be generic filler. Each wrong option should also attract a student who misunderstood.",
+ "against": "Keyed to surface words the rule over-fired: the model treated any absolute word as a giveaway and failed sound items, so it was narrowed to absolutes that carry the claim, and the rubric now warns that an option that is merely incorrect is not a giveaway. The code guard for negations fires only when every key follows the stem's direction and every wrong option opposes it (`icloud-work/inceptbench-main/src/inceptbench/evaluators/guards.py`, lines 962-974). The shares are among leaked items only; no rate for clean items is given (`grade3-reading/artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md`, lines 13-15). A review accepted obviously wrong options in an end-of-lesson fill-in: \"For blank 3, `charged`/`marched` \"into the night\" are grammatical but clearly wrong, which is acceptable.\" (`shadow-content-eval/reports/G3-U1-L14-review.md`, line 100). The training report's claim that fill-in passes at twice the multiple-choice rate does not match its own table, which gives 30.7% against 23.2% and 17.9% (`icloud-work/incept/ML_TRAINING_INSIGHTS_REPORT.md`, lines 293-295 and 430). A first attempt at same-theme wrong options for one item regressed to 1 of 3 and was reverted, reason not given, and the report warns that such options must not become defensible alternate keys. The two misses were stopped by the solver's own scope check, not by a grader verdict: \"causing local rejection and then live IB timeout\" (icloud-work/aptraining/workspace/comms/from_den/2026-05-22T2050Z_DELIVERED_pipeline_solver_v7_supersedes_v6.md, line 51). A word-usage check may rightly test one register violation with every wrong option, and one review downgraded the same-misuse finding to minor for that reason (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-B-D5-D6-D11-D13.md`, line 21).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "625",
+   "quote": "one or more distractors can be ruled out by general reasoning, test-taking instinct, or surface cues alone — *without* knowing the curriculum content the item is supposed to assess. This turns the item into a logic puzzle instead of a knowledge test",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "627",
+   "quote": "**Self-contradiction with the stem or with the option's own wording**, where the option asserts a cause/effect that plainly opposes the stem's premise",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "628",
+   "quote": "**Obviously-false-on-its-face claims** that any test-taker would reject from common sense rather than course mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "636",
+   "quote": "- **Topically misaligned distractors**: When a question stem has a clear topical focus (e.g., asks for evidence of \"economic impact\" or \"political structure\"), distractors that address entirely different topics from the stem's named focus are poor distractors. Students can eliminate them by topical mismatch alone without subject knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1342-1343",
+   "quote": "Students can identify the answer through simple keyword matching rather than subject knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "5-7",
+   "quote": "which left a single noncritical zero at ~0.91 — above the 0.85 pass threshold — so a question whose distractors are all implausible or giveaway still PASSED.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "23-24",
+   "quote": "Live verification (concurrency=30, x2): the reproducer flipped from PASS@0.9143 to mean overall 0.78, failing ~80% of runs (distractor_quality=0.0 in 23-25/30),",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e03b0f7",
+   "lines": "4-5",
+   "quote": "The LLM applied this mechanically and over-fired on legitimate golden items",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e03b0f7",
+   "lines": "10-13",
+   "quote": "Narrow the rule with a removal-check: the absolute is a giveaway only when the universality is *load-bearing* (deleting the absolute word leaves no plausible claim, or the absolute contradicts the stem's own premise).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "629",
+   "quote": "do NOT over-fire: an option that is merely *incorrect* (or even somewhat weaker than the others) is NOT automatically a giveaway.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_460.py",
+   "lines": "3-5",
+   "quote": "The distractor_quality and reveals_misconceptions metrics were passing items whose incorrect options were simply the logical negation/opposite of the correct answers (e.g., \"good land\" vs \"poor land\", \"near people\" vs \"no people\").",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "598",
+   "quote": "These are too obvious to eliminate and fail `distractor_quality = 0.0` even if grammatically parallel.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "601",
+   "quote": "Students can eliminate them by topical mismatch alone without subject knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "4",
+   "quote": "**Based on:** Forensic analysis of 150 MCQ + 100 MSQ items (62.7% MCQ leak rate, 51.0% MSQ leak rate)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "15",
+   "quote": "| Absolute language in wrong options | 27.3% | 34% | Students eliminate \"always/never/all/only\" without reading |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "17",
+   "quote": "| Generic topic-domain wrong option | 22% | 8% | \"Any passage on this topic\" option is trivially wrong |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "96",
+   "quote": "is left with a 50/50 — you have effectively built a 2-choice item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "124",
+   "quote": "Option C uses \"Both... agree\" on a question asking about a *difference* — eliminatable by reading the stem alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "125",
+   "quote": "The problem is options B and C are too easy, so students only need to choose between A and D.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "9",
+   "quote": "\"One option is not a Darling child, so it is eliminable from the stem alone\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "342",
+   "quote": "4-option item with two dead distractors is a 2-option item.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "138",
+   "quote": "- Those describe taking in, not releasing, so a child can drop them on the verb alone. That makes it a two-option item (sugar or oxygen).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "66",
+   "quote": "| `distractor_quality` | Non-critical | Wrong answers must be plausible |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "294",
+   "quote": "| MCQ | 23.2% | Distractor quality issues |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "430",
+   "quote": "The model fundamentally struggles with generating plausible, pedagogically-grounded distractor options.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/B0045_STAGED_MCQSET_INTERIM_20260519.md",
+   "lines": "55",
+   "quote": "Gender-role MCQ_SET Q2 fails because only the keyed option visibly signals gender.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "460",
+   "quote": "- MCQ_SET `hard-4`: religious-liberty Q3 used treaties/taxes as distractors, making the Virginia Statute too obvious.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "461",
+   "quote": "- Fix: replace distractors with same-domain religious-disestablishment alternatives.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "462",
+   "quote": "- Targeted proof: `dynamic_32b_full_failed_export_v1_mcqset_hard4_repaired_v32` scored 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "82",
+   "quote": "- Be in the **same category** as the correct answer (e.g., if correct is a person, distractors are people; if a date, distractors are dates from the same era).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "112",
+   "quote": "4. **Option grain-size mismatch**: 3 options are short, 1 is long with reasoning embedded. Length-balanced options only.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/B0045_STAGED_MCQSET_INTERIM_20260519.md",
+   "lines": "41",
+   "quote": "| v7 gender same-theme distractor attempt | 1/3 | Regressed badly; reverted. |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/B0045_STAGED_MCQSET_INTERIM_20260519.md",
+   "lines": "57",
+   "quote": "The next patch must produce same-theme but clearly wrong distractors that also mention gender/family authority without becoming historically defensible alternate keys.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "231",
+   "quote": "distractors same-period and plausible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1357Z_BLOCKED_unit2_mcqset_parent_archetype.md",
+   "lines": "54",
+   "quote": "reject generic option templates such as `belongs to the wider era`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1905Z_hidden_acceptance_repair_status.md",
+   "lines": "75",
+   "quote": "The IB critique is consistent: factually sound, but too many question-level failures due answer leaks, weak distractors, or insufficient AP-level cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2050Z_DELIVERED_pipeline_solver_v7_supersedes_v6.md",
+   "lines": "49",
+   "quote": "Result: `48/50`, mean K `1.2`, mean cost `$0.054`, mean latency `30.28258s`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2050Z_DELIVERED_pipeline_solver_v7_supersedes_v6.md",
+   "lines": "51",
+   "quote": "The two n=50 failures were both perspectives/cultural-interaction prompts that generated otherwise usable fresh content but included `Pueblo Revolt of 1680` as a distractor, causing local rejection and then live IB timeout.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "55-59",
+   "quote": "**Near-neighbour distractors.** Distractors are built from *real passage details*, with … the wrong actor / stage / effect / cause / claim swapped in. No distractor may be absurd … or eliminable by world knowledge alone. (Absurd distractors leak the key by elimination.) … At G5, a near-neighbour distractor should require *returning to a specific sentence to … reject* — that is the bar.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "69",
+   "quote": "| F13 | major | Chunk-stop distractors are self-declared filler, not real near-neighbour traps. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "26",
+   "quote": "| 5 | **Near-neighbour distractors** — plausible, text-adjacent, not obvious-eliminable | one-obvious-right + 3 throwaways |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "60-64",
+   "quote": "**Bait the blind solver.** When a world-knowledge default exists, make it a *wrong* … option (a \"live trap\"). This actively *punishes* the non-reader rather than merely failing … to help them. At G5, the most common GK default is the textbook-true generalization; if … the passage takes a specific or counter-typical stance, key to the passage and make the … textbook generalization a distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "149",
+   "quote": "if the key matches the textbook default, treat that as a GK leak.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "184",
+   "quote": "- Change ONE of: the subject, the cause, the effect, the relationship direction, or the scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "70",
+   "quote": "main-idea status (a \"promoted supporting detail\" distractor).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "64",
+   "quote": "All three distractors (friendly, gentle, caring) share the same \"nice\" valence, so the only unpleasant word (menacing) wins by elimination",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/L5-REVIEW-GAPS-2026-09-17.md",
+   "lines": "8",
+   "quote": "all three distractors were the same misconception (menacing used for something pleasant)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/KB_FURTHER_IMPROVEMENTS.md",
+   "lines": "40",
+   "quote": "author named misconception catalogue (M-REVERSE, M-EFFECT-AS-CAUSE, M-LAST-FIRST…), tag each distractor",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "23-24",
+   "quote": "Exactly one is right given the text; the other two are tempting to a skimmer but the text rules them out.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "75",
+   "quote": "seem believable to a Grade 9 reader who skimmed the text, rather than obviously absurd?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "40-41",
+   "quote": "A first live run on Othello showed two faults no check caught: a quick-check distractor no reader would choose",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "46",
+   "quote": "their precision is not yet measured (v04)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "41",
+   "quote": "a quick-check distractor no reader would choose (\"he hopes to eventually become the Moor\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "43",
+   "quote": "whether each wrong option would tempt a reader who skimmed; on Ozymandias it flagged two distractors as not tempting.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/06ff2f628b44b1fe.json",
+   "lines": "45",
+   "quote": "\"stem\": \"What term describes the situation where the audience knows Iago is lying but Othello does not?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/06ff2f628b44b1fe.json",
+   "lines": "54",
+   "quote": "The film defines an ensign as the officer who carries the flag, which is a military rank rather than a literary device.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "id: `tempting-${letters[i]}`, label: `Option ${letters[i]} would tempt a reader who skimmed`, required: false,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "42-43",
+   "quote": "an advisory check asks whether each wrong option would tempt a reader who skimmed; on Ozymandias it flagged two distractors as not tempting.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "29-30",
+   "quote": "\"mechanic\": \"quick-check\", \"status\": \"ready\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "53-56",
+   "quote": "\"id\": \"tempting-B\", \"required\": false, \"verdict\": \"fails\", \"p\": 0.37",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "46",
+   "quote": "precision is not yet measured (v04).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/subjects/reading.md",
+   "lines": "44-46",
+   "quote": "The usage checks ask which sentence uses the word correctly, with distractor sentences whose feeling or meaning is wrong, never sentences that give the answer away by valence alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/judge/distractor-quality.md",
+   "lines": "15-16",
+   "quote": "an option is answerable from the stem alone, without having read the text (general knowledge, valence, or grammar gives it away).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-aladdin-part-1.md",
+   "lines": "64",
+   "quote": "Distractors: B happy, C pleasant, D ordinary-positive; none carry a valence giveaway.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "148-150",
+   "quote": "an inanimate subject (soup, box, afternoon) that CAN'T plausibly show the trait lets a non-reader eliminate a distractor by animacy alone, without ever engaging the vocabulary meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "150-151",
+   "quote": "The sweep rewrote the determined-usage distractors course-wide.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "154-155",
+   "quote": "The operative test is animate-UNLESS-the-trait-fits-the-thing, not animate-always.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "151-153",
+   "quote": "Deliberate exceptions were left in place where the trait applies naturally to things: cheerful (a test CAN look cheerful), stubborn (a stubborn door is idiomatic)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INDEPENDENT-TASK-AUDIT.md",
+   "lines": "20",
+   "quote": "Option B has a pronoun error: “Her friends planned a trick” refers to Bottom.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "310-311",
+   "quote": "distractors logically coherent but passage-inconsistent, so a passage-blind solver cannot pick",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "559-561",
+   "quote": "A child who knows nothing about our text but knows the trope will discard any option that sounds unheroic or unmonstrous, so every distractor must be a true or near-true statement about this passage that fails only on relevance.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "212-213",
+   "quote": "A child who has never seen the video can eliminate all three distractors on the giant alone, since a giant in a cave is not a choice, not a home and not a friend.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "276-277",
+   "quote": "Authoring rules for our U4L2 stops: blind-solve-proof, parallel options, every distractor contradicted in-chunk, no answer-cue in lead-in or feedback",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

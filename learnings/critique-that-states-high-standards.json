@@ -1,0 +1,55 @@
+{
+ "id": "critique-that-states-high-standards",
+ "title": "Critique that states high standards",
+ "statement": "Open critical feedback on a learner's work with a fixed line saying the standard is high and they can reach it, then give specific critique, not praise padding.",
+ "example": "In randomized field trials, 71% of African American students revised an essay returned with such a note, against 17% with a neutral note.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The Grade 9 research brief read the wise-feedback trials in full: essays returned with a note stating very high expectations and confidence that the student could reach them were revised far more often, 71% against 17% with a neutral note among African American students (covariate-adjusted) and 87% against 62% among White students, and a third study, in a high school, raised African American students' grades. The brief makes it a rule for the lesson's AI marker: every critique opens with a fixed sentence stating high standards and confidence in the student, then gives specific, critical feedback, not praise padding such as 'Great try!' before a hint.",
+ "against": "The trials were randomized field trials, mostly in grade 7, with one in a high school (`othello-course-renderer-draft/repo/docs/design/grade-9/research/learners-voice-guide.md`, lines 23 and 25); the fixed sentence has not been tried in critiques a model writes.",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "23",
+   "quote": "Among African American students, 71% revised with this note versus 17% with a neutral note (covariate-adjusted).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "26",
+   "quote": "Every critique the LLM rubric returns should open with a fixed sentence stating high standards and confidence in the student.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "26",
+   "quote": "It should give specific, critical feedback, not praise padding.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Yeager, Purdie-Vaughns, Garcia et al. 2014",
+   "url": "https://www.columbia.edu/cu/psychology/vpvaughns/assets/pdfs/Yeager_Breaking_the_Cycle_2013.pdf"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,57 @@
+{
+ "id": "a-new-procedure-needs-its-own-pages",
+ "title": "A new procedure needs its own pages",
+ "statement": "Rebuild pages copied from a lesson on another procedure around the new procedure's steps, since new wording in old page shapes hides the change of task from learners.",
+ "example": "After the point where a new skill began, exactly one new presentation type appeared, and every other page reused an earlier shape.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "format",
+  "sequence",
+  "alignment"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of a reading lesson said that everything should change once skill instruction starts, and the response measured it: comparing node types on either side of that point found exactly one new presentation type, and the two pages where the child performs the new skill had the shape of an earlier comprehension check (`grade3-reading/artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf`, p.2). The lesson shared node ids with a lesson teaching a different procedure, because the page template had been copied and only its strings changed. It also put five procedure screens on one scrolling page, where the procedure gives each step its own screen and advance button, and its step table fell through to the component that had drawn an earlier story table (the same file, pp.2 and 4). The response found the content faithful to the design but invisible to the child, and planned to give each step its own screen and add the procedure's step rail.",
+ "against": "Lessons must still read as one app: \"Procedure differences don't excuse voice differences.\" (`grade3-reading/.claude/skills/arc-audit/SKILL.md`, line 18), and the request itself asked for the change \"while reusing UI components where possible.\" (`grade3-reading/artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf`, p.1). The comparison covers one lesson, and nothing measured whether learners noticed the change of task.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.2 (pdftotext lines 52-53)",
+   "quote": "So exactly one new presentation type appears after the skill starts. Everything else after the boundary reuses the shape the child has already been reading with.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.2 (pdftotext lines 57-58)",
+   "quote": "The page template was copied and the strings were changed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.2 (pdftotext lines 81-83)",
+   "quote": "It currently compresses five procedure screens into one scrolling page (six stacked question nodes). The procedure gives each step its own screen and its own advance button. This is the biggest single cause of 'feels like a FIND lesson'.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.1 (pdftotext lines 33-35)",
+   "quote": "But the lesson delivers that content through the page shape of a FIND lesson, so a child never experiences the mode change you describe. The pedagogy is present and invisible.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

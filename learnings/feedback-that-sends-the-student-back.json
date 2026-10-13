@@ -1,0 +1,1061 @@
+{
+ "id": "feedback-that-sends-the-student-back",
+ "title": "Feedback that sends the student back",
+ "statement": "Feedback on a wrong answer says where to look, never what the student has to produce, and only what is true of what they were given.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "hints"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Code holds feedback that names the right answer or speaks of how a film is made (\"the second frame\"); the judge then\nchecks each line against what the film has said and shown by its stop, and against the text\n(`g9/transformer/src/mechanics/util.js`, `stopChecks` and `feedbackJudged`). The checks exist because a finished block\nhad a line saying the film had said something it hadn't. Since then, drafts have been held for \"the second frame\" and\nfor feedback that named the answer, and the film check made again under these checks had all 9 lines confirmed\n(`g9/transformer/v02/QA.md`, \"Video essay and the unit-video modules\"). A hint may point to the line to read, even\nquote it, but copies no run of the answer (`g9/transformer/src/mechanics/open-check.js`); where the line itself is the\nanswer, the hint names who speaks or what moment to look at, without quoting it\n(`g9/transformer/src/mechanics/evidence-hunt.js`); a nearly exact quotation is told it is near, without the text's\nwording (`g9/transformer/src/glue/animated-judge.js`). The film kit's rule is the same: feedback on a wrong option\nsays why it is wrong and points back to the scene without naming the right one\n(`othello-unit-video/.claude/skills/uvk-checks-make/SKILL.md`).",
+ "against": "the key-words block's hint gives the word's\nfirst letter (`g9/transformer/src/mechanics/key-words.js`), and after the last try a 3D version's reply gives the\ntext's wording (`g9/transformer/src/glue/`). A later run found: a research summary on choice items says the minimum effective feedback is showing the correct answer, and that without feedback the wrong options can be learned as true (`grade3-reading/knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd`). A later run found: the prompts a reading QC pipeline runs pass feedback on a wrong option that states the correct answer outright, so that the student 'should leave knowing what the right answer is and why' (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json`). A later run found: a reading-question feedback rubric bundled with the AP work's evaluator requires feedback on a wrong choice to state the correct answer or clearly guide the student to it, so the student leaves knowing the right answer (`icloud-work/inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json`). A later run found: an AP lesson spec's corrective line for a link that is only chronology names example mechanisms the answer could use, which says what to produce rather than only where to look (`grade3-reading/edullm-review-hub/course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json`). A later run found: research summarised in an MCQ guide that, to keep students from later giving the wrong options they saw as answers, the minimum effective feedback is showing the correct answer (`grade3-reading/knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd`). A later run found counter-evidence (`icloud-work/incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt`). A later run found counter-evidence (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json`). A later run found counter-evidence (`icloud-work/inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json`). A later run found counter-evidence (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`). A later run found counter-evidence (`ti-courseplans-audit/docs/instruction-quality-standard.md`). A later run found counter-evidence (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd`). A later run found counter-evidence (`grade3-reading/ti-courseplans/feedback/feedback1/Generic Instruction BrainLift.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/feedback/feedback1/Direct Instruction BrainLift.md`). A later run found counter-evidence (`shadow-content-eval/SKILL.md`). A later run found counter-evidence (`shadow-bench/src/inceptbench/prompts/lesson_bundle/evaluation.txt`). The synthesis says the evidence is \"Drawn from second-language classrooms, so applied here by analogy to early oral language.\", and for growing a child's language in comprehension talk it still prefers recasts and follow-up questions over right-or-wrong marking. The research comes from second-language classrooms and is applied to early oral language by analogy (`ti-courseplans-audit/skills/course-red-team/references/opportunities-to-respond-brainlift.md`). A later run found: the code check that holds feedback naming the answer needs at least three of the answer's words in a row, so it never flags a one- or two-word answer: on one film block, two wrong-option lines naming a two-word key passed while a three-word key in the next question was caught (`g9/transformer/src/mechanics/util.js`). A later run found counter-evidence (`g9/transformer/src/mechanics/key-words.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-checks-make/SKILL.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "59",
+   "quote": "Feedback appears on many wrong answers, but it is too long, sometimes longer than the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "96-97",
+   "quote": "if corrective feedback is longer or more complex than the original instruction, the item has crossed into new instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "176",
+   "quote": "The minimum effective feedback is showing the correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "176",
+   "quote": "Without feedback, the negative suggestion effect persists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "65",
+   "quote": "It should explain what makes this specific option incorrect",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "69",
+   "quote": "The feedback must categorize or name the type of thinking error",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "73",
+   "quote": "The feedback must cite specific passage content that contradicts the wrong answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "131",
+   "quote": "- Identifies the specific error or misconception that led to the incorrect choice",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "144",
+   "quote": "- Provides a path to the right answer without giving it away directly",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The feedback must either explicitly state the correct answer or clearly guide the student to it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The student should leave knowing what the right answer is and why",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The feedback must either explicitly state the correct answer or clearly guide the student to it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The student should leave knowing what the right answer is and why",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "142",
+   "quote": "Replace then with a mechanism such as supplied labor, structured diplomacy, or constrained settlement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "175",
+   "quote": "Students produce MC lures as answers on later tests, even when warned not to guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "81",
+   "quote": "The praise attributes a correct story fact to the child that the child never said.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "85",
+   "quote": "or directly reflect the child's stated idea",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/G3-APPLICABILITY.md",
+   "lines": "23",
+   "quote": "These are pre-reveal answer-supplying hints, distinct from an honestly labeled final example.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "120",
+   "quote": "Five feedback/reveal lines contradict the story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "18",
+   "quote": "is answered 'Those are the page's own words. Tell me your answer in your own words.'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "29",
+   "quote": "message 'the page's own words' is false to the child because the sentence is hidden on p0b.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "127",
+   "quote": "The feedback register is the corrective-feedback bar: ≤40 words, evidence-anchored, teaches without revealing.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "67",
+   "quote": "Each distractor is a coded misconception (a happy place, a cheerful place, a cozy-ordinary thing) and its feedback names the mismatch — “was anyone uneasy there?” — without ever quoting the key.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "1d49212",
+   "lines": "3-5",
+   "quote": "A Grade 3 time-word-problem MCQ had an answer explanation that misdescribed the error in option D (claiming it 'adds an extra hour' when the arithmetic showed a different error).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "290",
+   "quote": "Explanations that misattribute the nature of a distractor's error are factual errors about the content and a `factual_accuracy = 0.0` failure.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "1d49212",
+   "lines": "9-12",
+   "quote": "Added a 'DISTRACTOR ERROR MISATTRIBUTION' rule to closed_ended_evaluation.txt under factual_accuracy: if an answer explanation describes a distractor's error pattern with a factually wrong mechanism given the question's actual numbers, values, or reasoning, that is a factual_accuracy = 0.0 failure.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "dd21268",
+   "lines": "1",
+   "quote": "fix(evaluator): add precedence exception to CRITICAL block so DISTRACTOR ERROR MISATTRIBUTION is not silenced by math-verification override (PR #1070)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "122",
+   "quote": "3. **Post-error (shown after incorrect answer)**: Feedback → NEVER a giveaway",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/uae-mathematics.md",
+   "lines": "38",
+   "quote": "6. **Explanation Quality** - Explanations guide learning vs stating answers. Flag \"leakage\" if reveals exact option text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "15",
+   "quote": "a wrong answer returns only “Good try, let’s look again,” with no explanation and no correct answer shown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "91",
+   "quote": "Ask what the earlier condition made possible, costly, contested, or more likely.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "118",
+   "quote": "A wrong answer is told why it is wrong and where to go, never what the answer is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "129-130",
+   "quote": "were handing over the Step 3-4 answer outright; fix was to rewrite to criterion cues only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "72",
+   "quote": "\"Good try, let's look again\" is a defect; passage visible whenever feedback says look back",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "6",
+   "quote": "a wrong-answer reply never names or paraphrases the key and never quotes six words of the correct option (validate-feedback)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "88",
+   "quote": "Wrong-answer feedback for option D points directly at the condition that identifies the key",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/corrective-feedback-policy.md",
+   "lines": "48",
+   "quote": "**concrete, addressable locus**, never a generic \"look again\":",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "51",
+   "quote": "- Every surface a child can miss must name the misconception and leave a way forward WITHOUT",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "18",
+   "quote": "scaffolding-question feedback (never the answer)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "114",
+   "quote": "On a miss: **Correct** (answer + brief why) → **Test** (re-ask immediately) →",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md",
+   "lines": "36",
+   "quote": "wrong answers corrected immediately with the correct answer + brief why",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "25",
+   "quote": "The app never restates the correct answer for the child; it prompts the child to complete/say it",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "399",
+   "quote": "Immediate answer reveal; identical retry; endless loop; supported retry counted as first independent success.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "94-95",
+   "quote": "all 13 MCQs carry exactly 4 options with index-aligned feedback and no wrong-answer feedback names the key",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "263",
+   "quote": "Show students where to look in the text, and revisit previous knowledge to spark connections.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "52",
+   "quote": "replace the binary feedback with corrective feedback that explains why an answer is right or wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "91 (textutil text)",
+   "quote": "Wrong -> (1) \"Let's listen to that page again,\" replay the sentence; (2) \"Here is the part of the text with the answer,\" highlight the exact sentence; (3) \"Now choose again.\"",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "39",
+   "quote": "the wrong-answer feedback teaches without revealing — it names what the child mixed up (flying belongs to a different story in this unit) and sends them back to the evidence they just heard, rather than printing the key.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 2. Should We Save the Rainforests - WEIGH - Lesson Design.docx",
+   "lines": "211 (textutil text)",
+   "quote": "Nudges redirect without giving the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Generic Instruction BrainLift.md",
+   "lines": "78",
+   "quote": "Minimum: reveal the correct answer; standard: name the misconception and offer a re-attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Direct Instruction BrainLift.md",
+   "lines": "60",
+   "quote": "You should correct the response immediately when a student answers a question incorrectly by stating the correct answer with a brief explanation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "36",
+   "quote": "- **Evidence-anchored.** Names the passage evidence in one sentence; never generic",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "27-29",
+   "quote": "must be true for EVERY index classified into that branch (a \"what happened\" claim may not cover a speech line). Never misquote the passage inside quotation marks.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "93-96",
+   "quote": "Feedback that explains *why* an option is wrong (*\"Copper coins are what Aladdin's father left behind\"*) is good feedback with or without a \"read it again\" cue, so its absence is a style observation, not a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "72",
+   "quote": "feedback on a *wrong* option names the answer's own distinctive vocabulary — picking that wrong option reveals the right one.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "77",
+   "quote": "Two wrong-answer feedbacks give away the answer: *\"names the thing on Aladdin's own hand\"* and *\"Re-read what the great figure says about **the ring**.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "18",
+   "quote": "So the same activity tells the student both that Mole wasn't lonely and that he was.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "197",
+   "quote": "Reword feedback[0] to *\"The text does not say animals get water from plants.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "118",
+   "quote": "Pass: the majority of items include feedback that explains WHY the correct answer is correct and targets a likely misconception for wrong answers.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "70",
+   "quote": "because children often do not notice a recast, it does not reliably teach one specific point (Lyster & Saito, 2010). When something has to be learned exactly, prompting the child to say it again in their own words works better.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "166",
+   "quote": "Distinguished recasts, which restate the correct form, from prompts, which cue the child to self-correct.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "167",
+   "quote": "Prompts more often lead the child to produce a corrected response.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "168",
+   "quote": "Drawn from second-language classrooms, so applied here by analogy to early oral language.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "88",
+   "quote": "In comprehension, prefer recasts and follow-up questions over right-or-wrong marking.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "70",
+   "quote": "A recast keeps a conversation moving and grows how much a child says, but because children often do not notice a recast, it does not reliably teach one specific point (Lyster & Saito, 2010).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "165",
+   "quote": "Lyster and Ranta (1997); Lyster and Saito (2010).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "166",
+   "quote": "Distinguished recasts, which restate the correct form, from prompts, which cue the child to self-correct.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "167",
+   "quote": "Prompts more often lead the child to produce a corrected response.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "168",
+   "quote": "Drawn from second-language classrooms, so applied here by analogy to early oral language.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "197",
+   "quote": "https://doi.org/10.1017/S0272263197001034",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "198",
+   "quote": "https://doi.org/10.1017/S0272263109990520",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "186",
+   "quote": "iter-3 defaults the third turn to recasts",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "17",
+   "quote": "Recasts don't reliably teach — children don't notice them; when a specific idea must be learned, PROMPT the child to restate it in their own words",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "74-75",
+   "quote": "got \"Nearly. Which of your words is not the text's own?\" (the wording is never given), then the exact words were accepted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "64",
+   "quote": "line is the text's own wording, for a check or the judge, never shown to the student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "74-75",
+   "quote": "\"I follow him to serve my turn on him\" got \"Nearly. Which of your words is not the text's own?\" (the wording is never given), then the exact words were accepted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "77",
+   "quote": "nearly the text's words (the 3D build's matcher): say so, without giving the wording; the build checks the reply",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "52",
+   "quote": "final ? ` The text has it as \"${strip(near[0].line)}\".` : ` Check the wording of \"${strip(near[0].wrote)}\" against the passage.`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "144",
+   "quote": "never the wording before the last try",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "116",
+   "quote": "sharedRun(f, c.options[c.answer]) >= Math.max(3, words(c.options[c.answer]).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "22",
+   "quote": "Listen again to hear that the play was written around 1603.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "97",
+   "quote": "Wrong-option feedback does not name the answer: question 2, option A: its feedback names the right answer; question 2, option C: its feedback names the right answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "63",
+   "quote": "the animated build's own rule (its safeReply and build-content check): a hint may quote the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "64",
+   "quote": "but it uses no leak word and copies no four-word run of the reveal outside a quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "28",
+   "quote": "- hint: one sentence that points to who speaks or what moment to look at, without quoting the line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "47",
+   "quote": "check(\"hint-no-quote\", \"The hint does not quote the line\", hintRun < 4, `the hint shares ${hintRun} consecutive words with a keyed line`),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "26",
+   "quote": "/** Does the sentence give its word away: the word or one of its forms, anywhere in it, quotations included. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/7bb3a47934432969.json",
+   "lines": "22",
+   "quote": "\"third_nudge\": \"Read the words \\\"I follow him to serve my turn upon him\\\" again. What does that phrase mean in your own words?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138-139",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may quote the line to read)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "47",
+   "quote": "check(\"hint-no-quote\", \"The hint does not quote the line\", hintRun < 4,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/963297774d627c12.json",
+   "lines": "12",
+   "quote": "Look at the description of the face's mouth and expression in the first sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/ozymandias.md",
+   "lines": "4",
+   "quote": "Stand in the desert. Near them, on the sand,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/ozymandias.md",
+   "lines": "6",
+   "quote": "And wrinkled lip, and sneer of cold command,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "29",
+   "quote": "wrong ones send the reader back to the surrounding lines without naming the best",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "29",
+   "quote": "pointing at what to compare without saying which is better",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "93",
+   "quote": "a miss does not give the words",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "47",
+   "quote": "The hint does not quote the line",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "63-64",
+   "quote": "a hint may quote the text, even the line to … read (its third rung), but it uses no leak word and copies no four-word run of the reveal outside a quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "122",
+   "quote": "The feedback after each option, held to what the film has given by that stop",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "54",
+   "quote": "A pointer back to the words that hold the answer, without saying what they show.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138-139",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may quote the line to read);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "188",
+   "quote": "Jev, one question a line: every line is true to what the film has said (and shown) by its stop, and to the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "190",
+   "quote": "Film with checks was made again under these checks: ready, with all 9 lines confirmed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "39",
+   "quote": "what was just said, without naming the answer; say only what the film has said by then).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "103",
+   "quote": "a hint, never the answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "27-28",
+   "quote": "Wrong option: one sentence that sends the reader back to specific words (quote a few of them) without naming the right answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "121",
+   "quote": "`The word you want begins with \"${w.word.charAt(0).toUpperCase()}\".`",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "57",
+   "quote": "Re-read the tenth line to consider the permanent claim of power in the title.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "1264, 1658",
+   "quote": "\"feedback_1_B\": \"The Turks of the Ottoman Empire were the enemy, whilst Othello served as Venice's trusted general.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "78",
+   "quote": "Nearly. One or two of those words are not the text's own: check the wording against the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "63",
+   "quote": "a hint may quote the text, even the line to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "712",
+   "quote": "A criterion is the better hint of the two when the child's error is about a kind of thinking rather than a missed fact, because it transfers to the next item and a page reference does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "9",
+   "quote": "says a wrong-answer reply must name the misconception and offer a location or criterion while stopping short of an answer the learner can retype.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "9",
+   "quote": "A closer hint can give a location or sentence shape; the final reveal is the only assessment line permitted to supply the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "5",
+   "quote": "enumerates **all 90 literal hint/second_hint fields**, 45 pairs, recursively in PP L4–L7.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "11",
+   "quote": "These **nine fields across eight question owners** supply their criterion's answer rather than only a location/shape.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "16",
+   "quote": "Does that feel heavy, or light and easy? Say the one that fits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "16",
+   "quote": "Look at the words 'feather' and 'gust of wind.' Finish 'flying feels...' with your own feeling word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "25",
+   "quote": "These replacements have 16–22 words and retain concrete source locations or incomplete answer shapes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "16",
+   "quote": "Again this is a direct paraphrase of the answer, not merely a concrete text location or an incomplete sentence shape.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "29",
+   "quote": "Retain them until independently reviewed, rather than silently calling all support either correct or defective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-PROPOSAL.md",
+   "lines": "29",
+   "quote": "Particularly, revising a worked connector example may reduce deliberate teaching; do not remove it just to satisfy lexical similarity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "367-369",
+   "quote": "A criterion is the better hint of the two when the child's error is about a kind of thinking rather than a missed fact, because it transfers to the next item and a page reference does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "26",
+   "quote": "If the student's final answer is wrong, the teacher asks \"Where in the text does it say that?\" or \"What clue did you use?\" to return them to the evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "85",
+   "quote": "A recast keeps a conversation moving and grows how much a child says, but because children often do not notice a recast, it does not reliably teach one specific point (Lyster & Saito, 2010). When something has to be learned exactly, prompting the child to say it again in their own words works better.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "213",
+   "quote": "Lyster, R., & Saito, K. (2010). Oral feedback in classroom SLA: A meta-analysis. *Studies in Second Language Acquisition, 32*(2), 265-302. https://doi.org/10.1017/S0272263109990520",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "76",
+   "quote": "Required the correction's cited spans to be the strongest exact evidence for both the distractor error and the corrected relation.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "98",
+   "quote": "Seven routes cited evidence that was valid but not the strongest exact binding.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "100",
+   "quote": "All seven bindings were strengthened and rechecked.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "99-100",
+   "quote": "Then L6 p19 retells hint anchor \"The attack came at dawn.\" was dropped by the attempt-1 leak gate (a one-sentence evidence paragraph has nothing wider to point at) → anchored to the pirates-burst-in line instead.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "85",
+   "quote": "A recast keeps a conversation moving and grows how much a child says, but because children often do not notice a recast, it does not reliably teach one specific point",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/otr-brainlift-2026-07-24.md",
+   "lines": "182",
+   "quote": "Prompts more often lead the child to produce a corrected response.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "303-304",
+   "quote": "Support can narrow where to look or how to combine; it cannot provide the thought being assessed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks-v7.json",
+   "lines": "66",
+   "quote": "Florence is not on the play’s journey. Listen for the island across the sea.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "181",
+   "quote": "Show students where to look in the text, and revisit previous knowledge to spark connections.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "97",
+   "quote": "off: reply gently says what the question is really asking, and points to where in the text to look.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "63",
+   "quote": "None handed over a missing answer.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "282-283",
+   "quote": "The evidenced move is to require the search, not to supply the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "199-201",
+   "quote": "feedback ladders name the specific sentence/quote to re-check rather than giving generic hints",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "63",
+   "quote": "ONE scaffolding question — never the answer or a synonym of it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Lyster & Saito 2010",
+   "url": "https://doi.org/10.1017/S0272263109990520"
+  },
+  {
+   "ref": "Lyster & Ranta 1997",
+   "url": "https://doi.org/10.1017/S0272263197001034"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

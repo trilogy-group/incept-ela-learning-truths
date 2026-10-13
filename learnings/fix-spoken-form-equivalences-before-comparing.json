@@ -1,0 +1,91 @@
+{
+ "id": "fix-spoken-form-equivalences-before-comparing",
+ "title": "Fix spoken-form equivalences before comparing",
+ "statement": "Before comparing transcripts with scripts, fix which differences count as the same spoken form, such as numerals, contractions and spelling variants, and send names and dialect to a person.",
+ "example": "One unit's 63 whole-file blind transcriptions and 12 focused probes, read under such rules, established no consistent omission or invention.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "media"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Whole-clip recognisers respelled characters' names, normalised dialect into standard words and joined compounds, so raw differences from the script overstated changes to the narration. The project fixed comparison rules that treat spelled numerals, contractions, US and UK spelling, joined compounds and possessive tokenization as equivalent spoken forms, and focused probes on isolated clips confirmed many words that whole-clip transcripts had changed or left out. Name variants and regional pronunciation were left for a person to accept, since recogniser spelling alone does not establish a speech defect.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "4",
+   "quote": "Do not equate raw ASR spelling differences with changed narration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "26",
+   "quote": "Step numerals spoken as words, hyphenated reread and possessive tokenization are equivalent spoken forms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "60",
+   "quote": "Spelled numerals, contractions, US/UK spelling, joined compounds and possessive tokenization are equivalent spoken forms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "61",
+   "quote": "similar names require human pronunciation acceptance; ASR orthography alone does not establish a speech defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/lesson-review-dispositions.json",
+   "lines": "56",
+   "quote": "Full ASR normalized dialect to thyself; isolated audio ASR renders thy sin",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/lesson-review-dispositions.json",
+   "lines": "57",
+   "quote": "Specific regional pronunciation remains for human voice review; not certified as an authentic Yorkshire accent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "3",
+   "quote": "Review pronunciation as part of voice acceptance; evidence does not replace a human listener",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "28",
+   "quote": "Focused clips confirm outside, repeated, in, happen and a quotation despite omitted or changed words in whole-node ASR.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "31",
+   "quote": "all63 whole-node blind transcriptions and12 focused probes completed. No remaining consistent content omission or invention established.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

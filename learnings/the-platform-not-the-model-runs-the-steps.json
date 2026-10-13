@@ -1,0 +1,63 @@
+{
+ "id": "the-platform-not-the-model-runs-the-steps",
+ "title": "The platform, not the model, runs the steps",
+ "statement": "Let the platform, not the model, step a learner through each part of a problem in order, because a prompt alone didn't keep the model on track.",
+ "example": "In a randomized crossover trial with undergraduates, structured AI tutoring built this way had a median post-test score of 4.5 against 3.5 for in-class active learning.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "sequence"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The Grade 9 research brief read in full a randomized crossover trial in which structured AI tutoring beat in-class active learning for physics undergraduates, with median post-test scores of 4.5 against 3.5 and a median time of 49 minutes against 60. Among the design elements the trial lists, the platform, not the language model, stepped students through each part of a problem in order, because the system prompt alone did not keep it on track, and expert step-by-step solutions went into the prompt to keep explanations accurate. The brief notes that the Grade 9 design already works this way, with authored answer keys feeding the judge and the platform controlling the sequence.",
+ "against": "The trial was with undergraduates only (`othello-course-renderer-draft/repo/docs/design/grade-9/research/learners-voice-guide.md`, line 177), and these are listed design elements, not features it tested one at a time.",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "169",
+   "quote": "median post-test scores were 4.5 for the AI group versus 3.5 for active learning, more than double the gains (effect size about 0.73–1.3).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "173",
+   "quote": "the platform, not the LLM, steps students through each part of a problem in order, because the system prompt alone did not keep it on track;",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "174",
+   "quote": "expert step-by-step solutions included in the prompt to keep explanations accurate;",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "178",
+   "quote": "Our current design already matches this: authored answer keys feed the judge, and the platform, not the LLM, controls the sequence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Kestin, Miller, Klales, Milbourne & Ponti 2025",
+   "url": "https://doi.org/10.1038/s41598-025-97652-6"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

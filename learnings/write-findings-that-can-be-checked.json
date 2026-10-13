@@ -1,0 +1,135 @@
+{
+ "id": "write-findings-that-can-be-checked",
+ "title": "Write findings that can be checked",
+ "statement": "Write each finding as one falsifiable problem with its exact location, the offending text word for word, why it matters, a concrete fix and the rechecks that show it fixed.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course's review-evidence format accepts a failure only with one falsifiable problem, exact evidence, why it matters, an exact target, a specific proposed change and named rechecks, and rejects stale, duplicate, vague or unknown results (`grade3-reading/ti-courseplans/docs/standards/course-json/README.md`, lines 113-117). Its red-team skill reports every count raw, exempted and real, after an all-caps sweep read 392 raw, of which 104 were play-script speaker labels and a skill name; publishing 392 would have cost the finding its standing (`grade3-reading/ti-courseplans/skills/course-red-team/SKILL.md`, lines 102-106). The skill gives the real number as 284, so the figures as written do not reconcile: 392 less 104 is 288.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-json/README.md",
+   "lines": "115-116",
+   "quote": "A failure additionally needs one falsifiable problem, exact evidence, why it matters, an exact target object/path, a specific proposed change, a repair-owner skill, and named rechecks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "102",
+   "quote": "**Report counts as raw / exempted / real, with the exemption rule stated.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "103-104",
+   "quote": "sweep read 392 raw; 104 were play-script speaker labels and a skill name; the real number was 284.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "385",
+   "quote": "Report **per lesson**, ranked by severity, and for every finding give:",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "388",
+   "quote": "- the offending text **verbatim**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "389",
+   "quote": "- what is wrong, in one plain sentence",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "390",
+   "quote": "- a concrete fix (rewritten option, word to gloss, step to reorder)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "394-395",
+   "quote": "If a check found nothing, say so rather than padding the report.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "18-19",
+   "quote": "Each block is made out of sight and gets a label to cite (`QC-1`, `VE-1`).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "24-25",
+   "quote": "four scripted personas (strong, guesser, stuck, adversarial) play the lesson, and any fault is named by block.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "209",
+   "quote": "A blocking comment must cite an `OJ-*` rule, a mapped `RP-*` criterion, exact artifact locator, and reproducible evidence. Otherwise it is input for future scope, not an invented blocker.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4526",
+   "quote": "idk, can we propose a series of reasonable how-tos, not just pointing shit out.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4662",
+   "quote": "And here’s the offline how-to playbook: six concrete proposals, each with example wording, an implementation rule and a test case.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "175",
+   "quote": "Four separate things, and they are fixed by different people: the script is mostly good; some lines read vague; the delivery feels soulless; and the face may not be needed throughout.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "60",
+   "quote": "Prefer one verbatim-evidenced finding over five speculative ones.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

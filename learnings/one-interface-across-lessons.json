@@ -1,0 +1,120 @@
+{
+ "id": "one-interface-across-lessons",
+ "title": "One interface across lessons",
+ "statement": "Give every lesson in a course the same controls and components, so lessons differ in content and structure, not in how they work.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Feedback on the reading course asked for interface standardization among other changes (`grade3-reading/knowledge_bot/HOTBUCKET.md`). A later ruling required every other lesson to follow the reference lesson's interface to the tee, with no variations. A census of the page's interface classes confirmed that a rebuilt lesson differed, and the following lessons were rebuilt keeping their own structure while their components were made to look exactly like the reference's (`grade3-reading/knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd`).",
+ "against": "The evidence is a ruling and the rebuild that followed it, not a measured effect on students.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "22-23",
+   "quote": "On all the other lessons, we have to follow the UI/UX to the tee — no variations at all.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "18",
+   "quote": "UI standardization",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "24",
+   "quote": "A DOM-class census on main confirmed it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "82-83",
+   "quote": "rule: our structure stays, his components look exactly like his",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/sources.js",
+   "lines": "50",
+   "quote": "read live from its Lesson 1 so an exported lesson speaks in the build's own words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "249",
+   "quote": "Used only where the build's own lines cannot be read (no mirror): plain, and never the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "114",
+   "quote": "Plain lines of ours: who speaks, never the content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "32",
+   "quote": "One \"Scout says\" component would carry instruction, encouragement and feedback, and would give the app a single voice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "98-101",
+   "quote": "Both survived because they were not quite the same control, the bar holding whether narration autoplays and the pill playing this page, a distinction no child can see.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "115",
+   "quote": "The lesson shape is fixed: video, read with purpose, a block of tasks, the Modelling Moment, Part 3, closing, doors. Only the task block flexes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Le9c5ae.txt",
+   "lines": "22",
+   "quote": "The step designs looks inconsistent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "16-18",
+   "quote": "UNIFORMITY against the reviewer-approved baseline lesson (stems, recaps, feedback voice, wrap shape, banners, silent-node reasons) — \"what would a child feel as a DIFFERENT app\". Procedure differences don't excuse voice differences.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "122-126",
+   "quote": "The video player chrome is identical across lessons … This does not ban checkpoint-triggered content from varying",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,57 @@
+{
+ "id": "pin-every-fix-with-a-test",
+ "title": "Pin every fix with a test",
+ "statement": "Pin every rule added after a judging failure with a deterministic test that breaks if its text is removed or moved, and with a labelled case that exercises it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Each reported disagreement from issue 371 to issue 1004 got a test that checks its guidance string sits in the right prompt file, so an edit that removes or moves it is caught without a model call (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_371_382.py`), and several also got a labelled regression case (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_1004.py`). The labelled set then runs as a pass-rate gate in continuous integration (`icloud-work/inceptbench-main/.github/workflows/quality-gates.yml`).",
+ "against": "A string test catches a deleted rule, not whether the rule works, and the pass threshold differs by place: 0.95 in the labelled set's own file, 0.98 as the runner's default and 0.99 in continuous integration (`icloud-work/inceptbench-main/src/inceptbench/golden/golden_dataset.json`, line 4; `icloud-work/inceptbench-main/src/inceptbench/golden/runner.py`, line 285).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_371_382.py",
+   "lines": "3-5",
+   "quote": "The tests check that the relevant guidance string is present in the right prompt file so that edits removing or relocating it are caught deterministically (no LLM).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_1004.py",
+   "lines": "15-16",
+   "quote": "added golden-112 regression entry.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/.github/workflows/quality-gates.yml",
+   "lines": "182",
+   "quote": "GOLDEN_PASS_THRESHOLD: ${{ vars.GOLDEN_PASS_THRESHOLD || '0.99' }}",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/README.md",
+   "lines": "55",
+   "quote": "mandatory regression tests for observed failures",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

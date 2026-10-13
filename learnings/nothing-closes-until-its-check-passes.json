@@ -1,0 +1,296 @@
+{
+ "id": "nothing-closes-until-its-check-passes",
+ "title": "Nothing closes until its check passes",
+ "statement": "Close a finding only when the check that found it passes on the current build: a commit, claim or run that happens not to reproduce it is not closure.",
+ "example": "Most of an 11-item fix report failed the next live review, including the original exploit.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 3 reading course, one review returned 30 findings, 22 of them criteria already in the course's own standard: the standard was not missing them, the build shipped without running them (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md`). A later round re-reported nine rules adopted five days earlier, and the rule written to stop that had itself followed the same failure (`grade3-reading/ti-courseplans/skills/course-red-team/SKILL.md`, rule 10). Fixes failed the same way: most of an 11-item fix report failed the next live review, including the original exploit, and one item was closed by citing a commit (`grade3-reading/ti-courseplans/skills/course-red-team/references/finding-taxonomy.md`, section H; `grade3-reading/ti-courseplans/docs/key-quality-gates.md`). The course's rules now make every catch a machine check in the same cycle, close a finding only by re-running its finder on the current build, and re-verify every earlier fix after each wave of fixes (`grade3-reading/ti-courseplans/docs/course-formula-agents.md`). A fix counts as done on the same terms: on the current delivered build, with a quote of what proves it. Before a round closes, every earlier finding and adopted rule is re-run by number and marked open, fixed or moot.",
+ "against": "A defect that shows only in the running app can't become a content check: putting it in a content gate manufactures a check that can never be green or red, so it goes to a bug report instead (`grade3-reading/ti-courseplans/skills/course-red-team/SKILL.md`, rule 13).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1044",
+   "quote": "returned 30 findings. Twenty-two of them were already criteria in the red-team standard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1045-1046",
+   "quote": "the standard was not missing them, this build shipped without running them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "89-90",
+   "quote": "Three consecutive rounds, one unenforced rule. Prose in an addendum gets read, not run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "91-92",
+   "quote": "walk every previously-adopted rule, grep the specific string it governs, and report **open/closed BY NAME**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "144-145",
+   "quote": "every human catch becomes a machine check the same cycle — born with a red-control (reconstruct the pre-fix content, prove it fires).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "136-137",
+   "quote": "Closure = re-run the finder on the current build; \"fixed in <commit>\" is not closure (one item was falsely closed this way).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "101-102",
+   "quote": "Round 2: most of an 11-item fix report failed live review, including the original kill exploit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "172",
+   "quote": "re-verify every prior fix line-by-line (closed/half/open) and sweep for issues the fix wave introduced",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "108-109",
+   "quote": "putting it in a content gate manufactures a check that can never be green or red.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "213",
+   "quote": "\"fixed in \\<commit\\>\" is not closure",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/book-driver/FINAL-CLAIM-AUDIT.md",
+   "lines": "14",
+   "quote": "trace04's natural 8.6-second end is nonreproduction, not a repair or acoustic acceptance",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/book-driver/ANNOTATION-AUDIO-DISPOSITION.md",
+   "lines": "22",
+   "quote": "No repeated run until green is justified.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/RESULT.md",
+   "lines": "53",
+   "quote": "Reported repeated classes trigger detector inspection, but absence from a later report cannot establish a fix or a declining rate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/recurrence/CLASSIFICATION-REVIEW-v3.md",
+   "lines": "233",
+   "quote": "Round coverage is incomparable. Absence of a class is not resolved, retested or improved.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "101-102",
+   "quote": "Round 2: most of an 11-item fix report failed live review, including the original kill exploit.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "102-104",
+   "quote": "every fixed-claim carries dated evidence from an independent student-seat walkthrough on the surface",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "306",
+   "quote": "Re-verify **every** prior finding by recomputation — not the disposition table.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "308-309",
+   "quote": "Sweep for NEW issues introduced by the fix wave (fixes introduce contradictions: stale paragraphs contradicting new honesty, walks that don't sum, version mismatches).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "27",
+   "quote": "All 20 EBSR items sit in the excluded bucket.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "27",
+   "quote": "6-format MAP coverage quietly becomes 5-format on the certified core.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "183",
+   "quote": "Visual alignment deletes reasoning; simpler flow removes access; old evidence reused after change.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "33",
+   "quote": "Impact analysis names affected PRESERVE results; each guard is rerun on changed bytes and passes an equivalence-or-better test.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "10",
+   "quote": "- **Now hidden:** three old findings are moot: #7 (p4), #8 (p23) and #12 (p24). So is the answer-position cluster.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "11",
+   "quote": "- **Still open:** every other finding from 24 Sep. That includes all six highs on p21, p20c and p10.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-main-review.md",
+   "lines": "9",
+   "quote": "- Only **7 nodes** differ from the version already reviewed. All the changes are correct.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-main-review.md",
+   "lines": "10",
+   "quote": "- One medium is **fixed**: the p19b verdicts (v3 #5).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-main-review.md",
+   "lines": "12",
+   "quote": "- **Both highs and 10 mediums are still open.** They are listed below with their fixes.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "318-319",
+   "quote": "**Per-item question checks still run on hidden items**, on purpose: a hidden item can be unhidden, and its defects come with it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "13-15",
+   "quote": "\"done\" is what the **deterministic check confirms on live state**, never an agent's claim or an HTTP 200 — a PUT can return 200 yet silently revert. Re-read via GET / `process-response`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/ingest-batch/SKILL.md",
+   "lines": "25-26",
+   "quote": "**Never trust a subagent's success claim.** Subagents have returned `wrote: true` for files that never landed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/templates/COMPLIANCE.template.md",
+   "lines": "32-33",
+   "quote": "verbatim line/figure that proves the status. \"Looks fine\" is not evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "109",
+   "quote": "Classify an old report's Fixed label as historical until matched current evidence exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "111",
+   "quote": "Warning labels are a mitigation; the wrong file remains an open delivery defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/README.md",
+   "lines": "16",
+   "quote": "A merge or passing geometry check is not a visual retest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE4.md",
+   "lines": "66",
+   "quote": "The intro video's existing defects should not be treated as fixed by a proposal or by adding explanatory reviewer notes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/SUBMISSION-STATUS.md",
+   "lines": "13",
+   "quote": "Main was rechecked and still reproduces L1.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "81",
+   "quote": "That is nonreproduction, NOT a repair or closure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "874-875",
+   "quote": "re-verified every finding independently against the live files rather than trusting the log.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

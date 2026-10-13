@@ -1,0 +1,56 @@
+{
+ "id": "remove-repeats-across-the-whole-course",
+ "title": "Remove repeats across the whole course",
+ "statement": "Expect knowledge drafted from several sources to overlap, and remove repeats across the whole course, not only within a unit, before people review it.",
+ "example": "People rejected 160 of 2,087 generated links across nine units, most of them with a note that the content repeated another, such as 'already covered'.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An AP history knowledge-schema pipeline drafts facts from several sources, and in one unit's consolidation audit the model marked 857 of 1,356 drafted facts 'Yes' under 'Overlap Notes' (`downloads/Knowledge Schema Generator - AP USH Unit 2.xlsx`). Its redundancy step checks a topic's facts only against earlier topics in the same unit. In the course's human checks, kept in its knowledge-schema tracking spreadsheet, 160 of 2,087 generated links were marked 'No', most with a repeat note, and people also removed nodes already covered in another unit.",
+ "against": "Overlap varies by unit: in the Unit 7 workbook's consolidation audit, 109 of 597 rows are marked 'Yes' (`downloads/Knowledge Schema Generator - UNIT 7.xlsx`). The Unit 2 flags are the model's own consolidation notes and mostly mark relatedness ('related to' appears 255 times), not duplicates.",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "Knowledge Schema Generator - AP USH Unit 2.xlsx",
+   "lines": "sheet 'Instructions' (xl/worksheets/sheet1.xml), cell B2, step 14",
+   "quote": "14. Run step 8 in main.py which will go through the current topic's facts and check for redundancies against previously processed topics in the unit.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 3 Relationships', rows 14 and 20, column J (Notes; Keep = 'No')",
+   "quote": "already covered",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 3 Nodes', row 56, column M (Comment/Reason); column N reads 'Removed'",
+   "quote": "already covered in 2.7, they should know this",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "Knowledge Schema Generator - AP USH Unit 2.xlsx",
+   "lines": "sheet '4. Consolidation Audit' (xl/worksheets/sheet10.xml), row 2, column J ('Overlap Notes')",
+   "quote": "Yes - Related to AMSCO_2_RP_IVxj; this adds detail to the English focus on land acquisition for agriculture.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

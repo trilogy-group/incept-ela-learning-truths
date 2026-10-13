@@ -1,0 +1,418 @@
+{
+ "id": "rerun-every-check-after-any-fix",
+ "title": "Rerun every check after any fix",
+ "statement": "After any change or fix, re-run every check and quality measure on the whole set, passed items included, because a fix for one can break another.",
+ "example": "A speaker-label fix passed a 1466/1466 live battery and still turned the full suite red.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project, a speaker-label fix passed every targeted check, including a machine re-listen, walkers and a 1466/1466 live battery, and still turned the full check suite red, because a validator comparing the exact field it touched ran nowhere in the listening pipeline. Each targeted verifier reads one slice of the contract, so any edit to the course file now runs the full suite on the final tree before commit. Re-run after any change, not only a fix, with no check switched off, add a fresh balanced set, and look for new kinds of failure.",
+ "against": "the rewrite pilot was small, and the project's own rule is not to report its four surviving items as the production result. The reports do not say what each update changed, so which change caused which effect is not known. The judge flips verdicts on identical generations (\"The InceptBench evaluator has a **20% rating-flip rate** on identical generations across 4 repeated trials.\", `icloud-work/ap-social-studies-generator/python/CLAUDE.md`, line 101), so control regressions of 5.1% to 9.0% against a 3% limit may be judge noise rather than real regressions, and a limit set below the judge's noise reverts every change. The control samples were small (`--control-pct 15`, the same file, line 192). The source is a proposal and reports no result of this test (`grade3-reading/knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd`). The same change was a real gain on multiple choice (`project_richer_rag_per_cell_tradeoff.md`, line 19). The full-set run compared fresh outputs with a stored baseline, which by itself moved short answers by 3.60 points (`feedback_baseline_must_be_fresh_gen.md`, line 24), so part of the drop may be that artifact. the faults it names are in a course package's documents and counts, not in its items. The report doesn't say how many changes the run made, so it shows that a fix for one dimension can break others, not that making one change at a time avoids it. A later run found: a planned editor stage would re-check only a step a person edits by hand, not every check on the whole set (`g9/transformer/v03/README.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/WORKFLOW.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "97-98",
+   "quote": "a speaker-label fix passed every targeted check — machine re-listen, walkers, a 1466/1466 live battery — and still turned `npm run check` red on main",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "96-97",
+   "quote": "**Any grade-JSON edit runs the FULL check suite on the final tree before commit, not just the targeted verifier**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0185-quality-discipline-rules.qmd",
+   "lines": "100",
+   "quote": "each targeted verifier reads one slice of the contract",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "123",
+   "quote": "13/13 deterministic quality-A pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "124",
+   "quote": "13/13 sound-gate pass under `loosened`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "125",
+   "quote": "only 4/13 LLM quality-B pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "127-128",
+   "quote": "Lesson: anti-leak success alone is insufficient. Some items became mechanical ordering tasks or failed standard fit even after passing the blind gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0085-g5-red-team-findings-2026-07-06.qmd",
+   "lines": "25-26",
+   "quote": "RT-2 accessibility: anti-leak concentrates items into TEI formats (525/772), no attestation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "31",
+   "quote": "Anti-leak certification is necessary but not sufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "239",
+   "quote": "Do not report the small four-item sequence MODIFY pilot as the production result.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "32",
+   "quote": "**Key observation:** Run 5 fixed easy difficulty (27% → 68%) but broke hard difficulty (58% → 38%) and cognitive demand (70% → 59%).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/changelog.md",
+   "lines": "157",
+   "quote": "**Before:** 94.8% | **After:** 87.7% | **Control regression:** 54.9%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/changelog.md",
+   "lines": "462",
+   "quote": "**Status:** REVERTED ✗ — control regression 7.1%, improvement +4.6%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/changelog.md",
+   "lines": "624",
+   "quote": "**Status:** REVERTED ✗ — control regression 6.9%, improvement +3.6%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/changelog.md",
+   "lines": "1433",
+   "quote": "**Status:** REVERTED ✗ — ctrl regression 5.1%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/agents/retester.md",
+   "lines": "39",
+   "quote": "- Control group regression > 3% (signs of overfitting/regression), OR",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "100",
+   "quote": "a one-rule edit causes unrelated behavior changes, kill it as the primary control plane",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "117-119",
+   "quote": "Any grade-JSON edit runs the FULL `npm run check` before commit — targeted verifiers read one slice; the colon-fix went red on a validator the listen pipeline never runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/BUILD-SPEC.md",
+   "lines": "66",
+   "quote": "per-lesson md5 of every OTHER lesson unchanged after each step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "101-103",
+   "quote": "Run per lesson immediately after cutting, and run the FULL suite before commit, not just the targeted verifier — PR #240 shipped a listen-fix that passed every targeted check but broke `validate-voiceover-sync`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "54-57",
+   "quote": "Classify every red before touching it: extract `origin/staging` to a scratch tree (`git archive origin/staging | tar -x -C /tmp/stg-<sha>`), symlink `node_modules`, run the same test — a red that reproduces there is inherited (register it, never fix it); a red only on the combination is ours.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "72-73",
+   "quote": "the 47 steps after lint were run individually — 41 pass, 6 fail identically on a detached pure-staging worktree at the same head",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "75-76",
+   "quote": "**Claim: this branch adds no failure beyond staging's own inherited reds.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "101-103",
+   "quote": "run the FULL suite before commit, not just the targeted verifier — PR #240 shipped a listen-fix that passed every targeted check but broke `validate-voiceover-sync`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "193-195",
+   "quote": "clean `origin/main` for G5 1,241 already fails 28 RED/12 YELLOW; the dirty tree's lower 15/8 result partly comes from disabled linter invariants, so both states are quarantined.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "37",
+   "quote": "**Aggregate on this 9-item slice: 0% → 63% pass rate. +63pp.** Way above the ~3pp noise floor.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "23",
+   "quote": "| apush/saq | 77.8% | **68.3%** | **-9.5pp** | ±3.8pp | ✗ REAL REGRESSION |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "24",
+   "quote": "| **APUSH agg** | **87.56%** | **85.67%** | -1.89pp | ±3.1pp | noise (washed out) |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_resolves_stable_fails.md",
+   "lines": "69",
+   "quote": "- Don't claim full +63pp transfers to 150-item — small sample. Pending full APUSH eval result.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "32",
+   "quote": "| `0.1.189` | exact two-row blockers `2/2`, fresh balanced50 `35/50` | Targeted fixes did not generalize |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "37",
+   "quote": "| `0.1.276` | exact frontier `8/8`, balanced15 effective `12/15 = 80%` | Targeted green, broad not green |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "40",
+   "quote": "| `0.1.300` | exact MCQ_SET blockers `2/2`, balanced15 effective `8/15 = 53.33%` | Targeted green, broad regression |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2033",
+   "quote": "- The originally failed DBQ and MCQ_SET rows stayed fixed live, but the broader regression gate caught a previously passing MCQ row (`apush-u1-0344-mcq-medium`) falling to 0.65 because the old single-MCQ template had no stimulus and implausible distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2039",
+   "quote": "- Process note: targeted failed-row retests were not sufficient here. The widened family regression gate caught a live breakage in an already-green neighboring row, so future patches should include an affected-family or affected-slice regression gate before claiming a fix is safe.",
+   "verified": "script"
+  },
+  {
+   "source": "openclaw-incept-memory",
+   "path": "ap-benchmark-context.md",
+   "lines": "12",
+   "quote": "| benchmark.retest | `python -m benchmark.retest --unit N --concurrency 30` | Retest failures + control, regression check |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "60",
+   "quote": "rejected transatlantic rewrite and broad environment rewrite after live IB showed regressions;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "37",
+   "quote": "**Grade ALL criteria** (factual_accuracy + educational_accuracy) — over-constrained Stage 1 can pass eduacc but break factual/coherence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-19T1541Z_gate0_prototype_in_lab.md",
+   "lines": "63",
+   "quote": "Other cells within ±2pp of K=6 baseline (DBQ 29/30, LEQ 29/30, MCQ 28/30, SAQ 30/30) — you may need to run those too for the no-regression check",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2050Z_DELIVERED_pipeline_solver_v7_supersedes_v6.md",
+   "lines": "26",
+   "quote": "Added post-generation Unit-1 scope sanitizer for known post-1607 leakage phrases in otherwise-valid fresh v80bchain outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2050Z_DELIVERED_pipeline_solver_v7_supersedes_v6.md",
+   "lines": "27",
+   "quote": "English-colony phrases, Chesapeake/New England, Pilgrim/Puritan phrases, and awkward replacement artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0339Z_DELIVERED_unit2_dbq_solver_v1_candidate.md",
+   "lines": "30",
+   "quote": "Colonial Society/Culture docs initially failed local doc-lock after sanitizer stripping; targeted repair probe passed at `1.0 SUPERIOR`.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "308",
+   "quote": "Sweep for NEW issues introduced by the fix wave (fixes introduce contradictions:",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "32",
+   "quote": "**Key observation:** Run 5 fixed easy difficulty (27% → 68%) but broke hard difficulty (58% → 38%) and cognitive demand (70% → 59%).",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "86",
+   "quote": "**Trade-off:** Run 5 improved factual accuracy and curriculum alignment but regressed on difficulty alignment and cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v03/README.md",
+   "lines": "8",
+   "quote": "- Undo and redo; scene files saved and versioned; edit a baked step by hand and re-check only that step.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v09/README.md",
+   "lines": "7",
+   "quote": "Regression suites of saved scenes, re-run when a prompt or a model changes; a report card per lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "71",
+   "quote": "re-judge kept decisions",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "123",
+   "quote": "Do not repeat green tests or recapture unchanged evidence merely because another round began.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/REGRESSIONS.md",
+   "lines": "18",
+   "quote": "After a shared component or CSS fix, run its cross-check plus the adjacent checks above.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "279",
+   "quote": "Validator caught a length tell and a rendered-key B-B-B run on the first wordings; final wordings chosen with a key-replay script; `validate-contracts` green.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-07.md",
+   "lines": "110-111",
+   "quote": "full suite before ANY grade-JSON commit (targeted verifiers read one slice)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "76-77",
+   "quote": "Any equivalent shortening works, but whoever applies it must re-run both validators rather than reason about one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "59-63",
+   "quote": "the 2026-09-04 colon→period fix passed re-listen, walkers, and the live battery, and still turned main's check RED … Green on the tool that found the bug is not green on the tree.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "7",
+   "quote": "the fix wave introduced a handful of new inconsistencies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "264",
+   "quote": "wave, run a self-consistency sweep — a header saying \"production\" against a table saying",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,242 @@
+{
+ "id": "set-each-grades-voice-on-purpose",
+ "title": "Set each grade's voice on purpose",
+ "statement": "Set each grade's voice, tone, praise, feedback length and pace on purpose for its learners' age, and never let a missing setting fall back to another grade's default.",
+ "example": "A Grade 5 lesson almost shipped in grade 4's child voice and storytime pace, which the code's own comment called silent and plausible.",
+ "group": "what-a-student-is-told",
+ "role": "method",
+ "facets": [
+  "wording",
+  "media"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's audio conventions found no grade 9 entry in its voice table, so new clips would silently fall through to grade 4's child voice and storytime pace, the same mistake that almost shipped for Grade 5 (`grade3-reading/knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd`). A Grade 5 rebuild passed every content validator and its unit test, yet its live page broke because a helper hard-coded grade 3 (`grade3-reading/knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd`). The same transfer checklist found that the Grade 5 build's register (no \"You did it!\", no medals or confetti, ≤40-word feedback, hedging allowed) was a content standard that lived in the page files, never in the renderer, and it puts a new grade's own register standard first. Keep each grade's register in a standard of its own, apart from the shared code; a fallback to another grade's default looks plausible and is wrong.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "72-77",
+   "quote": "**No grade-9 entry exists.** Without one, G9 clips would silently fall through to `DEFAULT_VOICES`/`DEFAULT_STYLE` = grade 4's child voice and storytime pace — \"silent and plausible,\" per this same file's own comment about the identical mistake almost shipping for Grade 5 (\"a ten-year-old reading about salinity gradients would have been read to as if this were a bedtime story\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd",
+   "lines": "25-28",
+   "quote": "a G5 rebuild passed every content validator and its unit test, yet the live page silently broke, because `bookCompoundResume.ts`'s `frameBlankInput()` hard-coded `grade: 3`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd",
+   "lines": "122-127",
+   "quote": "**Register/content differences are separate from mechanism differences.** The build spec's \"Register (Grade 5)\" section (no \"You did it!\", no medals/confetti, ≤40-word feedback, epistemic hedging allowed, more writing than G3, retell demands taught terms) is entirely a CONTENT authoring standard, not a code change — it lived in the page files' prose, never in the renderer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd",
+   "lines": "134-136",
+   "quote": "**Register/pedagogy standard first**, separate from mechanism: define a G9-appropriate voice/tone doc (the G5 build's §3 register rules are the template for this document's shape, not its content — G9 needs its own,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "72-74",
+   "quote": "Without one, G9 clips would silently fall through to `DEFAULT_VOICES`/`DEFAULT_STYLE` = grade 4's child voice and storytime pace",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "76-77",
+   "quote": "reading about salinity gradients would have been read to as if this were a bedtime story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "78-79",
+   "quote": "is a precondition for cutting any G9 audio, not an afterthought",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "70",
+   "quote": "is the documented failure mode to avoid",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0195-g5-book-lane-secret-garden-closed.qmd",
+   "lines": "69",
+   "quote": "medals/confetti) — specific process praise instead; feedback ≤40 words (never >60), one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd",
+   "lines": "122",
+   "quote": "**Register/content differences are separate from mechanism differences.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "959-961",
+   "quote": "almost shipping a 10-year-old's storytime voice for salinity-gradient content — is the exact failure mode to avoid repeating at a larger age gap",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "6-7",
+   "quote": "The tone is adult and precise: no games language, no exclamation marks, no \"Great job\", nothing that reads as written for young children.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "78",
+   "quote": "Is this question suitable for a Grade 9 student: clear, not childish, and answerable after one careful reading?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "20",
+   "quote": "The mechanics and the animation are for Grade 9 and older readers",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7122",
+   "quote": "good, make sure to find the appropiate gemini voice for the ominous nature of what I want to convey",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7143",
+   "quote": "I won’t default to the Grade 3 narrator or turn it into a horror-trailer voice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/submission-evidence-index.md",
+   "lines": "39",
+   "quote": "This replaces inherited Grade 3 fox/nine-year-old directions for those productions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "95",
+   "quote": "G3 110–120 WPM and the 5/13/7 minute component sheet are not ratified G5 parameters.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/ASSETS.md",
+   "lines": "46",
+   "quote": "For Grade 5, carry over coherent scenes, brush texture and light, while reducing oversized facial proportions and perpetual cheerful expressions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1068",
+   "quote": "The read-aloud runs at a set pace for the grade, not at a per-student speed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "405",
+   "quote": "It's 33 pages with every clip cut in the Grade-5 voices.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "895",
+   "quote": "G3: short sentences, warm Scout voice, no decimals/percentages, no jargon.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "334",
+   "quote": "## 7. Readventure / Grade 3 branding that must not carry into the Grade 9 film",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "278",
+   "quote": "Teens reject cartoonish or over-praising guides.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/LENGTH-RATIONALE.md",
+   "lines": "27",
+   "quote": "the generator's `words` field was inherited from G3-era targets (~320). U2 landed below its own band floor.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "2",
+   "quote": "A Grade-6 science course gets its own file; it does not get these numbers by inheritance.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "94",
+   "quote": "Use a peer-adult register at normal speech rate, with no sing-song or exclamatory praise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "72-73",
+   "quote": "the grade-5 style exists precisely because falling through to G4's storytime style was a silent, plausible bug",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "493",
+   "quote": "never G3-babyish praise at a G5 reader",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "88-89",
+   "quote": "a deliberately slow pace (~2.2 words/sec for G3; **we use ~3.0 words/sec for G5**)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

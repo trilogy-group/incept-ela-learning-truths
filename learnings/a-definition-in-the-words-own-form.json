@@ -1,0 +1,191 @@
+{
+ "id": "a-definition-in-the-words-own-form",
+ "title": "A definition in the word's own form",
+ "statement": "A definition gives the word's general meaning in the word's own grammatical form, without using the word itself or carrying over details from the text where it appears.",
+ "example": "Two reviews found an adverb glossed as a verb phrase, a word-form error.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An external audit found one word defined on every visible passage of a lesson as 'very fast and full of anger', with 'fast', it said, borrowed from the story rather than part of the word's meaning (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). Two reviews found an adverb glossed as a verb phrase, a word-form error (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md`), and a review profile checks that a definition doesn't use the word it defines (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-A-D1-D4.md`, D4.17).",
+ "against": "The definition the audit faulted is the one the governing design prescribes, and it was put back to the design's wording until a ruling (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/REGISTER-2026-09-15.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "83",
+   "quote": "'Furious' is defined wrongly on every visible passage ('very fast and full of anger')",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md",
+   "lines": "34",
+   "quote": "is a word-form error",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-A-D1-D4.md",
+   "lines": "79",
+   "quote": "| D4.17 | Distinct target words | PASS | Only 1 word; definition uses \"dangerous\" (different word); morph gloss uses \"menace/harm\" (different words). No circular definition. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "153",
+   "quote": "is PRESCRIBED by the PP3 design DOCX",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "79",
+   "quote": "No note uses its own word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "34",
+   "quote": "x.startsWith(norm(w).slice(0, -2))",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "56",
+   "quote": "note: its plain meaning here, at most 10 words, without",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "57",
+   "quote": "using the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "87-88",
+   "quote": "\"note\": \"what it means in this line, at most 15 words, without using the term\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "109",
+   "quote": "const usesTerm = (e) => norm(e.note).split(\" \").includes(norm(e.term).split(\" \")[0]);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "78",
+   "quote": "check(\"meanings-no-word\", \"No meaning uses its word\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "68",
+   "quote": "check(\"meaning-no-word\", \"The meaning does not use the word\", !norm(item.meaning).split(\" \").includes(norm(item.centre)), \"the meaning uses the centre word\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "codeChecks: each term is in the sentence; the sentence is at most 16 words; no note uses its own term.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "78",
+   "quote": "No meaning uses its word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "68",
+   "quote": "The meaning does not use the word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "71",
+   "quote": "No key word's meaning uses the word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "115",
+   "quote": "No note uses its term",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "345-348",
+   "quote": "**R-VOC-14b — a morpheme gloss is the morpheme's OWN meaning, not the target word's**: nurse glosses \"to care for others\" (not \"someone who cares for young children\" — that imports the target word's context into the part); -ry glosses \"a place\" (not \"a place for it\"). The gloss must survive transplanting the morpheme into a different word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "349",
+   "quote": "fixed in `5a48791`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/INTEGRATION-DISPOSITIONS.md",
+   "lines": "18",
+   "quote": "Two independent reviewers confirmed that “triumphantly → won with great effort” is a definite word-form error.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/family/meaning-correction/PROPOSAL.md",
+   "lines": "7",
+   "quote": "That is a past-tense verb phrase, whereas the adverb describes a victorious manner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "17",
+   "quote": "Define the inflected sense naturally (for example, concealed = kept hidden), or deliberately retain a base-word reference in the definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "29",
+   "quote": "The definition \"when you are triumphant, you win a great victory after a hard struggle\" is not an authoring error — it is the exact KB-sourced stamp specified in the design document.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

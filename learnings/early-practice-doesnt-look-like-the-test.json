@@ -1,0 +1,109 @@
+{
+ "id": "early-practice-doesnt-look-like-the-test",
+ "title": "Early practice doesn't look like the test",
+ "statement": "Spend most of a course teaching and building knowledge rather than drilling the final test, keeping test-format practice to set points late in the sequence.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "format",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluation gauntlet in one course-plan program runs a marathon-rule probe on reading courses: early practice should mostly not look like the test but be vocabulary in context, monitoring prompts and knowledge work, with test-format practice concentrated late and timed conditions last (`ti-courseplans-audit/skills/train-teacher/references/gauntlet-spec.md`). The reading-comprehension BrainLift in the same work holds that assessment format is not instruction format (`ti-courseplans-audit/docs/teaching-reading-comprehension-brainlift.md`). The Grade 3 reading criteria require knowledge-building activity that looks nothing like the paragraph-plus-questions test (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md`), and the practice-layer spec has format fluency taught as the operations each format demands of the text, never drilled (`ti-courseplans-audit/docs/practice-layer-spec.md`). Timed conditions come last, and test-format practice is framed as practice, never as instruction.",
+ "against": "A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz`).",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "32-34",
+   "quote": "**Marathon-rule probe** (reading): does early practice look like the test? (It mostly shouldn't — vocabulary-in-context, monitoring prompts, knowledge work; test-format practice concentrated late, timed conditions last.)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "119-120",
+   "quote": "Assessment format is not instruction format (the marathon rule), and acquisition mastery is not durable mastery — they need different instruments",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md",
+   "lines": "18",
+   "quote": "Knowledge-building activity looks nothing like the paragraph-plus-questions test (marathon-training analogy)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "12-13",
+   "quote": "format fluency **taught** through the instruction modes as named cognitive operations (what work each format demands of the text), never drilled.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "366-367",
+   "quote": "verdict = \"a well-built MAP-practice engine, **not** a comprehension curriculum.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "227-229",
+   "quote": "G3 course strategy is **teaching-based, not drill-based** — practice tests only at specific intervals;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "290-291",
+   "quote": "MAP/practice apps must stay framed as practice/assessment, not instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "50",
+   "quote": "Assessment format is not instruction format (the marathon rule), and acquisition mastery is not durable mastery — they need different instruments",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/COURSE-PLAN.md",
+   "lines": "67",
+   "quote": "Units 6-8: visual and quantitative evidence, full LEQ/DBQ practice, and timed mixed work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/prompts/u08.md",
+   "lines": "116",
+   "quote": "U8·L19 — Period 8 Synthesis: Continuity, Change, and a Complete Timed LEQ",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "37",
+   "quote": "three required sourced SAQs, nine scored parts total: secondary text, primary text, and primary non-text;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

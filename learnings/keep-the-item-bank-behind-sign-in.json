@@ -1,0 +1,54 @@
+{
+ "id": "keep-the-item-bank-behind-sign-in",
+ "title": "Keep the item bank behind sign-in",
+ "statement": "Keep a scored test's item bank behind sign-in, because an open route lets anyone harvest its items.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment's live deployment gates its direct no-login route behind a flag that is off by default, so that the item bank cannot be farmed anonymously, while students sit the test through a sign-in route (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`). Its approval case lists the gate among what is live and verifiable today (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "353",
+   "quote": "The full adaptive test is live. The direct no-login route is gated behind the `PUBLIC_TEST_ENABLED` flag (default off) so the item bank cannot be farmed anonymously:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "365",
+   "quote": "Redirects to Cognito SSO → authenticated adaptive session",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "202",
+   "quote": "Live and verifiable today:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "210",
+   "quote": "• Public /test route gated behind a flag so the item bank cannot be farmed anonymously.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

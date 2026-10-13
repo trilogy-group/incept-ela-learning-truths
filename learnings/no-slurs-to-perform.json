@@ -1,0 +1,213 @@
+{
+ "id": "no-slurs-to-perform",
+ "title": "No slurs to perform",
+ "statement": "Never ask a student to say or perform a line with a slur in it: a line a student performs ships only when a judge confirms it is clean.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A line a student is asked to work with or perform goes to the judge with one question, whether it is free of any\nracist or sexual slur or epithet, and the block ships only on a confident yes; a gloss may name an epithet as an\ninsult, but a student is never asked to perform one (`g9/transformer/src/mechanics/util.js`, `cleanLine`;\n`g9/transformer/test/laws.test.mjs`). A 3D version's list of lines it never stages is used as well, when its code is on\nthe machine.",
+ "against": "the guard is asked in three blocks (direct the line, word in focus, worked model); the\nsay-it-back block, whose sentence a student says aloud, doesn't ask it yet. A later run found counter-evidence (`g9-transformer-audit/2026-10-09-builders.json`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-builders.json`). A later run found counter-evidence (`g9/sources/Cutting-a-Scene-Othello-1.1.pdf`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "106-107",
+   "quote": "A gloss may name an epithet as an insult, as the animated … build's gloss does; a student is never asked to perform one.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "105",
+   "quote": "for any text, one Jev question with the line in the state, so a block",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "153",
+   "quote": "a line never staged holds a direct-the-line block, in code and on the judge's word; a word in focus may gloss the slur as an insult",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "79",
+   "quote": "Without the mirror there is none, and the Jev question carries the guard.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "211",
+   "quote": "line never staged is left out), the moment, the meaning and the words",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "183",
+   "quote": "the 3D build never stages this line",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "173",
+   "quote": "word in focus: another word in that line is held; the slur itself, glossed as the insult it is, is left to the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "153",
+   "quote": "a word in focus may gloss the slur as an insult",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "168",
+   "quote": "the 3D build's mirror is not on this machine: the judge's question carries the guard",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "3-4",
+   "quote": "The line shown must be clean: a slur in … it is allowed only as the word in focus itself, glossed as the insult it is (as the animated build glosses it).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "58",
+   "quote": "check(\"not-never-staged\", \"No candidate's line is one the 3D build never stages, unless the word is that slur\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "73",
+   "quote": "// the highest gain among the candidates the judge is sure are clean; with none, the highest, which the judge holds",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "173",
+   "quote": "// word in focus: another word in that line is held; the slur itself, glossed as the insult it is, is left to the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "168",
+   "quote": "if (!banned) return; // the 3D build's mirror is not on this machine: the judge's question carries the guard",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "78",
+   "quote": "Its lines never staged or voiced (scripts/check-moments.mjs SLUR, Othello's): read from the mirror at run time, so no",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "106",
+   "quote": "ships only on positive evidence that the line is clean.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "238",
+   "quote": "\"p\": 0.93,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/e47511c58b5dd64c.json",
+   "lines": "129",
+   "quote": "\"p\": 0.99,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "3",
+   "quote": "A student performs the line, so it is never one with a slur in it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "162",
+   "quote": "the judge's guard: the line is in the state, and the block ships only when the judge is sure it is clean",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "131-132",
+   "quote": "a slur guard on lines a student is asked to perform (the 3D build's own list, read at run time; a Jev question);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A word-in-focus gloss may name an epithet as an insult, as the animated build's gloss does, but a student is never asked to perform it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "'the Moor' lines may come back unsure and hold direct-the-line or word-in-focus blocks more often.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "lines such as 'an old black ram' are left to the Jev question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Cutting-a-Scene-Othello-1.1.pdf",
+   "lines": "113-115",
+   "quote": "Point out that the original version of this scene is full of racial language and even slurs. As a class we expect that groups keeping these words will not make light of them but rather treat them with the seriousness they deserve.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

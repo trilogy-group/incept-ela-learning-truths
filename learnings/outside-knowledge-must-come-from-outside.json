@@ -1,0 +1,41 @@
+{
+ "id": "outside-knowledge-must-come-from-outside",
+ "title": "Outside knowledge must come from outside",
+ "statement": "In a task built on given sources, the marking guide's examples of outside knowledge must not repeat what the sources already say.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP generator sometimes listed a provided document's content as outside evidence in a document-based question's marking guide, and the judge failed such items on factual accuracy because it checks for that contradiction (`icloud-work/aptraining/.agent/research/inference_clean.md`). An old pipeline patched it after generation by deleting overlapping items and padding with a generic placeholder; an audit replaced the patch with a rule to train the writer never to list document content as outside evidence (the same file).",
+ "against": "No count of how often it happened.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "69",
+   "quote": "LLM sometimes lists Doc 5's content as outside evidence — causes factual_accuracy hard-fails because the evaluator checks for this contradiction",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "403",
+   "quote": "Fix in training data — train the model to never list document content as outside evidence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

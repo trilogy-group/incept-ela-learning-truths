@@ -1,0 +1,227 @@
+{
+ "id": "no-spoilers-of-what-comes-later",
+ "title": "No spoilers of what comes later",
+ "statement": "Nothing in a lesson may preview or point to what the student hasn't reached yet, though a teaser that gives away no events is allowed.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "integrity",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course's checklist has a blocking row against any text, feedback or check that previews content the student has not reached, hunted across every node type (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, line 47). A content review of a reference lesson rejected an opening picture that gave away what would happen (`grade3-reading/artifacts/feedback-aladdin-2026-08-25/feedback-text.txt`, line 6), and an external audit flagged a modelled inference that stated an event before the story reached it (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`, line 85). A draft film plan keeps later events and the ending out of the opening film (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md`, line 79). The rule covers a lesson's text, feedback, checks, pictures and opening film.",
+ "against": "none found; the same review allows a teaser, \"no spoilers of events but teasers\" (`grade3-reading/artifacts/feedback-aladdin-2026-08-25/feedback-text.txt`, line 4). The same build broke it on its first page: its first walkthrough answers a wrong tap on the first-read check with where that answer lives, \"the river comes later, at the end of his wander…\", and its table walkthrough of the same day still describes that reply as telling \"where that answer actually lives\". A later run found: A Grade 9 unit's opening film previews the ending on purpose, stating the killing as fact before any reading (`g9/sources/Othello Unit Video_ Info Sheet for Devfactory.md`). A later run found: A Grade 9 unit's reading texts feed forward before each section, and some feeds tell the learner what the section contains before it is read, which this rule forbids; the two courses' designs disagree (`g9/sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx`). A later run found: a Grade 9 unit film, played before the first reading, tells students on purpose where the story starts and where it ends, so every lesson reads as a step toward the ending (`othello-archive/sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt`). A later run found: a Grade 9 unit-film brief deliberately tells the ending before the first reading, planting the destination and the start so that every lesson is read as a step on that journey (`g9/library/text/Lbde498.txt`). A later run found counter-evidence (`g9/script/v03/Othello-Unit-Video-Script-v3.txt`). A later run found counter-evidence (`g9/sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx`). A later run found counter-evidence (`othello-archive/sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt`). A later run found counter-evidence (`g9/library/text/Lbde498.txt`). A later run found counter-evidence (`g9/film/TREATMENT.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "47",
+   "quote": "No text, feedback, or check previews content the child has not reached",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-aladdin-2026-08-25/feedback-text.txt",
+   "lines": "6",
+   "quote": "The image is a bad one for the start of the story as it’s a spoiler for what will happen",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "85",
+   "quote": "the inference states 'Peter is wounded' before that happens in the story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md",
+   "lines": "79",
+   "quote": "No children flying out, parental decision or ending.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "32",
+   "quote": "Glossed words and sync-checked answers are never re-asked; no unread content in feedback | Spoilers turn reading into confirmation; re-asking stamps burns trust",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "123",
+   "quote": "A wrong tap (“the deep, fast river”) is answered with *where that answer actually lives* (“the river comes later, at the end of his wander…”) and a pointer back to the text, never the key.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "213",
+   "quote": "A wrong tap is told where that answer actually lives and pointed back to the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "114",
+   "quote": "the build's own marker for the half it shows before a section). Plain lines of ours: who speaks, never the content.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "119",
+   "quote": "return say(who ? `In this ${where}, ${who}.` : `In this ${where}, read slowly, with the question in mind.`);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "43",
+   "quote": "the half before a section is the build's \"In this next section\"; the half after it is ours, never the content",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "132-133",
+   "quote": "it named characters and told the child what happens.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "133",
+   "quote": "A warm-up meant to find out what a child brings was handing them the plot instead.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "151",
+   "quote": "5 of its 10 checks went red",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "22",
+   "quote": "The spoiler is deliberate. It moves the question from *what happens* to *how it happens*, which is the question the whole unit answers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v03/Othello-Unit-Video-Script-v3.txt",
+   "lines": "5",
+   "quote": "Not long after, he kills her, in their own bed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "38",
+   "quote": "In this next section, you'll read that Othello turned those men down and chose someone else.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "5",
+   "quote": "The video tells students exactly where the story starts and exactly where it ends, then gives them the knowledge they need to make the journey between the two.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lbde498.txt",
+   "lines": "22",
+   "quote": "The spoiler is deliberate. It moves the question from *what happens* to *how it happens*, which is the question the whole unit answers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lbde498.txt",
+   "lines": "14",
+   "quote": "The video plants the destination (the murder) and the start (the love), so that every lesson is read as a step on that journey.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "229",
+   "quote": "Narration says the learner has found proof that Hook is cruel while the work is still hidden and unanswered.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "136-137",
+   "quote": "Local item validity was mistaken for lesson-sequence validity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "17",
+   "quote": "The model treats ordinary instructional signposting and known characters as forbidden suspense disclosure without a source policy supporting that rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "79-80",
+   "quote": "Scout's lines on a routine page name characters, never plot (the lead-in \"how a stranger tricks Aladdin\" was struck as a spoiler).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "10",
+   "quote": "The video plants the destination (the murder) and the start (the love), so that every lesson is read as a step on that journey.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lbde498.txt",
+   "lines": "7",
+   "quote": "The video tells students exactly where the story starts and exactly where it ends, then gives them the knowledge they need to make the journey between the two.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/TREATMENT.md",
+   "lines": "15",
+   "quote": "Establish the tragic span while leaving the cause to investigate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "82-83",
+   "quote": "this event occurs within L6's own reading, not a spoiler of L7.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "261",
+   "quote": "until beat k+1 — no forward leak, ever.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

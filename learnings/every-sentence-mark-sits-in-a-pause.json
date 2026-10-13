@@ -1,0 +1,47 @@
+{
+ "id": "every-sentence-mark-sits-in-a-pause",
+ "title": "Every sentence mark sits in a pause",
+ "statement": "Check that every sentence mark in a read-along narration clip sits in a pause, because a mark inside speech cuts off the previous line's last word.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course renderer's closing-questions handover gives every narration clip one mark per sentence and says to verify each new clip in two ways: read it back with speech-to-text word for word, and check that every mark sits in a pause, since a mark inside speech cuts the previous line's last word (`grade3-reading/course-renderer/docs/handover/closing-questions/HANDOVER.md`, lines 252-264). The same handover prefers splicing a changed sentence into the original take, cut at pauses measured by silence detection, to re-recording the line.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "262-264",
+   "quote": "**Verify every clip**: read it back with Gemini speech-to-text word for word, and check every mark sits in a pause (a mark inside speech cuts the previous line's last word).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "255",
+   "quote": "there is one mark per sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "259-261",
+   "quote": "when a line changes by a sentence, keep the original take and synthesise only the new sentence, cutting at measured pauses",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

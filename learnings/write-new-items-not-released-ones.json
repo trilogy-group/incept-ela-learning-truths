@@ -1,0 +1,49 @@
+{
+ "id": "write-new-items-not-released-ones",
+ "title": "Write new items, not released ones",
+ "statement": "Write new questions rather than copying or paraphrasing released exam items.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's stem template for document-based questions ruled out verbatim exam-board prompts and paraphrases of released exams, asking for new stems anchored to verified primary documents. Its inclusion criteria require every pipeline component to be licence- and source-clean: no scraped copyrighted material, no model output used as training data, and no personal data. A re-audit of the source corpus found every encyclopedia row carrying its CC BY-SA 4.0 licence.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/t5_dbq_stem_template.md",
+   "lines": "4-5",
+   "quote": "NO verbatim College Board prompts; NO paraphrase of released exams; net-new stems anchored to verified primary documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/INCLUSION_CRITERIA.md",
+   "lines": "64",
+   "quote": "7. **License / source-clean**: no scraped copyrighted material, no Anthropic / OpenAI-output-as-training, no PII",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/2026-05-22T2308Z_v93_phase3_reaudit_VERDICT_ADJUST.md",
+   "lines": "54",
+   "quote": "- Wikipedia: every row has `\"license\":\"CC BY-SA 4.0\"`.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

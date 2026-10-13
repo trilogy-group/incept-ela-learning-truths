@@ -1,0 +1,135 @@
+{
+ "id": "mark-a-word-web-generously",
+ "title": "Mark a word web generously",
+ "statement": "In a word web, accept any word a reader could reasonably link to the centre word, leave spelling unmarked, and don't count random words or names.",
+ "example": "The word web's nine seed cases accept the misspelt link 'decieve' and reject a name taken from the text.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "marking",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The word web's play-time check sends any word that is not the centre, a key word, one of their forms or a likely word to the judge, and its note calls the check generous by design: a word a reader could reasonably link counts, spelling is not checked, and a name does not count. Its nine seed cases, obvious ones only, expect a misspelt link to hold and a name taken from the text, a vague word, nonsense and a line aimed at the grader to fail. Another build's web counts a word even when the judge is unsure, by its own rule that the web is generous.",
+ "against": "This runtime is not generous when the judge is unsure: \"the word web: a word the judge did not check stays pending, never 'Not about'; only a confident no is\" (g9/transformer/test/positive-evidence.test.mjs line 108). The seed sets \"prove the wiring, measure nothing\" (g9/transformer/v02/QA.md line 136). The players differ on a word the judge is unsure of: a 3D version treats it as its offline case, never a miss (`g9/transformer/src/glue/threejs-archivist.js`, line 190), while an animated version's generous web lets it in (`g9/transformer/src/glue/animated-judge.js`, line 99).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/word-web.linked.json",
+   "lines": "5",
+   "quote": "The check is generous by design: a word a reader could reasonably link counts, spelling is not what it checks, and a name does not count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/word-web.linked.json",
+   "lines": "13",
+   "quote": "Deceive, misspelt: the link is plain, and the web does not mark spelling.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/word-web.linked.json",
+   "lines": "17",
+   "quote": "A name taken from the text: the check says a name does not count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "107",
+   "quote": "the web's own rule is to be generous",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "108",
+   "quote": "the word web: a word the judge did not check stays pending, never 'Not about'; only a confident no is",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "136",
+   "quote": "seed only: they prove the wiring, measure nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "187",
+   "quote": "Could a Grade 9 reader reasonably link word to centre: a kind of it, a sign of it, a word for someone who shows it, or what it does to people? A random word, a name, or a word with no link does not count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "176",
+   "quote": "count at once, a one-letter slip of them too (spelled right back); any other word goes to Jev, generously.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "a sign of it, a word for someone who shows it, or what it does to people",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "86-87",
+   "quote": "\"two-faced\", \"liar\", \"dissembling\" and \"hypocrite\" went in (Jev through `api/judge`, or a family form), \"football\" was struck through \"Not about duplicity\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "190",
+   "quote": "a confident no gets the page's own line; an unsure one is the build's offline case, never a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "99",
+   "quote": "an unsure criterion is never a pass and never a miss. The word web's own rule is to be generous, so there an unsure",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "19",
+   "quote": "evaluative word (bad, mean, evil, nice) is rejected with ONE narrowing question, never a forced link.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "26",
+   "quote": "REJECT a vague or general word that could describe almost anything bad or good (for deceit: bad, mean, evil, rude, angry, sad; for noble: good, nice, cool), a word with no real link, a non-word, and nonsense. Do not invent a link to make a weak word fit.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/verify-fix2.mjs",
+   "lines": "67",
+   "quote": "l1-web rejects \"bad\" (narrows, not forced in)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

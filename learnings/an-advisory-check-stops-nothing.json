@@ -1,0 +1,63 @@
+{
+ "id": "an-advisory-check-stops-nothing",
+ "title": "An advisory check stops nothing",
+ "statement": "A check that only advises stops nothing: whatever it flags still ships unless some other check holds the item.",
+ "example": "In one live run the judge found four of eight drafted wrong options not tempting and was unsure of three, yet all four blocks carrying them were ready on their first draft.",
+ "group": "making-and-reviewing",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The lesson engine's quick check and word-in-focus blocks ask the judge, as an advisory check, whether each wrong option would tempt a reader who skimmed or did not look closely, and only a required check holds a block (`g9/transformer/src/transform.js`, line 76). In the v01 live proof, with one judge sample per question on a play scene and a poem, the eight such verdicts were one holds (p 0.6), four fails (p 0.37, 0.37, 0.35 and 0.2) and three unclear (p 0.53, 0.46 and 0.44), and all four blocks were ready on their first attempt (`g9/transformer/v01/proof-2026-10-09.json`, lines 53-62, 175-184, 313-322 and 447-456). The check had been added after an earlier live run produced a distractor no reader would choose, which no check caught (`g9/transformer/v01/QA.md`, lines 40-43). Keeping an uncalibrated judged check advisory is what Person-labelled cases first asks, so the two pull against each other.",
+ "against": "Whether the not-tempting verdicts are right is unknown: the proof took one judge sample per question, and the judge checks' \"precision is not yet measured (v04)\" (`g9/transformer/v01/QA.md`, line 46).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "would tempt a reader who skimmed`, required: false",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "76",
+   "quote": "const failing = results.filter((r) => r.required && r.verdict !== \"holds\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "319-322",
+   "quote": "\"id\": \"tempting-C\", \"required\": false, \"verdict\": \"holds\", \"p\": 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "453-456",
+   "quote": "\"id\": \"tempting-C\", \"required\": false, \"verdict\": \"fails\", \"p\": 0.2",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "26",
+   "quote": "| ozymandias | `word-in-focus` | ready | 1 | 5/5 | 4/4 | 0/2 | 4.1 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

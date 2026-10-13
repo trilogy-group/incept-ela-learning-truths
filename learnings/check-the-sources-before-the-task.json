@@ -1,0 +1,142 @@
+{
+ "id": "check-the-sources-before-the-task",
+ "title": "Check the sources before the task",
+ "statement": "Check the sources a task rests on before building or grading it, for the right period, real text and distinct documents counted by content.",
+ "example": "Of 244 parsed document packs, 12 fit the unit and none passed strict validation.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A permissive scout filled each document task with seven documents by pulling in material from after the period asked about; once the validator was tightened, the strict scout passed 0/10 (a note of 23 May 2026). An audit of 244 parsed document packs found 12 that fit the unit and 0 that passed strict validation, and set the rule that seven returned documents are not enough; the task type passed only after its source packs and topics were repaired. Later gates asked for two valid packs per topic, but this sweep compared titles and content hashes in the nine repaired pack files and found that in all 43 topics with two packs, both held the same seven texts under relabelled IDs, so one unit's 70 document slots held 32 distinct titles. Real text means text-bearing sources, not a summary or a missing image, and distinct documents are counted by content rather than by label. A count of documents returned is not a check.",
+ "against": "Passing the strict structural gate did not establish provenance: \"It does not independently fetch every URL or certify that normalized excerpts are acceptable for training.\" (aptraining-local/den-of-ideation/to_main/2026-05-23T1831Z_DEN_REQUEST_validate_unit1_dbq_source_packs_v1.md, line 52). The uniqueness check inside each pack did not catch the same texts repeated across packs.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T0913Z_BLOCKED_dbq_doclock_scout.md",
+   "lines": "45",
+   "quote": "The earlier permissive scout showed chunk fallback could produce 7 documents, but inspection exposed false positives:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T0913Z_BLOCKED_dbq_doclock_scout.md",
+   "lines": "37",
+   "quote": "scout_passed: 0/10",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1825Z_BLOCKED_dbq_source_pack_repair_list.md",
+   "lines": "31",
+   "quote": "Parsed DBQ packs inspected: 244",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1825Z_BLOCKED_dbq_source_pack_repair_list.md",
+   "lines": "32",
+   "quote": "Unit-1-like DBQ packs found: 12",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1825Z_BLOCKED_dbq_source_pack_repair_list.md",
+   "lines": "33",
+   "quote": "Unit-1-like packs passing strict doc-lock validation: 0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1825Z_BLOCKED_dbq_source_pack_repair_list.md",
+   "lines": "61",
+   "quote": "The old failure mode was treating \"7 returned docs\" as enough; it is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T2000Z_DELIVERED_objective_completion_audit.md",
+   "lines": "30",
+   "quote": "Unit-1 DBQ passed only after source-pack and topic repair. Extending DBQ blindly to Units 2-9 would repeat the same source-integrity failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/d13_unit2_dbq_source_packs_v1.jsonl",
+   "lines": "1",
+   "quote": "\"doc_id\": \"unit2_regions_a_doc1_virginia_charter_1606\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/d13_unit2_dbq_source_packs_v1.jsonl",
+   "lines": "2",
+   "quote": "\"doc_id\": \"unit2_regions_b_doc1_virginia_charter_1606\"",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit2_dbq_source_pack_gate_20260524T030000Z.md",
+   "lines": "18",
+   "quote": "| colonial_regions | 2 | 2 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "82",
+   "quote": "Is film_narration about the same work as passage, so that it can open a lesson on it?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/d2d7d0787d6754d9.json",
+   "lines": "187",
+   "quote": "\"value\": 0.01,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d2d7d0787d6754d9.json",
+   "lines": "97",
+   "quote": "The film belongs with this text: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "55",
+   "quote": "/** The film whose narration shares most words with the text and the question; null if there is none. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "62",
+   "quote": "if (!best || shared > best.shared) best = { film: f, shared };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "11",
+   "quote": "{ id: \"othello-opening\", title: \"Othello: the opening (unit film)\", file: \"Othello-opening-full.mp4\", vtt: \"Othello-opening-full.vtt\", poster: \"thumbnail-othello-love.jpg\" },",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

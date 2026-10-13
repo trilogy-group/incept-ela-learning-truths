@@ -1,0 +1,70 @@
+{
+ "id": "size-a-course-in-minutes-not-points",
+ "title": "Size a course in minutes, not points",
+ "statement": "Size a course's length in measured minutes for each kind of activity, never by holding points constant, since equal points can take very different times.",
+ "example": "On one platform, nearly identical points, about 25,200, took 3.0 times the minutes in a comprehension course as in a fluency course.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "practice"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A second-grade redesign claimed to be duration-neutral because its total points stayed fixed. A feasibility red team queried the platform's activity data: a fluency course and a comprehension course with essentially identical points, 25,250 and 25,213, took 23,051 and 69,860 minutes, 0.913 against 2.771 minutes per point, 3.0 times the time (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md`, lines 67-74). The narrowed rebuild that followed recorded comprehension work at 2.87 minutes per point against 0.92 for fluency and kept the duration-neutral claim only for a one-for-one swap of items (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md`, lines 18 and 38-39).",
+ "against": "Minutes per point also reflect how the platform's points are configured, not only how long the work takes (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md`, line 100).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "73-74",
+   "quote": "The first two rows are a near-natural experiment: **essentially identical XP (25,250 vs 25,213), 3.0x the minutes.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "69",
+   "quote": "| Alpha Reading Fluency G2 (replace target) | 25,250 | 23,051 | **0.913** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "70",
+   "quote": "| Alpha Read Grade 3 (comprehension model) | 25,213 | 69,860 | **2.771** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "18",
+   "quote": "Alpha Read comprehension = **2.87 min/XP** vs fluency 0.92 — ~3× slower → real bloat.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "39",
+   "quote": "This is the one scope where \"duration-neutral\" is actually true.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "100",
+   "quote": "Caveat in the plan's favor: min/XP also reflects XP-economy *configuration*, not only intrinsic task speed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

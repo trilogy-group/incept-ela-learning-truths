@@ -1,0 +1,364 @@
+{
+ "id": "keep-every-judgment-whole",
+ "title": "Keep every judgment whole",
+ "statement": "Keep every judgment whole, so it can be replayed or re-asked of another judge; where two judges agree against an answer key, check the key.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Every try's decide records are kept as decide made them, so a block can be re-judged through a second judge\n(`g9/transformer/src/blocks.js`); a replayed session must match tick for tick and never ask the judge\n(`g9/transformer/src/quality/playtest.js`), and the first replay gave 8 ticks, 0 differences\n(`g9/transformer/v02/QA.md`, \"Live session\"). Replayed through a second judge, the reading engine's recorded session\nagreed on 0.946 of 37 judgments (`grade3-reading/engine/EVIDENCE-2026-09-22.md`); where the judge disagreed with the\nauthored key, stably across three runs, the key was at fault: it included two fragments that describe nothing and\nmissed two that do (the same file).",
+ "against": "records missing a part are counted, not replayed, and agreement with a\nsecond judge is the cheapest signal, not accuracy (`g9/transformer/src/quality/calibrate.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "85",
+   "quote": "A distractor selected more by high-performing students than low-performing students suggests the keyed answer is wrong or ambiguous.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "715eadc",
+   "lines": "4",
+   "quote": "- golden-001 (math g3 mcq easy): INFERIOR → SUPERIOR (BAML correctly rates it; no failing metrics)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "3a88a35",
+   "lines": "3-7",
+   "quote": "golden-001 (grade 3 MCQ on parallel sides) has a labeled answer of B=1 with the explanation \"A triangle has one pair of parallel sides: the bottom side is parallel to itself.\" A triangle has zero pairs of parallel sides, and no standard geometry treats a side as parallel to itself — the correct answer is A=0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_962.py",
+   "lines": "216-218",
+   "quote": "item's evaluator score sits on the pass/fail boundary and may vary between INFERIOR and ACCEPTABLE/SUPERIOR across runs. It is pinned to ACCEPTABLE to reflect its typical post-fix behaviour while acknowledging inherent instability.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/dpo_and_fdpo_pipeline.md",
+   "lines": "98",
+   "quote": "**The `prompt_messages` fix:** `eval_finetuned.py` was modified to save `prompt_messages` (the system + user turns that preceded the generation) in each result when `SAVE_ALL_CONTENT=1`. Without this, `build_fdpo_dataset.py` only had the generated content, not the full conversation context needed for DPO pairs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/failed_questions_how_readers_get_to_know_characters_1_2025-10-20_13-15-11.json",
+   "lines": "91",
+   "quote": "\"improvement_attempts\": []",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "16",
+   "quote": "The raw audit result is also stored in ``result.factual_audit`` for",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "36",
+   "quote": "2. **No source MANIFEST** — the 73.33% number lived in a status file, not a `summary_*.json` with hashes-of-inputs + grader-version + per-item-score.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "3a88a35",
+   "lines": "11-13",
+   "quote": "The new evaluator's 3-gate factual_accuracy system correctly catches this as INFERIOR (score 0.0). Relabel the expected verdict so the golden suite reflects the actual quality of the item",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "12",
+   "quote": "2. Winner-only scoring is not selector calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/.archive/CLONE_PARTIAL_WORK_2026-04-30T1510Z.md",
+   "lines": "28",
+   "quote": "2. Save rejected attempts to `*_rejects.jsonl` for debugging (script currently only writes kept rows)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "54-55",
+   "quote": "adversarially recomputed from the raw per-call JSONL (not trusted from the run harness's own summary).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "44",
+   "quote": "Independent recompute `verify_gate.py`: VERIFY PASS -- every verdict, blind score, floor,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "55",
+   "quote": "- Independent verify: every verdict recomputed from raw attempts alone",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "32-34",
+   "quote": "the G5 static dataset carries both an IB and an independent Opus score per pass-row — rank by max disagreement and send those to the passage-blind solver first; a ready-made, zero-cost leak-suspect signal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "60",
+   "quote": "An item is **certified** only when ALL hold, each with a **stored verdict** the `COMPLIANCE.md` reads:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2022",
+   "quote": "A distractor selected more by high-performing students than low-performing students suggests the keyed answer is wrong or ambiguous.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-quality.qmd",
+   "lines": "55",
+   "quote": "- generation trace including rejected attempts.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HARNESS.md",
+   "lines": "16",
+   "quote": "`scoring.py` binds ratings to raw outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "70",
+   "quote": "the keyed answer is nearly absent from the story while a distractor sits in it near-verbatim — **verify the key is right**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "144",
+   "quote": "but the actual generation prompt is gone — we'd have to reconstruct it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "192",
+   "quote": "Every run saves: full per-item raw, run-level metadata (grader version + endpoint + timestamp + model_id + decode params + git_sha), append-only manifest at workspace/eval/runs/MANIFEST.jsonl.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_save_everything_always.md",
+   "lines": "38",
+   "quote": "- v29's 63.64% baseline could be re-scored on 2.5.3 because we kept the gen file — but only because we happened to save it; rule wasn't explicit",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "112-114",
+   "quote": "- Documented that the confirmed-fail path intentionally returns ONE coherent sample rather than reconciling non-critical metrics across samples (per-metric voting would decouple each score from its own reasoning text).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "9",
+   "quote": "All overrides are logged with before/after scores.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "81",
+   "quote": "- Store enough candidate payload to replay selector mistakes. Prior K-sweep was weakened because full unselected candidate payloads were missing.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_324d5e51_live_update_decision.md",
+   "lines": "38",
+   "quote": "- Do not add broad deterministic filters unless a selector replay proves net lift.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "125",
+   "quote": "Keep generation/evaluation artifacts with prompt messages; DPO and debugging require full conversation context, not only output JSON.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2056Z_DELIVERED_pipeline_solver_v8_timeout_fallback.md",
+   "lines": "51",
+   "quote": "original v80bchain timeout attempt is preserved in `audit_trail`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v10/README.md",
+   "lines": "6",
+   "quote": "Versions and diffs per scene",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v10/README.md",
+   "lines": "6",
+   "quote": "approve, edit or hold, with the reason kept",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "158",
+   "quote": "the run, rebuilt from its own log with the recorded verdicts: it must match tick for tick and never ask the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "160",
+   "quote": "const probe = createFakeProvider(unsureAnswer, { name: \"replay-probe\" });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "29",
+   "quote": "An answer that fails the support gates: what the oracle gives when the key does not settle the question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "24",
+   "quote": "Replaying the session from its log: 8 ticks, 0 differences.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "62",
+   "quote": "Every draft, check, decision and film is kept under runs/, so any of it can be re-judged or replayed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "93",
+   "quote": "every try's decide records, as decide made them, so the block can be re-judged through a second judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "11",
+   "quote": "Every decision is appended to runs/marking/<rubric id>.jsonl, for replay.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "37",
+   "quote": "the whole decide record (state, questions, answers) stays in the tick log, so any tick can be re-judged through a",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "57",
+   "quote": "each judged tick keeps its decide record, for a second judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "93",
+   "quote": "// every try's decide records, as decide made them, so the block can be re-judged through a second judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "replay.js line 15 requires state and questions[0].instructions; the runs/lessons/*.decisions.jsonl records carry both.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "74-76",
+   "quote": "the p22 \"what Neverland is like\" clue set, where two independent judges both rank \"the stars blazed brighter\" and \"toward a place they could not yet imagine\" below the sun-never-sets lines and split on \"Neverland is waiting\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "23",
+   "quote": "multi-audio blind judge returned labels my parser didn't expect → rankings lost in 3/4 passes → normalise labels with a regex and keep raw text (judging/judge.py)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

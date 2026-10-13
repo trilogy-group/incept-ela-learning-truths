@@ -1,0 +1,55 @@
+{
+ "id": "off-task-only-on-a-sure-no",
+ "title": "Off task only on a sure no",
+ "statement": "Call an answer off task only on the judge's confident no, and never when it meets any criterion.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "It came from answering an animated version's marking contract with the lesson engine's judge, and the engine answers a 3D version's marking the same way (`g9/transformer/src/glue/animated-judge.js`, `g9/transformer/src/glue/threejs-archivist.js`). In both, an answer aimed at the marker meets nothing and is off task; any other answer is off task only when the on-task question gets a confident no and no criterion is met, and the animated adapter also needs nothing left unsure. A test of the animated adapter is named for the rule, though it checks only an on-task answer that meets its criterion and an off-task one that meets nothing (`g9/transformer/test/animated-judge.test.mjs`).",
+ "against": "In the 3D adapter an answer whose criterion the judge is unsure of is still called off when the judge is sure it is off task, where the animated adapter would leave it unsure (`g9/transformer/src/glue/threejs-archivist.js`, lines 93, 97 and 156-158).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "53",
+   "quote": "a criterion in meaning goes to Jev; off task only on a confident no, and never with a criterion met",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "105",
+   "quote": "const offTask = !met.size && !unsure.length && results.find((r) => r.id === \"on-task\")?.verdict === \"fails\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "97",
+   "quote": "if (results.find((r) => r.id === \"addresses-grader\")?.verdict === \"fails\") return { ok: true, assessment: { met: [], misreading: null, off_task: true",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "158",
+   "quote": "if (injected || (!met.length && yes(got, \"on_task\") === false)) return reply(\"off\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

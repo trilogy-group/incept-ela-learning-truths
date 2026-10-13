@@ -1,0 +1,486 @@
+{
+ "id": "hard-for-the-right-reason",
+ "title": "Hard for the right reason",
+ "statement": "Put an item's or a level's difficulty in the knowledge or reasoning it demands, never in labels, untaught words, hard syntax, negatives, obscure facts, padded reading or reworded easier lessons.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "format",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The assessment BrainLift holds that an item whose difficulty can't be explained by the knowledge it targets is almost certainly measuring a mix of construct and noise, and that hardness from convoluted language, tricky negatives and obscure contexts is an invalid obstacle, not rigour (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, lines 2366-2367); its diagnostic section adds that an item should not punish students who know the material but are tripped up by wording (line 398). In the Grade 3 course an ordering item shipped as a menu of position numbers per event, which taxed exactly the working memory the item existed to measure comprehension with; it became drag-and-drop with its own check, and the build rules now say to match the gesture to the shape of the answer (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md`, lines 757-766). Difficulty from what is tested means more steps, synthesis, a subtle distinction or a plausible confusion. Wording difficulty includes rare or untaught words, hard syntax and negatives, and extra help in the stem should not set the level either. If plainer wording that tests the same thing would make the item easier, remove that difficulty.",
+ "against": "An earlier lesson in the same project said the reverse, that hard questions must require recall, not reading, and that scaffolding makes hard questions medium (`icloud-work/ap-social-studies-generator/docs/archive/ITERATION_ANALYSIS.md`). One review allowed that heavy scaffolding might be acceptable in a practice item for struggling students (`icloud-work/ap-social-studies-generator/docs/analysis/evaluation_audit.md`). The 86%-to-62% drop came from a retrain that also regressed other item types, so it is not a clean test of labels (`icloud-work/ap-social-studies-generator/HANDOFF-finetune-status.md`). Multi-step prompts where each step drives a different decision are not flagged, and a first step that asks for a member of a closed grammatical category is exempt (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, lines 151 and 156). The recycling check exists only for matching items, and only when the variants are judged in the same batch (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt`, line 492); and the rubrics disagree on item count, which the matching rubric says does not determine difficulty (the same file, line 285) while the ordering rubric sets more items for harder levels (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt`, lines 157-159). The difficulty verdicts were a model judge's opinion with no learner data, and the pattern swung between runs: the run that broke hard items fixed easy ones, from 27% to 68%. The grader cannot check difficulty unless difficulty is defined for it: with no definitions given, it scores difficulty alignment 1.0 (icloud-work/aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt, line 137). The finding that labels do nothing is second-hand, from an earlier handoff lesson ('handoff hga-fix lesson', `icloud-work/aptraining/.agent/research/sota_strategy.md`, line 113), and the plan's line supports only the first clause. The same prompts let the easiest level match the taught statement almost word for word. In a reading lesson the text itself is what is tested, so there a question must need the text rather than outside knowledge. The mechanisms can carry across levels unchanged: a later ruling carried every Grade 3 mechanism to Grade 5 as it was, with the content written at Grade 5 from the course's own sources (`grade3-reading/artifacts/g5-book-2026-09-29/BUILD-SPEC-G5-U1-L1.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2366",
+   "quote": "Any item whose difficulty cannot be explained in KC/KDT terms (steps, conversions, cue structure, etc.) is almost certainly measuring a messy mix of construct and noise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2367",
+   "quote": "In a mastery model, these items are not rigorous; they are simply invalid obstacles.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "398",
+   "quote": "The item should not reward test-taking savvy or punish students who know the material but are tripped up by wording.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "760-761",
+   "quote": "**The interaction taxed exactly the working memory the item exists to measure comprehension with.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "766",
+   "quote": "* **Match the gesture to the shape of the answer.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "80",
+   "quote": "- Difficulty adjustment only changes vocabulary complexity, not cognitive demand",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "92",
+   "quote": "**24 out of 39 hard questions failed (62%)**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "114",
+   "quote": "**Pattern:** The endpoint adds too much context/scaffolding, which paradoxically makes hard questions easier to answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/packages/apush_unit1_pipeline_v0/docs/KNOWN_FAILURES.md",
+   "lines": "44",
+   "quote": "- Make the medium difficulty come from an APUSH inference, not wording complexity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "216",
+   "quote": "Do not make difficulty depend on obscure wording; make it depend on historical reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/HANDOFF-finetune-status.md",
+   "lines": "69",
+   "quote": "**Why it failed:** The difficulty labels were added but content difficulty doesn't vary.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/HANDOFF-finetune-status.md",
+   "lines": "70",
+   "quote": "**Result:** MCQ_SET 86% → 62%. The retrain also regressed DBQ (67% → 33%) and SAQ (100% → 60%).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/HANDOFF-finetune-status.md",
+   "lines": "71",
+   "quote": "**Lesson:** Label injection without content variation teaches nothing. The model needs examples with structurally different question types at each difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "41",
+   "quote": "**ACTUAL:** Questions became cognitively shallow recall exercises",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "104",
+   "quote": "\"What would X group think?\" pattern is single-step reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "151",
+   "quote": "Flag only when the wording demonstrably adds reading load without adding cognitive demand → `clarity_precision`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "152",
+   "quote": "This commonly occurs when generation tries to \"cover\" as much of the standard as possible by inserting unrelated topics into the stem.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py",
+   "lines": "9-11",
+   "quote": "G6 ELA items with \"First X. Then, based on X, Y.\" stems and adult-register passages were passing evaluation at 0.95 ACCEPTABLE despite real grade-band problems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "96",
+   "quote": "Being in the same broad curriculum standard does not make a clause connected — the clause must provide information *necessary* to answering this specific question.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "125-126",
+   "quote": "Three or more reasoning steps, or transfer of the skill to a novel but supported context. - Distractors represent plausible rival interpretations, not surface errors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "127",
+   "quote": "- Length alone is not difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "315",
+   "quote": "Hard vocabulary or long item text does not elevate an EASY structure to MEDIUM, but genuine item ambiguity does.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "322",
+   "quote": "Ask: \"What is the wrong category a partially-knowing student would pick for this item, and why would they pick it?\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "504",
+   "quote": "If the majority of items in a Medium question are recycled from its Easy counterpart, set `difficulty_alignment = 0.0` for the Medium question — it is not genuinely harder, just relabelled.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "288",
+   "quote": "8. **Cross-difficulty recycling** — The evaluator still can't detect cross-difficulty item recycling (same facts rephrased across easy/medium/hard) because each question is evaluated independently.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "211",
+   "quote": "- Difficulty should affect cognitive demand, not just vocabulary",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "80",
+   "quote": "- Difficulty adjustment only changes vocabulary complexity, not cognitive demand",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "114",
+   "quote": "**Pattern:** The endpoint adds too much context/scaffolding, which paradoxically makes hard questions easier to answer.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "32",
+   "quote": "**Key observation:** Run 5 fixed easy difficulty (27% → 68%) but broke hard difficulty (58% → 38%) and cognitive demand (70% → 59%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "152",
+   "quote": "if I simplified the wording of this item without changing what it tests, would it become easier? If yes, the current difficulty is at least partly extraneous.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "70",
+   "quote": "If you cannot explain why an item is hard, you should not be using it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "126",
+   "quote": "N5: linguistic validity. Untaught vocabulary or syntax can create construct-irrelevant difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "233",
+   "quote": "- hard questions should require reasoning, not obscure names or out-of-period facts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "234",
+   "quote": "- easy questions should still avoid giveaway wording.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "71",
+   "quote": "- [ ] Hard: subtle distinction, synthesis, or counterargument evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/failure_mode_index.json",
+   "lines": "40-41",
+   "quote": "\"trap\": \"Required outside knowledge is obscure\", \"fix\": \"All required facts must be curriculum-standard\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md",
+   "lines": "32",
+   "quote": "Autonomous items are screened for untaught Tier-2 vocab, grade-inappropriate syntax, and idioms that make them test reading, not content",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "99-100",
+   "quote": "**linguistic-validity QC** (untaught Tier-2 vocab, syntax, idioms — required for teacherless delivery)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/sota_strategy.md",
+   "lines": "114",
+   "quote": "The hga fix already showed that injecting difficulty *labels* without content variation does nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "204",
+   "quote": "The set is marked as 'hard,' but two questions are explicitly labeled 'Easy' and 'Medium,' so the quiz does not match the requested single-difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "330",
+   "quote": "Additionally: enforce per-question difficulty assignment matching the set's stated difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/plans/PLAN-mission-2026-04-26.md",
+   "lines": "80",
+   "quote": "Minor effect; model learns difficulty implicitly from data.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "134",
+   "quote": "- difficulty must be earned by outside APUSH context, not reading comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "117",
+   "quote": "- MCQ misses are mostly educational-accuracy failures: answer can be found by reading, answer leaks, or weak APUSH knowledge demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_leq.md",
+   "lines": "43",
+   "quote": "- Students can earn full marks using ONLY the curriculum (no obscure outside knowledge required).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "110",
+   "quote": "2. **Subject-knowledge bypass**: a student with zero subject knowledge could answer just by reading the stimulus. If the answer is paraphrased in the stimulus, the question fails educational_accuracy. Force the answer to require a curriculum-derived inference, not just stimulus paraphrase.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "96",
+   "quote": "- Easy: direct recall of one curriculum fact; correct answer matches statement nearly verbatim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "53",
+   "quote": "3. **Genuinely G5, never G3 dressed up.** Complexity lives in the task, not inflated prose. The",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "171",
+   "quote": "`item-2-cards` distractors are below band.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-book-2026-09-29/SCOUT-AND-PLAN.md",
+   "lines": "12",
+   "quote": "\"never a Grade 3 copy; consult the canon; log the rule behind each decision\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-book-2026-09-29/BUILD-SPEC-G5-U1-L1.md",
+   "lines": "4",
+   "quote": "(1) ALL G3-acquired mechanisms carry to G5 as-is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20736",
+   "quote": "| **AOTA / NOTA / negative stem** | \"all/none of the above\", \"which is NOT\" | hard fail |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "56",
+   "quote": "| No T/F, AOTA, NOTA | PASS | 0 True/False items or option sets; 0 All/None-of-the-above; 0 classic EXCEPT/least/not-true exclusion stems. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "39",
+   "quote": "- The prohibited negative choice-stem scan is empty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading-v2/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "39",
+   "quote": "- The prohibited negative choice-stem scan is empty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-science/brainlifts/v0.1.md",
+   "lines": "21",
+   "quote": "science items at G6 presuppose ~G4+ reading; item language must not turn science assessment into a covert reading test",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-science/brainlifts/v0.1.md",
+   "lines": "21",
+   "quote": "reading-load ceiling TO CONFIRM",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "88-90",
+   "quote": "**\"All of the above,\" \"none of the above,\" and negative stems** (\"which is NOT…\") are also **banned outright** — they test test-taking convention, not the target skill.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "39",
+   "quote": "The prohibited negative choice-stem scan is empty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "63",
+   "quote": "D5.4 (no negative stem): no 'which is NOT' or negatively-framed stem found in any of the 18 selected-response items checked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "15",
+   "quote": "Stems avoid \"which is NOT\"; positive framing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2067",
+   "quote": "Stems that ask \"Which of the following is NOT...\" require an additional cognitive step: the student must identify what is true and then reverse the logic.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3085",
+   "quote": "More difficult vocabulary alone does not raise the level of thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "557-558",
+   "quote": "Set difficulty should come from historical reasoning and evidence use, not obscure trivia.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

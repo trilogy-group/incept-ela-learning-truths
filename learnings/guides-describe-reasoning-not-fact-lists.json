@@ -1,0 +1,481 @@
+{
+ "id": "guides-describe-reasoning-not-fact-lists",
+ "title": "Guides describe reasoning, not fact lists",
+ "statement": "A marking guide describes the reasoning that earns credit in a few checks, not facts or keywords, which can be wrong or matched by an answer lacking the reasoning.",
+ "example": "In one set of short-answer items, wrong facts caused 14 of 18 failures, and a postmortem traced them to the examples the writer put in the guide.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP generator's system message tells it that short-answer scoring guidance describes criteria, not evidence lists (`icloud-work/aptraining/.agent/research/inference_clean.md`). In the failure analysis, factual accuracy caused 14 of 18 failures in one course's short-answer items, and a postmortem traced them to the guide itself: the writer filled its sample-response and acceptable-evidence fields with plausible but wrong historical examples (`icloud-work/aptraining/.agent/research/failure_taxonomy.md`). Every fact a guide lists, especially one its writer recalls rather than verifies, is another chance to be wrong.",
+ "against": "Telling the small writer to leave specific facts out did not work: it wrote wrong specific facts instead (the same analysis). the same note calls that instruction good enough for a large model and insufficient for a 14B one (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`). The course's own published guide lists examples: its short-answer scoring guidelines say what credited responses must do and then give \"Examples that earn this point include the following:\" (`icloud-work/ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf`, pdftotext -layout output, line 12660). The same change also removed about 300 lines of other prompt constraints (`icloud-work/ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md`, line 179), so the drop is not the list change alone. It is design guidance, not a measurement, and for a short recall answer the same library credits any two of an accepted set instead (`grade3-reading/knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd`). The fix was not yet tested when the note was written; those runs came before it (same file, line 137). A ban on lists alone did not work: the same report says that for these notes “don’t list specific facts” failed and that verified-facts-only constraints are stronger. The handover's techniques come from a sibling generator whose best run used a different grader version, which it calls design evidence, not certified current scores. In a 15-item replay, short-answer sample responses were too generic for the scorer, and the repair that added concrete examples by topic was one of the changes in the version that passed 15 of 15 (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md`, lines 205-225); that version repaired an existing run rather than a fresh one (line 249). The same BrainLift keeps full automation for numeric, diagram and property-based answers with explicit tolerances, where the space of valid answers is small.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "130",
+   "quote": "For SAQ: scoring guidance describes criteria, not evidence lists",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "70-76",
+   "quote": "#### Cell 3: APUSH × SAQ … | 1 | factual_accuracy | 14 | 78% | 76% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "82",
+   "quote": "the model fills `sample_response` and `acceptable_evidence` fields with plausible-sounding but wrong historical examples.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "82",
+   "quote": "Negative prompting (\"don't include specific facts\") fails because the 14B has strong-but-wrong parametric associations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "36",
+   "quote": "SAQ scoring notes said \"list 2-4 specific named evidence items.\" This is where hallucinations concentrated (wrong dates, wrong attributions). Changed to \"describe analytical reasoning\" (no evidence lists). Eliminated 15/17 factual accuracy failures instantly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "37",
+   "quote": "**Critical lesson:** The more specific the evidence the model is asked to enumerate, the more opportunities for hallucination. Analytical framing → less fabrication surface area.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "120",
+   "quote": "The most impactful single change in the entire project was removing the evidence list from SAQ scoring notes. One change eliminated 15 of 17 factual accuracy failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "132",
+   "quote": "2. **The current approach (negative prompting) seemed to work on Gemini.** Because Gemini is large enough to mostly respect the \"no specific evidence\" instruction and has accurate enough parametric memory that when it does include evidence, it's usually right. The instruction that's good enough for a large model is insufficient for a 14B model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "175",
+   "quote": "15 of 17 factual_accuracy hard-fails came from SAQ scoring notes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "178",
+   "quote": "- Scoring philosophy changed from \"list 2-4 specific named evidence items\" to \"describe what analytical reasoning earns the point\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "183",
+   "quote": "**Data:** factual_accuracy hard-fails: 17 -> 2.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "226",
+   "quote": "3. States what does NOT earn the point (e.g., \"just naming X without explaining = 0\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "475",
+   "quote": "Two-to-four checks: (1) correct principle stated, (2) applied to the case, (3) addresses counter-case/constraint, (4) conclusion warranted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "117",
+   "quote": "with a tiny micro-rubric (e.g., credit for any 2 of the accepted set)",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "50-51",
+   "quote": "**Pattern:** scoring_notes contained specific evidence (dates, named events) that\nInceptBench hard-fails when wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "57",
+   "quote": "**Fix applied (2026-04-24, saq.py `build_saq_user`):** Removed the PROCEDURE block.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "58",
+   "quote": "Replaced with categorical-only mandate: no names, dates, events in scoring_notes.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "137",
+   "quote": "2. **SAQ 33%** — new categorical-only fix not yet tested; these runs were pre-fix",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "122",
+   "quote": "For SAQ/LEQ/DBQ, replace hallucination-prone evidence lists with verified-facts-only or analytical-category scoring notes.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/HANDOVER.md",
+   "lines": "123",
+   "quote": "SAQ scoring notes should avoid hallucination-prone evidence lists",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/HANDOVER.md",
+   "lines": "123",
+   "quote": "SAQ scoring notes should avoid hallucination-prone evidence lists",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "174",
+   "quote": "16. **Grading guidance MUST demand stance, not tokens; quotes fail closed (F16).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "175",
+   "quote": "*Check:* no `scoring`/`accept` spec passes on keyword presence alone — negated, hedged, or",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "176",
+   "quote": "off-topic responses route to unscorable/needs-work",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "327",
+   "quote": "the rubric asks for the arc’s heart (the change and the how), not a checklist — a retell, not a quiz wearing a retell’s clothes.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/ap-evaluation.md",
+   "lines": "126-128",
+   "quote": "Justify/Explain require reasoning tied to a chemical principle, with a correct answer + wrong reasoning earning nothing",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "68-70",
+   "quote": "AP awards the point only for a correct response **and** a valid justification tied to the relevant principle — a correct answer with missing or wrong reasoning earns nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "70-71",
+   "quote": "Items and their scoring criteria should reflect these conventions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_saq.md",
+   "lines": "39",
+   "quote": "- Scoring criteria are concrete enough to grade consistently — describe what makes an answer correct, don't dictate the exact answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_saq.md",
+   "lines": "73",
+   "quote": "4. **Ambiguous scoring.** \"Acceptable answers should be reasonable.\" → Useless. Replace with \"Acceptable answers identify [type of factor] and explain [type of mechanism].\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "154",
+   "quote": "3. SAQ scoring notes should avoid hallucination-prone evidence lists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "209",
+   "quote": "SAQ sample responses were too generic to be scorer-facing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "225",
+   "quote": "SAQ repair now emits concrete scorer-facing examples by topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "218",
+   "quote": "15/15 = 100%, avg overall 0.998667.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "249",
+   "quote": "This is a strong step-level win, but it is not the final goal proof yet because `v5` repairs an existing generated run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1471",
+   "quote": "- Your “acceptable answers” list exceeds ~15–20 variants.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1455",
+   "quote": "Result: a brittle, ever-growing ruleset that still misses clever but correct answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1469",
+   "quote": "Reserve full automation for numeric/diagram/property-based tasks with explicit tolerances.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "160",
+   "quote": "Default: use a micro-rubric (0/1/2) for short text and explanations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "152",
+   "quote": "Scorers (human or LLM-assist with thresholds) apply 2–3 checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "147",
+   "quote": "Result: a brittle, ever-growing ruleset that still misses clever but correct answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "163",
+   "quote": "Your “acceptable answers” list exceeds ~15–20 variants.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "164",
+   "quote": "You’ve edited the key twice post-launch to add more exceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "20",
+   "quote": "**A3 · Micro-rubric 0/1/2 is the scoring format for short text (`[WF 1467]`).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "21-22",
+   "quote": "**switch fully to the rubric** the moment the acceptable- answer list exceeds ~15–20 variants, or the key is edited twice, or correct-but-missed responses",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1472",
+   "quote": "You’ve edited the key twice post-launch to add more exceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1473",
+   "quote": "You keep finding “should-be-correct” responses that the rules miss.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "410-413",
+   "quote": "Students and generators can imitate rubric terms without performing the historical work. A sentence beginning \"Although\" is not automatically complex. Mentioning purpose is not sourcing. Naming two events is not comparison. The course scores the relationship between claim, evidence, and historical object, not the presence of a phrase.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "8-9",
+   "quote": "Meaning scoring replaced substring detection everywhere (a word detector wearing a rubric's clothes praises listed words in wrong sentences).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L01e07f.txt",
+   "lines": "1",
+   "quote": "The displayed praise and “That holds up” response do not establish that a student’s interpretation is true or well supported.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "57-58",
+   "quote": "\"He wanted to be Othellos ancient but Cassio got to be the ancient\" has the ranks backwards, but it met \"someone else got it\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "140",
+   "quote": "The open word response is stored for review rather than judged correct by a keyword match.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "412-413",
+   "quote": "The course scores the relationship between claim, evidence, and historical object, not the presence of a phrase.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/strategy/grade-9-strategy.md",
+   "lines": "149",
+   "quote": "The largest risks are a guide that sounds like a younger product in disguise, and a judge that grades evidence by keyword when Grade 9 asks for reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/strategy/grade-9-strategy.md",
+   "lines": "156",
+   "quote": "| The judge rewards matching quotes, not reasoning | Rubric criteria for relevant and sufficient evidence and for reasoning that links them (RI.9-10.8) |",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "130",
+   "quote": "**RI.9-10.8:** \"Delineate and evaluate the argument… whether the reasoning is valid and the evidence is relevant and sufficient; identify false statements and fallacious reasoning.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "133",
+   "quote": "The LLM rubric should grade how relevant and sufficient the evidence is, and the reasoning, not just whether a matching span was found.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "Where your argument stands",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "The claim answers the question",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "The evidence is relevant",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "The reasoning links evidence to claim",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/01-readers-desk-odyssey.html",
+   "lines": "44",
+   "quote": "The counterclaim is answered",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/prototype/README.md",
+   "lines": "41",
+   "quote": "The judge is rules, not an LLM.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Common Core State Standards for ELA & Literacy (NGA & CCSSO, 2010)",
+   "url": "https://learning.ccsso.org/wp-content/uploads/2022/11/ELA_Standards1.pdf"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

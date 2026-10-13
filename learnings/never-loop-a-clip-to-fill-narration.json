@@ -1,0 +1,85 @@
+{
+ "id": "never-loop-a-clip-to-fill-narration",
+ "title": "Never loop a clip to fill narration",
+ "statement": "Never loop or replay a generated clip to fill a teaching film's narration, since each loop visibly resets mid-sentence.",
+ "example": "Of one film's 87 seconds, only about 56 were unique footage; the rest was loops resetting mid-sentence.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A frame-by-frame audit of a generated film for a Grade 4 reading unit found seven unrelated 8-second clips, each played roughly twice to pad out 87 seconds of narration, with no shot designed against the script it carried (`othello-course-renderer-draft/repo/docs/video/u1-intro-audit.md`, line 10). Measured with SSIM, a frame matched the frame 8 seconds later at 0.95 to 0.98 across every shot, so only about 56 seconds was unique footage, and the audit judged the looping alone enough to make the film unfixable by re-editing (lines 10 and 48). The script's two most concrete teaching claims were not on screen at all, and the remake requires every second of the runtime to be unique footage, with more clips generated rather than replayed when a generator caps at 8 seconds (line 116). Each shot of a teaching film should also be made for the line it carries.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "10",
+   "quote": "it is seven unrelated 8-second AI-generated clips, each played roughly twice to pad out 87 seconds of narration, with no shot designed against the script it is carrying.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "10",
+   "quote": "Measured with SSIM, a frame at time *t* matches the frame at *t+8* at 0.95 to 0.98 across every shot, so of 87 seconds only about 56 seconds is unique footage and the rest is visible loop-resets mid-sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "10",
+   "quote": "On top of that structure, the two most concrete teaching claims in the script are simply not on screen",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "48",
+   "quote": "Every reset is a visible pop, action rewinds mid-narration, and no shot can develop or reveal anything because it is the same 8 seconds twice. This alone makes the asset unfixable by re-editing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "116",
+   "quote": "**No clip reuse.** Every second of the runtime must be unique footage. If a generator caps at 8 seconds, generate more clips rather than replaying them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-intro-audit.md",
+   "lines": "10",
+   "quote": "This is not a video with fixable defects; it is seven unrelated 8-second AI-generated clips, each played roughly twice to pad out 87 seconds of narration, with no shot designed against the script it is carrying.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-intro-audit.md",
+   "lines": "10",
+   "quote": "Measured with SSIM, a frame at time *t* matches the frame at *t+8* at 0.95 to 0.98 across every shot, so of 87 seconds only about 56 seconds is unique footage and the rest is visible loop-resets mid-sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-intro-audit.md",
+   "lines": "116",
+   "quote": "**No clip reuse.** Every second of the runtime must be unique footage. If a generator caps at 8 seconds, generate more clips rather than replaying them.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

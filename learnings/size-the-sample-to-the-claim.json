@@ -1,0 +1,632 @@
+{
+ "id": "size-the-sample-to-the-claim",
+ "title": "Size the sample to the claim",
+ "statement": "Claim a rate or a difference only from a sample sized to show it, with the count reported, and a difference only once it clears the judge's run-to-run spread.",
+ "example": "On 15-item runs the noise floor was roughly ±1 row per type, so a split of 2/3 against 0/3 was read as directional only.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "AP lab analyses kept asking whether a sample could carry the claim made from it. One report called n=45 per type small for a 95 % gate, with one type alone at 25 misses; another put the noise floor of 15-item runs at roughly ±1 row per type and read splits like 2/3 against 0/3 as directional only; and a handoff rule calls any expected lift under 1.0 point below the noise floor for n=150 measurements. A test needs enough items of each type to tell a high gate from a lower rate. The noise to clear is about twice the judge's spread on unchanged items, and a small-sample win is confirmed on more items.",
+ "against": "The project kept deciding on small samples: a winner was declared on 10 items (\"| **Two-Stage Generation** | **100%** (10/10) | ✅ WINNER |\", `icloud-work/ap-social-studies-generator/docs/archive/EXPERIMENT_RESULTS_2026-02-18.md`, line 15), and its blueprint kept a 12-question check for iteration (`icloud-work/ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md`, line 1006). The 12-item check did not evaluate cognitive demand (`icloud-work/ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md`, line 14), so its 100% reflects a missing criterion as well as sample size. Where the judge is deterministic, any difference counts (`project_grader_variance_discovered.md`, line 42), and re-scoring stored outputs measures only the judge, while fresh generation adds noise of its own (`feedback_baseline_must_be_fresh_gen.md`, line 49). Doubt about a small sample scales with a type's history: types that had held at 95-100% for several versions were more credible at 100 items (`feedback_n_scale_tightens_CI_exposes_n100_anomalies_2026_06_01.md`, line 26). A swing from 20 of 20 to 0 of 100 is too large for sampling error alone, so those runs probably differed in more than size. Most of the document-based spread was later traced to the pass/fail cut ('DBQ \"noise\" was ~all threshold artifact', `icloud-work/aptraining/.agent/memory/MEMORY.md`, line 113), and a long-essay type was one of the two that did not vary, so the spread is not simply a matter of length. The spreads come from three runs on one set of saved outputs, so the thresholds are rough: \"**Finding (T0, 3 independent IB v2.5.3 runs on identical v29 gens, 2026-04-29):**\" (icloud-work/aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md, 132). Where the spread is zero, any change counts: \"- MCQ/LEQ: essentially deterministic (σ=0), any non-zero delta is real\" (the same file, 144). Small gains need many items: at 30 items per type a paired test detects differences of about 0.05 or more with 80% power, and smaller ones need 120 or more per type (`icloud-work/aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md`). A continuous score also needs a freshly generated baseline, without which several regressions reversed (`icloud-work/aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md`). And an aggregate can look steady while item types swing: across three seeds the overall rate had a standard deviation under a point while one type passed 6, 7 and 9 of 30 (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md`). The generator changed between runs, so the swings mix real change with sampling noise, and cells this small cannot separate the two. A mechanical count rule misfires when the small number is a breakdown rather than the support, as with the report it rejected: \"the document's verdict is supported by aggregate n=30 (30/30 v40h fabrications + 30/30 v29 fabrications); the n=6 is per-cell stratification (a methodological detail, not the support). R1 doesn't distinguish \"support n\" from \"incidental n.\"\" (icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1713Z_validator_findings.md, 88) The writer changed between runs, so the reversals mix changes to the writer with sampling noise, and no two runs repeat the same writer and judge (`icloud-work/evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md`). The same project still read a one-item difference on a 30-item set as a win: a change that moved one course's items from 86.7% to 90% was recorded as the first evidence that the method worked (`icloud-work/aptraining/.agent/research/OVERNIGHT_RECAP.md`; `icloud-work/aptraining/.agent/memory/BEADS.md`).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_324d5e51_what_is_really_going_on.md",
+   "lines": "55",
+   "quote": "n=45 per cell is small; 95 % requires <2/45 cell misses, and MCQ_SET alone has 25 misses here.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "66",
+   "quote": "5. **n=15 noise floor is roughly ±1 row per cell.** Per-cell numbers like \"2/3 vs 0/3\" should be interpreted as directional only.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/handoff_from_calibration/README.md",
+   "lines": "67",
+   "quote": "- Any packet whose `expected_lift_pp` < 1.0 is below noise floor for n=150 measurements — don't bother.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "413",
+   "quote": "4. **SAQ improvement (+25pp) is sampling variance.** Only 13 SAQ items in this run. No SAQ-specific changes made. Not a real improvement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1260",
+   "quote": "4. **MCQ_SET and DBQ high variance**: With 17 and 24 items respectively, a 5-8 item swing produces ±14pp swings. Not statistically meaningful at N=17-24.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "1169",
+   "quote": "| SAQ | 50.0% | 40.0% | -10.0pp | Variance (SAQ prompt unchanged) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "10",
+   "quote": "**Mini benchmark (100%) was misleading.** Comprehensive benchmark revealed cognitive demand collapse.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "14",
+   "quote": "| Run 6 Mini | 12 | 100% | Not evaluated |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "15",
+   "quote": "| Run 6 Comprehensive | 116 | **50.0%** | **51%** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "20",
+   "quote": "**APUSH (n=150):** r1=86.67%, r2=89.33%, r3=86.67% → mean 87.56%, σ=1.54pp, range=2.67pp",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "36",
+   "quote": "**Insight:** DBQ drives ~all the noise. MCQ/LEQ are essentially deterministic. SAQ and MCQ_SET have small (~2pp) variance.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "53",
+   "quote": "**None of our \"wins\" since v29 are above the noise floor.** They're all clustered at ~133-134/150.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-oracle-agent-memory",
+   "path": "project_v40h_breakthrough_doctrine_drift.md",
+   "lines": "9",
+   "quote": "90.00% APUSH (135/150) on IB v2.5.3, +3.33pp over v29's 86.67% baseline today. Above the 3pp σ-band → real lift.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_three_rule_updates_20260506.md",
+   "lines": "12",
+   "quote": "(2) v40h \"0.9 breakthrough\" stat-tied with v29 under multi-seed (R8 caught it).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_n_scale_tightens_CI_exposes_n100_anomalies_2026_06_01.md",
+   "lines": "7",
+   "quote": "The n=100 CI is ±15pp per cell (at n=20/cell), wide enough to mask structural floors.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_n_scale_tightens_CI_exposes_n100_anomalies_2026_06_01.md",
+   "lines": "12",
+   "quote": "- MCQ_SET 100% → 0% was the dramatic collapse: cell has structural issue (gemma family can't follow Option B 6-region schema at inference, matches Cheater's v90c K=18 0/16 finding 6/1 18:50Z); single-seed n=20 just got lucky",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "fdpo_pipeline.md",
+   "lines": "12",
+   "quote": "- Pass rates: **83.3% at N=30 / 60% at N=100** (N=100 is more reliable)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "112",
+   "quote": "3-run probe: APUSH agg σ=1.54pp, DBQ σ=7-9pp. Win-declaration thresholds per-cell. MCQ/LEQ deterministic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "197",
+   "quote": "Same v29 gens scored to 24/30 vs 19/30 on apush/dbq across runs. ~1-3pp aggregate noise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "197",
+   "quote": "**Don't trust deltas under 5pp single-call.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/PLAN.md",
+   "lines": "279",
+   "quote": "**Inter-seed std-dev ≤ 4pp**. If std-dev > 4pp, fire F13 (re-eval 2 additional seeds before branching). High variance means the mean is uninterpretable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/PILLARS_2026_05_12.md",
+   "lines": "37",
+   "quote": "For any cell or arm that PASSED unexpectedly, audit the prompt + generation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "104",
+   "quote": "Original cell-routed 92% used single-pass mcq_set (got lucky 30/30); 3-way eval revealed v43-soup mcq_set true ceiling ~80% under stochastic 3-seed (σ=0.424).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "104",
+   "quote": "Always 3-seed before claiming K=1 numbers.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "182",
+   "quote": "Prior 0.9-class single-run was statistical noise — R8 caught it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "136",
+   "quote": "| APUSH aggregate (n=150) | 87.56% | **1.54pp** | 2.67pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "137",
+   "quote": "| APUSH DBQ (n=30) | 74.4% | **7.7pp** | 13.3pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "140",
+   "quote": "**Win-declaration thresholds (>2σ):**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "141",
+   "quote": "- APUSH aggregate: need **>3.1pp** delta to claim a real win",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "112",
+   "quote": "**What was claimed:** v35 Self-RAG SFT on 966 rows = +2.70pp aggregate, +1.33pp APUSH over v29. New canonical.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "118",
+   "quote": "| McNemar exact two-sided p (n=150 APUSH) | **p = 0.7744** — not significant |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-04T1010Z_drift_rescore_findings_grader_stable.md",
+   "lines": "17",
+   "quote": "**Verdict: grader is stable. The original 6.67pp \"drift\" headline was 100% the strip_think bug.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-04T1010Z_drift_rescore_findings_grader_stable.md",
+   "lines": "25",
+   "quote": "Same gen file (`gen_v29_freshrun_apush150.jsonl`) — only the grader call between Apr 29 and May 4 changed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-04T1010Z_drift_rescore_findings_grader_stable.md",
+   "lines": "82",
+   "quote": "- **Net stable-grader delta: -0.69pp.** Well within 1.54pp σ.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "132",
+   "quote": "**Finding (T0, 3 independent IB v2.5.3 runs on identical v29 gens, 2026-04-29):**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "144",
+   "quote": "- MCQ/LEQ: essentially deterministic (σ=0), any non-zero delta is real",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "12",
+   "quote": "Same generations re-scored produce 17pp per-cell variance, ~1-2pp aggregate variance. **Per-cell deltas <5pp are noise. Aggregate deltas <3pp are noise.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/forensics/mcq_seed_variance_diff.md",
+   "lines": "5",
+   "quote": "v50 mcq seed σ = 5.09pp at T=0 (should be 0 if deterministic).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "260",
+   "quote": "**Symptom**: LEQ exam_precision pass rate was 0.87 on one draw, 0.73 on another. Single-draw \"LEQ exam_precision is best\" claim was wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/system_improvement_brainstorm.md",
+   "lines": "15",
+   "quote": "**Value**: HIGH. The single-draw → 2-draw step already flipped SAQ's best profile (exam_precision → tight_alignment).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/audits/v35_pressure_test/feedback_v35_within_noise.draft.md",
+   "lines": "21",
+   "quote": "- Paired McNemar on the same 150 APUSH prompts under the same canonical grader (IB v2.5.3): b=5 (v29-only passes), c=7 (v35-only passes), exact two-sided p = **0.7744**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/audits/v35_pressure_test/feedback_v35_within_noise.draft.md",
+   "lines": "21",
+   "quote": "No version of \"more samples might tighten this\" survives — the per-row contingency only has 12 disagreements out of 150, and their direction is split 5/7.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md",
+   "lines": "20",
+   "quote": "Binary pass/fail at threshold 0.85 stays as a *secondary* report. Decisions get made on continuous-mean deltas with paired tests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md",
+   "lines": "28",
+   "quote": "| M1 | Card, Henderson, Khandelwal, Jia, Mahowald, Jurafsky. *With Little Power Comes Great Responsibility.* EMNLP 2020. | NLP benchmarks routinely under-powered; advocates continuous metrics + paired tests over binary accuracy at small n. Direct fit for our n=30 per cell. |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md",
+   "lines": "449",
+   "quote": "4. Smoke test: compare v29 baseline against itself with a different seed run. Expect `per_cell.*.significant_at_alpha == false` everywhere; `mean_diff_overall ≈ 0`. If false-positives appear under self-comparison, the pairing key is wrong — check (row_id, cell) keying.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md",
+   "lines": "450",
+   "quote": "5. Only then run a real comparison (e.g., v29 vs v29+CoVe).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/03_R41D_implementation.md",
+   "lines": "440",
+   "quote": "5. **Power note:** at n=30 per cell and observed SD ≈ 0.15, paired-t detects Δ ≥ ~0.05 with 80% power. Smaller effects need n≥120 per cell — relevant if you want to distinguish CoVe from no-op at 1pp lift.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md",
+   "lines": "138",
+   "quote": "| Fresh baseline rule | Several \"regressions\" reverse to \"real lifts\" with proper baseline | `feedback_baseline_must_be_fresh_gen.md` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "83",
+   "quote": "Variance σ < 1pp across seeds — stable, reproducible measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "78-80",
+   "quote": "| s7 | 62.00% | 6/30 | … | s42 | 64.00% | 7/30 | … | s1234 | 62.67% | 9/30 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "35",
+   "quote": "1. **Match + Easy = 15%** - Catastrophic failure rate",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "129",
+   "quote": "- 13 easy+match questions → routed to MSQ (15% → ~78%)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "50",
+   "quote": "2. **Match + Easy = 0%** - All 6 questions failed",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "58",
+   "quote": "| **Match** | 64% | 55% | 38% |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "63",
+   "quote": "2. **MCQ + Medium: 83%** (5/6) - Strong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/README.md",
+   "lines": "122",
+   "quote": "| Feasibility pilot | ~40 students (1–2 classes) | Usability, engagement, and early item red flags — no calibration claims at this size |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "196",
+   "quote": "**Success/kill criteria (usage-based — all meaningful at N=40):** session completion ≥ 90%; session duration within the expected 30–60-minute envelope; rapid-guess rate < 10%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "28",
+   "quote": "| 3 | Natural CAT exposure under-samples tail items for calibration |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "59",
+   "quote": "is directionally right and statistically decorative; fine for feasibility, but don't let it be read as tail validation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-20T1940Z_self_audit_findings_and_path_forward.md",
+   "lines": "66",
+   "quote": "Said \"75% lift\" at n=20 BoN small, settled to 64% at n=50 | Wait for n≥30 minimum before quoting %",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-04-30T0700Z_v37c_DONE_postmortem.md",
+   "lines": "69",
+   "quote": "The pilot's 100/80/20/10/0 spread was small-N noise on 5 cherry-picked cells.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1713Z_validator_findings.md",
+   "lines": "71",
+   "quote": "[R1-REJECT] verdict word 'confirmed' at n=6 (<10);",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1713Z_validator_findings.md",
+   "lines": "88",
+   "quote": "the document's verdict is supported by aggregate n=30 (30/30 v40h fabrications + 30/30 v29 fabrications); the n=6 is per-cell stratification (a methodological detail, not the support). R1 doesn't distinguish \"support n\" from \"incidental n.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "102",
+   "quote": "| **Medium** | MCQ (83%) | Match (73%) | MSQ (54%) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "119-121",
+   "quote": "# MSQ struggles at medium",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "44",
+   "quote": "| MSQ | 40% | 71% | 75% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "64",
+   "quote": "3. **MSQ + Medium: 78%** (7/9) - Good",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "66",
+   "quote": "1. **MSQ + Medium: 88%** (7/8)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "50",
+   "quote": "2. **Match + Easy = 0%** - All 6 questions failed",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "58",
+   "quote": "The endpoint update broke format compliance:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "113",
+   "quote": "**Tier 1:** n=3, pass=3, fail=0 (100%) — **<5 samples, statistically vacuous.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "13",
+   "quote": "4. T0 evidence requires actual measurement on our data (n ≥ 30 OR multiple confirming runs).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "69",
+   "quote": "scripts/validate_claim.sh blocks: R1 (n<10 + verdict word), R3 (phantom number not in summary), R6 (IB-only promotion w/o BAML).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/OVERNIGHT_RECAP.md",
+   "lines": "95",
+   "quote": "v15 with 174 pairs pushed APUSH from 86.7% → 90%. First evidence DPO works in our regime",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "110",
+   "quote": "APUSH 86.7% 26/30",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "53",
+   "quote": "Natural CAT exposure concentrates responses at the population center: tail-band items would see only ~50–100 responses each under proportional usage — below the calibration floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "53",
+   "quote": "the **≥150 responses per tail-band item** target (floor bands ≈ RIT 155–180; ceiling bands ≈ RIT 225–250) attaches to the calibration stage that accrues from regular use",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "139",
+   "quote": "**Bank size for a single N=1000 calibration cohort:**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "146",
+   "quote": "Items at b ≈ −3.0 or +1.0:  ~50–100 exposures/item (marginal)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "51",
+   "quote": "Schools serving a wide range of RIT levels are preferred to avoid restriction of range, which reduces linking precision [Kolen-Brennan-2014 §2.4].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "61",
+   "quote": "To be unambiguous: the ≥8+≥8 pilot inclusion is a feasibility and UX commitment at the edges; it neither claims nor implies tail calibration or tail validation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "47",
+   "quote": "The pilot is ~40 students (1–2 classes) × ~40 items ≈ 1,600 responses against a 786-item bank — far below the ~200 responses per item that calibration requires, so the pilot makes **no calibration claims**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "288",
+   "quote": "These are conservative targets.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/ADJUDICATION.md",
+   "lines": "32",
+   "quote": "Five MCQs are too few to infer a durable answer-position bias.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "64",
+   "quote": "Monte Carlo error ≈ ±0.005 on r, ±0.1 RIT on RMSE/SEM",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Card et al. 2020",
+   "url": "https://doi.org/10.18653/v1/2020.emnlp-main.745"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

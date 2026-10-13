@@ -1,0 +1,79 @@
+{
+ "id": "strip-the-working-before-it-ships",
+ "title": "Strip the working before it ships",
+ "statement": "Strip drafting, self-checking and debug text from an item before a student or a judge sees it.",
+ "example": "After fields outside the delivery format were dropped, 30 of 30 winning items in a random live sample passed validation.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A draft-verify-revise spec for document-based items expected its verification text to be penalised, since the grader scores a meta-pedagogical voice negatively, as an earlier paraphrase experiment had shown; the generator checklist bans any 'this question tests…' preamble visible to students. A saved winning item failed delivery validation because it still carried pipeline metadata, and after non-schema fields were dropped, 30 of 30 winners in a random live sample passed. The weekly report concluded that debug metadata belongs in archives and logs, not delivered payloads.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "150",
+   "quote": "The verification meta-text WILL be penalized — IB rubric scores presence of meta-pedagogical voice negatively (we saw this in R10 paraphrase-composition).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "51",
+   "quote": "- [ ] No \"this question tests…\" preamble visible to students",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "282",
+   "quote": "- winner/scoring rows drop non-schema item fields",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "287",
+   "quote": "- old saved winner failed on `prompt_pipeline_meta`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "289",
+   "quote": "- random-30 live gate winners: 30/30 passed OpenAPI validation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "500",
+   "quote": "Debug metadata belongs in archives/logs, not official payloads.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/build_content.py",
+   "lines": "101",
+   "quote": "if '666666' in colours: continue  # Devfactory-facing notes",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

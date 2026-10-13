@@ -1,0 +1,196 @@
+{
+ "id": "decide-on-unaided-work",
+ "title": "Decide on unaided work",
+ "statement": "Base decisions on the first unaided check and let a high-stakes score count only unaided work, because doing something with cues is not doing it unaided.",
+ "example": "Support is labelled 0 to 3, from none to worked steps or feedback, and fades to 0 by the check.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "hints",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The assessment pattern library in the reading project's knowledge base labels every task with its support, from 0 for none to 3 for worked steps or feedback, and with the inference it allows, unaided or with standard or guided supports, and fades support across a lesson from warm-up through practice to the check and transfer (`grade3-reading/knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd`). Supported steps serve mainly for feedback and move an estimate only a little; high-stakes decisions rest on the first unaided check or transfer task, and a claim says whether it holds with standard cues or unaided. The assessment pack guide adds, for AP-style constructed responses, that scaffolding changes a task's difficulty and so how attainment is read (`grade3-reading/knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd`). Each task's support is labelled, and every result is stated with the support it was earned under.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "72",
+   "quote": "base high-stakes decisions on the first unaided check (or transfer task) that follows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "71",
+   "quote": "State the claim to match support.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "68",
+   "quote": "S: 0 = none; 1 = cues/examples; 2 = guided prompts; 3 = worked steps/feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "64",
+   "quote": "structure each lesson as a fade from high-support learning to low-support evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "61",
+   "quote": "The amount of scaffolding and guidance in a task directly affects its difficulty and therefore has implications for how we interpret student attainment.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "169",
+   "quote": "\"can do X with cues\" ≠ \"unaided\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "46",
+   "quote": "The mastery claim states its support level (\"unaided\" vs \"with cues\"); high-stakes scores only the unaided check",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2767",
+   "quote": "It must be unmistakably the student thinking alone: exploring, writing, evaluating",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4388",
+   "quote": "On a blank answer, it offered: “An ensign carries a flag. What is Iago’s flag hiding?” That’s a restrained but interpretation-shaping hint.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2881",
+   "quote": "If the student requests instructional help, we record the attempt as assisted and later offer a fresh independent opportunity.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3077",
+   "quote": "A high-school mathematics experiment found that unrestricted GPT assistance improved practice performance while reducing subsequent unaided performance.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3077",
+   "quote": "This is a warning to test independent learning, not proof of the same effect in English.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "164",
+   "quote": "During practice, grades rose 48% with GPT Base and 127% with GPT Tutor.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "164",
+   "quote": "On the unassisted exam, the GPT Base group scored 17% *worse* than controls.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "164",
+   "quote": "It erased most of the harm, but it did **not** beat the control group on the exam.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "140",
+   "quote": "A reveal is supported review, not unaided recall.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "414",
+   "quote": "Assistance and model reveals are honestly labelled; no live AI diagnosis is implied.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "320",
+   "quote": "Scaffolded in-session success is not delayed unaided mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "122",
+   "quote": "A question counts as right only if no wrong answer was ever recorded against",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "399",
+   "quote": "supported retry counted as first independent success",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "418",
+   "quote": "The only unaided evidence the lesson produces.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "88",
+   "quote": "Every claim must name the support level under which its evidence was collected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "197",
+   "quote": "helped items count honestly as completed-with-help — only the solo tally differs",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

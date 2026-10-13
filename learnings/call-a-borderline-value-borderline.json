@@ -1,0 +1,60 @@
+{
+ "id": "call-a-borderline-value-borderline",
+ "title": "Call a borderline value borderline",
+ "statement": "Report a measured value that falls within the tolerance margin of a limit as borderline, not as in range.",
+ "example": "One reading-level check scored such values 1.0 and printed that they were within the grade band.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A code-computed reading-level check folded reliable values just outside the grade band, but within its tolerance margin, into its pass branch, scoring them 1.0 and printing that they were within the band, which contradicted the measurement's own verdict (git commit 3c78f22 in `shadow/bench`, lines 48-52). The fix kept the pass, since failing near-edge items would defeat the margin and the metric has no model fallback, but gave borderline values their own branch with accurate wording (lines 54-57). Whether a borderline value then passes or goes to a judge is a separate decision.",
+ "against": "Another path treats the same verdict differently: the fiction-reading rubric hands a borderline or low-reliability value to the judge's own judgment (`shadow/bench/src/inceptbench/prompts/fiction_reading/evaluation.txt` lines 397-398). The record unsure-is-neither-yes-nor-no holds that an unsure judge's verdict is never a pass, while a measured value inside a tolerance margin passes here by design.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "48-52",
+   "quote": "_attach_reading_level_metric folded band_verdict==\"uncertain\" (reliable Lexile just outside the grade band but within BAND_OVERRIDE_MARGIN_L) into the pass branch, scoring 1.0 AND printing \"is within the grade-N band\", which contradicts analyze_reading_level and the injected prompt VERDICT for borderline text.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "54-57",
+   "quote": "Borderline still passes (failing near-edge items would defeat the purpose of the tolerance margin, and there is no LLM fallback for this deterministically attached metric), but it now has its own branch with accurate wording (\"just above/below the band but within the {margin}L tolerance\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "18",
+   "quote": "| Sim 2 reliability (operational range) | 0.929 | 0.923 | 0.929 | **0.931** | 0.93 target | ✅ meets the 0.93 target |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "57",
+   "quote": "expect *\"so the honest summary is: simulated, near-miss reliability on uncalibrated items.\"*",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,86 @@
+{
+ "id": "supported-means-the-passage-says-it",
+ "title": "Supported means the passage says it",
+ "statement": "Besides checking that a quote is exact, check that the passage itself states everything the claim says, not merely that the claim is plausible, and audit 'partly supported' verdicts.",
+ "example": "One span labelled fully supported added a fact the paragraph never stated, so only outside knowledge could support it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "stimulus"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A second model re-graded 30 support labels from a training set, stratified 10 per class, and agreed with 70% overall and 60% on 'partly supported', with two of those pulled up to 'fully' and two down to 'no' (`project_self_rag_label_audit_rebuild_trigger.md`). The clearest disagreement was a span labelled fully supported that added a fact the paragraph never stated, so it needed outside knowledge. 'Partly supported' verdicts need an audit of their own.",
+ "against": "This is one model checked against another on 10 spans per class, so its disagreements are not errors against a person's key, and the re-grader leaned lenient on the 'no' class, moving three labels to 'partly' and none the other way (same file, line 43). The evaluation design is a draft: no model has been run under it (`uae-education-ai/EVALUATION.md`, line 3).",
+ "evidence": [
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_label_audit_rebuild_trigger.md",
+   "lines": "26",
+   "quote": "| **partially** | **60%** | 10 | **<80% → REBUILD** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_label_audit_rebuild_trigger.md",
+   "lines": "28",
+   "quote": "| **aggregate** | **70%** | 30 | <90% → not \"clean\" |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_label_audit_rebuild_trigger.md",
+   "lines": "41",
+   "quote": "The partially class is **bidirectionally noisy** — 2 cases pulled UP to \"fully\" (Quill under-rated), 2 cases pulled DOWN to \"no\" (Quill over-rated).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_label_audit_rebuild_trigger.md",
+   "lines": "50",
+   "quote": "- Atlas verdict: \"no\" — paragraph mentions debate over treatment, NOT conversion to Christianity. Span injects fact requiring outside knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_label_audit_rebuild_trigger.md",
+   "lines": "43",
+   "quote": "The \"no\" class is asymmetrically lenient on Atlas's side (3 pulled \"no\" → \"partially\", 0 the other way), consistent with 3.1-pro slightly more accepting of thematic-but-not-literal entailment.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "124",
+   "quote": "- The quote doesn't mention water, so the model answer asserts something its own evidence doesn't show.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "50",
+   "quote": "Mechanically verify that each quote is an exact fragment substring. … rate whether the quote actually supports the stated verdict and rule: 0 = absent or misleading, 1 = relevant but incomplete, 2 = sufficient and faithful.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "282",
+   "quote": "The script doesn't check a write-frame's revealed quote against the revealed answer.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

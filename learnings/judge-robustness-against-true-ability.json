@@ -1,0 +1,106 @@
+{
+ "id": "judge-robustness-against-true-ability",
+ "title": "Judge robustness against true ability",
+ "statement": "In simulation, judge whether a test survives wrong item difficulties by its error against the true abilities, not by its reliability, which can stay flat while that error grows.",
+ "example": "In one simulation, difficulty noise with a standard deviation of 1.0 logit left reliability at 0.890 against 0.886 without noise, while error against true ability rose from 0.3977 to 0.4502 logits.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "contested",
+ "detail": "A reading assessment's third simulation gave its engine item difficulties perturbed by random noise, at standard deviations from 0 to 1.0 logits, while 2,000 simulated students per level answered by the unperturbed values (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`). Reliability barely moved, 0.886 with no noise and 0.890 at 1.0, but error against true ability rose from 0.3977 to 0.4502 logits and peaked at 0.4938 at 0.8. The package itself adds that robustness to parameter error does not mean scores are accurate in absolute terms. My inference is that the engine's own precision is computed from the difficulties it was given, so a reliability figure built on it cannot see their errors.",
+ "against": "The package draws the opposite conclusion from the same table: \"The algorithm is robust to pre-calibration parameter uncertainty.\" Both columns are noisy (the error at a standard deviation of 0.2, 0.3826, sat below the noiseless run), reliability did fall to 0.866 at 0.8 where the error peaked, and the later full-bank run reports only reliability for this study, at least 0.915 at every level (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "185",
+   "quote": "- 2,000 students per σ level, across 7 levels: σ = 0.0, 0.1, 0.2, 0.3, 0.5, 0.8, 1.0 logits",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "186",
+   "quote": "- At each σ level, each item's b_provisional is perturbed by Gaussian noise: b_administered = b_provisional + N(0, σ)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "187",
+   "quote": "- The engine uses the perturbed b values (simulating what happens when expert assignments are wrong)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "188",
+   "quote": "- True students are simulated using the unperturbed values (simulating true item difficulty)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "197",
+   "quote": "| 0.0 | 0 RIT | 0.3977 | 0.886 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "202",
+   "quote": "| 0.8 | 8 RIT | 0.4938 | 0.866 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "203",
+   "quote": "| 1.0 | 10 RIT | 0.4502 | 0.890 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "211",
+   "quote": "Robustness to parameter error does not mean scores are accurate in absolute terms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "208",
+   "quote": "The algorithm is robust to pre-calibration parameter uncertainty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "199",
+   "quote": "| 0.2 | 2 RIT | 0.3826 | 0.892 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "20",
+   "quote": "(reliability ≥ 0.915 at every σ)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

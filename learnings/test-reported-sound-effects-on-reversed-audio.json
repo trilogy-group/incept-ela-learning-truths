@@ -1,0 +1,78 @@
+{
+ "id": "test-reported-sound-effects-on-reversed-audio",
+ "title": "Test reported sound effects on reversed audio",
+ "statement": "A listening model can report sounds the narration only describes, so test a reported sound effect on the same audio reversed, and leave remaining disagreement to a person.",
+ "example": "After the two reported-noisy examples were regenerated, a sound-focused model still heard tapping that reversed copies of the same samples did not contain.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A sound-focused model kept reporting tapping under narrated sentences about tapping, even after the two reported-noisy examples were regenerated with the exact words, while ordinary speech recognition and other model reviews reported no unintended sounds. Reversed audio keeps any real percussion but makes the words unintelligible, and two reversed-audio diagnostics of the same samples found only speech, which the project read as semantic contamination. The disagreement was kept open for a person to hear rather than certified either way.",
+ "against": "The reversed-audio check did not settle the case: the project kept the disagreement open and noted that \"it does not establish a clean-speech human certification\" (grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json, line 48).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "48",
+   "quote": "Flash still describes percussion mirroring the spoken example, but reversed-PCM diagnostics of the same samples find only speech, supporting semantic contamination.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "48",
+   "quote": "Replaced the two reported-noisy examples",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "48",
+   "quote": "Whole-node and isolated flash-lite review report no unintended sounds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/FINAL-HANDOFF.json",
+   "lines": "29",
+   "quote": "Human review of regenerated rhythm example: ordinary ASR reports no effects, sound-focused model disagrees; reverse-PCM checks hear no percussion, indicating possible semantic contamination.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/flash-audio-adjudication/u9-l4-rhythm-unprimed.json",
+   "lines": "35",
+   "quote": "a series of actual, repeating tapping sounds are audibly present, directly illustrating the action described.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/flash-audio-adjudication/rhythm-reversed-diagnostic.json",
+   "lines": "5",
+   "quote": "There are no separate percussive sounds, impacts, or distinct tapping patterns mixed with the voice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/flash-audio-adjudication/rhythm-reversed-diagnostic-2.json",
+   "lines": "5",
+   "quote": "No separate percussive sounds such as distinct impacts or a tapping pattern are present alongside the voice.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

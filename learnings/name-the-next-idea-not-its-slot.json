@@ -1,0 +1,96 @@
+{
+ "id": "name-the-next-idea-not-its-slot",
+ "title": "Name the next idea, not its slot",
+ "statement": "Link to what comes next by naming the next idea and why it follows, never by position such as 'in the next video', because the order can change.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script rubric's bridge must name the actual next idea and the hinge between the two, anchored to the concept relationship rather than the playlist slot, so it stays coherent when the review queue reorders lessons (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). Positional references to a neighbouring lesson assert a teaching-order fact that can't be checked, since under batched or parallel generation the true neighbour is unknown (`shadow-bench`, git commit a8818e0). A high-precision detector in code now flags such references and downgrades the script's structure score. Numbered references such as 'lesson 7' are positional too, and the same commit asserts, without a count, that a named neighbour is often wrong.",
+ "against": "Vague references are allowed: 'Safely-vague forms (\"earlier in the course\") are fine.' (`shadow-bench`, git commit a8818e0, lines 9-10). That a named neighbour is 'frequently wrong' is asserted from an internal guide, not counted (the same commit, lines 8-9).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "52",
+   "quote": "- **Phrasing rule:** anchor the bridge to the concept relationship (\"now that you know X, Y follows because…\"), NOT to the UI or playlist slot (\"in the next video…\"). This keeps the bridge coherent even when the retrieval queue reorders review.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "51",
+   "quote": "The bridge must be specific: it names the actual next idea and states the conceptual hinge between them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "a8818e0",
+   "lines": "5-8",
+   "quote": "Positional / UI-coupled references to a specific neighbouring lesson (\"in the last video\", \"coming up next\", \"Lesson 7\", \"two lessons ago\") assert an unverifiable teaching-order fact. Under batched/parallel generation the true neighbour is unknown, so a confidently-named one is frequently wrong",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "a8818e0",
+   "lines": "9-10",
+   "quote": "Safely-vague forms (\"earlier in the course\") are fine.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "a8818e0",
+   "lines": "12-14",
+   "quote": "tools/relational_reference.py (shared): high-precision detector — flags only clearly positional/UI-coupled/numbered references, so it can drive a downgrade with a low false-positive rate; soft \"an earlier lesson\" is left to the LLM.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/v0.2.md",
+   "lines": "93",
+   "quote": "The first pilot videos were technically accurate but felt \"random\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/v0.2.md",
+   "lines": "93",
+   "quote": "began mid-explanation and switched concepts with no marker",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "60",
+   "quote": "At every concept boundary the **spoken narration itself must introduce the next concept with a smooth, natural connective bridge**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "60",
+   "quote": "no silent jumps",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,52 @@
+{
+ "id": "absolute-words-in-wrong-options",
+ "title": "Absolute words in wrong options",
+ "statement": "Open: whether to flag absolute words such as always, never and all in any wrong option, or only when every wrong option carries one and the key does not.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "distractors",
+  "integrity",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The reading audit flags absolute words only when every distractor carries one and the key does not, because only then is the key findable by shape. An AP question benchmark instead rejects a question outright, before any model is asked, if its distractors use absolute language. Neither file records a measurement behind its choice.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "78",
+   "quote": "every distractor carries an absolute (always/never/all/none/only…) and the key does not, so the key is findable by shape",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "95",
+   "quote": "- **Absolute language** in distractors: \"total\", \"complete\", \"immediate\", \"all\", \"never\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "975",
+   "quote": "(3) p8's distractors were wrong on their quantifiers (two opened 'Only'), so elimination found the inclusive key; they are now wrong on the facts.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

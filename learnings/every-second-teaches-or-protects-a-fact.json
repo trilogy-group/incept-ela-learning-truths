@@ -1,0 +1,133 @@
+{
+ "id": "every-second-teaches-or-protects-a-fact",
+ "title": "Every second teaches or protects a fact",
+ "statement": "Cut anything in a teaching video that cannot name the fact it teaches or protects.",
+ "example": "The rule's companion file puts the cost of interesting but irrelevant details at an effect size of about −0.37 to −0.41.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The science video agent's spec sets a single objective: every second must encode a target fact or protect the encoding of one, a second that does neither is a cut candidate, and completion is not success (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`). Its rule 3 cuts any element that cannot name its target fact and turns off music under narration, decorative b-roll, textured backgrounds, non-process motion and off-topic jokes by default. The companion file gives the reason: interesting but irrelevant material tends to depress learning, about g −0.37 to −0.41 for seductive details, and its sources include a 2012 meta-analysis of the seductive-detail effect (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md`). Keep music and sound effects out from under the teaching voice unless a sound has an instructional job, and leave decorative footage and textured backgrounds off by default.",
+ "against": "It is a default, not a ban: an element stays when the storyboard names the instructional job it does, and the companion file says to revisit the rule if the project's own delayed-recall data disagree (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md`). The 20 dB gap is listed as an operating heuristic still to be tested against recall and intelligibility, and the evidence corpus behind these rules skews adult and higher-ed, with elementary effects non-significant (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md`). A later run found: A unit's opening film was required to carry an atmospheric, theatrical intro sound following the script, then background music, with the target an atmospheric score under the narration, swells timed to the story and the words clear throughout. The score was never mixed with narration and nothing measured its effect (`g9/transcript/chat-transcript.redacted.txt`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "12-13",
+   "quote": "Every second must ENCODE a target fact or PROTECT the encoding of one. A second that does neither is a cut candidate. Completion ≠ success.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "29",
+   "quote": "Default OFF: music under narration, decorative b-roll, textured backgrounds, non-process motion, off-topic jokes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "54",
+   "quote": "Interesting-but-irrelevant material tends to *depress* learning, not sit neutral.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "55",
+   "quote": "Seductive details ≈ g −0.37 to −0.41 [5]",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "49-51",
+   "quote": "\"Default\" means: apply unless the storyboard identifies a specific instructional function for doing otherwise, and revisit if our own delayed-recall data disagrees.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "46",
+   "quote": "20. Music/SFX OFF under teaching narration; any intro/outro bed ≥20 dB below speech; an SFX must have an instructional job.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "197",
+   "quote": "- Music/SFX default OFF under teaching narration [LE] [22]; any bed ≥20 dB below speech [OH/AR]; an SFX must have an instructional job.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6895",
+   "quote": "it has to have an epic atmospheric and theatrical intro sound going over the script closely",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6937",
+   "quote": "generate music too, as a bg",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6916",
+   "quote": "a theatrical narrator performing the script closely, with an atmospheric score underneath, deliberate pauses and musical swells timed to the story. The words stay clear throughout.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/video-recut-drafts-2026-08-31.md",
+   "lines": "179",
+   "quote": "it previews atmosphere and teaches nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Grade 9 video feedback.md",
+   "lines": "10",
+   "quote": "zooming into the question mark doesn’t add value.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "16",
+   "quote": "Every sentence carries knowledge. No puzzle hooks, rhetorical teasers or openings that are only atmosphere. The pull comes from the story itself (A to B), told as fact.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lbde498.txt",
+   "lines": "20",
+   "quote": "Every sentence carries knowledge. No puzzle hooks, rhetorical teasers or openings that are only atmosphere.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rey 2012",
+   "url": "https://doi.org/10.1016/j.edurev.2012.05.003"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

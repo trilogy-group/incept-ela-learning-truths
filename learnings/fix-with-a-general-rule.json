@@ -1,0 +1,40 @@
+{
+ "id": "fix-with-a-general-rule",
+ "title": "Fix with a general rule",
+ "statement": "Fix a reported judging failure with a general rule, and keep the reported item's details, and rules for a single standard, out of the general rubric.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator repository's working rules say to generalise from a reported example and never paste its item text, answer choices, IDs or issue numbers into prompts, rubrics, evaluators, tests or code unless the requirement is about that literal content (`icloud-work/inceptbench-main/AGENTS.md`). A regression test for issue 397 keeps rules for single substandards out of the standardised-test overlays, because that guidance comes from the curriculum service at run time (`icloud-work/inceptbench-main/tests/test_sat_overlay_no_substandard_rules.py`).",
+ "against": "Several audits are still tied to narrow content, such as one that fires when a stem names a wild animal species by its common name and one for fill-in answers that are geographic reference lines (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, lines 63 and 162).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/AGENTS.md",
+   "lines": "154",
+   "quote": "When fixing an issue, generalize from the reported example. Do not paste the issue's exact example, item text, answer choices, IDs, issue numbers, or attachment-specific content into production prompts, rubrics, evaluators, tests, or code unless the requirement is explicitly about that literal content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_sat_overlay_no_substandard_rules.py",
+   "lines": "6-8",
+   "quote": "Substandard-level guidance is owned by the curriculum repo and delivered at runtime through the Curriculum API.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

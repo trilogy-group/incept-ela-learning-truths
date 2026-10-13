@@ -1,0 +1,63 @@
+{
+ "id": "quick-for-facts-explained-for-concepts",
+ "title": "Quick for facts, explained for concepts",
+ "statement": "Give feedback at once on simple facts, and on concepts explain why an answer is right or wrong.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The delivery platform's learning-science page lists feedback among the force multipliers that work once the foundations are in place: immediate for basic facts, elaborated, explaining why, for concepts. Its principles page carries the same line, and the reading project took both as its bar, so this is a rule adopted from the platform, not a result measured here.",
+ "against": "Explained feedback still has to be short for young readers: long feedback text was itself counted a failure for Grade 3 (`grade3-reading/knowledge_bot/HOTBUCKET.md`, line 283), and a lesson lint caps feedback at 60 words, with 40 as the target (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md`, line 15).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0027-learning-science.qmd",
+   "lines": "38",
+   "quote": "| **Feedback**        | Immediate for basic facts; elaborated (explaining why) for concepts.   |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "65",
+   "quote": "| **Feedback** | Immediate for basic facts; elaborated (explaining why) for concepts. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "283",
+   "quote": "Long feedback text is itself a failure for Grade 3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "15",
+   "quote": "feedback must carry a `misconception_id` and be <= 60 words (hard cap); 41-60 words emits a non-blocking warning (40 is the standard's target).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "367-369",
+   "quote": "A criterion is the better hint of the two when the child's error is about a kind of thinking rather than a missed fact, because it transfers to the next item and a page reference does not.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

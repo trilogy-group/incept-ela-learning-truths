@@ -1,0 +1,70 @@
+{
+ "id": "test-and-prune-a-writers-rules",
+ "title": "Test and prune a writer's rules",
+ "statement": "Treat every rule or example added to a writer's instructions as a change to test, and prune and reconcile the rules as they grow.",
+ "example": "A run that added constraints and warnings fell from 65% to 61%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP generator's prompt runs, a run that added constraints and warning text fell from 65% to 61%, and its analysis blamed added rules that created conflicting signals and 'do not' lists the model couldn't all satisfy (`icloud-work/ap-social-studies-generator/docs/archive/ITERATION_ANALYSIS.md`; `icloud-work/ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md`). Adding 15 document examples to one course's source-based essay prompt brought 4 failures, where the version without examples had passed 98% (`icloud-work/ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md`).",
+ "against": "Examples helped elsewhere: another course passed 100% with 31 examples (`icloud-work/ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md`), and concrete bad examples correlated strongly with passing (`icloud-work/ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md`). The runs compared changed several things at once, and a 4-point drop may be within run-to-run noise.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/ITERATION_ANALYSIS.md",
+   "lines": "93",
+   "quote": "> **More rules ≠ better output.** The LLM has limited attention. Every added constraint dilutes the importance of existing ones.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/ITERATION_ANALYSIS.md",
+   "lines": "89",
+   "quote": "- Additional rules created conflicting signals",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md",
+   "lines": "88",
+   "quote": "3. **Conflicting DO NOTs** - Model couldn't satisfy all constraints",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/VERSION_ANALYSIS.md",
+   "lines": "94",
+   "quote": "| Pass Rate | 65% | 61% | -4% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "186",
+   "quote": "APUSH DBQ had 4 failures after adding 15 document examples to prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "225",
+   "quote": "| Main | APUSH | 0 | 195.2 | 98% pass |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

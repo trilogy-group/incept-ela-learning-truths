@@ -1,0 +1,495 @@
+{
+ "id": "one-plain-voice-for-every-line",
+ "title": "One plain voice for every line",
+ "statement": "Every line a student reads gets one plain voice: no praise, no exclamation marks, no verdict the screen already shows, and at most one question, none in a closing line.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every line a student reads passes the same cleaner in code: no gushing, at most one question while a try remains and\nnone in a closing line, no semicolon or dash standing in for a comma, and no opening verdict, since the screen shows\nthe verdict itself (`g9/transformer/src/house.js`). The rules are a 3D version's reply cleaners and an animated\nversion's punctuation, used as they are. A test turns \"Great job! You found the line. Which word matters? And why?\"\ninto \"You found the line. Which word matters?\" (`g9/transformer/test/glue.test.mjs`). Before the rule, feedback opened\nwith \"This is correct;\" under the build's own YES (`g9/transformer/v02/QA.md`, \"Found and fixed\").",
+ "against": "without the\n3D version's code on the machine, its praise and question rules don't run (`g9/transformer/src/glue/threejs.js`). A later run found: another reading course's register for ten-year-olds bans younger-grade praise such as medals and confetti but asks for specific process praise instead, with feedback kept to 40 words and one scaffolding question on a miss, so whether a line may praise at all differs between courses (`grade3-reading/knowledge_bot/knowledge/kb-0195-g5-book-lane-secret-garden-closed.qmd`). A later run found: a Grade 5 reading course asks for specific process praise that names what the student's move accomplished, rather than no praise, after a review found the same generic praise and medal on all nine lesson endings, though it graded that as polish only (`grade3-reading/artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md`). A later run found counter-evidence (`grade3-reading/incept-read-app/apps/broker/WRITING-SCORE.md`). A later run found counter-evidence (`grade3-reading/incept-read-app/docs/G4-SCR-example-native-qti.md`). A later run found counter-evidence (`g9/transcript/chat-transcript.redacted.txt`). A later run found counter-evidence (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/dimensions/D12-motivation-engagement.md`). A later run found counter-evidence (`grade3-reading/artifacts/g5-deploy/EVALUATION-API.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/glue.test.mjs"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0195-g5-book-lane-secret-garden-closed.qmd",
+   "lines": "68-70",
+   "quote": "no G3-babyish praise (\"You did it!\", medals/confetti) — specific process praise instead; feedback ≤40 words (never >60), one scaffolding question on a miss, never the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-27-R12.md",
+   "lines": "38",
+   "quote": "All 5 G5 MSQ items author those lines as praise",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-27-R12.md",
+   "lines": "39",
+   "quote": "child who just failed to the floor read \"Yes.\" — unearned praise contradicting the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-15-R23.md",
+   "lines": "53",
+   "quote": "running out of tries is not passing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md",
+   "lines": "50",
+   "quote": "Hedged language is not politeness, it is load: 'might', 'maybe', 'a little' are excluded because they add processing cost without information.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "205",
+   "quote": "representation CANNOT show (\"Neither source named the fish's diet\"), without hedging into",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "198",
+   "quote": "Praise is specific process praise naming what the student's move accomplished",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "127",
+   "quote": "lesson three the trophy is wallpaper. The `did`/`now` lines are honest and specific",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "126",
+   "quote": "**P-1. POLISH — all nine receipts are the identical \"You did it!\" + gold medal.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/rubric.md",
+   "lines": "88",
+   "quote": "One calm, grade-appropriate voice, conversational 2nd person (r15).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "524-525",
+   "quote": "one stable voice per \"expert\" across the whole exchange; tune for register-matched, moderate prosody, not maximum expressiveness",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "20 (textutil text)",
+   "quote": "No em dashes in child-facing wording; US English throughout; no voice input.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "42",
+   "quote": "\"modelling\" is also an adult word for grade 3.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js",
+   "lines": "3-4",
+   "quote": "leading verdict (\"Correct.\", \"This is incorrect;\") is dropped: both builds show the verdict themselves (YES, NOT THAT … ONE). Quotations are left exactly as the text has them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js",
+   "lines": "19",
+   "quote": "t = t.split(QUOTED).map((seg, i) => (i % 2 ? seg : punctuate(seg))).join(\"\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "29-30",
+   "quote": "praise and \"!\" removed, one question while a try remains, none on the final word, a quoted line's \"!\" kept.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "66",
+   "quote": "feedback opened with \"This is correct;\" under the build's own YES",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "73",
+   "quote": "if (!available) return text;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "29-30",
+   "quote": "Tested on its own cases: praise and \"!\" removed, one question while a try remains, none on the final word, a quoted line's \"!\" kept.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/glue.test.mjs",
+   "lines": "8",
+   "quote": "a quoted line keeps its !",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "70",
+   "quote": "student text in both builds' house style: no opening verdict, no semicolon or dash for a comma, quotations untouched",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "75",
+   "quote": "assert.equal(say(\"He is two-faced — a liar.\"), \"He is two-faced, a liar.\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "22",
+   "quote": "What a student reads after a tick, outside quotations: no line number (src/mechanics/util.js) and no exclamation mark.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "89",
+   "quote": "a closing line keeps no question of its own (the 3D build's rule), only quoted ones",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js",
+   "lines": "1-2",
+   "quote": "the 3D build's own rules (no gushing; at most one question, … none in a closing line)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "10-11",
+   "quote": "never put a paraphrase in quotes. Feedback never opens with a verdict (Correct, Incorrect, Yes, No): the lesson shows the verdict itself.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "4",
+   "quote": "its house rules for every line a student reads (no praise, no \"!\", one question while the student still",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "66",
+   "quote": "feedback opened with \"This is correct;\" under the build's own YES;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "95",
+   "quote": "a reading check's reply is a question, as the build requires",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/glue.test.mjs",
+   "lines": "6",
+   "quote": "assert.equal(houseRules(\"Great job! You found the line. Which word matters? And why?\"), \"You found the line. Which word matters?\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "120",
+   "quote": "a closing reply asks nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "6-7",
+   "quote": "The tone is adult and precise: no games language, no exclamation marks, no \"Great job\", nothing that reads as written for young children.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "39",
+   "quote": "This definition correctly reflects the religious sense of declaring a physical place holy.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "These should stay behind: the Grade 3 loop and level shapes, its prompts and praise lines",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "461",
+   "quote": "No em dashes in child-facing text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "517",
+   "quote": "No semicolons, parentheses, slash compounds or ALL-CAPS emphasis",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "520",
+   "quote": "Same ban, same reason, extended to the punctuation that reads as adult prose to an eight- or nine-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "528",
+   "quote": "R-COPY-1 and R-COPY-2 apply to every word a child reads, including the praise and the hint composed at answer time by the scorer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "528",
+   "quote": "Those two are rewritten into house style in `src/app/api/speak-score/route.ts` before they are returned, because no validator can see a line that does not exist until the child answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "93",
+   "quote": "LLM-speak, untaught terms before they're taught, and em-dash or semicolon register all fail.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "61",
+   "quote": "praise opener (l3 Task 2) is kept only when it is earned: after a secure oral argument",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "301",
+   "quote": "const said = voice && !earned ? voice.replace(PRAISE_OPEN, '') : voice",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "31",
+   "quote": "Never uses praise words (\"great\", \"amazing\", \"excellent\", \"well done\") and never uses \"!\".",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "39",
+   "quote": "Eight behaviors predicted higher perceived autonomy: listening, letting the student work their own way, time the student spends talking, informational praise, encouragement, offering hints, answering student questions, and acknowledging the student's perspective.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "26",
+   "quote": "It should give specific, critical feedback, not praise padding.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "26",
+   "quote": "Avoid \"Great try!\" followed by a hint.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/sources/README.md",
+   "lines": "9",
+   "quote": "The style validator preserves semicolons only inside those verified excerpts or verse lines; ordinary instructional prose remains subject to the existing rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "173",
+   "quote": "All strings verified: no em-dash/semicolon/parenthesis/ALL-CAPS, one child-actionable sentence, under 25 words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "106-107",
+   "quote": "**No banned punctuation** found in any question stem in the new-surface set (checked for ellipsis specifically; none present).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L5.md",
+   "lines": "83",
+   "quote": "**House rule compliance**: zero em dashes in L5 (grepped raw JSON)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/book-know-word-bank.test.mjs",
+   "lines": "331",
+   "quote": "assert.ok(!/[—–]/.test(s), `no em dash: ${s}`);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "27",
+   "quote": "Production note: house rules — no em dashes in child-facing wording;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/apps/broker/WRITING-SCORE.md",
+   "lines": "110",
+   "quote": "one encouraging sentence for the child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "133",
+   "quote": "Excellent job explaining how water wakes the seed up and makes its shell crack open!",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2866",
+   "quote": "Supports persistence and self-efficacy through specific encouragement and reflection on progress.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-internal-review-2026-08-12.md",
+   "lines": "44-46",
+   "quote": "Wrong answer feedback for vocab doesn't look educationally sound and helpful to the student \"You said my words back to me. Nice memory! But I want to hear YOUR words\" these instructions are just fluff",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "177",
+   "quote": "Verdict: **the feedback lines are the best copy in the build** — declarative, one fact, no praise inflation, no exclamation marks, every wrong answer corrected with the reason.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "341",
+   "quote": "None of this. The card says one declarative sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "182",
+   "quote": "Over-praise or use a cartoonish tone.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "53",
+   "quote": "The task closes on secure (and on the final attempt), so a closing question would be left hanging: drop it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "62",
+   "quote": "36 of 63 verdicts came with the model's own reply: 19 to 30 words, no praise words, no exclamation marks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L96a053.txt",
+   "lines": "177",
+   "quote": "Verdict: **the feedback lines are the best copy in the build** — declarative, one fact, no praise inflation, no exclamation marks, every wrong answer corrected with the reason.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D12-motivation-engagement.md",
+   "lines": "17",
+   "quote": "gets specific *process* praise, not generic 'good job'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "64",
+   "quote": "uptake-first: names something specific the student actually said (never generic \"great job\")",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

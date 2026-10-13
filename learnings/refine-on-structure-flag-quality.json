@@ -1,0 +1,91 @@
+{
+ "id": "refine-on-structure-flag-quality",
+ "title": "Refine on structure, flag quality",
+ "statement": "Let an automatic refine loop act only on structural failures and send a judge's quality findings to a person, since a refiner acting on them rewrote approved content.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading engine's authoring pipeline runs its gates on each generated lesson, deterministic ones first and judges after, refines within a budget by regenerating only the failing subjects, and never writes a structural failure. Quality findings are flags for the human reviewer, never input to the refiner: the first time they were fed back, a judge called the design document's own signed distractors filler, the refiner rewrote them, and the fidelity gate then failed the rewrite. It applies machine-checks-are-not-judgment to a generation loop.",
+ "against": "The Grade 9 lesson engine feeds its judge's failures back to the writer: \"a failing draft gets exactly one correction pass with the reasons.\" (`g9/transformer/src/transform.js`, line 2).",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "82-87",
+   "quote": "Refine acts on STRUCTURAL failures only. Quality findings are FLAGS for the human reviewer (`flag_on: quality` in the rule pack), never refine fodder: the first time quality findings were fed back, a judge called the design doc's own signed distractors filler, the refiner rewrote them, and the fidelity gate then rightly failed the rewrite. The loop cannot be allowed to argue with the signed content it exists to protect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "75",
+   "quote": "(deterministic first, they are free; judges after)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "76",
+   "quote": "(only the failing subjects are regenerated)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "77",
+   "quote": "(a structural failure is never written)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "82-86",
+   "quote": "Refine acts on STRUCTURAL failures only. Quality findings are FLAGS for the human reviewer (`flag_on: quality` in the rule pack), never refine fodder: the first time quality findings were fed back, a judge called the design doc's own signed distractors filler, the refiner rewrote them, and the fidelity gate then rightly failed the rewrite.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "86-87",
+   "quote": "The loop cannot be allowed to argue with the signed content it exists to protect.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "76",
+   "quote": "refine within budget  (only the failing subjects are regenerated)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "77",
+   "quote": "accept or DISCARD     (a structural failure is never written)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "102",
+   "quote": "`severity` — `structural` (discard), `quality` (flag), or `advisory` (note).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

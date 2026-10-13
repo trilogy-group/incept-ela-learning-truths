@@ -1,0 +1,71 @@
+{
+ "id": "restore-only-what-the-learner-did",
+ "title": "Restore only what the learner did",
+ "statement": "Restore a learner's place after a reload, Back or mode switch only from a record of what they actually did, so returning neither erases earned progress nor grants unearned credit.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "evidence-of-learning",
+  "integrity",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Native checks of a Grade 3 course found an ordinary reload that lost an earned step and relocked the page, because its progress sat in a bare key outside the lesson's reading-phase state (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 1147). A switch to reviewer mode and back relocked a completed answer with the status 'Give your answer first', while a real reload repaired it (line 2083). In the other direction, reviewer answers carried into student mode as a correct mark and an open gate (line 663). Text drafts were made to survive reload and page return, and a regression now asserts across reload, pending, outage, identity and reviewer cases that no gate is restored (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.md`, line 27; `grade3-reading/ui-audit-2026-09-08/gold-standard/draft-action-regression.log`, line 20).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1147",
+   "quote": "Ordinary reload loses that earned tail and relocks the page.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1147",
+   "quote": "Tail progress uses local tailT plus a bare :tails done key outside the existing reading-phase owner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2083",
+   "quote": "Toggle reviewer on, then student on without editing or answering. The exact accepted transcript returns, but settled Next has aria-disabled=true and status Give your answer first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2083",
+   "quote": "A real reload repairs the gate, and a second reviewer return reproduces it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.md",
+   "lines": "27",
+   "quote": "| reading-9ur.20 | closed | Preserve current student text drafts across reload and page return |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/draft-action-regression.log",
+   "lines": "20",
+   "quote": "PASS draft storage + actual composer/exchange/scorer owner: reload, pending, outage, identity, reviewer, accepted clear, unavailable storage; no restored gate.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,666 @@
+{
+ "id": "a-passed-gate-is-not-learning",
+ "title": "A passed gate is not learning",
+ "statement": "A lesson that passes every check is well formed, and a first-try answer shows the moment; whether anyone learned needs a later test on new items.",
+ "group": "how-people-learn",
+ "role": "context",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's quality gate certifies form, not outcome, by construction\n(`grade3-reading/knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd`); its engine's README says passing tests\nproves plumbing, not learning (`grade3-reading/engine/README.md`); and a rise in completion alone was ruled\ninsufficient (`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`). First-try answers show the\nmoment: on a final test 5 minutes later restudying won, but after 2 days and a week prior testing gave much greater\nretention (Roediger & Karpicke 2006, https://doi.org/10.1111/j.1467-9280.2006.01693.x).",
+ "against": "no outside measure was\navailable to test it with, since the usual external test was not available for the cohort (`grade3-reading/NORTH_STAR.md`). A later run found: lessons the calibration log had marked green still drew 26 findings in one review round, findings the team's own passing gate missed, so passing every check shows good form only as far as the checks reach (`grade3-reading/knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd`). A later run found counter-evidence (`g9/transformer/v01/QA.md`). A later run found counter-evidence (`g9-transformer-runs/blocks/856ace1aed960671.json`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "README.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "NORTH_STAR.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "149",
+   "quote": "A same-day lesson gate proves at most \"I can do it now,\" not \"I can still do it later under changed conditions.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "238",
+   "quote": "**The first gate should test the intended generalisation.** If the KC is meant to transfer across surface forms, then first-exposure gating must include surface variation and near-miss contrasts—not only isomorphic items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "237",
+   "quote": "mastery gates should include items that require the learner to generate, select, or justify without the scaffold.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "158",
+   "quote": "E4 mastery gate: no feedback, delayed, varied, independent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "159",
+   "quote": "Same-day testing after practice measures working memory more than long-term memory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "60",
+   "quote": "**Author parallel forms per lesson test** (BLOCKING for hole-filling) — 2-3 forms each so three-state retry works",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "- Require 90% to advance; if not met, give intensive instruction and a delayed test with new items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "60",
+   "quote": "26 findings landed on lessons whose gate was green at review time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md",
+   "lines": "56",
+   "quote": "JSON/JSX text**, and the findings that keep recurring are ones only visible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "223",
+   "quote": "A perfectly-transferred bad design passes every gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/inputs/PRIOR-curriculum-verification-2026-09-10.md",
+   "lines": "3",
+   "quote": "do not replace student text, regenerate media, or claim curricular approval from source equality or passing technical tests",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/V2_MONSTER_DOSSIER.md",
+   "lines": "109",
+   "quote": "completion-up-while-construct-accuracy-flat is the named failure, not a win.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/V2_MONSTER_DOSSIER.md",
+   "lines": "109",
+   "quote": "Pre-register every dosage claim as a PAIRED metric (completion delta + same-student near-neighbour construct-accuracy delta, leak-probe ON).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/VERDICT_TEMPLATE.md",
+   "lines": "70",
+   "quote": "2. **KCT1 Domain-knowledge ≈ 0 — by design.** Domain-recall items are passage-independent → removed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "22",
+   "quote": "was 0/3 plain-blind and 3/3 spine-conditioned",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "22",
+   "quote": "Decertified `certified -> spine_leaky`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/04-evidence-contract.md",
+   "lines": "11",
+   "quote": "Improvement from pre-unit to post-unit student explanation of the unit concept.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "318",
+   "quote": "A v1 seam the adversarial review found: the same instrument was being used as both the mastery gate and the growth measure. Rev 2 separates them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "321",
+   "quote": "built from a held-out pool of un-practiced, un-gated items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "321",
+   "quote": "We never teach to or gate on it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md",
+   "lines": "53",
+   "quote": "Platforms that collapse the two masteries (acquisition vs durable) into one binary gate either over-reteach or under-practise",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "130",
+   "quote": "old: no bridge possible (0/313 overlap). Current: 409 real G3 MAP RIT records",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "131",
+   "quote": "for 173 students in TimeBack OneRoster; blocker is UUID crosswalk.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "135-136",
+   "quote": "The predictive claim (\"does well here → does well on MAP\") is **a design intent, not a measured result**, until the linking study runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "31",
+   "quote": "the 24-item mastery GATE (`masteryThreshold:90`) is DISTINCT from the MAP-equivalent proxy (cold passages, raw/40+band, `gating=false`, no 90 threshold). Don't conflate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd",
+   "lines": "74",
+   "quote": "Running 100K simulated students yields **zero new information** — outputs are determined by the imposed math models + pre-training.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd",
+   "lines": "76",
+   "quote": "100K-LLM-agent AP simulator (AP-score-from-pre-training artefact problem)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd",
+   "lines": "84",
+   "quote": "no self-validation (outputs must be validated against real student outcomes — Phase 6).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/PRIORITIES.qmd",
+   "lines": "81-83",
+   "quote": "this corpus grounds DESIGN, it does not prove OUR implementation works. Never cite it as evidence about our courses' outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/ROUTER.md",
+   "lines": "126",
+   "quote": "Do not claim RIT/proven impact before a real linked/piloted outcome source exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0031-how-it-works.qmd",
+   "lines": "138",
+   "quote": "**Curriculum issues** (students complete content but scores don't improve): your instruction needs work",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0016-timeback-alpharead-publishing-playbook.qmd",
+   "lines": "62-65",
+   "quote": "pre/post tests are assigned **separately from the course** and surface on the TimeBack UI dashboard as a pending test. **PowerPath is only for serving questions natively — not for pre/post gating.** Pilot: select a cohort, assign the test before + after the learning app to measure growth.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "38-40",
+   "quote": "release-day completion never qualifies (Practice BrainLift: same-day testing measures working memory, not learning).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "38-40",
+   "quote": "a delayed (≥24h) retest passed on *new* parallel items — release-day completion never qualifies (Practice BrainLift: same-day testing measures working memory, not learning)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "13",
+   "quote": "Same-day testing after practice is invalid (measures working memory) — non-negotiable",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/course-quality.qmd",
+   "lines": "61",
+   "quote": "A fully green build gate proves the course is well-built. It does not prove the course works.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/course-quality.qmd",
+   "lines": "65",
+   "quote": "A green gate with no outcome measure is reported as built, not effective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "35-36",
+   "quote": "these are not rushed-tree findings, they are findings the team's OWN passing gate missed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0127-incept-service-coe-catchup-2026-07-14.qmd",
+   "lines": "94",
+   "quote": "pedagogical-knowledge benchmark performance is not proof of teaching quality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0130-incept-service-coe-catchup-2026-07-15.qmd",
+   "lines": "136-137",
+   "quote": "Neither dataset size nor CDPK performance establishes effective generated instruction or student learning.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "430",
+   "quote": "The sync check after a video is a check on attention, not on memory.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "329",
+   "quote": "That is real retrieval, because the child has to produce the answer across a gap of days. The sync check after a video is not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "37-40",
+   "quote": "**Interleaving eligibility = E2-cleared**: a delayed (≥24h) retest passed on *new* parallel items — release-day completion never qualifies",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "63-64",
+   "quote": "an anchor first taught the same day never satisfies an `assumes` edge, and an anchor that is present-but-not-fluent is treated as not met.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "98-99",
+   "quote": "GREEN is only \"no defect found on the checked dimensions\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-quality.qmd",
+   "lines": "81",
+   "quote": "Synthetic prediction, IB scores, or reviewer approval are not outcome evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "187",
+   "quote": "- It doesn't test \"student experience\" — a confusing but technically correct question can pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/SAT_Question_Generation_Replication_Guide.md",
+   "lines": "462",
+   "quote": "- **Student Testing**: Test questions with actual target audience when possible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "35",
+   "quote": "Acquisition mastery and durable mastery are different. A same-day lesson gate proves at most 'I can do it now,' not 'I can still do it later under changed conditions.'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/case-for-review.md",
+   "lines": "10",
+   "quote": "The nine assessment sets preserve held-out source use, function-level scoring, correction routes,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "19",
+   "quote": "In-app success must predict performance on credible external assessments.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "69",
+   "quote": "Root cause: paqpgdst's MCQ_SET pass rate on HOLDOUT prompts is **0%** (0/176 K=3 attempts), vs ~20% on eval baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "159",
+   "quote": "- Same-day testing after practice measures working memory more than long-term memory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/WHY_V2_WINS.md",
+   "lines": "14",
+   "quote": "practiced certifies *familiarity*, not reading ability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "188",
+   "quote": "Receipt claims completion/practice, never mastery",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "53",
+   "quote": "\"this lesson will not waste a child's time or lie to them,\" not",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "48",
+   "quote": "\"Is it adding value\" cannot improve past \"the design says so and the shape is coherent\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/03-transfer-practice-layer.md",
+   "lines": "95",
+   "quote": "It proves assessment integrity, not curriculum quality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "9",
+   "quote": "It is item-quality-against-a-rubric, NOT learning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "120",
+   "quote": "| High in-app accuracy, low test scores | In-app tasks are not testing transfer |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "22",
+   "quote": "Until it exists, \"certified\" ≠ \"works\";",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "84",
+   "quote": "**Mastery now requires COLD / unseen-passage transfer** — the fix for \"in-app high, MAP flat.\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "120",
+   "quote": "Durable mastery requires a **delayed",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "176",
+   "quote": "The goal is to measure whether a child’s comprehension and oral language are growing over time, not just whether the child answered one question.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "353",
+   "quote": "whether they own them durably is a different question the course answers with spaced returns, not with a medal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-quality.qmd",
+   "lines": "61",
+   "quote": "A fully green build gate proves the course is well-built. It does not prove the course works.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/academics-alignment-plan.md",
+   "lines": "71-72",
+   "quote": "Serving mastery forms same-session with feedback measures acquisition and calls it mastery",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_eval_contamination_check_all_eval_files.md",
+   "lines": "20",
+   "quote": "Had I trained on those rows, v54 would have learned its eval set verbatim → fake pass rate, contamination, useless iteration. Caught before training; saved the cycle.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "143",
+   "quote": "and nothing flows back from the classroom to reveal whether they missed any.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "249",
+   "quote": "The next proof must be a fresh dynamic generation run using the patched pipeline, followed by the prior n=30 regression gate and eventually the full failed-export replay.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/promotion_gate_20260525.md",
+   "lines": "47",
+   "quote": "- Failed re-validation/cherry-pick artifacts including old Den 50/50 proof and EXPLOIT-003.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v04/README.md",
+   "lines": "12",
+   "quote": "- **Transfer:** unseen lines, key quotations.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "40",
+   "quote": "A successful render is technical proof only, not academic approval.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "19",
+   "quote": "The generated voice and assembled scene have **not** been heard or approved by a human reviewer, academically signed off, or tested with students.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "40-41",
+   "quote": "A first live run on Othello showed two faults no check caught",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "8, 14",
+   "quote": "\"stem\": \"Who is the person actually speaking the words that describe the ruined statue and the surrounding desert?\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/STUDENT_READY_CRITICISM_FRAMEWORK.qmd",
+   "lines": "172",
+   "quote": "BrainLift in `kb-0086` separates E1 acquisition, E2 fluency, E3 generalization, and E4 delayed independent mastery. Same-day gates prove little durable mastery. | Add delayed, varied, independent mastery gates using new items and no immediate feedback; distinguish acquisition checks from durable mastery in docs. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "581",
+   "quote": "### G5-POL-PRA-008: Reserve durable-mastery claims for a different-day, feedback-free assessment on novel items at or above eighty percent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Acquisition, durable mastery, and transfer are different claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "an acquisition checkpoint requires a substantial set of distinct, certified, feedback-free items, including integrative work, at the declared high-accuracy threshold;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "durable mastery requires a different-day, feedback-free check on novel forms; and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "transfer requires cold passages on never-taught topics and remains separate from course mastery or an impact claim.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3111",
+   "quote": "Can the student make and defend a thoughtful interpretive judgment on unfamiliar material after the support has gone?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "891",
+   "quote": "Every per-unit gate was the unit's own TRANSFER lesson, taken in the same session with feedback on. That measures acquisition, not durable mastery, and a failed gate routed straight to a retry rather than to reteaching and a delayed retest.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/course-rationale.json",
+   "lines": "939",
+   "quote": "a delayed, feedback-off instrument that can draw on any unit, not the next thing taught.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "36-37",
+   "quote": "It does not present eight planned units as if they were authored lessons, and it does not convert a clean package into evidence about classroom results.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Roediger & Karpicke 2006",
+   "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

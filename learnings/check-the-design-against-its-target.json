@@ -1,0 +1,58 @@
+{
+ "id": "check-the-design-against-its-target",
+ "title": "Check the design against its target",
+ "statement": "When review rounds settle into cosmetic findings, check the design against the target it claims to serve, because quiet rounds can hide a real gap.",
+ "example": "Three rounds of cosmetic findings hid that a writing plan's knowledge-component spine covered only one of the three constructed-response types its target test uses.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "alignment"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Three red-team rounds on a grade 4–5 writing plan converged on naming, counts and cross-references; the fourth deliberately widened the aperture and checked the plan against the test blueprint it claimed to target (`grade3-reading/ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R4.md`). It found that the plan's knowledge-component spine covered only one of the blueprint's three constructed-response types, a gap the package never stated. The gap was then disclosed and mapped rather than rebuilt.",
+ "against": "The project's review gauntlet ends each layer once it goes dry, at \"two consecutive rounds with zero new findings\" (`grade3-reading/ti-courseplans/docs/train-teacher-requirements.md`, lines 164-165), so convergence alone would end a review.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R4.md",
+   "lines": "12-14",
+   "quote": "The convergence to > cosmetics in R1–R3 was masking that nobody had checked the plan against the blueprint it claims to > target — R4 did, and found a gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R4.md",
+   "lines": "27",
+   "quote": "The package targets the STAAR CR blueprint but its KC spine covers only ONE of its three CR types",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/train-teacher-requirements.md",
+   "lines": "164-165",
+   "quote": "two consecutive rounds with zero new findings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "503-504",
+   "quote": "is a *different* rubric from our internal 8-dimension red-team, so it surfaced gaps our own bar did not weight.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

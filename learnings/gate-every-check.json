@@ -1,0 +1,596 @@
+{
+ "id": "gate-every-check",
+ "title": "Gate every check",
+ "statement": "Gate every check: one a student can skip is decoration, so a seek past an unanswered question goes back to it.",
+ "example": "In testing, a jump to 200 s landed back at the first open question, at 47.05 s.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Finding 4 of the film study (`othello-unit-video/research/FINDINGS.md`): the film player sends any seek back to the\nfirst unanswered question (a jump to 200 s landed at 47.05 s) and won't play while a question is open. In a study of\nrecorded lectures, short tests between segments cut mind-wandering from about 40% to 19% (Szpunar et al. 2013,\nhttps://doi.org/10.1073/pnas.1221764110). Both places the lesson engine plays a film, the animated version's player and\nits own lesson view, stop at each question and pull a seek back (`g9/transformer/web/lesson.js`).",
+ "against": "most viewers\nanswer optional in-video quizzes anyway (74% in Kovacs 2016, https://doi.org/10.1145/2876034.2876041), so a gate may\nadd little and push some students to guess. A later run found: a grade 3 lesson lint keeps one instruction mode non-blocking, because its spec says that mode never blocks progression until its grading is calibrated (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md`). A later run found counter-evidence (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/BULK_GENERATOR_README.md`). A later run found counter-evidence (`icloud-work/incept/nova_forge/archive/old_docs/platform/PHASE2_MATH_AUDITOR.md`). A later run found counter-evidence (`grade3-reading/artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md`). A later run found counter-evidence (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`). A later run found counter-evidence (`aptraining-local/parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md`). A later run found counter-evidence (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/AGENTS.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/design/grade-9/canvases/03-desktop-othello.html`).",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/FINDINGS.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "34",
+   "quote": "DBQ | 109 | 1 | 4 | 99.1%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "75",
+   "quote": "document_authenticity | 1 | 109 | 0.9%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "130",
+   "quote": "skippable \"pause and think\" is not a check",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "120",
+   "quote": "The gate did not require comprehension and did not prevent click-through, so the mastery claims are currently unproven in the product.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "`masteryThreshold:90` declared in metadata, not enforced by an observable mechanism",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "79",
+   "quote": "the \"not so fast\" nudge is non-blocking and can be skipped by clicking Next twice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "100",
+   "quote": "Read gate is bypassed by clicking Next a second time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "130",
+   "quote": "skippable \"pause and think\" is not a check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "130",
+   "quote": "- Keep passive episodes short and make active checks consequential; skippable \"pause and think\" is not a check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "126",
+   "quote": "No trap (child can always proceed by doing the work) and no leak (cannot proceed without it)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "129",
+   "quote": "that first check activates and does not gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-agent-entrypoint-g3-practical-test-2026-08-06/REPORT.qmd",
+   "lines": "42",
+   "quote": "- A browser completed U1·L3's 18 scenes with zero answers and reached the congratulatory ending.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "95",
+   "quote": "at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "61",
+   "quote": "in a main-idea task we earned the pass while answering every question incorrectly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "35",
+   "quote": "where a \"not so fast — read, read\" nudge appeared it was non-blocking and skipped by clicking Next twice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "14",
+   "quote": "| L3 | every check blocking | any non-blocking atom is a failure (the \"Next-twice\" exploit; the round-2 hint-style we-do). M5 carve-out below. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "75-76",
+   "quote": "**`blocking` defaults to false:** an atom that does not declare itself blocking is treated as skippable (absence of a guarantee is not a guarantee).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0191-g3-book-lesson-anatomy.qmd",
+   "lines": "155-157",
+   "quote": "Records only what is BANKED, never half-done state, so a refresh cannot open a gate the child has not passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "61-62",
+   "quote": "spec section 2 says M5 \"never blocks progression\" until the grading calibration pass, so L3 requires M5 atoms to be non-blocking and all other atoms blocking.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "135",
+   "quote": "produces a *poisoned feedback signal* — kid-outcome data from a gameable course can't improve",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "58-60",
+   "quote": "A gate a child can bypass doesn't just corrupt the data; it places the child outside their zone of proximal development *by construction*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "120",
+   "quote": "earned a stamp on \"The Amazing Axolotl\" at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "101",
+   "quote": "earned the pass while answering every question incorrectly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "85-87",
+   "quote": "a real browser reached \"Great Work!\" across all 18 of U1·L3's scenes with **zero answers given**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0248-g9-video-research-full-files.qmd",
+   "lines": "211-212",
+   "quote": "Interpolated memory tests inserted into recorded lectures cut mind-wandering by roughly a third and improved recall versus uninterrupted video.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "31",
+   "quote": "If video carries essential context, interrupt it with mandatory quick checks so the learner does not watch a long unexamined clip.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "427",
+   "quote": "In a solo app, the checks and pauses have to do the work the partner did, which is why they are not optional.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Generic Instruction BrainLift.md",
+   "lines": "37",
+   "quote": "\"Pause and think\" is not an active check: anything skippable without consequence is skipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/meetings/incept-service-coe-2026-08-10/MEETING-EXCERPTS.qmd",
+   "lines": "27-28",
+   "quote": "A user could complete the entire course simply by clicking through the green buttons without > engaging with the material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "108",
+   "quote": "double-Next skip on read gates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "59-61",
+   "quote": "it places the child outside their zone of proximal development *by construction* — advanced past knowledge they don't hold, or held below knowledge they do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "134-136",
+   "quote": "a gate that doesn't require reading > produces a *poisoned feedback signal* — kid-outcome data from a gameable course can't improve > the generators.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "at **~20% accuracy by clicking through** without reading; a course-wide audit found **~half of ~700 items gameable**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "535",
+   "quote": "Claim boundary: Anti-gaming controls must not block legitimate accessibility paths.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "793",
+   "quote": "logger.warning(f\"{task_id}: DEBUG - All distractors failed plausibility. Forcing the first one to pass for testing.\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/BULK_GENERATOR_README.md",
+   "lines": "12",
+   "quote": "- Questions failing ≤1 QC check are tentatively accepted",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PHASE2_MATH_AUDITOR.md",
+   "lines": "20",
+   "quote": "- Attempt 3: force‑accept to guarantee output",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/ULTIMATE-VALIDATION-REPORT-2026-02-18.md",
+   "lines": "195",
+   "quote": "| Non-MCQ bypass quality gate | `server.py` | MSQ/fill-in/match/article unvalidated |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/COMPREHENSIVE-VALIDATION-2026-02-18-1600.md",
+   "lines": "65",
+   "quote": "FACT_CHECK_ENABLED = False  # EXPERIMENT: Disabled for exp_12_minimal_gates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "34",
+   "quote": "design-time contracts alone demonstrably failed to prevent any of it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "86",
+   "quote": "reached \"Great Work!\" across all 18 of U1·L3's scenes with **zero answers given**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "20",
+   "quote": "comprehension check was silently optional while every sibling page gates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "127",
+   "quote": "Clicking forward with no answer records no progress and no XP (leaked live twice)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/FEEDBACK_RESPONSE.md",
+   "lines": "94",
+   "quote": "real accuracy by clicking through — the gate did not actually require reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "135",
+   "quote": "conflated): l0-l3 are now non-gating formative",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/sim-review-2026-09-02/FINDINGS.md",
+   "lines": "5",
+   "quote": "- CRITICAL: L6 p18 + L7 p18 `cfu` dialogues had NO gate key — closing comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "84",
+   "quote": "**Attention/read gates must block.** Any nudge skippable by an extra click is a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "19-20",
+   "quote": "the closing comprehension check was silently optional while every sibling page gates.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "39",
+   "quote": "Your round-2 review caught nudges that could be clicked past; this one cannot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "120",
+   "quote": "at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "91",
+   "quote": "item, empty-answer Next on every gate (leaks award XP — found live twice),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/evidence/AGENT-LIBRARY-USABILITY-CLEAN-ROOM-2026-08-07.qmd",
+   "lines": "65",
+   "quote": "3. One incorrect comprehension response unlocks `Next` while the feedback still says `Pick again`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "607",
+   "quote": "need T1 system-prompt move + T2 post-validation reject + T3 D13 RAG",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/24H_CARETAKER_STATE_20260521.md",
+   "lines": "29",
+   "quote": "Lesson: do not hard-reject all deterministic MCQ_SET quality failures unless K is expanded or a fallback candidate policy exists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md",
+   "lines": "207",
+   "quote": "- Service commit `985f867` changed `/v1/per-question-generator` to one generation only, with MCQ_SET quality checks recorded as advisory metadata instead of blocking responses.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "184-185",
+   "quote": "That view now stops the same way; before, the film played straight through with every question listed under it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "580",
+   "quote": "draws the rest: blocks the chosen build has no screen for, blocks still being made, and everything while a render",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "378",
+   "quote": "Films.tsx UnitFilm, plainly: the film stops at each of its questions, a seek past the next one comes back to it,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "105",
+   "quote": "return { correct, feedback: c.feedback[i], done: correct && k === item.checks.length - 1 };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "19",
+   "quote": "if (type === \"film-check\") return { type: \"choose\", check: item.checks.length - 1, index: item.checks.at(-1).answer };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "182-183",
+   "quote": "a seek past an open question is pulled back.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "182",
+   "quote": "the right one gets \"Keep watching\", and a seek past an open question is pulled",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "185",
+   "quote": "film played straight through with every question listed under it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "195-198",
+   "quote": "It records what is BANKED, never what is half-done, so restoring it cannot open a gate the child has not passed. The current page's own answers are not in it and are re-asked after a refresh.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/design-system/BOOK-DESIGN-SYSTEM.md",
+   "lines": "210",
+   "quote": "**Refresh resets the page**; only banked progress survives.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "187-189",
+   "quote": "And arriving by url is ARRIVING, not skipping: the destination page's gates are untouched by how you got there, exactly as when you arrive by Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/unit-video-production.md",
+   "lines": "44",
+   "quote": "The same check must appear in video, text and audio alternatives.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "12",
+   "quote": "A standalone MP4 cannot enforce a learning check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "76",
+   "quote": "An alternate text path must not bypass the learning check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-07-08.md",
+   "lines": "36",
+   "quote": "The read-gate is bypassed by clicking Next a second time (the \"not so fast — read\" step is skipped), and in a main-idea task we earned the pass while answering every question incorrectly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "39",
+   "quote": "The film pauses at the end of the scene (in its silent tail); nothing plays until the check is passed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/index.html",
+   "lines": "183"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "8",
+   "quote": "Seek to 150 s before check 1 → snapped back to 97.38 s",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L1716c4.txt",
+   "lines": "8",
+   "quote": "Seek to 150 s before check 1 → snapped back to 97.38 s",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "62-65",
+   "quote": "Pretesting on content not yet taught helps even when nearly every answer is wrong, but only where the child then meets the correct answer, which on our pages arrives through the passage that follows: a gate is exactly what would withhold it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/03-desktop-othello.html",
+   "lines": "38",
+   "quote": "Checkpoint: one quick question between sections, never a gate",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "133",
+   "quote": "A linear MP4 cannot replace this interaction contract by itself.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "245-246",
+   "quote": "unreached chapters are disabled (`S.maxVisited` tracking), so the rail can never skip a gate.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Szpunar et al. 2013",
+   "url": "https://doi.org/10.1073/pnas.1221764110"
+  },
+  {
+   "ref": "74% in Kovacs 2016",
+   "url": "https://doi.org/10.1145/2876034.2876041"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,849 @@
+{
+ "id": "two-tries-then-the-answer",
+ "title": "Two tries, then the answer",
+ "statement": "Two tries, then the answer; otherwise a student who never gets it right can't finish.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The rule comes from a 3D version of the lesson, and the engine uses it in its written checks, key words, evidence hunt\nand debate. Before the runtime passed the attempt count, the release never fired in sessions; after it, all four\nscripted readers finished a 15-block lesson (`g9/transformer/v02/QA.md`, \"Found and fixed in integration\" and\n\"Grade 3 quality\").",
+ "against": "a choice question never releases its answer; with three options, elimination ends it in\nthree picks (`g9/transformer/src/mechanics/quick-check.js`), and the playtest reports a guesser there as having no\nceiling (`g9/transformer/src/quality/playtest.js`). A later run found: the reading project never reveals a single-select item's answer after any number of tries, because a short option list lets a child eliminate their way to it and a reveal mid-reasoning stops the thinking the item exists to provoke, while every other gated type ends in a reveal (`grade3-reading/knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd`). A later run found counter-evidence (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0192-g3-book-component-catalogue.qmd`). A later run found counter-evidence (`grade3-reading/artifacts/criteria-register.csv`). A later run found counter-evidence (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md`). A later run found counter-evidence (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md`). A later run found counter-evidence (`grade3-reading/artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0220-peter-pan-video-brief-and-screen-narratives.qmd`). A later run found counter-evidence (`downloads/5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx`). A later run found counter-evidence (`downloads/5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md`). A later run found: the lesson engine's export to an animated version sets three tries by default on its rubrics and one on a web word, and gives two only to its open check and debate (`g9/transformer/src/glue/animated.js`). A later run found: from reading the code, with no planted case, the session runtime counts tries for the whole block, right answers and answers set aside as aimed at the marker included, while the lesson page counts sure misses gap by gap, so in a session the first miss on a later gap could give the word at once; the runtime's own comment says the two agree (`g9/transformer/src/core/runtime.js`). A later run found: The 9 October audit of the lesson engine recommends that choice blocks never reveal their answer, because a reveal on a three-option item gives the key away by elimination. The engine's quick check already finishes only on the right pick. This adds a quoted Grade 9 source to the elimination point the record's against already makes about three-option items (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found counter-evidence (`g9/transformer/src/glue/animated.js`). A later run found counter-evidence (`g9/transformer/src/mechanics/film-check.js`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found: A Grade 5 release gate takes the opposite line for a step whose response gates progress: a first wrong answer stays blocked, a distinct second wrong answer reveals support but stays blocked, and only a fresh learner-selected correct retest exposes Next, with support that never auto-fills or unlocks the answer (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, line 81; `grade3-reading/edullm-review-hub/docs/GRADE_5_REVIEW_NOTES.qmd`, line 44). Its postmortem had found that an implementation could reveal the answer and advance without a genuine retest (lines 65-67 of the gate). It is an adopted rule; no learner outcome was measured (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`). A later run found: A reading course's rules never reveal a single-select answer: ruling options out is the thinking the item exists for, and a short closed list can't strand anyone, so its contract validator fails any single-select that authors a reveal after tries. Open answers and closed but combinatorial items (sequence, match, inline choice) keep a ceiling of tries that ends in the answer, and the course records the clash with its own earlier two-attempts rule as an open contradiction awaiting a ruling (`grade3-reading/course-renderer/docs/rules/questions-and-assessment.md`). A later run found: the Grade 9 library's copy of the reading engine's component catalogue records the validator-enforced contract that a single-select answer is never revealed, even after many tries, because exhausting a short option list finds it, and lists its clash with the two-attempts rule as an open contradiction not to be assumed resolved (`g9/library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd`). A later run found: A Grade 3 reading course put every backstop that picked the answer after a number of tries behind an opt-in offer: after four missed taps on a hunt or hint ladder, the lesson's guide offers help with one button the child must tap, and never marks the answer unprompted (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md`). A later run found counter-evidence (`grade3-reading/visual-findings-2026-09-08/reviewer-annotations/independent-review-plan.md`). A later run found counter-evidence (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md`). A later run found counter-evidence (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/unit-video-production.md`). A later run found counter-evidence (`grade3-reading/curriculum-gen/.agent/RESOURCES.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md`). A later run found counter-evidence (`grade3-reading/_archive/handovers/HANDOVER-2026-09-24.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/rules/questions-and-assessment.md`). A later run found counter-evidence (`g9/player/content/archivist-checks.json`). A later run found counter-evidence (`g9/library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/rules/questions-and-assessment.md`). A later run found counter-evidence (`grade3-reading/artifacts/red-team-2026-09-23/PRE-BRIEF.md`). A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/L7.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "135-136",
+   "quote": "a single-select (`mcq`) item is *never* revealed after N tries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "136-138",
+   "quote": "because a short, closed option list lets the child eliminate their way to the answer — revealing it mid-reasoning stops the exact thinking the item exists to provoke.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "138-139",
+   "quote": "Every other gated question type (open response, `sequence`, `match`, `inline_choice`) keeps a tries-ceiling and ends in a reveal",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "136-137",
+   "quote": "because a short, closed option list lets the child eliminate their way to the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "130",
+   "quote": "Release after N tries is named as moving on, never dressed as a win",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "311 (textutil text)",
+   "quote": "FEEDBACK LADDER (only advances if the answer changed since the last try):",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "316 (textutil text)",
+   "quote": "3rd fail: reveal the full words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "56",
+   "quote": "The trace shows correction, an alternate explanation or representation, a parallel new attempt, a delayed recheck where claimed, retry bounds, and escalation after non-progress.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "36",
+   "quote": "A second consecutive failed delayed retest routes to placement/sequence review — never an infinite loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/03-INSTRUCTION-DESIGN.md",
+   "lines": "136-137",
+   "quote": "on a second miss, fill the slot with the correct ending and say so — never dress a filled answer as a child win",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "107",
+   "quote": "When students make errors, they are guided through the correct reasoning right away.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "135-137",
+   "quote": "a single-select (`mcq`) item is *never* revealed after N tries (`validate-contracts.mjs` fails an `mcq` carrying `reveal_after_tries`), because a short, closed option list lets the child eliminate their way to the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "50",
+   "quote": "with no explanation and no correct answer shown",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "40-42",
+   "quote": "**a single-select answer is never revealed**, even after many tries — the option list is short and exhausting it finds the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "50",
+   "quote": "a wrong answer returns only \"Good try, let's look again,\" with no explanation and no correct answer shown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "69",
+   "quote": "Two attempts, then Scout gives it and the lesson moves on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "24",
+   "quote": "Generic doc mandates 'two attempts, then reveal' on pauses; R-Q-20 fails any mcq authoring reveal_after_tries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "138",
+   "quote": "plain MCQ items use unlimited retry until correct, matching L4 pattern",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "150",
+   "quote": "**Outlier: tap-the-clue (p15) has reveal_after_tries=7 vs 3 for all other items.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/CLOSURE-PLAN-2026-08-25.md",
+   "lines": "19",
+   "quote": "with a written pedagogical argument (a closed set the child works through)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "45",
+   "quote": "- No `reveal_after_tries` on single-select — exhausting a closed list IS the thinking; a reveal",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-matrix/slices/07-SCORING-FEEDBACK-XP.csv",
+   "lines": "55",
+   "quote": "third miss the reveal that names the gap, states the answer, cites the text, and opens the gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "98-99",
+   "quote": "miss 1 -> level-1 criterion cue, miss 2 -> level-2 evidence frame, attempt 3 -> level-3 release (`released:true`, framed as help, never \"solo pass\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0225-g3-closing-questions-adoption-2026-09-24.qmd",
+   "lines": "37",
+   "quote": "failure is cheap (two attempts, warm reveal, never loop)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd",
+   "lines": "86-88",
+   "quote": "single-select mcq never reveals the answer (R-Q-24, logged as a contradiction awaiting the author's ruling since it departs from \"two attempts then reveal\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "614-615",
+   "quote": "every free-text written answer except the closing questions gets ten [tries]",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0220-peter-pan-video-brief-and-screen-narratives.qmd",
+   "lines": "91-92",
+   "quote": "every other open-response node across all four lessons caps at 3 tries",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "18 (textutil text)",
+   "quote": "two attempts, then reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "315 (textutil text)",
+   "quote": "3rd try and beyond: \"The dashed red statements are the ones to fix. Read them slowly and check them against the text.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "160-163",
+   "quote": "**A single-select MCQ answer is NEVER revealed and has no ceiling on tries** (departs from the ladder rule above, which is written for OPEN responses): a wrong pick earns the R-Q-22 feedback above and the child picks again, because a short closed list cannot strand anyone and ruling options out is the thinking the item exists for.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "163",
+   "quote": "The spec says two attempts, then the answer. Check which value the renderer honours. If the gate wins, a child gets a third try.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "82",
+   "quote": "Other lessons use \"Here is the ending: …\", which tells the student what to type in the blank.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "141",
+   "quote": "(the runtime now passes the attempt count); the hunt and debate now release after two tries",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "59",
+   "quote": "works in a session as it does in a page that counts its own",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "83",
+   "quote": "if (!unsure.length || response.correct != null) es.attempts++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "659",
+   "quote": "{ type: \"argue\", answer, tries }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "662",
+   "quote": "if (res.correct === false) tries++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "130",
+   "quote": "bare(text))) && tries(action) >= 2)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "366",
+   "quote": "two tries, then the answer is given and the step completes, but a given answer is not shown as \"Accepted\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "373",
+   "quote": "a checkpoint's answer given after two tries is not marked accepted",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "106",
+   "quote": "an answer given after two tries is not marked accepted",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "68",
+   "quote": "source, max_tries: 3, criteria, misreadings: [], lines:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "{ max_tries: 1 }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "42",
+   "quote": "two tries, then the answer (the 3D build's release rule), for the written checks this file adds",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "39",
+   "quote": "idles are not tries",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "113",
+   "quote": "the actions the runtime took: a refused one (an idle) is in the history, but it is not a try",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "60",
+   "quote": "const action = given && typeof given === \"object\" && given.tries == null ? { ...given, tries: es.attempts } : given;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "522",
+   "quote": "let tries = 0;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "531",
+   "quote": "if (res.correct === false) tries++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "110",
+   "quote": "// words aimed at whoever marks them are not an answer: no verdict, and no try (the Grade 3 engine's rule)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "369",
+   "quote": "if (v !== 'secure' && attempt >= 2) v = 'secure'",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "118",
+   "quote": "released: true, saved: { released: w.word }",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "src/lib/scoring/item-engine.ts",
+   "lines": "12",
+   "quote": "U4 at the unit's ceiling, support fires for THAT UNIT ONLY, worn as given",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "src/lib/scoring/item-engine.ts",
+   "lines": "14",
+   "quote": "U6 any given unit suppresses the praise verdict",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "85",
+   "quote": "response.correct === false ? \"incorrect\" : unsure.length ? \"unsure\" : \"saved\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Choice blocks never reveal (U5).",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A reveal on a three-option item gives the key away by elimination, so keep U5.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "90",
+   "quote": "return { correct, feedback: item.feedback[i], reveal: correct ? { units: item.evidence } : null, done: correct };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "4",
+   "quote": "Two tries, then the sentence is given.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "140-141",
+   "quote": "the two-tries release did not fire in sessions (the runtime now passes the attempt count); the hunt and debate now release after two tries",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "140-141",
+   "quote": "the two-tries release did not fire in sessions (the runtime now passes the attempt count); the hunt and debate now release after two tries;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "21",
+   "quote": "Watches the film; it stops at each question, and goes on after the right answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-25-25-174Z.json",
+   "lines": "139",
+   "quote": "stopped at tick 200 after 190 tries: no attempt ceiling and no reveal",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "141",
+   "quote": "the hunt and debate now release after two tries;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "127",
+   "quote": "two tries, then the answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-18-55-414Z.json",
+   "lines": "139",
+   "quote": "\"detail\": \"stopped at tick 200 after 190 tries: no attempt ceiling and no reveal\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "141",
+   "quote": "the hunt and debate now release after two tries",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Its own player (web/lesson.js options()) disables an option once tried, so a student reaches the key within three picks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "OC and DB use max_tries 2, not the audit's 3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "81",
+   "quote": "Wrong A remains blocked; a distinct wrong B reveals support but remains blocked; only a fresh learner-selected correct retest exposes Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "44",
+   "quote": "two-error support that never auto-fills or unlocks the answer and always requires a fresh retest;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "65-67",
+   "quote": "4. The retry path did not require two distinct wrong attempts, answer support, and a fresh explicit correct selection. An implementation could therefore reveal and advance without a genuine retest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "507",
+   "quote": "An `mcq` has no ceiling on tries and no reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "512-513",
+   "quote": "Ruling options out is the thinking a single-select item exists to provoke, and the reveal ends it on the child's behalf.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "521-525",
+   "quote": "That reasoning is specific to single-select and does not carry. An open response is unbounded, so a child holding a wrong idea can restate it indefinitely, which is R-Q-23's three rungs. `sequence`, `match` and `inline_choice` are closed but combinatorial, where working through the set is permutations rather than reasoning. Those keep their reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "530-531",
+   "quote": "Enforced by `scripts/validate-contracts.mjs`, which fails an `mcq` carrying `reveal_after_tries` rather than letting `McqItem` ignore the field.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "286-289",
+   "quote": "A single-select answer is NEVER revealed. Every other gated question has a ceiling of tries ending in the answer, because a child can otherwise be held there forever; an `mcq` cannot strand anyone, since the list is short, closed, and exhausting it finds the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/example-lesson-components-2026-08-06.md",
+   "lines": "27",
+   "quote": "Every option comes from what the child has just read; two attempts, then reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "40-43",
+   "quote": "**a single-select answer is never revealed**, even after many tries — the option list is short and exhausting it finds the answer, so authoring `reveal_after_tries` on an mcq is a contract violation.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "44-45",
+   "quote": "is recorded as an open `CONTRADICTION` in `docs/rules/contradictions.md`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "45-46",
+   "quote": "do not assume it is resolved.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "85",
+   "quote": "House rule: two attempts then reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L935db1.txt",
+   "lines": "16",
+   "quote": "Each allows two tries, then the answer is shown.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "507-508",
+   "quote": "**Rule.** An `mcq` has no ceiling on tries and no reveal. A wrong pick earns its feedback under R-Q-22 and the child picks again.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "512-513",
+   "quote": "**Why.** Ruling options out is the thinking a single-select item exists to provoke, and the reveal ends it on the child's behalf.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "516-517",
+   "quote": "The ceiling exists so nobody is held at a question with no way on, and here nobody can be.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "523-525",
+   "quote": "`sequence`, `match` and `inline_choice` are closed but combinatorial, where working through the set is permutations rather than reasoning. Those keep their reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "326-327",
+   "quote": "**Rule.** A during-reading check gives two attempts and then reveals, and every option comes from what the child has just read.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "572",
+   "quote": "### CONTRADICTION Two attempts then reveal, against never revealing a single-select answer",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/contradictions.md",
+   "lines": "7",
+   "quote": "None of these has been decided.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g4-u1-l2.json",
+   "lines": "257",
+   "quote": "Two attempts then reveal, per R-Q-20",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "586-589",
+   "quote": "Part A of a two-part evidence item is a single-select and looks to a child exactly like the checks R-Q-24 now covers, but it still reveals, so two questions that look the same behave differently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "95-96",
+   "quote": "After four missed taps on any hunt or ladder, Scout offers to help with a single button; the child must tap to accept, and Scout never marks the answer unprompted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "100-101",
+   "quote": "Every `reveal_after_tries` backstop that picked FOR the child is now gated behind the one ScoutOffer flow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-02.md",
+   "lines": "39",
+   "quote": "Two failed attempts lead to the ordered explanation, not an endless gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/reviewer-annotations/independent-review-plan.md",
+   "lines": "24",
+   "quote": "MCQ has no automatic correct-answer reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "96",
+   "quote": "R-Q-20 records a two-attempt reveal while later R-Q-24 prohibits single-select answer reveals.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/unit-video-production.md",
+   "lines": "44",
+   "quote": "MCQ follows the renderer's finite-choice retry policy, with no automatic answer reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "66-68",
+   "quote": "R-Q-24 (never reveal a single-select answer) departs from \"two attempts, then reveal\" and is logged there awaiting a ruling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "728",
+   "quote": "An `mcq` has no ceiling on tries and no reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "16",
+   "quote": "Single-select wrong answers retain the choice task instead of auto-revealing its key.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "9",
+   "quote": "prescribes first hint, closer second hint, then answer on the third miss.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/feedback-fixes-review-unit1.md",
+   "lines": "13",
+   "quote": "A miss remains visible and editable; second miss still offers the target word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1106",
+   "quote": "Every option comes from what the child has just read; two attempts, then reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "334",
+   "quote": "**T** ten tries on every free-text frame (#670 — he set it on OUR four Step 4 frames on staging himself; the rebase carries it; G5 p22 step4 carries it in its page file)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/sim-review-2026-09-24/scratch/skeptic-B-verdicts-notes.md",
+   "lines": "9-10",
+   "quote": "Failure is cheap. Two attempts, then the answer is given warmly and the lesson continues. Never loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "507",
+   "quote": "**Rule.** An `mcq` has no ceiling on tries and no reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "40",
+   "quote": "A wrong answer never unlocks Continue (feedback 8.2 spirit; app resume_rule). Replay of the scene is always offered.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "85",
+   "quote": "House rule: two attempts then reveal.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "68",
+   "quote": "if (finalAttempt && !reply.startsWith('Here is one way to see it:'))",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/engine/kb0192--kb-0192-g3-book-component-catalogue.qmd",
+   "lines": "40-43",
+   "quote": "Gotcha (R-Q-24, `validate-contracts.mjs`-enforced): **a single-select answer is never revealed**, even after many tries — the option list is short and exhausting it finds the answer, so authoring `reveal_after_tries` on an mcq is a contract violation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "26",
+   "quote": "A single-select `mcq` NEVER reveals the answer (R-Q-24)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L7.md",
+   "lines": "124-125",
+   "quote": "comprehension MCQs allow unlimited retries by convention.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "100-101",
+   "quote": "Every reveal_after_tries backstop that picked FOR the child is now gated behind the one ScoutOffer flow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "65",
+   "quote": "the child is released, not failed",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

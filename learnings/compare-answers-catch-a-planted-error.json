@@ -1,0 +1,209 @@
+{
+ "id": "compare-answers-catch-a-planted-error",
+ "title": "Compare answers, catch a planted error",
+ "statement": "Give guided practice that compares and corrects: students pick the better of two responses and say why, or stop a model answer at a planted error and fix it.",
+ "example": "A replication with 390 students confirmed a delayed-test advantage for erroneous examples.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The Grade 9 lesson design specification has two such modes of guided practice: comparative judgement, where students see two responses side by side, pick the one that better answers the learning question and explain why, and an intercept mode, where a model answer writes itself out until the student stops it at the error, highlights the mistake and corrects it; it proposes recording each planted error so that errors are designed on purpose, not improvised (`grade3-reading/knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd`). Its reading list grounds the first in adaptive comparative judgement (Pollitt 2012) and the second in studies of erroneous examples, whose larger follow-up with 390 students confirmed their delayed-test advantage (McLaren, Adams & Mayer 2015) (`grade3-reading/knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd`).",
+ "against": "The erroneous-examples studies taught decimals with a web-based tutoring system, not writing about a text (`grade3-reading/knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd`), and the specification notes that in the research 'faded examples' usually means steps removed for the learner to complete, so its intercept mode is closer to erroneous examples (`grade3-reading/knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "250",
+   "quote": "Students see two responses side by side, pick the one that better answers the learning question, and explain why.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "252",
+   "quote": "The student stops it at the error, highlights the mistake and corrects it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "391",
+   "quote": "So that errors are designed on purpose, not improvised.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "305",
+   "quote": "confirms the delayed-test advantage of erroneous examples.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "305",
+   "quote": "Follow-up/larger-N replication of the paper above (390 students)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "306",
+   "quote": "Underpins guided-practice mode 2, \"comparative judgement\" — pairwise pick-and-justify, exactly Pollitt's ACJ method",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "1-2",
+   "quote": "Compare two answers: comparative judgement. Two Grade 9 paragraphs answer the same question; the reader picks the … stronger and says why. The judge must choose the same paragraph with a clear margin, so there is one defensible pick.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "25",
+   "quote": "other is weaker but honest: it retells or quotes without explaining. Neither contains a factual error about the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "15",
+   "quote": "The reason is saved and never marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "57",
+   "quote": "const state = { paragraph_A: item.paragraphs[0], paragraph_B: item.paragraphs[1] };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "61",
+   "quote": "free of factual errors about the text it discusses?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "259-262",
+   "quote": "\"id\": \"weaker-honest\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "531-534",
+   "quote": "\"id\": \"weaker-honest\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.72",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "170",
+   "quote": "The student stops it at the error, highlights the mistake and corrects it. The model then carries on from the corrected version.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "309",
+   "quote": "And a column for the planted error in faded examples?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "309",
+   "quote": "So that errors are designed on purpose, not improvised.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "310",
+   "quote": "In the research, \"faded examples\" usually means steps removed for the learner to complete.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "310",
+   "quote": "mode is closest to \"erroneous examples\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "528",
+   "quote": "Add \"Lesson profile\" and \"Guided practice mode\" columns? And a column for the planted error in faded examples?",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "529",
+   "quote": "So that errors are designed on purpose, not improvised.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "532",
+   "quote": "In the research, \"faded examples\" usually means steps removed for the learner to complete.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "168",
+   "quote": "Students see two responses side by side, pick the one that better answers the learning question, and explain why.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "306",
+   "quote": "The model answer writes itself out with an \"intercept\" button. The student stops it at the error, highlights the mistake and corrects it. The model then carries on from the corrected version.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "309",
+   "quote": "So that errors are designed on purpose, not improvised.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "McLaren, Adams & Mayer 2015",
+   "url": "https://doi.org/10.1007/s40593-015-0064-x"
+  },
+  {
+   "ref": "Pollitt 2012",
+   "url": "https://doi.org/10.1080/0969594X.2012.665354"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

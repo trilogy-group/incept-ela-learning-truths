@@ -1,0 +1,119 @@
+{
+ "id": "report-a-score-with-its-uncertainty",
+ "title": "Report a score with its uncertainty",
+ "statement": "Report every score, sub-score or mastery estimate with its own uncertainty, such as a standard error or a floor or ceiling flag, never as a bare number.",
+ "example": "Scores of 7/10 and 6/10 may differ by no more than the margin of measurement error.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading red-team standard lists among its item-construction criteria that mastery and score outputs carry a certainty band, not a bare one-shot score, drawn from an assessment BrainLift. That BrainLift calls treating a score as more precise and meaningful than it is the most common inferential error with multiple-choice results, and asks for the uncertainty to be acknowledged and for decisions to rest on several data points. An interim test built as a proxy for an outside reading test applies the rule: before linking, its reports carry a 'not a RIT score' label, floor and ceiling flags and standard errors.",
+ "against": "The widening factor comes from a validation run that took the provisional difficulties as the true ones (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`, line 103), so it cannot reflect their error, which the package puts at σ ≈ 0.5–1.0 logits (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`, line 264); a factor of 1.02 probably understates the real uncertainty. The package also shows domain sub-scores in every session before any factor analysis has checked the domains (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md`, line 146).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "43",
+   "quote": "Mastery/score outputs carry a certainty band, not a bare one-shot score",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2128",
+   "quote": "The most common inferential error in MCQ-based assessment is treating a score as more precise and more meaningful than it is.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2128",
+   "quote": "A student who scores 7/10 and a student who scores 6/10 may not differ meaningfully in their understanding — the difference may be within the margin of measurement error.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2128",
+   "quote": "When communicating MCQ results, acknowledge the uncertainty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2128",
+   "quote": "When making decisions based on MCQ results, use multiple data points",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "95",
+   "quote": "Pre-linking reports carry \"not a RIT score\" labels, floor/ceiling flags, and SEs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "177",
+   "quote": "One honesty instrument shipped with the score report itself: because provisional b values understate true score uncertainty, reports emit a **b-uncertainty-adjusted SE** — the Fisher SE inflated by the current validation run's RMSE/SEM ratio (1.02 under v4) — with an explicit `se_basis` field naming the adjustment; it is removed automatically once empirical calibration lands",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "247",
+   "quote": "the Fisher SE inflated by the current validation run's RMSE/SEM ratio (1.02 under v4), with an explicit `se_basis` field naming the adjustment; the inflation is removed automatically post-calibration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "46",
+   "quote": "*instructional-area* (domain) score reliability averages 0.87–0.88 (Table 7.8)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "46",
+   "quote": "MAP's headline 0.96 (Technical Report 2024–25, Table 7.7) is *marginal reliability*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "392",
+   "quote": "| Overall θ | ≤ 0.30 logits | 39 | ✅ Sim 2: 0.926 reliability |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "393",
+   "quote": "| Domain θ (Literary/Info) | ≤ 0.50 logits | 13 | ✅ adequate |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "207",
+   "quote": "- Conduct confirmatory factor analysis to verify domain structure",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

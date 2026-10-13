@@ -1,0 +1,88 @@
+{
+ "id": "say-what-will-be-learned-then-teach",
+ "title": "Say what will be learned, then teach",
+ "statement": "Early in a teaching script, state what will be learned as one testable sentence and go straight into teaching; a hook or topic label doesn't count.",
+ "example": "The target sentence must come within about the first 30% of the script, and an opening hook does not count.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "alignment",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script check asks for an orientation beat: one sentence that states the learning target as a testable proposition, in the first ~30% of the script, followed straight away by teaching rather than a multi-step roadmap or a series of questions (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). A sentence that only names a topic fails, and so does a script whose first substantive statement is a hook, unless a clear orientation beat also appears within the first 30%.",
+ "against": "The rationale is uncited: 'cognitive load research is unambiguous that learners encode better when they know the learning target before the details arrive.' (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`, line 201). The hook-versus-target line is also the one distinction that still flipped after the judge was made more consistent: 'genuine rubric ambiguity — the opening hook vs orientation-beat distinction' (`shadow-bench`, git commit bfc4165, line 19).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "204",
+   "quote": "- One sentence that explicitly states the learning target as a testable proposition",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "206",
+   "quote": "- Must appear in the first ~30% of the script",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "207",
+   "quote": "- Immediately followed by teaching (not by a multi-step roadmap or a series of questions)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "221",
+   "quote": "If the first substantive statement is a hook, the script fails proposition_clarity unless a clear orientation beat also appears within the first 30%.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "218",
+   "quote": "- \"Today we're going to learn about cells and what makes them special.\" → Describes a topic, not a testable proposition.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "201",
+   "quote": "cognitive load research is unambiguous that learners encode better when they know the learning target before the details arrive.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bfc4165",
+   "lines": "19",
+   "quote": "genuine rubric ambiguity — the opening hook vs orientation-beat distinction",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "20",
+   "quote": "Every sentence carries knowledge. No puzzle hooks, rhetorical teasers or openings that are only atmosphere.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

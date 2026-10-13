@@ -1,0 +1,71 @@
+{
+ "id": "insert-whole-sentences-then-recheck-references",
+ "title": "Insert whole sentences, then recheck references",
+ "statement": "Edit a passage that questions, quotes or clips point into only by inserting whole sentences, never by altering existing ones, and recheck every reference afterwards.",
+ "example": "Before the reference check existed, one rewrite broke six things no validator could see.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The grade-3 authoring rules pin passage edits: insert whole sentences and never extend existing ones, because clip keys, span groups and candidate matches all break on extension. A rewrite must also pass a reference check confirming that quoted sentences, dialogue evidence, reread excerpts and glossary terms still exist verbatim in the rewritten story. One rewrite broke six things no validator could see before that check existed.",
+ "against": "The reference check proves only that a span's text is a substring of the passage, not that it lines up with the units the engine prints, so a textually valid but misaligned span passes it and silently fails the student (grade3-reading/knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd, lines 111-113). One lesson's passage, expanded by adding eight whole sentences and editing none, was recorded as still pending review (`grade3-reading/course-renderer/docs/extras/alpharead-lesson-design-plants-l1.md`, line 22), so nothing yet shows the longer text was accepted.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "66-67",
+   "quote": "Passage edits are pinned: INSERT whole sentences, never extend existing ones (clip keys, span groups, and candidate matches all break on extension).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "81-83",
+   "quote": "**A passage rewrite must not break existing references**: run `validate-passage-refs.mjs`, which checks that quoted sentences, dialogue evidence, reread excerpts, and glossary terms still exist verbatim in the rewritten story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "83-84",
+   "quote": "a rewrite once broke six things no validator could see before this check existed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "111-113",
+   "quote": "**Root cause:** `validate-passage-refs` only proves the span text is a SUBSTRING of the passage; it does not run the engine's own unit-boundary logic (`unitsOf`/`partOfLine`), so a span that is textually valid but unit-misaligned passes the validator and silently fails the student experience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-plants-l1.md",
+   "lines": "22",
+   "quote": "Eight sentences were ADDED, never lengthened, and no existing sentence was edited, so every quote, hot-text target, think-aloud candidate, dialogue evidence line and cloze answer bound to the text is unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-plants-l1.md",
+   "lines": "22",
+   "quote": "Each addition elaborates what its own section already says",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

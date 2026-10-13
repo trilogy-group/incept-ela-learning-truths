@@ -1,0 +1,50 @@
+{
+ "id": "whether-a-reading-lesson-takes-speech",
+ "title": "Whether a reading lesson takes speech",
+ "statement": "Whether a reading lesson should take spoken answers at all is unsettled: one course's lesson designs rule out voice input, while the engine it runs on asks for speech.",
+ "example": "Every one of the lesson designs' 20 structural gate checks repeats 'no voice input'.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "format",
+  "accessibility",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The reading rule pack that the course renderer's authoring pipeline reads records a live conflict: the curriculum's master lesson spine says there is no speaking, and every one of its 20 structural gate checks repeats no voice input, while the engine ships speaking tasks, a say-back on every vocabulary card and speech-to-text scoring (`grade3-reading/course-renderer/authoring/inputs/rule-packs/reading-g3.json`, line 243). The pack follows the engine because that is what shipped, and records the conflict so the pipeline never presents it as settled. The curriculum's lesson-components sheet of 2026-08-06 says of its vocabulary step that there is no speaking and that understanding is checked by a multiple-choice question (`grade3-reading/course-renderer/docs/pedagogy/example-lesson-components-2026-08-06.md`, line 22).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "243",
+   "quote": "The team's master spine says 'there is no speaking' and every one of their 20 structural gate checks repeats 'no voice input'. This engine ships speak nodes, a say-back on every vocabulary card and STT scoring. That is a live CONFLICT, not a gap, and it needs a ruling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "243",
+   "quote": "recorded so the pipeline never presents the conflict as settled",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/example-lesson-components-2026-08-06.md",
+   "lines": "22",
+   "quote": "There is no speaking; understanding is checked by the MCQ.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,285 @@
+{
+ "id": "no-format-is-leak-proof",
+ "title": "No format is leak-proof",
+ "statement": "No item format is leak-proof and each leaks its own way, so test every item with the text hidden using a strong solver.",
+ "example": "Under the first gate, 97% of multiple-choice items were answered without the passage, against 0% of matching items.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "format",
+  "integrity",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A cross-family anti-leak gate recorded blind recovery by format: multiple-choice 97%, multiple-select 100% and two-part evidence items 80% were rejected, against hot-text 24%, sequence 42% and match 0%, which left a 541-slot skeleton only 32.7% fillable. After a passage-design fix the measured leak was 99.5% for multiple-choice, 100% for multiple-select and ~0.56% for the other formats. A strong-solver re-gate then left only 20 of 95 'clean' items and 187 of 3,146 untested candidates (5.9%), so the low rates depended on the solver. Single-choice items leak through general knowledge or a textbook-correct option, multi-select items through options that reinforce each other, highlight items through stems that signpost the span, and ordering items through events with a natural order. Design each format against its own leak, and prefer forms built to need the reading.",
+ "against": "The project's plan notes hold that selected response is not inherently leaky, but raw selected-response items often are, and that hot-text and sequence formats need extra suspicion because renderer, protocol and guessability issues can masquerade as content quality (`grade3-reading/knowledge_bot/knowledge/kb-0090-fable5-plan-traces-2026-07-09.qmd`, lines 132 and 134). The fix list's audits were all same-family, so its closed leaks have no cross-family solve behind them (`grade3-reading/knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd`). The Grade 5 figures are historical, kept as pricing and design evidence, not current readiness (`ti-courseplans-audit/docs/practice-layer-spec.md`, line 20). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g5-reading/assessments/DESIGN.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "34-36",
+   "quote": "a 541-slot skeleton was only 32.7% fillable (177 keeper items) because the anti-leak gate scored MCQ 97% / MSQ 100% / EBSR 80% blind-recovered (reject) vs. hot-text 24% / sequence 42% / match 0% (pass).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "105-106",
+   "quote": "Measured leak by type: MCQ 99.5%, MSQ 100%, hot-text/sequence/match/EBSR ~0.56% after the 06-24 passage-design fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "67-69",
+   "quote": "showed the weak gpt-4o-mini gate had over-credited items — of v1's 95 re-gated \"clean\" items, only **20 (21%) survived**; **75 leaked** under the strong solver.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "69",
+   "quote": "Of 3,146 un-gated existing candidates, only 187 (5.9%) survived the strong blind-solve.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "208-210",
+   "quote": "- MCQ leaked through ordinary school knowledge, vocabulary, or a \"textbook correct\" option; - MSQ leaked through mutually reinforcing correct options; - hot-text leaked when stem/span wording signposted the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "214-215",
+   "quote": "- failed when fragments had natural story/process order; - survives only when details are neutral and non-orderable without passage location.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "167-170",
+   "quote": "| MCQ | 89/90 = 98.9% | 41/89 = 46.1% | | MSQ | 83/90 = 92.2% | 21/83 = 25.3% | | hot-text | 39/90 = 43.3% | 6/39 = 15.4% | | sequence | 88/90 = 97.8% | 45/88 = 51.1% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "111-112",
+   "quote": "20 flagged STILL_LEAKY (mechanisms: keyword echo x6 MSQ, unique-span tells x3 hottext, canonical sequences x6 order, structural tells x5 singles)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "116",
+   "quote": "order content replacement with novel arbitrary-order narratives",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "123",
+   "quote": "all audits were same-family (Claude only)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "19",
+   "quote": "construction-gated items: fragment-sequence, source-attribution, explicit-vs-inferred",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "21-23",
+   "quote": "construction-first generation survived the anti-leak gate at 60% vs 6% for encyclopedic clones; one production campaign yielded 48.7% (738 certified of 1,516); raw generated banks leaked ~94% blind.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "59-60",
+   "quote": "78% of raw machine-generated items failed the passage-dependence gate alone",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "G5 proved format is necessary but not sufficient (the anti-leak-*format* pool still leaked ~78%)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "20",
+   "quote": "pricing and design evidence, not current readiness",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "298",
+   "quote": "99.5% / MSQ 100% leak as authored; hot-text / sequence / match force a return to the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "299",
+   "quote": "per-item redesign converted the leaky pools and certified **549/772** under the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "282",
+   "quote": "certification is **per-item**, not per-format",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/generator_review/leak_control_and_certification_schema.md",
+   "lines": "24-25",
+   "quote": "`novelty: \"unseen\"` (already in the spec) guarantees the *passage* is new to the student. It does **not** guarantee the *item* is passage-dependent — an unseen passage can still host a leaky item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "3",
+   "quote": "**Headline: EBSR moves from 0-certified to 2-certified. 2 / 13 certified.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "79-80",
+   "quote": "This is a real property of the two-part select-the-evidence format under a strong cross-family solver, not a tooling gap.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "178-179",
+   "quote": "leak is format-dependent. MCQ ~99.5% / MSQ 100% blind-solvable; hot-text 1.67% / sequence 0% / match 0% / EBSR-cross-family 0%.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "281",
+   "quote": "The G5 live build established that **format sets the default leak**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "282",
+   "quote": "The G5 discipline — certification is **per-item**, not per-format",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "299-300",
+   "quote": "per-item redesign converted the leaky pools and certified **549/772** under the cross-family mean-blind-solve < 0.60 gate",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "47-48",
+   "quote": "5 gating formats (text_entry, sequence, mcq, ebsr, inline_choice) + a **43-item non-gating practice lane** (multi_select, hot_text, match) for",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "79-80",
+   "quote": "the leaky formats in a 43-item non-gating practice lane",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-25/artifacts/Grade 7 Reading - START HERE.md",
+   "lines": "42-44",
+   "quote": "no G7 selection format cleared the 60% blind-solve bar for their interpret/compare demand (mcq flatlined at 50% across two attempts; hot_text 0%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/REGISTER.md",
+   "lines": "41",
+   "quote": "After the in-flight 133→68 sequence decert, **6 certified sequence items still ≥0.60 blind**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "286-287",
+   "quote": "This showed that control-pass rate did not predict anti-leak certification. MCQ, MSQ, and hot-text could be answerable with the passage and still leak blind.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "50",
+   "quote": "- **Skeleton V2 decision (G5):** MCQ/MSQ eliminated from the build after 99.5–100% leak; match pool culled to 653; this SUPERSEDED the MCQ-regen effort — don't restart regen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "11",
+   "quote": "Exact key recovered: 148 / 152 (0.974).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-clean-course-v2/GATE_REPORT.md",
+   "lines": "19-20",
+   "quote": "Of the **95** v1 \"clean\" items re-gated, only **20 (21%)** survived — **75 leaked** under the strong solver. The weak gpt-4o-mini gate had over-credited them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "213-215",
+   "quote": "It passes every structural tell in `validate-blind-solve.mjs`, which I confirmed by running it, but `R-Q-3` is about the item and not only about the tells.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/GENERATOR_DIRECTIVE.md",
+   "lines": "34",
+   "quote": "| MCQ | 99.5% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/assessments/DESIGN.md",
+   "lines": "88",
+   "quote": "span selection cannot be scored without the passage present; leakage cannot be measured via cross-family blind-solve.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

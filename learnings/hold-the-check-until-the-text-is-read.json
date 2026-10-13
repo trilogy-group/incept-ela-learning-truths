@@ -1,0 +1,121 @@
+{
+ "id": "hold-the-check-until-the-text-is-read",
+ "title": "Hold the check until the text is read",
+ "statement": "Hold the question until a learner reading alone could plausibly have read the text, timed from its word count at a generous reading rate for their age.",
+ "example": "One review got past a non-blocking reading nudge by clicking Next twice.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "sequence",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A content review of a Grade 3 reading build found that timers on the text could still be clicked through, that a non-blocking reminder to read was skipped by clicking Next twice, and that a main-idea pass could be earned with every answer wrong. Matching a reference player, the reading engine now withholds Next on its book pages until the longer of 4 seconds and the time its words take at 150 words a minute has passed when the learner reads alone, or until the narration ends when the page is read aloud, with the dwell kept as a backstop. The hold is a floor, not a pace: once it has passed, the learner moves on with Next.",
+ "against": "Neighbouring rulings in the same project pull the other way: a review asking that modelled thinking not be clicked past named \"no timers, no disabled Next, no yes/no gates\" as anti-patterns (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/REGISTER.md`, line 29), and another put staged reveals on a tap because \"A timer also cannot pace itself to a slow reader.\" (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md`, lines 310-311). The sources record the hold as built, not whether it makes students read rather than wait. The ceiling of 230 words a minute is stated without a source, and the 60-second cap opens any part longer than 230 words sooner than that ceiling allows. The build shows the wait as a \"countdown shown on the door\" (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`, lines 70-71), a visible clock that sits uneasily with keeping clocks off untimed reading (the record no-clock-unless-speed-counts). On a page holding a passage that is silent by design, the hold kept a learner waiting about 60 s while the guide's line said to listen to the story, and the walk asked for such text to be exempt or for a line saying to take one's time (`grade3-reading/artifacts/qc-2026-09-30-staging/LIVE-WALK.md`, lines 56-60).",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "41",
+   "quote": "Self-read dwell door: `max(4s, words/150wpm)` before the check | yes | **BUILT** — book-layout pages withhold Next until the dwell elapses (self-read) or the narration completes (read-to-me, dwell as an untrappable backstop)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-07-08.md",
+   "lines": "31",
+   "quote": "Whilst there were timers on text reading before the question appeared, it still seems possible to just click through, and where a \"not so fast — read, read\" nudge appeared it was non-blocking and skipped by clicking Next twice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-07-08.md",
+   "lines": "36",
+   "quote": "The read-gate is bypassed by clicking Next a second time (the \"not so fast — read\" step is skipped), and in a main-idea task we earned the pass while answering every question incorrectly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "98-100",
+   "quote": "in read-myself mode the chunk's Quick-check door arms no earlier than `hold_s = clamp(round(60 * chunk_word_count / WPM_MAX), 10, 60)` with `WPM_MAX = 230` (a generous Grade-5 silent-reading ceiling — a faster finish is not a plausible read).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "96-97",
+   "quote": "replaces the reference's flat 20-second silent-reader clock on chunk beats",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "102",
+   "quote": "mode checked at fire time, so flipping modes mid-beat cannot bypass the hold",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "73-74",
+   "quote": "Tapping a sentence in read-myself speaks that one line and never arms the door.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "71",
+   "quote": "Per chunk, not global.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "101-102",
+   "quote": "In read-to-me mode the clock is unchanged from the reference: the read-along's natural end arms the door",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "85",
+   "quote": "WPM-based self-read hold (derive from word count × grade WPM norms)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/METHODS-CHECKLIST.md",
+   "lines": "83-85",
+   "quote": "**B1. WPM-plausibility hold on self-reading.** In \"I'll read it myself\" mode, the advance control for each chunk is disabled until a minimum time derived from that chunk's word count at an age-plausible WPM has elapsed; a learner cannot scroll-and-skip to the question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/02-LESSON-STRUCTURE.md",
+   "lines": "106-108",
+   "quote": "Each chunk ends in a RECALL-ONLY stop behind a door that arms when read-aloud ends or after the self-read dwell (`max(4s, words/150wpm)`, PRA-146).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "58",
+   "quote": "The coach line says \"Listen to the story to the end first.\" The button arms only after a silent timer of about 60 s.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "reteach-on-flat-gain-not-low-accuracy",
+ "title": "Reteach on flat gain, not low accuracy",
+ "statement": "Reteach when a learner's gain is flat, not merely when accuracy is low.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An assessment-quality memo for a reading course sets out the platform's adaptive policy: positive gain short of the cut keeps a learner practising on fresh items, and only flat learning gain routes to reteaching, with recovery checked on a different slice of evidence, never the same items; gaming is treated as distinct from misunderstanding (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md`). An assessment BrainLift in the course plans' feedback folder sets the same stopping policy: stop early when evidence is decisive, gather more when it is ambiguous, and change approach when learning gain is flat (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`). Meet rapid guessing and hint abuse with an integrity response, not reteaching.",
+ "against": "The course that wrote the memo does not drive the adaptive engine, so flat-gain detection is outside its scope and nothing there measures it (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md`, §6).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "72",
+   "quote": "The load-bearing signal is **flat gain, not low accuracy**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "72",
+   "quote": "rapid-guessing and help-abuse get an integrity response, not reteaching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "775",
+   "quote": "When evidence is decisive, stop early; when ambiguous, gather more; when flat learning gain, change approach.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "70",
+   "quote": "And **gaming ≠ misunderstanding** (#32): rapid-guessing and help-abuse get an integrity response, not reteaching.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "72",
+   "quote": "(0 of 432 built items have a `difficulty` field). Without difficulty/discrimination metadata the adaptive loop flat-lines at \"medium,\" so *flat-gain detection cannot yet be computed the way this policy requires*.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

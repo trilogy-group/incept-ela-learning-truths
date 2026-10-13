@@ -1,0 +1,93 @@
+{
+ "id": "retrieval-questions-teach-not-just-measure",
+ "title": "Retrieval questions teach, not just measure",
+ "statement": "Use low-stakes retrieval questions as learning events, not only as measures, because practising recall beats restudying.",
+ "example": "In one meta-analysis, practice testing beat restudying at g = +0.51.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "An assessment BrainLift in the reading course's feedback treats multiple-choice questions as learning events first and puts the testing effect for multiple-choice practice at g = +0.70 against restudying; its own notes on the meta-analysis behind the figure give g = +0.51 for practice testing against restudying, g = +0.93 against no activity, and g = +0.70 for multiple-choice practice tests against g = +0.48 for short-answer ones. The course's evaluation criteria make active recall the primary learning event, not passive consumption (`grade3-reading/ti-courseplans/skills/timeback-course-eval/references/eval-criteria.md`, line 38).",
+ "against": "The same BrainLift warns that plausible wrong options can implant false knowledge when no feedback follows, a risk that feedback largely removes (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 1991).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1989",
+   "quote": "The testing effect for MCQ-based practice (g = +0.70 vs. restudying) is one of the largest effect sizes in educational psychology.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2203",
+   "quote": "Practice testing produced moderate effect sizes vs. restudying (g = +0.51) and large effect sizes vs. no activity (g = +0.93).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2204",
+   "quote": "MC practice tests showed a larger effect size (g = +0.70) than short-answer tests (g = +0.48)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "38",
+   "quote": "Active recall is the primary learning event, not passive consumption.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "1-2",
+   "quote": "Key words: study a set, then recall each word into a gap. Each word comes back in a sentence about the text with a … blank where it goes, cued by its meaning, and the student types it from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "541",
+   "quote": "Study each word and what it means. Then put them away, and put each back into its sentence from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "93",
+   "quote": "Is filled_${i} true to passage?",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Adesope, Trevisan & Sundararajan 2017",
+   "url": "https://doi.org/10.3102/0034654316689306"
+  },
+  {
+   "ref": "Roediger & Karpicke 2006",
+   "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+  },
+  {
+   "ref": "Butler & Roediger 2008",
+   "url": "https://doi.org/10.3758/MC.36.3.604"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

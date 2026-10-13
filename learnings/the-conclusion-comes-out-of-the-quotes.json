@@ -1,0 +1,41 @@
+{
+ "id": "the-conclusion-comes-out-of-the-quotes",
+ "title": "The conclusion comes out of the quotes",
+ "statement": "In a modelled reading, the conclusion must emerge from the quoted lines step by step and follow from them, never be reached first and decorated with quotes.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's judge for modelled reasoning fails a think-aloud whose narration reaches its conclusion before engaging the quoted lines, so the quotes decorate a conclusion reached elsewhere, and a write-up whose conclusion does not follow from the chosen quote, tested by whether a child granting the quote could still reasonably deny the conclusion. It passes one where a child following the narration would see the answer emerge from the quoted lines, step by step, in the procedure's own order (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/judge/model-against-text.md`, lines 6-17). The same judge fails narration that asserts a fact the passage on the page does not contain, and a sentence frame whose 'so' step is a leap the guide never explains.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/judge/model-against-text.md",
+   "lines": "7-10",
+   "quote": "the narration reaches its conclusion BEFORE engaging the quoted lines, so the quotes decorate a conclusion reached elsewhere instead of producing it; - the write-up's conclusion does not follow from the chosen quote (a child granting the quote could still reasonably deny the conclusion);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/judge/model-against-text.md",
+   "lines": "16-17",
+   "quote": "Pass when a child following the narration would see the answer EMERGE from the quoted lines, step by step, in the procedure's own order.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,126 @@
+{
+ "id": "write-from-vetted-material-not-from-scratch",
+ "title": "Write from vetted material, not from scratch",
+ "statement": "Have a model assemble, adapt and cite vetted sources, carrying over what they specify rather than inventing items from scratch.",
+ "example": "In a study of 9 AI quiz builders cited in one project's generator notes, 74% of the items had major flaws and only 1 in 5 was usable.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading project's generator notes set out an asymmetry: models are reliable at tagging and assembling (tagging hits ~87–95%) and unreliable at authoring, since of 9 Gen-AI quiz builders studied, 80% of items violated at least one best-practice guideline and 74% had major flaws (`ti-courseplans-audit/docs/generator-insights.md`, B1). They conclude that generators should assemble and transform vetted material and tag it to standards, not invent items from scratch, and that every generation should be grounded in a source the generator cites, since ungrounded generation is where the 74%-flaw rate lives (B3). It bears on a learning from the AP work, that a writer should get verified facts as its only source, not as inspiration. The same notes say to treat what a generator makes as a candidate until a separate check passes it.",
+ "against": "the study of 9 quiz builders is cited second-hand, with no DOI or URL in these files; and generated items can still serve once gated: construction-first generation survived the anti-leak gate at 60% vs 6% for encyclopedic clones, and one production campaign certified 48.7% (738 of 1,516), while raw generated banks leaked ~94% blind (`ti-courseplans-audit/docs/practice-layer-spec.md`). In a fifth-grade course's history, construction-first generation survived the anti-leak gate at 60% vs 6% for encyclopedic clones (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`).",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/generator-insights.md",
+   "lines": "56-57",
+   "quote": "But of 9 Gen-AI quiz builders studied, **80% of items violated ≥1 best-practice guideline and 74% had major flaws — only 1 in 5 usable**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/generator-insights.md",
+   "lines": "59-60",
+   "quote": "**Design generators that assemble + transform vetted material and tag to standards — not ones that invent items from scratch.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/generator-insights.md",
+   "lines": "71",
+   "quote": "**Ungrounded generation is where the 74%-flaw rate lives.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "24",
+   "quote": "built correctly to the wrong/no spec",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "29",
+   "quote": "Class 1 is the expensive one and the one artifact testing can never catch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "36-37",
+   "quote": "Names are part of the fingerprint (the \"5. Lesson Designs and KBs\" → \"5. Curriculum\" re-parenting was caught this way).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "50-52",
+   "quote": "An undocumented divergence is a build error regardless of who requested it verbally.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "141",
+   "quote": "1. Transfer, don't generate; mark no-canon layers explicitly.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "364 (textutil text)",
+   "quote": "carried faithfully, not invented past the KB.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx",
+   "lines": "sheet 'V7.0 Executive Summary', cell A57",
+   "quote": "No CKHG equivalent exists for approximately 90% of K-8 Economics standards, so the context window for Economics atom generation will rely entirely on state curricula and CEE.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/generator-insights.md",
+   "lines": "56-57",
+   "quote": "But of 9 Gen-AI quiz builders studied, **80% of items violated ≥1 best-practice guideline and 74% had major flaws — only 1 in 5 usable**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/generator-insights.md",
+   "lines": "90",
+   "quote": "**Treat generator output as *candidate* until a separate check passes.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-1/reference/dok2-knowledge-tree.md",
+   "lines": "81",
+   "quote": "A 2025 effectiveness study of nine Gen-AI quiz builders found that 80 percent of the 270 multiple-choice items they produced violated at least one best-practice guideline, and 74 percent had “major” flaws likely to invalidate results.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "May et al. 2025",
+   "url": "https://doi.org/10.3390/educsci15020144"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,55 @@
+{
+ "id": "repeated-generic-comments-mean-unobserved-pages",
+ "title": "Repeated generic comments mean unobserved pages",
+ "statement": "Treat identical generic comments across reviewed pages as false coverage: mark those pages unobserved and review each again, asking what the learner has read or heard and must do.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A lesson audit's workflow names false coverage as its first failure mode and lists its signs: missing page or state evidence, identical generic comments, a screenshot never reviewed, and a source or HTTP check described as a student attempt. Its recovery is to mark the page unobserved, perform the browser action and replace the claim with a precise coverage limit. Each page review reads the visible text, inspects the screenshot and asks what the learner has actually read or heard, what they should do and why the offered control is valid there. The workflow cites the project's pattern that evidence defeats rubber-stamp review.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "93",
+   "quote": "Detect: missing page/state evidence, identical generic comments, screenshot never reviewed, HTTP/source assertion described as a student attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "93",
+   "quote": "Recovery: 1. mark unobserved; 2. perform browser action; 3. replace claim with precise coverage limit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "44",
+   "quote": "Read the actual visible text, inspect the screenshot, and ask: what has the learner actually read/heard, what should they do, and why is the offered control valid here?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "38",
+   "quote": "P-CUT-08 (evidence defeats rubber-stamp review)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

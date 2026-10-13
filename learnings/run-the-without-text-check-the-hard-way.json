@@ -1,0 +1,224 @@
+{
+ "id": "run-the-without-text-check-the-hard-way",
+ "title": "Run the without-text check the hard way",
+ "statement": "Check that a question needs its new text the hard way: give the solver everything else the student has met, and judge by the worst of several option orders.",
+ "example": "Re-run under four option orders and scored by the worst, 65 of 118 ordering items that had passed on one order were decertified.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading courses' practice spec gives the solver all prior lesson content but not the new text; on one theme this caught 1 of 16 items that plain-blind certification missed (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, lines 106-109). The ordering gate had scored one seeded shuffle per item, and a re-probe of 118 certified ordering items under four shuffles, scored by the worst run beside a with-passage control, decertified 65 and flagged 7 as broken (`grade3-reading/ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md`). One item an older model solved 0/3 without the text, though 3/3 with the earlier lessons, was solved 3/3 without the text by a current model, so the old verdict did not survive model drift (`grade3-reading/ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/README.md`, lines 86-92). Above all for items that ask for an order, try several option orders. Keep a with-text control beside the check, and repeat it whenever the solving model changes.",
+ "against": "The prior-lessons check was measured on one theme, and the spec calls the result validation of the instrument on that bounded sample, not a general yield or course-readiness claim (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, lines 109-110). Elsewhere the same review counts a grade 5 decertification of 72 as 65 plus 7 broken-flagged items (`ti-courseplans-audit/skills/course-red-team/SKILL.md`), so not all of the 72 may have been shuffle failures. A later run found: For items the platform serves in a fresh random order on every attempt, a Grade 5 course argued that the mean over resampled shuffles is a student's expected blind-solve performance and the worst case measures an attacker's luckiest presentation; judged by the mean, 31 ordering and 69 matching items the worst case had excluded were restored, none of the 31 solving exactly. The course's own retrospective lists assuming worst-case and mean-case were interchangeable as a failure, so which to judge by is open (`grade3-reading/_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz`). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "106-109",
+   "quote": "the solver receives all prior lesson content (on-ramp pre-teach, ledger state, prior passages) but not the new text; later items must fail. The Rivers calibration caught **1 of 16** items that plain-blind certification missed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md",
+   "lines": "4-5",
+   "quote": "The sequence anti-leak gate scored **one** seeded shuffle per item. A leaky ordering item can pass on a single lucky shuffle.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md",
+   "lines": "14",
+   "quote": "**Worst-case pair_acc = max across the 4 runs.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md",
+   "lines": "15",
+   "quote": "With-passage control x1 (temp 0)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md",
+   "lines": "32",
+   "quote": "Decertified (leak + answerable): 65",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "86-87",
+   "quote": "Historically, Gemini 2.5 produced `0/3` plain-blind and `3/3` spine-conditioned on the same item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "90-92",
+   "quote": "After a `1/1` with-passage calibration, `gemini-group/gemini-3.5-flash` solved the item `3/3` plain-blind and `3/3` with prior-course context.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "92",
+   "quote": "The old context-lift claim does not survive model drift; the item is directly gameable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "139-140",
+   "quote": "the historical context-lift interpretation does not generalize across model versions.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "20",
+   "quote": "sequence items certified against one seeded shuffle; multi-shuffle re-probe decertified 72 incl. one exact 1.000",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-assessor/SKILL.md",
+   "lines": "43-44",
+   "quote": "(anonymized labels, seeded+multi shuffles, three blind votes incl. temp variation, leak = exact or partial ≥0.6, cross-family solver, no self-certification).",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "So Grade 3's answerable_blind is an opinion formed with the passage in view, like the transformer's no-giveaway; it is not a blind solve.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "quick-check.js judge() puts the text and keyed_answer in state (lines 60-66) and asks no-giveaway as an opinion.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The passage is stripped, and an exact pick at high confidence marks the item gameable.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/tools/blind_solve.py",
+   "lines": "4",
+   "quote": "a rubric opinion, formed while the passage is visible",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "whether the key can be picked without reading",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "WF, DL, CA and film check have no give-away check.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Mark it required: false until it is calibrated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/mean-metric-2026-07-07/README.md",
+   "lines": "7-9",
+   "quote": "Their expected blind-solve performance is therefore the **mean over resampled shuffles**, not the worst case. Worst-case measures an attacker's luckiest presentation, which no student controls under `shuffle=\"true\"`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/mean-metric-2026-07-07/README.md",
+   "lines": "19-21",
+   "quote": "- Restored (borderline under worst-case, safe under mean): 31 sequence + 69 match. **0 of the 31 restored sequences exact-solve; mean 0.31–0.58; worst 0.33–0.75.** The high worst-case values are lucky single-shuffle hits the student never reliably sees.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "195-198",
+   "quote": "What failed: - single-shuffle certification for sequence items; - assuming worst-case and mean-case were interchangeable;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "50-51",
+   "quote": "re-solved the new gated items passage-stripped (dual solver, sequence elements shuffled)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "51-52",
+   "quote": "and reproduced a **0.00** blind-solve rate",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1655",
+   "quote": "eight shuffled blind views",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/REGISTER.md",
+   "lines": "37",
+   "quote": "the gate certifies on ONE seeded shuffle, so an item passes on a lucky order while resampled/aggregate it blind-solves.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "169-172",
+   "quote": "The sequence lane exposed a concrete protocol bug: a sequence item could pass if the blind solver saw only one seeded shuffle that happened not to reveal the ordering. A multi-shuffle reprobe decertified 65 items, flagged 7 broken items, and left 46 clean survivors.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1588",
+   "quote": "with the taught prior spine but without the new passage.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

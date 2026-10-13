@@ -1,0 +1,56 @@
+{
+ "id": "reject-never-repair-what-is-measured",
+ "title": "Reject, never repair, what is measured",
+ "statement": "When people review a generator's output to measure it, let them accept or reject each piece but never repair, add, merge or rescope it, so its omissions stay measurable.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The frozen protocol of an experiment on extracting teaching rules with a model sent a fixed extractor's candidates through an accept-or-reject safety review, in which a candidate could be rejected but not repaired, merged, split, broadened or narrowed, and no omitted rule could be added. Accepted candidates got only the approval needed to run, rejected, abstained and omitted ones stayed absent, and the fully corrected set was kept apart as the reference. The protocol's reason is that only approved rules run while the extractor's omissions and unusable predictions stay measurable.",
+ "against": "The arm never ran: the record lists no adjudicated reference rules and no scored output for it (grade3-reading/bias_experiment/experiment-record/docs/04-resolution-and-salvage.md line 15).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "389-390",
+   "quote": "reviewers may reject a candidate but may not repair it, add an omitted atom, merge/split it, or broaden/narrow its scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "390-392",
+   "quote": "Accepted candidates receive the minimum approval metadata needed to execute; rejected, abstained, and omitted atoms remain absent. The fully corrected/adjudicated store is the separate gold store.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "392-393",
+   "quote": "This preserves the rule that only approved atoms execute while keeping extraction omissions and unusable predictions measurable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "416",
+   "quote": "Reviewers may reject but never repair, add, merge, split, broaden, or narrow a candidate.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

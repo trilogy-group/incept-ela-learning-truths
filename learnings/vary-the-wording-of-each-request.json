@@ -1,0 +1,49 @@
+{
+ "id": "vary-the-wording-of-each-request",
+ "title": "Vary the wording of each request",
+ "statement": "Test a generator with several phrasings of each request, since its quality should not depend on how a request is worded.",
+ "example": "One maths benchmark varies each request's wording, difficulty and type, for more than 4,000 requests in all.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A maths benchmark's request set covers 672 skills and varies each request by difficulty, item type and semantic variation, describing the same skills and topics 'in various semantically similar ways' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md`). It is a design; no result from it is recorded.",
+ "against": "No results were recorded for the benchmark that uses it: its results table reads '| Coming Soon | - | - | - | - |' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/uae-mathematics.md`, line 131).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "498",
+   "quote": "Semantic variation \\- The same skills and topics are described in various semantically similar ways while sending requests to the LLM",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "491",
+   "quote": "The entire curriculum for Mathematics across grades 3-8 is divided into a granular list of 672 unique skills.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "500",
+   "quote": "Including all variations, the benchmark covers \\> 4000 question generation requests.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

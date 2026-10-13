@@ -1,0 +1,50 @@
+{
+ "id": "let-the-model-point-copy-in-code",
+ "title": "Let the model point; copy in code",
+ "statement": "When a model splits material, have it mark each part's start and end and cut the original in code: asked to copy, it rewrites pictures, tables and diagrams as words.",
+ "example": "Asked to copy, the splitter turned an inline image into a text description, and the judge then scored the stimulus 0.0.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "stimulus"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's splitter, asked to extract the verbatim text of each part, routinely paraphrased rich stimuli: an inline image became '[Image: ...]', SVG blocks became descriptions and a table a bulleted list, so the judge's programmatic stimulus check found no image and scored the stimulus 0.0 although the source had one (`icloud-work/inceptbench-main/src/inceptbench/decomposer/anchor_slicer.py`). From 2.6.3 the splitter returns short verbatim start and end anchors instead, and code slices the original between them; the module is absent from 2.5.3 (`icloud-work/inceptbench-latest/src/inceptbench/decomposer/anchor_slicer.py`).",
+ "against": "When the anchors don't match, the caller falls back to the model's free-text extraction (`icloud-work/inceptbench-main/src/inceptbench/decomposer/anchor_slicer.py`, lines 27-28).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/decomposer/anchor_slicer.py",
+   "lines": "6-9",
+   "quote": "When the decomposer LLM is asked to \"extract verbatim text\" of a child node, it routinely paraphrases rich stimuli — `<img src=\"...\">` becomes \"[Image: ...]\", `<svg>` blocks become text descriptions, `<table>` becomes a bulleted list.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/decomposer/anchor_slicer.py",
+   "lines": "9-11",
+   "quote": "The downstream evaluator then runs a programmatic stimulus check on the paraphrased text, finds no real image, and scores `stimulus_quality = 0.0` even though the source had the image inline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/decomposer/anchor_slicer.py",
+   "lines": "15-16",
+   "quote": "The decomposer LLM returns short verbatim `start_anchor` / `end_anchor` substrings instead. This module slices the ORIGINAL source buffer between",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

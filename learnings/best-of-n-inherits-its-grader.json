@@ -1,0 +1,185 @@
+{
+ "id": "best-of-n-inherits-its-grader",
+ "title": "Best-of-N inherits its grader",
+ "statement": "Let a grader pick only among drafts passing the code checks, after showing on saved candidates that it tracks the real criterion and beats taking the first valid one.",
+ "example": "Against a cheap ranker whose agreement with the true verdicts was no better than chance, picking the best of several drafts gave zero lift.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of a proposed item factory settled by mechanism and code that best-of-N is argmax over the grader, so it inherits the grader's correlation to the truth and none of its own: measured, it gave zero lift against a cheap same-family ranker with kappa about 0, and converged only against a grounded oracle, which found a 0.94 pass in 2 candidates where 10 hand iterations had failed (`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`). The same record calls the cheap ranker a kappa~0 rubber stamp on subtle failures. A fact sheet found that an AP pipeline's 99% came from caching plus best-of-N, not from the generator (`grade3-reading/artifacts/alpha-read-packager/FACTS_SHEET.md`). Validating a grader before it picks among drafts includes checking whether its picks beat taking the first valid draft.",
+ "against": "The item factory's evidence came from AP history items (`grade3-reading/artifacts/PROPOSAL_REVIEW_2026_06_16.md`), and a fact sheet rates the claimed convergence of the two efforts as weak, AP findings carried onto grade 3 rather than independent replication (`grade3-reading/artifacts/alpha-read-packager/FACTS_SHEET.md`). One small positive check for a model ranker, on a single pool of three items: \"- Ranker picked index 0 (one of the tied-top items)\" (`icloud-work/aptraining/Cheater/scripts/ranker/README.md`, line 111); no larger test of it was found. On another archive of 150 rows the selector picked a passing candidate on 137 of the 145 rows where one existed, a recall of 0.945 (icloud-work/aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/gemini_selector_calibration_final.md, line 15).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "best-of-N is mathematically argmax over the grader, so it INHERITS the grader's correlation-to-truth and ZERO of its own (measured: zero lift vs cheap same-family ranker, kappa~0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "converges only against a grounded oracle where it found a 0.94 pass in 2 candidates while 10 hand-iterations failed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "9",
+   "quote": "the cheap holistic ranker is a kappa~0 rubber stamp on subtle failures",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "55",
+   "quote": "the \"99%\" was **cache + best-of-N**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1014Z_ESCALATE_v7_also_regressed_MCQSET_CAPPED.md",
+   "lines": "29-30",
+   "quote": "- The \"best\" pick was effectively random — sometimes the better candidate, sometimes worse",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1014Z_ESCALATE_v7_also_regressed_MCQSET_CAPPED.md",
+   "lines": "38-39",
+   "quote": "The IB grader is doing real work; without it, local validators can only catch structural defects, not content quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1138Z_DEFINITIVE_CLOSURE_MCQSET_13_attempts.md",
+   "lines": "37-39",
+   "quote": "Adding K=3 candidates makes pass rate WORSE because the local validator picks structurally-clean candidates that are sometimes factually weaker.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1138Z_DEFINITIVE_CLOSURE_MCQSET_13_attempts.md",
+   "lines": "25",
+   "quote": "| **12** | **EXPLOIT-013 v8 = v4 prompt + temp=0.0** | **52% (13/25) ← BEST** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1138Z_DEFINITIVE_CLOSURE_MCQSET_13_attempts.md",
+   "lines": "26",
+   "quote": "| 13 | EXPLOIT-013 v9 = K=3 temp=0.0 + local-pick | 24% (regressed) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-20T0821Z_PIL_WEEKLY_APUSH_REPORT.md",
+   "lines": "28",
+   "quote": "- Selector calibration: Gemini tied first-valid at 13/15 on saved balanced15 candidates; it is active but not proven better.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/scripts/ranker/README.md",
+   "lines": "111",
+   "quote": "- Ranker picked index 0 (one of the tied-top items)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "17",
+   "quote": "- Evidence: if bad candidates reach the selector, a fluent but invalid MCQ_SET can beat the actually passing raw candidate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "18",
+   "quote": "- Rule: deterministic filters come before Gemini. Gemini is a selector, not a rescue path.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "33",
+   "quote": "| first_valid | 15 | 13 | 0.8667 | 0.965333 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "35",
+   "quote": "| gemini | 15 | 13 | 0.8667 | 0.965333 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "37",
+   "quote": "| oracle | 15 | 13 | 0.8667 | 0.965333 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "39",
+   "quote": "Takeaway: Gemini did not beat first-valid on this archive. Do not enable Gemini as a selector for this policy from this evidence. It is audit-only until a larger saved-candidate calibration proves a lift.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "44",
+   "quote": "- MCQ_SET: staged route; extra K only after filters, and selector must beat first-valid in calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "2",
+   "quote": "the open, well-formed ones; the judge keeps the first it finds answerable from the text alone and worth a lesson",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "90-91",
+   "quote": "the writer drafts three, code keeps the open ones, Jev keeps the first answerable from the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "87",
+   "quote": "a text without a question is given one: open, well formed, answerable on the judge's word, the same next time",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "94",
+   "quote": "the yes-or-no draft is dropped",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

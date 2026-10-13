@@ -1,0 +1,229 @@
+{
+ "id": "answers-nobody-planned-for",
+ "title": "Answers nobody planned for",
+ "statement": "Accept a right answer nobody planned for, but only when the judge is sure, and log it for review.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "key"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In the evidence hunt, a tapped line nobody keyed is judged during play: accepted only on a confident yes, kept for\nreview, and an unsure judgment gives the hint with no miss (`g9/transformer/src/mechanics/evidence-hunt.js`). In the\nfirst live session, one such tap was judged in a single request of 482 ms (`g9/transformer/v02/QA.md`, \"Live\nsession\").",
+ "against": "A later run found counter-evidence (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/item-types/scr.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "303",
+   "quote": "the rubric judges whether the answer holds together, never whether we recognize the story",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "305",
+   "quote": "the rubric rewards noticing differences above matching our list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0153-assessment-pack-brainlift.qmd",
+   "lines": "120",
+   "quote": "pre-specify acceptable variants (equivalence classes) and typical partial solutions (near-misses)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "116",
+   "quote": "Only one of two defensible actions is accepted",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "271",
+   "quote": "Scoring is deliberately generous: this beat rewards thinking beyond the first answer; it must never punish it.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "269",
+   "quote": "any sensible rule earns full credit with no further ask.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "30",
+   "quote": "\"L3\": \"L3 [IAGO] I follow him to serve my turn upon him.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "226",
+   "quote": "\"value\": 0.89,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "477",
+   "quote": "\"value\": 0.84,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "107",
+   "quote": "\"value\": 0.75,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "339",
+   "quote": "\"value\": 0.78,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "226",
+   "quote": "\"value\": 0.89,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "475",
+   "quote": "\"value\": 0.87,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "107",
+   "quote": "\"value\": 0.76,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "339",
+   "quote": "\"value\": 0.78,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/815626dc60c1b455.json",
+   "lines": "82",
+   "quote": "\"p\": 0.6,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "105",
+   "quote": "/** Support gates (conservative engineering thresholds, not calibrated correctness). */",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "11-12",
+   "quote": "At play time, a tapped line nobody keyed goes to the judge in one request. It is accepted only on positive evidence, and logged for review.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "102",
+   "quote": "a real line outside those goes to Jev, which must find it clear evidence on its own.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "60",
+   "quote": "\"In following him, I follow but myself\", a fair line nobody keyed, on Jev's decision;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "59-60",
+   "quote": "accepted \"In following him, I follow but myself\", a fair line nobody keyed, on Jev's decision",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/evidence-hunt.tapped-proves.json",
+   "lines": "11",
+   "quote": "The line the claim was written from, tapped while another line is keyed: it must still count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "59-60",
+   "quote": "EH-1 refused a line that does not prove the claim with its hint, and accepted \"In following him, I follow but myself\", a fair line nobody keyed, on Jev's decision",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "83",
+   "quote": "// the judge unsure or absent: the hint, no miss, and the line kept for review",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "30, 226",
+   "quote": "\"L3\": \"L3 [IAGO] I follow him to serve my turn upon him.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "7",
+   "quote": "them counts if the judge finds it gives clear evidence too.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/item-types/scr.md",
+   "lines": "7-8",
+   "quote": "`grounding`: the answers the text actually supports, listed. Anything outside them is off-topic by construction.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

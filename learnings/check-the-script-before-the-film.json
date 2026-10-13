@@ -1,0 +1,129 @@
+{
+ "id": "check-the-script-before-the-film",
+ "title": "Check the script before the film",
+ "statement": "Check a media script before the media is made, because fixing content after recording means a costly re-record.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A pre-generation evaluator was added for the scripts of short instructional videos, on the reasoning that catching factual, structural and one-idea-per-script problems before the video is generated avoids costly re-records (git commit df5aa18 in `shadow/bench`, lines 3-5). It judges nine dimensions, four of them critical (lines 7-10). The saving is reasoned, not measured.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df5aa18",
+   "lines": "3-5",
+   "quote": "Adds a pre-generation script evaluator for AlphaTok instructional atoms. Catching factual, structural, and KC-atomicity issues before video generation avoids costly re-records and schema corruption in student knowledge graphs.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "61",
+   "quote": "A block with a film (the video essay) makes it only after its checks pass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "85",
+   "quote": "a block that makes something after it is checked (a video essay's film) makes it now, from the checked item only",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "163",
+   "quote": "The film is made only after the block passes, and once per key",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "85",
+   "quote": "// a block that makes something after it is checked (a video essay's film) makes it now, from the checked item only",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "163",
+   "quote": "is made only after the block passes, and once per key",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "169",
+   "quote": "The key covers the title, the beats, what is drawn, the stops, the pinned modules and the voice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "76",
+   "quote": "made once: the second call speaks nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "215-216",
+   "quote": "Generate narration BEFORE paying for picture: it turned a $25 re-bill into a free script revision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/PLAN.md",
+   "lines": "49",
+   "quote": "Gate 6: full narration proceeds only once intended spoken text is explicit and authors declare stable",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5592",
+   "quote": "That would let us judge the visual detail and tone before producing the whole introduction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "186-187",
+   "quote": "a video is the one asset no gate can fact-check after the fact, so grounding is a generation-time discipline",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "56",
+   "quote": "pass a US English check, and be signed off by",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lbde498.txt",
+   "lines": "35",
+   "quote": "use only the quotes in Section 6, word for word; include the three pause-to-check questions (or equivalents); end by returning to A to B and handing over to Lesson 1 retrieval; pass a US English check, and be signed off by",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

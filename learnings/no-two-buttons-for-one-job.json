@@ -1,0 +1,63 @@
+{
+ "id": "no-two-buttons-for-one-job",
+ "title": "No two buttons for one job",
+ "statement": "Give each screen one forward button, and never show two buttons that do the same job.",
+ "example": "A screenshot sweep flags any screen showing more than 1 filled button.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Review feedback on a 3D version of the Grade 9 lessons rejected clutter and two controls doing one job, and its rules say no two controls may do the same job (`othello-archive/DESIGN.md`, line 4; `othello-archive/README.md`, line 87). Its shell keeps one filled Next in the footer as the only forward control, which no step may duplicate, with one filled button at a time (`othello-archive/BRIEF.md`, lines 12-13), and a screenshot sweep flags any screen with more than one filled button (`othello-archive/scripts/sweep.mjs`, line 69).",
+ "against": "The rule bars a second button, not a second way to press the one there is: in one step a click on the stage and the keyboard do the footer button's job (`othello-archive/src/steps/Explosion.tsx`, line 48).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "README.md",
+   "lines": "87",
+   "quote": "Keep the screen uncluttered. No two controls may do the same job.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "4",
+   "quote": "They reject clutter, repeated content, AI-sounding copy, and two controls doing one job.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "12",
+   "quote": "**Never render your own Next/Continue-to-next-step button.** The footer Next is the only forward control.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "13",
+   "quote": "**One filled button at a time.**",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/sweep.mjs",
+   "lines": "69",
+   "quote": "r.filled.length > 1 && `${r.filled.length} filled buttons: ${r.filled.join(' | ')}`",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

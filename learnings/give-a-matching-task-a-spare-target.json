@@ -1,0 +1,165 @@
+{
+ "id": "give-a-matching-task-a-spare-target",
+ "title": "Give a matching task a spare target",
+ "statement": "Give a matching item more targets than prompts, without announcing which one is spare, so its last pairs can't be won by elimination.",
+ "example": "A static scan of one course found 192 matching items that announced their spare target.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "options",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The intake of a Grade 5 generator pilot asked for at least one unused decoy target in every matching item before scale (`grade3-reading/knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd`), and a test design listed its three-by-three matching item among its honest limits as a minor elimination cue (`grade3-reading/knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd`). A static accessibility scan of the merged Grade 5 course named 192 matching items that announce a decoy bucket (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`). Let the text, rather than a common association, fix each pairing, so no pair can be won by guessing.",
+ "against": "a structural grader run on one Grade 5 dataset listed an unused right bucket as a failure reason 638 times (`grade3-reading/knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd`, line 116), so one local rule treated a spare target as a defect. The judge's own matching rules allowed equal counts: '- Equal or greater number of definitions/descriptions' (`icloud-work/evaluator/ap_benchmark/prompts/match.py`, line 12). The pass rates and reasons came from one model judge, with no learner data. A scan of the merged course flagged 192 match items announcing a decoy bucket (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, line 133); an announced decoy is itself a cue, so an extra target helps only when it is not announced.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "314",
+   "quote": "- add at least one unused/decoy right bucket to match items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "66",
+   "quote": "`match` is 3×3 (minor elimination cue)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "133",
+   "quote": "192 match items announcing a decoy bucket",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN7_REPORT.md",
+   "lines": "58",
+   "quote": "- difficulty_alignment: 1:1 matching without distractors reduces difficulty",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN7_REPORT.md",
+   "lines": "59",
+   "quote": "- distractor_quality: No extra options to create analytical challenge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "106",
+   "quote": "| match | 53% | 45% | 52% | 55% | 54% | 48% | **51%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "387",
+   "quote": "| Never exceeds | 55% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "391",
+   "quote": "- No distractors = simple elimination",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "106",
+   "quote": "| match | 53% | 45% | 52% | 55% | 54% | 48% | **51%** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "387",
+   "quote": "| Never exceeds | 55% |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "390",
+   "quote": "- 1:1 format eliminates analytical challenge",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "391",
+   "quote": "- No distractors = simple elimination",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN7_REPORT.md",
+   "lines": "119-120",
+   "quote": "The 1:1 matching format with no distractors makes this more of a medium difficulty question despite being marked as hard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd",
+   "lines": "116",
+   "quote": "unused-right-bucket-exists: 638",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "58",
+   "quote": "192 match items announce a decoy bucket",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0090-fable5-plan-traces-2026-07-09.qmd",
+   "lines": "133",
+   "quote": "match designs work when they force source/POV attribution, which-half attribution, or not-mentioned discrimination;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "48-49",
+   "quote": "**Match** — ≥3 text-grounded pairs (note: 3×3 equal-sides has a minor elimination cue — prefer a 4th distractor category where the generator supports it).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "78-79",
+   "quote": "The correct pairing must be fixed by the passage, NOT by a canonical … real-world association.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "694",
+   "quote": "A word-bank cloze with four blanks and four bank words can be completed from grammar alone, without the text.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

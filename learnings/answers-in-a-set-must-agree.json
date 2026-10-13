@@ -1,0 +1,72 @@
+{
+ "id": "answers-in-a-set-must-agree",
+ "title": "Answers in a set must agree",
+ "statement": "No correct answer in a set may contradict another, and what one step marks right or teaches must still hold in the next, so check the whole set.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The rubric-derived writer prompt for question sets (`system_prompt_mcq_set.md`) lists contradictions between questions among its set-level fail traps: one question's correct answer saying that X caused Y while another's says that Y caused X. It asks for consistency to be audited across the whole set, on top of the checks each question gets on its own.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "89",
+   "quote": "6. **Inter-question contradictions**: Q1's correct answer says \"X caused Y\", Q3's correct answer says \"Y caused X\". Audit consistency across the set.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "22",
+   "quote": "A student who carries their Step 3 words forward, as the method teaches, fails Step 4.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "26",
+   "quote": "A student who follows steps 1 and 2 as taught ends up looking in the wrong paragraph for the clue they must copy.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "22",
+   "quote": "A student who carries Step 3's answer forward gets marked unpredictably.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "426",
+   "quote": "A we-do that disagrees with its own floor teaches the child two different answers to one question",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "148",
+   "quote": "undercut the lesson's defiant AND dutiful thesis.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

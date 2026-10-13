@@ -1,0 +1,114 @@
+{
+ "id": "true-explanations-that-still-mislead",
+ "title": "True explanations that still mislead",
+ "statement": "A true explanation can still teach wrongly: check it for circular definitions, misleading analogies, contradictions, unconnected facts and wording that invites a misconception, allowing simplification normal for the level.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script check separates factual accuracy from educational accuracy: a script can be factually correct and still fail if its explanation creates or reinforces misconceptions or its teaching arc fails to build understanding (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). It names the faults that pass a fact check: circular definitions, misleading analogies, internal contradictions, facts listed without the relationship between them, and explanations that make a common misconception more likely. Grade-appropriate simplification is expected and is not a factual error. A misleading analogy is one whose obvious features suggest something false.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "180",
+   "quote": "A script can be factually correct and still fail educational accuracy if the explanation creates or reinforces misconceptions, or if the teaching arc fails to build understanding.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "187",
+   "quote": "- **Circular definition:** uses the term being taught to define itself.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "188",
+   "quote": "- **Misleading analogy:** an analogy that installs a wrong mental model.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "189",
+   "quote": "- **Internal contradiction:** the script states X in one place and not-X elsewhere.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "190",
+   "quote": "- **Missing teaching arc:** facts are listed without explaining the relationship between them. A student hears isolated facts but cannot reconstruct the mechanism or apply the KC.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "191",
+   "quote": "- **Misconception scaffolding:** the explanation makes a common misconception more likely.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "174",
+   "quote": "Grade-appropriate simplification is expected and not a factual error",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Physics Misconception Prevention Guidance.docx",
+   "lines": "257 (textutil text)",
+   "quote": "Avoid the water pipe analogy without extreme care — it naturally suggests water (current) is consumed by components.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Physics Misconception Prevention Guidance.docx",
+   "lines": "250 (textutil text)",
+   "quote": "But the SKIERS keep going around. The ski lift doesn't create new skiers.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Chemistry Misconception Prevention Guidance.docx",
+   "lines": "207 (textutil text)",
+   "quote": "Use the analogy of magnets (carefully)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "220",
+   "quote": "\"a drop of water … cut down to an atom\" (water's smallest piece is a molecule).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "161",
+   "quote": "It states direction toward Earth's center and universality without the \"no gravity in space\" trap.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

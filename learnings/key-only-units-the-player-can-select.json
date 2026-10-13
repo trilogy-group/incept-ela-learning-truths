@@ -1,0 +1,49 @@
+{
+ "id": "key-only-units-the-player-can-select",
+ "title": "Key only units the player can select",
+ "statement": "Check in code that every keyed span and candidate in a select-in-the-text task is exactly a unit the player lets students select, or the right answer can't be chosen.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "format",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 reading lesson's spec requires the candidate sentences and evidence in its find-the-sentence tasks to be verbatim substrings of the passage, matched as spans in the story, with in-card buttons as a fallback when span matching fails. The build's verification checked that every tap target and highlighted sentence matched the output of the player's own sentence splitter. Its stated aim was no dead taps, targets a student cannot actually select.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "357-358",
+   "quote": "Candidates and evidence must be VERBATIM passage substrings (span-group matched in the story).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "166-167",
+   "quote": "Sentence-splitter parity: every we-do/evidence tap target and both I-do/you-do highlight sentences match the splitter's output verbatim (no dead taps).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "363-364",
+   "quote": "fallback: in-card `.findtap` buttons if span matching fails",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

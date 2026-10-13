@@ -1,0 +1,150 @@
+{
+ "id": "explanations-must-fit-the-item-given",
+ "title": "Explanations must fit the item given",
+ "statement": "Explanations, hints and feedback must be true of the item as given.",
+ "example": "A judge scored factual accuracy 1.0 on an item whose explanation wrongly called a wrong option a fact stated explicitly in the text.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "hints",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In one reported case the judge scored factual accuracy 1.0 on an inference item whose explanation called a wrong option 'a fact stated explicitly in the text' when that claim was not in the passage, because it accepted the explanation's description of itself without checking (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_967.py`). The reading and writing rules now make the judge verify such labels against the passage, and the ELA rules forbid using the explanation as the sole source of truth (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`; `icloud-work/inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt`). The closed-ended rubric treats explanations, hints, feedback templates and diagnostic notes as part of the content and fails an item whose support text discusses values that are not among its options, counting it under clarity rather than accuracy when code has confirmed the answer (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). An explanation is written for the options' final order and backs the keyed option and no other, which code checks, failing the item when it can't tell. A judge checks every other claim that explanations, hints and feedback make against the item itself.",
+ "against": "Each experiment had 10 items, and three different fixes each passed 10 of 10, among them a shuffle in code that rewrote every letter reference and a self-check instruction, so keeping the letters in sync matters more than the order of the steps (`icloud-work/ap-social-studies-generator/docs/archive/EXPERIMENT_RESULTS_2026-02-18.md`). A pattern check catches only explicit letter phrases: an explanation can argue for a wrong option without naming it (`icloud-work/ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_967.py",
+   "lines": "10",
+   "quote": "The evaluator accepted the explanation's self-characterization without checking.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "34-36",
+   "quote": "**Rule:** When an explanation claims a distractor is \"a fact stated explicitly in the text\" or \"explicitly stated,\" you MUST verify whether the *specific claim made in that distractor* is literally present in the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "83",
+   "quote": "Do NOT use `answer_explanation` as your sole source of truth — the explanation may be absent, wrong, or misleading.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "260-261",
+   "quote": "- **FIELD MISMATCH**: Explanations, hints, feedback templates, or `additional_details` describe distractors, answers, or values that do NOT match the actual options or correct answer - Example: `additional_details` discusses choosing between \"7 riyals\" and \"14 riyals\" but actual options are 28, 70, 30, 35",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "271",
+   "quote": "**CRITICAL - Supporting Text Fields**: You MUST treat explanations, hints, feedback templates, and diagnostic notes (`additional_details` fields) as part of the content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "272",
+   "quote": "- **If MATHEMATICAL VERIFICATION DATA is present and says CORRECT**: This is a `clarity_precision` failure, NOT a `factual_accuracy` failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "6",
+   "quote": "This bug caused 7 out of 30 questions (23%) to fail in Claude cross-evaluation, making it a critical quality blocker.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "80",
+   "quote": "return True  # ← WRONG! Should be False to trigger regeneration",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "194",
+   "quote": "Gemini scores content_accuracy at 1.0 for several questions where the explanation contradicts the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "197",
+   "quote": "- This is functionally equivalent to a factual error",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/DECISIONS.md",
+   "lines": "35",
+   "quote": "- Bug: Explanation generated before shuffle said \"Option A is correct\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/DECISIONS.md",
+   "lines": "36",
+   "quote": "- After shuffle, answer became \"C\" but explanation still said \"A\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/DECISIONS.md",
+   "lines": "49",
+   "quote": "- No post-hoc shuffling that can desync answer/explanation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "106",
+   "quote": "Fixed answer bias (all answers were \"B\") by shuffling options after generation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/EXPERIMENT_RESULTS_2026-02-18.md",
+   "lines": "15",
+   "quote": "| **Two-Stage Generation** | **100%** (10/10) | ✅ WINNER |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "292",
+   "quote": "Its rollercoaster option can also seem dangerous under the actualdefinition; feedback rejects it using fun/laughter absentfromtheoption.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/MENACING-ITEM-IMPLEMENTATION.md",
+   "lines": "11",
+   "quote": "Its feedback uses the option's own facts; the old rollercoaster rejection invented fun and laughter that the choice did not state.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

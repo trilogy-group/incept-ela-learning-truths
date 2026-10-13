@@ -1,0 +1,43 @@
+{
+ "id": "keep-every-sentence-however-short",
+ "title": "Keep every sentence, however short",
+ "statement": "A check that matches answers to the text must keep every sentence that carries a content word, however short.",
+ "example": "A minimum of 10 characters dropped a one-word sentence of exactly 10 and made a correctly keyed answer look unsupported.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "key"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons splits each story into sentences to check that a keyed answer is supported by the text. An earlier minimum length of 10 characters silently dropped one-word sentences, which is where that prose puts its key words, and made a correctly keyed answer look unsupported; the splitter now keeps every sentence that carries a content word (`shadow/content-eval/SKILL.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "105",
+   "quote": "Sentence splitting keeps **every** sentence carrying a content word.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "105-108",
+   "quote": "An earlier minimum length of 10 characters silently dropped one-word dramatic sentences — `\"Gratitude.\"` is exactly 10 — which is where this prose puts its key words, and it made a correctly-keyed answer look unsupported.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

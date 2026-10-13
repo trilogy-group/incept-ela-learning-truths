@@ -1,0 +1,92 @@
+{
+ "id": "one-task-per-part",
+ "title": "One task per part",
+ "statement": "Ask for one thing in each stem or part of a question: no compound verbs such as identify and describe, no second question, no joining of separate concepts.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's API spec bans compound task verbs such as \"identify AND describe\" within one part (`icloud-work/evaluator/docs/EVALUATION_API.md`), and the judge flagged a part that conflated two distinct concepts (`icloud-work/evaluator/docs/reports/LATEST.md`). The support is thin: one adopted rule and one judge note, raised once. The skill each part declares must also match what its prompt asks.",
+ "against": "Multi-part items deliberately span several topics but score each part separately: '- A long FRQ is a **broad, integrative** item: it is worth roughly **10 scorable points** and **spans two to three distinct topics/units**, woven into one scenario.' (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`, lines 14-15).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_API.md",
+   "lines": "328",
+   "quote": "- **NEVER** use compound verbs like \"identify AND describe\" in a single part",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "125",
+   "quote": "| Part (c) conflates two distinct concepts — maritime technology development AND navigational skills —... | 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "54",
+   "quote": "- (2x) Mismatch between stated reasoning type (causation) and actual prompt structure (...",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_API.md",
+   "lines": "328",
+   "quote": "- **NEVER** use compound verbs like \"identify AND describe\" in a single part",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "91-92",
+   "quote": "An SCR that tests multiple unrelated concepts cannot be fairly scored on a 0/1/2 scale.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "128-129",
+   "quote": "- Fails if the question is vague (\"Write about the passage\"), has two different questions in one stem, or uses vocabulary significantly above the target grade level when simpler alternatives exist.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "14-15",
+   "quote": "- A long FRQ is a **broad, integrative** item: it is worth roughly **10 scorable points** and **spans two to three distinct topics/units**, woven into one scenario.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "273",
+   "quote": "And the question is two questions in one, so a child can answer half and feel finished.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "273",
+   "quote": "And the question is two questions in one, so a child can answer half and feel finished.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,115 @@
+{
+ "id": "a-rubrics-rules-must-fit-together",
+ "title": "A rubric's rules must fit together",
+ "statement": "Check that a rubric's rules can all be met at once.",
+ "example": "With easy items defined as recall and recall-only items failed, 26 of 37 easy items failed cognitive demand.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "demand"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An AP benchmark's judge context said easy items should test basic recall and comprehension, and also that questions should test historical thinking, not just factual recall. One run's report found items were either too simple and failed cognitive demand or too complex and failed difficulty, and in a later run 26 of 37 easy items failed cognitive demand. After the rule was relaxed to accept recall, the judge's 25-case calibration set still expected a recall-only question to fail cognitive demand.",
+ "against": "The conflict was settled by relaxing the judge between runs rather than by fixing the rule, so runs before and after are not comparable, and the context file comes from a commit after the runs, so the rules in force during them can't be confirmed.",
+ "evidence": [
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/core/curriculum.py",
+   "lines": "323",
+   "quote": "\"easy\": \"Should test basic recall and comprehension of key concepts\",",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/core/curriculum.py",
+   "lines": "351",
+   "quote": "lines.append(\"  - Questions should test historical thinking, not just factual recall\")",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "63",
+   "quote": "- Result: Questions are either too simple (cognitive fail) or too complex (difficulty fail)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "80",
+   "quote": "**26 out of 37 easy questions failed cognitive demand**",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "88",
+   "quote": "- Recall and memorization questions ARE ACCEPTABLE",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/calibration/gold_standard.json",
+   "lines": "193-194",
+   "quote": "\"expected_failures\": [\"cognitive_demand\"], \"failure_reason\": \"Recall-only question - just asks for a date without any analysis\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md",
+   "lines": "57",
+   "quote": "The QC rubric predates the baked-heading feature and may penalize the intended headings.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md",
+   "lines": "47",
+   "quote": "the `no_questions` gate in `01_script` actively suppresses in-body prompts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "120-122",
+   "quote": "Re-authoring videos, a roster, a story-pattern chart, or CFU branches would violate the \"use content verbatim, do not re-author\" instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "491-492",
+   "quote": "A U4L2 build whose `BEATS.length !== 28` (with 4 vocab words and 4 chunks) has drifted from the reference and fails review before any pixel comparison starts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "350",
+   "quote": "Each MCQ has exactly 3 distractors, one of each:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "243",
+   "quote": "| Dim 11: Distractor coverage | Four distractor types present (scope, conflation, prior knowledge, partial) | Hard gate |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

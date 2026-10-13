@@ -1,0 +1,101 @@
+{
+ "id": "dont-define-the-word-being-tested",
+ "title": "Don't define the word being tested",
+ "statement": "A question on a taught word must make the learner use the idea, never define the word in the question or key an answer that just repeats its definition.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "key",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of one reading test's items, run separately from an AI quality benchmark, found a vocabulary template that defined the affix in the stem and rewrote it so the item depends on the passage. A checker written for the reading project fails a vocabulary item whose right option just echoes the taught definition, though it was one of four checkers not yet wired into the build. The same holds for a question on a taught definition, and defining the word's parts, such as an affix, in the question counts as defining it.",
+ "against": "A later run found counter-evidence (`grade3-reading/artifacts/arc-audit/L7.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "49",
+   "quote": "pre-defined the affix in the stem",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "93-94",
+   "quote": "DEFINITION-ECHO (a vocab-testing item's correct option must not just echo the taught definition).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/plans/2026-05-25-ap-history-request-expectation-mapping.md",
+   "lines": "35",
+   "quote": "- Definitional standards must be transformed into assessment tasks, not copied into stems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/plans/2026-05-25-ap-history-request-expectation-mapping.md",
+   "lines": "156",
+   "quote": "### F3: APWH definitional rows become copied stems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ap-history-ib-expectation-matrix.md",
+   "lines": "213",
+   "quote": "- Definitional text rather than task verb: identify the concept as the content target; require generator to transform it into a reasoning task rather than copy the definition.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/request_expectations/ap_history_request_expectations_summary.md",
+   "lines": "3",
+   "quote": "- Rows written: 53790",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/request_expectations/ap_history_request_expectations_summary.md",
+   "lines": "8",
+   "quote": "- By reasoning mode: {'definition_to_assessment': 510, 'causation': 25695, 'statement_to_assessment': 4515, 'comparison': 5880, 'evidence_source_analysis': 105, 'contextualization': 465, 'continuity_change_over_time': 13320, 'explanation_general': 2910, 'evaluation_argument': 390}",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md",
+   "lines": "17",
+   "quote": "So when we write the sentence frames, the word is always in the sentence frame and it's always open-ended. That's why you see a lot of our sentence frames ending with because",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md",
+   "lines": "19",
+   "quote": "So that's an example of a closed frame because there's really just one answer to it. You're just asking for a definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L7.md",
+   "lines": "32",
+   "quote": "Delivered Form 2 (`vocab-form2`) is a definition-recall MCQ (\"You win a great victory after a hard struggle. Which word says that?\").",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

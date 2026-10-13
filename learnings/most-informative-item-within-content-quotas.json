@@ -1,0 +1,98 @@
+{
+ "id": "most-informative-item-within-content-quotas",
+ "title": "Most informative item within content quotas",
+ "statement": "In an adaptive test, give each student next the most informative item at their current estimate, but within content quotas, because information alone ignores the blueprint.",
+ "example": "Under domain quotas one engine kept 100% of simulated sessions within one item of its 14/13/13 blueprint.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "alignment",
+  "sequence"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "contested",
+ "detail": "A reading assessment's design follows published work on adaptive testing: an item is most informative when its difficulty matches the student's ability and items much easier or harder contribute nearly zero information, so each next item is the one most informative at the current estimate (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). Selection on information alone would keep choosing the same few items near the population mean, so the test it mirrors adds domain quotas that secure the blueprint whatever the student's ability, and the engine does the same. In simulation the quotas held the 14/13/13 domain blueprint within one item in 100% of sessions (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`).",
+ "against": "Before calibration, information is judged on assigned difficulties that carry an estimated uncertainty of 0.5 to 1.0 logits, and the package concedes that a wrong difficulty can waste an item slot on a near-ceiling item instead of an informative one (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`; `grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). A diagnostic guide in the same project holds that with uncalibrated items information-based selection is no better than heuristic selection and may be worse (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`); nothing here compares the two.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "198",
+   "quote": "Items much easier or harder than the student's ability contribute nearly zero information [AERA-2014].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "200",
+   "quote": "select the item that maximizes Fisher information at the current θ̂ — ensures that measurement precision is concentrated at the student's true ability level, not wasted on floor or ceiling items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "204",
+   "quote": "Raw Fisher-information maximization would repeatedly select the same few items near the population mean. MAP Growth adds content constraints — domain quotas — that ensure blueprint coverage regardless of student ability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "206",
+   "quote": "1. **Domain quotas:** 14 Literary / 13 Informational / 13 Vocabulary on the 40-item scored form.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "22",
+   "quote": "| Sim 5 blueprint adherence (±1) | 100% (13/13/13) | 100% (13/13/13) | 100% | **100% (14/13/13 on the 40-item scored form)** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "264",
+   "quote": "The provisional values carry an estimated uncertainty of σ ≈ 0.5–1.0 logits (5–10 RIT) [AUTHORING-DECISION; DERIVED].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "14",
+   "quote": "Item selection uses b_provisional values to compute Fisher information.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "14",
+   "quote": "wasting an item slot on a near-ceiling item instead of an informative one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "117",
+   "quote": "With uncalibrated items, the \"optimal\" selection is no better than heuristic selection, and may be worse",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Procedures for selecting items for computerized adaptive tests (Applied Measurement in Education 2:4, 1989)",
+   "url": "https://doi.org/10.1207/s15324818ame0204_6"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

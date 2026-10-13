@@ -1,0 +1,214 @@
+{
+ "id": "keys-stay-on-the-server",
+ "title": "Keys stay on the server",
+ "statement": "Keep keys, rationales, rubrics and correction routes off the learner's device, even hidden, until each response is submitted, and score on the server, never trusting the screen's correctness flag.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's standing rule is that the client renders and reports responses and the server scores (`grade3-reading/knowledge_bot/BRIEFING.md`). A custom delivery app fetches items in a student-before-answer view, forbids client scoring with a CI gate and rejects client-sent outcomes at its broker (`grade3-reading/knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd`), and a change to the main reading app scores each response on the server from the item's own declarations and never trusts client-reported correctness (`grade3-reading/knowledge_bot/knowledge/kb-0024-beyond-alpharead-pr45-all-qti-types.qmd`).",
+ "against": "The lesson engine's animated export still writes each choice question's key into the lesson data its player loads (`g9/transformer/src/glue/animated.js`). The acceptance record marks it as shown in one unit's demonstration, with runtime unverified (`grade3-reading/edullm-review-hub/course-packages/courses/apush/review/evidence/incept-acceptance.json`). A later run found: both of the lesson engine's exports still put answer material in the page: a 3D version's checkpoint table carries each quick check's expected answer, and an animated version's pages send their own rubric with each answer they ask to be judged (`g9/transformer/test/threejs-render.test.mjs`). A later run found counter-evidence (`grade3-reading/incept-read-app/docs/DOSE-DATA-IN-TIMEBACK.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "88",
+   "quote": "**No client-side scoring, ever** — render + report responses; the server scores. Never send renderer outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "39-41",
+   "quote": "The client must **never** extract the answer key, compute score/mastery/XP/accuracy/advancement, send `rendererOutcomes`, persist scores, or hold a secret. QTI is fetched `view=student-before-answer`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0024-beyond-alpharead-pr45-all-qti-types.qmd",
+   "lines": "37-38",
+   "quote": "**never trusts client-reported correctness**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "76",
+   "quote": "correct: it.answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "39-40",
+   "quote": "The client must **never** extract the answer key, compute score/mastery/XP/accuracy/advancement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "71-72",
+   "quote": "Define a student-only source projection containing `student_material` plus approved citation metadata, excluding teacher-only answer-bearing fields.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/case-for-review.md",
+   "lines": "12-13",
+   "quote": "Student projections omit assessment candidates, answer keys, rationales, rubrics, feedback, teacher-only supports, and correction routes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "81",
+   "quote": "Unit 1 withholds independent and checkpoint evidence, excludes keys from student HTML, requires correction before retest, caps candidate attempts, and never unlocks on reviewer action.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/assessment-set.json",
+   "lines": "18",
+   "quote": "Withhold keys, rationales, lesson models, correction routes, and retries until the relevant response is submitted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "127",
+   "quote": "What the page receives: never the item, the checks or the reasons, and a view only for a ready (checked) block.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "62",
+   "quote": "accepted the exact quotation, kept the reasoning and showed a model answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "166",
+   "quote": "return lesson ? send(res, 200, lesson)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "36",
+   "quote": "blocks: made invisibly, cached, played; the page never sees the item or the checks",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "47",
+   "quote": "for (const k of [\"item\", \"reasons\", \"judge\", \"code\", \"checks\"]) assert.equal(k in b1, false, k);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "48",
+   "quote": "assert.equal(JSON.stringify(b1.view).includes(\"feedback\"), false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "19",
+   "quote": "with Jev, and replies only with the authored lines kept here in `marking`, which stays on the server.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "59",
+   "quote": "the feedback lines are not shipped",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "80",
+   "quote": "Each keeps its marking (the authored lines, the text's key) beside its folder, never in it, so the",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "57",
+   "quote": "assert.deepEqual(check.expects, [qc.options[qc.answer]]);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "147",
+   "quote": "entry: { q: it.stem, expects: [right], source: \"draft\" }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "1",
+   "quote": "Its pages POST `api/judge` (relative to the page) with an authored rubric and",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "10",
+   "quote": "const FORBIDDEN = [\"answer\", \"feedback\", \"evidence\", \"accepted\", \"stronger\", \"best\", \"why\", \"hint\", \"reveal\", \"model\", \"gloss\", \"candidates\", \"chosen\"];",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "16",
+   "quote": "The student view never carries a key, feedback, evidence or a model answer (the list in test/mechanics.test.mjs).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "18",
+   "quote": "assert.equal(reading.mcqs[0].correct, 0);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/README.md",
+   "lines": "10-11",
+   "quote": "must **never**: extract the answer key, compute score/mastery/XP/accuracy/advancement/next-task",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/DOSE-DATA-IN-TIMEBACK.md",
+   "lines": "195-196",
+   "quote": "The dose teach MCQs / hot-text carry `answer` + `answer_explanation` **in the JSON** so the client can give immediate teach-phase feedback.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,81 @@
+{
+ "id": "match-curriculum-data-by-content",
+ "title": "Match curriculum data by content",
+ "statement": "Find and match curriculum data, lesson parts and source texts by their content and structure, never by identifiers or titles, which drift or shift wholesale.",
+ "example": "224 of 239 local entries for one course matched the canonical source by content, but 218 of those sat at a different identifier.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When the AP work's evaluator reconciled its history curriculum data with the canonical curriculum repository, one course's local entries turned out to be systematically off by one period: 224 of 239 had a strong content match, but 218 of those were at a different identifier (commit fb17482 in `icloud-work/inceptbench`). The merge rebuilt that course on the canonical identifiers, carried the local content onto each record by a Jaccard match, kept the old identifier on every remapped record, and carried over the 16 entries with no match unchanged.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "fb17482",
+   "lines": "10-13",
+   "quote": "The local APEURO entries were systematically off by one period. Verified by content cross-match: 224 of 239 inceptbench APEURO entries had a strong content match in the curriculum repo, but 218 of those were at a different KC id.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "157",
+   "quote": "- **Detection is structural, never by node id or title.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "221-223",
+   "quote": "The source is confirmed by what the lesson's reading chunks contain, not by the lesson's `lessonId`. A course file whose ids lag the folder scheme still gets checked; the mismatch is reported as info.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/PR_AND_RELEASE_STANDARD.qmd",
+   "lines": "85",
+   "quote": "File names or equal counts are insufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "The named shared-app ZIP is the prior handoff again and contains no current-build advantage.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/leadership/leadership--LEADERSHIP-PLAYBOOK.md",
+   "lines": "366-367",
+   "quote": "a Playwright DOM-class harvester keyed by page `station` not page id \"because page ids drift but stations don't\" — kb-0222).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "552-553",
+   "quote": "had silently broken when the cards were swapped: tapping \"producer\" in the passage popped the *evidence* definition and \"habitat\" popped *correspond*.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

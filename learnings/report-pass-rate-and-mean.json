@@ -1,0 +1,114 @@
+{
+ "id": "report-pass-rate-and-mean",
+ "title": "Report pass rate and mean",
+ "statement": "Report the mean score beside the pass rate, fixing in advance which decides, because a pass cut turns small shifts near the bar into noise or false gains.",
+ "example": "On one item type the pass rate rose from 20.0% to 43.3% while the mean score fell from 0.779 to 0.732.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "After one change to an AP model, the clean per-type table showed the mean score falling on 3 of 10 item types, and on 2 of them the pass rate rose at the same time, one by a single item (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`, lines 21-32). The grader's overall scores fall in a few clusters, 0.75-0.84 just below the fixed 0.85 threshold and 0.85-0.99 just above, so more items can clear it while the near-misses score lower (`icloud-work/auto-memory-backup/reference_inceptbench.md`, line 82). An earlier note in the same result file put the fall at 7 of 10 types, from scoring that counted lost items as zeros (line 42). Fix in advance which of the two decides.",
+ "against": "This is one item type at n=30, and the same file's first-pass and clean numbers disagree on a type with no lost items, about 77% in the line-43 note against 90.0% in the line-24 table (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`, lines 24 and 43), so per-type shifts of a few items may be re-scoring noise. The note's other two examples do not hold: a pass-rate gain that came with a lower mean became a real gain once compared with a fresh baseline (`feedback_baseline_must_be_fresh_gen.md`, line 39), and a 3.08-point drop on one type (`feedback_r41d_continuous_metric.md`, line 73) matched that type's stored-versus-fresh gap of 3.14 (`feedback_baseline_must_be_fresh_gen.md`, line 25). The delivered target stays a pass mark ('Threshold of 0.85 is fixed by mission.', `reference_inceptbench.md`, line 83), and the judge's scores land in clusters, so the mean goes beside the pass rate, not in its place. Accepting an item still has to be binary on critical criteria, which the judge enforces with a veto cap ('CRITICAL_VETO_CAP=0.84', `icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md`, line 133), and later quality gates were set on pass rates again (`icloud-work/aptraining/.agent/PLAN.md`, line 276).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "21",
+   "quote": "| Cell | v18 | v20a (clean) | Δ |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "31",
+   "quote": "| apwh/mcq_set | 20.0% (0.779) | 43.3% (0.732) | +23.3pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_inceptbench.md",
+   "lines": "82",
+   "quote": "The grader's per-dim binary check + non-critical aggregation lands `overall` in clusters: 0.0/0.30/0.60-0.69/0.75-0.84/0.85-0.99/1.00.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_inceptbench.md",
+   "lines": "82",
+   "quote": "Threshold of 0.85 is fixed by mission.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "42",
+   "quote": "- avg_overall **dropped on 7 of 10 cells** — pass rates went up because more items cleared 0.85, but the \"soft fails\" (0.6-0.84) have lower avg. (Numbers above are based on first-pass scoring with 22 503s zeroed out — true v20a aggregate after re-score will be higher.)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "43",
+   "quote": "- apush/leq regressed sharply (−13pp). The one cell at 90% with v18 is no longer there. This regression is real even after fixing 503s — it's measured on the cells with 0 503s.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "24",
+   "quote": "| apush/leq | 90.0% (0.942) | **90.0%** (0.947) | = |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_r41d_continuous_metric.md",
+   "lines": "27",
+   "quote": "The IB grader thresholds at 0.85 internally. Items with continuous score in [0.80, 0.90] flip pass↔fail under any tiny continuous-side noise. For DBQ where ~20% of items sit in this band, this alone produces 13-17pp binary swing per run.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_r41d_continuous_metric.md",
+   "lines": "71",
+   "quote": "| richer-RAG dbq | -6.1 binary-pp | +0.06 cont-pp | binary \"regression\" was 100% threshold artifact — DBQ continuous quality unchanged |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "113",
+   "quote": "Switch primary metric from binary pass-rate to averaged-continuous overall. Compass R41: threshold at 0.85 causes most apparent variance. FREE; ~5× sharper. Reveals v36b binary +1.77pp = continuous -0.88; DBQ \"noise\" was ~all threshold artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/v38_decision_rules.md",
+   "lines": "11",
+   "quote": "Report: aggregate binary pass-rate + aggregate continuous score + per-cell breakdown",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Card, D., Henderson, P., Khandelwal, U., Jia, R., Mahowald, K. and Jurafsky, D. (2020). With Little Power Comes Great Responsibility. Proceedings of EMNLP 2020, 9263-9274.",
+   "url": "https://doi.org/10.18653/v1/2020.emnlp-main.745"
+  },
+  {
+   "ref": "Dror, R., Baumer, G., Shlomov, S. and Reichart, R. (2018). The Hitchhiker's Guide to Testing Statistical Significance in Natural Language Processing. Proceedings of ACL 2018, 1383-1392.",
+   "url": "https://doi.org/10.18653/v1/P18-1128"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

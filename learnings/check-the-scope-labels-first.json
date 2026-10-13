@@ -1,0 +1,488 @@
+{
+ "id": "check-the-scope-labels-first",
+ "title": "Check the scope labels first",
+ "statement": "Check every scope label against the official framework before an item is made or judged, pass it explicitly and unchanged through every step, and confirm how the judge reads it.",
+ "example": "One wrong period mapping in a generator's settings caused 77 curriculum-alignment hard-fails, the majority of all failures in its baseline.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one quality push on an AP question generator, its settings mapped several units to the wrong period, so items matched their topic but carried the wrong time period, and the evaluator hard-failed them on curriculum alignment (`icloud-work/ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md`). That single settings error caused 77 hard-fails in the baseline, the majority of all failures. The evaluator in turn returned systematically wrong unit numbers for one course's standards, so the generator corrected them before evaluation (`icloud-work/ap-social-studies-generator/CHANGELOG.md`). The labels are the course, unit, period, standard and procedure. Match them to the framework by content, and pass them along as given.",
+ "against": "The ID shift stayed in one source: an audit of 30 records of the canonical source found no shift in the affected course (0 of 10 records), though one record there carried a wrong unit (`icloud-work/auto-memory-backup/project_grader_audit_results_2_of_3_pass.md`, lines 22-26). That a wrong ID makes the grader fail correct content is the note's reasoning, not a measurement. The label fault was not the whole story: the report first put a 43-point fall on one item type (69 % → 26 %) down to a change in how the judge enforced the label, but the full run found the fault steady and touching only 27 of that type's 193 scored items, too few to account for most of the fall. the metadata-confirmed conflict rests on declared operation metadata, not an independent content adjudication (`ti-courseplans-audit/docs/handoffs-2026-07-13/course-eval-layer/README.md`). The handover's techniques come from a sibling generator whose best run used a different grader version, which it calls design evidence, not certified current scores. a date-only screen mostly raised false alarms: 12 of the 18 records it flagged belonged where they were. The 70.7%-to-94.0% gain is cumulative over several commits, not all of them about the default. The fix carried the labels through and still falls back to parsing the code when no label is passed, so stopping on an unknown label is the lesson drawn, not the change measured (`icloud-work/ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md`). The exact-ID hit rate is second-hand: a 40-standard check \"reportedly found 100% hit rate\" (`ap_social_studies_generator_distilled.md`, line 68).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "41",
+   "quote": "Every generated item for these units had content matching the TOPIC but metadata saying the wrong TIME PERIOD. The evaluator saw the mismatch and issued automatic curriculum_alignment hard-fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "43",
+   "quote": "**Impact:** 77 curriculum_alignment hard-fails in baseline. This single config error was responsible for the majority of all failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "71",
+   "quote": "4. **APWH unit correction.** The evaluator returns systematically wrong unit numbers for APWH standards — we fix them before evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "29",
+   "quote": "Every APEURO Unit 4 question automatically failed `curriculum_alignment` because the generated content referenced 1648-1815 material but the evaluator expected 1914-present content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "31",
+   "quote": "**Why this is significant:** No amount of prompt engineering can fix wrong metadata. The metadata (time period string) appears in every prompt for every question of that unit. Every question was doomed before generation started.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "35",
+   "quote": "**Impact:** All APEURO Unit 4 questions went from 0% to baseline pass rate (~80%) instantly. This single change accounted for roughly 3-4% of the 15% total improvement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "81",
+   "quote": "**Why this was missed:** The code was doing \"clever\" re-derivation of course/unit from substandard_id. The problem with re-derivation: KC-prefixed standards are APWH-specific notation that the parser didn't handle. Passing explicit values eliminates the re-derivation entirely.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "181-187",
+   "quote": "**Problem:** Question frames settlement houses as a Gilded Age phenomenon when the curriculum explicitly states they were Progressive Era (1890s-1920s). The Gilded Age ended around 1898.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "126",
+   "quote": "| Minor note: The curriculum context lists the time period as 'late 19th century,' which contradicts t... | 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "36",
+   "quote": "I checked content Jaccard similarity for all 239 InceptBench APEURO entries.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "36",
+   "quote": "224 of them have a >= 0.80 content match in the curriculum repo, but 218 of those 224 are at a different ID.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "36",
+   "quote": "**InceptBench's APEURO IDs are off by one period from CB CED.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_oracle_source_reconciliation.md",
+   "lines": "28",
+   "quote": "- **APEURO with InceptBench IDs**: training rows get tagged with KC IDs that are off-by-one-period vs official CB CED. Atlas passes on schema, Quill uses them as anchors, InceptBench grader marks factual_accuracy = 0 even when content is correct, because the KC claim is wrong. Pass rate suffers.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "22",
+   "quote": "- **Result:** 30/30 records compared via Gemini 2.5 Pro against current published CED PDFs (APUSH / APWH-Modern / APEURO from collegeboard.org)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "23",
+   "quote": "- **Critical finding:** **0/10 APEURO records showed off-by-period drift** — the InceptBench APEURO bug (off-by-one-period vs CB CED) did NOT propagate to the canonical API at `192.168.1.26:8002`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "26",
+   "quote": "- 1 wrong_unit: APWH `c_lAtP` Columbian Exchange tagged Unit 0 instead of Unit 4 — single-record fix needed in API",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "41-42",
+   "quote": "the `SC Coverage` tab carries Procedure/Variation — consult it; three shipped lessons were once mis-routed because nobody did",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K96",
+   "quote": "RI.3.8.c (paragraph relationships) replaces mistagged RI.3.9.b.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "144",
+   "quote": "The second one is quieter and therefore more dangerous: it lowers numbers by 10–40 pp on individual items in a way that looks like a model regression.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "142",
+   "quote": "`grade: \"1\"` interpreted as *1st grade* instead of *Unit 1*",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "19",
+   "quote": "81 fingerprints across 1 079 evals at consistent rate. Wrapper sends `grade: \"1\"` for Unit 1; grader reads as 1st grade; zeros `educational_accuracy` and `clarity_precision`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "20",
+   "quote": "A **subject-taxonomy rename (`apush` → `American History`) broke the evaluator out from under the runs**, zeroing every score.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-decisions.md",
+   "lines": "260",
+   "quote": "The same `standard_id` can appear in multiple subjects/courses (e.g., CKHG standards in both American History and World History).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/curriculum-api-decisions.md",
+   "lines": "260",
+   "quote": "This was verified empirically — CC has 284 duplicate standard IDs, AP has 311.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "135",
+   "quote": "The MCQ collapse (69 % → 26 %, −43 pp in 90 min) is implausible as a model regression",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "30",
+   "quote": "| MCQ | 216 | 23 | 193 | 37 | **19.2 %** | 0.702 | 27 (14 %) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "505",
+   "quote": "Build AP curriculum context from local JSON facts only (fail-closed).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "511",
+   "quote": "- Course guard enforced to prevent cross-course ID collisions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "533",
+   "quote": "AP_CONTEXT_MODE=COURSE_MISMATCH_FAIL_CLOSED requested_course=%s",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "132",
+   "quote": "scope mismatch, two schema/policy misses, one metadata-confirmed conflict",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/course-evidence-workbench.html",
+   "lines": "161",
+   "quote": "A theme unit was scored as a whole Grade-3 course",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/course-evidence-workbench.html",
+   "lines": "161",
+   "quote": "Missing literature and foundational-skills coverage may be true of this unit and still be irrelevant to its assigned scope.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "8ef0744",
+   "lines": "5-7",
+   "quote": "Because the bare \"ap\" slug is itself in AP_CURRICULUMS, any AP item (e.g. AP Chemistry) was captured by the local branch and failed closed with empty curriculum context, never reaching the incept-curriculum API.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "8ef0744",
+   "lines": "3-4",
+   "quote": "AP curriculum context was resolved entirely from the bundled local facts JSON, which only covers the 7 AP Social Studies courses",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "19",
+   "quote": "Wrapper sends `grade: \"1\"` for Unit 1; grader reads as 1st grade; zeros `educational_accuracy` and `clarity_precision`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_f54d5849_what_is_going_wrong.md",
+   "lines": "19",
+   "quote": "81 fingerprints across 1 079 evals at consistent rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/run_73348c1a_orchestrator_contract.md",
+   "lines": "57",
+   "quote": "- Echo grade as `AP United States History`, not numeric unit values like `\"1\"` or `\"3\"`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "152",
+   "quote": "1. Authoritative course/unit propagation is critical.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "153",
+   "quote": "2. Period metadata bugs can dominate failure rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_analyzer/2026-05-27T1741Z_DIAGNOSIS_data_adequacy_binding_lever.md",
+   "lines": "25",
+   "quote": "zeroing every factual_accuracy score. A subject-key rename (`apush` → `American History`) broke the grader's curriculum lookup.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "114",
+   "quote": "Treat metadata correctness as a hard gate: course, unit, period, standard, and type must propagate authoritatively through every generator path.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/HANDOVER.md",
+   "lines": "122",
+   "quote": "Period metadata bugs can dominate failure rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/HANDOVER.md",
+   "lines": "122",
+   "quote": "Period metadata bugs can dominate failure rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "31",
+   "quote": "No amount of prompt engineering can fix wrong metadata.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "35",
+   "quote": "All APEURO Unit 4 questions went from 0% to baseline pass rate (~80%) instantly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "79",
+   "quote": "Pass explicit `course` and `unit` from the request body, not re-derived from substandard_id.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "83",
+   "quote": "~3-4% total improvement",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-28T1549Z_u1_kc_audit_report.md",
+   "lines": "19",
+   "quote": "identified as causing v80b DBQ 15% baseline",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/curriculum_kc_period_audit.md",
+   "lines": "8",
+   "quote": "76 KCs flagged as period-mismatched.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-28T1549Z_u1_kc_audit_report.md",
+   "lines": "95",
+   "quote": "12 of the 18 \"flagged\" are false-positives",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-14T1422Z_curriculum_facts_critical_analysis_+_bundle.md",
+   "lines": "130",
+   "quote": "Pipeline MUST disambiguate by course on every lookup.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1631Z_DBQ_cross-check_vs_Quill_pass-criteria_pack.md",
+   "lines": "68-70",
+   "quote": "Period mismatch is the root cause — v80b can't satisfy chronology guardrail when the KC's period and content disagree.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "120",
+   "quote": "`parse_substandard(\"KC-4.1.VI+1+D\")` in the generator code doesn't match any of the regex patterns for course detection (USH/WH/EH/MAC/MIC/GOV/HG/EURO prefix). It silently falls through to the default: `{course=\"APUSH\", unit=1}`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "145",
+   "quote": "So `ctx.course` came back as \"APUSH\" for all APWH items. Because `ctx.course != \"APWH\"`, the `_build_apwh_unit_guidance()` function added in commit 2 was **silently skipped** for every APWH request.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "163",
+   "quote": "APWH u3 going from 43.3% to 100% with 0 hard-fails is the definitive proof that the KC-prefix routing chain (commits 3+4+2) was the root cause.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "145",
+   "quote": "The request's course, unit, period, type, standard/substandard, and node identifiers must flow through every layer without rederivation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "68",
+   "quote": "- Exact `node_id` lookup beat fuzzy topic search. A 40-standard check reportedly found 100% hit rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T1731Z_den_solver_delivery/QUARANTINE_REASON.md",
+   "lines": "25",
+   "quote": "Different format → den's substandard_lookup falls through → deterministic template path skipped → v80bchain fallback only.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "75",
+   "quote": "| Metadata propagation | confirmed | implied | confirmed | confirmed | compatible | T1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "174",
+   "quote": "- Propagate authoritative course/unit/time-period/standard metadata through every layer. Never rederive when the request already supplies it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T1731Z_den_solver_delivery/QUARANTINE_REASON.md",
+   "lines": "29",
+   "quote": "Den's own self-test on the v80bchain fallback path: 0/10 passing under the 60s cap.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/fact_lookup_for_generation/README.md",
+   "lines": "88",
+   "quote": "| `req.grade` | unit number as string (e.g., `\"1\"`) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "224",
+   "quote": "the generator was calibrating passages at **grade 11, not grade 3**; verify the target grade before any batch",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/PROFILE-PARITY.qmd",
+   "lines": "9-10",
+   "quote": "it never infers a grade or capability from filenames, prose, or a reviewer request.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "7",
+   "quote": "- **Request-Centric Evaluation**: Questions are evaluated against the original generation request, not in isolation",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

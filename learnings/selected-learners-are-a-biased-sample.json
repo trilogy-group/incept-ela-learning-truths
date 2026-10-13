@@ -1,0 +1,77 @@
+{
+ "id": "selected-learners-are-a-biased-sample",
+ "title": "Selected learners are a biased sample",
+ "statement": "Read results from learners who happened to be measured, or who chose to do more, as a biased sample that can flatter a course, never as proof it works.",
+ "example": "In one grade, learners who completed onboarding averaged 0.66 grades ahead, against 0.22 grades behind for those with a record who had not.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A setup review of a second-grade reading cohort found its headline of +0.48 grades ahead to be an artifact of who gets measured: learners who completed onboarding averaged +0.66 grades ahead and those with a record but incomplete onboarding −0.22, because fast learners pass placement while strugglers stall before producing a clean grade (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md`, lines 41-45). A third-grade data slice of 409 records sat near the 74th percentile, against 46.3 for the full population of 915 (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md`, line 103). The grade-2 analysis read high achievement among learners who did the most work as consistent with the course working, not proof of it, since motivated learners do more and score higher regardless (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/g2-completion-and-course-findings.md`, lines 60-61). In grade 6, more work did not predict more growth among learners who did any, r ≈ −0.08 (`grade3-reading/ti-courseplans/courses/g6-reading/brainlifts/v0.2.md`, line 100).",
+ "against": "The grade-6 growth figures are themselves sparse and self-selected, about 94 values with 2 to 22 learners per bucket, so the near-zero correlation is a weak read (`grade3-reading/ti-courseplans/courses/g6-reading/brainlifts/v0.2.md`, line 100).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md",
+   "lines": "43-45",
+   "quote": "So the rosy \"+0.48 grades-ahead\" headline is an artifact of *who gets measured*: fast students blast through placement; strugglers stall in onboarding and never produce a clean grade. **The measured cohort over-represents the strong.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md",
+   "lines": "41-42",
+   "quote": "Students who *complete onboarding* average **+0.66 grades ahead**; students with a record but incomplete onboarding average **−0.22**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "103",
+   "quote": "Our OneRoster slice (409 G3 records / 173 students, 8 schools, 2017–2026) is coverage-biased at mean percentile ~74 in every grade",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "103",
+   "quote": "Full current G3 population: **n=915, mean RIT 196.0, mean percentile 46.3**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-completion-and-course-findings.md",
+   "lines": "60-61",
+   "quote": "*Caveats: self-selected cohort (motivated kids do more work and score higher regardless — consistent with the course working, not proof it caused it)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/brainlifts/v0.2.md",
+   "lines": "100",
+   "quote": "among G6 doers, *more* work does **not** predict more growth (r ≈ −0.08)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/brainlifts/v0.2.md",
+   "lines": "100",
+   "quote": "sparse/noisy (≈94 non-null), self-selected, and non-monotonic (2–22 students/bucket)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

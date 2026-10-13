@@ -1,0 +1,71 @@
+{
+ "id": "a-cold-text-decides-each-step-up",
+ "title": "A cold text decides each step up",
+ "statement": "End each block with an unseen text running a known procedure on new content, with no model or sentence starters, and let it decide stepping up or re-modelling.",
+ "example": "One writing scheme ends units 5, 10 and 15 with milestone cold checks, the last a practice state-test essay with no support.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "evidence-of-learning",
+  "sequence",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A model curriculum's fading rules end each block of units with a cold text: a known procedure on new content, at the current stage and inside the knowledge the course has built, with no model and no sentence stems. The cold text is its mastery diagnostic: a learner who fails it gets the model back in the next lesson, and one who aces it is ready to step up. A unit clock also guarantees every child meets the fully independent form before the state test.",
+ "against": "Another course design in the same project keeps its cold benchmark, a \"sealed windowed diagnostic on never-taught topics\", out of gating: \"The cold benchmark is **never a mastery gate and never teaching material**\" (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, lines 61 and 71). Nothing in the sources measures whether the cold-text routing works.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "62",
+   "quote": "The cold text = the mastery diagnostic: known procedure + new content, current stage, inside the built knowledge web. Bomb it → restore / re-model next lesson; ace it → ready to step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "32",
+   "quote": "Last text = COLD Stage-1: known procedure, new content, no MM, no stems.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "35",
+   "quote": "Cold Stage-3 = a practice STAAR essay, no support. END OF UNIT 15 = milestone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "66",
+   "quote": "Backstop: the unit clock guarantees every child meets the fully independent form before the STAAR.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "71",
+   "quote": "The cold benchmark is **never a mastery gate and never teaching material**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "61",
+   "quote": "sealed windowed diagnostic on never-taught topics",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,57 @@
+{
+ "id": "a-diagnostic-routes-support-never-grades",
+ "title": "A diagnostic routes support, never grades",
+ "statement": "Use a diagnostic to route support under stated uncertainty, never as a grade or a mastery label.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The course-quality checklist accepts a diagnostic only when its product type, sampling limits, uncertainty, slips, guesses, unassessed knowledge and routing behaviour are explicit and tested (`ti-courseplans-audit/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`). The earlier version of the standard lists a diagnostic score that directly promotes, punishes or labels mastery, or hides its uncertainty, as a failure, and bounds the claim: a diagnostic may inform a later assessment but does not replace it (`ti-courseplans-audit/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`).",
+ "against": "The grade 3 curriculum criteria doubt that a valid diagnostic of knowledge or comprehension gaps exists at all, and build breadth of knowledge instead (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D7-knowledge-first-curriculum.md`); that bears on whether to build one, not on how to use one.",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "99",
+   "quote": "Product type, sampling limits, uncertainty, slips, guesses, unassessed knowledge, and routing behavior are explicit and tested.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "785",
+   "quote": "Failure signals: Diagnostic score directly promotes, punishes, or labels mastery; uncertainty hidden.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "786",
+   "quote": "Claim boundary: A diagnostic may inform a later assessment but does not replace it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "24",
+   "quote": "| Pre-pilot output | Rasch logit θ ± SE only — RIT blocked until scale linking | C7 constraint; see §8 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

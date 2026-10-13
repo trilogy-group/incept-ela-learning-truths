@@ -1,0 +1,59 @@
+{
+ "id": "re-judge-the-borderline-cases",
+ "title": "Re-judge the borderline cases",
+ "statement": "Spend repeat judgments where a verdict sits near its threshold: judge a borderline item again, and break a disagreement with a third run.",
+ "example": "Overall scores between 0.75 and 0.90 get a second judgment, and a third when the two land in different bands.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Consensus scoring was added on 2026-04-17: an overall score between 0.75 and 0.90 triggers a second judgment, the two are averaged when they fall in the same band, and a third breaks the tie by majority when they don't (commit 9a68759 in `icloud-work/inceptbench`; `icloud-work/inceptbench-main/src/inceptbench/llm/baml_native_evaluator.py`). The variance write-up had traced the remaining flips to borderline pass-or-fail decisions and had ruled multi-run judging out (`docs/EVALUATOR_VARIANCE_FIX.md`, deleted in commit e5be84f).",
+ "against": "A labelled borderline case still varied between runs with consensus in place (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_962.py`, lines 213-218), and consensus keys on the overall score while most remaining flips were single pass-or-fail metrics (`docs/EVALUATOR_VARIANCE_FIX.md`, lines 584-586).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/llm/baml_native_evaluator.py",
+   "lines": "31-33",
+   "quote": "Consensus scoring: for borderline overall scores in this range, run a second # BAML call and average. If the two runs disagree on bucket, run a 3rd tiebreaker. CONSENSUS_SCORE_RANGE = (0.75, 0.90)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "9a68759",
+   "lines": "12-14",
+   "quote": "- Add consensus scoring to call_baml_question: borderline scores (0.75–0.90) trigger a 2nd BAML call; if buckets agree, average; if they disagree, run a 3rd tiebreaker and majority-vote",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/play_audio_check.py",
+   "lines": "6",
+   "quote": "a clip under 0.9 is heard a second time (best pass counts); still under 0.9 -> re-take via",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "747-748",
+   "quote": "Humans review every calibration record, every hard-gate failure, every machine-human disagreement, every borderline score from 0.80 through 0.89, and every candidate proposed for the served bank.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

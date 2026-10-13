@@ -1,0 +1,195 @@
+{
+ "id": "reduced-motion-and-colour",
+ "title": "Reduced motion and colour",
+ "statement": "Give every animated picture a reduced-motion version with the same information and a text description, and never let colour carry meaning alone.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every frame module draws the same information with `motion: 'reduced'`, without fades, pans or fast motion\n(`unit-video-modules/packages/core/README.md`); the argument map reinforces its colours by position, labels and a full\ntext description (`unit-video-modules/packages/argument-map/README.md`); and the lesson engine draws its films in\nreduced motion (`g9/transformer/src/video/frames.js`).",
+ "against": "this is a design rule with no failure behind it, and a\ntext description does not replace captions or a person's review (`unit-video-modules/INTEGRATION.md`).",
+ "evidence": [
+  {
+   "source": "unit-video-modules",
+   "path": "packages/core/README.md"
+  },
+  {
+   "source": "unit-video-modules",
+   "path": "packages/argument-map/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/frames.js"
+  },
+  {
+   "source": "unit-video-modules",
+   "path": "INTEGRATION.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "105",
+   "quote": "The Axolotl lesson's opening selection item rendered black text on a black background, legible only on hover.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "The drag-and-drop and matching items are not keyboard or assistive-technology operable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "67",
+   "quote": "The diagram is not element-addressable and has no accessible table equivalent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "67",
+   "quote": "| F11 | major | The diagram is not element-addressable and has no accessible table equivalent. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "28",
+   "quote": "The reviewers identify this as a WCAG 2.1 AA contrast failure and unusable by all students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "105",
+   "quote": "rendered black text on a black background, legible only on hover.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-argus-ui-2026-09-30/REGISTER.md",
+   "lines": "23",
+   "quote": "right/wrong never rest on colour alone",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "157",
+   "quote": "nothing essential rides on an entrance animation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "66",
+   "quote": "rendered black text on a black background, legible only on hover",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "88",
+   "quote": "**Automated WCAG contrast checks** in render QA (round-2 found black-on-black).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "88",
+   "quote": "- **Automated WCAG contrast checks** in render QA (round-2 found black-on-black).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v07/README.md",
+   "lines": "8-9",
+   "quote": "reduced motion respected everywhere.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "core/README.md",
+   "lines": "26",
+   "quote": "Use `motion: 'reduced'` for the same information without fades, pans, or fast motion.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "argument-map/README.md",
+   "lines": "3",
+   "quote": "Color is reinforced by position, labels, and full `accessibilityText`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "evidence-plate/README.md",
+   "lines": "18",
+   "quote": "The returned `accessibilityText` includes every line regardless of animation time so the host can expose the full meaning to assistive technology.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "288",
+   "quote": "give the marking a second cue beyond hue, so it survives for a color-blind reader and in grayscale.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "62",
+   "quote": "If color marks the current stage, make sure the label carries the meaning on its own.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "111",
+   "quote": "Mark the quote with more than hue.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "288",
+   "quote": "give the marking a second cue beyond hue, so it survives for a color-blind reader and in grayscale",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "34",
+   "quote": "Remove navigation pulse; respect reduced motion on remaining nonessentialanimation.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "62",
+   "quote": "If color marks the current stage, make sure the label carries the meaning on its own.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

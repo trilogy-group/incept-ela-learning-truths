@@ -1,0 +1,242 @@
+{
+ "id": "declare-what-each-assessment-is-for",
+ "title": "Declare what each assessment is for",
+ "statement": "Before judging a course or assessment, declare its purpose (teaching, practice, mastery gate, diagnostic), judge it by that alone, and set pass marks only on checks that gate progress.",
+ "example": "One course keeps its 24-item mastery gate, set at 90%, apart from a growth test that has no 90% threshold and gates nothing.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "alignment",
+  "evidence-of-learning"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The assessment packet has the product type declared first, as formative, mastery, diagnostic, summative or cold measurement, and bars calling a diagnostic score a grade, since diagnostics route study under uncertainty (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md`). A course validator fails a check-bearing screen that declares no product type, because the type decides which criteria apply (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py`), and the evaluator gap list names the same declaration (`grade3-reading/knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd`). The course checklist and the staged assessment standard keep the 24-item mastery gate apart from the growth measure, which uses cold passages, scores raw out of 40 with a band and is never gated on, and they call its predictive claim a design intent until a linking study runs (`grade3-reading/knowledge_bot/CHECKLIST.md`, `grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md`). The purposes also include placement, a final summary and a transfer measure on unseen material, and the declaration should come with the assessment's full specification. Pass marks belong only on checks that decide progress.",
+ "against": "The stamps prove the 90% gate, not a 24-hour delay: the platform does not enforce that delay, and no elapsed-time evidence was captured (the same two files). The gap analysis lists the declaration as a second-tier gap, a check the evaluator does not yet make (`grade3-reading/knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "47",
+   "quote": "Product declaration: formative, mastery, diagnostic, summative, or cold measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "63",
+   "quote": "Do not call a diagnostic score a grade; diagnostics route study under uncertainty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/tools/course_validate.py",
+   "lines": "651",
+   "quote": "product_type -- required to gate which criteria apply.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "135",
+   "quote": "product-type declaration: comprehension curriculum vs MAP-practice determines applicable criteria;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "139",
+   "quote": "These are **two distinct instruments** — do not conflate them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "31",
+   "quote": "the 24-item mastery GATE (`masteryThreshold:90`) is DISTINCT from the MAP-equivalent proxy (cold passages, raw/40+band, `gating=false`, no 90 threshold). Don't conflate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "135-136",
+   "quote": "The predictive claim (\"does well here → does well on MAP\") is **a design intent, not a measured result**, until the linking study runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "89-90",
+   "quote": "declare whether a resource is formative, mastery, diagnostic, summative, or cold measurement before interpreting its result;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "102",
+   "quote": "Trying to do both at once with a single instrument wastes items and confuses the design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "102",
+   "quote": "A placement diagnostic can be done in 10-15 items and 5 minutes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "102",
+   "quote": "It's inherently more expensive (40-60+ items, 15-30 minutes).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "61",
+   "quote": "acquisition mastery is not durable mastery — they need different instruments",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "89-90",
+   "quote": "- declare whether a resource is formative, mastery, diagnostic, summative, or cold measurement before interpreting its result;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "36-37",
+   "quote": "l0-l3 now declare teaching-check / non-gating behavior; l4 is the gated interval assessment at 90%",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "230-231",
+   "quote": "masteryThreshold=90 on all 5 lesson resources** -- the three teaching lessons and the transfer lesson behaved as 90% practice-test gates over their own formative checks.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "81-82",
+   "quote": "Teaching-check lesson resources additionally carry `gating:false` and no mastery threshold; a threshold may live only on interval assessments.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "91-92",
+   "quote": "judging one by the other's bar.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/course-evidence-workbench.html",
+   "lines": "161",
+   "quote": "D15 deliberately suppresses item feedback, but the evaluator keeps one course-level product type and penalizes the aggregate.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "102",
+   "quote": "The single most important criterion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "230-231",
+   "quote": "the three teaching lessons and the transfer lesson behaved as 90% practice-test gates over their own formative checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "90-92",
+   "quote": "the declaration lets the evaluator judge teaching checks by teaching criteria and interval forms by assessment criteria instead of judging one by the other's bar.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "84-85",
+   "quote": "no KC, claim, evidence indicators, task conditions, outcome space, and scoring rule means no assessment;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "132",
+   "quote": "do not teach one cognitive operation and assess another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "40",
+   "quote": "If it is decided that this should be a MAP practice app, the recommendations below would be different.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "40",
+   "quote": "a well-built, MAP-styled practice-and-assessment engine, not a comprehension curriculum, and on its current form it should not be approved as one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "131",
+   "quote": "Tier-2 content-checkable gaps",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "131",
+   "quote": "A v1 seam the adversarial review found: the same instrument was being used as both the mastery gate and the growth measure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "132",
+   "quote": "all drawn from the practice/mock pool.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "133",
+   "quote": "built from a held-out pool of un-practiced, un-gated items. **We never teach to or gate on it**, so a rise isn't format-practice inflation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "756-758",
+   "quote": "the receipt's you-do lines count only the trap item, the two formative beats tally as generic \"answers found\" practice, and nothing presents them as release items.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

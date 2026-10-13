@@ -1,0 +1,691 @@
+{
+ "id": "a-repeating-failure-is-a-fault-to-find",
+ "title": "A repeating failure is a fault to find",
+ "statement": "A failure that repeats across items or retries is a fault, not noise: redrafting or rescoring won't fix it, so rule out broken measurement, find its cause and test it.",
+ "example": "Nine targeted fixes, each for one specific fault, added 15.1 points to the pass rate.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "At 81.9% the AP question work's remaining failures were systematic, not random (`icloud-work/ML learnings/gemini_benchmark_relentless.md`). Of about 40-50 automated iterations most changed nothing, and the nine that worked each removed a specific code or prompt bug behind a specific failing dimension, adding 15.1 points in about 48 hours. The project's diagnostic method goes from the aggregate to the failing dimension and items, then two or three hypotheses and a test that tells them apart, with a catalogue of signatures: a whole unit failing points to wrong scope labels, a whole item type to missing examples, right content on the wrong topic to an ignored constraint, and wrong specifics to invented details (`icloud-work/ML learnings/debugging_methodology.md`). Each time a step was skipped, going from an aggregate straight to a fix, a training run was wasted. Signs of such a failure include a whole item type at zero or all passing, and scores bunched under the pass line. Rule out a broken measurement as well as a broken pipeline.",
+ "against": "A repeating failure is not always fixable in the instructions: \"The failure is at the weight level, not the prompt level.\" (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`, line 73), and the same source's last 3% were random slips (`icloud-work/ML learnings/gemini_benchmark_relentless.md`, line 208). A whole item type once failed because of a routing fault, not missing examples (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`, line 26), and even with the method the first hypotheses were often wrong (`icloud-work/ML learnings/stage2_postmortem_full.md`, line 180). The none-or-all rule is stated from one incident, not measured across runs: \"**NOT re-verified by me on disk this turn; this is the directive's framing, not new measurement.**\" (icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md, 32). The reading of bunched scores rests on one item type in two runs. Inferred from counts: the reports never cross-tabulate rule by item type. In both runs the hard-fail count equals the fill-in count (18 and 16), and the sampled hard-fail examples are all fill-in items. The review's own caveat: drift in the judge over the window can't be fully excluded, so per-version rates should be re-confirmed on one pinned judge version. the 100-draft figure is reasoning from the type of failure, not a measured run. the same project credits a three-attempt retry with a stronger-model fallback, alongside a check before generation, for one question type's rise from 90% to 100% (`icloud-work/ap-social-studies-generator/CHANGELOG.md`). The gate that measured the rounds is itself stochastic: boundary items pass one draw and fail a fresh one, about 22% on a second draw, so a single round's rate carries noise (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`). Among items that failed every scoring, the evidence does not single out near misses: three of the six that scored 0.7-0.8 every time became triple passes once the writer was given each objective's scope limits and sub-objectives, as did both items with zero scores, while two near misses did not move (`project_richer_rag_resolves_stable_fails.md`, lines 27-35). A failure that repeats can be the judge's own: a '0%' on one item type was 9 real verdicts and 91 timeouts (`feedback_ib_grader_v266_dbq_mcqset_timeout_99pct_at_concurrency_default_2026_06_02.md`, line 11). And a structural failure holds for one judge version and one generator: a grounded generator's document sets passed a later judge 139 of 154 times (`recipe_track_b_openstax_pair_generation.md`, line 67). The lifts were scored by the same grader that picked the best version; a held-out judge agreed on 21 of 24 rescued items, so part of the measured lift may be the picking fitting the grader. A flip is not always a slip: a later change to the same evaluator found that the flips it studied were not noise on clean items but genuine defects in the scoring guide that it caught on some runs and missed on others, and fixed them by making that check mandatory.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "13",
+   "quote": "At 81.9%, the system was generating correct AP questions most of the time. The remaining ~18% failures were not random — they were systematic, patterned failures. The key insight that drove the relentless push: every failure is evidence of a specific, fixable bug.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "184",
+   "quote": "**Total:** 15.1 percentage point improvement from 9 targeted fixes over ~48 hours.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "197",
+   "quote": "The system applied ~40-50 iterations over 48 hours. Most iterations were 0.0% improvement. 9 were significant. The 9 that worked all had the same structure: **a specific, identifiable code/prompt bug causing a specific, measurable dimension to fail.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "225",
+   "quote": "**60-80%:** Usually systematic bugs (wrong metadata, wrong course, missing training examples for a type)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "128-129",
+   "quote": "**Signature:** Entire unit/course at 0% despite other units passing\n**Cause:** Wrong metadata (time period, course, unit) being passed to model",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "119-120",
+   "quote": "**Signature:** Entire type/class at 0% or near-0%\n**Cause:** That class has little or no representation in training data",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "137-138",
+   "quote": "**Signature:** Model generates correct content for the WRONG thing it was told to do\n**Cause:** Training data lacked hard negatives for constraint adherence",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "146-147",
+   "quote": "**Signature:** Facts are mostly right, but specific details (dates, attributions, names) are wrong\n**Cause:** Model's parametric memory generates plausible details that aren't factually correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "13-15",
+   "quote": "4. HYPOTHESIS → generate 2-3 possible root causes\n5. DISTINGUISH → find the test that differentiates hypotheses\n6. CONFIRM → run the test, accept one hypothesis",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "19",
+   "quote": "Never skip to step 7. Every time we skipped steps (went from aggregate failure to guessing at a fix), we wasted a training run.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "38",
+   "quote": "pass rates clustered at exactly 0/30 or 30/30 are almost always a parser/grader-pipeline bug, not a model behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-01T1238Z_eval_runs_phantom_audit_v2.md",
+   "lines": "28",
+   "quote": "pass_rate=0 here is grader-failure not model-failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-27T1922Z_v80b_n100_unit1_BASELINE_REPORT.md",
+   "lines": "31",
+   "quote": "scores cluster 0.55-0.84 just under 0.85 threshold; failures are test_preparedness / concept_coverage / answer_balance / stimulus_quality (NOT factual)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-06-02T0341Z_quill_DELIVERED_v92_IB_DBQ_failure_mode_analysis_TIMEOUT_NOT_FAILURE.md",
+   "lines": "36",
+   "quote": "all scored 0.65, just below 0.85 threshold — not zero",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "32",
+   "quote": "**NOT re-verified by me on disk this turn; this is the directive's framing, not new measurement.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "33",
+   "quote": "| FILL-IN | 18 | 0 | 0.0% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "34",
+   "quote": "| MATCH | 15 | 0 | 0.0% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "57",
+   "quote": "| `missing_explanation` | 18 | Question lacks required explanation for correct answer |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "77",
+   "quote": "**Example 1:** FILL-IN - APWH",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "88",
+   "quote": "**Example 1:** MATCH - APWH",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "90",
+   "quote": "- Failed dimensions: `factual_accuracy, curriculum_alignment, cognitive_demand, clarity, difficulty_alignment`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_154247.md",
+   "lines": "23",
+   "quote": "| Hard Failed | 16 (32.0%) | - |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_154247.md",
+   "lines": "31",
+   "quote": "| FILL-IN | 0/16 (0.0%) | **BROKEN** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "375",
+   "quote": "Fill-in and Match question types were **completely broken** (0% pass rate) due to missing explanations (hard-fail rule).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "8",
+   "quote": "Every tactic layered on top (anti-static, selector, source-fallback, shape-repair, pubdate-strict) produced **zero aggregate lift** and several **cell-specific regressions**.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "25",
+   "quote": "**DBQ crashed to 24/192 = 12.5%** — the \"strict pubdate\" fix *destroyed the very cell it targeted*",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "33",
+   "quote": "The 40-day \"regression\" is largely **two infra contract-breaks masquerading as model collapse**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "36",
+   "quote": "precise per-version pass% should be re-confirmed against a single pinned grader before quoting deltas.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "129",
+   "quote": "Before prompt churn, check whether the failing KC is period-mismapped or criterion-misaligned.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "105",
+   "quote": "- Failure-forensics gate before pipeline changes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "62-63",
+   "quote": "Tried K=22 total across v3/v4/v5/v6 and never converged above 0.78.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "27",
+   "quote": "N=1: 88.89% pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "28",
+   "quote": "N=5: 98.6% pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "33",
+   "quote": "If single-shot P=0.89, then N=5 → 1-(1-0.89)^5 = 99.4% theoretical. Actual 98.6% is slightly below theoretical (some questions are systematically hard — Best-of-N can't overcome systematic failures).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "140",
+   "quote": "even N=100 won't reliably get to 90%+ because the *type* of failures (fabricated attribution) is deterministic, not stochastic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "33",
+   "quote": "**The math matches theory:** If single-shot P=0.89, then N=5 → 1-(1-0.89)^5 = 99.4% theoretical. Actual 98.6% is slightly below theoretical (some questions are systematically hard — Best-of-N can't overcome systematic failures). For our model at P=0.60, N=5 → 1-(0.40)^5 = 99.0% theoretical, practical ~92%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "100",
+   "quote": "With Best-of-N=5: generating 5 candidates, evaluating all, picking the best (best scored 0.96). 50% means roughly half the best-of-5 candidates are still failing factual_accuracy hard-fails. The model's parametric knowledge is shaky on Colonial era APUSH specifics.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "406",
+   "quote": "**Inference-time verification / regeneration:** Per project principles, \"verification and regeneration are not valid approaches.\" Beyond the principle, our evaluator results show the model consistently picks wrong facts — this is a systematic failure, not a stochastic one that retries would fix.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "140",
+   "quote": "**Practical implication:** If the 14B model's failure rate is 67% (as currently), even N=100 won't reliably get to 90%+ because the *type* of failures (fabricated attribution) is deterministic, not stochastic. But if data quality fixes bring pass rate to 70-80%, then Best-of-N=5 at $0.20/M is more economical than 70B at $0.90/M.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/pipeline_architecture_insight.md",
+   "lines": "100",
+   "quote": "So Best-of-N is a multiplier, not a miracle. The base model still needs to be competent. Target P≥0.60 per type before Best-of-N becomes highly effective.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/05-OPERATING-PRINCIPLES.md",
+   "lines": "48",
+   "quote": "| Increase retry count to dilute failures | ❌ Bandaid |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/03-ARCHITECTURE.md",
+   "lines": "94",
+   "quote": "- Each retry should address a specific failure mode, not be a random re-roll",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "480",
+   "quote": "Gemini should only rank validator-clean candidates. If every candidate has the same flaw, Gemini cannot create a passing item.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "186",
+   "quote": "- MCQ_SET: 16/30 even at K=6",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "190",
+   "quote": "K-of-N is not the solution by itself. K is only useful when deterministic filters create a clean candidate pool and the selector is calibrated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "58",
+   "quote": "| Round 1 | 52 | 32 | 20 | 0.615 | initial cold regen of the leaky originals |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "59",
+   "quote": "| Round 2 | 32 | 26 | 6 | 0.812 | re-author R1 leakers — leak rate *rose* (hard residue) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "60",
+   "quote": "| Round 3 | 26 | 16 | 10 | 0.615 | counter-conventional + EBSR decisive-fix designs land |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "67-68",
+   "quote": "the gate is stochastic; boundary items pass one draw and fail a fresh one. Measured: ~22% flipped on the 2nd draw",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "63",
+   "quote": "38 failing items classified: 76% stochastic variance (decode instability), 13% chronic DBQ veracity fails (Unit 8, D13_docs lever), 5% SFT-forget, 5% systematic fabrication.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "129",
+   "quote": "DBQ remains data-veracity bound — D13 real-source corpus is the unique remaining lever.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v29_failure_analysis_3run.md",
+   "lines": "20",
+   "quote": "| Stable fail (0/3) | 14 | 9.3% | REAL MISSES — must train on |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v29_failure_analysis_3run.md",
+   "lines": "21",
+   "quote": "| Flipped (1-2/3) | 10 | 6.7% | Grader noise — Compass R41 multi-call majority denoises |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v29_failure_analysis_3run.md",
+   "lines": "65",
+   "quote": "**Don't waste effort on flipped items** — they're grader noise.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_v92_mcq_set_structural_fail_at_scale_confirmed_2026_06_02.md",
+   "lines": "12",
+   "quote": "- Fail <0.70 (deep): 55 (clustered at 0.65)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_v92_mcq_set_structural_fail_at_scale_confirmed_2026_06_02.md",
+   "lines": "13",
+   "quote": "- Zero (timeouts): 2",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_v92_mcq_set_structural_fail_at_scale_confirmed_2026_06_02.md",
+   "lines": "36",
+   "quote": "The score-cluster pattern at 0.65 (vs scattered fails) is the structural-fail tell.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_dbq_stimulus_v2.5.6_root_cause.md",
+   "lines": "19",
+   "quote": "σ=0 across seeds for v43-soup and v51; the failure is deterministic at T=0.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_quill_discovery_cross_model_volatility_2026_05_11.md",
+   "lines": "30",
+   "quote": "for the 93% volatile items, decode-time sampling depth matters; for the 7% hard items, no depth helps.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k8_huge_lift.md",
+   "lines": "44",
+   "quote": "DBQ is structurally different: 7 primary documents per stimulus + 6-paragraph essay + multi-document analysis. Single-shot v29 was at 27% DBQ; even K=8 BoN only gets to 67%.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k8_huge_lift.md",
+   "lines": "17",
+   "quote": "`v29 + BoN K=8 / T=0.7` = **269/297 = 90.57%** vs K=4 82.83% vs single-shot 63.64%.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_quill_discovery_cross_model_volatility_2026_05_11.md",
+   "lines": "29",
+   "quote": "2. **Hard boundary is small** — only 7% of items are completely intractable across 56 model attempts.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "57",
+   "quote": "4. **Multiple retry attempts** — masks quality issues instead of fixing them",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k4_huge_lift.md",
+   "lines": "58",
+   "quote": "- For training: don't substitute BoN for training data quality. Curriculum-SFT still needed because BoN amplifies what the model already knows; it doesn't teach new facts.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k4_huge_lift.md",
+   "lines": "46",
+   "quote": "**21/24 (88%) agreed.** Mean IB BoN-pick = 0.949, mean Claude judge = 0.889.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "13-15",
+   "quote": "An item only counts as failed/errored if it fails EVERY attempt — the signature of a deterministic regression. This tolerates run-to-run variance of boundary items while still catching real regressions (which fail all 3 times).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "3-5",
+   "quote": "Three consecutive CI runs (errors already eliminated) showed the gate failing on a *different* disjoint set of borderline items each time — 0075/0103, then 0006/0118, then 0144/0168/0187 — every one of which passed in the other runs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "6",
+   "quote": "Across 3 runs ~19 distinct items flipped category at least once.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "7-8",
+   "quote": "so single-attempt scoring of borderline LLM judgments is statistically unsatisfiable and pruning is whack-a-mole.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "10-13",
+   "quote": "Generalize the errored-item quarantine retry into a best-of-N retry: every item that does not pass on its first run gets up to `retry_attempts` (default 2) additional runs; the moment it passes it is locked in and dropped from further retries.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "7-9",
+   "quote": "The flips were not noise on clean items — the evaluator was *inconsistently detecting genuine defects* that live in the scoring guide / sample-response / rubric region",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "15",
+   "quote": "Fix: make the audit mandatory and explicit.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/handover_observations_training_questions_2026_05_27.md",
+   "lines": "25",
+   "quote": "synapse learning `cc714738` (K=N transfers format not facts):",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/handover_observations_training_questions_2026_05_27.md",
+   "lines": "23-24",
+   "quote": "The remaining ~15pp gap is dominated by **factual errors that the wrapper architecturally cannot fix**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_best_of_n_protocol.md",
+   "lines": "137",
+   "quote": "Those need repair layers, not more N.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_best_of_n_protocol.md",
+   "lines": "129",
+   "quote": "Do not use it to mask deterministic bugs:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "120",
+   "quote": "Best-of-N is a multiplier, not a miracle. It works once base per-type pass rate is competent; it does not fix systematic failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "20",
+   "quote": "Best-of-N evidence: N=5 reached 98.6% in cross-team results, but at about 9.3x cost per question.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260529T085132Z_2026-05-29T0850Z_v86_VERDICT_57pct_aggregate_DBQ_MCQ_SET_catastrophic_99stack_rescue.md.md",
+   "lines": "114",
+   "quote": "Catastrophic cells are CONSISTENTLY catastrophic across seeds (not flaky); strong cells are CONSISTENTLY strong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-29T0850Z_v86_VERDICT_57pct_aggregate_DBQ_MCQ_SET_catastrophic_99stack_rescue.md",
+   "lines": "32",
+   "quote": "Catastrophic cells are CONSISTENTLY catastrophic across seeds (not flaky); strong cells are CONSISTENTLY strong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-29T0850Z_v86_VERDICT_57pct_aggregate_DBQ_MCQ_SET_catastrophic_99stack_rescue.md",
+   "lines": "20",
+   "quote": "mcq_set   : 0/60   = 0.0% … fresh-base v7 corpus had no MCQ_SET training rows",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/cell_family_archetype_scout_20260523.md",
+   "lines": "134",
+   "quote": "Do not run DBQ as a generic \"best of K\" prompt; DBQ failure mode is source integrity, not merely weak prose.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "label: `Option ${letters[i]} would tempt a reader who skimmed`, required: false,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "41",
+   "quote": "a quick-check distractor no reader would choose",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "43",
+   "quote": "whether each wrong option would tempt a reader who skimmed; on Ozymandias it flagged two distractors as not tempting.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "203",
+   "quote": "\"label\": \"Option A would tempt a reader who has not looked closely\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "206",
+   "quote": "\"p\": 0.18,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "319-322",
+   "quote": "\"p\": 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "57-58",
+   "quote": "The correlated error profile points to a protocol/competence boundary, not random reviewer noise.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v01/README.md",
+   "lines": "14",
+   "quote": "\"lie\" → \"lies\" (scene 1) is heard by the transcriber in every take of every voice and model; treat as transcriber bias until a human listens.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L10e9c2.txt",
+   "lines": "22",
+   "quote": "\"lie\" heard as \"lies\" appears in every take from both models and all voices, so it is almost certainly a transcriber artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "46-48",
+   "quote": "deterministic, a straight re-cut reproduces it … Fix is CONTENT, not a re-roll",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "78",
+   "quote": "A constant bias is absorbed by the linear scale-linking intercept in Stage 3, but it must be root-caused before the pilot",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

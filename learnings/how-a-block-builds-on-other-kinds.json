@@ -1,0 +1,77 @@
+{
+ "id": "how-a-block-builds-on-other-kinds",
+ "title": "How a block builds on other kinds",
+ "statement": "How a lesson's separately made blocks can build on what blocks of other kinds taught, when each is made from the text, the question and its own kind alone.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "sequence",
+  "generation",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The 9 October audit of the lesson engine asked for the key-word deck to be seeded from the word web's key words when a lesson has both (`g9-transformer-audit/2026-10-09-best-of-everything.json`). The build that followed found that a block is made from the text, the question and its own kind only, and cannot see the rest of the lesson. So with a word web present, the key-word block is listed as skipped in the animated export and drawn only on the engine's plain screen (`g9-transformer-audit/2026-10-09-builders.json`). Only a later block of the same kind is told what earlier ones cover, and a block's key hashes just the maker and kind versions, the text, the question, the kind and its number (`g9/transformer/src/blocks.js`, lines 23-25 and 67-74). The engine's known gaps still say that key words are not seeded from the word web's words (`g9/transformer/README.md`, line 114).",
+ "against": "A 3D version joins them after the fact: it puts the word web's key words into its own key-words step, as a deck labelled with the web's centre word (`g9/transformer/src/glue/threejs-render.js`, lines 219 and 224).",
+ "evidence": [
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "KW is not seeded from the strip's word web, as the audit asked. A block is made from text, question and mechanic only and cannot see the strip.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "If the strip has a word-web block, seed the deck from its keys.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "67",
+   "quote": "what the lesson's earlier blocks of this kind cover",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "25",
+   "quote": "return hash(MAKER, String(text).trim(), String(question).trim(), mechanic, n, ...(ver > 1 ? [ver] : []));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "114",
+   "quote": "Key words are not seeded from the word web's words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "219",
+   "quote": "key words: the word web's (cued by their meanings), and each key-words deck (each word into its gap)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "224",
+   "quote": "decks.push({ label: `Words for ${ww.item.centre}`, words: ww.item.keys.map((k) => k.word), gaps: [] });",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

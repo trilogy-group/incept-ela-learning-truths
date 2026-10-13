@@ -1,0 +1,78 @@
+{
+ "id": "stop-the-voice-for-a-reread",
+ "title": "Stop the voice for a reread",
+ "statement": "When a routine has the learner reread a stretch of text, narrow the view to it and pause narration until they say they have, so they do the reading.",
+ "example": "The view narrows to the stretch that matters, about 60 to 120 words, and the voice waits until the child taps to say they have reread it.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A curriculum ruling on a grade 3 reading course's locate routine has the view narrow to the stretch that matters, tell the child to reread it and pause until they have. Without the stop the line is said while the child watches, and the routine exists so that the child does the finding. The build holds it in code: narration pauses at the handover mark and resumes only on the child's tap, and with narration off the paragraph is simply shown (`grade3-reading/course-renderer/docs/rules/pedagogy-and-lesson-structure.md`, lines 373-377).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "359-361",
+   "quote": "The Locate routine's third move narrows the view to the stretch that matters, tells the child to re-read it, and stops the narration until they say they have.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "364-366",
+   "quote": "\"The view zooms to the pertinent stretch (~60-120 words); then, to the child: 'Re-read this paragraph now.' - and PAUSE (narration stops until the child has re-read).\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "367-368",
+   "quote": "Without the stop it is a line the guide says while the child watches, and the routine exists so that the child does the finding.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "359-361",
+   "quote": "**Rule.** The Locate routine's third move narrows the view to the stretch that matters, tells the child to re-read it, and stops the narration until they say they have.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "844",
+   "quote": "The view zooms to the pertinent stretch (~60-120 words); then, to the child: \"Re-read this paragraph now.\" - and PAUSE (narration stops until the child has re-read).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "367-368",
+   "quote": "Without the stop it is a line the guide says while the child watches, and the routine exists so that the child does the finding.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "373-375",
+   "quote": "`think_aloud.reread` in the contract, held by `ThinkAloudNode.tsx`, which pauses narration at the handover mark and resumes only on the child's tap.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

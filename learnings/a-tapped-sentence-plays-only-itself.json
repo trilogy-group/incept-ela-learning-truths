@@ -1,0 +1,70 @@
+{
+ "id": "a-tapped-sentence-plays-only-itself",
+ "title": "A tapped sentence plays only itself",
+ "statement": "A tapped sentence in a read-along must play only itself, so test non-adjacent taps on every passage, since listening straight through cannot reveal a clip that runs on.",
+ "example": "A tapped first sentence whose next mark began at 3.96 seconds was still playing at 9.476258 seconds.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading course's QA checklist asks for three or four sentence taps in non-adjacent order on every passage, each starting at the tapped sentence and stopping cleanly at its end, because the passive listen-through check does not catch audio that bleeds into the next sentence. On public staging, a tapped first sentence was still playing at 9.476258 seconds, past the next sentence's mark at 3.96 seconds. An inventory of the 859 printed units on the 64 voiced lesson nodes found 501 with a unique exact audio boundary, 353 coarse and 5 ambiguous.",
+ "against": "Withholding an inexact control is honest but is not a passing tap: 'Making an inexact control unavailable is honest behavior, but cannot count as the requested successful sentence tap.' (`grade3-reading/ui-audit-2026-09-08/round-5/final-standard-verification/TECHNICAL-QA-EXECUTION-LEDGER-initial.md`, line 39).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "101",
+   "quote": "On every passage, tap 3-4 sentences in non-adjacent order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "101",
+   "quote": "Each tap must start audio at exactly the tapped sentence and stop cleanly at its end — never bleeding into the neighbour.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "101",
+   "quote": "The passive listen-through (item 9) does not catch this; only tapping does.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SENTENCE-REPLAY-FAILURE.md",
+   "lines": "7",
+   "quote": "Its next authored mark begins3.96 seconds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SENTENCE-REPLAY-FAILURE.md",
+   "lines": "7",
+   "quote": "At21:58:11.852Z it was still playing at9.476258 seconds. The selected sentence therefore did not stop before subsequent sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/TECHNICAL-QA-EXECUTION-LEDGER-initial.md",
+   "lines": "39",
+   "quote": "The alignment inventory separately enumerates all859 printed units on the64 voiced owners:501 unique exact,353 coarse and5 ambiguous.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

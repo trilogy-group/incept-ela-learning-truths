@@ -1,0 +1,105 @@
+{
+ "id": "leave-a-pretest-on-new-content-ungated",
+ "title": "Leave a pretest on new content ungated",
+ "statement": "Never gate a check on untaught content: a pretest often helps even when most answers are wrong, but only if learners meet the right answers afterwards.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "practice",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading engine rules that the first check of a knowledge-building lesson opening a unit activates and does not gate, since nothing has been taught to gate against, while every later check in the lesson still gates. The lesson research behind it rests on a 2023 review finding that pretesting on content not yet taught helps even when nearly every answer is wrong, but only if there is an opportunity to study the correct answers afterwards, which a gate would withhold. The research adds that the answer may arrive through the text or film that follows rather than as feedback on the item, as it does in this course's passages.",
+ "against": "The review's own claim is hedged, \"can often enhance learning\", so the research brief calls this a defensible design rather than a guaranteed gain (`grade3-reading/course-renderer/docs/research/g4-u1-l1-what-is-an-epic.md`, lines 196-197). The course records the rule, not its effect.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "62-65",
+   "quote": "Pretesting on content not yet taught helps even when nearly every answer is wrong, but only where the child then meets the correct answer, which on our pages arrives through the passage that follows: a gate is exactly what would withhold it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "187-192",
+   "quote": "The condition worth designing around: Pan and Carpenter's 2023 review finds pretesting on not-yet-taught content helps **even when nearly every answer is wrong**, but only \"if there is an opportunity to study the correct answers afterwards\" — which is exactly what a gate would withhold. So the ungated opener is not a relaxation of rigour; gating it would remove the mechanism that makes it work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "31",
+   "quote": "On a unit-opening lesson the first check ACTIVATES and does not gate (AGENTS.md, R-KC-5): there is nothing taught yet to gate against.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "188-190",
+   "quote": "pretesting on not-yet-taught content helps **even when nearly every answer is wrong**, but only \"if there is an opportunity to study the correct answers afterwards\" — which is exactly what a gate would withhold.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l1-what-is-an-epic.md",
+   "lines": "194-196",
+   "quote": "The correct answer may arrive **implicitly**, through the text or video that follows, rather than as item-level feedback",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "58-60",
+   "quote": "**On a knowledge-building lesson that opens a unit, that first check activates and does not gate.**",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "62-65",
+   "quote": "Pretesting on content not yet taught helps even when nearly every answer is wrong, but only where the child then meets the correct answer, which on our pages arrives through the passage that follows: a gate is exactly what would withhold it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "67-68",
+   "quote": "Every later check in the lesson still gates.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g4-u1-l1.json",
+   "lines": "435",
+   "quote": "gating this question would not make the lesson stricter, it would remove the mechanism that makes an opener work at all",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g4-u1-l1.json",
+   "lines": "442",
+   "quote": "An activation question that locks the child out on a miss does neither.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Pan & Carpenter 2023",
+   "url": "https://doi.org/10.1007/s10648-023-09814-5"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

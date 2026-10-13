@@ -1,0 +1,79 @@
+{
+ "id": "the-task-leads-every-screen",
+ "title": "The task leads every screen",
+ "statement": "Make the task the most prominent thing on each screen, checked on the rendered screen, because a text-pattern check can pass a screen where supporting material buries the task.",
+ "example": "On one screen, the passage outweighed the learner's task 4:1.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course's quality gates list a passage outweighing the child's task 4:1 among the failures visible only when a screen is rendered and in motion (`grade3-reading/ti-courseplans/docs/key-quality-gates.md`, line 27). They now require the primary task to win a squint test on blurred screenshots, at least 25% of the viewport on stage screens and no smaller than the largest competitor on work screens, enforced with pixels because a tripwire-only validator once passed a failing screen (the same file, lines 86-89).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "27",
+   "quote": "passage outweighing the child's task 4:1",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "86-88",
+   "quote": "the primary must win the squint test (≥25% viewport on stage screens; ≥ largest competitor on work screens",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "88-89",
+   "quote": "enforce with pixels, not seam greps: a tripwire-only validator once passed a failing screen).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1750",
+   "quote": "Both requested four-clue and nested two-clue first arrivals put the current task above the bank; wrong/recovery/quiet controls accepted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "37",
+   "quote": "Recovery: 1. remove competing primary controls; 2. collapse earlier material while keeping it accessible; 3. focus the actual new prompt and reduce nonessential decoration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "55-57",
+   "quote": "The audit measured the old 50/50 split giving the passage 28–33% of pixels where the child's act got 5–15% — a 4:1 inversion on the I-do.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "55-57",
+   "quote": "The audit measured the old 50/50 split giving the passage 28–33% of pixels where the child's act got 5–15% — a 4:1 inversion on the I-do.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

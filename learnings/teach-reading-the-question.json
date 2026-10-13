@@ -1,0 +1,123 @@
+{
+ "id": "teach-reading-the-question",
+ "title": "Teach reading the question",
+ "statement": "Teach reading the question as its own step, marking the word that says what to do and the word naming the target, with the usual misreadings as wrong options.",
+ "example": "In one built lesson that step's wrong options were three usual misreadings: answering the previous question, grabbing a familiar name, and answering about the wrong place.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "distractors",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a Grade 3 inference design the first step is reading the question: students circle the word that says what to do and the word that names the target, and label what each asks for, before they hunt for the writer's words. A built lesson's walkthrough calls reading the question a taught step, not a formality, and takes that step's distractors from the ways a Grade 3 reader misreads a question.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "241",
+   "quote": "Reading the question is a taught step, not a formality — the distractors are the exact ways a grade-3 reader misreads a question (answers the previous question; grabs a familiar name; answers about the wrong place).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "133 (textutil text)",
+   "quote": "PROCESS word: circle \"Why\" -> draw a line -> label \"Which words?\" (we hunt for the writer's actual words as evidence).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "134 (textutil text)",
+   "quote": "TARGET word: circle \"use\" -> draw a line -> label \"Which wants? / traits?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "1-2",
+   "quote": "the lesson's question on its own, with two or three of its phrases explained (what each asks, … never the answer)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "29-30",
+   "quote": "Choose two or three short phrases of the lesson question that a Grade 9 reader should stop on, and say what each asks of them here, without answering the question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "64",
+   "quote": "Does note_${i} say what phrase_${i} asks or means in question, without answering question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "121",
+   "quote": "assert.equal(lq.codeChecks(stray, ctx).find((c) => c.id === \"phrases-in-question\").ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-staar-writing-research.md",
+   "lines": "75",
+   "quote": "**Genre-labeling note:** 2023/2024 named the genre; **2025 said only \"well-organized essay.\"** Train students to infer mode from the task verb (\"Explain your opinion\" = argue; \"Explain why/how/the ways\" = inform/analyze).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "838",
+   "quote": "A reader does not \"find\" before they have a question: the search runs inside the think-aloud, immediately after the procedure's Step 1.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "200",
+   "quote": "MCQ on the task verb before the child starts hunting.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "173",
+   "quote": "That protects every constructed response from a misread prompt",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "228",
+   "quote": "Highlight \"how does Shakespeare show\" as the method command; gloss \"true self\".",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/alpharead-staar-writing-research.md",
+   "lines": "75",
+   "quote": "Train students to infer mode from the task verb (\"Explain your opinion\" = argue; \"Explain why/how/the ways\" = inform/analyze).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

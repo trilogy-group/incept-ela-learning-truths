@@ -1,0 +1,66 @@
+{
+ "id": "one-point-for-each-checkable-element",
+ "title": "One point for each checkable element",
+ "statement": "Give each point in a mark scheme to a discrete element that can be checked on its own, never award an element twice, and list acceptable equivalent answers in advance.",
+ "example": "Two criteria rewarding the identical claim, or a credit list that cannot sum to the stated total, is a defect.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "key",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's free-response rules tie each scorable point to one discrete, independently checkable element, such as a setup, a value with units, a claim or a justification, and want acceptable equivalent answers anticipated where more than one valid form exists (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`). Its mandatory answer-key audit treats the same action rewarded as two points, or an itemized credit list that cannot sum to the stated total, as a concrete defect. One action awarded two points was among the defects the judge had caught on some runs and missed on others before that audit was made mandatory (`shadow-bench`, git commit 5dae036).",
+ "against": "Point totals are guidance only: '- The point total is **guidance, not a hard count**: do not fail an item merely' (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`, line 21), for example because the points sum to 9 or 11 instead of 10.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "68-70",
+   "quote": "- A scorable point corresponds to **one discrete, independently checkable element** (a correct setup, a correct value with units, a correct claim, a correct justification, a correct feature of a representation).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "97-99",
+   "quote": "The same single action rewarded as two separate points (e.g., two criteria sentences rewarding the identical claim), or an itemized credit list that cannot sum to a stated point total, is a concrete defect",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "73-75",
+   "quote": "- The scoring criteria should be **achievable and unambiguous** — it should be clear what earns each point, with acceptable equivalent answers anticipated where the chemistry allows more than one valid form.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "7-11",
+   "quote": "The flips were not noise on clean items — the evaluator was *inconsistently detecting genuine defects* that live in the scoring guide / sample-response / rubric region (e.g. a task that says \"describe\" but a key that rewards \"draws\"; an intermediate value in a worked key that cannot yield the stated answer; the same single action awarded two independent points).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "21",
+   "quote": "- The point total is **guidance, not a hard count**: do not fail an item merely",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

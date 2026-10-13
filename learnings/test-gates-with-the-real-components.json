@@ -1,0 +1,63 @@
+{
+ "id": "test-gates-with-the-real-components",
+ "title": "Test gates with the real components",
+ "statement": "Test a lesson's gates with its real components or with stand-ins proven to behave the same, because a stand-in that grants completion can hide a page that stays locked.",
+ "example": "Rerun with the real text component, 6 checks failed on the old build and passed after the repair.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "evidence-of-learning"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a delivered lesson an accepted explanation removed the answer box and showed praise, but no next action was registered and the Next button stayed disabled. The investigation found that the maintained test's stand-in for the text component granted completion on load, which the real component never did, so the test could not see the hold. The rule adopted is that a test substitute must load the real component or prove parity with its effects, and that a presentation stub must never grant completion, listening credit or saved progress the real lesson does not. After a nine-line repair, 6 checks that failed on the old build with the real text component passed.",
+ "against": "The rule is scoped: \"Expand related checks only when a concrete shared substitute or changed dependency warrants it.\" (grade3-reading/ui-audit-2026-09-08/WORKFLOW.md, line 49)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "49",
+   "quote": "Completion-affecting test substitutes must load the real component or prove parity with its real effects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "49",
+   "quote": "A presentation stub must never grant completion, listening credit or persisted progress that production does not grant.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "49",
+   "quote": "The .61 Routine investigation found one such false Text-on-mount completion effect; the maintained test now uses actual Text/Spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "261",
+   "quote": "Composer disappears and positive feedback is shown, but no primary action is registered and Next page remains disabled with Go through the steps first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "273",
+   "quote": "Six actual Text-owner baseline failures now pass;36/36 groups retain83original assertions and realText/Spoken.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,140 @@
+{
+ "id": "judge-only-from-the-words-given",
+ "title": "Judge only from the words given",
+ "statement": "Tell a judge to decide only from the words given, such as a question's own wording for give-aways, never from what it or readers know of a well-known work.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Integration of the lesson engine found that a give-away check, which asks whether a question's own wording states what a good answer must say, was answered from general knowledge of the play the lesson was on. The check now tells the judge to judge only the wording of the question, not what a reader may already know about the work, since a famous text's answer is known to anyone who knows the work and that is no give-away. The answer-key check is likewise judged only from the lines the item cites.",
+ "against": "The fix is an instruction inside the judge's question, and the engine's calibration sets are seed cases that \"prove the wiring, measure nothing\" (`g9/transformer/v02/QA.md`, line 136), so how often the judge still draws on what it knows has not been measured. Narrowing leaves a question whose answer is common knowledge unasked by this check, by design: \"its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's\" (`g9/transformer/src/mechanics/open-check.js`, line 86). After the change, all three drafts of a question on a famous speech that named both sides of its contrast still failed the check (0.69, 0.71 and 0.65), and with no person-labelled cases it is not known whether the judge was right to hold them.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "139-140",
+   "quote": "its give-away question was answered from general knowledge of Othello (now: the question's own words only)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/quick-check.answerable.json",
+   "lines": "5",
+   "quote": "A block's check, on both samples: is the keyed option right, judged only from the cited lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Do the words of q themselves state, or nearly state, what a good answer must say? Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "471",
+   "quote": "\"instructions\": \"Does the wording of q by itself give away what a good answer must say?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "444",
+   "quote": "\"q\": \"According to Iago, what is his purpose in continuing to serve Othello?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a775ad50ec1c4070.json",
+   "lines": "37",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "8",
+   "quote": "\"q\": \"What difference does the speaker draw between the endurance of spoken words and the actions of the soldiers?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "129-133",
+   "quote": "\"id\": \"no-giveaway\", \"label\": \"The question does not give its answer away\", \"required\": true, \"verdict\": \"fails\", \"p\": 0.35,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "// its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "48",
+   "quote": "\"instructions\": \"Do the words of q themselves state, or nearly state, what a good answer must say? Judge only the wording of q, not what a reader may already know about the work.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "111",
+   "quote": "\"value\": 0.69,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "280",
+   "quote": "\"value\": 0.71,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "437",
+   "quote": "\"value\": 0.65,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,56 @@
+{
+ "id": "does-answer-history-bias-a-marker",
+ "title": "Does answer history bias a marker?",
+ "statement": "Does putting a learner's earlier off-topic or wrong answers into a model marker's input bias its verdict on a later correct answer?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "marking",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A model marker rejected a correct answer, byte-identical to the lesson's own model answer, that a learner submitted after an off-topic one, and the marking route concatenated earlier answers into its input. The incident record called the wrong verdict potentially influenced by the hint or the accumulated off-topic history, and named history contamination plausible, not proven. The fix that followed enforced exact criterion identifiers and complete boolean validation so that malformed model output could no longer count against the learner, which left the history question untested.",
+ "against": "After the fix, the same answer was accepted on a second attempt in a fresh browser session, one observation rather than a test of the history question (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 84).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "A semantically wrong but well-formed `value:false` verdict, potentially influenced by the hint or accumulated off-topic history.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "The route concatenates earlier answers; history contamination is plausible, not proven.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "That text is byte-identical to `assessment.reveal`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "84",
+   "quote": "exact authored criterion IDs and complete/unique boolean validation prevent malformed model output from becoming learner-wrong",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

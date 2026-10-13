@@ -1,0 +1,72 @@
+{
+ "id": "flag-the-node-the-graph-lacks",
+ "title": "Flag the node the graph lacks",
+ "statement": "When a text presupposes an idea no knowledge-graph node holds, flag the gap rather than force it onto the nearest node, since no check of the graph can see it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "sequence"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A protocol for placing reading texts on the components of a knowledge graph asks, at its confirm step, whether a text's operation presupposes a mental model that exists in no node, such as that a text has a structure independent of its topic, or that stated and true are different properties. If it does, the step records a graph gap, with the proposed node, why it is load-bearing and which texts surface it, instead of pinning the assumption to the nearest existing component. The protocol's reason is that its deterministic validator checks only the graph it is given, so it cannot catch this class of error by construction; only the confirm step can.",
+ "against": "It is a judgment step, and the file records no gap found or what one changed.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "76-80",
+   "quote": "- Missing-conceptual-prerequisite check: does this text's operation presuppose a mental model that exists in NO graph node (e.g. \"a text has a structure independent of its topic\", \"stated and true are different properties\")? If yes, do NOT force the assumption onto the nearest existing KC -- flag a GRAPH GAP (proposed node, why it is load-bearing, which texts surface it)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "80-81",
+   "quote": "The validator cannot catch this class of error by construction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "83",
+   "quote": "only this confirm step can.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "76-79",
+   "quote": "Missing-conceptual-prerequisite check: does this text's operation presuppose a mental model that exists in NO graph node (e.g. \"a text has a structure independent of its topic\", \"stated and true are different properties\")? If yes, do NOT force the assumption onto the nearest existing KC -- flag a GRAPH GAP",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "80-81",
+   "quote": "The validator cannot catch this class of error by construction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "83",
+   "quote": "only this confirm step can.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,180 @@
+{
+ "id": "replace-a-check-only-on-a-paired-trial",
+ "title": "Replace a check only on a paired trial",
+ "statement": "Change a check only after a paired trial on frozen scenarios shows a gain and no new misses, even when just adding reference text, which can make a judge worse.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An assessment of reusing the reading course's earlier QA tools ruled that current requirements and the original evidence govern, and that timestamps and test totals cannot show one tool is better (`grade3-reading/artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md`). It freezes case ids, expected outcomes, builds and thresholds before a paired run, and replaces a tool only with no additional misses or false alarms on protected cases, no lost obligations and a measured benefit, never for a faster probe that quietly stops exercising hard cases (the same file). The trial runs several times on the old and the new version, with a wrong answer as a control. Being newer, passing more tests or reasoning about how a model will read a rule proves nothing.",
+ "against": "Each probe covered one item; other open-answer items exposed to the same rule were not probed in that round (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md`). One experiment with one judge model. A narrow audit grounded on the same passages also gave false positives, and in one 50-question test it was skipped for every question because retrieval failed (the same document, lines 359, 372 and 442). An unmerged AP branch adds up to 30 textbook-cited facts per standard to every judge prompt, in source-file order, and has not been compared with and without them (`icloud-work/inceptbench/src/inceptbench/evaluators/base.py`, lines 617-631).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md",
+   "lines": "42",
+   "quote": "Tier 1: current requirements and immutable original evidence govern; timestamps and test totals cannot establish superiority.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md",
+   "lines": "95",
+   "quote": "No additional misses or false alarms on protected cases, no lost obligations, and a measured benefit on the declared target are needed for replacement. Do not accept a faster probe that silently stops exercising hard cases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R24.md",
+   "lines": "41",
+   "quote": "Reasoning cannot settle whether an LLM judge reads",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R24.md",
+   "lines": "57",
+   "quote": "Scenarios × 3 reps × 2 routes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R24.md",
+   "lines": "67",
+   "quote": "Bands, banked criteria and passing turn are IDENTICAL across routes in 12/12 scenario runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "34",
+   "quote": "Passing turn identical in 12/12. Per-turn bands identical in 9/12; the 3 differing runs are all the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "35",
+   "quote": "short-phrase scenario's turn 1 (deterministic 3/3, not noise).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "40",
+   "quote": "no false success (control held 3/3)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R26.md",
+   "lines": "42",
+   "quote": "All 18 turns identical in band AND ticked criteria to the R25 baseline (18/18).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "422",
+   "quote": "**Finding**: **Wikipedia-grounded Gemini performed WORSE** — caught only 3/22 factual errors (down from 6/22 baseline) and increased variance to 7.0% (up from 5.5%). Gemini apparently got confused by the additional context rather than using it for cross-referencing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "424",
+   "quote": "**Conclusion**: Wikipedia injection into Gemini's prompt is counterproductive. Reverted.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "1079",
+   "quote": "use_wiki = os.environ.get(\"EVALUATOR_USE_WIKIPEDIA\", \"\").strip().lower() in (",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/judge-table.sh",
+   "lines": "2",
+   "quote": "The animated build's own answer table (its scripts/judge-test.ts), run through its own page code",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "54",
+   "quote": "43 answers, 0 hard fails, 1 soft miss. 31 reached the judge, median 266 ms, slowest 437 ms",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/judge-table.sh",
+   "lines": "37",
+   "quote": "if (c.must && bad) fails++; else if (bad) soft++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "77-78",
+   "quote": "its answer table still gave 0 hard fails, 1 soft miss, median 261 ms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "3",
+   "quote": "A judge moved to Jev only where it matched or beat the current judge on labelled cases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "14",
+   "quote": "**Cost.** About 8 s for all 82 cases x 7 votes, with no app server.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "30",
+   "quote": "Jev ran 7 votes on a `choice` question with 4 classes and got **28/36 (78%)** against the agent's labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "34",
+   "quote": "**Verdict.** Worse than the current (human-read) judge. **Not adopted.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "76-77",
+   "quote": "prove a new ruling against the known true-positives before trusting it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

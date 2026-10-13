@@ -1,0 +1,200 @@
+{
+ "id": "one-home-for-each-rule",
+ "title": "One home for each rule",
+ "statement": "Give each rule one home and authority, restated nowhere else, and check a writer's instructions for contradictions before generating, since conflicting rules cause refusals and silent overrides.",
+ "example": "A kit instruction to refuse without a source corpus that was never wired took one item type to 0%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "format"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A check-in on why every layer added to an AP question generator had cost quality found the layers fighting each other (`aptraining-local/parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md`, lines 15-19 and 110-123). A kit prompt told the writer to refuse without a source corpus that was never wired, and document questions passed 0% (line 51); a prompt rule demanding four questions clashed with a validator in code enforcing three and was silently overridden, and the writer refused two directives that contradicted each other (lines 91-94); a kit's fixed period framing contradicted the objective's period, and the writer refused (lines 113-114). Earlier the project had put the kit first and the service's own prompt last, as the hard schema authority, so the kit's illustrative field names could not break the judge's JSON shape (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md`, line 152). Banned lists count as rules: an intro-video guide keeps its banned punctuation in a settings file and its banned phrases in the script prompt, and restates neither list anywhere else (`downloads/BrainLift - What makes a good intro video.md`, line 953).",
+ "against": "The banned phrases sit in the generator's prompt, and the AP work found that adding warnings to a generator's prompt made it worse. One case, and the fix was not yet tested when the note was written (same file, line 137).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "51",
+   "quote": "| Satisfaction kit DBQ refusal | 0% on DBQ | `system_prompt_dbq.md` line 135: \"Without D13: refuse\" — we don't wire D13 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "91",
+   "quote": "\"EXACTLY 4 questions\" conflicted with hardcoded validator at",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "92-94",
+   "quote": "`main.py:5948` enforcing exactly 3 → silently overridden. DBQ directive + kit's D13 directive → v80b correctly refused contradictory instructions.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "113-114",
+   "quote": "1. **Contradicts another layer** (kit says \"1491-1607\", learning objective says \"pre-1491\" → v80b refuses)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md",
+   "lines": "152",
+   "quote": "- The kit is prepended to the system prompt, then the original service prompt is appended as the hard schema authority. This prevents the kit's illustrative field names from breaking InceptBench JSON shape.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "953",
+   "quote": "The banned phrase list is maintained in `prompts/script.md`, since a phrase ban needs the wording of the ask around it to be understood.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "953",
+   "quote": "Neither list is restated anywhere else.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "50",
+   "quote": "**Pattern:** scoring_notes contained specific evidence (dates, named events) that",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "53",
+   "quote": "**Root cause:** Two contradicting instructions:",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "54",
+   "quote": "- System prompt: `⛔ NEVER list specific event names/dates/people`",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "55",
+   "quote": "- User prompt PROCEDURE: `\"Write it as [FACT: <exact phrase>]\"` — granted permission",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "57",
+   "quote": "**Fix applied (2026-04-24, saq.py `build_saq_user`):** Removed the PROCEDURE block.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "137",
+   "quote": "2. **SAQ 33%** — new categorical-only fix not yet tested; these runs were pre-fix",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "24-25",
+   "quote": "The reading game engine's decide layer (typed decisions, support gates, logs for replay) is imported, not copied.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/engine.js",
+   "lines": "2",
+   "quote": "One source of truth: nothing is copied.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "12",
+   "quote": "One check's verdict from its typed answer (also used by the runtime, whose question ids are namespaced).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "115",
+   "quote": "Shared by blocks and the v01 lesson route.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/analyse.js",
+   "lines": "16",
+   "quote": "a.pass && a.value >= 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "17",
+   "quote": "a.value >= 0.5",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "34",
+   "quote": "{ provider: judge, samples, tag: \"suggest-question\" }",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "278-279",
+   "quote": "Detection: textual order decides precedence. Recovery cascade: 1. Add explicit priorities and dependencies. 2. Reject unresolved conflicts at compile time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "425-426",
+   "quote": "Two contradictory pins now sit on staging and `npm run check` is red at this step since #443.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "131",
+   "quote": "One thing worth flagging honestly: on our own re-check after the first fix wave, we caught that Fix 1 was only half-closed - two sibling copies of the guards content (UNIT-SPECS.md and the standalone guards file's own intro paragraph) still said U2/U3/U4-only, contradicting the corrected table just below them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_ROUND2_PR83.md",
+   "lines": "80-82",
+   "quote": "it's Fix 1 only touching one of three copies of the same fact, which is worse than touching none, because now the package **contradicts itself** rather than being uniformly wrong.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,757 @@
+{
+ "id": "each-wrong-option-a-named-misconception",
+ "title": "Each wrong option a named misconception",
+ "statement": "Build each wrong option from a different, named misconception or predictable error that students really make, so that choosing it shows what was misunderstood.",
+ "example": "One audit found only about 7% of choice items naming, in their feedback, the misconception a wrong option targets.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "An assessment BrainLift used as feedback for the reading courses calls distractor and feedback quality coupled decisions: misconception-based distractors carry the highest risk of the negative suggestion effect, and Butler & Roediger (2008) showed that feedback largely neutralises it (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 1991). The courses' instruction-quality standard makes each distractor the answer a named misconception picks, with feedback that names it (`grade3-reading/ti-courseplans/docs/instruction-quality-standard.md`, lines 129-130), yet an assessment memo found only ~7% of choice items (15 of 48 lessons) naming, in their feedback, the specific misconception a wrong option targets (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md`, line 44). An adversarial review's checklist calls strong misconception distractors with no feedback teaching the error, and a fourth option no misconception would pick filler, worse than three options (`grade3-reading/ti-courseplans/skills/course-red-team/references/finding-taxonomy.md`, lines 160 and 166); the BrainLift agrees that a weak fourth distractor is worse than none (line 2006). The predictable errors include a wrong time, place, cause or actor, and each wrong option should sit in the same category and grain as the key. Record which error each option targets and give it feedback that corrects that error, since an uncorrected lure can teach the error, and an option nobody would pick is only filler.",
+ "against": "in an exploit study, options parallel in form but obviously wrong to a knowledgeable reader still passed the judge's distractor checks, and a step that rebuilt weak distractors gave no gain in pass rate over 5 samples. The quiz pipeline's plausibility rule: \"If the distractor has ANY connection to the passage OR question, it PASSES (score=1)\" (`icloud-work/incept/aplit-quiz-generation/lit-question-qc.json`, line 8). Among near misses, the project's own fix list counted 30 distractor problems and rated fixing them harder, needing content work, and low in impact (`icloud-work/incept/nova_forge/README.md`, line 303). One run report proposed the opposite for easy items, in a prompt it recommended for the writer: '- Have obviously wrong distractors (for MCQ)' (`icloud-work/evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md`, line 326). No student responses were ever collected, so the guidance's own test of a working wrong option, chosen by at least 5% of test-takers, was never applied, and plausibility was judged only by models (`icloud-work/ap-social-studies-generator/docs/analysis/best_practices.md`). For a single-skill standard, wrong options that share a failure category are normal good design (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 600). The misconception list reaches the judge only on the unmerged AP branch; the current AP context has no misconception field (`icloud-work/inceptbench-main/src/inceptbench/evaluators/base.py`, lines 796-817). The spec is inconsistent on the count: it says each item has exactly 3 distractors, one of each, then lists four types, while the item bank's gate asks for four types present. The benchmark's link between such distractors and passing is an observation, not a test. The research's minimum effective feedback is showing the correct answer, while the reading course never reveals a single-select item's answer after a set number of tries, because a short option list lets the child eliminate their way to it (`grade3-reading/knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd`); whether eliminating to the right option corrects a lure as well as being shown it has not been measured here. A planned test of misconception-seeded options, to be replicated on 150 items if distractor quality rose 3 points, has no recorded result in the files read (icloud-work/aptraining/helpers/data/output/path_e/path_e_build_notes.md, line 42). In that strand the tags were assigned by a model (\"deterministic dose assembler + LLM misconception tagging\", `grade3-reading/knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd`, lines 135-136), and an enum validator checks that each option carries a tag from the list, not that the tag is right. The grade 3 profile also requires at least 4 options on every multiple-choice item and no true/false item in the mastery pool, since a yes/no is a 50/50 guess, while the same criteria drop to 3 options rather than add a weak fourth, so where no fourth real error exists the two rules conflict (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md`). Quick are-you-still-reading checks are treated differently: one story design keeps them free of trick distractors, while the science designs build theirs to the same rule, misconception distractor included. The general bar is softer: an incorrect but content-plausible option that could tempt a non-expert student is acceptable, not a failure, and the SAT math rule asks for only one such option. A later run found counter-evidence (`grade3-reading/course-renderer/authoring/inputs/prompt-packs/reading-g3/item-types/mcq.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/authoring/inputs/rule-packs/reading-g3.json`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1991",
+   "quote": "they carry the highest risk of the negative suggestion effect, where exposure to plausible wrong answers implants false knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1991",
+   "quote": "Butler & Roediger (2008) showed that feedback largely neutralises this risk, while the absence of feedback leaves it unchecked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "95-96",
+   "quote": "plausible lures can seed false knowledge;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "166",
+   "quote": "strong misconception distractors + no feedback = teaching the error (negative suggestion effect)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "129-130",
+   "quote": "Distractors are misconception-coded (each = the answer a named misconception picks); feedback names the misconception.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "44",
+   "quote": "only **~7% of choice items (15 of 48 lessons)** name the *specific misconception* a distractor targets in its feedback",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2006",
+   "quote": "A weak fourth distractor is worse than no fourth distractor because it provides testwiseness cues and wastes time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "160",
+   "quote": "can you name what a student choosing each distractor is thinking? if not, it's filler (worse than 3 options)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "221",
+   "quote": "Absolute language: \"total,\" \"complete,\" \"all,\" \"immediate,\" \"never\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "224",
+   "quote": "Historically absurd: contradicts basic knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "229",
+   "quote": "Scope confusion: True for different region/group/time period",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "230",
+   "quote": "Partial truth: Contains accurate element but wrong overall conclusion",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "234",
+   "quote": "Would a good student who studied but didn't master the material choose this?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "23",
+   "quote": "Based on academic literature (Haladyna & Rodriguez, 2013; University of Waterloo CTE; BMC Medical Education)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "33",
+   "quote": "Similar length to the correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "44",
+   "quote": "Each should be selected by at least 5% of test-takers",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "71",
+   "quote": "obviously-wrong-on-the-merits to a knowledgeable reader",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "132",
+   "quote": "Zero pass rate improvement",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "123",
+   "quote": "Ran data-driven benchmarks (5 samples each) to decide what to optimize",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/mcq.py",
+   "lines": "17",
+   "quote": "- Each distractor represents a different type of misconception",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "621",
+   "quote": "1. **Plausible**: Each distractor should be a real mistake a student might make",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "258",
+   "quote": "- If Curriculum API provided Common Misconceptions → verify distractors align with those specific misconceptions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/inceptbench_new/tools/misconception_analysis.py",
+   "lines": "72",
+   "quote": "issues.append(f\"redundant (same error): {', '.join(sorted(redundant_keys))}\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "724",
+   "quote": "- When Curriculum API provides Common Misconceptions → You MUST verify distractors align with those misconceptions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "358",
+   "quote": "1. Generated 36 questions from the live inference endpoint.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "368",
+   "quote": "Main failure dimensions (most frequent 0.0):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "369",
+   "quote": "- `distractor_quality` (16/36)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "370",
+   "quote": "- `reveals_misconceptions` (12/36)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "404",
+   "quote": "- Distractors are often not tied to *specific misconceptions* (diagnostic weakness).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "490",
+   "quote": "- Issue: Because every option is correct, the item cannot differentiate between correct understanding and common errors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "406",
+   "quote": "- Issue: One option (“+”) is non-parallel and implausible for a comparison task, reducing distractor quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/README.md",
+   "lines": "303",
+   "quote": "| Distractors | 30 | … HARDER (content) | Low |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "79",
+   "quote": "| distractor_quality        |   69 |  152 |     31.2% |      0.35 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "176",
+   "quote": "Option A is too easily dismissed as an extreme/absurd distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "97",
+   "quote": "- FAIL for obviously absurd distractors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "39",
+   "quote": "- Distractors must be plausible, homogeneous, grammatically parallel, similar in specificity/length, and tied to real misconceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "40",
+   "quote": "- Avoid opposite/negation distractors, borderline-correct distractors, and partial-question giveaways.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ap-history-ib-expectation-matrix.md",
+   "lines": "124",
+   "quote": "- Write distractors from wrong period, wrong region, wrong cause, wrong actor, or overgeneralized interpretation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "28",
+   "quote": "- Each distractor should target a specific student misconception or common error",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "45",
+   "quote": "- Non-functioning distractors (never selected) indicate poor design",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "69",
+   "quote": "**Key Finding**: Distractors generated by predicting student choice behavior significantly outperform those generated by similarity-based methods.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md",
+   "lines": "24",
+   "quote": "Q1-D (declaring war over the Treaty of Tordesillas) is easily eliminated and does not reflect a realistic student misconception.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/COMPREHENSIVE-AUDIT-2026-02-18.md",
+   "lines": "81",
+   "quote": "| Distractor Quality | C | Plausible but not misconception-based |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "600",
+   "quote": "A high-quality MCQ should have at least one distractor that targets one of these misconceptions, and the correct answer must NOT match any of them.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "505",
+   "quote": "- No connection to common misconceptions (especially those provided by Curriculum API)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "600",
+   "quote": "In that narrow case, if every distractor violates the same sub-criterion the question loses diagnostic value → `distractor_quality = 0.0`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_371_382.py",
+   "lines": "25-26",
+   "quote": "does not over-fire on single-skill items (avoids golden-suite regression).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "356",
+   "quote": "`options[i].misconception` field required on all non-key options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "351",
+   "quote": "- **Scope error** — true detail presented at wrong granularity",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "173",
+   "quote": "- Distractors MUST represent plausible student misconceptions, not absurd options",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "222, 227",
+   "quote": "Questions that passed tended to: … 5. Use distractors representing real student misconceptions",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "350",
+   "quote": "Each MCQ has exactly 3 distractors, one of each:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "243",
+   "quote": "| Dim 11: Distractor coverage | Four distractor types present (scope, conflation, prior knowledge, partial) | Hard gate |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "175",
+   "quote": "Students produce MC lures as answers on later tests, even when warned not to guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "175",
+   "quote": "The effect scales with the plausibility and number of competitive distractors",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "176",
+   "quote": "Without feedback, the negative suggestion effect persists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "176",
+   "quote": "both immediate and delayed feedback were effective",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "95-96",
+   "quote": "potent misconception-based distractors require product-appropriate corrective feedback or post-test correction because plausible lures can seed false knowledge;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "287-288",
+   "quote": "- Distractors are plausible and likely chosen by students with partial mastery - Distractors align with known common misconceptions (especially those from Curriculum API)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "36",
+   "quote": "- [ ] All options same grain size and same category",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "38",
+   "quote": "- [ ] Distractors seeded from `common_misconceptions` where possible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "68-72",
+   "quote": "obviously-wrong-on-the-merits to a knowledgeable reader (each distractor names a real historical claim that is anachronistic or factually inverted, not nonsense). This pattern automatically satisfies `distractor_quality` and `reveals_misconceptions` default-pass conditions",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "27",
+   "quote": "| 6 | **Misconception-tagged distractors** — each wrong option maps to a named cluster: `schema_mis_mapping` / `strategy_substitution` / `inference_overreach` | distractors with no diagnostic intent |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "105-106",
+   "quote": "Action: add a per-option enum validator (fail-and-retry) to our generator;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd",
+   "lines": "132-133",
+   "quote": "Every selected-response item carries **misconception- cluster tags** (A = strategy-substitution / B = schema-mismapping / C = inference-overreach).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd",
+   "lines": "135-136",
+   "quote": "deterministic dose assembler + LLM misconception tagging",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "160",
+   "quote": "can you name what a student choosing each distractor is thinking? if not, it's filler (worse than 3 options)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "773",
+   "quote": "J16-ASS-001: Use only plausible, diagnostically useful response options; do not add filler to meet a count.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "770",
+   "quote": "Claim boundary: No fixed option count belongs in the universal standard.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "20",
+   "quote": "If 4 options, all 4 are plausible — drop to 3 rather than add a weak 4th",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "69",
+   "quote": "Chunk-stop distractors are self-declared filler, not real near-neighbour traps.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "248 (textutil text)",
+   "quote": "Assessment items should include distractors based on known misconceptions. A student who can state the correct definition but selects the misconception when presented as a plausible alternative does not truly hold the correct understanding.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "248 (textutil text)",
+   "quote": "The FCI (Force Concept Inventory) model — forced choice between the correct answer and the most common misconception — is the gold standard.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Chemistry Misconception Prevention Guidance.docx",
+   "lines": "240 (textutil text)",
+   "quote": "The College Board explicitly designs multiple-choice distractors around the \"bond breaking releases energy\" misconception and the teleological \"atoms want full shells\" reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 6. Life in Water - CONNECT - Lesson Design.docx",
+   "lines": "10 (textutil text)",
+   "quote": "Exactly one deliberate misconception distractor per item.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "67",
+   "quote": "Each distractor is a coded misconception (a happy place, a cheerful place, a cozy-ordinary thing) and its feedback names the mismatch",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 3. Aladdin and the Wonderful Lamp, Part 3 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "97 (textutil text)",
+   "quote": "4 short plausible options, one stated in the text, no trick distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "75 (textutil text)",
+   "quote": "four short options all plausible to a drifting child; built to Rule 2.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "58-61",
+   "quote": "- Distractors should each correspond to a **specific, predictable chemistry error** (e.g. an inverted ratio, a dropped stoichiometric coefficient, confusing a quantity with its logarithm, using mass where moles are required, selecting a conjugate instead of the named species) rather than arbitrary wrong values.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "30-31",
+   "quote": "Strong science items are built around **known student misconceptions**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "32-33",
+   "quote": "Distractors or expected wrong answers should map to such predictable errors rather than to arbitrary or obviously-wrong alternatives.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "49-50",
+   "quote": "Every distractor must represent a genuine misreading of the passage — not a grammatically wrong option, an obviously off-topic word, or one no reader would seriously consider.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/sat_math_evaluation.txt",
+   "lines": "74-75",
+   "quote": "At least one incorrect distractor must require a genuine misapplication of the tested concept to be tempting.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "527",
+   "quote": "- Distractors are plausible and likely chosen by students with partial mastery",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "531",
+   "quote": "- Has strong diagnostic value",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "629",
+   "quote": "An incorrect-but-content-plausible distractor that a non-expert student could be tempted by is acceptable distractor design, not a failure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "23",
+   "quote": "the other two are tempting to a skimmer but the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "75",
+   "quote": "Would option ${letters[i]} seem believable to a Grade 9 reader who skimmed the text, rather than obviously absurd?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "352",
+   "quote": "- **Concept conflation** — right topic, wrong relationship",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "353",
+   "quote": "- **Prior-knowledge override** — world-plausible but text-unsupported",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "354",
+   "quote": "- **Partial comprehension** — correct at midpoint, overturned by ending",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "49",
+   "quote": "each wrong answer must be grounded in the passage, true-sounding, and exploitable only by partial comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "277-280",
+   "quote": "The flagship \"misconception-mapped MCQ\" on the energy lesson (G5-U4L3-I01) maps its distractors to source-block LOCATION (\"which fragment is in Source A vs Source C\") and its feedback coaches \"recheck Source A,\" not the energy science.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "267-273",
+   "quote": "- YELLOW - Your anti-generic distractor gate has a blind spot. 7 of the 52 science MCQs use per-option templated ids like \"mc-...-a-unsupported-detail\" - a generic label, not a diagnosed misconception. Your own quality scan reports \"generic fallbacks absent,\" but its blocklist is only {wrong-choice, wrong-part, wrong-span} - it never scans for \"unsupported-detail,\" so these 7 pass as if they were specific.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/misconceptions/cross-cutting-synthesis.md",
+   "lines": "305",
+   "quote": "A student who can state the correct definition but selects the misconception when presented as a plausible alternative does not truly hold the correct understanding.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/item-types/mcq.md",
+   "lines": "11-12",
+   "quote": "Exactly one deliberate misconception distractor per item: an option a child who half-followed would genuinely pick.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "32",
+   "quote": "Distractors built from executed error-patterns diagnose *which* rule is broken",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "44",
+   "quote": "only **~7% of choice items (15 of 48 lessons)** name the *specific misconception* a distractor targets in its feedback",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "69",
+   "quote": "Their Rule 2 asks for exactly one deliberate misconception distractor per item, NAMED in the design doc.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "552-553",
+   "quote": "Distractors should represent plausible misconceptions or reasoning errors rather than generic wrongness.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Butler & Roediger 2008",
+   "url": "https://doi.org/10.3758/MC.36.3.604"
+  },
+  {
+   "ref": "Haladyna & Rodriguez 2013, Developing and Validating Test Items",
+   "url": "https://doi.org/10.4324/9780203850381"
+  },
+  {
+   "ref": "Generating Plausible Distractors for Multiple-Choice Questions via Student Choice Prediction (2025)",
+   "url": "https://doi.org/10.48550/arXiv.2501.13125"
+  },
+  {
+   "ref": "Roediger & Marsh 2005",
+   "url": "https://doi.org/10.1037/0278-7393.31.5.1155"
+  },
+  {
+   "ref": "Hestenes, Wells & Swackhamer 1992, Force Concept Inventory, The Physics Teacher",
+   "url": "https://doi.org/10.1119/1.2343497"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

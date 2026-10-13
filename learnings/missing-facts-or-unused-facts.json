@@ -1,0 +1,63 @@
+{
+ "id": "missing-facts-or-unused-facts",
+ "title": "Missing facts or unused facts",
+ "statement": "Whether wrong facts in generated items were missing from the writer's material or there and unused decides the fix, and the test that tells them apart has no recorded result.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A diagnosis in the AP work split 'not enough data' into two causes with opposite fixes: facts the training corpus does not contain, where a bigger model will not help, and facts it contains but the model fails to retain, where a bigger model is justified (`icloud-work/aptraining/workspace/comms/from_analyzer/2026-05-27T1741Z_DIAGNOSIS_data_adequacy_binding_lever.md`, lines 10-14). It asked for the failing facts to be checked against the corpus, because row count alone cannot tell the two apart (lines 16 and 19), and the check was asked for again the next day (`icloud-work/aptraining/workspace/comms/to_analyzer/2026-05-28T0614Z_dream_sequence_sync_2.md`, lines 32-39). No verdict is in the folder where it was asked for, which holds only an acknowledgement and the diagnosis, and a later fix asserted that the facts were in the corpus but the writer had not been given the curriculum context, so it changed the prompt instead (`icloud-work/aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md`, line 30). To settle it: check a sample of the wrong facts against the writer's training data and the material it was given, and choose the fix by what that shows.",
+ "against": "The later message says the facts are in the corpus without showing the test, and its request to re-measure after the change (`icloud-work/aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md`, line 34) has no reply in that folder.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_analyzer/2026-05-27T1741Z_DIAGNOSIS_data_adequacy_binding_lever.md",
+   "lines": "16",
+   "quote": "**The discriminating test (please make the data-adequacy assessment answer THIS, not just row count):** take the off-period hallucination cases (e.g. the 1920s-DBQ-for-Unit-1 sample) and check whether those specific Unit-1 facts are PRESENT in the training corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_analyzer/2026-05-27T1741Z_DIAGNOSIS_data_adequacy_binding_lever.md",
+   "lines": "19",
+   "quote": "Row-count alone (\"14k = not enough\") cannot tell these apart, and it's the exact spot where \"bigger base\" gets pulled without the binding lever named.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-06-01T1838Z_dream_sequence_sync.md",
+   "lines": "30",
+   "quote": "This addresses §2 coverage-lever side of your 5/27 binding-lever fork: facts ARE in the corpus, but the generator wasn't conditioned on the curriculum context that defines the alignment criterion.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-05-28T0614Z_dream_sequence_sync_2.md",
+   "lines": "39",
+   "quote": "Drop verdict at `from_analyzer/<UTC>_COVERAGE_VS_CAPACITY_v4.md`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_analyzer/2026-05-27T1741Z_DIAGNOSIS_data_adequacy_binding_lever.md",
+   "lines": "13",
+   "quote": "(you can't retain facts that aren't in the training set)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

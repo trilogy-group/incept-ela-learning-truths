@@ -1,0 +1,63 @@
+{
+ "id": "a-reference-course-shows-presentation-only",
+ "title": "A reference course shows presentation only",
+ "statement": "Let a reference course inform only interaction and presentation: it never proves a verdict, content correctness or grade fit, and none of its content, numbers or policies carry across.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "alignment",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The Grade 5 reading release uses the Grade 3 player as a presentation reference, not as course authority, and copies none of Grade 3's story content, mascot language, passage chunking, vocabulary count or item policy (`grade3-reading/edullm-review-hub/docs/GRADE_5_REVIEW_NOTES.qmd`, lines 9 and 28-31). Its instruction-review profile gives the reference the role of interaction and presentation reference only, lists criterion verdict, content correctness and grade appropriateness as what it may not prove, and admits a reference-course artifact only in a comparison note, never as verdict evidence (`grade3-reading/edullm-review-hub/course-packages/courses/g5-reading/review/generated/instruction-review-profile.json`, lines 116-127 and 156). A Grade 7 BrainLift treats its neighbouring grades the same way: they are method templates, and their numbers are theirs (`grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md`, lines 451-453).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "156",
+   "quote": "A reference-course artifact may appear only in a comparison note, never as verdict evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "117",
+   "quote": "interaction and presentation reference only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "9",
+   "quote": "Grade 5 uses the current Grade 3 player as a presentation reference, not as course authority.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "30",
+   "quote": "Grade 3-specific story content, mascot language, passage chunking, vocabulary count, or item policy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "453",
+   "quote": "their numbers are theirs, never G7's",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

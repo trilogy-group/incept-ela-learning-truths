@@ -1,0 +1,86 @@
+{
+ "id": "model-written-wrong-options-rarely-tempt",
+ "title": "Model-written wrong options rarely tempt",
+ "statement": "Wrong options a model writes rarely pass a judge's test of whether they would tempt a skimming reader.",
+ "example": "In seven live lesson runs, the judge found 2 of 28 machine-written wrong options tempting, and none of the 14 for word meanings.",
+ "group": "generating-with-a-model",
+ "role": "context",
+ "facets": [
+  "distractors",
+  "generation",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A first live run produced a quick-check wrong option no reader would choose, and no check caught it, so an advisory judge question was added asking whether each wrong option would seem believable to a Grade 9 reader who skimmed, rather than obviously absurd. Across the seven later lesson runs on two texts, the quick check's 14 machine-written wrong options got 2 holds, 6 fails and 6 unsure, and the word-meaning block's 14 got 0 holds, 10 fails and 4 unsure. All 14 blocks were still marked ready, because the question cannot hold a block. The verdicts are the judge's own, with no labelled case behind them.",
+ "against": "The judge's precision has not been measured: \"their precision is not yet measured (v04)\" (g9/transformer/v01/QA.md line 46). With no labelled cases the judge may be too strict, and the word-meaning version asks about a reader who \"has not looked closely\" rather than one who skimmed (g9/transformer/src/mechanics/word-in-focus.js line 87).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "40-42",
+   "quote": "A first live run on Othello showed two faults no check caught: a quick-check distractor no reader would choose (\"he hopes to eventually become the Moor\"), and \"L42\" written in a student paragraph.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "42-43",
+   "quote": "an advisory check asks whether each wrong option would tempt a reader who skimmed; on Ozymandias it flagged two distractors as not tempting.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "74",
+   "quote": "id: `tempting-${letters[i]}`, label: `Option ${letters[i]} would tempt a reader who skimmed`, required: false,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "75",
+   "quote": "seem believable to a Grade 9 reader who skimmed the text, rather than obviously absurd?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "879-881",
+   "quote": "\"label\": \"Option A would tempt a reader who skimmed\", \"required\": false, \"verdict\": \"fails\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "20",
+   "quote": "| othello-1-1 | `word-in-focus` | ready | 1 | 5/5 | 4/4 | 0/2 | 3.9 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "46",
+   "quote": "their precision is not yet measured (v04)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "87",
+   "quote": "would tempt a reader who has not looked closely",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

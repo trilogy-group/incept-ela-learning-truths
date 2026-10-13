@@ -1,0 +1,179 @@
+{
+ "id": "every-field-a-student-meets-is-checked",
+ "title": "Every field a student meets is checked",
+ "statement": "Make sure every field a student sees or hears is read by at least one check.",
+ "example": "Three clips played as silence behind a passing build because no check looked for them.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one course nothing validated the lesson-page video checkpoints and nothing checked that voice-over clips existed, and three clips played as silence behind a green build until both checks were added (`grade3-reading/artifacts/DECISIONS-2026-08-24.md`). Review clips carried no hash of the text they voice, so a definition edit left a clip silently stale (`grade3-reading/artifacts/l4-p3-stale-clip-2026-09-29/README.md`), and the audit script never read the search fields at all, the direct root cause of a leak in those fields that no machine caught (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "38",
+   "quote": "video checkpoints were validated by nothing (only unit videos were walked),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "39-40",
+   "quote": "clips were never checked for existence — three played as silence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-p3-stale-clip-2026-09-29/README.md",
+   "lines": "14",
+   "quote": "Class gap: frame `rows[].audio_path` review clips have no `audio_of`, so a definition edit leaves the clip silently stale.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "139",
+   "quote": "The audit script (audit.py) never reads think_aloud.states[].search / we_do.search fields at all",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "42-46",
+   "quote": "**Rule.** R-COPY-1 and R-COPY-2 apply to every word a child reads, including the praise and the hint composed at answer time by the scorer. Those two are rewritten into house style in `src/app/api/speak-score/route.ts` before they are returned, because no validator can see a line that does not exist until the child answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "49-51",
+   "quote": "so half the words in a conversation were exempt from the rules the other half were checked against, and a model reaches for an em-dash by default.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "61-62",
+   "quote": "By `houseStyle()` in the scoring route, on every reply before it is sent. Not by a validator, which cannot reach runtime text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "505",
+   "quote": "Current scripts/validate-semantic.mjs collects top-level question/mcq items; narrated text supplies context but receives no independent judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "518",
+   "quote": "Real18-lesson run accounts for325 items (61MCQ+264narration)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "474",
+   "quote": "The validator only visits top-level voiceover and purpose_voiceover; nested p21-pick-win.mp3 is skipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/validate-component-text.txt",
+   "lines": "8",
+   "quote": "Child-facing text belongs in the lesson JSON, not in a component.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "190",
+   "quote": "The checker proved only the fields it knew.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/NARRATED-TEXT-SEMANTIC-COVERAGE-PROPOSAL.md",
+   "lines": "11",
+   "quote": "A separate, explicitly top-level inventory finds **234 non-hidden authored text-bearing voiceover/purpose_voiceover records**, including **54 narrated text nodes**. None receives a narration verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "264",
+   "quote": "| Feedback linter skips the delivered feedback | It reports `n=144` dose explanations while missing all 960 option feedback records and all 432 identical `_good`/`_bad` pairs. | `reading-2vg` |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "361-362",
+   "quote": "**a third `inline_choice` would inherit zero content-quality coverage.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/FINDINGS.md",
+   "lines": "91",
+   "quote": "Content-eval reads MCQs, not models or we-dos (items 5, 6, 11, 14, 15, 16–18).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "19",
+   "quote": "The old collector only evaluated MCQs. The collector now includes authored narrated scripts, exact source pointers, correct grade, conditional-exposure limits and explicit missing policies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "5",
+   "quote": "D9 (science integrity): no science claim in L4 — out of scope, confirmed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "24",
+   "quote": "its keys across all passage nodes are exactly: Mermaid Lagoon, breathless, daring, doubt, gravity, hovered, imagine, mischief, nightgown, nursery, seized, untamed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "93",
+   "quote": "the one-line scope confirmation above is a manual read of the full lesson text for any science claim, not a run of scripts/misconception_scan.py.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "128-130",
+   "quote": "Every single complaint came from that excluded set — reply clips, routine words, sounded-out parts, which hang off fields like good_audio_path and stuck_offer_audio_path.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

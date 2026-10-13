@@ -1,0 +1,216 @@
+{
+ "id": "feedback-for-each-wrong-option",
+ "title": "Feedback for each wrong option",
+ "statement": "Give each wrong option its own feedback that names the error and likely misconception it stands for and says what to look at next.",
+ "example": "In one course draft, none of the 1,234 option-specific feedback routes fell back to a generic message keyed to the option's position.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of one grade 5 course draft was closed with all 1,234 option-specific feedback routes having zero generic option-position IDs or truncated claim and recheck templates. The reading project's evaluator gap list asks for misconception-coded distractors and misconception-named feedback, and its course checklist requires every scored item to carry correct and incorrect feedback, with each wrong option mapped to a named misconception. One message for every wrong answer, generic encouragement or feedback keyed to an option's position is a defect.",
+ "against": "The same rubric requires feedback to state the correct answer or clearly guide the student to it (`icloud-work/inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json`, L77), which conflicts with feedback that sends the student back. The record shows the gate's result, not a case where feedback keyed to a position reached a student.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "64-65",
+   "quote": "all 1,234 option-specific feedback routes have zero generic option-position IDs or truncated claim/recheck templates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "125",
+   "quote": "N4: misconception-coded distractors and misconception-named feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "30",
+   "quote": "every scored item has a `FEEDBACK` outcome + CORRECT/INCORRECT `qti-modal-feedback` (distractors→named misconception).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "65",
+   "quote": "The feedback must address the particular distractor chosen",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "69",
+   "quote": "The feedback must categorize or name the type of thinking error",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "81",
+   "quote": "The tip should be specific and actionable, not vague encouragement",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "73",
+   "quote": "The feedback must cite specific passage content that contradicts the wrong answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "77",
+   "quote": "The feedback must either explicitly state the correct answer or clearly guide the student to it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "141",
+   "quote": "\"if_context_is_inside_period\": \"Move one step earlier and identify the inherited system that shaped the chosen development.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "142",
+   "quote": "Replace then with a mechanism such as supplied labor, structured diplomacy, or constrained settlement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "91",
+   "quote": "Ask what the earlier condition made possible, costly, contested, or more likely.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "15",
+   "quote": "a wrong answer returns only “Good try, let’s look again,” with no explanation and no correct answer shown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/package/G5_EXECUTED_ACTIONS_CHECKLIST.md",
+   "lines": "43",
+   "quote": "all 772 items resolve to the generic engine outcome",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "58",
+   "quote": "Corrective feedback must be short, misconception-naming, evidence-anchored, and delivered with the text visible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "38",
+   "quote": "zero option-position fallback IDs and zero truncated claim/recheck templates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "71-73",
+   "quote": "the detector and gates now cover every supported selected-response format. All 1,234 option-specific routes have zero option-position fallback IDs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "73-74",
+   "quote": "the seven `unsupported-detail` family routes were replaced with diagnosed, evidence-bound distractor semantics.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "75",
+   "quote": "Required every misconception ID to be position-independent and diagnosis-specific and every correction to name the actual error rather than restate a generic wrong-choice template.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "121",
+   "quote": "\"option_position_unsupported_detail\": 116,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "160",
+   "quote": "Across the full course, the current independent close must reproduce 1,781 total feedback routes,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "162-163",
+   "quote": "Both scopes must retain zero option-position fallback IDs and zero truncated claim/recheck templates.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "39",
+   "quote": "Generic `wrong-choice`, `wrong-part`, `part-a`, `part-b`, and `wrong-span` fallbacks are absent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "156-158",
+   "quote": "**E7. Wrong-answer feedback is right.** Every miss reply names the actual misconception of the tapped option — a wrong red reply fails (doc 1 item 6).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "330",
+   "quote": "Our data's feedback is one `feedback_correct` and one `feedback_incorrect` per check, not per option — author per-option lines in",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/film/script.ts",
+   "lines": "70",
+   "quote": "nudge: 'Othello is the general. He gave the job. Look one rung below him.'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "64",
+   "quote": "every option on every MCQ, including the 5 dialogue-branch follow-ups, has feedback that names the specific misread/misconception",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

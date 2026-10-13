@@ -1,0 +1,341 @@
+{
+ "id": "break-results-down-before-fixing",
+ "title": "Break results down before fixing",
+ "statement": "Before choosing a fix or calling a change a gain, break results down by item type, unit and failure kind, and apply changes only where they help: averages hide losses.",
+ "example": "One gate abandoned a change if any key item type fell 5 points or more, however the overall score moved.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A synthesis across five corpora of the AP work makes dimension-aware debugging a first-tier rule: every failed result maps to a failed dimension and item type before any fix is chosen, because jumping from an aggregate score to retraining had wasted days and each item type failed for its own reasons (`MASTER_SYNTHESIS.md`, lines 264, 280 and 281). One step-function gate compared each critical item type with its baseline and marked a change dead if any fell by 5 points or more, even when the overall score held (the step-function gate's `source_report.md`, lines 51 and 58). Size each fix by its criterion's share of your own failures, and stop on a collapse in any one item type.",
+ "against": "The short-answer drop may be noise: the project's own bar for a real change on that item type is \"- SAQ/MCQ_SET: need **>4pp**\" (icloud-work/aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md, 143). The unit finding is one measurement whose raw report is outside this evidence, and the targeted fix has no recorded result; the same file says that measurement alone \"could be SAQ-specific\" (`icloud-work/auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md`, line 12). The note on failure overlap sits in a file marked low confidence and conflicted (`icloud-work/auto-memory-backup/project_warm_start_hurts.md`, lines 7 and 9). The same ruling kept part of the literature view, that the model had the capacity, and found the training data kept it from being used (`icloud-work/auto-memory-backup/MEMORY_GOVERNANCE.md`, line 98). That the literature fix touches only citation is itself an assumption, and the cut to +0-5 points is a projection whose test is not recorded. The lab's pipeline guide takes the opposite general line, that the raw model is one component and the pipeline the multiplier, and the notes give no sample sizes. The overall effect was within noise ('Aggregate +0.67pp / cell-routed +1.33pp APUSH (within noise) but per-cell direction is reusable.', `icloud-work/aptraining/.agent/memory/MEMORY.md`, line 198), and the two entries disagree on whether short-answer items gained, with top-3 facts, or lost, with a richer context. Supplying the real source documents themselves helped the document-based type (`icloud-work/aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md`, line 88), so the rule is about added background facts, not the source texts.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "264",
+   "quote": "Every failed result should map to a failed hard dimension and item type before any fix is chosen.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "280",
+   "quote": "- ML learnings says aggregate-to-training jumps wasted days.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "281",
+   "quote": "- DBQ 0%, MCQ_SET weakness, and SAQ failures have different mechanisms.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T155705Z_data_v87_step_function_gate.py/source_report.md",
+   "lines": "51",
+   "quote": "crit_collapse = any(d <= -5.0 for d in crit.values())",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T155705Z_data_v87_step_function_gate.py/source_report.md",
+   "lines": "58",
+   "quote": "if delta <= -3.0 or crit_collapse:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "9",
+   "quote": "Pipeline isn't strictly better than v80b on all cells.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "14",
+   "quote": "| LEQ | **100.0%** | — | 90.4% | v80b (pipeline HURTS LEQ -9.6pp) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "16",
+   "quote": "| MCQ_SET | 4.0% | — | **62.6%** | pipeline |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "17",
+   "quote": "| SAQ | **86.0%** | — | 83.7% | v80b (pipeline HURTS SAQ -2.3pp) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/EXTERNAL_AGENT_BRIEF.md",
+   "lines": "192",
+   "quote": "**Failure-dimension breakdown is the most useful diagnostic** — not aggregate pass rate. In 8 of 10 cells, `factual_accuracy = 0.0` is the dominant failure mode.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "143",
+   "quote": "- SAQ/MCQ_SET: need **>4pp**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md",
+   "lines": "23",
+   "quote": "| Quill Q1 (13:30Z): APUSH/SAQ vs APWH/SAQ +23pp factual_accuracy gap, clustered in APUSH unit-6 + unit-8 named entities | Failures aren't broad-distribution; they're surgical: specific units where v18 hallucinated |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v30b_v18_broader_regressed.md",
+   "lines": "51",
+   "quote": "2. **Quill Q1 (13:30Z):** APUSH/SAQ vs APWH/SAQ +23pp factual_accuracy gap clusters in APUSH unit-6 + unit-8 — model hallucinates named entities (Immigration Act 1882, SALT I, HRC Fund, détente dates)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md",
+   "lines": "59",
+   "quote": "- **Surgical interventions in identified hallucination-cluster units** (Quill Q1: APUSH unit-6 Gilded Age, unit-8 Cold War). Curriculum-API rows in these units specifically. Not broad-distribution retrain.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20b_lr2e4_result.md",
+   "lines": "34",
+   "quote": "**Pattern: Higher LR lifts the floor, cracks the ceiling.** v20b is more aggressive — it commits harder to regions of input space that the model could already handle marginally (DBQ, hard mcq_sets) but slightly destabilises regions it had nailed (apwh/mcq, the cells where v20a was at 90%+).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_warm_start_hurts.md",
+   "lines": "18",
+   "quote": "- v9 had ZERO failure-overlap with v8 (shuffled the failure surface, didn't shrink it)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "20",
+   "quote": "| **factual_accuracy** | **28** | **56%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "22",
+   "quote": "| passage_reference | 3 | 6% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "27",
+   "quote": "| **factual_accuracy** | **26** | **62%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "29",
+   "quote": "| passage_reference | 3 | 7% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "72",
+   "quote": "Self-RAG addresses attribution (6-7% of failures), not memorization (56-62%). Mostly addresses the wrong slice.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/MEMORY_GOVERNANCE.md",
+   "lines": "98",
+   "quote": "T0 measurement on our data dominates T2 literature inference for OUR scope.",
+   "verified": "script"
+  },
+  {
+   "source": "openclaw-incept-memory",
+   "path": "2026-05-21.md",
+   "lines": "16",
+   "quote": "- LEQ: Pipeline 90.4% vs Model standalone 100% (-9.6pp)",
+   "verified": "script"
+  },
+  {
+   "source": "openclaw-incept-memory",
+   "path": "2026-05-21.md",
+   "lines": "17",
+   "quote": "- SAQ: Pipeline 83.7% vs Model standalone 86% (-2.3pp)",
+   "verified": "script"
+  },
+  {
+   "source": "openclaw-incept-memory",
+   "path": "2026-05-21.md",
+   "lines": "23",
+   "quote": "MCQ_SET and DBQ must remain in the pipeline because they rely on stimulus/RAG injection (+58.6pp and +20.9pp respectively).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/BEAD_EVIDENCE_INDEX.md",
+   "lines": "66",
+   "quote": "- Finding: 19/25 = 76%. DBQ 4/5 (fallback works), but MCQ/MCQ_SET regress. **Use per-KC only, never globally.**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "68",
+   "quote": "**Architectural rule:** raw model is one component; pipeline is the multiplier.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "198",
+   "quote": "RAG-at-decode + curriculum API top-3 helped MCQ/SAQ/LEQ but HURT DBQ + MCQ_SET (which already have stimulus).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "198",
+   "quote": "**Rule: RAG only when prompt doesn't carry its own source content.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "122",
+   "quote": "Full 150-item: MCQ +6.7pp REAL LIFT, SAQ -8.9pp REAL REGRESS. Aggregate washes out.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "388",
+   "quote": "PATH G DBQ hybrid D13+curriculum = counterproductive (context overload); D13-only at 17%, D13-targeted retrieval at 66.7%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "76",
+   "quote": "Today 51% of attempts are an opaque `generated_item:null` — **instrument *why* each one died** (topic-reject vs format-fail vs truncation) before tuning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "76",
+   "quote": "**Bucket failures by type** (gen-fail vs transport-5xx vs schema-fail), not one boolean",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "76",
+   "quote": "aptraining burned weeks \"stuck at 28%\" that were **4 harness bugs**",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "97",
+   "quote": "\"Wrong-option feedback does not name the answer: question 2, option A: its feedback names the right answer; question 2, option C: its feedback names the right answer\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "161",
+   "quote": "\"judge\": [],",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "162",
+   "quote": "\"tries\": 2,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "163",
+   "quote": "\"judgeCalls\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "187, 794, 1401",
+   "quote": "\"value\": 0.02,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "93",
+   "quote": "// every try's decide records, as decide made them, so the block can be re-judged through a second judge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "59-60",
+   "quote": "Cells are never pooled after results are visible. A course average is descriptive only; it cannot rescue a failed family.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "100-101",
+   "quote": "an average that looks healthy hides the individual sentence a child is stuck on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "164",
+   "quote": "Blended: 83% (heavily weighted by easier item types)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "56",
+   "quote": "Its disclosed residuals — a −0.4 to −1.0 RIT negative bias in the RIT 175–190 bands and 241/650 never-used items — motivated the bank expansions that the authoritative v4 run then validated.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

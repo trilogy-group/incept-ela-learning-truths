@@ -1,0 +1,73 @@
+{
+ "id": "fix-the-examples-before-retraining",
+ "title": "Fix the examples before retraining",
+ "statement": "When a writer falls short, fix its examples before retraining it: format examples in its prompt, and training examples picked on the quality you want, not a proxy score.",
+ "example": "In an earlier Advanced Placement question-writing effort, 68 preference pairs picked on the quality wanted gained 9.7 points where two retraining runs both regressed.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's plan for improving its question writer carries over two results from an earlier AP question-writing effort (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md`). Few-shot examples fixed the answer balance of that effort's multi-question sets with no retraining, +23 points, so the plan tries examples of each format in the prompt before fine-tuning. The same format's wall was mislabelled preference data, pairs picked on a proxy judge's score and never checked on the educational accuracy wanted, and fixing the labels beat two warm-start retrains, which both regressed; the effort's summary records 68 pairs rebuilt on that axis lifting the format from 0.194 to 0.292, +9.7 points with no regression (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`). The plan therefore builds its own training data on the qualities that bind it, items that need the text and transfer to new texts, as confirmed by a judge from a different model family, not on the proxy score (the first file).",
+ "against": "Both results are second-hand: the AP effort's own summary does not repeat the 23-point figure, and after relabelling the format still failed its floor at 0.292 (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "88",
+   "quote": "Mirrors aptraining [F5]: **few-shot exemplars fixed MCQ_SET answer-balance with NO retrain (+23pp)** — try in-context format exemplars before reaching for SFT.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "94",
+   "quote": "aptraining's MCQ_SET wall was a **mislabeled-preference-data** problem (pairs picked on the IB axis, never verified on the true `educational_accuracy` axis) [M3/M8] — fixing the *data labels* beat 2 SFT warm-starts (both regressed, [M6]).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "94",
+   "quote": "For us the binding axes are **anti-leak / cold-transfer**; build the preference/SFT data on *those* axes, verified by the different-family judge, not on the IB score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "37-38",
+   "quote": "the **v97 clean-eduacc-axis DPO** (68 pairs, mcq_set 0.194→0.292, **+9.7pp**, no regression)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "51",
+   "quote": "**MCQ + MCQ_SET still FAIL the raw floor at 0.292** (+0.41 each to go)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/GENERATOR_DIRECTIVE.md",
+   "lines": "44",
+   "quote": "a weak checkpoint comes from a **leaky corpus**, not bad hyperparameters.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

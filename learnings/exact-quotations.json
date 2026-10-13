@@ -1,0 +1,952 @@
+{
+ "id": "exact-quotations",
+ "title": "Exact quotations",
+ "statement": "Quote exactly, and check every quotation against the text in code.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every block also gets a house check that every quotation is the text's exact words; a near miss is matched with a 3D\nversion's own matcher and given the text's wording for the correction (`g9/transformer/src/mechanics/util.js`,\n`houseChecks`; `g9/transformer/src/glue/threejs.js`). The film kit's plates quote the text word for word\n(`othello-unit-video/kit/docs/STANDARDS.md`).",
+ "against": "A later run found: In the reading engine a contract requires a modelled inference in a reveal beat to be wrapped whole in curly quotes; the clash with exact quotation was recorded as a contradiction awaiting a ruling, and the lessons kept the quote marks (`grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`). A later run found counter-evidence (`grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`). A later run found: in a 3D version's paragraph task the lesson engine counts as evidence an exact quotation of two words or more, or one of three words or more that is only nearly the text's (`g9/transformer/src/glue/threejs-archivist.js`). A later run found counter-evidence (`g9/transformer/test/quotes.test.mjs`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "kit/docs/STANDARDS.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "63",
+   "quote": "primary source passage attributed to the historical author in the plan",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "102",
+   "quote": "Stimulus doesn't sound like a period-authentic primary source",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "The training data (raft_combined) itself has fabricated attributions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "96",
+   "quote": "a 30-char substring \"verbatim\" check (defeated by paraphrase)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "63",
+   "quote": "- Output: primary source passage attributed to the historical author in the plan",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "169",
+   "quote": "3. **Attribution is the trap.** Every MCQ_SET needs a historical author and date. The model learned to generate plausible-sounding attributions. Plausible ≠ accurate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "200",
+   "quote": "Rather than generating claims freely and optionally citing afterward, the \"cite first\" constraint forces the model to locate supporting evidence before committing to a claim. This exploits the autoregressive structure: once the model has emitted a citation token pointing to a specific fact, the conditional probability of hallucinating a different fact drops sharply.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "204",
+   "quote": "Results: Citation grounding improved by **13.83%** on production benchmarks versus standard RAG prompting. However, only ~50% of sentences achieved perfect citation coverage without fine-tuning, suggesting a ceiling that requires SFT to overcome fully.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "107",
+   "quote": "1. Forces explicit selection commitment (anchor_fact in plan JSON = traceable)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "108",
+   "quote": "2. The verbatim copy creates a ground truth to compare against",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "34-35",
+   "quote": "Before writing any specific date, name, treaty, or event in scoring notes, first write:\n[FACT: <copy the exact phrase from VERIFIED FACTS above that supports this claim>]",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "132-134",
+   "quote": "- Claims that a specific passage, quote, or description is \"not found in\" or\n    \"does not match\" a named primary source. You do not have reliable verbatim\n    recall of historical texts and cannot verify what a source does or does not say.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md",
+   "lines": "116",
+   "quote": "The model appears to have **appended a sentence designed to align the source content with the lesson topic**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "51",
+   "quote": "**Zero rows** in either model produced verifiable, unmodified primary-source stimuli.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "38",
+   "quote": "29 of 30 v40h rows are IB false-positives.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "61",
+   "quote": "Paraphrase presented as direct quote.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "76",
+   "quote": "Under a more lenient reading where \"directionally accurate paraphrase = fine,\" the rate would be lower",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "44",
+   "quote": "- 50/50 have exactly 7 documents (100% structural compliance)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "47",
+   "quote": "- **Document TEXT is unverified.** The teacher generation pipeline (`raft_combined.jsonl`) is itself LLM-produced; the quoted content from real authors is **plausible-but-likely-fabricated**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "20",
+   "quote": "| **factual_accuracy** | **28** | **56%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_dbq_floor_is_data_veracity.md",
+   "lines": "27",
+   "quote": "| **factual_accuracy** | **26** | **62%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_no_hallucination_in_training_data.md",
+   "lines": "25",
+   "quote": "1. **Document text** must be verbatim or near-verbatim quotation from a citable primary source.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "96",
+   "quote": "`word_count`/Lexile and a 30-char substring \"verbatim\" check (defeated by paraphrase).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "97-98",
+   "quote": "independently recompute Lexile, word_count, hot-text/EBSR spans (NFKC exact-match against the tokenized passage)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "14",
+   "quote": "every quoted span in think-aloud states / write_up / extra-thinking / frames must be a verbatim story slice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "57",
+   "quote": "checkStagedModel requires `beats[2].reveal[1]` wrapped whole in curly quotes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "57",
+   "quote": "is a CONTRADICTION, not a fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95-99",
+   "quote": "they trusted generator-asserted `word_count`/Lexile and a 30-char substring \"verbatim\" check (defeated by paraphrase). Our contract has the same shape. Action: independently recompute Lexile, word_count, hot-text/EBSR spans (NFKC exact-match against the tokenized passage), answer-checkability at intake; any self-reported field used as a gate is UNVERIFIED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "393",
+   "quote": "All quotes need checking against the chosen edition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "39",
+   "quote": "Pin the edition to Folger.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "330-332",
+   "quote": "General citation-fabrication research found roughly two-thirds of ChatGPT-generated bibliographic citations invented or wrong (Nature Sci Rep, 2023, ~400-paper audit)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "335-336",
+   "quote": "**This is the single highest-confidence risk in this file** — a general, high-base-rate LLM property, not a possibility.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "358",
+   "quote": "Add a **mandatory quote/claim verification step** — anything voiced as a quotation or historical fact from the text is checked against the actual Othello text every time, not spot-checked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "32",
+   "quote": "230/230 extracted quotes verified verbatim at extraction time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "36",
+   "quote": "Zero fabricated quotes survived the pipeline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "25-26",
+   "quote": "every distinct source attribution was **grep-verified against the actual transcript on disk**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "29",
+   "quote": "**~49 distinct sources checked; 49 verified.** Zero fabrications.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "34-35",
+   "quote": "The four EduQwen checks establish presence in the scoped extraction only, not full-paper coverage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "39",
+   "quote": "**Boundary spot-checks** (does each extraction reach the document's true end?):",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_a_b_kc_pack_substitution.md",
+   "lines": "11",
+   "quote": "Even when grounded in a real OpenStax `_GROUND_TRUTH_SOURCE_` excerpt in the prompt, output documents are stylistic-real not literal-real.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "26",
+   "quote": "- Success rate at \"use docs literally\" is ~20% on v43-soup (1 of 5 graded)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "133-134",
+   "quote": "You do not have reliable verbatim\n    recall of historical texts and cannot verify what a source does or does not say.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "38",
+   "quote": "29 of 30 v40h rows are IB false-positives. The IB grader passes essentially every MCQ_SET row regardless of stimulus authenticity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-05T1225Z_v41_d13_stimulus_provenance_audit.md",
+   "lines": "21",
+   "quote": "**30/30 v41-d13 MCQ_SET stimuli (100% of BAML≥0.85 filtered set) classify FABRICATION_OR_NOVEL_SOURCE** against Atlas's 569-doc primary-source corpus pool.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md",
+   "lines": "83",
+   "quote": "While Ricci's journals are real, this stimulus is a paraphrase/reconstruction rather than a direct quotation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "130",
+   "quote": "Fabricated poem falsely attributed to Wilfred Owen",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "54-55",
+   "quote": "answer choices must be verbatim spans from the stimulus. Ellipses are allowed only for shortening; paraphrased or fabricated options fail `specification_compliance`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "246",
+   "quote": "| Dim 14: EBSR Part B verbatim | Part B options are verbatim passage sentences (EBSR only) | Hard gate |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0115-reading-science-folder-2026-07-10.qmd",
+   "lines": "58-59",
+   "quote": "Full texts attached by file copy, never re-emitted through a model",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/v18_rebuild_scope.md",
+   "lines": "54-55",
+   "quote": "4. **Atlas verify** (free) — every source URL must 200; every passage must substring-match the verified URL's body.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "67",
+   "quote": "the model fabricated a second occurrence it then quoted back verbatim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "58",
+   "quote": "Quoted spans verbatim in the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "87",
+   "quote": "Nudge quotes words not in the story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R3.md",
+   "lines": "10",
+   "quote": "193 paragraphs, 1 deviation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-matrix/slices/07-SCORING-FEEDBACK-XP.csv",
+   "lines": "20",
+   "quote": "ScrItem's quote gate requires 95% token-window similarity against candidate lines",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "163-164",
+   "quote": "Treat lifecycle `quote-integrity` findings as blocking. A prompt that asks for a quotation requires one unique contiguous passage match after only Unicode, whitespace, and punctuation normalization.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95-96",
+   "quote": "they trusted generator-asserted `word_count`/Lexile and a 30-char substring \"verbatim\" check (defeated by paraphrase).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "121",
+   "quote": "116 of 116 confirmed as real substrings, zero invented.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "32",
+   "quote": "230/230 extracted quotes verified verbatim at extraction time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0174-august-consolidation-and-scout-lesson-feedback.qmd",
+   "lines": "70",
+   "quote": "exact-quote grading must fail closed (a botched quote was accepted)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "330-331",
+   "quote": "roughly two-thirds of ChatGPT-generated bibliographic citations invented or wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0067-g5-generator-pilot-intake-and-team-async-2026-06-23.qmd",
+   "lines": "275",
+   "quote": "The adapter only marks Part B as evidence if the option text resolves against the stimulus text.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "271 (textutil text)",
+   "quote": "Blank A: must match one of the 3 evidence quotes.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "333 (textutil text)",
+   "quote": "All re-checked against the story text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "32-36",
+   "quote": "230/230 extracted quotes verified verbatim at extraction time",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "61",
+   "quote": "every visible passage is the fixed source text word for word",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "58",
+   "quote": "check the literal characters around the suspect position with `python3 -c` and `repr()` if needed (e.g. confirming a space is `U+0020`, not `U+00A0` NBSP — that one bit us in a real review).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "105",
+   "quote": "- `dynamic_source_gate_mcqset_v2`: MCQ_SET regressed to 0.0 because generated questions referenced phrases not present in the enforced stimulus (`system of checks and balances`, `supreme law of the land`).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "98",
+   "quote": "- MCQ_SET validator now rejects quoted phrases in child questions/explanations when those phrases are absent from the enforced stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "53",
+   "quote": "Is this quotation the text's exact words? Its quotedLines: punctuation, case and apostrophes aside, never across a",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "54",
+   "quote": "stage direction or two speeches.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "75",
+   "quote": "the quote is not an exact quotation from the text (within one speech)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "52",
+   "quote": "Find a quotation in the text. It may span consecutive lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/f23aebacf033daa2.json",
+   "lines": "13",
+   "quote": "How do the details of a wrinkled lip and sneer of cold command suggest a ruler who also possessed great passion?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/samples/ozymandias.md",
+   "lines": "6",
+   "quote": "And wrinkled lip, and sneer of cold command,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/f23aebacf033daa2.json",
+   "lines": "28",
+   "quote": "Each push-back quotes the text: a push-back quotes no words from the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/aeb043df247f1b45.json",
+   "lines": "17",
+   "quote": "How can speech matter if the world will little note, nor long remember what we say here?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "8",
+   "quote": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "51",
+   "quote": "24 words, that quotes a few exact words from the text in double quotes",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "63",
+   "quote": "A quotation cut with an ellipsis whose every part is the text's own words is a fair elision, not a near miss.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "44",
+   "quote": "each part of an elided quotation is checked on its own",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "57-58",
+   "quote": "The item's own wording, which a line of its feedback may quote: its options, stem, claim and the like (the pool rule … These are checked against the text alone.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "48",
+   "quote": "an item's own string is checked against the text, and cannot pass its own quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "42",
+   "quote": "a source the mechanic declares (a film's narration)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "66",
+   "quote": "a span with an editorial [bracket] left alone",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "43",
+   "quote": "two words are too few to call a quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "33",
+   "quote": "The units a quotation covers, if it is long enough to count: three words, or a whole short line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "39",
+   "quote": "The units a quotation covers, if it is long enough to count: three words, or a whole short line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "65",
+   "quote": "Quotations that are neither the text's exact words nor the item's own: a span of three words or more in quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "226",
+   "quote": "evidence: exact.length > 0 || near.length > 0",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "207",
+   "quote": "the text, exactly or nearly: the page puts its own wording note on a near one), the rest Jev; one sentence's job is a",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "45",
+   "quote": "The quoted spans in a string, two words or more (its quotesIn: double, curly or single quotes).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "63",
+   "quote": "Quotations of three or more words that are nearly, not exactly, the text's (its nearQuotes): [{ wrote, line }].",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "54",
+   "quote": "stage direction or two speeches. Without its tools, src/text.js findQuote, so a missing mirror never passes a quote",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "52",
+   "quote": "Find a quotation in the text. It may span consecutive lines. Returns the unit indices it covers, or null.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "56",
+   "quote": "const ls = spoken(text);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "28",
+   "quote": "quoting one of its options passes",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "9-10",
+   "quote": "so quote a few of the words instead. Anything in quotation marks is the text's own words, copied exactly, in double quotes: never put a paraphrase in quotes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "59",
+   "quote": "without the 3D build's mirror the quotation check still runs, on src/text.js findQuote, and never passes for lack of it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "182",
+   "quote": "its word is not in its line as written",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "211",
+   "quote": "the text is kept by its hash, so the judge endpoint can settle quotations against it in code",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "136",
+   "quote": "the build marks a phrase where the question has it, word for word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "25",
+   "quote": "// the film's own words may be quoted (houseChecks: a quotation is the text's, the item's own, or one of these)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "16",
+   "quote": "The Shakespeare quotations and Act/Scene labels match",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "28",
+   "quote": "an invented quotation holds a quick check; an exact one passes; quoting one of its options passes",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "9-10",
+   "quote": "Anything in quotation marks is the text's own words, copied exactly, in double quotes: never put a paraphrase in quotes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A quotation made up outright passes, because nearQuotes gives nothing for a quote nowhere near the scene.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A quote across two speeches never matches, a limit of the 3D build's matcher.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "57",
+   "quote": "The item's own wording, which a line of its feedback may quote: its options, stem, claim and the like (the pool rule",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "15-16",
+   "quote": "the check cannot tell a faithful paraphrase from an invented claim — both fail the string match.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "18-19",
+   "quote": "This is the limit, not a bug to fix: loosening the match to fuzzy similarity would let through exactly the defect the class exists for.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "21-22",
+   "quote": "a two-word difference that a similarity threshold generous enough to admit real paraphrase would also admit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-claim-fidelity.mjs",
+   "lines": "29-30",
+   "quote": "The content mixes curly and straight quotes, en/em dashes and unicode ellipses, so a naive === comparison fails on correct content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-key-integrity.mjs",
+   "lines": "30-31",
+   "quote": "The content uses curly apostrophes and smart quotes. Every comparison in this file runs on normalised text; naive comparison silently fails on them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "51",
+   "quote": "Normalisation must not turn a correct quote into a finding.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "40",
+   "quote": "The downstream Course JSON quote-integrity gate exposed and rejected one exact-quote collision in `G5-U7L3-I05`",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "40",
+   "quote": "`U7L3-S23` (`then stops.`) was duplicated inside `U7L3-S30`.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "40",
+   "quote": "The source was repaired without changing the keyed span",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "40",
+   "quote": "the bound quote now occurs exactly once",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "151-152",
+   "quote": "A think-aloud presented a quotation that was not the exact printed sentence. Capitalization and sentence boundaries made the paraphrase look verbatim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/03_AUDIT_FINDINGS_AND_OPEN_RISKS.md",
+   "lines": "19",
+   "quote": "Earlier validation checked the shape of a SHA-256 and a non-empty quote but did not prove that the reference resolved to exactly one frozen evidence item or that the quote existed in those bytes. A reproduction using an invented path/hash/quote produced no validation error.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "64",
+   "quote": "All quotes are word for word from the Folger Shakespeare text (CC BY-NC 3.0). Please do not paraphrase them on screen.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "142",
+   "quote": "Every quote in this workbook was checked word for word against the Folger text of 1.1–1.3.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "142",
+   "quote": "Every quote in this workbook was checked word for word against the Folger text of 1.1–1.3.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/IDEA-SYNTHESIS.md",
+   "lines": "26-27",
+   "quote": "2. **Invented quotes.** Near-certain without a check: every quote an AI voice speaks must be verified against the edition's text before it is voiced.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "410",
+   "quote": "Shakespeare’s quotation text is read-only, accurately attributed, and complete.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "37-38",
+   "quote": "matches passage p11 exactly, and is validated by `kind: \"quote\"` (forces literal match), not free text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "66-67",
+   "quote": "quotes verbatim from the passage — paraphrase fails validate-passage-refs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "39",
+   "quote": "`quote_tap` fails closed — only an exact, unmangled quote is accepted",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

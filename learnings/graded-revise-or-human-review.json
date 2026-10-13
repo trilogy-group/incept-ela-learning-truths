@@ -1,0 +1,46 @@
+{
+ "id": "graded-revise-or-human-review",
+ "title": "Graded, revise or human review",
+ "statement": "Let a written-answer marker return graded, revise or human review, sending ambiguity, conflicting evidence, rubric gaps and low confidence to a person instead of forcing a verdict.",
+ "example": "One Grade 5 grader sends an answer to a person whenever the provider's confidence falls below 0.85.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation",
+  "review"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A Grade 5 course's grader for written answers grounds its evaluation in supplied passage evidence and a versioned rubric, runs deterministic grounding guards before the model call, records the rubric and prompt versions, and returns one of three states: graded, revise or human review. It requires a person for ambiguity, conflicting evidence, a rubric that does not cover the answer, or provider confidence below 0.85. An AP teaching contract likewise records a low-confidence written answer without mastery or points and routes it to a person.",
+ "against": "The grader's handover says its presence does not certify all 550 items or prove production scale or delivery (`grade3-reading/_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/05-g5-xp-scoring-progression-and-qti-runtime/HANDOVER.md`, line 52). Another build on record goes further and lets a model's confident reading of a student's words choose a hint or move on, but never give a grade (keep-the-words-a-hint-not-a-grade).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/05-g5-xp-scoring-progression-and-qti-runtime/HANDOVER.md",
+   "lines": "47-50",
+   "quote": "- grounds evaluation in supplied passage evidence and a versioned rubric; - requires human review for ambiguity, conflicting evidence, rubric insufficiency, or provider confidence below 0.85; - uses deterministic grounding guards before the model call; - records rubric/prompt versions and returns graded/revise/human-review states.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "70-71",
+   "quote": "A low-confidence constructed response is recorded without mastery or XP and routed to human review.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,1149 @@
+{
+ "id": "nothing-gives-the-answer-first",
+ "title": "Nothing gives the answer first",
+ "statement": "Nothing a student sees or hears may give the answer before the first attempt, including the picture behind a paused question.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The film's method: nothing a student sees or hears may give an answer before the first attempt; checks sit after the\nscene they ask about, and the film is blurred while a question is on screen\n(`othello-unit-video/research/METHODS.md`). The blur came after two checks paused over plates that showed their answer\n(`g9/film/v06/README.md`), and the kit's rule counts the question's own wording too\n(`othello-unit-video/.claude/skills/uvk-checks-make/SKILL.md`). A meta-analysis found learning impeded when a video is\nnot paused for interaction (Ploetzner 2024, https://doi.org/10.1080/10494820.2022.2123002). In the lesson engine,\nnothing a student needs to work out is on screen before they answer; a word card that showed the meaning before the\nquestion, and a delivery choice that showed what the speaker wants before the pick, were both fixed\n(`g9/transformer/src/glue/animated.js`; `g9/transformer/v02/QA.md`, \"Found and fixed\").",
+ "against": "one build's exported\nlesson still carries the key in its data (`g9/transformer/src/glue/animated.js`), and by the kit's own rule a check asks\nonly about what the film has just said, so it tests what was just heard. A later run found counter-evidence (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). A later run found counter-evidence (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/video/u1-intro-audit.md`). The validator fails only an order identical to the key (`grade3-reading/course-renderer/scripts/validate-contracts.mjs`, line 823), so an order one swap from the answer still passes it.",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "g9",
+   "path": "film/v06/README.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-checks-make/SKILL.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "150",
+   "quote": "`answer_leakage` - Shows solutions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "28",
+   "quote": "Question stems provide so much context that students can identify the answer without demonstrating historical thinking skills.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "19",
+   "quote": "| Fill-in | 6.7% | Tests recall, not understanding |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "22",
+   "quote": "- A countable 3×4 array is APPROPRIATE scaffolding",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "24",
+   "quote": "- A \"3 × 4 = ?\" label on the array is also fine – the student still needs to compute",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "25",
+   "quote": "- Only \"3 × 4 = 12\" directly stated would be a problem (answer is literally given)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "47",
+   "quote": "An in-lesson knowledge check answerable from explicitly-taught knowledge is legitimate (that's what checking taught knowledge means); the same overlap in a comprehension/transfer item is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "81",
+   "quote": "Cueing enemies: one item's stem or options give away the answer to another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "48-49",
+   "quote": "the `L.3.4` template pre-defined the affix in the stem → rewritten to be passage-dependent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "47",
+   "quote": "MAP-likeness review (separate from InceptBench, which graded answer-leaking items 1.0)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "50-52",
+   "quote": "A related census run the same round, not yet a hard validator: **STEM-ECHO** (a reply/feedback shares a key word with the question's own stem), **VOCAB-ROOT-IN-STEM** (a stem contains the root of the taught word it is testing)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "49-51",
+   "quote": "a `view.js` that is tested at every step to carry none of `answer_index`, `correct_indices`, `rubric`, `criteria`, `feedback`, `grounding`, or `quote_from`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "71",
+   "quote": "Define a student-only source projection containing `student_material` plus approved citation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "126",
+   "quote": "mutation tests for student-answer leakage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "128",
+   "quote": "rows **M5, M9, M10, M14, M20** — praise/",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "129-130",
+   "quote": "nudge/instruction lines on L4 p22, L5 p15b/p16, L6 p15b, L7 p16 were handing over the Step 3-4 answer outright",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd",
+   "lines": "57",
+   "quote": "our L4 silent branch was at **1.00** overlap (verbatim echo)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0224-g3-dialogue-branches-pace-gate-roll-forward-2026-09-22-23.qmd",
+   "lines": "58-59",
+   "quote": "Both of ours were rewritten to model a *line from the story* and ask its *meaning* instead of stating the answer outright, landing both at **0**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "57",
+   "quote": "prints its own answer key in-diagram",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "57",
+   "quote": "lets a child pass every diagram check without reading the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "68",
+   "quote": "The \"Dashed Line\" beat pre-teaches its own check on the same screen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-ela-chat-2026-09-24/REGISTER.md",
+   "lines": "10",
+   "quote": "don't take this as a general licence to put the taught word in the stem",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-ela-chat-2026-09-24/REGISTER.md",
+   "lines": "10",
+   "quote": "Class to encode: \"taught word demanded ⇒ not printed in the demanding node\" (L1 exempt by ruling)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "19",
+   "quote": "you-do question gives away the magic word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-ela-chat-2026-09-24/REGISTER.md",
+   "lines": "14",
+   "quote": "I judged the item purely on retrieval strength and missed that at the very start of a course the trade-off runs the other way.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "15",
+   "quote": "praise / nudges / instructions hand over the Step 3–4 answers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/PR-BODY.md",
+   "lines": "5",
+   "quote": "Answers no longer handed over by nudges, praise, instructions or Scout's part",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "49",
+   "quote": "before any miss is even required",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "54",
+   "quote": "The sentence must not be visible when the child produces it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "54",
+   "quote": "Said, then hidden, then reproduced is recall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/video-2026-09-16/PETER-PAN-PART-1-FILM.md",
+   "lines": "79",
+   "quote": "Do not narrate the assessed London/Neverland mood words or complete their inference for the learner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "84",
+   "quote": "pattern in U9-L3 and U1-L6. A child who exhausts the speak's 3 tries is handed the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "57",
+   "quote": "prints its own answer key in-diagram (a key line stating the arrow rule, plus \"eater\"/\"diet unknown\" sub-labels) — lets a child pass every diagram check without reading the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "66",
+   "quote": "No rendered check requires integrating both sources; the trap-item stem leaks the diagram's own fact.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/labeled-defect-corpus.jsonl",
+   "lines": "2",
+   "quote": "teaching content leaking the answer to the check it precedes.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "85-86",
+   "quote": "Mis-classifying the item makes the same text both correct and defective — it took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "224-225",
+   "quote": "a token which uniquely identifies one item's key must not appear in another item's stem, options, or feedback anywhere in the same lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "226-227",
+   "quote": "The lesson title counts as a surface: RT-10 found the video-2 check answerable from the title alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "83-84",
+   "quote": "| No prediction beat | answer arrives before any learner operation | 01_script (r14) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "223-225",
+   "quote": "**And the leak is per-lesson, not per-item.** D5.23 (enemy-item check) is the criterion; the working form is that a token which uniquely identifies one item's key must not appear in another item's stem, options, or feedback anywhere in the same lesson",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "80",
+   "quote": "A student who taps the sparkle line before the reeds line hears which clue is strongest before *\"Now tap the strongest clue.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "7",
+   "quote": "The learner sees only `learner_help`; audit every returned text field for answer leakage in practice before delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "reports/uae-heretic-smoke-20261009-ee31a9.md",
+   "lines": "48",
+   "quote": "First, add 12 and 16 to get 28. Then, subtract 17 from 28 to find the result.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "data/development_cases.json",
+   "lines": "18",
+   "quote": "While learners work independently, prompts may clarify task directions but must not give the final answer or a decisive calculation for that task.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "113-114",
+   "quote": "the analogous giveaway is an in-item **forward-reference or ordinal leak** (\"the first event…\", \"finally,…\", \"as mentioned above\") that reveals position",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1997",
+   "quote": "- Only failure was row 60 DBQ easy (`c_9eQY` Native environment), scoring 0.82 because the environment DBQ's Document 7 gave away the synthesis.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2001",
+   "quote": "- Source commit `85c2767` (`Repair Unit 1 environment DBQ synthesis leak`) revises environment DBQ Document 7 from a conclusion sentence to a material-evidence inventory.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2002",
+   "quote": "- `unit1_environment_dbq_doc7_repair_v1/scores.local_ib.json` rescored row 60 at 1.0 / SUPERIOR.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "43",
+   "quote": "**Display Timing**: Content is ONLY an \"answer giveaway\" if shown BEFORE the student attempts to answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "130",
+   "quote": "| Correct answer visible before attempt | Use reveal cues or post-submission fields for answers |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/BENCHMARK_FAILURE_ANALYSIS.md",
+   "lines": "73",
+   "quote": "The diagram itself displays '135°,' giving away the answer before the student attempts the problem.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/inceptapi.com/INCEPT_Benchmarking_Framework.html",
+   "lines": "496",
+   "quote": "Scaffolding should guide students through problem-solving without revealing answers prematurely.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/glossary.md",
+   "lines": "110",
+   "quote": "Includes hard-fail gates for inappropriate content or answer leakage",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/demo_articles/grade4_fractions.md",
+   "lines": "31",
+   "quote": "**D)** 1/8 + 1/8 + 1/8 ✓",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "124",
+   "quote": "| The preamble/stimulus text is somewhat leading and may inadvertently scaffold answers for parts (a) ... | 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_3/diagnosis.md",
+   "lines": "90",
+   "quote": "The inclusion of Document 7 (Anderson's 'Crucible of War') constitutes an answer giveaway.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "192",
+   "quote": "- Document 7 \"performs analysis for student\" (answer leakage)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "62",
+   "quote": "**Display Timing**: Content is ONLY an \"answer giveaway\" if shown BEFORE the student attempts to answer. Content behind reveal cues, shown after submission, or on-demand is NEVER a giveaway.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "339",
+   "quote": "- **Showing the answer or reasoning that leads to it is NOT a failure.** Explicit \"Answer: ...\" is expected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "26",
+   "quote": "I-do reveals the answer instead of modeling thought",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "43",
+   "quote": "an immediately available hint lowers desirable difficulty. The durable rule is attempt first, then targeted help.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "63",
+   "quote": "design-science pilot reported more consistent scaffolding and less premature answer-giving",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "40",
+   "quote": "**Display Timing**: Content is ONLY an \"answer giveaway\" if shown BEFORE the student attempts to answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "75",
+   "quote": "**Symptom**: 24 rows tagged `answer_telegraph` — stem repeats the distinctive noun phrase of the correct option.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-arc-continuity.md",
+   "lines": "147",
+   "quote": "the goal before the passage already knows the answer (\"gentle\") before watching the model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "27",
+   "quote": "| LENS1-01 | Gradual-release leak: l0/l1 teaching articles pre-answered their certified release checks (must-fix)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-arc-continuity.md",
+   "lines": "160",
+   "quote": "to notice (how they feel/sound), without naming the mood answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/ROUND-RESULT.md",
+   "lines": "14",
+   "quote": "PP2 P066 prescribes the sentence; observation only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "231",
+   "quote": "No hint or support is visible before the student's first genuine",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/14-prototype-unit-power-course-graph.md",
+   "lines": "195",
+   "quote": "- no new teaching before first attempt;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "372",
+   "quote": "hints-buttons **out**, scaffolding-on-2nd-attempt **in**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "24",
+   "quote": "hints follow an attempt;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "68",
+   "quote": "| F12 | major | The \"Dashed Line\" beat pre-teaches its own check on the same screen. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0227-g3-branch-hygiene-pr634-prep-2026-09-24.qmd",
+   "lines": "63-64",
+   "quote": "Silent branch on L4/L6 models a line from the story and asks its meaning (content-word overlap 1.00→0 on L4, 0.80→0 on L6; his L2 sits at 0.50)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "883",
+   "quote": "Vocabulary support must not pre-answer the target question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0225-g3-closing-questions-adoption-2026-09-24.qmd",
+   "lines": "95-96",
+   "quote": "every node whose gate/rubric/magic-word demands the taught word prints it nowhere in its stem/instruction/hints.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "195 (textutil text)",
+   "quote": "because showing it inline would answer the question",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "340",
+   "quote": "the video may set up but must not state.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "81 (textutil text)",
+   "quote": "not the trust / FIND skill target, which is saved for the Modelling Moment and the Independent Task",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "43",
+   "quote": "The durable rule is attempt first, then targeted help.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/labeled-defect-corpus.jsonl",
+   "lines": "2",
+   "quote": "teaching content leaking the answer to the check it precedes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "883",
+   "quote": "- Claim boundary: Vocabulary support must not pre-answer the target question.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "60",
+   "quote": "The push arrives *before* the child answers. The spec says to accept the answer first and then push once.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "51",
+   "quote": "So the student just copies a word from the same sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "164",
+   "quote": "If labels render anywhere on screen (header, progress bar, nav), the sentence is visible on the child's own turn, which turns recall into copying.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "98",
+   "quote": "The rubric says to coach *\"without giving the word away\"*, but the instruction already says *\"Use the word courage.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "141",
+   "quote": "- **p21 Step 3 (`know-step`)** is a text-only node that lists the answer (*\"hopeful, loyal, together\"*). The independent Step 3 isn't checked.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1496-1498",
+   "quote": "Detect math fill-in questions where the image (e.g. protractor, number line) directly reveals the numeric answer, making the intended calculation unnecessary.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "144-147",
+   "quote": "A hot text item leaks when the correct span is identifiable from the stem ALONE without reading the passage — for example, the stem paraphrases the keyed sentence so closely that picking it is pure surface matching rather than comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "101",
+   "quote": "- No metadata in the student-visible fields hinting at the correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "50",
+   "quote": "Map labels should be names/regions only; descriptors cause reading-comprehension leaks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "110",
+   "quote": "at: +(beats[c.after].start + LEAD + beats[c.after].audio_seconds + 0.3).toFixed(2)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/beats.js",
+   "lines": "7",
+   "quote": "export const LEAD = 0.4, TAIL = 0.8;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "388-389",
+   "quote": "video.pause();\n      video.currentTime = v.stops[k].at;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/cd48a45d510f4e3e/manifest.json",
+   "lines": "42",
+   "quote": "\"at\": 9.46",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/bf53179f4d5d0451.json",
+   "lines": "13",
+   "quote": "\"quote\": \"I follow him to serve my turn upon him\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/bf53179f4d5d0451.json",
+   "lines": "62",
+   "quote": "\"To serve his own turn upon him\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "67",
+   "quote": "const told = item.criteria.flatMap((c) => c.leak).filter((w) => has(item.q, w));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "70",
+   "quote": "check(\"q-no-answer\", \"The question uses no word that hands the answer over\", !told.length, `the question uses: ${told.join(\", \")}`),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "18",
+   "quote": "student: \"Sees the line with the word picked out, answers what it means here, then reads the gloss.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "118",
+   "quote": "the quotation unpicked and the sentence to rebuild, without its answers; the paragraph comes after the rebuild",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "63-64",
+   "quote": "direct the line showed what the speaker wants before the pick",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "63-64",
+   "quote": "the word-in-focus card showed the meaning before the question; direct the line showed what the speaker wants before the pick",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "29",
+   "quote": "Nothing a student needs to work out is on screen before they answer: the key-term card's \"meaning\" holds the context.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "63-64",
+   "quote": "the word-in-focus card showed the meaning before the question; direct the line showed what the speaker wants before the pick;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "26",
+   "quote": "nothing a student works out is on the card before they answer: the gloss and the speaker's aim come after",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "112",
+   "quote": "code checks hold a gap that gives its word away, a rebuild that does not make its sentence, a phrase not in the question, a yes-or-no debate and a hint that leaks",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "63",
+   "quote": "the word-in-focus card showed the meaning before the question",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "29",
+   "quote": "// Nothing a student needs to work out is on screen before they answer: the key-term card's \"meaning\" holds the context.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/9a28237802fccd82.json",
+   "lines": "16",
+   "quote": "will little note, nor long remember what we say here",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "21, 111",
+   "quote": "\"q\": \"What difference does the speaker draw between the endurance of the ceremony and the impact of the fighting?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "16",
+   "quote": "The student view never carries a key, feedback, evidence or a model answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "15",
+   "quote": "playing at 7.364065 of 14.2 seconds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "15",
+   "quote": "Its authored opening is “You found the proof that Hook is cruel.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "3",
+   "quote": "Repair the inherited audio queue that reads future work and can treat an unanswered question stem as completed work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "69-71",
+   "quote": "INFER change-variation delivery rules: pre-fill evidence slots so the child types only the thinking gap; **answer-distance rule** (pre-filled text must never contain the gap's word or a synonym);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "356",
+   "quote": "**6.2 previous text stays accessible while answering**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "356",
+   "quote": "no scrim; corner placement keeps the painting visible; on mobile the sheet sits under the frame.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "42",
+   "quote": "No answer-bearing visuals: the card shows text only; the painting behind it is the scene's last still.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v06/README.md",
+   "lines": "12",
+   "quote": "an engraved map: Venice, then the route to Cyprus; \"the general's word is law\" on the fortress",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/README.md",
+   "lines": "39",
+   "quote": "The film is blurred while a check is open, so a plate on screen cannot show the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "35",
+   "quote": "Check 1 opened at 47.45 s with the film blurred and dimmed, so the A-to-B plate's answer is unreadable",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "164",
+   "quote": "Students used GPT Base as a \"crutch\" by asking for and copying solutions.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "164",
+   "quote": "On the unassisted exam, the GPT Base group scored 17% *worse* than controls.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "167",
+   "quote": "Hints should be pre-authored per item.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "146",
+   "quote": "Before saving a first attempt, there should be no sample argument, highlighted answer word, interpretation sidebar, flag-metaphor explanation, or answer-bearing narration. Dictionary support, read-aloud, text resizing, and generic writing prompts can remain available.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "155",
+   "quote": "During an independent attempt, it must not write the learner’s claim or explain the interpretation being assessed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "412",
+   "quote": "Before a first attempt, the independent task does not expose the sample interpretation or answer-bearing help.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "27",
+   "quote": "Continue disabled before save (also after typing); sample hidden; save → firstAttempt stored, Continue enabled, Compare shown, sample labelled illustrative, status \"scripted support\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "293-294",
+   "quote": "Step 4 supplied “amazing,” the interpretation Step 3 was meant to produce, while the rubric accepted the same word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/findings.json",
+   "lines": "71",
+   "quote": "An item-level answer check can pass because the key is accurate; it does not inspect the adjacent introduction for answer cues.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/REPORT.md",
+   "lines": "8",
+   "quote": "L5 p0 asks the learner to recall London’s mood while the preceding sentence already supplies “cold.”",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "341",
+   "quote": "`tapPulse` scaling of the correct option before the pupil taps it (the answer is literally pulsing)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/1. 1.1 - Iago's Introduction - Text.txt",
+   "lines": "12",
+   "quote": "Iago has his own reason to be angry: Othello has made a man called Cassio his lieutenant instead of him.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/l1-script/Othello Lesson 1 (1.1)_ Lesson Script v3, Stage 1.txt",
+   "lines": "111-112",
+   "quote": "Why is Iago angry with Othello?",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/LearningQuestion.tsx",
+   "lines": "6",
+   "quote": "not a \"catchy\" line: those are the lesson's answers, and would give it away.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L0bb3e2.txt",
+   "lines": "20-21",
+   "quote": "Also: the unit words are bold in the captions, and the player blurs the film while a check is open, because two checks now pause over plates that show their answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "35",
+   "quote": "film v6 plates put the answers to checks 1 and 2 on screen behind the check card → a plate that teaches a fact also answers the next question about it → blur the film while a check is open (player/index.html `.frame.asking`)",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "110",
+   "quote": "This is the last chance to prime the checkpoint question, which asks the child to choose \"A long story about a hero's journey and its trials,\" so both **journey** and **trials** must be visibly reinforced here.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "78",
+   "quote": "Protect retrieval and independent first attempts from answer-bearing visuals, narration, highlights, or model paragraphs.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/review-build/DESIGN.md",
+   "lines": "9",
+   "quote": "Retrieval has no scene image so it does not cue recall answers, and the closing written tasks stay clear and text focused.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "481",
+   "quote": "Helpful-looking art, narration, or prompts can reveal the answer before the student has tried.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "281-282",
+   "quote": "the stem itself states the direction (urchin→otter), so a student can answer correctly from the stem's own wording without ever consulting the diagram or applying the rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/lesson-architecture.md",
+   "lines": "65-68",
+   "quote": "The answer-distance rule of 3 July applies to the filled slot: it is pitched at situation or behaviour level and never contains the gap's word or a synonym of it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "868",
+   "quote": "Structural risk in the FEELINGS variation: Step 3's generalization names the feeling, so the frame must never reprint Step 3's conclusion (voice it in the model only).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "142-145",
+   "quote": "On a FIND page the claim frames the proof hunt (L1 p22b: \"The stranger's behavior is changing.\"); on an INFER page the claim is the answer, so the page authors none and Step 3 opens on the frame's prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/KB-NOTES.md",
+   "lines": "148-149",
+   "quote": "**Answer-distance rule:** pre-filled text (evidence slots) \"must never contain the gap's word or a synonym\" — the child types only the thinking gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "91",
+   "quote": "Scout's part, \"Wendy realizes Peter is not coming, and decides she cannot just wait.\", sits right before the blank \"Wendy decides to ___\".",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/lesson-architecture.md",
+   "lines": "65-68",
+   "quote": "The answer-distance rule of 3 July applies to the filled slot: it is pitched at situation or behaviour level and never contains the gap's word or a synonym of it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "868",
+   "quote": "in any pre-filled Step 5 / Q3 frame, the knowledge slot never contains the gap's word or a synonym - pre-fill at situation/behaviour level; the gap demands the naming plus what it is about.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "868",
+   "quote": "Structural risk in the FEELINGS variation: Step 3's generalization names the feeling, so the frame must never reprint Step 3's conclusion (voice it in the model only).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "27",
+   "quote": "sequence items presented OUT of order",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "81-84",
+   "quote": "Every fixed defect class becomes a validator rule the same day, red-controlled (prove it fires on the old defect, then fix). Precedents from this arc: checkpoint grounding + mark-boundary firing (validate-contracts), sequence presented-order",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/validate-contracts.mjs",
+   "lines": "826",
+   "quote": "sequence.items are presented in the correct order, so Check passes without ordering anything",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/validate-contracts.mjs",
+   "lines": "821-822",
+   "quote": "Both of THIS grade's … sequence items shipped in the correct order and were caught by it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Ploetzner 2024",
+   "url": "https://doi.org/10.1080/10494820.2022.2123002"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

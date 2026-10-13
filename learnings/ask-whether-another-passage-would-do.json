@@ -1,0 +1,50 @@
+{
+ "id": "ask-whether-another-passage-would-do",
+ "title": "Ask whether another passage would do",
+ "statement": "Check that a question needs its passage by asking whether it would still work for a different passage on the same topic, and redesign it if it would.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "stimulus",
+  "stem"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A grade-5 specification for generated vocabulary items gives this test beside its one fixing rule, after a 120-item generated pool leaked at 95-100% by substandard in a text-hidden solve: the keyed meaning must need a passage-specific clue that overrides or narrows the word's common meaning. A question that would work as well for another passage on the same topic can be answered from the topic, not the text. The specification states the test for vocabulary items, and no measurement of the test itself is recorded.",
+ "against": "The specification states the test for vocabulary items only, and no measurement of the test itself is recorded.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "225",
+   "quote": "Test: \"Would this question work for a different passage on the same topic?\" → If yes, redesign.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "209",
+   "quote": "**Root causes measured (120-item Claude-generated pool, blind-solve 2026-06-24):**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "222-223",
+   "quote": "**The correct answer must require a passage-specific context clue that overrides or narrows the word's common meaning.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

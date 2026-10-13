@@ -1,0 +1,105 @@
+{
+ "id": "known-faults-fail-by-default",
+ "title": "Known faults fail by default",
+ "statement": "Give each known fault a narrow check that fails by default, since a judge that passes whatever is arguable talks itself past known faults.",
+ "example": "Pass-by-default clauses for borderline difficulty and distractor calls, shipped with other changes, left a judge's gold-set pass rate at 94%, under its 98% bar, and were reverted.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "scoring-guide"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An item evaluator's base rubric passes a metric whenever reasonable evaluators could disagree (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`), and leaks and misalignments excused under that stance led to structural audits that override it (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). Adding pass-by-default clauses for borderline difficulty and distractor calls dropped its gold-set pass rate to 94%, below the 98% threshold, and they were reverted (commit 2750903 in `icloud-work/inceptbench`). On two flagged real items, a soft cue gave inconsistent verdicts on identical defects: one run excused the fault as \"common formatting style\", another cropped the stem and claimed the options weren't there. After the cue listed the disallowed excuses, quoted the raw stem and required any override to quote its exception, re-runs flagged both (commit 0a22a5b), and the closed-ended rubric also refuses \"more central\" or \"best captures\" excuses for a wrong option that is arguably right. Name the excuses the judge has used as invalid, and accept an override only when it quotes the exception it relies on.",
+ "against": "The 94% run covered a whole pull request (#268) that also changed other parts of the evaluator, and the two-item result shipped three changes together, so the effect of the excuse list alone is unknown. Default pass remains the rule elsewhere: \"When uncertain, default to PASS\" (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 687), and an article rubric chooses 1.0 when two runs could disagree (`icloud-work/inceptbench-main/src/inceptbench/prompts/article/evaluation.txt`, line 881).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "5",
+   "quote": "If reasonable evaluators could disagree, the metric passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "10",
+   "quote": "These audits override the base-prompt default-PASS stance; the \"reasonable evaluators could disagree\" carve-out does NOT apply.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "2750903",
+   "lines": "3-7",
+   "quote": "Per golden dataset regression test (94% pass rate, below 98% threshold): - difficulty_alignment: restore 'use general definitions + judgment' when no curriculum definitions available (revert pass-by-default added in PR #268) - distractor_quality: remove 'borderline default to 1.0' paragraph (revert PR #268 change that made evaluator too lenient on ambiguous distractor flaws)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "5-7",
+   "quote": "The LLM rationalized one case as \"common formatting style\" and on a second run cropped the stem to its first sentence and claimed the options weren't present, when in fact the full A/B/C/D answer list was inline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "10-13",
+   "quote": "- Reframe cue as \"VERIFY AND PENALIZE IF CONFIRMED\": adds an explicit definition of stem redundancy, a narrow false-positive list, and an explicit list of disallowed rationalizations (including the exact \"common formatting style\" wording the LLM previously used).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "14-16",
+   "quote": "- Inject the raw stem text (capped at 2000 chars) inside the cue block so the LLM cannot crop or deny material that is quoted alongside the instruction that asks it to verify.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "17-18",
+   "quote": "- Require any override to cite which narrow false-positive case applies and quote the supporting stem text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "22-24",
+   "quote": "now flags both as INFERIOR with spec_compliance = educational_accuracy = 0.0 and reasoning that explicitly references the inline A/B/C/D list.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "599",
+   "quote": "do NOT excuse the failure by arguing the keyed answer is \"more central\", \"primary\", \"most effective\", or \"best captures\" the relationship",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py",
+   "lines": "13-15",
+   "quote": "tightened the borderline-correct-distractor rule in `closed_ended_evaluation.txt` to refuse \"more central / best captures\" escape hatches.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

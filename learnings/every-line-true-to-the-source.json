@@ -1,0 +1,413 @@
+{
+ "id": "every-line-true-to-the-source",
+ "title": "Every line true to the source",
+ "statement": "Everything a lesson says, quoted or not, from model answers and feedback to marking guides, must be true to its source and claim no more than the source's words support.",
+ "example": "One marking guide failed a student who gave the source's four pairings and passed one who gave the wrong pairings it named.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "feedback",
+  "scoring-guide",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A source-fidelity review of the reading course found a model answer that chained two separate consequences into a mechanism the source never states, the same merged mechanism in corrective feedback, feedback that half-conceded a wrong option's claim that an action always works, and a marking guide that failed a student giving the source's four pairings while passing the wrong ones it named. A check of another lesson found five feedback and reveal lines that contradicted the story. The project's protocol for a text's claims about the world holds any text with a failed claim as a draft, since a wrong claim in a child's science text is a kill, not a footnote. What a lesson tells a student includes its model answers and feedback as well as its hints and definitions.",
+ "against": "A true but unsupported addition was judged less harmful: an example detail invented for a word card, but true of real ecology, was recorded as worth fixing rather than critical (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R4.md`, line 56). The ruling states it two ways: an inference may only use what the passage's own words show, yet the procedure combines text clues with what you know, so where expected knowledge ends is left to judgment (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`). Where a named design governs, a string it prescribes is not changed even when an audit finds it wrong; a prescribed definition the audit faulted was kept as the design has it, pending a ruling (`grade3-reading/artifacts/feedback-live-walk-2026-09-30/BUILD-SPEC.md`; `grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R3.md",
+   "lines": "31",
+   "quote": "that light-blocking leads to low oxygen. Canon never states that mechanism.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R3.md",
+   "lines": "47",
+   "quote": "since restoration always works\" — the feedback half-concedes the distractor's premise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R3.md",
+   "lines": "88",
+   "quote": "criterion; a child stating the authored wrong pairs passes. The node's own grounding",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "120",
+   "quote": "Five feedback/reveal lines contradict the story",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/02-factuality-claims.md",
+   "lines": "22",
+   "quote": "child's science text is a kill, not a footnote.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "3",
+   "quote": "325 rules, one CRITICAL fabricated claim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "41",
+   "quote": "**CRITICAL — fabricated claim printed as textual fact.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "45-46",
+   "quote": "\"Bored\" occurs exactly once in the whole lesson (this string) and zero times in any passage node.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "48-49",
+   "quote": "exact defect class (grounding inference in invented rather than real textual evidence) the lesson exists to teach the child to avoid.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "76-77",
+   "quote": "anything a lesson presents to the child as being IN the story must actually be in that lesson's own passage text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "77-78",
+   "quote": "extracts both QUOTED spans (inside quote marks) and ATTRIBUTED spans (no quotes, introduced by \"the story says\"/\"it says\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "79",
+   "quote": "phrasing — the shape that hides the worst defects, since unquoted claims look like nothing).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "73-74",
+   "quote": "not referenced by `npm run check` or any other known gate at ingestion time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "167-168",
+   "quote": "must be directly traceable to the passage's own words — invented causes and unsupported superlatives are a defect class, not a style choice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "153-155",
+   "quote": "Untrue-to-story lines... folded into the FIX batch: morning m7 (L5 p11 invented cause), m10 (L6 p11 'He says so'), m12 (L7 p16 'only weapon'), live m9 (L6/L7 retell stops early).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "152",
+   "quote": "Not a single named R-COPY rule, but a repeatedly enforced standard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "76",
+   "quote": "**INFER** (\"combine text clues with what you know\";",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "79-80",
+   "quote": "struck an earlier worked example that let the 4b extension reach for outside-world knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "80-82",
+   "quote": "an inference may only use what the passage's own words show; extension deepens the mood from remaining text clues, never a civic/cultural fact the passage never gave.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "25",
+   "quote": "\"The children could not sleep and lay wide awake\" is wrong — only John lies wide awake",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "10",
+   "quote": "find-it key teaches a fact not in the story (London bedtime/rules/grown-ups)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "71",
+   "quote": "The KB-listed 'fire burned low' clue is NOT used because the story does not contain that line",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "41",
+   "quote": "the Modelling Moment HTML itself has \"because they are bored\" (not in the story)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "153",
+   "quote": "is PRESCRIBED by the PP3 design DOCX",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/BUILD-SPEC.md",
+   "lines": "4",
+   "quote": "a design-prescribed string is NOT changed — say so in notes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "78-79",
+   "quote": "ATTRIBUTED spans (no quotes, introduced by \"the story says\"/\"it says\" phrasing — the shape that hides the worst defects, since unquoted claims look like nothing).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0205-g9-othello-1-1-kb-lesson-view.qmd",
+   "lines": "45-46",
+   "quote": "In the quote, Iago does follow Othello, only \"to serve my turn upon him\", so \"refusal\" may misstate the line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "7",
+   "quote": "Use only what is in the text below.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "126",
+   "quote": "Is everything narration_${k} says true to passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "84-85",
+   "quote": "the words and short phrases a Grade 9 reader needs explained to follow it (a rank, a title, an older sense of a word, an idiom)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "125",
+   "quote": "Does note_${k} correctly explain what term_${k} means as it is used in line_${k}?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "47",
+   "quote": "says what the lines show, close to their own words (for example \"He serves only to line his own coat\"), never an",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "178",
+   "quote": "a reading Jev could not defend from the lines: points now keep close to the lines' own words;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0e36e4f6c770a7b1.json",
+   "lines": "29",
+   "quote": "\"left_2\": \"Pragmatic Survival: He protects himself from being discarded; He secures his own material well-being\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0e36e4f6c770a7b1.json",
+   "lines": "334",
+   "quote": "\"value\": 0.52,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0e36e4f6c770a7b1.json",
+   "lines": "355",
+   "quote": "\"value\": 0.91,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "7",
+   "quote": "However, the two current entries remove the useful referents and make narration look like Peter's words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "9",
+   "quote": "`They didn't jump the first time. He was flying.` drops the intervening explanation that Michael jumped first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "10",
+   "quote": "`Neverland is waiting, Peter said, toward a place they could not yet imagine.` joins Peter's speech to a later narrator clause.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "12",
+   "quote": "The G3 scorer calls these “The answers this passage actually supports” and says answers outside the list are unsupported.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "20",
+   "quote": "All are exact contiguous spans in the delivered source.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "7",
+   "quote": "Assessment.grounding is defined as answers the text supports, not a universally verbatim-only field. Therefore discontiguous paraphrase alone is not a contract failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "382",
+   "quote": "which is exactly why it survives review — it feels true.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "595-596",
+   "quote": "an invented detail almost always comes from somewhere the child read *earlier*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "393",
+   "quote": "a place being golden or cold is precisely the claim that has to come from the text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "866",
+   "quote": "the child never looks back, but the AUTHOR always does - re-read the earlier parts' actual texts and verify every THEN claim against them before writing it; the continuity brief is a pointer, not a substitute. Plausible embellishments are story-fact errors and poison the change inference.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/KB - Overview.csv",
+   "lines": "144",
+   "quote": "originally said \"\"not all masters 'cannot be truly followed'\"\", a double negative that reverses the line. Changed to \"\"not all masters can be 'truly followed.'\"\" Fixed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1988",
+   "quote": "These authored lines provide a plausible source for the model's “took the ship” wording.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-claim-fidelity.mjs",
+   "lines": "14-15",
+   "quote": "This is the shape that hides the worst defects, because without quote marks nothing looks like a claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "663",
+   "quote": "**Source binding:** Every factual or model claim resolves to a source-ledger ID and source-packet locator; generated prose, diagrams, items, and feedback may narrow but never broaden the source claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "19-21",
+   "quote": "But one printed, child-visible string tells the child that the text says something the text does not say",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L7f7ca8.txt",
+   "lines": "1",
+   "quote": "Draft video fact check: The spec says no characters hear “I am not what I am”. Roderigo is present when Iago says it in Act 1.1.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L01e07f.txt",
+   "lines": "1",
+   "quote": "Content to check before reuse “Iago never told a lie” is too absolute for the supplied excerpt: he tells Othello “you know I love you” while the catch-up says he secretly hates him.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/KB-1-1-NOTES-2026-10-01.md",
+   "lines": "29-30",
+   "quote": "In the quote, Iago does follow Othello, only \"to serve my turn upon him\", so \"refusal\" may misstate the line.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

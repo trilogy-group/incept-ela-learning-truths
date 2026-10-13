@@ -1,0 +1,140 @@
+{
+ "id": "correct-what-a-lure-might-teach",
+ "title": "Correct what a lure might teach",
+ "statement": "Follow a plausible wrong option with corrective feedback or a correction after the test, because a lure left uncorrected can plant false knowledge.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's assessment rules require product-appropriate corrective feedback or post-test correction for potent misconception-based distractors, because plausible lures can seed false knowledge. The rule offers two ways to meet it: corrective feedback suited to the product, or a correction after the test. The rule matters most for a wrong option built on a real misconception, and students can later recall the planted false knowledge as true.",
+ "against": "the study was run in a lab and its feedback simply showed the correct answer, so whether feedback that only says where to look does the same was not tested. The same course's theme checkpoint is feedback-free by design (`ti-courseplans-audit/docs/practice-layer-spec.md`), so a plausible lure there goes uncorrected; the rule holds where feedback is given.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "95-96",
+   "quote": "post-test correction because plausible lures can seed false knowledge;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "53",
+   "quote": "Distractor quality and feedback quality are coupled decisions — you cannot set one without the other",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "54",
+   "quote": "Competitive, misconception-based distractors are the gold standard for both diagnosis and deep retrieval — but they carry the highest risk of the negative suggestion effect, where exposure to plausible wrong answers implants false knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "54",
+   "quote": "feedback largely neutralises this risk, while the absence of feedback leaves it unchecked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "121",
+   "quote": "Without feedback, the negative suggestion effect persists: students continue to produce MC lures on later tests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "122",
+   "quote": "With feedback, the negative suggestion effect is substantially (though not completely) eliminated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "95-96",
+   "quote": "potent misconception-based distractors require product-appropriate corrective feedback or post-test correction because plausible lures can seed false knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl",
+   "lines": "48",
+   "quote": "Potent MCQ lures are corrected before they can become retained false knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "123",
+   "quote": "Lab setting. Feedback was simple (correct answer shown).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/labeled-defect-corpus.jsonl",
+   "lines": "5",
+   "quote": "Corrective feedback did not match the construct the distractor represents (feedback not misconception-keyed to the chosen option).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "166",
+   "quote": "strong misconception distractors + no feedback = teaching the error (negative suggestion effect)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "17",
+   "quote": "Every misconception distractor carries feedback addressing that misconception",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "18",
+   "quote": "Any item with competitive/plausible distractors must provide feedback (guards the negative-suggestion effect)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "768",
+   "quote": "potent lures receive correction",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "769",
+   "quote": "false lure left uncorrected",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Feedback enhances the positive effects and reduces the negative effects of multiple-choice testing (Memory & Cognition, 2008)",
+   "url": "https://doi.org/10.3758/MC.36.3.604"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

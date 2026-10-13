@@ -1,0 +1,70 @@
+{
+ "id": "transcribe-film-narration-from-audio-alone",
+ "title": "Transcribe film narration from audio alone",
+ "statement": "Transcribe a film's narration from its audio track alone, because a model watching the video can mix on-screen labels into what it reports hearing and drop spoken words.",
+ "example": "A multimodal transcript of one film scored 0.8985507246376812 similarity to its script, and an audio-only transcript of the same film scored 1.0.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The first model reviews of the unit films transcribed the narration while watching each whole video, and the transcripts incorporated visible labels and omitted some heard wording. For one film the multimodal transcript scored 0.8985507246376812 similarity to the script, while a separate audio-only transcription of the same film scored 1.0, so audio-only transcription was added to the review. The evidence comes from one review model, so the record says this can happen, not that it always does.",
+ "against": "Audio-only transcription is not flawless either: \"U1 matched all normalized words; U9 differed in transcription orthography and omitted one word that a focused sentence review confirmed audible.\" (grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md, line 43)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "43",
+   "quote": "The first multimodal transcriptions incorporated visible labels and omitted some heard wording, so separate audio-only transcription was added.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/u1-video-review.json",
+   "lines": "6",
+   "quote": "\"transcript_similarity\": 0.8985507246376812,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/u1-audio-review.json",
+   "lines": "5",
+   "quote": "\"scope\": \"Audio-only independent transcription to avoid visible-label contamination found in multimodal transcript\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/u1-audio-review.json",
+   "lines": "6",
+   "quote": "\"transcript_similarity\": 1.0,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/u1-video-review.json",
+   "lines": "3",
+   "quote": "\"video_sha256\": \"588961d2396f329c4c46edc88b7c9cbaacb379b27aaff61928ea189ecf6efbe7\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/u1-audio-review.json",
+   "lines": "3",
+   "quote": "\"video_sha256\": \"588961d2396f329c4c46edc88b7c9cbaacb379b27aaff61928ea189ecf6efbe7\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

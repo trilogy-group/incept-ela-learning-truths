@@ -1,0 +1,85 @@
+{
+ "id": "beat-what-the-records-already-predict",
+ "title": "Beat what the records already predict",
+ "statement": "Before a new test takes learners' time, measure the error of the cheapest existing alternative, such as predicting from records already held, and show the test beats it head-to-head.",
+ "example": "An adversarial review cited a model built from learners' records as already predicting the official score with a mean absolute error of 7.28, and the new test's case never compared itself with it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A red team on an interim reading assessment found that its case for spending student time never named an existing prediction model built from learners' records, never compared itself with it and never explained why direct measurement beats that prediction at no extra student time; the model's write-up measured a mean absolute error of 7.28 against the official test (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md`, line 33). The recheck found the head-to-head committed in advance, with its baseline leg running before any student time was spent (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md`, line 7). The baseline costs learners nothing, so a test earns its minutes only by beating it.",
+ "against": "The head-to-head was committed, but its result is not in these files. No writeup of the cited model could be found: a search \"finds **no writeup of any RIT-prediction model with MAE 7.28 / RMSE 9.53**\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md`, line 47). The package accepts that the comparison could stop the project: \"If the retrospective readout shows prediction already meets the need, that is a legitimate reason to stop — we are asking for the comparison, not assuming its outcome.\" (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md`, line 154). The readout had not yet run; it waited on access to the reporting data.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "33",
+   "quote": "the package **never names it, compares against it, or explains why direct measurement beats prediction-from-existing-signals at zero additional student time.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "33",
+   "quote": "measured MAE 7.28 / RMSE 9.53 against Spring 24-25 MAP",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "7",
+   "quote": "the prediction head-to-head is pre-committed with the baseline leg running before any student time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "69",
+   "quote": "A named head-to-head against the internal RIT-prediction model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "154",
+   "quote": "The prediction model's error is measurable retrospectively today — its stored predictions against actual Winter 2025-26 RITs, data that already exists in the reporting views",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "14",
+   "quote": "the baseline leg now runs BEFORE the pilot (retrospective predictor-vs-actual readout, zero student minutes, gated on rpt2 access)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "154",
+   "quote": "same students, same window, published either way.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "154",
+   "quote": "it produces a score with a known standard error (SEM ≈ 3.14 RIT core-band) rather than an inference whose error is unbounded by design; it yields the three domain sub-scores prediction cannot emit; and it works for students with no coursework history",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

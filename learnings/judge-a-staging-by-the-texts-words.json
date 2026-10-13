@@ -1,0 +1,43 @@
+{
+ "id": "judge-a-staging-by-the-texts-words",
+ "title": "Judge a staging by the text's words",
+ "statement": "When learners judge which staging of a text convinces them, accept either choice but credit only a reason tied to the text's words, not lighting or camera alone.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version shows one speech staged two ways and asks which staging convinces the learner more, and why, using one word the speaker says. Its marker counts a choice of either staging, or an argued blend, with a reason tied to the speech as secure, and a reason only about the lighting or camera, with no link to what is said, as partial. A secure answer then gets one push-back putting the case for the other staging, citing one word from the speech.",
+ "against": "The task's student-facing lines are marked as the builders' own draft, pending approval (`othello-archive/src/content/oral.ts`, line 83).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/oral.mjs",
+   "lines": "50",
+   "quote": "A reason that is only about the lighting or camera, with no link to what Othello says, is partial. Either choice can be secure.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/oral.ts",
+   "lines": "86",
+   "quote": "export const STAGE_Q = 'Which staging convinces you more, and why? Use one word Othello says.'",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

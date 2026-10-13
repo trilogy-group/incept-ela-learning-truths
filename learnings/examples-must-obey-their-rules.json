@@ -1,0 +1,56 @@
+{
+ "id": "examples-must-obey-their-rules",
+ "title": "Examples must obey their rules",
+ "statement": "Every example in a standard's description must obey the rules beside it; when a rule and its example disagree, decide which is the source of truth and fix the other.",
+ "example": "A rule that one or more digits must be 0 sat beside an example of 40.271, so the rule was dropped and the example kept as the source of truth.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The curriculum review skill names rule-versus-example consistency as a recurring kind of change: a rule clause that contradicts an example in the same entry, such as 'must be 2-digit' beside an example of 5.03, is removed when the examples are the documented source of truth. A rewrite of difficulty content is read carefully to verify that the examples don't violate the rules they sit next to. The skill records these as calls that needed human judgement in real reviews.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "45",
+   "quote": "| **Rule-vs-example consistency** | Removes a rule clause that contradicts an in-leaf example (e.g. \"must be 2-digit\" but example is `5.03`) | **Approve** if examples are the documented source of truth |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "49",
+   "quote": "| **Difficulty content rewrite** | Adds tier examples, swaps notation (LaTeX optional), tightens stems | **Read carefully** — verify examples don't violate the rules they sit next to |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "142",
+   "quote": "- **A removed rule is fine if the examples already encode it.** Example: dropping *\"One or more digits must be 0\"* when the in-leaf example is `40.271` (no zero digit) is correct — the example is the source of truth. Approve.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "140",
+   "quote": "These are the calls that needed human judgement — capture them so the next run gets them right:",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

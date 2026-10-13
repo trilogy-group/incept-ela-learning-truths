@@ -1,0 +1,64 @@
+{
+ "id": "credit-falls-with-each-wrong-pick",
+ "title": "Credit falls with each wrong pick",
+ "statement": "On a retried choice item, cut credit with each wrong pick and give none once only the key is left, so trying every option earns nothing.",
+ "example": "Credit runs 1.00, 0.50, 0.25 and 0.00 by attempt, keyed to the number of options.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "practice",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The grade-3 rulebook's credit rule scores attempts at 1.00, 0.50, 0.25 and 0.00, keyed to the number of options, so a right pick when only one option is left pays nothing. An attempt is an option tapped or an answer sent, and being wrong is never punished, only unrewarded. The same rulebook never reveals a single-select answer and sets no ceiling on its tries.",
+ "against": "Whether per-answer credit should feed points is not shared across courses: here a step's points are its rate times the mean credit of its judged beats, while a Grade 5 release contract in the same project gives no per-answer points (the record points-for-focused-time-not-answers).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "164-165",
+   "quote": "Credit by attempt: 1.00 / 0.50 / 0.25 / 0.00, keyed to the option count (right-only-when- one-left pays 0)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "165",
+   "quote": "an attempt = an option tapped or an answer sent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "172",
+   "quote": "Being wrong is never punished, only unrewarded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "139",
+   "quote": "**A single-select MCQ answer is NEVER revealed and has no ceiling on tries**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "167",
+   "quote": "XP = round(rate × mean credit of judged beats)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

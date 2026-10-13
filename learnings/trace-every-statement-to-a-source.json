@@ -1,0 +1,140 @@
+{
+ "id": "trace-every-statement-to-a-source",
+ "title": "Trace every statement to a source",
+ "statement": "Trace every statement in generated text to a given source fact, and drop or flag any that traces to none, because a model's memory never counts as support.",
+ "example": "An automatic check listed no added facts for all 62 and all 96 articles of two runs, while a review note estimated one or two in every article.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "stimulus",
+  "generation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One generator's design says every claim in generated questions must trace to an entry in its vetted knowledge base (`icloud-work/ap-social-studies-generator/docs/03-ARCHITECTURE.md`, line 65). In an article pipeline, the tracker's automatic 'Extra Facts' column held an empty list for all 62 articles of one run and all 96 of another (`icloud-work/k_12_social_studies/ap_files/Articles Tracker.xlsx`, sheets 'Articles-readable-exp' and 'APUSH Articles-readable-exp', column K). A review note asked what exactly had been added and estimated one or two statements from the model in every article beyond the knowledge base (sheet 'Sheet4', cell H8).",
+ "against": "The same note says some of the added statements seemed important because they tie the article together (\"some of it seems important as it really ties things together in the article\"), so a statement with no source is not necessarily wrong. The lint traced numbers only, and it guarded a model's training corpus rather than lessons students see (`grade3-reading/artifacts/wiki-research/pedagogy-llm-method.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/03-ARCHITECTURE.md",
+   "lines": "65",
+   "quote": "- Every claim in generated questions must trace to a VKB entry",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Articles-readable-exp', cell K2 (column K header 'Extra Facts')"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles-readable-exp', column K ('Extra Facts'), all 96 article rows"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Sheet4', cell H8",
+   "quote": "We definitely have more (maybe around 1-2 statement in every article from llm) and some of it seems important as it really ties things together in the article",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "46",
+   "quote": "1. **The canonical file is the sole truth.** Every passage sentence, span id, item, misconception",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "47",
+   "quote": "You never invent facts,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/AUTHORING-RULINGS-R1-R10.md",
+   "lines": "104",
+   "quote": "## R10 — Hint ladders: trace or re-derive, never leave invented",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/AUTHORING-RULINGS-R1-R10.md",
+   "lines": "106",
+   "quote": "For every gated non-mcq item, each hint/second_hint/reveal must trace to canon",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-method.md",
+   "lines": "94",
+   "quote": "any generated item containing a numeric token not traceable to its source chunk is dropped (~2.8% of items)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-method.md",
+   "lines": "94",
+   "quote": "an omitted number teaches nothing false; a fabricated number would be trained in as truth",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "71",
+   "quote": "Fabrication scores 0 — not 0.5. The timeline notes a 2.4% fabrication rate in early synthetic",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "30-32",
+   "quote": "every claim in I-do answer cards + chart frame values must be verifiable from THIS lesson's passage (not another lesson's, not the hook item). Think-alouds may paraphrase but never invent sensory/setting details.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "3-4",
+   "quote": "Every rule below is enforced by a gate in `unit-2/verify/` and each one exists because a real defect shipped and was caught live.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "120-121",
+   "quote": "Search snippets, unsourced summaries, blogs, and model memory cannot support `PASS`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "171",
+   "quote": "No check compares a model's claims, or a key, against the passage (C1, M1, M11, M13).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "38",
+   "quote": "Never invent lines of the play. Only quote lines given to you in the context.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

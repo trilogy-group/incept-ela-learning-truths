@@ -1,0 +1,122 @@
+{
+ "id": "word-forms-from-a-table-not-rules",
+ "title": "Word forms from a table, not rules",
+ "statement": "Decide in code whether words are forms of the same word by looking them up in a published table of word forms, never by spelling rules.",
+ "example": "A suffix-trimmer that did it by rule gave 234 false unfamiliar-word candidates across 25 lesson runs.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons asks whether two words are the same word in several checks, from an answer that echoes the question to whether a word is familiar at the grade. The suffix-trimmer it first used missed every irregular form, giving 234 false unfamiliar-word candidates across 25 lesson runs, and invented links such as bees to \"be\" and manner to \"man\" (`shadow/content-eval/SKILL.md`). It now looks words up in a published lemmatization list and in WordNet's derivation links, and a missing form is added as a line in the table, not as a rule.",
+ "against": "The tables have limits: \"- A word the tables don't list matches only itself.\" (`shadow/content-eval/SKILL.md`, line 146), and an ambiguous form joins both of its families.",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "131",
+   "quote": "**Word forms come from published tables, never from suffix rules.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "140-142",
+   "quote": "The suffix-trimmer this replaced missed every irregular form: 234 false unfamiliar-word candidates across the 25 lesson runs (chose ×9, given, forgotten, teeth, mice).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "142-143",
+   "quote": "It also invented links such as bees → \"be\", manner → \"man\" and stared → \"star\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "149",
+   "quote": "- To add a missing form, append a line to the table. Don't add a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "15",
+   "quote": "const stemOf = (w) => norm(w).replace(/[^a-z]/g, \"\").slice(0, 4);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "59",
+   "quote": "// a form shares the start of its word (\"deceive\", \"deception\" for \"deceit\"); a synonym (\"lie\") is dropped",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "59",
+   "quote": "assert.ok(web.families[0].words.includes(\"deception\") && !web.families[0].words.includes(\"lie\"), \"forms, not synonyms\");",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/REPORT.md",
+   "lines": "23",
+   "quote": "automatic broad stemming risks mapping familiar inside unfamiliar",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "23",
+   "quote": "Broad automatic stemming risks incorrect senses and false matches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "25",
+   "quote": "All definitions require ordinary content review; a code test cannot approve their teaching meaning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "310-311",
+   "quote": "which matches the two home uses but not later `distance`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb9608f.txt",
+   "lines": "145-149",
+   "quote": "Subramaniam specifically critiqued word-web exercises where prompting for \"betray\" generated unrelated terms like \"betrayal,\" characterizing the interaction as unintelligent and naive (00:17:37",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-28/ADJUDICATION.md",
+   "lines": "14",
+   "quote": "*Enchanting* is an adjective in the keyed option; the suffix classifier calls it a gerund.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

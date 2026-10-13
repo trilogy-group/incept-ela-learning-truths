@@ -1,0 +1,741 @@
+{
+ "id": "check-the-instrument-before-the-score",
+ "title": "Check the instrument before the score",
+ "statement": "Before believing a score, high or low, check the harness, scorer and items that produced it, and when results look uniform or mostly flagged, suspect the check before the content.",
+ "example": "A score stuck at about 28% for weeks came largely from four bugs in the harness, not from the model.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP training work, a jump from 0.29 to 0.95 existed only under a discredited judge and collapsed to about 28% on the binding grader, and the fix behind it had removed the stimulus, so the grader's leak probe was skipped (`grade3-reading/knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd`, lines 24-27). The weeks stuck at about 28% were four harness bugs: a wrong field read, a grader on the wrong host, a misrouted item type and a truncated answer (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`, lines 39-41). In the reading project, an auditor's 81/81 fail traced to an arbitrary constant hardcoded in the auditor itself, and a design review named the risk of a reworded leak scoring higher than a genuine requires-reading item under the shipped code (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 136-137 and 186-188). A keyless judge there once cost 11 phantom fails, half of the audio defects were defective checks (`grade3-reading/knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd`, lines 70-73), and 4 of 5 listening findings in one day came from the probe, not the audio (`grade3-reading/knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd`, lines 141-142). Check that the harness exists, still runs on the files it names, reads the right fields and uses a judge still trusted. When every item, or one criterion on every item, gets the same score, suspect the measuring before the content.",
+ "against": "Confirming a result on the binding grader is not enough by itself, since the binding grader's own 28% was largely a measurement artifact (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`, lines 39-41); and once the auditor's constant was corrected, 2 of 81 banks still genuinely fell below the real floor, so an instrument fault can sit on top of a smaller real gap (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 138-139). The analysis itself warned that it rested on only 12 rows (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md`). Both local snapshots of the AP project end on 4 June, so the mid-June bug records can't be checked at source and rest on the knowledge base's syntheses, one of which calls the 28% largely, not wholly, an artifact. The harness was not the whole story: after the fixes, two of the AP writer's formats still failed their floor at 0.292 (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`). A uniform zero can also be a real break on the generating side, as when a two-cell code path broke and two item types scored zero; that is still a pipeline fault, not a verdict on content. Fixed retrieval was kept for one item type and documented as such: \"Document that DBQ is retrieval-with-cleanup, not LLM generation per call.\" (icloud-work/aptraining/workspace/comms/to_den/2026-05-25T0615Z_TASK_concrete_deployable_workflow.md, line 52). Cached fallback output was also promoted as a pass because it had once been graded (icloud-work/aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/VALIDATION_REASON.md, line 62). Passing checks miss real faults too: one review's findings included 26 on lessons the calibration log had marked green, faults the team's own passing gate missed. A later run found counter-evidence (`grade3-reading/course-renderer/.claude/skills/ux-review/SKILL.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24-25",
+   "quote": "On the **binding grader** it **collapsed to ~28%** (DBQ 0%, MCQ_SET 0%) and was logged as a **\"Gemini-judge artifact.\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "26-27",
+   "quote": "it was **REMOVING the stimulus** so the grader's leak-probe is skipped. That's **grader-gaming**, not a provenance win.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "186-188",
+   "quote": "reward inversion/Goodhart (a reworded canonical leak scored higher than a genuine requires-reading item under the shipped code)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "36",
+   "quote": "The **\"28%\" was four eval-harness bugs** — weeks burned on a measurement artifact, not a model failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "136-137",
+   "quote": "the auditor's `thin_banks`/`enforcement_broken` FAIL (81/81) traced to an arbitrary `>=15` bank-depth constant hardcoded in `audit_compliance.py` itself",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "141-142",
+   "quote": "the probe is often the bug (4 of 5 listen findings that day were probe-classes, not real defects)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "70-71",
+   "quote": "preflight refuses a keyless judge (\"HARNESS, NOT CONTENT\" — 2026-09-03 cost 11 phantom FAILs once).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "39-41",
+   "quote": "the \"stuck at ~28%\" narrative was largely **measurement artifact** (wrong field read, grader on wrong host, MCQ_SET mis-route 0→0.77, DBQ truncation 0.55→1.0 at 6000 tok).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "72-73",
+   "quote": "half of 'audio defects' were defective checks",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-registry.json",
+   "lines": "337-343",
+   "quote": "\"zero_rate\": 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-registry.json",
+   "lines": "386-387",
+   "quote": "\"pass_rate\": 0.25,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "43",
+   "quote": "- Load-bearing: `specification_compliance` 0.750, `curriculum_alignment` 0.750, `distractor_quality` 0.750, `educational_accuracy` 0.5833, `stimulus_quality` 0.3333",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/NORTH_STAR.md",
+   "lines": "37",
+   "quote": "- MCQ_SET is structurally hard: specification_compliance, curriculum_alignment, distractor_quality, educational_accuracy, and stimulus_quality are all load-bearing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build27_fail3_recheck/evaluation_results.jsonl",
+   "lines": "1",
+   "quote": "\"metric_scores\": {\"overall\": 0.9, \"factual_accuracy\": 1.0, \"educational_accuracy\": 1.0, \"localization_quality\": 1.0, \"concept_coverage\": 1.0, \"difficulty_distribution\": 1.0, \"stimulus_quality\": 1.0, \"non_repetitiveness\": 1.0, \"test_preparedness\": 1.0, \"answer_balance\": 1.0, \"integrity_check\": 1.0}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "45",
+   "quote": "- Caveat: only 12 rows; treat as hard until larger sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "39-41",
+   "quote": "the \"stuck at ~28%\" narrative was largely **measurement artifact** (wrong field read, grader on wrong host, MCQ_SET mis-route 0→0.77, DBQ truncation 0.55→1.0 at 6000 tok)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "75-76",
+   "quote": "aptraining burned weeks \"stuck at 28%\" that were **4 eval-harness bugs** — proof that an unvalidated measurement can masquerade as a real number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "79-80",
+   "quote": "a verdict with an unverified measurement leg is not a clean PASS. Prove the gate measures what it claims before trusting any verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "185-186",
+   "quote": "never read a 0/0 verdict as green — treat it as a harness bug until proven otherwise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "70-71",
+   "quote": "preflight refuses a keyless judge (\"HARNESS, NOT CONTENT\" — 2026-09-03 cost 11 phantom FAILs once)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "76",
+   "quote": "aptraining burned weeks \"stuck at 28%\" that were **4 harness bugs** (wrong field read `overall.score`, grader on wrong host, MCQ_SET mis-route 0→0.77, DBQ truncation at low max_tokens)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "76",
+   "quote": "**Bucket failures by type** (gen-fail vs transport-5xx vs schema-fail), not one boolean",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "126-129",
+   "quote": "The first grader run false-failed some MSQ/EBSR candidates because `_resolve_key` handled JSON-array keys but not comma-separated legacy strings such as `\"a, b\"` or `\"a,d\"`. The staged `anti_leak_grader.py` accepts both. `match` items still did not survive because the current checker is MCQ-style and does not model pair-key scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "51",
+   "quote": "**MCQ + MCQ_SET still FAIL the raw floor at 0.292** (+0.41 each to go)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling-manifest.json",
+   "lines": "11",
+   "quote": "\"result\": \"PASS: 9 fixtures; all six rules exercised with failing cases\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "43-44",
+   "quote": "the selftest asserts the exact expected failure-rule set per lesson and fails if any rule loses its failing fixture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/EXTRACTION_EVIDENCE.qmd",
+   "lines": "32-34",
+   "quote": "**Quote integrity:** 230/230 extracted quotes verified verbatim at extraction time (`verify_quotes.py --json claims.json`); **271/271** quoted spans verified in the rendered SYNTHESIS + DIGEST files",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "113-114",
+   "quote": "no runnable blind solver existed in-repo at merge time (the \"Claude-strong harness\" referenced was a phantom;",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/per_unit_bench_20260527T0916Z.md",
+   "lines": "12",
+   "quote": "| 1 | 10 | 0 | **0.0%** | 0 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/per_unit_bench_20260527T0916Z.md",
+   "lines": "20",
+   "quote": "| 9 | 10 | 0 | **0.0%** | 1 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/per_unit_bench_corrected_20260527T1009Z.md",
+   "lines": "6",
+   "quote": "Fix: score now read from ev['overall']['score'] (was ev['score']=None)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/per_unit_bench_corrected_20260527T1009Z.md",
+   "lines": "12",
+   "quote": "| 1 | 10 | 6 | **60.0%** | 0 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_conscience/2026-05-28T0030Z_proactive_log_self_catch_research_first.md",
+   "lines": "11",
+   "quote": "**Within ~6 minutes**, I recognized this signature as wrong-schema-not-content-fail (the 0.55 floor + 0/30 = grader rejecting \"not a DBQ\" not grading badness of source).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": ".agent/reports/e2e_v97_live_20260607T100840Z.md",
+   "lines": "6",
+   "quote": "Note: corrected: verdict = overall.score (prior summary read nonexistent overall_pass).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "20",
+   "quote": "A **subject-taxonomy rename (`apush` → `American History`) broke the evaluator out from under the runs**, zeroing every score.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "24",
+   "quote": "A two-cell code path broke; ~45% aggregate = 3 cells working + 2 cells bugged to zero.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "82",
+   "quote": "Result: 30/30 scored 0.55 overall, stim_quality=0, rated INFERIOR.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "105",
+   "quote": "Recognized 0.55 floor + 0/30 = signature of wrong-schema, not content failure",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1-50 (all 50 rows)",
+   "quote": "\"ib_score\": 0.95",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1-50 (all 50 rows)",
+   "quote": "Fresh v80bchain final content accepted by high-scoring Unit-1 archetype predictor before live IB grading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "40",
+   "quote": "(wrong field read, grader on wrong host, MCQ_SET mis-route 0→0.77, DBQ truncation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "39-40",
+   "quote": "**The 4-harness-bug reframe (E1a–E1d):** the \"stuck at ~28%\" narrative was largely **measurement artifact**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "62-63",
+   "quote": "a scorer-less dev server produced 11 phantom FAILs because nobody preflighted that the scoring API had credentials",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "80",
+   "quote": "Prove the gate measures what it claims before trusting any verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "39-40",
+   "quote": "the \"stuck at ~28%\" narrative was largely measurement artifact (wrong field read, grader on wrong host",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "41",
+   "quote": "Corrected the project's own metrics; pre-fix figures superseded.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "186",
+   "quote": "MCQ was generating via Gemini (not the SFT model) — inflating MCQ numbers",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "189",
+   "quote": "We never got a clean MCQ benchmark on any SFT model until now.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "74",
+   "quote": "EVERY tick was being silently aborted, even when generator and InceptBench were both healthy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24",
+   "quote": "That 0.29→0.95 jump existed only under a discredited Gemini judge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/INDEX.md",
+   "lines": "113",
+   "quote": "claimed lift is INVALID because all sampled C0 records used GPT-4.1 under an older bar while C1 used Gemini 2.5 Flash under the loosened bar",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "39",
+   "quote": "**Why this wasn't caught earlier:** The bug only manifests with `LLM_BACKEND=fireworks`. Every previous sft-v4/sft-v5/sft-v6 benchmark was probably silently skipping all MCQs. The MCQ numbers from those runs are meaningless.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "26",
+   "quote": "**Symptom:** All MCQ items returned empty content (`generated_content: {}`), score 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "31",
+   "quote": "**Result:** The MCQ Research step NEVER WORKED. Every MCQ and MCQ_SET generation silently fell back to a legacy one-shot path. The research was supposed to gather verified primary sources — it never ran.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "163",
+   "quote": "**Result:** Best-of-N was \"deployed\" but not activated. The benchmark showed the same results as before because the feature wasn't actually running.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_failures_deep_dive.md",
+   "lines": "37",
+   "quote": "**Why this wasn't caught earlier:** The sft-v3 baseline test (5 prompts) showed 4/5 valid JSON. But that test went through the production pipeline, which strips thinking blocks before returning the response. Raw GRPO rollout bypasses the pipeline entirely. Two different code paths.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_failures_deep_dive.md",
+   "lines": "33",
+   "quote": "1416/1416 items scored 0.0 with reason \"invalid JSON completion.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "86",
+   "quote": "elapsed: 0.150s because current archetypes were backed by prior live IB cache entries",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "84",
+   "quote": "- pass: 44/50",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "99",
+   "quote": "- mean latency: 0.01032s",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1936Z_DELIVERED_pipeline_solver.md",
+   "lines": "77",
+   "quote": "First hidden run was 37/50.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "49",
+   "quote": "Deterministic fallback can fake readiness. Exports with ~0.40s generation latency were later marked invalid as quality evidence because they were fallback-shaped rather than model-shaped.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-22T1910Z_iterate_toward_LLM_FINAL_compatible.md",
+   "lines": "12",
+   "quote": "Production explicitly forbids deterministic returns (cache lookups, prewritten templates, archetype banks) as the FINAL answer. Banks/rescues may inform prompts but cannot be returned.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "283",
+   "quote": "Sub-second “generation” from a supposed model route is suspicious; it often means deterministic/template fallback.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HARNESS.md",
+   "lines": "12",
+   "quote": "Its output is labeled `FAKE_PROVIDER_SOFTWARE_TEST_ONLY`; it is **not** model or pedagogy evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "16",
+   "quote": "The naive fake is not a model or pedagogical score.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "16",
+   "quote": "The labeled fake dry run produces 1,056 output slots, 672 blind first-review packets, and a prespecified 168-packet second-review selection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "85-88",
+   "quote": "an onset-audibility check flagged 31 of 123 clips \"WEAK ATTACK,\" all false, because it measured loudness from the universal 0.28s lead-in at t=0 instead of from the actually-detected speech onset — fixed by measuring from detected onset, not from t=0 (an onset detector firing on 25% of clips at random was itself evidence the check, not the audio, was broken).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "136-139",
+   "quote": "the auditor's `thin_banks`/`enforcement_broken` FAIL (81/81) traced to an arbitrary `>=15` bank-depth constant hardcoded in `audit_compliance.py` itself (circular — the spec just quotes the auditor); the real platform/publisher floor is 8. After correcting the bar, 79/81 banks pass; 2 genuinely fall below 8 (a real, small, named gap).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "112-114",
+   "quote": "**Driver** (Playwright-based walker) evolved v10.1 through v10.16 across the campaign, each version fixing a false-negative in the driver itself (nested-rail host filtering, we_do adapter, popover-close timing, bold-text normalization, reset-detector logic) — never by loosening an assertion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "135-136",
+   "quote": "never loosen a pin.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "85",
+   "quote": "flagged 31 of 123 clips \"WEAK ATTACK,\" all false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "87-88",
+   "quote": "an onset detector firing on 25% of clips at random was itself evidence the check, not the audio, was broken",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "144-145",
+   "quote": "First run: recall 0.625 but a **98.6% false-positive rate** (the judge flagged 69 of 70 items nobody had ever complained about), traced to one broken check",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "35-36",
+   "quote": "on lessons the calibration log marked green at review time -- i.e. these are not rushed-tree findings, they are findings the team's OWN passing gate missed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "85",
+   "quote": "an onset-audibility check flagged 31 of 123 clips \"WEAK ATTACK,\" all false",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "5-6",
+   "quote": "Each test now has its own store: before, the block caches of every test run went to one shared temp folder, so a test could read a block an earlier run had made.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "22",
+   "quote": "const tmpStore = (name) => createStore(path.join(fs.mkdtempSync(path.join(os.tmpdir(),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-PHASE2-SUMMARY.md",
+   "lines": "3-5",
+   "quote": "headline now Flesch-Kincaid-based (R2=0.87, MAE 17L vs 4-method consensus). Old MSL/Zipf model kept as `lexile_legacy` diagnostic. It was under-reporting ~300L and near-non-predictive (R2=0.10) on this corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "14",
+   "quote": "**Lexile:** median **700L**, range 620–780L. **0 of 75** passages fall in the CCSS G6 band (925–1070L); all 75 sit below 925L.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION.md",
+   "lines": "14",
+   "quote": "Keep the grade-6 mastery claim — the text is already at band (consensus 1020L), so it's honest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION.md",
+   "lines": "16",
+   "quote": "What this means for the build (post-Lexile-recheck: all cheap, no passage rebuild)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "86",
+   "quote": "The low placement `pct_score` that looked like failure was a probe artifact (avg pct 0.05 vs 92% accuracy on the same attempts).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/brainlifts/v0.2.md",
+   "lines": "9",
+   "quote": "of the 33 who do, **69.7% (23) pass** — passers outnumber failers >2:1",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "85",
+   "quote": "but attempters are heavily self-selected (avg already mastered grade ~6.8, ~2 grades ahead)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION-BRIEF.md",
+   "lines": "86",
+   "quote": "passing is rare because of *non-participation*, not test failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "30",
+   "quote": "`style-fixture-initial.log` preserves an initial fixture font-context failure; the fixture initially omitted Next's font variables.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/style-fixture.json",
+   "lines": "153",
+   "quote": "\"font\": \"Georgia, Georgia, serif\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Reviewer-Feedback-2026-08-18.md",
+   "lines": "13",
+   "quote": "so a script reading `stem` reports \"1 distinct\" and looks like it found something",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "234",
+   "quote": "They don’t establish that all four lessons are broken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "190-192",
+   "quote": "One honest note on my own end: I briefly thought your linter printed RED but exited 0 (the G6 bug). That was my mistake - I was reading a piped tail's exit code, not the linter's.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "154-156",
+   "quote": "the nav controls had no stable hook, so a passage sentence beginning \"Next, the hornets.\" counted as a forward control.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": ".claude/skills/ux-review/SKILL.md",
+   "lines": "50-52",
+   "quote": "A stall is itself review-worthy (a student would be equally stuck) — judge the stall screenshot before assuming harness fault.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "22",
+   "quote": "\"lie\" heard as \"lies\" appears in every take from both models and all voices, so it is almost certainly a transcriber artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "76",
+   "quote": "The onset check above shows the captions sit on the true onsets, so this +0.26 s is whisper's own early bias over music, not caption lateness.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "24",
+   "quote": "ffmpeg `fps=1/15,tile` contact sheet dropped the first 3 tiles and looked like scene 1 had no picture → sampling artefact, not the film → verify with direct `-ss` frame grabs before concluding a render is broken",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Ldb4a38.txt",
+   "lines": "5",
+   "quote": "It catches 7 of the hard cuts and 1 crossfade and misses the other 27 transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-completion-and-course-findings.md",
+   "lines": "41",
+   "quote": "**Lesson:** three of four alarms this effort chased were artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "7",
+   "quote": "under `python3 -m http.server`, which does not honour Range requests, Chrome cannot seek inside the AAC clips: rewind and seek reset `currentTime` to 0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "73-74",
+   "quote": "The probe is often the bug: 5 of 6 findings on the first full G5 pass were probe artifacts, 1 was real.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "79-80",
+   "quote": "a flat output dir self-overwrites and invents cross-lesson bleed (the 2026-09-02 false-positive lesson).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

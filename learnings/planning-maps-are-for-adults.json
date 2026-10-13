@@ -1,0 +1,95 @@
+{
+ "id": "planning-maps-are-for-adults",
+ "title": "Planning maps are for adults",
+ "statement": "Treat a curriculum planning map as a guide for adults: never copy its rows into student material without separate review, or take a row as proof of learning.",
+ "example": "All 189 review-comment cells in one draft ledger are blank, which records no comments, not approval.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "wording",
+  "evidence-of-learning",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The routing packet for review feedback on the reading course says to treat the draft science workbook's rows as a candidate adult-facing coherence map, not approved student wording or proof that a student has already learned a concept (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/README.md`). Draft ledgers for several grades carry the same boundary: one is not evidence that younger students learned its concepts, another warns never to assume its concepts were taught, mastered, reviewed or approved, and a third forbids turning its statements into student prose without a separate authoring and review process (`grade3-reading/knowledge_bot/knowledge/kb-0152-science-g8-atom-composite-ledger.qmd`, `grade3-reading/knowledge_bot/knowledge/kb-0149-draft-grade-5-science-ledger.qmd`, `grade3-reading/knowledge_bot/knowledge/kb-0150-science-g6-atom-composite-ledger.qmd`). The passage-integrity checks forbid copying a draft workbook sentence into child-facing prose without separate review, and the cross-subject guidance notes that the draft science standards are written for adults and do not reflect the language students will be given (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md`, `grade3-reading/knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd`). Rows copied into student material need separate authoring as well as review, and a row is no proof that a student was even taught it.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/README.md",
+   "lines": "63-65",
+   "quote": "Treat workbook rows as a candidate adult-facing vertical-coherence map, not approved student wording or proof that a student has already learned a concept.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0152-science-g8-atom-composite-ledger.qmd",
+   "lines": "9",
+   "quote": "not evidence that younger students learned these concepts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0149-draft-grade-5-science-ledger.qmd",
+   "lines": "10",
+   "quote": "never assume the listed concepts were taught, mastered, reviewed, or approved for students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0150-science-g6-atom-composite-ledger.qmd",
+   "lines": "26-27",
+   "quote": "Do not convert the content statements into student prose without a separate authoring and review process.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0150-science-g6-atom-composite-ledger.qmd",
+   "lines": "25-26",
+   "quote": "All 189 `Reviewer Comments` cells are blank: that records an absence of reviewer comments, not reviewer approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md",
+   "lines": "55",
+   "quote": "no draft workbook sentence copied directly into child-facing prose without separate review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd",
+   "lines": "71",
+   "quote": "These standards remain subject to revision and are currently written for adults; they do not reflect the language that will be given to students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/README.md",
+   "lines": "36",
+   "quote": "C2 calls the row a soliloquy, but Puck addresses the watchers directly. L6 teaches the form accurately and preserves the discrepancy for review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "27",
+   "quote": "one treated KB inputs as child-facing mandates",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

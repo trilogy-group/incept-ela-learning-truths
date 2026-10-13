@@ -1,0 +1,70 @@
+{
+ "id": "name-judged-parts-by-content-not-position",
+ "title": "Name judged parts by content, not position",
+ "statement": "Name each judged part by what it is rather than by its position, so its judgments can be compared across drafts.",
+ "example": "In one remade glossary a redraft inserted one term, so every id from 4 to 9 named a different term in the two drafts.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The glossary's judge state names each entry by its position, term_0, line_0 and note_0 onwards. In one remade glossary the second draft inserted a term at id 4, so every id from 4 to 9 named a different term in the two drafts: three glosses identical in term, line and note moved to new ids, and a fourth moved with a shortened note. Comparing or replaying judgments by id across those drafts compares different words.",
+ "against": "Within one draft the ids are unambiguous, and the whole state is logged, so content can be matched again by hand.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "123",
+   "quote": "[[`term_${k}`, e.term], [`line_${k}`, ctx.text.units[e.unit].text], [`note_${k}`, e.note]]",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "35",
+   "quote": "\"term_5\": \"old gradation\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "37",
+   "quote": "\"note_5\": \"the traditional system of promotion by seniority\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "38",
+   "quote": "\"term_6\": \"affined\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "535",
+   "quote": "\"term_6\": \"old gradation\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "537",
+   "quote": "\"note_6\": \"the traditional system of promotion by seniority\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

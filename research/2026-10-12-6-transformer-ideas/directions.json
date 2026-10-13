@@ -1,0 +1,52 @@
+[
+ {
+  "id": "making-pipeline",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/ (the lesson engine; read at commit 7acdba0): src/transform.js, src/blocks.js, src/mechanics/util.js (the house prompt and the checks every block gets: line numbers, exact quotations, repeats, slur guard, the guard on answers aimed at the marker, stop and feedback checks), src/house.js, src/judge.js, src/engine.js, src/question.js (how a lesson question is suggested for any text), src/text.js (the text parser), src/analyse.js, DECISIONS.md, README.md. The ideas: how a block is drafted, checked, corrected, keyed and remade; how one judgment layer serves everything."
+ },
+ {
+  "id": "blocks-reading-checking",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/src/mechanics/: quick-check.js, open-check.js, evidence-hunt.js, word-in-focus.js, learning-question.js, glossary.js, key-words.js, word-web.js. For each block: its idea of a good item (what it must have), how it is generated and checked (its prompt, code checks and judge questions), how it plays (hints, release after two tries, feedback), and what its comments say it learned."
+ },
+ {
+  "id": "blocks-writing-thinking",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/src/mechanics/: worked-model.js, cer-frame.js, compare-paragraphs.js, say-it-back.js, debate.js, direct-the-line.js. For each block: its idea of a good task, how it is generated and checked, how a student's own words are handled and judged, and what its comments say it learned."
+ },
+ {
+  "id": "blocks-media",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/src/mechanics/film-check.js, video-essay.js, src/films.js and src/video/ (art.js, frames.js, beats.js, produce.js): how a film becomes a checked block, how a short video is made from any text (beats, frames, narration, captions, stops), and what is checked before and after it is made."
+ },
+ {
+  "id": "runtime-quality",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/src/core/ (scene, runtime), src/quality/ (personas, playtest, calibrate), test/*.test.mjs (the test names and assertions encode rules), v01/QA.md, v02/QA.md, v02/README.md: how a lesson plays as a scene, how judgments at play are made and replayed, how scripted readers and calibration check a lesson."
+ },
+ {
+  "id": "glue-surface",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transformer/src/glue/ (the animated build's lesson format and marking, the 3D build's rules, render and marking, sources), src/server.js, web/ (the composer: drag and drop, block labels, the quality line, renderer tabs, the lesson view) and v03/ to v11/ README.md (the planned stages, as open questions): how one lesson renders in other builds, what reviewers see, what is planned and not yet built."
+ },
+ {
+  "id": "universality-test",
+  "sources": [
+   "g9",
+   "g9-transformer-runs"
+  ],
+  "scope": "How universal and reusable the engine is. On 12 October 2026 all 16 blocks were made for a poem (Shelley's Ozymandias) and for prose (the Gettysburg Address) through the composer's API; the questions and results are in ~/Projects/learning-truths/research/2026-10-12-6-transformer-ideas/universality-test.json, each block's record in ~/Projects/g9/transformer/runs/blocks/<key>.json (word-web on ozymandias: ready (runs/blocks/4e79a689a9ff89da.json); film-check on ozymandias: failed (runs/blocks/0419fc2dc6f6bacf.json); video-essay on ozymandias: failed (runs/blocks/7e771d331c6b4135.json); learning-question on ozymandias: ready (runs/blocks/a8a3fc2ba12b27dd.json); key-words on ozymandias: ready (runs/blocks/1ed330c52090f0fc.json); glossary on ozymandias: ready (runs/blocks/4a2c8f7b98ff3449.json); quick-check on ozymandias: ready (runs/blocks/fa497dafbb0eb7c2.json); open-check on ozymandias: failed (runs/blocks/d872bc1dfbda65fb.json); evidence-hunt on ozymandias: ready (runs/blocks/963297774d627c12.json); word-in-focus on ozymandias: ready (runs/blocks/5722a3741161394e.json); direct-the-line on ozymandias: ready (runs/blocks/eb9231d930fa07c4.json); worked-model on ozymandias: ready (runs/blocks/68d85cc9b79fb956.json); cer-frame on ozymandias: ready (runs/blocks/28f70842c2e5570c.json); compare-paragraphs on ozymandias: ready (runs/blocks/3258f1e56c815eaa.json); say-it-back on ozymandias: ready (runs/blocks/225d56352f579174.json); debate on ozymandias: failed (runs/blocks/f23aebacf033daa2.json); word-web on gettysburg: failed (runs/blocks/7d9cc864b5707a05.json); film-check on gettysburg: failed (runs/blocks/d2d7d0787d6754d9.json); video-essay on gettysburg: ready (runs/blocks/34c293906aa945a2.json); learning-question on gettysburg: ready (runs/blocks/1d0b8598f5f274ad.json); key-words on gettysburg: ready (runs/blocks/cd006e767ac5b219.json); glossary on gettysburg: ready (runs/blocks/839053e70062cbb5.json); quick-check on gettysburg: ready (runs/blocks/9a28237802fccd82.json); open-check on gettysburg: failed (runs/blocks/b5f74899349e1331.json); evidence-hunt on gettysburg: ready (runs/blocks/cee942a6baad8233.json); word-in-focus on gettysburg: ready (runs/blocks/a75bd9643fa602d9.json); direct-the-line on gettysburg: ready (runs/blocks/e47511c58b5dd64c.json); worked-model on gettysburg: failed (runs/blocks/be97f27fc4c4a65a.json); cer-frame on gettysburg: ready (runs/blocks/0e5853cb45717f78.json); compare-paragraphs on gettysburg: ready (runs/blocks/f603c8d14862db8a.json); say-it-back on gettysburg: ready (runs/blocks/ee35599c8adf4826.json); debate on gettysburg: failed (runs/blocks/aeb043df247f1b45.json)). Read every failed block's record (its reasons, item and checks) and a few ready ones. Then read where the engine is tied to one grade, one text or one build: 'Grade 9' in src/mechanics/util.js, open-check.js, debate.js, worked-model.js, compare-paragraphs.js and src/question.js; the single film in src/films.js; the paintings in src/video/art.js; the build slots in src/glue/threejs-render.js and ops/render-animated.sh. Learnings: what made a block work on any text, what made one fail, and what a generator must keep out of its blocks to stay universal."
+ }
+]

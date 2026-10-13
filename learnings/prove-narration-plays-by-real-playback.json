@@ -1,0 +1,57 @@
+{
+ "id": "prove-narration-plays-by-real-playback",
+ "title": "Prove narration plays by real playback",
+ "statement": "Prove narration plays by observing real playback where media can play, since simulated media events test only fallback code.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "evaluation",
+  "accessibility"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a Grade 5 click-through the reading control looked active without proving that meaningful narration had started (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, line 20). The postmortem found that audio tests had simulated media events inside a network-blocked fixture, which proves recovery code, not playable narration (lines 61-62). The product contract now starts the read-to-me state only after real playback starts, not when a control is present or a request was attempted, and the release check needs a media-capable boundary that observes real playback, since a loopback failure can test fallback behaviour but cannot prove or disprove production media (lines 50-51 and 86).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "20",
+   "quote": "the reading control looked active without proving that meaningful narration had started;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "61-62",
+   "quote": "Audio tests could simulate media events inside a network-blocked fixture. That proves recovery code, not playable narration from a media-capable product boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "51",
+   "quote": "is present or a request was attempted; the active state begins only after real playback starts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "86",
+   "quote": "A media-capable boundary observes real playback. Loopback failure can test fallback behavior but cannot prove or disprove production media.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

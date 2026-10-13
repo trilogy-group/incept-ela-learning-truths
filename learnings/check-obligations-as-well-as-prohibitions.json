@@ -1,0 +1,93 @@
+{
+ "id": "check-obligations-as-well-as-prohibitions",
+ "title": "Check obligations as well as prohibitions",
+ "statement": "Check what an output must contain as well as what it must avoid, so an empty or minimal output that breaks no rule still fails.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "generation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The pedagogy decision-bank experiment design requires both positive obligations and prohibitions, so an empty or minimal artifact fails completeness even if it avoids every violation. Its headline metric counts only held-out tasks that produce a complete artifact satisfying every active critical rule, which keeps an output from passing by doing nothing.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "405-406",
+   "quote": "Positive obligations and prohibitions are both required; an empty/minimal artifact fails completeness even if it avoids violations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "313",
+   "quote": "the proportion of held-out tasks that produce a complete artifact satisfying every active critical rule",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "104",
+   "quote": "Each beat's narration is at most 45 words, the whole at most 180",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "37",
+   "quote": "TASK: a short video essay (60 to 100 seconds) that opens the lesson: three or four beats, each one frame with narration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20713",
+   "quote": "| **Tier-2 missing framing** | an adaptation text that never says variation is random + pre-existing; an energy text that never frames conservation | scan --topic flags the required framing's absence |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading-v2/docs/SCIENCE_MISCONCEPTION_CHECK.md",
+   "lines": "99-100",
+   "quote": "A missing Tier-2 framing now blocks the bounded content-review PASS; it cannot be carried as a harmless warning merely because the Tier-1 literal scan is clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "405-406",
+   "quote": "Positive obligations and prohibitions are both required; an empty/minimal artifact fails completeness even if it avoids violations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "328",
+   "quote": "Minimal empty outputs fail even when they avoid prohibitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "203",
+   "quote": "so \"the the the the the the\" cannot pass a 6-word threshold.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

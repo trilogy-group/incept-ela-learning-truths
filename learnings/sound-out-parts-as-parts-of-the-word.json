@@ -1,0 +1,121 @@
+{
+ "id": "sound-out-parts-as-parts-of-the-word",
+ "title": "Sound out parts as parts of the word",
+ "statement": "When a word is sounded out in parts, voice each part as it sounds inside the word, in the same voice as the whole word.",
+ "example": "Re-cut as parts of the word, one word's joined pieces read back as the word 3 of 3 times, where the old three-piece set read back as 'Manganese'.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A ruling on a vocabulary card's sound-it-out clips asked that the parts be pronounced as parts of the word, not as separate parts, and, after three rounds, that the pieces and the whole word share one voice (`grade3-reading/artifacts/HUMAN-REVIEW-2026-09-21.md`). The clips were re-cut from phonetic respellings and checked by reading the joined pieces back: two words read back as themselves 3 of 3 times, where one old three-piece set had read back as 'Manganese' (the same file). A walkthrough later found five new word-part clips that had never been read back, and they were re-cut with read-back transcripts; one card's earlier transcript reads 'Mercy, written with an eye,', a line the re-cut card no longer says (`grade3-reading/artifacts/feedback-live-walk-2026-09-30/REGISTER.md`; `grade3-reading/artifacts/feedback-live-walk-2026-09-30/PR-BODY.md`; `grade3-reading/artifacts/listen-qa-l4-l7-2026-09-24/G3-U1-L6/p2-word.txt`). Check that the joined parts read back as the word.",
+ "against": "An external audit held that the two-piece split chosen for one word should have been three syllables (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`), and three words were left as they were because their in-word candidates read worse (`grade3-reading/artifacts/HUMAN-REVIEW-2026-09-21.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "101",
+   "quote": "\"pronounce the parts as parts of that word, not as individual parts\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "107",
+   "quote": "the old three-piece set read back \"Manganese\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "123",
+   "quote": "\"same voice for the pieces and the full word\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "26",
+   "quote": "the five new routine-parts clips never read back",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/PR-BODY.md",
+   "lines": "10",
+   "quote": "Word-parts clips re-cut through the routine script with read-back transcripts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/listen-qa-l4-l7-2026-09-24/G3-U1-L6/p2-word.txt",
+   "lines": "5",
+   "quote": "Mercy, written with an eye,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "65",
+   "quote": "splits the word into two syllables instead of the correct three",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "74-75",
+   "quote": "Whisper is NOISE on isolated chunks (\"Bae?\", \"Ma?\"). Use the generator's own read-backs, three times, plus a sequence file for the ear",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "57-58",
+   "quote": "a 3-way multiple-choice the read-back must answer with the in-word sound, 3 of 5 votes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "94-95",
+   "quote": "Whisper is useless on isolated syllables; the generator's read-backs (WORD_PROMPT / CLIP_PROMPT / PROBE) and a human ear are the instruments.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/peter-pan/fill/L5-BUILD-SPEC-2026-08-27.md",
+   "lines": "147-149",
+   "quote": "a bare suffix fragment can be misread by the TTS (\"Ry\" → rye; fixed as \"Ree, like the end of bakery\" — the part mark must CONTAIN the part's letters, which the analogy word can carry).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "28",
+   "quote": "Sound-out parts are spoken as they sound inside the word, printed parts keep the morphology",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "96",
+   "quote": "never a natural word cut at its seams (abrupt however faded)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

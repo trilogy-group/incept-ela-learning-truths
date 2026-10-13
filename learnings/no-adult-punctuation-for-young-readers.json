@@ -1,0 +1,112 @@
+{
+ "id": "no-adult-punctuation-for-young-readers",
+ "title": "No adult punctuation for young readers",
+ "statement": "Keep adult punctuation and shorthand, such as em dashes, semicolons, any brackets, slash compounds and all-caps, out of young readers' text outside quoted source, and check it in code.",
+ "example": "The ban covers punctuation that reads as adult prose to an eight- or nine-year-old, with a short list of acronyms exempt from the caps rule.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review comment on a grade 3 reading course found that machine-written em dashes made sentences harder for a child to read, and the course banned them from child-facing text. It extended the ban to semicolons, parentheses, slash compounds and all-caps emphasis, as punctuation that reads as adult prose to an eight- or nine-year-old, enforced by validators on lesson data and on text built into components (`grade3-reading/course-renderer/docs/rules/content-and-copy.md`, lines 18-38). The course's rule pack calls these house rules, not universal ones, and its style validator keeps semicolons only inside verified excerpts from source texts.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "10-12",
+   "quote": "\"AI uses loads of em dashes. I would remove them entirely. It is much better for a child to see other types of punctuation and they make sentences harder to read in my opinion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "25-26",
+   "quote": "**Rule.** Same ban, same reason, extended to the punctuation that reads as adult prose to an eight- or nine-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "18-20",
+   "quote": "Enforced by `scripts/validate-contracts.mjs` for JSON content (em dash and en dash) and by `scripts/validate-component-text.mjs` for text hardcoded in components",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "199",
+   "quote": "These are GRADE-3-READING house rules, not universal ones, and that is the whole reason they live in a rule pack.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/sources/README.md",
+   "lines": "9",
+   "quote": "The style validator preserves semicolons only inside those verified excerpts or verse lines",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "13",
+   "quote": "The six hard-won content rules (each has a gate; violations WILL bounce)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "4",
+   "quote": "each one exists because a real defect shipped and was caught live.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "14",
+   "quote": "no parenthetical abbreviations, no slash-compounds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "15-16",
+   "quote": "Exception: quoting a play's own bracketed stage directions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/verification/README.md",
+   "lines": "141",
+   "quote": "no adult note-shorthand reaches a child's screen — no parentheticals, slash-compounds or brackets",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "904",
+   "quote": "## Known generator defects in your source (v3_gen) — you must FIX, not inherit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "905",
+   "quote": "bracket shorthand in chart values/beats;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

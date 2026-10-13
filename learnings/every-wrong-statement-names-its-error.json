@@ -1,0 +1,80 @@
+{
+ "id": "every-wrong-statement-names-its-error",
+ "title": "Every wrong statement names its error",
+ "statement": "In a select-all item, every wrong statement must contain an error that can be named, because a statement that is merely less good is not false.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "options",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "One generator's failure analysis quotes the judge failing a select-all option that was not clearly false, only a mischaracterization. Its fix tells the writer that wrong answers in a select-all item must be false statements, not misleading but plausible ones: for each, the writer completes a sentence naming the specific error, and one it can't complete is too ambiguous. Select-all items passed 40% in that benchmark, their key issue being that they had been written as single-answer items.",
+ "against": "in an earlier batch, a model's review of 8 such items passed all 8 where the writer's own model, judging, passed 5, and called that judge too strict.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "18",
+   "quote": "MSQ | 40% | CRITICAL: Wrong format (4 options, 1 answer instead of 5/2-3)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "106",
+   "quote": "Option B is NOT clearly factually incorrect - it's more of a mischaracterization/distractor",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "243",
+   "quote": "In MSQ, wrong answers must be STATEMENTS THAT ARE FALSE, not \"misleading but plausible.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "255",
+   "quote": "If you cannot complete that sentence, the statement is too ambiguous.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md",
+   "lines": "21",
+   "quote": "MSQ | 62.5% (5/8) | 100% (8/8) | Gemini too strict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/item-types/msq.md",
+   "lines": "5-7",
+   "quote": "The two untrue statements are FALSIFIABLE directly from the text — a child can point at the sentence that proves them wrong. Never merely unlikely, never outside the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp4-v4-design.txt",
+   "lines": "326",
+   "quote": "Refine sets are 6 statements each, 4 true + 2 incorrect, all falsifiable from the text.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

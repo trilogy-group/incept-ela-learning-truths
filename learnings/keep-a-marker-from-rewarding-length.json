@@ -1,0 +1,62 @@
+{
+ "id": "keep-a-marker-from-rewarding-length",
+ "title": "Keep a marker from rewarding length",
+ "statement": "Model judges favour longer answers and one position, so length-normalise a marker's inputs, swap the order of compared answers, and test it on short full-credit answers.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "An assessment BrainLift, citing published work on model judges, says they show first-or-second position effects and favour more verbose responses, and names randomised sides, length-normalised inputs and repeated, permuted comparisons as the mitigations. A grade 4-5 writing module's marker spec adopts length-normalising and side-swapping of anchor order even in absolute scoring, since longer answers would otherwise inflate, and its generation contract requires a short full-credit and a long partial-credit answer among the exemplars so that longest does not count as best.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1963",
+   "quote": "LLM judges show left/right (or first/second) position effects and favour more verbose responses; mitigate via randomised sides, length-normalised inputs, and repeated, permuted comparisons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1968",
+   "quote": "Audit: track judge agreement with human seeds; estimate reliability; check for systemic biases (position, verbosity).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "83-84",
+   "quote": "**length-normalise** inputs and **side-swap** anchor order even in absolute scoring, or longer Grade-4 answers inflate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "38-39",
+   "quote": "**A correct 2 can be short**: do not let \"longest = best\" (`[WF 1963]`); the exemplar set must include a short full-credit and a long partial-credit response.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (arXiv:2306.05685, NeurIPS 2023)",
+   "url": "https://doi.org/10.48550/arXiv.2306.05685"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

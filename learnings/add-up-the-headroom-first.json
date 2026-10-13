@@ -1,0 +1,65 @@
+{
+ "id": "add-up-the-headroom-first",
+ "title": "Add up the headroom first",
+ "statement": "Before committing to an overall target, add up each item type's realistic headroom to see whether the target can be reached and which type decides it.",
+ "example": "With every other type near its ceiling, the weakest type at its best-ever rate gave 83.8% overall against a 95% target.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "format"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Per-type arithmetic on measured pass rates was written into the project's target file as something to read before approving any spend (`icloud-work/auto-memory-backup/mission_locked_95_aggregate.md`). A 95% target meant 282 of 297 prompts passing; with every other type near its estimated ceiling, the weakest type at its best-ever rate gave 249 of 297 (83.8%), and at an 80% pass rate 276 of 297 (92.9%). That made the weakest type the binding constraint.",
+ "against": "The per-type ceilings are estimates (\"maybe 8-10\", `icloud-work/auto-memory-backup/mission_locked_95_aggregate.md`, line 37). The +47 for the other types sits inside the 41 to 52 range the table implies, and even at 52, with the weakest type at 80%, the total is 281, one short of 282.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/mission_locked_95_aggregate.md",
+   "lines": "19",
+   "quote": "Operationally: **282 of 297 prompts must pass.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/mission_locked_95_aggregate.md",
+   "lines": "44",
+   "quote": "**Without solving DBQ:** non-DBQ ceilings at +47, DBQ at all-time-best +11 = **+58 max**. 191 + 58 = **249/297 = 83.8%.** Below bar.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/mission_locked_95_aggregate.md",
+   "lines": "46",
+   "quote": "**With DBQ at 80% pass rate (24+24=48 vs current 10):** +38 from DBQ + +47 from non-DBQ = +85. **191 + 85 = 276/297 = 92.9%.** Still below bar.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/mission_locked_95_aggregate.md",
+   "lines": "52",
+   "quote": "DBQ is the structural constraint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-final-selection/_internal/VERDICT.md",
+   "lines": "39",
+   "quote": "**The strict variety cap (match ≤6/15) is unreachable regardless of Claude** — a structural non-match shortage (623 available vs 729 needed), not a wiring bug.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

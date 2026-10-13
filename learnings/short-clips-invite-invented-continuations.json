@@ -1,0 +1,82 @@
+{
+ "id": "short-clips-invite-invented-continuations",
+ "title": "Short clips invite invented continuations",
+ "statement": "Voice generators given short lines can invent a continuation or speak their style notes, so mark where each clip's literal text starts and stops, and check short clips hardest.",
+ "example": "A ten-word sentence produced a fabricated continuation about green flowers, and a five-word epilogue line produced invented verse.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a narration rebuild a ten-word sentence produced a fabricated continuation and a five-word epilogue line produced invented verse, and the gate notes that a valid file, the right voice and a reasonable volume do not prove faithful narration. The reviews of both units found that short literary fragments sometimes produced invented continuation or leaked style instructions, and several short source lines had to be replaced before packaging. The repair prompt marks the printed words with tags and tells the voice to read exactly those words, never continue with remembered text and stop at the closing tag, and the gate cites the speech-generation documentation's advice to label the transcript clearly.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "7",
+   "quote": "In this rebuild, a ten-word Secret Garden sentence produced a fabricated continuation about green flowers. A five-word epilogue line produced invented verse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "7",
+   "quote": "A valid WAV, correct voice ID and reasonable volume do not prove faithful narration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "14",
+   "quote": "Short literary fragments sometimes produced invented continuation or leaked style instructions",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "12",
+   "quote": "Several short source lines produced invented continuation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "12",
+   "quote": "Label literal transcript boundaries and stop conditions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/repair-narration.py",
+   "lines": "9",
+   "quote": "Read exactly those words. Never continue with remembered text or infer a following sentence. Stop completely at the closing tag.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "19",
+   "quote": "Google documents prompt-classifier false rejections and recommends explicit speech-synthesis instructions with a clearly labelled transcript.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "the voice model's documentation, speech generation limitations (cited by the gate, verified 2026-09-07)",
+   "url": "https://ai.google.dev/gemini-api/docs/speech-generation"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

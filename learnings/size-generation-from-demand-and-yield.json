@@ -1,0 +1,63 @@
+{
+ "id": "size-generation-from-demand-and-yield",
+ "title": "Size generation from demand and yield",
+ "statement": "Before generating, size a unit's item bank from how many certified items each use needs, such as practice, checkpoints, retest forms and review, divided by the expected certification yield.",
+ "example": "A certification yield of 0.5 means generating twice as many items as must be certified.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "practice"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's demand calculator sizes each theme before authoring begins (`grade3-reading/ti-courseplans/scripts/lane-tools/theme-demand/README.md`). It counts the certified items each consumer needs, practice slots, a 15-item checkpoint, a parallel 15-item form for each funded retest, and shares for spaced review and a cold pool, then divides the total by the certification yield to get the number to generate, along with the authoring load per text. Its default yield of 0.5 rounds a grade 5 campaign that certified 48.7%, and the same file keeps a grade 3 calibration blocking before generation or a grade 3 gate goes live.",
+ "against": "The yield it divides by is a pricing prior from another grade, not a grade 3 readiness result (`grade3-reading/ti-courseplans/scripts/lane-tools/theme-demand/README.md`, lines 54-55), so the sizes are estimates until a grade 3 calibration replaces it.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "3",
+   "quote": "Sizes a theme BEFORE authoring begins",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "16-17",
+   "quote": "table of items TO CERTIFY and TO GENERATE, broken down by consumer (practice slots, D15 checkpoints, retest reserve, spaced review, cold pool) plus per-text authoring load.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "24-25",
+   "quote": "one 15-item checkpoint per theme and one parallel 15-item form per funded retest cycle",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "64",
+   "quote": "to_generate = ceil(to_certify / certification_yield)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "54-55",
+   "quote": "`certification_yield` 0.5 is a historical G5 pricing prior (campaign 48.7%), not a G3 readiness result.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

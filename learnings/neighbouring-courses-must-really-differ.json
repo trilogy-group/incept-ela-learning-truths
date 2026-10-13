@@ -1,0 +1,65 @@
+{
+ "id": "neighbouring-courses-must-really-differ",
+ "title": "Neighbouring courses must really differ",
+ "statement": "A course for one level must differ from the course for the level beside it in more than its lesson list, difficulty and units, because near-copies share their weaknesses.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "demand",
+  "review"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The course-plan agents made a sibling clone a blocking finding: a design whose only differences from the nearest sibling are lesson spines, difficulty and units fails review (`ti-courseplans-audit/docs/course-formula-agents.md`, lines 99-101). Every design first loads a grade-band profile of the dimensions that must differ by grade, among them text band, stamina, genre split, item formats, depth-of-knowledge mix and gate design (the same file, lines 89-91). The rule answered a standing concern that courses for neighbouring grades built under the same guidance were so alike that one rejection would bring the rest for the same underlying reasons (`ti-courseplans-audit/docs/grade-band-profiles.md`).",
+ "against": "The joint rejection is a stated concern, not an observed outcome.",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "99-101",
+   "quote": "**\"Sibling clone\" is a blocking red-team finding class**: a design whose only deltas from the nearest sibling are lesson spines/difficulty/units fails review",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "89-91",
+   "quote": "dimensions that MUST differ by grade (axis, decoding share, text band, stamina, schema progression, genre split, item formats, DOK mix, gate design, anchor)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/grade-band-profiles.md",
+   "lines": "7",
+   "quote": "rejected for the same underlying reasons. We're just failing in parallel.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/STAAR-RLA-BLUEPRINT.md",
+   "lines": "71",
+   "quote": "the current live AlphaWrite Paragraphs G4/G5 are byte-identical — the failure mode to avoid",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "469",
+   "quote": "G7 is **not** \"G6 with harder text,\" and it is **not** \"a lighter G8.\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

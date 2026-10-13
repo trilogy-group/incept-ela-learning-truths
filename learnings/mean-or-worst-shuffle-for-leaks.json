@@ -1,0 +1,75 @@
+{
+ "id": "mean-or-worst-shuffle-for-leaks",
+ "title": "Mean or worst shuffle for leaks",
+ "statement": "Whether a leak gate for items served in shuffled order should judge the mean over many shuffles or the worst one is unsettled.",
+ "example": "Judged by the mean, 31 ordering and 69 matching items that the worst case had excluded were restored, and none of the 31 solved exactly.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "integrity",
+  "evaluation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A Grade 5 course's anti-leak gate moved from the worst case to the mean over resampled shuffles, because the platform randomises the presentation order on every attempt, so a student meets the distribution, while the worst case measures an attacker's luckiest presentation. Earlier, certifying on one seeded shuffle had shipped a leaky item and six more ordering items that a blind solver answered at 0.60 or above, one at exactly 1.000. The course's retrospective lists single-shuffle certification, and assuming worst-case and mean-case were interchangeable, among what failed, and the mean-metric evidence was among the claims its red-team records still disputed.",
+ "against": "A rule on record judges a without-text check by the worst of several option orders (run-the-without-text-check-the-hard-way).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/mean-metric-2026-07-07/README.md",
+   "lines": "5-7",
+   "quote": "the platform **randomizes the presentation order on every attempt**. A student cannot select the order; they face the distribution.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/mean-metric-2026-07-07/README.md",
+   "lines": "7-9",
+   "quote": "Their expected blind-solve performance is therefore the **mean over resampled shuffles**, not the worst case. Worst-case measures an attacker's luckiest presentation, which no student controls under `shuffle=\"true\"`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/mean-metric-2026-07-07/README.md",
+   "lines": "19-21",
+   "quote": "- Restored (borderline under worst-case, safe under mean): 31 sequence + 69 match. **0 of the 31 restored sequences exact-solve; mean 0.31–0.58; worst 0.33–0.75.** The high worst-case values are lucky single-shuffle hits the student never reliably sees.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "60",
+   "quote": "anti-leak gate certified on ONE seeded shuffle, shipping a leaky certified_clean item (grade5 u1-l19-q09-sequence blind pair_acc≈0.75, resampled ~88% ≥0.6) and 6 more certified sequence items ≥0.60 blind including one at exactly 1.000",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "195-198",
+   "quote": "What failed: - single-shuffle certification for sequence items; - assuming worst-case and mean-case were interchangeable;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/STUDENT_READY_CRITICISM_FRAMEWORK.qmd",
+   "lines": "176",
+   "quote": "Active beads `B0154`, `B0155`, `B0156`, `B0157`, `B0160` challenge mean-metric evidence, gate arithmetic, expansion validity, construct validity, and 1241/0/0 certification.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

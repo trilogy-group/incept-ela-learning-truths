@@ -1,0 +1,369 @@
+{
+ "id": "one-change-at-a-time",
+ "title": "One change at a time",
+ "statement": "Test each change alone against an equally informed control on the same fixed items and conditions, differing only in that change, and adopt it only on a net gain.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP training chain kept its settings fixed from version to version under an anti-regression rule that only the data changes. To learn whether a block of curriculum context was needed, it trained two versions side by side that differ only in that block: if the version without it does as well, the block is redundant, and if the one with it does better, the block is doing real work. The control runs on the same fixed items and conditions, the request mix and the writer's examples included.",
+ "against": "The note records the plan, not the result: both versions were still queued when it was written. most iterations changed nothing, and the loop's proposals sometimes made things slightly worse (a 0.5% regression) and rarely caught code bugs. Gains measured one at a time may not hold together: two prompt changes that each lifted a small paired pilot lowered fresh first-try rates once combined (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md`, lines 3-6). A changed mix can also expose a real defect: the 90.0% run revealed a genuine conflict between a unit's period and a topic (`icloud-work/ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md`, line 251), so the drop was informative even though it was not a regression. A design fixed before any run; the file records no result. A fix confirmed on one item proves little beyond it: the lab's own takeaways say targeted repair probes prove the fix for that family, not the whole unit, and warn against row-specific hacks masquerading as generalized repairs. A filter that hurt in the bundle can still help alone: question-set checks measured net-negative when bundled recovered about 6 of 40 candidates on their own (icloud-work/aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md, line 65).",
+ "evidence": [
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "80",
+   "quote": "Test whether curriculum_context (v52b primary) is necessary, or whether D13 alone (v52 control) suffices. If v52 ≥ v52b → curriculum is redundant. If v52b > v52 → curriculum is doing real work.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "75",
+   "quote": "Hyperparams unchanged across chain: LR 1e-6, epochs 1, loraRank 32, batchSize 32768 (per anti-regression rule — only data changes).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "139",
+   "quote": "v52/v52b still QUEUED no fw_job.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "212",
+   "quote": "The next tick measures whether THAT specific change improved things. Multiple simultaneous changes = unknown attribution.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "197",
+   "quote": "The system applied ~40-50 iterations over 48 hours. Most iterations were 0.0% improvement. 9 were significant.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "197",
+   "quote": "The 9 that worked all had the same structure: a specific, identifiable code/prompt bug causing a specific, measurable dimension to fail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "103",
+   "quote": "Claimed 90% MCQ_SET pass rate (actual: 70-75%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "105",
+   "quote": "Spawned 4 parallel processes modifying the same generator files",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "225",
+   "quote": "Sometimes proposed a prompt change that made things slightly worse (0.5% regression)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "226",
+   "quote": "Rarely caught code bugs (like the f-string bug)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "212",
+   "quote": "1. **Testable:** The next tick measures whether THAT specific change improved things. Multiple simultaneous changes = unknown attribution.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "244",
+   "quote": "Incremental testing ensures we can validate each fix independently.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "248",
+   "quote": "The 99.3% LEQ pass rate (run `fda3ba0f`) had **zero APUSH-5 LEQ** requests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "249",
+   "quote": "The 90.0% LEQ pass rate (run `ee6fb4af`) was **100% APUSH-5 LEQ** requests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "251",
+   "quote": "This is not a code regression but a test distribution change revealing an existing issue with APUSH Unit 5's time period (1844-1877) conflicting with topics like \"Reconstruction\" (1865-1877).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "571",
+   "quote": "MCQ apparent regression (-11pp) is explained by sampling variance: Gate 3 included harder MCQ items (APWH, APEURO hard-difficulty).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "68",
+   "quote": "3. **Demo selection drift**: lock the demo set per cell.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "311",
+   "quote": "Never batch multiple fixes. Never skip local testing. Always measure before/after.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "231",
+   "quote": "- Cannot measure impact: no A/B control in this run",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "579",
+   "quote": "- Can't isolate which change caused regression",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "583",
+   "quote": "- Change ONE thing at a time",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN7_BLUEPRINT.md",
+   "lines": "162",
+   "quote": "Run 4: Major Regression (49.6%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "149",
+   "quote": "One knob per eval, or you can't attribute deltas.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-22/ours-only.html",
+   "lines": "31",
+   "quote": "Both sides are the same staging commit 5d033ac1. The only difference is our work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "59",
+   "quote": "Before such an evaluation, freeze the current comparison, choose one variable, preserve reading access and pronunciation rulings, and measure completion, interpretation, targeted learning and broader recall.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "53-54",
+   "quote": "**Arm B (base): the untrained base model + the SAME prompts and briefs.** Isolates what training added; run it or the result is uninterpretable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/NORTH_STAR.md",
+   "lines": "42",
+   "quote": "One change per experiment. Single-variable diffs against v7 baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "29-33",
+   "quote": "No temperature/model/threshold changes. General rules only — no item-, subject-, or example-specific content. Measured on a fixed set of borderline items, 6 evaluations each, identical conditions (temp 0, seed 42, gemini-3-flash):",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "34",
+   "quote": "- flipping items: 12/17 -> 6/17",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "241",
+   "quote": "- The export is invalid as evidence for the fixed endpoint because it continued through multiple deployments and includes old placeholder generations plus the intermediate DBQ source-gate 502s.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/runs_to_commits_40d.md",
+   "lines": "63",
+   "quote": "- Render auto-deploys on push; typical deploy-live latency 1-3 min. Runs that fire within ~2 min of a commit push may be reading the prior version.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2115",
+   "quote": "- Important methodology note: deterministic same-build slice `300-349` remains valid only for deterministic/template mode. It cannot be counted as LLM-required proof.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "23",
+   "quote": "The version numbers are not monotonic improvements. Treat every version as a measured hypothesis.",
+   "verified": "script"
+  },
+  {
+   "source": "openclaw-incept-memory",
+   "path": "ap-benchmark-context.md",
+   "lines": "48",
+   "quote": "diagnose → fix one thing → commit → retest → check regression → repeat until 98%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "44",
+   "quote": "The rule is aggregate -> dimension -> item -> hypothesis -> distinguish -> confirm -> fix.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "45",
+   "quote": "Never jump from aggregate failure to a training run. That was the recurring expensive mistake.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "59",
+   "quote": "targeted Native-environment easy repair retained after live IB improved that row from 0.80 to 1.00;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1840Z_DELIVERED_pipeline_solver.md",
+   "lines": "60",
+   "quote": "rejected transatlantic rewrite and broad environment rewrite after live IB showed regressions;",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "9",
+   "quote": "This tests whether an edit improves context-sensitive judgment beyond an equally informed prompt. A null result is valid. The prompt-only baseline remains the default demo if the edited model fails.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "32",
+   "quote": "Use the same inference prompt, rule text, source access, decoding settings, and output budget as the prompted base.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "147-149",
+   "quote": "**Fix**: never ship the filter bundle. Recommend filters individually with per-filter replay numbers. Add a filter only if its replay shows net gain ≥ 3 rows.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "129-130",
+   "quote": "**Root cause**: the filters in `scripts/filters/*.py` are individually plausible but their bundle over-rejects valid candidates.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/gemini_selector_calibration_final.md",
+   "lines": "4",
+   "quote": "Rows audited: **150**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/gemini_selector_calibration_final.md",
+   "lines": "96",
+   "quote": "| mcq_set/hard | 10 | 10/10 | 3/10 | 10/10 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/gemini_selector_calibration_final.md",
+   "lines": "103-104",
+   "quote": "- baseline pass rate (current Gemini selector): **91.3%** - filter→gemini pass rate (proposed v2 selector): **87.3%**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0166-counterfactual-authority-a1b-terminal-causal-control.qmd",
+   "lines": "178-179",
+   "quote": "A Tiny Recursive Models-style loop earns causal credit only when limited error feedback beats the equal-budget blind-resampling control.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5253",
+   "quote": "The useful next check is a held-out set with equal candidate/ranking budgets and human review of whether the help is appropriate.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4434",
+   "quote": "I’ll keep the same lesson content across them to make the comparison useful.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

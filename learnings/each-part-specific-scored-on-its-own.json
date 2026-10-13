@@ -1,0 +1,51 @@
+{
+ "id": "each-part-specific-scored-on-its-own",
+ "title": "Each part specific, scored on its own",
+ "statement": "Build each part of an open question so that a vague, generic answer cannot earn credit and the part can be scored on its own.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "demand",
+  "scoring-guide"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The short-answer rubric gives full marks when the parts require specific evidence, examples or reasoning, so that generic answers would not earn points (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt`). It also asks for the expected number of parts, each with a clear task verb, connected to one another but independently scorable (the same file). It governs how the question is built, not how its marking guide is written.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "41",
+   "quote": "- Score 1.0: Parts require specific evidence, examples, or reasoning; generic answers would not earn points",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "36",
+   "quote": "- Score 1.0: Has the expected number of parts (check metadata/curriculum context for requirements); each part has a clear task verb; parts are logically connected but independently scorable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "316",
+   "quote": "Exact-match grading; rubric has no reject boundary",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

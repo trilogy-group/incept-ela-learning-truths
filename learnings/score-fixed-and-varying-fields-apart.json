@@ -1,0 +1,56 @@
+{
+ "id": "score-fixed-and-varying-fields-apart",
+ "title": "Score fixed and varying fields apart",
+ "statement": "Report accuracy on the parts of a structured answer that vary between items apart from parts fixed for every item, because fixed parts inflate field-level scores and hide real mistakes.",
+ "example": "One candidate matched 612 of 660 scored cells but only 44 of 60 whole answers.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A plan for qualifying coders of a typed rule schema found that seven constant-skeleton field groups can make field accuracy misleading, and required the four groups that vary from item to item (effect and template, force, value encoding and derived fields) to be reported separately. Another qualification plan counts 240 varying cells and 420 constant skeleton cells in a 60-item round. In one such round a candidate matched 612 of 660 cells but only 44 of 60 whole answers, and the failures concentrated in two varying fields, force and value encoding.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-trm-recursive-reviewer-pilot-plan.md",
+   "lines": "50-51",
+   "quote": "Seven constant-skeleton field groups can create misleading field accuracy. The four dynamic groups—effect/template, force, value encoding, and derived fields—must be reported separately.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-human-qualification-v3-launch-plan.md",
+   "lines": "92-93",
+   "quote": "240 dynamic-semantic cells, 420 constant skeleton cells",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "25",
+   "quote": "| A | 44/60 | 612/660 | 22/30 | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "45-46",
+   "quote": "The discriminating failure is boundary/reciprocal reasoning, concentrated in typed force and value encoding",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

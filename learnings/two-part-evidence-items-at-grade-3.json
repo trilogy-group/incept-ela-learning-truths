@@ -1,0 +1,87 @@
+{
+ "id": "two-part-evidence-items-at-grade-3",
+ "title": "Two-part evidence items at Grade 3",
+ "statement": "Whether two-part claim-and-evidence items suit grade 3 is unsettled: state tests reportedly start them a grade later, and reviews of work at that grade disagree.",
+ "example": "A red team found a two-part evidence item in all 48 generated Grade 3 lessons.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "format",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The course plans' red-team taxonomy lists two-part evidence items shipped at Grade 3 as a developmentally inappropriate format, on the ground that state test blueprints put two-part evidence around grade 4 and up, and a red team found one in all 48 generated Grade 3 lessons despite the canonical instruction-quality standard. A later look at the Grade 3 checks found such items still being scored although they are banned at that grade. Against that, a Grade 5 course's acceptance framework records that feedback on the Grade 3 course praised its evidence and two-part work. The blueprint claim is secondhand and is not checked here.",
+ "against": "The sources quoted disagree with one another. A format record on record keeps two-part items out of Grade 3 and notes that a ruling on them is still pending (choose-the-format-the-target-needs).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20669",
+   "quote": "| **Developmentally inappropriate formats** | EBSR shipped at G3 (state blueprints put two-part evidence ~G4+) | format census × grade-level state blueprint |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1068",
+   "quote": "Also found a few checks pointing the wrong way: option counts capped at a max when the standard sets a minimum, passage length pushed toward STAAR test-prep, EBSR scored when it's banned at G3, and most checks report-only so findings never move a score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "181-182",
+   "quote": "Every generated G3 lesson includes an EBSR: **48/48**, despite the canonical instruction-quality standard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/STUDENT_READY_CRITICISM_FRAMEWORK.qmd",
+   "lines": "189",
+   "quote": "G3 feedback praised evidence/two-part work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "596",
+   "quote": "2026-06-29 calls the two-part evidence items \"well built\", a genuine strength",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "598-599",
+   "quote": "2026-07-08 calls the same type \"likely developmentally inappropriate for grade 3 — that type generally appears on state tests around grade 4 and above\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "601-602",
+   "quote": "This repo is Grade 4, where the second note's own reasoning says the type is fine",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "602-603",
+   "quote": "is a supported bank type. Needs a decision.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

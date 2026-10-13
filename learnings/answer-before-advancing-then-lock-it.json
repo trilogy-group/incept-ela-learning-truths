@@ -1,0 +1,62 @@
+{
+ "id": "answer-before-advancing-then-lock-it",
+ "title": "Answer before advancing, then lock it",
+ "statement": "In an adaptive test, require an answer before moving on and lock it once given, since later items are chosen from it and going back breaks the selection.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "measurement",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment that follows an established adaptive test's documented interface locks each item once answered, with no back button, and keeps Next disabled until a response is given (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`). Its design-review procedure lists untimed, forward-only delivery among its hard constraints because back-navigation breaks the adaptive assumption (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md`), each next item being the one most informative at the estimate the earlier answers set (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`).",
+ "against": "The rule copies the reference test's conventions; nothing in these sources measured what allowing review would do to the scores.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "51",
+   "quote": "| C8 | **Untimed, forward-only** — power test, no clock; once answered, locked | NWEA confirmed: 3rd graders typically take 45–100 min; no time limit is set. Back-navigation breaks the adaptive assumption. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "345",
+   "quote": "- **Forward-only navigation**: once an item is answered, it is locked; no back button [NWEA-VERIFIED]",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "346",
+   "quote": "- **Answer-before-advance**: NEXT is disabled until a response is given",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "343",
+   "quote": "so that students experience familiar testing conventions and the official test measures reading rather than interface novelty",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "200",
+   "quote": "select the item that maximizes Fisher information at the current θ̂",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

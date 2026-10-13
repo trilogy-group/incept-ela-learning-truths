@@ -1,0 +1,141 @@
+{
+ "id": "one-fixed-read-aloud-pace-with-replay",
+ "title": "One fixed read-aloud pace, with replay",
+ "statement": "Read text aloud at one fixed pace set for the grade, not per learner, and let learners pause and replay rather than slowing the voice, which distorts speech.",
+ "example": "For grade 3 the pace is 110 to 120 words a minute, with no per-student speed.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A model lesson sheet for a grade 3 reading course sets the read-aloud at a fixed pace with no per-student speed, and a review call gave the reason as one standardised, age-appropriate reading speed across all lessons. A later call accepted the argument that slowing audio distorts prosody, breaks sentence continuity and compromises fidelity, so learners should pause and replay at the set pace, and the build lets a child tap a line the voice has already reached to hear it again (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 73-89). The same call kept a slower option for struggling readers, and the course records the earlier no-speed-control decision as superseded but never withdrawn.",
+ "against": "The course kept a slower option: \"'slow enough' is highly subjective, noting that struggling readers or children with special educational needs require a slightly dialed-down pace\" (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 272-274), and \"The settlement was normal-and-slower, which is what the repo implements\" (line 276), with exactly two speeds, `normal` at 1x and `slower` at 0.85x (lines 49-51). A later handover judged the faster course-wide playback rate a real variance from the specification with no demonstrated harm, and found no words-per-minute figure in the updated procedure document (`grade3-reading/_archive/handovers/HANDOVER-2026-09-24.md`, lines 255 and 262). For teens, a Grade 9 design guide gives learners speed control instead: \"Let students skip or speed up audio.\" (`othello-course-renderer-draft/repo/docs/design/grade-9/research/learners-voice-guide.md`, line 94).",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/example-lesson-components-2026-08-06.md",
+   "lines": "25",
+   "quote": "The full text read aloud with word-by-word highlighting at a fixed pace (110–120 wpm, no per-student speed).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "60-61",
+   "quote": "The 2026-08-04 call adds the reason: an enforced \"standardized, age-appropriate reading speed across all lessons\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "75",
+   "quote": "**Rule.** Support pausing, and let the child tap the text to hear a part again.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "78-80",
+   "quote": "slowing audio \"distorts speech prosody, breaks sentence continuity, and compromises content fidelity\", so \"the system should simply allow students to pause and replay the text at the ideal pre-established third-grade pace.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1102",
+   "quote": "The full text read aloud with word-by-word highlighting at a fixed pace (110–120 wpm, no per-student speed).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "255",
+   "quote": "the 110–120 wpm band IS in all four named Peter Pan designs (e.g. `artifacts/pp4-v4-design.txt:61` 'Fixed pace 110-120 wpm') and the example-lesson-components doc",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "255",
+   "quote": "L1 is the fastest lesson (all five passage clips > 120, max 138), our L6/L7 the slowest (max 115).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/kb-authorities.md",
+   "lines": "4",
+   "quote": "no student-controlled read-aloud speed",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "73",
+   "quote": "Pause and replay instead of slowing down, where you can",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "75",
+   "quote": "**Rule.** Support pausing, and let the child tap the text to hear a part again.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "78-80",
+   "quote": "slowing audio \"distorts speech prosody, breaks sentence continuity, and compromises content fidelity\", so \"the system should simply allow students to pause and replay the text at the ideal pre-established third-grade pace.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "59-60",
+   "quote": "The full text read aloud with word-by-word highlighting at a fixed pace (110–120 wpm, no per-student speed).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "77-78",
+   "quote": "alongside keeping a slower option",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "34-35",
+   "quote": "**Rule.** No faster-than-normal playback. Offer normal and slower only, and label them exactly that.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "49-50",
+   "quote": "`useAudioNarration.ts` defines exactly two speeds, `normal` at 1x and `slower` at 0.85x",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "94",
+   "quote": "Let students skip or speed up audio.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

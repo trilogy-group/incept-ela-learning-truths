@@ -1,0 +1,194 @@
+{
+ "id": "bind-each-question-to-its-text",
+ "title": "Bind each question to its text",
+ "statement": "Bind each question to the exact text it was written and checked against, and confirm that pairing on the delivered form as a blocking check of its own.",
+ "example": "In one delivered quiz all 25 questions asked about a different text from the one it showed, and all 25 passed all seven checks.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "alignment",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When no example question matched the chosen passage's type, an AP Literature quiz generator silently regenerated its questions against a different passage, while the explanation step and the saved quiz kept the first one. In the saved hard-level quiz the passage is a play, all 25 stems ask about a road-building satire, and all 25 pass all seven checks in their final verdicts. Of 74 double-quoted strings in those verdicts, the only ones found in the saved passage are the bare word 'to', against 35 of 51 and 26 of 49 in the two quizzes without a swap, and the converted delivery file names the play as the source of all 25 items. A text swapped mid-run can ship questions about a text the learner never sees.",
+ "against": "The item-quality judge did catch this blatant mismatch, scoring the rendered form inferior on 9 of 9 draws; the report credits the defect's blatancy rather than the judge's design and expects subtler topic drift to slip through (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, lines 247-256). the item evaluator studied in the same record hands each question of a decomposed reading resource its parent passage, so a topic mismatch is visible to its judge (`grade3-reading/knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd`, lines 24-26).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "1494",
+   "quote": "return await self.generate_questions(different_passage, question_distribution, recursion_depth + 1)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "513",
+   "quote": "explanations = await self.generate_explanations_for_quiz(passed_questions, passage)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quiz_an_artful_arrangement_of_incidents_diff3_2025-10-20_12-21-58.json",
+   "lines": "53",
+   "quote": "while paragraph 7 heightens this into buffoonish spectacle (dropping scissors, sycophants tussling, fingers stuck)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "215-216",
+   "quote": "4 of 5 items are unanswerable as rendered",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "217",
+   "quote": "the exact class meeting #10 calls \"passes item evaluations but fails the holistic course",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "224",
+   "quote": "**rock-bottom outlier at ratio 0.091** vs a normal real-assessment-passage floor of ~0.47",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "230",
+   "quote": "aggregate first returned a false all-clear",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "265-266",
+   "quote": "never assume an IB pass means the passage and the question are about the same thing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "38-39",
+   "quote": "whose water-cycle items were bound to an unrelated pistol-shrimp passage, plus an EBSR Part-B quoting a passage that was never persisted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "39-40",
+   "quote": "the class of defect that \"passes item evals but fails the holistic course eval.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "41-42",
+   "quote": "each independently re-verified by a fresh read-only GET",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "25-26",
+   "quote": "hands each child question the parent passage as `full_context`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "26",
+   "quote": "so topic mismatches are visible to the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "38",
+   "quote": "A short fingerprint of the source. A block is good only for the text and question it was made from.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "112",
+   "quote": "made for another question: not played",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/films.js",
+   "lines": "55",
+   "quote": "/** The film whose narration shares most words with the text and the question; null if there is none. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d2d7d0787d6754d9.json",
+   "lines": "97",
+   "quote": "The film belongs with this text: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d2d7d0787d6754d9.json",
+   "lines": "167",
+   "quote": "\"p\": 0.01,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "184-187",
+   "quote": "\"value\": 0.02,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "60, 667, 1274",
+   "quote": "\"instructions\": \"Is film_narration about the same work as passage, so that it can open a lesson on it?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "187, 794, 1401",
+   "quote": "\"value\": 0.02,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "23",
+   "quote": "\"question_0\": \"When was the play written?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "1507",
+   "quote": "One detail is flagged for your review: the script still refers to reading text v2.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,112 @@
+{
+ "id": "how-much-context-a-writer-needs",
+ "title": "How much context a writer needs",
+ "statement": "How much context to give a writer, and when scope notes, source documents or curriculum blocks start to lower what it makes, is unsettled.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An autopsy of document-based items found the arm that added generic curriculum notes to the real source documents did worse than the documents alone, and advised against layering such notes in until an A/B test showed no regression (`dbq_structural_zero.md`, line 136). A distilled report adds that, for dense courses, too many prompt examples can hurt (`ap_social_studies_generator_distilled.md`, line 186), while a generator kit lists scope boundaries injected at generation time as its fix for out-of-scope questions, in a design table rather than a measurement (the kit's `README.md`, line 139). To settle it: the A/B the autopsy asked for, on many more than six items, with and without each kind of context.",
+ "against": "The worse result rests on six prompts (`build_PATH_G_dbq_hybrid.py`, line 4). Six items, one seed, one model (`feedback_d13_inference_injection_partial_fix_2026_05_12.md`, line 7). Measured against fresh outputs rather than stored ones, the richer context's overall effect on the continuous score was noise, +0.25 points (`feedback_baseline_must_be_fresh_gen.md`, line 36). Training with both blocks in the system message was reported safe (`feedback_d13_inference_injection_partial_fix_2026_05_12.md`, line 36).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "136",
+   "quote": "- DBQ route should prefer D13-only source grounding. Do not layer generic curriculum notes into the DBQ prompt until an A/B proves no regression; PATH G hybrid was worse than D13-only.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "186",
+   "quote": "- For dense courses like APUSH, too many prompt examples can hurt; prefer exact facts/source packs over long example lists.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/README.md",
+   "lines": "139",
+   "quote": "| Out-of-scope questions slip through | `assessment_boundaries` injected at gen time |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "15",
+   "quote": "| 1 vanilla (no docs) | 0/6 | 0.0% | 0.789 | 0.000 | 1.000 |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "16",
+   "quote": "| **2 D13-only** (7 docs in user) | **1/6** | **16.7%** | 0.502 | **0.200** | 0.400 |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "18",
+   "quote": "| 4 hybrid (D13 + curriculum) | 0/6 | 0.0% | **0.125** | 0.000 | **0.000** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "38",
+   "quote": "For SAQ (3 sub-questions, structured response): the verbose context confuses the response format. SAQ requires terse 2-3 sentence answers per sub-part; the boundaries text makes the model add disclaimers/scope notes that the grader doesn't reward.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "19",
+   "quote": "| apush/mcq | 93.3% | **100.0%** | +6.7pp | ±0.5pp | ✓ REAL LIFT |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_richer_rag_per_cell_tradeoff.md",
+   "lines": "23",
+   "quote": "| apush/saq | 77.8% | **68.3%** | **-9.5pp** | ±3.8pp | ✗ REAL REGRESSION |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "7",
+   "quote": "**Rule (P0/T1; n=6 single-seed, single-model — promote to T0 after n≥30 replication):**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_baseline_must_be_fresh_gen.md",
+   "lines": "36",
+   "quote": "| richer-RAG | -1.43 cont-pp | +0.25 cont-pp | noise |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "36",
+   "quote": "**Training-time (v52b+):** D13 + curriculum_context in system are PROVEN safe (v52b build pattern).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

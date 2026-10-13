@@ -1,0 +1,55 @@
+{
+ "id": "record-why-the-checks-missed-it",
+ "title": "Record why the checks missed it",
+ "statement": "With every confirmed defect, record why the existing checks missed it, so the gap in the checks is fixed along with the item.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A lesson audit's workflow requires every issue to record, besides its symptom, reproduction, expected behaviour, cause and cause confidence, why earlier checks missed it, and each finding record carries a priorTestGap field for it. Two of its findings show what the field catches: a test suite that tested one grade's isolated branch but expressly allowed the unisolated branch and never exercised the other grade's caller, and a question whose tests checked only the key's index and so never tested a competing interpretation. Naming the gap points the repair at the checks as well as at the item.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "46",
+   "quote": "Every issue records its visible symptom, minimal reproduction, expected behavior and source, affected pages, code mechanism, cause confidence, and why earlier checks missed it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "73",
+   "quote": "`affectedScope`, `priorTestGap`, `proposedFix`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "663",
+   "quote": "The earlier suite tested the isolated branch but expressly allowed the unisolated branch; it never exercised the Grade 3 caller.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3052",
+   "quote": "Cause: the question omitted the comparison group; answer-index testing alone never tests competing interpretations.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

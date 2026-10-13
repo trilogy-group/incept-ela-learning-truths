@@ -1,0 +1,64 @@
+{
+ "id": "judge-original-examples-against-the-meaning",
+ "title": "Judge original examples against the meaning",
+ "statement": "When a task asks for an original example, give the judge the taught meaning as its reference, never a closed list of acceptable answers, which contradicts the task.",
+ "example": "Grounded on meaning, four previously rejected original examples passed; with a separate copy-guard fix as well, all six did.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "scoring-guide",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the same sweep, correct original examples of taught words were rejected because the judge's shared grounding called the definition, example and non-example a closed list of answers and rejected anything outside it, although the task asked for a new everyday example. The repair grounded vocabulary judging on meaning references rather than an exhaustive answer set, while still requiring an explanation or application of the word. Four rejected examples then passed, and with a separate fix to a client copy guard all six exact previously rejected answers passed.",
+ "against": "The regression tests guard the prompt, not the judging: \"These tests prevent the known prompt contradiction from returning but do not prove language-model judgment.\" (grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/scoring-regression/SERVER-FIX.md:13)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/scoring-regression/SERVER-FIX.md",
+   "lines": "9",
+   "quote": "Cause: the shared server grounding block called the vocabulary definition/example/non-example a closed list of answers supported by a passage, then explicitly rejected anything outside that list. The vocabulary card asks for a new everyday example, so the prompt contradicted the task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/scoring-regression/SERVER-FIX.md",
+   "lines": "11",
+   "quote": "Commit `3bc891eb` changes vocabulary grounding to meaning references rather than an exhaustive answer set. A reasoned original example can show meaning without a separate definition sentence. Shared vocabulary instructions judge the whole response, permitting natural word overlap while retaining the requirement for explanation/application.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/scoring-regression/SERVER-FIX.md",
+   "lines": "19",
+   "quote": "exact original unfamiliar, gradual, relationship and reveal responses now show Yes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/scoring-regression/SERVER-FIX.md",
+   "lines": "19",
+   "quote": "Rehearsal and pardon also pass after the combined server/client repair",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/README.md",
+   "lines": "26",
+   "quote": "Six exact previously rejected vocabulary answers now pass.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,85 @@
+{
+ "id": "mark-each-model-answer-with-its-rubric",
+ "title": "Mark each model answer with its rubric",
+ "statement": "Mark every model answer or reveal with the rubric it models before it ships.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 3 reading course, one written response's rubric required a term that its own model answer expressed in other words, so the model answer would have been marked down by the rule printed under it; no check had opened the strings, only counted them (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md`, class 8). The check added since scores every model answer against its own criteria. The course's assessment memo also asks each written response to declare its pass mark and carry a borderline example at that mark, not only a top-score model, so a pass is anchored where the decision is hard; at the time its examples were top-score only (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "132",
+   "quote": "U2-L6's SCR required the term \"sacrifice\"; its own model answer said \"gave up\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "135-136",
+   "quote": "scores every exemplar against its own criteria. Nothing else in the battery opened the strings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "83",
+   "quote": "each SCR declares the cut *and* carries a **borderline** exemplar at that cut — not only a top-score model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-2/approval-package-v2/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "83",
+   "quote": "today's exemplars are top-score only",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "104",
+   "quote": "15. **p22 `wrap-q1` — the reveal fails its own rubric.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "77",
+   "quote": "- **Slot 2's model answer fails its own rubric** (second read).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "89",
+   "quote": "- The reveal *\"Aladdin feels brave and calm.\"* is a full sentence, which the rubric says an answer never is.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/question-audit/RETELL-PROPOSAL.md",
+   "lines": "24",
+   "quote": "The reveal also omits merciless despite explicitly asking the learner to use it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

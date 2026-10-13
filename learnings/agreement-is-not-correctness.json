@@ -1,0 +1,286 @@
+{
+ "id": "agreement-is-not-correctness",
+ "title": "Agreement is not correctness",
+ "statement": "Agreement between a judge's samples is consistency, not correctness, and its choices can shift with the order of the options.",
+ "example": "One wrong flag came with every sample agreeing.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project's judge calibration, one control case was wrongly flagged with every sample agreeing (agreement\n1.00); with a non-zero temperature, agreement measures self-consistency, not correctness\n(`grade3-reading/artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md`). In a voice audition,\nthe same judge model reversed its ranking between two shuffles of the takes\n(`othello-unit-video/research/METHODS.md`), and most model judges favour the first position they are shown (Zheng et\nal. 2023, https://doi.org/10.48550/arXiv.2306.05685). The reading engine rotates the options between samples\n(`grade3-reading/engine/src/decide/questions.js`), and four samples proved too few to tell a real effect from chance,\nso it moved to eight (`grade3-reading/.agent/LESSONS_LEARNED.md`).",
+ "against": "a one-sample run never rotates, and one\nsample is the engine's default (`grade3-reading/engine/bin/engine.mjs`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".agent/LESSONS_LEARNED.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "bin/engine.mjs"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/qa/README.md",
+   "lines": "8",
+   "quote": "if a question goes to N askees, each gets a separate qa_id and file; no askee sees another askee's answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/qa/README.md",
+   "lines": "116",
+   "quote": "3. **Independent critics.** If you want N opinions, run `qa ask` N times with distinct askees. NEVER copy-paste an answer from one askee into another's question. Cross-contamination = psychophancy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "180",
+   "quote": "confirmed STABLE across 5 independent calls",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "57",
+   "quote": "The \"two teams converged\" is **WEAK** … not independent replication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "30-31",
+   "quote": "not two teams replicating independently. Treat it as a hypothesis-transfer, not a cross-validated law.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "The flip-band stably-pass gate is load-bearing hygiene every lens endorsed (0.80-0.85 flips are real defects, >=0.95 holds) but it filters score NOISE, not score BIAS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "a confidently mis-graded item certifies forever",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "188-189",
+   "quote": "single-family blind-solve confound (every label comes from one solver family; no two-family agreement had been measured",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1115-1117",
+   "quote": "**Two agents independently agreeing via the same blind method is not corroboration; it is one unverified claim counted twice.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1113-1114",
+   "quote": "Both of us grepped it for an underscore-key filter without `-a`, both got empty, and both reported \"no filter exists\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "148",
+   "quote": "**Diagnostic:** Errors are in specific facts, not structural; model is consistent in its errors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/EduBench/README.md",
+   "lines": "217",
+   "quote": "- **Consistency among evaluation models**: The models show high consistency, with almost all Kendall's W values above 0.5 and most around 0.6, indicating strong agreement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "2750903",
+   "lines": "6-7",
+   "quote": "- distractor_quality: remove 'borderline default to 1.0' paragraph (revert PR #268 change that made evaluator too lenient on ambiguous distractor flaws)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "129",
+   "quote": "- Added paragraph after the Fail conditions: \"If two reasonable evaluators could disagree on whether distractors are 'plausible enough' or 'parallel enough,' you MUST default to 1.0. Only score 0.0 when the flaw is concrete, specific, and unambiguous.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "61",
+   "quote": "The v4 consistency result (r=0.918, LoA [−10.0, +10.0] RIT) is an engine consistency check — explicitly not MAP agreement evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "83-84",
+   "quote": "same-model resamples (agreement = self-consistency, not cross-family agreement)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "482",
+   "quote": "Models converge on machine consensus, not human difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "655",
+   "quote": "LLM judges show left/right (or first/second) position effects and favour more verbose responses",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md",
+   "lines": "67",
+   "quote": "Completeness and consistency do not prove the truth of observations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "it filters score NOISE, not score BIAS — a confidently mis-graded item certifies forever",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "150",
+   "quote": "4. repeat with at least three option-aliased or shuffled views;",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "20",
+   "quote": "sequence items certified against one seeded shuffle; multi-shuffle re-probe decertified 72 incl. one exact 1.000",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md",
+   "lines": "4-5",
+   "quote": "A leaky ordering item can pass on a single lucky shuffle.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3192",
+   "quote": "sensitivity to answer-choice ordering — correlates better with human difficulty than the model's actual correctness.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "27b3848",
+   "lines": "3-6",
+   "quote": "Commit d6c23f5 re-baselined golden item 0103 ACCEPTABLE->INFERIOR on the claim it was a reproducing #1026 true-positive (verified INFERIOR 3x). That draw was non-reproducing: on the current HEAD the item evaluates SUPERIOR@1.0 five-for-five",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "118",
+   "quote": "Deterministic option-order rotation per sample (option order shifts answers; rotate and average).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "70",
+   "quote": "the share of votes that agree with the verdict: a split vote on a labelled case is a control that flips",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "118",
+   "quote": "/** Deterministic option-order rotation per sample (option order shifts answers; rotate and average). */",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "workspace/comms/from_plan/2026-08-31T182831Z-work-queue.md",
+   "lines": "89-92",
+   "quote": "greps the claimed duplicate sentence against the lesson's source JSON and downgrades a `fail` to `advisory-unconfirmed` when the sentence appears exactly once — re-run against the same p26 case that produced 5/5 hallucinated fails",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md",
+   "lines": "108",
+   "quote": "Agreement (0.917 both judges) clears the 0.8 bar; conditions 1 and 2 of the gate fail.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-archivist-voice/judgments.json",
+   "lines": "58",
+   "quote": "A deep, older male voice that completely misses the gender-neutral and young-adult marks.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-archivist-voice/judgments.json",
+   "lines": "100",
+   "quote": "A bit raspy and leans female; feels a bit too character-heavy rather than a subtle guide.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Zheng et al. 2023",
+   "url": "https://doi.org/10.48550/arXiv.2306.05685"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

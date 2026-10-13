@@ -1,0 +1,675 @@
+{
+ "id": "reteach-then-retest-on-new-items",
+ "title": "Reteach, then retest on new items",
+ "statement": "After a miss, reteach what failed, retest on new parallel items or a fresh test form, never the same ones, check again later, and send repeated failure to placement review.",
+ "example": "An evaluation of a reading course asked for 2-3 parallel forms of each lesson test so a three-state retry could work.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "sequence",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's mastery doctrine gives a gate three outcomes, promote, keep practising or switch to corrective instruction, because a student who can pass by sampling similar items again and again shows persistence or luck, not mastery. Its adopted obligations map wrong answers to corrective feedback, alternate instruction and a new parallel check, escalate after repeated non-progress instead of allowing endless retries, and require parallel forms with no shared items for a retry. A simulated course design named its retry path reteach-first, no-escalation, and a second round of course findings asked for intensive instruction and a delayed test on new items when the 90% bar is not met. Send a second failure to a review of placement or sequence instead of an endless loop.",
+ "against": "an earlier design simply re-showed the same test, a small item bank means repeated items on a retake, and the number of misses that should trigger reteaching was never settled; the rule is adopted, not measured here. A harder retry will score lower anyway, so the fall shows more failure on the retry, not lost learning; and after two failed cycles the same plan does change the level, stepping the difficulty down (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`, line 310). The evidence is the platform's own description of its rule, not a measured result. The project's direct-instruction protocol gives the answer and re-asks the same item at once, then re-serves the miss (`grade3-reading/ti-courseplans/docs/instruction-quality-standard.md`, line 114), and a course evaluation counted re-attempting lesson tests until 100% as stricter than a 90% gate (`grade3-reading/ti-courseplans/handoff/timeback-course-explorer/references/eval-analysis.md`, line 96). The platform could not always show the second form: the built lesson's first walkthrough records \"The doc’s FORM 2 has no renderer slot — the retry ladder substitutes (accepted deviation, logged).\" One platform's guide reuses the same item in instruction and review and treats the risk of cueing as a medium-to-low concern, because courses rotate a large deck of questions; that guide is not cited because its file's path carries a person's name. A small clean bank may not fill disjoint forms: one Grade 5 build noted that 97/172 items can't populate disjoint parallel forms without overlap (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "63",
+   "quote": "The system needs three outcomes, not two: promote, keep practising, or switch to corrective instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "90",
+   "quote": "If learners can eventually pass by repeatedly sampling similar items, the gate is measuring persistence (or luck) rather than acquisition mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl",
+   "lines": "48",
+   "quote": "Map high-value wrong responses to bounded corrective feedback, alternate instruction, and a new parallel check; repeated non-progress must trigger an explicit escalation rather than endless retries.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "56",
+   "quote": "(≥2, zero shared items) are required for three-state retry",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0011-run6-amalgamation-v2-engine-output.qmd",
+   "lines": "121",
+   "quote": "`retry_path_reteach_first_no_escalation` mitigates after 2",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "Require 90% to advance; if not met, give intensive instruction and a delayed test with new items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "60",
+   "quote": "2-3 forms each so three-state retry works",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0022-incept-team-sync-2026-06-17.qmd",
+   "lines": "63",
+   "quote": "same test re-shown (small chance of variety)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "252-253",
+   "quote": "repeated items on retake",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "43",
+   "quote": "neither the exact count nor an exception policy was finalized.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "65",
+   "quote": "A mastery system that lacks an explicit “switch mode” state will inevitably turn persistence into the hidden criterion for passing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "66",
+   "quote": "Therefore the stopping policy must include an escalation trigger (“practice isn’t working”) and a designed corrective response (what to restudy and how to verify recovery).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0157-mastery-signal-evidence-base.qmd",
+   "lines": "430",
+   "quote": "when a learner is failing, we currently just let them keep attempting items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0157-mastery-signal-evidence-base.qmd",
+   "lines": "433",
+   "quote": "Formalises “wheel-spinning” as the case where additional practice yields diminishing probability of mastery",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "230",
+   "quote": "After corrective instruction, the system should re-check using near-miss and transfer variants to confirm the misconception was actually repaired, not merely coached.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "67-68",
+   "quote": "Rebuild every assessment and writing criterion as failed function -> relevant taught check -> different-evidence retry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "86",
+   "quote": "Commit `2056514` closes the six repair buckets recorded in kb-0167",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "88",
+   "quote": "criterion-level correction mappings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "143",
+   "quote": "- Error correction should be immediate and brief: correct, test, give intervening items, then retest later.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "67-68",
+   "quote": "4. Rebuild every assessment and writing criterion as failed function -> relevant taught check -> different-evidence retry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "46",
+   "quote": "Data-derived: the incumbent's harder-on-retry drops supporting-details 64%→41% (−22.6pt)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "310",
+   "quote": "**Never re-serve the identical item; never hand a harder item after failure.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "314",
+   "quote": "The incumbent's retry path escalates difficulty and measurably destroys attempt-2 accuracy (supporting-details 64% → 41%). Reteach-first protects confidence AND dosage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0031-how-it-works.qmd",
+   "lines": "156",
+   "quote": "When a student scores below mastery on a standardized test (less than 90%), the platform analyzes which standards were missed and generates a **targeted remediation course** containing just the lessons needed to fill the specific gaps. The student completes the hole-filling content, retests, and only advances once mastery is demonstrated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0026-evaluating-apps.qmd",
+   "lines": "24",
+   "quote": "| **Hole-filling compatibility** | Targeted remediation is possible when gaps show up |",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "72-74",
+   "quote": "D15 failure routing: reteach via M7 → one delayed retest on new items → a second failure routes to placement/sequence review. No infinite retest loop",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "36",
+   "quote": "A second consecutive failed delayed retest routes to placement/sequence review — never an infinite loop.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "16",
+   "quote": "≥90% acquisition gate; failure → intensive instruction → delayed (~24h) retest on NEW items, never an endless loop",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md",
+   "lines": "35",
+   "quote": "a second consecutive failed delayed retest routes to placement/sequence review, never an infinite loop",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "- Require 90% to advance; if not met, give intensive instruction and a delayed test with new items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "76",
+   "quote": "97/172 items can't populate disjoint parallel forms without overlap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "56",
+   "quote": "The trace shows correction, an alternate explanation or representation, a parallel new attempt, a delayed recheck where claimed, retry bounds, and escalation after non-progress.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "36",
+   "quote": "A second consecutive failed delayed retest routes to placement/sequence review — never an infinite loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "461",
+   "quote": "Route historical-thinking feedback to the failed function, then reassess with a parallel task that uses different evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "769",
+   "quote": "**SPOV 3 – The system needs three outcomes, not two: promote, keep practising, or switch to corrective instruction.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "771",
+   "quote": "A mastery system that lacks an explicit “switch mode” state will inevitably turn persistence into the hidden criterion for passing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "796",
+   "quote": "If learners can eventually pass by repeatedly sampling similar items, the gate is measuring persistence (or luck) rather than acquisition mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "797",
+   "quote": "To prevent grind-through, mastery evidence must include breadth (multiple item families / near-miss contrasts) and recovery verification after any corrective branch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "114",
+   "quote": "On a miss: **Correct** (answer + brief why) → **Test** (re-ask immediately) →",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/references/eval-analysis.md",
+   "lines": "96",
+   "quote": "the student re-attempts until 100%, which is *stricter* than a 90% gate",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "20 (textutil text)",
+   "quote": "Runs as two parallel forms; the second is shown if the first is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "44 (textutil text)",
+   "quote": "FORM 2 (second chance / clean measure)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "67",
+   "quote": "form 1 corrects, form 2 gives a cleaner read on whether the correction took.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "155",
+   "quote": "The doc’s FORM 2 has no renderer slot — the retry ladder substitutes (accepted deviation, logged).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/assessment-set.json",
+   "lines": "26",
+   "quote": "Score atomically, record the first failed historical function, teach through its resolved local check, and administer its parallel retry with different evidence before reassessment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "37",
+   "quote": "Unit 1 exposes targeted feedback, correction, and different-evidence retry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "39-40",
+   "quote": "**Two parallel forms (A + B) sharing ZERO items.** Parallel forms are required for retry without answer leakage (a student who retests sees the other form).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0022-incept-team-sync-2026-06-17.qmd",
+   "lines": "63-64",
+   "quote": "**Reattempt:** same test re-shown (small chance of variety); randomizing via multiple tests is TBD (check PowerPath docs).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "two 4-5 item tests are un-gateable (no \"90% of 4\"); no three-state retry / parallel forms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "32",
+   "quote": "single static form (gameable)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "461",
+   "quote": "### G5-POL-INS-010: Cap error-correction interrupts at two per lesson dose and route a second consecutive failed delayed retest to placement or sequence review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "464",
+   "quote": "- **Rationale:** Infinite retry loops confuse persistence with instruction and hide a likely prerequisite or sequence failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "469",
+   "quote": "per_dose_interrupt_cap == 2 and second_failed_delayed_retest_route in {placement_review,sequence_review}",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/drafts/xp-dose-mapping.md",
+   "lines": "55",
+   "quote": "- **In-dose interrupts** (cap 2/dose): correction + immediate retest happen inside the segment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/docs/BRAINLIFT.md",
+   "lines": "250",
+   "quote": "| Miss flow | Correction, parallel check, delayed retest, spaced return, capped retry | A wrong response must reopen instruction, not produce feedback-plus-lockout. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "405",
+   "quote": "## Dropped approaches (inherited from G3; confirmed apply at G7)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "408",
+   "quote": "difficulty escalation after failure (measurably destroyed attempt-2 accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "372",
+   "quote": "three-state retry (mastered/developing/not-yet; never escalate difficulty on failure)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md",
+   "lines": "223-224",
+   "quote": "Three outcomes at every gate: promote / keep practising / SWITCH TO CORRECTIVE — never just pass/fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md",
+   "lines": "224-225",
+   "quote": "Guard grind-through: a stretch changes the evidence slice (item families, near-miss contrasts, recovery verification), never more-of-the-same.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md",
+   "lines": "221-222",
+   "quote": "Error correction: Correct → Test → Retest → spaced re-appearance; interrupt cap 2/dose; a second consecutive failed delayed retest routes to placement review, never a loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "33",
+   "quote": "exactly one taught word, then two parallel usage forms. Form 1 teaches (retry until correct); Form 2 is the clean measure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/example-lesson-components-2026-08-06.md",
+   "lines": "28",
+   "quote": "Runs as two parallel forms; the second is shown if the first is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "127",
+   "quote": "The incumbent's retry path escalates difficulty and measurably destroys attempt-2 accuracy (supporting-details 64% → 41%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "176",
+   "quote": "Supporting-details attempt-1: 64%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "177",
+   "quote": "Supporting-details attempt-2 (under escalation): 41%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "38",
+   "quote": "Cycles here: fail → re-teach (routed) → **parallel same-difficulty form**.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1419",
+   "quote": "Cap error-correction interrupts at two per lesson dose and route a second consecutive failed delayed retest to placement or sequence review.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1420",
+   "quote": "Infinite retry loops confuse persistence with instruction and hide a likely prerequisite or sequence failure.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-selection.json",
+   "lines": "19",
+   "quote": "\"second_error_action\": \"stop independent progression and route to operation-step review or placement review\",",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "372",
+   "quote": "never escalate difficulty on failure",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "408-409",
+   "quote": "difficulty escalation after failure (measurably destroyed attempt-2 accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "503-508",
+   "quote": "A route has four parts: 1. evidence of the failure; 2. the exact taught check to revisit; 3. a parallel task with a different source or case; 4. a pass condition that describes the corrected function.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "404-406",
+   "quote": "The correction route targets the function that failed. A missing second example receives an evidence-selection task. Two examples with no relationship receive a reasoning task. A broad thesis receives a claim-boundary task. This is more useful than returning one total score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "41",
+   "quote": "criterion-level routes for all 32 scored components: eight MCQs, nine SAQ parts, ten writing-task criteria, and five mini-DBQ criteria. Each names the failed function, exact taught check, and a parallel retry with different evidence; and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "42",
+   "quote": "an 18-function correction registry with observable failure evidence, retry selection rules, prompts, and pass conditions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "51",
+   "quote": "Target-runtime mastery, XP, event, and accessibility behavior | Contracted, not run",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "118",
+   "quote": "Item security is weaker: students who take the test multiple times will see repeated items (mean pairwise between-session overlap 29.4%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "40",
+   "quote": "**retest-overlap exclusion** — items a candidate answered in their last 2 sessions are excluded from selection, with a three-stage starvation fallback (relax to last-1, then off, plus a mid-session unfiltered retry) so exposure control can never prevent a session from starting or end one early",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "40",
+   "quote": "Both new mechanisms ship **off by default** — pre-committed for the calibration (\"regular use\") stage, not the pilot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "98-99",
+   "quote": "provide a second parallel form after an error",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "381-382",
+   "quote": "a later task asks the learner to update, transfer, or reapply the corrected thinking",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "118-123",
+   "quote": "Correction follows one inspectable chain: `observed failed function -> relevant taught check -> parallel retry with different evidence` Topic-level remediation, a link to an entire lesson, or a retry over the same assessed stimulus does not satisfy the contract.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/brainlift.html",
+   "lines": "152-153",
+   "quote": "A failed function routes to a concrete taught check and a parallel retry with different evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_08 10_30 CEST - Notes by Gemini.md",
+   "lines": "342",
+   "quote": "Now those kids between 60 and 80% they didn't know what they didn't know. So they failed it the first time and then they failed it the second time they kept failing it again and again and again.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L612555.txt",
+   "lines": "342",
+   "quote": "Now those kids between 60 and 80% they didn't know what they didn't know. So they failed it the first time and then they failed it the second time they kept failing it again and again and again.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "112-114",
+   "quote": "never an immediate same-item retry",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "134-135",
+   "quote": "Showing the correct answer and repeating the same item is not evidence that a misconception was repaired. It may show recognition or memory for feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "76",
+   "quote": "3. Track growth meaningfully when the same items are administered repeatedly",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Beck & Gong 2013",
+   "url": "https://link.springer.com/chapter/10.1007/978-3-642-39112-5_44"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

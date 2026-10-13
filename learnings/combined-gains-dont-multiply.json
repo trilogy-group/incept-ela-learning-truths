@@ -1,0 +1,63 @@
+{
+ "id": "combined-gains-dont-multiply",
+ "title": "Combined gains don't multiply",
+ "statement": "Don't predict the gain of stacked methods or repeated attempts by multiplying their odds as if they were independent; failures cluster, so measure the combination.",
+ "example": "A design reckoned five tries at a 68% base rate would pass 99.66% per cell, yet one item failed all 10 of its tries.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A serving design for the AP generator reckoned that with a 68% base rate all five attempts would fail only 0.34% of the time, giving 99.66% per cell. In practice some sub-standards failed systematically while others passed, one long-essay item never crossed 0.80 in two rounds of five attempts, and identical candidates had to be counted as one, not six chances. Two methods that each helped failed to compose when stacked, and the project's state summary called multiplicative stacking wishful.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/02_CONSOLIDATED_STATE.md",
+   "lines": "96",
+   "quote": "| **Combo routing + RAG** | Failed to compose lifts | `project_combo_routing_plus_rag_failed.md` | Methods correlate; multiplicative stacking is wishful |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/serve99stack.py",
+   "lines": "8",
+   "quote": "- At K=5 with 68% raw base: P(all 5 fail) = 0.32⁵ = 0.34% → 99.66% per cell from Layer 3 alone",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-23T082229Z_exploits_EXPLOIT-005-leq-no-stimulus/source_report.md",
+   "lines": "54-55",
+   "quote": "Tried 2 rounds of K=5 (10 attempts) and never crossed 0.80.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/system_improvement_brainstorm.md",
+   "lines": "39",
+   "quote": "Some substandards (KC-1.1.I.* on MCQ_SET) systematically fail; others systematically pass.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "62",
+   "quote": "Takeaway: K was not producing useful diversity for MCQ_SET in this archive. It produced duplicate payloads. Anti-static guard must treat identical candidates as one candidate, not six chances.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

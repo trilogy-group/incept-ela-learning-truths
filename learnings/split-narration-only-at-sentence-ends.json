@@ -1,0 +1,66 @@
+{
+ "id": "split-narration-only-at-sentence-ends",
+ "title": "Split narration only at sentence ends",
+ "statement": "Split narration into clips only at real sentence ends, never at an abbreviation's full stop, since a lone fragment like a title abbreviation can return far longer than its text.",
+ "example": "A one-word clip holding only a title abbreviation was flagged as a duration outlier, which for one word means over 12 seconds.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The narration segmenter split a title abbreviation from the name after it, leaving the abbreviation alone as a segment in at least two passages. One such one-word clip was flagged as a duration outlier, which under the repair rule means it ran over 12 seconds, and its regenerated clip ran 1.195625 seconds. The project's notes do not discuss the split itself, so the rule is drawn from this case.",
+ "against": "The project kept the split: its final manifest still voices the abbreviation as a segment of its own (\"text\": \"Mr.\", at grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/manifest.json, line 7099), and the rule rests on one flagged clip.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/inputs.json",
+   "lines": "1502"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/inputs.json",
+   "lines": "1526"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/repairs/8596f899655ae24c06c48652803d1adcfe0f6e175e648d91b5759725367b4519/repair.json",
+   "lines": "2",
+   "quote": "\"reason\": \"duration-outlier\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/repairs/8596f899655ae24c06c48652803d1adcfe0f6e175e648d91b5759725367b4519/repair.json",
+   "lines": "3",
+   "quote": "\"printed_text\": \"Mr.\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/repairs/8596f899655ae24c06c48652803d1adcfe0f6e175e648d91b5759725367b4519/repair.json",
+   "lines": "8",
+   "quote": "\"duration_seconds\": 1.195625,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/repair-narration.py",
+   "lines": "16",
+   "quote": "anomalous=p.exists() and n.duration(p)>max(12,len(s.split())*1.1)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

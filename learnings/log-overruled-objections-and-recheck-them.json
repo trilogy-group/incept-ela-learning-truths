@@ -1,0 +1,50 @@
+{
+ "id": "log-overruled-objections-and-recheck-them",
+ "title": "Log overruled objections and recheck them",
+ "statement": "Record every review objection that was overruled, with its reasoning, and check it again in the next round, so a recurrence counts as evidence rather than memory.",
+ "example": "An objection overruled on 08-06 was raised independently by a later review on 08-11.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The red-team skill for the reading course plans makes this its rule 14 and gives the case behind it: on 08-06 the team argued that a pre-filled quote inverts the release gradient, was told to implement it without pushback, and on 08-11 a later review raised the same point independently (`grade3-reading/ti-courseplans/skills/course-red-team/SKILL.md`). Without the log the earlier objection is only a memory; with it, it is calibration evidence for the next disagreement.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "115-118",
+   "quote": "When we raise an objection and are directed to proceed, record it with the reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "118-119",
+   "quote": "Without the log that is a memory; with it, it is calibration evidence for the next disagreement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "30-31",
+   "quote": "one commit whose message records BOTH the fixed and the refuted-with-reasons lists.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

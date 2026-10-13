@@ -1,0 +1,952 @@
+{
+ "id": "a-check-must-catch-a-planted-fault",
+ "title": "A check must catch a planted fault",
+ "statement": "A check that has never fired proves nothing until it catches a fault planted for it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One of the reading engine's judged checks fired zero times in 135 asks across two runs, and was marked for retiring or\nrewriting rather than kept as decoration (`grade3-reading/engine/EVIDENCE-2026-09-22.md`). The lesson engine's tests\nplant the faults each check exists for, such as an invented quotation, a marked word missing from its quotation, and\ntwo questions one beat apart (`g9/transformer/test/video.test.mjs`).",
+ "against": "none found.",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FACT_CHECK_RESULTS.md",
+   "lines": "15",
+   "quote": "Failures: 0% (0/10 questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FACT_CHECK_RESULTS.md",
+   "lines": "74",
+   "quote": "High Precision: No false positives (0 failed questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "82",
+   "quote": "mutate one fact (wrong year, wrong attribution) → confirm mutated version fails InceptBench factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "150",
+   "quote": "`JUDGE-GRADE` had fired zero times across both runs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0216-codex-visual-audit-2026-09-07.qmd",
+   "lines": "46",
+   "quote": "red-controlled (must fail on pre-fix code)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "33",
+   "quote": "| LEQ      |    200 |      0 |      0 |    100.0% |      1.00 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "33",
+   "quote": "| LEQ      |    120 |      0 |      0 |    100.0% |      0.98 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "56",
+   "quote": "- No load-bearing criterion in the pack.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "80",
+   "quote": "LEQ is comparatively lenient but still needs clean structure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "34",
+   "quote": "| DBQ      |    186 |      5 |      0 |     97.4% |      0.87 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "82",
+   "quote": "| document_authenticity     |   28 |  163 |     14.7% |      0.15 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Articles-readable-exp', cell K2 (column K header 'Extra Facts')"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles-readable-exp', column K ('Extra Facts'), all 96 article rows"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Sheet4', cell H8",
+   "quote": "We definitely have more (maybe around 1-2 statement in every article from llm) and some of it seems important as it really ties things together in the article",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "122",
+   "quote": "Re-engineer the gate to block advancement on genuine misses, require reading or attention, and penalise rapid-guessing, then demonstrate it blocking a real miss in a live walkthrough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd",
+   "lines": "53-54",
+   "quote": "where 5 of 6 checks were silently broken behind a green run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd",
+   "lines": "51",
+   "quote": "that passes but has never been shown to fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd",
+   "lines": "51-52",
+   "quote": "red-first harness (positive + near-miss-negative fixtures) before porting tools",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "58-59",
+   "quote": "The only FAIL is a film frame; every drawn-children image is a clean PASS on every read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "7",
+   "quote": "Purpose: prove the new check DISCRIMINATES — fires on AI-generated film frames with humans, stays",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "40",
+   "quote": "no false success (control held 3/3)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "37",
+   "quote": "`masteryThreshold:90` declared in metadata, not enforced by an observable mechanism; lesson tests carry NO threshold;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "92-93",
+   "quote": "`masteryThreshold` was `null` on both live courses (the 90% gate didn't actually block)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "44-45",
+   "quote": "PROVE it with a play-through, don't assert a metadata field as \"enforced.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "170-171",
+   "quote": "**`cold_passage_bonus` fires 0% of the time** on the 163 verified items (near-useless on this genre); **`curriculum_penalty` separates leaky from clean by only +0.018** (AUC ~= 0.5).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "182",
+   "quote": "**Symptom (2026-10-01):** a per-file test gate reported 0 pass / 0 fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "185-186",
+   "quote": "never read a 0/0 verdict as green — treat it as a harness bug until proven otherwise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "122",
+   "quote": "demonstrate it blocking a real miss in a live walkthrough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "74-75",
+   "quote": "Purpose: prove the new check discriminates (fires on AI-generated film-frame humans, stays quiet on drawn children) *before* judging",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "76-77",
+   "quote": "Three rounds against 9 film key-frames + 7 drawn book-art images + 1 G5 cover",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "90-91",
+   "quote": "discrimination confirmed (only FAIL is a film frame, every drawn child is a clean PASS on every read)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "203-204",
+   "quote": "Break the thing deliberately; confirm the gate fails. **Five gates asserted nothing** and every one was found this way, never by re-running",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "208",
+   "quote": "`UNIT=2` instead of `U2` matched no lessons — judged 6% of the corpus, printed ALL PASS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/references/eval-analysis.md",
+   "lines": "114",
+   "quote": "The original AM pull found zero standards.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/references/eval-analysis.md",
+   "lines": "117",
+   "quote": "All 745 items (100%) carry CCSS standards.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/references/eval-analysis.md",
+   "lines": "117",
+   "quote": "(the morning analyzer missed them because it only scanned `rawXml`; standards are in structured metadata, not inline XML).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/edullm-quality-standard/SKILL.md",
+   "lines": "16-17",
+   "quote": "Never treat an unreturned rule as absent: search is a bounded relevance lookup, not a completeness oracle.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "94-95",
+   "quote": "**A new check must prove it discriminates before it ships.** Report (a) fires/eligible, and (b) that it catches the seed example that motivated it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "95-96",
+   "quote": "A check firing on everything cannot rank items; a check missing its own seed is not measuring what prompted it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/SKILL.md",
+   "lines": "98-99",
+   "quote": "the first cut of that check fired 13/213 with 11 false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "203",
+   "quote": "Break the thing deliberately; confirm the gate fails. **Five gates asserted nothing**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "144-145",
+   "quote": "every human catch becomes a machine check the same cycle — born with a red-control (reconstruct the pre-fix content, prove it fires).",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "data/heretic_synthetic_v3/manifest.json",
+   "lines": "359",
+   "quote": "Arithmetic addition task/control examples compute a coherent subtract-instead result. Other rows are mechanically false result claims only; they do not test detection of a particular wrong operation.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "README.md",
+   "lines": "9",
+   "quote": "Addition wrong-help examples now show the computed result of subtracting instead; other wrong-help examples claim a false result without a stated operation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "442-444",
+   "quote": "Take this AP history exam question and introduce one subtle factual error (wrong year, \nwrong person, wrong founding date). Keep everything else identical. The error should be \nplausible — not obviously wrong, but verifiably incorrect per standard AP curriculum.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "447",
+   "quote": "Run the synthetic rejected responses through InceptBench to confirm they fail factual_accuracy before including them in training. Keep only (chosen=PASS, rejected=FAIL) pairs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "790",
+   "quote": "# Force at least one distractor to pass for testing",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "118",
+   "quote": "- GVC shows \"math_errors_found: 0\" but InceptBench still finds issues",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md",
+   "lines": "15",
+   "quote": "- **Educational Curriculum Alignment (EC):** 10.00/10.0 (n=873)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "33-35",
+   "quote": "But it is *only* run when a stimulus is present. Strip the stimulus and the probe never fires.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_pil/2026-06-01T0710Z_PATCHES_99stack_audit_findings_landed_6_files.md",
+   "lines": "19",
+   "quote": "Was a SILENT no-op on dev too — every loader returned `{}` because the path didn't exist",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/EXTERNAL_AGENT_BRIEF.md",
+   "lines": "170",
+   "quote": "Zero-variance reward usually means evaluator broken, not method failed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/gold_standard.json",
+   "lines": "296-308",
+   "quote": "\"failure_reason\": \"Too easy for 'hard' difficulty; requires no analysis\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FACT_CHECK_RESULTS.md",
+   "lines": "101",
+   "quote": "- **Made-up dates:** No false dates found in test sample",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/URGENT-BUG-STILL-PRESENT.md",
+   "lines": "35",
+   "quote": "2. **The \"20/20 tests passing\" claim is misleading** - tests may be checking something else",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/PROMPT_EVOLUTION_2026-02-19.md",
+   "lines": "5",
+   "quote": "**Major Finding: All prompt variants achieved 100% pass rate.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "64",
+   "quote": "4. **Add adversarial tests** - wrong answer marked correct, anachronisms, explanation contradictions, factual errors in distractors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_stimulus_promise_detection.py",
+   "lines": "4-6"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "715eadc",
+   "lines": "16",
+   "quote": "Golden dataset now: 100/100 expected to pass.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "33",
+   "quote": "| LEQ      |    200 |      0 |      0 |    100.0% |      1.00 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "100",
+   "quote": "| prompt_arguability        |  391 |    0 |    100.0% |      1.00 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "97",
+   "quote": "then demonstrate it blocking a real miss in a live walkthrough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "42-43",
+   "quote": "drive ONE real sub-90% attempt and observe the block",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "472",
+   "quote": "use seeding (gold scripts) to check drift",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/FINAL_REPORT.md",
+   "lines": "8-10",
+   "quote": "lifts a deliberately mid-quality hand-crafted batch from \"no chance\" to **100% (30/30)**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "33-34",
+   "quote": "run on the arrival page — a false 15/15 clean). Lens now builds paths and asserts the landed page id.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/audio/RESULT.md",
+   "lines": "10",
+   "quote": "The original read of stdout silently yielded NaN and skipped the attack check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/audio/RESULT.md",
+   "lines": "11",
+   "quote": "including an actual temporary weak-onset tone that the original tool incorrectly accepted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "267",
+   "quote": "- **Red-control or it didn't happen.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "7",
+   "quote": "Purpose: prove the new check DISCRIMINATES",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/edullm-standards-centralization-2026-08-05/EXECUTOR-RUNBOOK.qmd",
+   "lines": "523",
+   "quote": "1. Positive, negative, boundary, and missing-input fixture for every blocking rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/op-taxonomy-calibration.md",
+   "lines": "132",
+   "quote": "fc-09 all flagged, zero false flags on controls, and the mandatory per-unit human",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/audit-heuristic-finding.md",
+   "lines": "62",
+   "quote": "Our ids are `g5-reading-merged-pp-9802-*`, so **the real enforcement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "42-44",
+   "quote": "One passing unit and one failing fixture per rule, including all three round-2 failure shapes. Every rule has at least one failing case -- the selftest asserts the exact expected failure-rule set per lesson and fails if any rule loses its failing fixture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "30",
+   "quote": "full validation, fixed-point index, and 152/152 mutation cases pass in a fresh tree;",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "75",
+   "quote": "8 failing fixtures + 1 passing unit, one failing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "97-98",
+   "quote": "invariant (ID3 tag or frame sync in the first bytes), red-controlled 11→0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "74-75",
+   "quote": "prove the new check discriminates (fires on AI-generated film-frame humans, stays quiet on drawn children) *before* judging",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "281",
+   "quote": "For every claimed gate, plant a representative defect and prove that the gate rejects it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "47-49",
+   "quote": "The Review Evidence consistency linter passes all 13 fail-closed mutation checks",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/moe_extension_summary.md",
+   "lines": "80",
+   "quote": "- **MoE fields populated**: 0 entries (expected - no MoE-specific content in test data)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_self_rag_full_build_clean.md",
+   "lines": "47",
+   "quote": "**IsUse is degenerate** (essentially all maxed). gpt-4o-mini IsUse classifier collapsed to ceiling.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v60_partial_stimfab_insufficient_2026_05_13.md",
+   "lines": "53",
+   "quote": "Spot-check 1-2 rejected samples per type to verify IB grader actually fails them (open API call), otherwise discard the corruption type.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e435432",
+   "lines": "42-43",
+   "quote": "Items that carry answer options under 'choices' (or 'options') instead of 'answer_options' were silently unprobeable and fell back to the rubric opinion.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "9c9d00c",
+   "lines": "50-52",
+   "quote": "scan_containers iterated a container value directly, so a container keyed by option id ({'A': {...}}) yielded its string keys and every option's feedback was silently dropped (n_feedback=0).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "721d3af",
+   "lines": "3-5",
+   "quote": "Without this instruction the LLM described redundancies qualitatively (\"asks the same question twice\") without citing specific item positions, so repetitive_item_ids was always empty.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "44a9d6e",
+   "lines": "4-6",
+   "quote": "MCQ *sets* use a separate evaluator that loads only mcq_set/evaluation.txt (no subject/curriculum-subject overlay layer), so the AP-critical checks were not reaching them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "fbbe38e",
+   "lines": "9-11",
+   "quote": "- 0118 (Social Studies): previously always masked in the error bucket (curriculum timeout); now evaluates and the evaluator stably rates it INFERIOR on a clear answer/distractor giveaway vs its ACCEPTABLE label.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_search_20260526.md",
+   "lines": "109",
+   "quote": "if a future change broke any of the audit rules, this control would fail to fail — that's the canary.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "60",
+   "quote": "| Local validation | known visual-map DBQ is rejected | regex false-positive on legitimate text source; narrow regex | visual-map DBQ passes |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "55",
+   "quote": "`No: the answer is ${right}.`",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "22",
+   "quote": "Listen again to hear that the play was written around 1603.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/quick-check.answerable.json",
+   "lines": "5",
+   "quote": "A case keys a different option of the same question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/quick-check.answerable.json",
+   "lines": "11",
+   "quote": "\"kind\": \"keyed-wrong\", \"item\": { \"answer\": 1 }, \"expect\": \"fails\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "136",
+   "quote": "seed only: they prove the wiring, measure nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "99",
+   "quote": "`test/fixtures/othello-items.json` and a play in `src/quality/personas.js`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "66",
+   "quote": "assert.equal(houseChecks({ hint: \"Reread L7 and L8.\" })[0].ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "116",
+   "quote": "sharedRun(f, c.options[c.answer]) >= Math.max(3, words(c.options[c.answer]).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/helpers.mjs",
+   "lines": "13",
+   "quote": "Says yes to every check except give-aways; picks paragraph A and delivery A; scores knowledge 4 of 5.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "27",
+   "quote": "key shapes, each tried on a sample made here, so a law that could never fire fails too",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/transform.test.mjs",
+   "lines": "18",
+   "quote": "a failing required check gets one correction pass with the reason, then the step is held",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "50",
+   "quote": "the line reached the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "66",
+   "quote": "the exact quotation, so the answer is saved and reaches the judge",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/laws.test.mjs",
+   "lines": "27",
+   "quote": "// key shapes, each tried on a sample made here, so a law that could never fire fails too",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "65",
+   "quote": "assert.equal(houseChecks({ feedback: [\"Look again at line 12.\"] })[0].ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The script's comment 'git show writes nothing there' is wrong for that case, and test/laws.test.mjs treats show and ls-tree as reads.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "93-94",
+   "quote": "When the four checkers were first ported, every negative passed and 5 of 6 positives were missed — they only looked precise because they under-detected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "85-86",
+   "quote": "Run it. **Watch it fail.** A suite that has never been red proves nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/LESSONS_LEARNED.md",
+   "lines": "43",
+   "quote": "route-gate hostile test expected 0.7 but one mutated answer already had the target route → choose known-wrong substitutions and assert the counted result",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "48",
+   "quote": "Add meaningful regressions that fail for the original problem; verify relevant adjacent modes/grades.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "195-196",
+   "quote": "A validator must enumerate all contractual references, and the defect must become a failing red fixture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "488",
+   "quote": "every deterministic gate has been observed failing on the defect class it claims to catch",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/shared/ANSWER-RETRY-IMPLEMENTATION.md",
+   "lines": "30",
+   "quote": "Thus the revised test detects the previously observed behavior rather than only mirroring a helper.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "33",
+   "quote": "Require each regression to fail against the actual original mechanism",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-20T11-20-06-019f7ed3-5205-72f0-a25a-caf13bf2a620.md",
+   "lines": "248-252",
+   "quote": "The linter is genuinely fail-closed - I corrupted the science-gate status and got \"FAIL: 2 findings\" with a nonzero exit; corrupted a graph node, nonzero exit. That fixes the exact bug I flagged on the G6 package (a linter that printed FAIL but still exited 0).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/02_CURRENT_STATE_AND_ARTIFACTS.md",
+   "lines": "91",
+   "quote": "- An earlier architecture audit reported 30 tests and `validate --all` passing on an earlier state while still reproducing critical forgeries. That history proves that the prior suite was insufficient, not that the current system is healthy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/op-lint/README.md",
+   "lines": "42-44",
+   "quote": "One passing unit and one failing fixture per rule, including all three round-2 failure shapes. Every rule has at least one failing case -- the selftest asserts the exact expected failure-rule set per lesson and fails if any rule loses its failing fixture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "152",
+   "quote": "A gate that has never failed has never been tested.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "193",
+   "quote": "a **vacuous** assertion — a dead selector list that made it pass over nothing — by exactly this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/characters/implementing-developer-agent/character.json",
+   "lines": "8",
+   "quote": "Treat an existing green test as a claim until a negative path demonstrates its guard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "170-174",
+   "quote": "I negative-tested it, not just ran it clean: broke an arc endpoint and it went 2 RED with a nonzero exit; it also caught the stale JS wrapper. Genuinely fail-closed - it does NOT repeat the G6 bug where the linter printed FAIL but exited 0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "104-106",
+   "quote": "It caught one the day it was written: shortening `trial`'s card left the story's glossary still handing a child the old three-sentence version.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/op-lint/README.md",
+   "lines": "43-44",
+   "quote": "the selftest asserts the exact expected failure-rule set per lesson and fails if any rule loses its failing fixture.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "38-39",
+   "quote": "a fail-closed consistency linter whose 13 named mutations are all rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/g4-plan-red-team-2026-07-20.md",
+   "lines": "127",
+   "quote": "Negative-tested: a broken arc and a stale wrapper both correctly fail red.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "24",
+   "quote": "Missing audio shows honest fallback | PASS (throwaway copy) | manifest pointed at a 404 path",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "763",
+   "quote": "Mutation selftests demonstrate that the gates fail closed rather than merely printing a warning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "147-148",
+   "quote": "proves each law failing before it is trusted (9 cases when written; 12 by 29.09), per the red-first rule that caught five broken inherited checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "108",
+   "quote": "A check that has never failed anything proves nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "608-609",
+   "quote": "Verified in node: babble fails, real say-backs/retells pass, third attempt releases.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "one-question-at-a-time",
+ "title": "One question at a time",
+ "statement": "Ask one thing at a time: one question per screen, and a two-part task as two turns, so the feedback can answer each part.",
+ "example": "Three pages overflowed the screen for the same reason: two choice questions stacked on one page.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A one-screen census at 1440×900 found four pages too tall, three of them for the same reason, two multiple-choice questions stacked on one page; each was split into single-question pages with every quoted option kept. A reading course's vocabulary rulebook splits saying a word and defining it into two separate turns, because one question asking both complicates the feedback when a child gets both parts wrong.",
+ "against": "the two-turn split is built into the card's structure, but no validator checks it.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "107",
+   "quote": "one-screen census failures** at 1440×900",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "108-109",
+   "quote": "two MCQs stacked on one page",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "110-111",
+   "quote": "each split into single-question pages/cases, all verbatim quoted options preserved",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "54-55",
+   "quote": "Say the word first, define it second, as two **separate turns** — not one question asking both",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "55-56",
+   "quote": "complicates simultaneous feedback if a child gets both parts wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "56-57",
+   "quote": "the split/order is not validator-checked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "306-307",
+   "quote": "Two asks arriving in the same instant, one of them answerable, and nothing saying which is theirs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "308",
+   "quote": "the defect is SIMULTANEITY, not existence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "330",
+   "quote": "Our `check_intro_world` is two-part in `data.js`; either split it into two sequential stops at 93.4 and 93.5 s",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

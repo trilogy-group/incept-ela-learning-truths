@@ -1,0 +1,160 @@
+{
+ "id": "show-no-clock-but-log-the-time",
+ "title": "Show no clock, but log the time",
+ "statement": "Don't show a clock unless speed is what the task measures, but quietly log how long learners take on each item and flag rushed answers.",
+ "example": "One plan notes that the target test's publisher invalidates tests above 25% rapid guessing.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A course plan keeps reading untimed because time pressure rewards rapid guessing, which the target test penalises; it keeps timing only where speed is the construct, such as fluency drills, and captures time on task silently everywhere for rapid-guess detection, with no clock on a reading passage (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`). An assessment plan notes that the test's publisher invalidates tests above 25% rapid guessing and that disengagement deflates scores, citing published work on low examinee effort, and has its proxy test capture per-item timing silently and flag rushing (`grade3-reading/artifacts/g5_build_2026_07_02/mapproxy_clean.md`). A score with heavy rapid guessing is treated as invalid, since a disengaged attempt is not evidence of what a learner knows.",
+ "against": "The 25% figure is the plan's account of the publisher's rule; nothing here checked it against the publisher's own documents. A later run found counter-evidence (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "265",
+   "quote": "rewards rapid-guessing, which MAP penalizes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "265",
+   "quote": "Timing is preserved ONLY where speed is the construct",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "265",
+   "quote": "Time-on-task is captured silently everywhere (rapid-guess detection, calibration) — but no clock is shown on a reading passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/mapproxy_clean.md",
+   "lines": "211",
+   "quote": "NWEA invalidates tests above 25% rapid-guessing; disengagement deflates scores",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/mapproxy_clean.md",
+   "lines": "211",
+   "quote": "The proxy captures per-item timing silently and flags rushing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "87",
+   "quote": "NWEA invalidates tests above 25% rapid-guessing; disengagement deflates scores (Wise & DeMars 2005).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "87",
+   "quote": "The proxy captures per-item timing silently and flags rushing — so a disengaged student is coached before the official window, and a proxy score carries its own validity flag rather than silent noise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "95",
+   "quote": "at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "97",
+   "quote": "Re-engineer the gate to block advancement on genuine misses, require reading or attention, and penalise rapid-guessing, then demonstrate it blocking a real miss in a live walkthrough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "114",
+   "quote": "No clock shown",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "118-120",
+   "quote": "The band is logged per sitting (dev console + the pace ledger, src/lib/paceLedger.ts) so the 180 s can be recalibrated after a week.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "200-201",
+   "quote": "Time-on-task captured silently (rapid-guess detection); no clock on a reading passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "149",
+   "quote": "| No engagement validity check | Per-item timing captured; rapid-guessing flagged — mirroring NWEA's own >25% rapid-guess validity rule | Engine telemetry; NWEA-verified rule |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "196",
+   "quote": "**Success/kill criteria (usage-based — all meaningful at N=40):** session completion ≥ 90%; session duration within the expected 30–60-minute envelope; rapid-guess rate < 10%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/brainlift.html",
+   "lines": "199"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_08 10_30 CEST - Notes by Gemini.md",
+   "lines": "362",
+   "quote": "So if the answers are um you know pretty um if they're spending 5 seconds on an answer then they're not thinking they're guessing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L612555.txt",
+   "lines": "136",
+   "quote": "Hendrick identified response time and hesitation as crucial metrics: rapid answers (e.g., under five seconds) indicate guessing rather than active thinking ([00:11:10](#00:11:10",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "70-71",
+   "quote": "countdown shown on the door",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Wise & DeMars 2005",
+   "url": "https://doi.org/10.1207/s15326977ea1001_1"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

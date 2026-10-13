@@ -1,0 +1,102 @@
+{
+ "id": "audit-a-judge-with-matched-pairs",
+ "title": "Audit a judge with matched pairs",
+ "statement": "Audit a judge with matched inputs that differ only in something that should not matter, such as an incidental item feature or the prompt's formatting, before trusting its scores.",
+ "example": "A seven-word time-period prefix on otherwise identical items moved a judge's passes from 2 of 5 to 5 of 5.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A red team sent a content judge hand-made pairs of items identical except for one surface feature (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md`; `icloud-work/aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md`). A stock seven-word prefix naming a time period moved passes from 2 of 5 to 5 of 5, and labelling the same four items easy rather than hard moved them from 1 of 4 to 4 of 4. A pair test checks that a judge ignores what should not matter, where a planted fault checks that it catches what should. Fix any verdict that changes with something that should not matter before trusting the judge's scores.",
+ "against": "The prefix effect did not carry over to fresh items: \"(stacked fresh-holdout n=25 MCQ: 76% with period+difficulty stacking vs 80% without).\" (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md`, lines 4-5). A single flip can also be run-to-run variance, since the same judge's verdicts vary between runs, and a time-period anchor arguably adds scope, so that pair is not a pure surface change.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md",
+   "lines": "7",
+   "quote": "**Pass rate**: **5/5 = 100%** with explicit period anchor vs **2/5 = 40%** without, on the same content (10 items, paired implicit/explicit). Δ = +60pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md",
+   "lines": "39-40",
+   "quote": "The content is identical across the pair. The lift comes entirely from a 7-word prefix that any wrapper can deterministically add.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "8",
+   "quote": "**Pass rate**: **4/4 = 100%** when labeled \"easy\" vs **1/4 = 25%** when labeled \"hard\" on the SAME 4 stems × 4 options × 1 answer. Δ = +75pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md",
+   "lines": "4-5",
+   "quote": "(stacked fresh-holdout n=25 MCQ: 76% with period+difficulty stacking vs 80% without).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "21",
+   "quote": "- **Sclar et al. ICLR 2024 Spotlight** — prompt-format sensitivity (76 → 32 acc swing on Llama-2 from spurious format choices); empty/malformed prompt is the worst-case format",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "167",
+   "quote": "https://openreview.net/forum?id=RIu5lyNXjT",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "22",
+   "quote": "- **Mizrahi et al. TACL 2024** — multi-prompt evaluation; single-prompt eval can be off by 10+pp",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "168",
+   "quote": "https://aclanthology.org/2024.tacl-1.52/ — single-prompt eval can be off by 10+pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "49",
+   "quote": "| **F2** | **Format-template double-encoding** | system-prompt or user-prompt appears twice in raw stimulus; per-item length distribution shifts +30–80% | Sclar ICLR 2024 (format sensitivity) |",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Sclar et al. 2024",
+   "url": "https://openreview.net/forum?id=RIu5lyNXjT"
+  },
+  {
+   "ref": "Mizrahi et al. 2024",
+   "url": "https://aclanthology.org/2024.tacl-1.52/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

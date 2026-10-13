@@ -1,0 +1,56 @@
+{
+ "id": "what-a-films-own-checks-should-test",
+ "title": "What a film's own checks should test",
+ "statement": "Should a check inside a film made from a text test the text itself, or may it test what the film argued?",
+ "group": "not-settled",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "media",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The video essay builds an argument from the text, ending in two readings a careful reader could defend, and is told that each of its checks is answered by the narration so far. In the 12 October run the speech's essay asked, after its argument frame, how the two readings interpret the speaker's contrast, and its keyed option restates the film's own framing of two readings, which is the film's argument rather than the speech's words. The rule that a question about a text must need the text does not settle whether a film's argument counts as material a check may test.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "75",
+   "quote": "\"stem\": \"How do the two readings interpret the speaker's contrast?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "78",
+   "quote": "One reading stresses the weakness of speech while the other stresses the power of action",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "46",
+   "quote": "two readings of the lesson question that these lines alone support.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "55",
+   "quote": "Each question is answered by the narration so far.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

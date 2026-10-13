@@ -1,0 +1,71 @@
+{
+ "id": "sample-a-stored-pool-at-random",
+ "title": "Sample a stored pool at random",
+ "statement": "To estimate a single-try or best-of-several rate from a stored pool of scored candidates, sample the pool at random or generate afresh.",
+ "example": "Read off the top of a score-sorted list, one model's single-try rate came out at 99.11%, which was its best-of-8 rate.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP work, each prompt's eight candidate scores were stored sorted best first, so the first entry, or the best of the first two, always returned the best-of-8 score (`icloud-work/aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md`). On one day that mistake was reported twice, as a single-try rate and as a best-of-2 rate, both 99.11%; a fresh single-try run that day scored 82.67% (`icloud-work/aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md`). The rule since is to simulate a smaller pool by sampling stored candidates at random, or to generate afresh (`icloud-work/aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md",
+   "lines": "3",
+   "quote": "True K=N from K=8 data requires random pair sampling.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md",
+   "lines": "7",
+   "quote": "The `all_scores` array is sorted DESCENDING by IB score (winner first). Slicing the first N entries gives you the TOP N from the K=8 pool, and the max of that is always `all_scores[0]` = the K=8 winner.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md",
+   "lines": "32",
+   "quote": "OR fresh K=N generation, which is rigorous but expensive.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_k8_bon_winner_trap_2026_05_11.md",
+   "lines": "36",
+   "quote": "On 2026-05-11, orch reported \"B0161 K=2 BoN = 99.11% mean\" computed from existing K=8 data via `max(all_scores[:2])`. This number is identical to K=8 winner pass rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "23",
+   "quote": "K=1 was 99.11% per K=8 candidate-0 → wrong (sorted-by-score artifact).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "24",
+   "quote": "**1h ago**: UPLIFT-1 single-seed K=1 T=0 = 82.67% on v43-soup `ty16vgj9`.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

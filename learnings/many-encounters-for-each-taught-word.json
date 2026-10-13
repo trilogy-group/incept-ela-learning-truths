@@ -1,0 +1,347 @@
+{
+ "id": "many-encounters-for-each-taught-word",
+ "title": "Many encounters for each taught word",
+ "statement": "Plan many meaningful, spaced encounters with each taught word across the unit, adding them in the lesson's own activities where a text can't carry them, because one meeting teaches little.",
+ "example": "The check was built after 7 of 9 taught words were found appearing only once.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's rulebook holds that a word needs 10 to 12 encounters across the unit or course to be retained. Its validator fails a taught word never met again in a later lesson of its unit and reports the shortfall against ten; the gate came from 7 of 9 taught words appearing only once. Because the story text cannot be edited to insert a word, the rule was amended: a word the passage carries fewer than twice still counts if the lesson's own questions, options, feedback, frames, retell and recap use it at least 3 times. A key word is first taught with a definition and its use in context, and is assessed by its use rather than by recognition.",
+ "against": "the rulebook gives the 10 to 12 figure as a ruling with no study beside it, and the shortfall against ten is only reported, since most encounters are owed by lessons not yet written. In a coherent text set, target words that recurred about 6 times were learned incidentally (η²=.625) with no meanings taught, so 10 to 12 is a ruling, not a measured threshold. The rule is only partly met: the exempt words and later lessons not yet built sit on a debt list (`grade3-reading/artifacts/criteria-register.csv`). The same doctrine reports that the largest effect in one coherent-text study was incidental vocabulary, with no meanings taught, when target words recurred about 6 times across the set (`grade3-reading/knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd`, line 56), so planned recurrence alone can teach a lot. Vocabulary gains carry only partly into comprehension: in the Elleman et al. (2009) meta-analysis, vocabulary instruction helped comprehension on custom measures (d = 0.50) far more than on standardised ones (d = 0.10), and a study's vocabulary gain correlated only modestly with its comprehension gain (r = .43). The summary credits the figure of ten encounters to two authors without naming a study.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "65-66",
+   "quote": "from 7/9 taught words appearing only once",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "69",
+   "quote": "A word needs **10 to 12 encounters** across the unit/course to be retained",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "70-71",
+   "quote": "fails a word never met again in any later authored lesson of its unit, and reports (rather than hard-fails) the shortfall against ten",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "46",
+   "quote": "cannot be edited to insert a word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "46-48",
+   "quote": "a word not carried twice by the passage is still \"earned\" if the lesson's own activities (questions, options, feedback, frames, retell, recap) use it at least 3 times",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "69",
+   "quote": "Only \\~5–15 of 100 unfamiliar words met in natural reading are learned; misdirective contexts teach approximately zero",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "67",
+   "quote": "*incidental* vocabulary: η²=.625, no meanings taught, target words recurring \\~6× across the set",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "12",
+   "quote": "A taught word appears at least twice in its own passage and is met again in a later authored lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-A-D1-D4.md",
+   "lines": "71",
+   "quote": "| D4.7 | Use not recognition | PASS |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-C-D7-D8-D10-D12.md",
+   "lines": "29",
+   "quote": "Deliberate absence from the passage (confirmed: zero occurrences in passage text) forces the child to supply it as evidence of comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/G3-APPLICABILITY.md",
+   "lines": "24",
+   "quote": "`validate-vocab-earned.mjs:198–220` explicitly exempts encapsulating words from own-passage/later-lesson recurrence rules",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "45",
+   "quote": "Tier-2 vocabulary requires direct robust instruction plus engineered re-encounters; incidental context is an unreliable acquisition channel",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/PRIORITIES.qmd",
+   "lines": "56-57",
+   "quote": "Vocabulary recipe: definitional + contextual, multiple encounters, morphology (~60% of meanings predictable), taught words chosen for generative value.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "58",
+   "quote": "Only \\~5–15 of 100 unfamiliar words met in natural reading are learned; misdirective contexts teach approximately zero",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "60",
+   "quote": "Sentences students write from dictionary definitions are unacceptable 60–63% of the time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "56",
+   "quote": "*incidental* vocabulary: η²=.625, no meanings taught, target words recurring \\~6× across the set",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "428",
+   "quote": "Around ten or more meaningful encounters are needed to own a word, and vocabulary gains appear far more strongly on custom measures than standardised ones.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "428",
+   "quote": "A word met once in a video is a first encounter, not the teaching of it.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "487",
+   "quote": "vocabulary instruction helped comprehension on custom measures (d \\= 0.50) far more than on standardised ones (d \\= 0.10)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "487",
+   "quote": "the correlation between a study's vocabulary gain and its comprehension gain was only modest (r \\= .43).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "22",
+   "quote": "Each word returns \\~10–12 times across the unit | One meeting never sticks; spaced returns in fresh contexts build ownership",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of G3-8_Threads_FourTier.docx",
+   "lines": "396 (textutil text)",
+   "quote": "Each unit's technical terminology (above) must be listed in the KB, taught before reading, and carried with spaced recall",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "68",
+   "quote": "R-VOC-7: count the visible uses of each Word Power word **after its card** — story, questions, models, frames. Zero is `med`; fewer than 3 is `low`.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "288",
+   "quote": "| `VOCAB-UNTESTED` | med | a taught word that no Word Power question (and not the card's own check) tests (B4) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "240-241",
+   "quote": "The recurrence metric rewarded a whole-corpus count without protecting the semantic and narrative ownership of the lesson being edited.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "250-251",
+   "quote": "natural-use adjudication for every recurrence hit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "355",
+   "quote": "Recurrence counts do not prove word learning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/course-graph-guide.md",
+   "lines": "40",
+   "quote": "RECURRENCE FLOOR: every Tier-2 word appears >=4x across the unit's passages, engineered toward ~6x -- emphasis on DOMAIN-SPECIFIC words (not just argument-core), which under-recur if unchecked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "264-267",
+   "quote": "The count is reported rather than failed because most of a word's encounters are owed by lessons that are not written yet, and failing on it would block authoring lesson four until lesson eight existed. The shortfall is the number a later lesson has to pay back.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md",
+   "lines": "15",
+   "quote": "We might do 22 or more touches on that word during this short 7-minute lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md",
+   "lines": "13",
+   "quote": "I probably end the lesson with the kids saying admire at least 20 or so times.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/course-graph-guide.md",
+   "lines": "40",
+   "quote": "RECURRENCE FLOOR: every Tier-2 word appears >=4x across the unit's passages, engineered toward ~6x -- emphasis on DOMAIN-SPECIFIC words (not just argument-core), which under-recur if unchecked.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/UNIT-SPECS.md",
+   "lines": "413-414",
+   "quote": "Recurrence engineered ≥5× in a 4-lesson unit; sub-6× flagged honestly",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/BRAINLIFT.md",
+   "lines": "247-248",
+   "quote": "a domain needs enough related-text volume (~6× vocabulary recurrence, multiple texts) to compound.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/generation-contract.md",
+   "lines": "91-92",
+   "quote": "domain words firmed in-lesson, not counted as Tier-2",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "78-79",
+   "quote": "taught vocab must be recycled into Scout's speech and the show-what-you-know question",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "347",
+   "quote": "Reuse taught vocabulary meaningfully after the vocabulary cards instead of letting it disappear.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "146-149",
+   "quote": "When the passage does not carry the word twice, the word is still earned if the lesson's own activities use it: the questions, answer options, feedback, sentence frames, the retelling cloze and the recap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "254-256",
+   "quote": "\"students require 10 to 12 implicit or explicit encounters with a new vocabulary word across texts to successfully retain it, making standalone, disconnected lessons ineffective.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "75",
+   "quote": "Word,Class,Meaning (student-facing),Introduced,Stage,Linked to,Revisit in",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_08 10_30 CEST - Notes by Gemini.md",
+   "lines": "490",
+   "quote": "here's 30 hinge concept words that we want students to revisit over the course of a period of time.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "155-157",
+   "quote": "When that check was first written, seven of the unit's nine taught words appeared exactly once in the passage they were taught for.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "530-531",
+   "quote": "say-it asking the child to say how they *reconciled* the sources, gloss restated, and to fit in evidence / decomposer / correspond",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "55",
+   "quote": "vocab recycled into speech + SWYK question",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Elleman, Lindo, Morphy & Compton 2009",
+   "url": "https://doi.org/10.1080/19345740802539200"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

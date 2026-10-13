@@ -1,0 +1,258 @@
+{
+ "id": "transfer-work-needs-evidence-the-teaching-didnt-use",
+ "title": "Transfer work needs evidence the teaching didn't use",
+ "statement": "Decide whether an item checks taught knowledge, where overlap with the teaching is the point, or independent use of a skill, which needs evidence the teaching never used.",
+ "example": "One of six repairs behind an AP unit's block was replacing independent tasks in Lessons 1, 3 and 6 that reused answer-bearing evidence from the worked example.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "alignment",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An independent audit of an AP unit confirmed unseen sources and no wrong or ambiguous key, yet blocked it on six repairs, one of them replacing independent tasks in Lessons 1, 3 and 6 that reused answer-bearing modelled evidence; a later commit closed the repairs with an independent, different-evidence release. A Grade 5 course writes the split in as an invariant, keeping independent item claims disjoint from teaching claims while a blocking, unscored on-ramp check retrieves a prior lesson's claim. The reading BrainLift needed five adversarial rounds to isolate the distinction: an in-lesson knowledge check answerable from explicitly taught knowledge is legitimate, the same overlap in a comprehension or transfer item is a leak, and in reading, where finding the answer in the passage is the skill, a history-style 'answer is in the source' check is skipped. Evidence for independent use must also avoid the cases the teaching and its worked example used, so that copying the model can't pass it.",
+ "against": "In the Grade 5 course the split is a design-level resolution: every lesson's certification still read not run, so whether it works at runtime is unverified. none found; checks of taught knowledge are exempt by design, provided each item's class is stated (`ti-courseplans-audit/skills/train-teacher/references/teacher-contract.md`). The Grade 3 build notes apply disjointness to checks for understanding as well, saying never to test the exact proposition just modeled (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md`, lines 33-34).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "58-59",
+   "quote": "The independent full read confirmed five genuinely unseen checkpoint sources, a 2/2/2/2 MCQ key distribution, no wrong or ambiguous MCQ key",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "60",
+   "quote": "It still issued **BLOCKED FOR REPLICATION** on six repair buckets:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "64",
+   "quote": "Replace independent tasks that reuse answer-bearing modeled evidence in Lessons 1, 3, and 6.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "87",
+   "quote": "independent different-evidence release",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "81-82",
+   "quote": "Independent item claim_ids must be a subset of independent_claim_ids and disjoint from teaching_claim_ids",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "77",
+   "quote": "retrieved through a **blocking, unscored on-ramp check**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "47",
+   "quote": "An in-lesson knowledge check answerable from explicitly-taught knowledge is legitimate (that's what checking taught knowledge means); the same overlap in a comprehension/transfer item is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "47",
+   "quote": "it took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "26-27",
+   "quote": "in reading, finding the answer in the passage IS the skill, so the usual history-style \"answer is in the source\" leak check is deliberately skipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "85-87",
+   "quote": "this is a **design-level** resolution — every lesson's `evaluator_certification`/`renderer_status` still reads not-run/required-not-verified, so whether it executes correctly at runtime is unverified",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "53",
+   "quote": "The APUSH deterministic validator passes with zero errors and zero warnings.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "64",
+   "quote": "2. Replace independent tasks that reuse answer-bearing modeled evidence in Lessons 1, 3, and 6.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "86",
+   "quote": "Commit `2056514` closes the six repair buckets recorded in kb-0167",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/AUTHORING-RULINGS-R1-R10.md",
+   "lines": "80",
+   "quote": "The kitchen/greenhouse/classroom modelling case never appears inside an assessed item.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "88",
+   "quote": "a teaching dose models the exact proposition an item tests → the item checks recall of the modeled sentence, not the skill. Reproduced across 2 units.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/teacher-contract.md",
+   "lines": "59-60",
+   "quote": "Authoring a fresh unit (u03 respiratory) REPRODUCED the dose-item leak the hibernation unit took 5 rounds to eliminate",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/teacher-contract.md",
+   "lines": "66-67",
+   "quote": "The two lists must be DISJOINT — no move item may test the inference a dose step modeled.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/labeled-defect-corpus.jsonl",
+   "lines": "2",
+   "quote": "teaching content leaking the answer to the check it precedes.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "85-86",
+   "quote": "Mis-classifying the item makes the same text both correct and defective — it took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0205-g9-othello-1-1-kb-lesson-view.qmd",
+   "lines": "32",
+   "quote": "**\"students are locked out of writing about the guided practice quote\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "82-84",
+   "quote": "An in-lesson knowledge check answerable from explicitly-taught knowledge is legitimate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "84-86",
+   "quote": "the same overlap in a comprehension/transfer item is a leak. Mis-classifying the item makes the same text both correct and defective — it took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "88",
+   "quote": "list every FACT the dose (I-do/we-do/you-do) uses vs every FACT the MOVE items test — must be DISJOINT (knowledge-CFU items exempt)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "88",
+   "quote": "Reproduced across 2 units.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "207",
+   "quote": "the student's quote: lines the lesson's blocks found for the question, never the model's or a guided quote",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "213",
+   "quote": "your paragraph: no other line of the text to offer as its quote (the model's own is never offered)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "186",
+   "quote": "never the model's quote",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20670",
+   "quote": "| **Dose-item answer leak** | teacher-gauntlet: a teaching dose models the exact proposition an item tests → the item checks recall of the modeled sentence, not the skill. Reproduced across 2 units. | list every FACT the dose (I-do/we-do/you-do) uses vs every FACT the MOVE items test — must be DISJOINT (knowledge-CFU items exempt) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/README.md",
+   "lines": "82",
+   "quote": "never test the exact proposition you just modeled.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/G5-BAR.md",
+   "lines": "287-288",
+   "quote": "Independent item claim_ids must be a subset of independent_claim_ids and **disjoint from** teaching_claim_ids.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "273",
+   "quote": "Both answers are stated outright in the paragraph above, which is appropriate for a Check but means it is retrieval, so the lesson needs something beyond it.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1556-1557",
+   "quote": "The same answerability pattern is valid for a taught fact check and invalid for a comprehension item",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

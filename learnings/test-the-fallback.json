@@ -1,0 +1,436 @@
+{
+ "id": "test-the-fallback",
+ "title": "Test the fallback",
+ "statement": "Test whatever marks an answer when the model is slow or down, because that path marks real students too.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The marking test's page marked with keyword rules when the judge failed or took over 9 s, and those rules went\nuntested, since the test answers were written to pass them; 9 of 91 calls got no response within 40 s and were sent\nagain (`g9/review/2026-10-07-archivist-marking-test/README.md`). A 3D version's fallback keeps the answer and asks the\nstudent to send it again (`g9/review/three-film-comparison/threejs/checks.json`), and in the lesson engine an unsure or\nfailed judgment is not an attempt (`g9/transformer/src/glue/`).",
+ "against": "no call in that test went over the page's 9 s\nlimit (median 3.44 s, slowest 7.5 s).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "review/2026-10-07-archivist-marking-test/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/three-film-comparison/threejs/checks.json"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "9",
+   "quote": "When it can't verify something, it returns nothing and the LLM evaluates as before with zero degradation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "113",
+   "quote": "Total evaluations | 486",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "114",
+   "quote": "Regressions | **0**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "31",
+   "quote": "Every MCQ and MCQ_SET generation silently fell back to a legacy one-shot path.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_stimulus_llm_failure_fallback.py",
+   "lines": "4-8",
+   "quote": "When `_extract_stimulus_promises_llm` exhausts its retries and returns None, the detector must still flag a mismatch if the regex fast-path saw a real visual reference and no actual stimulus is present. Otherwise an LLM outage silently disables the entire mismatch detector and \"Look at the chart\" with no chart attached gets a free pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "72",
+   "quote": "The local evaluation fallback grades free responses by keyword overlap, and a porting note propagates that defect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "31",
+   "quote": "**Result:** The MCQ Research step NEVER WORKED. Every MCQ and MCQ_SET generation silently fell back to a legacy one-shot path. The research was supposed to gather verified primary sources — it never ran.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0615Z_REPORT_unit1_mcq_solver_v2_repair_delivery.md",
+   "lines": "27",
+   "quote": "- removed the local `PREDICTED_PASS_LOCAL_MCQ_AFTER_IB_TIMEOUT` conversion path",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/evaluator.py",
+   "lines": "167-168",
+   "quote": "return DimensionScore(score=1.0, reasoning=default_reasoning, issues=[])",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/evaluator.py",
+   "lines": "446",
+   "quote": "error_score = DimensionScore(score=0.0, reasoning=f\"Evaluation error: {str(e)}\", issues=[])",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "131",
+   "quote": "The dimension tracking code had a Python falsy evaluation bug: `v.get(\"score\") or v.get(\"value\")` drops score=0.0 values (0.0 is falsy).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "176",
+   "quote": "### 1. Test the validation function itself",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "596ad44",
+   "lines": "3-6",
+   "quote": "BAML path was returning raw LLM scores without applying the same score clamping that the default generate_structured() path applies. This caused BAML to over-score borderline ACCEPTABLE/SUPERIOR cases (e.g. golden-089: BAML=1.00 SUPERIOR vs expected ACCEPTABLE).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_ela_enforcement_guard.py",
+   "lines": "4-5",
+   "quote": "The image consistency guard must NOT silently cancel an ELA detector enforcement that deliberately set factual_accuracy to 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "208",
+   "quote": "score = dim_data.get(\"score\", 1.0) if isinstance(dim_data, dict) else dim_data",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "37",
+   "quote": "Eleven of 28 checks are visibly marked as uncertified fallback routes pending authored replacement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_oracle_session/HANDOVER.md",
+   "lines": "396",
+   "quote": "- **B1.** When IB curriculum API returns 503, does `evaluators/base.py` fail-the-row, fall-back-to-bundled-facts, skip-factual-verification, or default-pass?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "131",
+   "quote": "Infra-failure way-outs (StuckWayOut) hand back the authored reveal",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "72",
+   "quote": "| F16 | major | The local evaluation fallback grades free responses by keyword overlap, and a porting note propagates that defect. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0186-scope-lane-and-model-routing-rules.qmd",
+   "lines": "82-84",
+   "quote": "a probe route was found to return 200 with `{\"ok\":false}` when the key was missing, serving keyless for roughly 11 hours undetected",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "11",
+   "quote": "**Impact**: The Research→Compile pipeline NEVER WORKED for either MCQ or MCQ_SET. Both silently fell back to legacy generation paths every time. The research step was designed to gather verified primary sources and plausible alternatives, but it always crashed before it could run.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "86-88",
+   "quote": "- Consensus degenerated to a single-sample veto when all confirmation samples errored (len(fails)*2 > len([first]) auto-confirmed). Added a <2-sample guard that returns the failure as low_confidence instead of a confirmed hard-veto.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "122-123",
+   "quote": "A blanket `except Exception` would swallow real code bugs as transient hiccups, silently degrading to item-level scores.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-24T1113Z_DEN_NOTICE_mcqset_route_inspection_no_safe_unblock.md",
+   "lines": "15",
+   "quote": "per-child MCQ fallback is unreliable: children 1 and 2 timed out at 60s; child 3 scored `1.0 SUPERIOR`",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "1-2",
+   "quote": "with no judge, a judge that cannot be … reached, or one that is unsure, no judged action of any mechanic is marked wrong or completes on the judge's word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "38",
+   "quote": "\"a judge that cannot be reached\": () => createFakeProvider(() => { throw new Error(\"fetch failed\"); })",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "39",
+   "quote": "\"a judge that answers nothing usable\": () => createFakeProvider(() => null)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "71",
+   "quote": "no judged action is marked wrong, or completes on the judge's word; each is put up for review",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "235",
+   "quote": "Three-word runs of a line: the rules fallback's keywords, used only if the judge endpoint cannot be reached.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "35",
+   "quote": "Tested offline with a stand-in model, including a slow or failed task, which adds nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "74",
+   "quote": "a judge that answers nothing is no verdict: judge_unavailable, never nothing met",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "1-2"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "259",
+   "quote": "it proves it against the *fallback* reply-picker",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "261",
+   "quote": "distinctness check is **not being asserted on the path most children are on.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "160-162",
+   "quote": "The degrade section of `walk-lesson` must force every scoring call to fail and assert the app responds honestly in the child's words, never claims the answer was good, never opens the gate on first failure, and eventually offers a way past.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "163-164",
+   "quote": "A broken scorer that waves children through looks from outside exactly like one that works (5/5 degrade assertions required",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "17",
+   "quote": "the engine is unreachable: never mark it Accepted on a guess. Keep the answer, say so plainly, let them go on.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "18",
+   "quote": "The archive could not read that just now. Your answer is kept. Send it again.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "151",
+   "quote": "engine unreachable: not an attempt, not a verdict. Keep their words in the box and say so.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "29",
+   "quote": "verdict: q.answer.split(/\\s+/).length > 5 ? 'secure' : 'partial'",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "23",
+   "quote": "return { ok: q.word.length > 2, spelling: q.word, link: '', joins: '' }",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/practice/lesson.ts",
+   "lines": "51",
+   "quote": "Offline rule, only if the engine is unreachable: check the shape, generously. DRAFT lines.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/threads.mjs",
+   "lines": "42",
+   "quote": "the engine is unreachable: a lesson word in the right place is enough to name the thread",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "12",
+   "quote": "Falls back to a generous length/keyword rule if the engine is unreachable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1926",
+   "quote": "Expected: a deliberate retry can contact a recovered scorer without requiring reload.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "43",
+   "quote": "The revised editor correctly preserved the answer and kept Next gated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "163",
+   "quote": "A broken scorer that waves children through looks from outside exactly like one that works",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "87",
+   "quote": "It failed 4 times in about 30 calls: L4 p22 extra thinking, p22b, p22d, and L7 p16d. Every other call returned 200 in 3.5–9 s.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "148",
+   "quote": "degrade — with EVERY scoring call failing: honest wording, never claims the answer was good, never opens the gate on the first failure, eventually offers a way past | 5/5",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/api.ts",
+   "lines": "29",
+   "quote": "catch { return { verdict: q.answer.split(/\\s+/).length > 5 ? 'secure' : 'partial', reply: 'Go on.', offline: true } }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "14",
+   "quote": "If the judge fails or takes over 9 s, the page marks with the keyword rules instead.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "36",
+   "quote": "| answers with a verdict | 63 of 63 (91 calls; 9 timed out with no response in 40 s and were sent again) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "66-68",
+   "quote": "the authored missing/coaching ladder remains the explicit degrade path when the LLM judge is unavailable (infra failure).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "458-460",
+   "quote": "The server-side `evaluate_locally` free-response branch grades student answers by token overlap with `targetFacts` (coverage ≥ 0.5, or ≥ 4 raw hits, triggers \"strong\"), with no reading of stance",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "316-317",
+   "quote": "Any failure (timeout 60 s, non-200, bad shape, static serving) degrades SILENTLY to the local judge, label unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "82-83",
+   "quote": "Expect several seconds of latency per call (measured ~10–25 s per verdict on this machine).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

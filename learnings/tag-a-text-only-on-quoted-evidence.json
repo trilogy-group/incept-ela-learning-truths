@@ -1,0 +1,53 @@
+{
+ "id": "tag-a-text-only-on-quoted-evidence",
+ "title": "Tag a text only on quoted evidence",
+ "statement": "Tag a text with a knowledge component only on a quoted span that shows it, not on trigger words.",
+ "example": "Trigger words such as \"then ... because\" can mark sequence, cause and effect, or both, so on their own they don't show which component a text carries.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A placement protocol for a Grade 5 reading course's texts lets a model read each text against the component list and propose the components it can carry, but every proposal must come with one or more verbatim quotes showing the text carries it, and the model's output is only a draft for a human confirm step. That step keeps a placement only if the quoted span really evidences the component's hinge proposition: trigger words are a hint, not proof, since 'then ... because' can mark sequence, cause and effect, or both. It also cuts over-placement, since a text carrying more than about four to six components is usually diluted, with the validator's default ceiling of six as the hard limit and judgment as the real bar.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "34-36",
+   "quote": "every proposed KC MUST come with span evidence: one or more verbatim quotes from the text body that show the text actually carries that KC (trigger words present, the hinge proposition is demonstrable in the passage).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "45-46",
+   "quote": "The validator is deterministic and never calls an LLM. LLM output is a draft for step 2, nothing more.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/kc-placement/placement-protocol.md",
+   "lines": "57-62",
+   "quote": "- Keep a placement only if the quoted span genuinely evidences the KC (read the hinge_proposition, not just trigger-word overlap -- trigger words are a hint, not proof; e.g. \"then ... because\" can be sequence, cause-effect, or both). - Cut over-placement: a text carrying more than ~4-6 KCs is usually diluted; the validator's load bound (`--max-kcs`, default 6) is the hard ceiling, judgment is the real bar.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

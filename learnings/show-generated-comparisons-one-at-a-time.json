@@ -1,0 +1,70 @@
+{
+ "id": "show-generated-comparisons-one-at-a-time",
+ "title": "Show generated comparisons one at a time",
+ "statement": "When a model generates the video, show a comparison as consecutive shots or a swap in place, not as two objects side by side in one frame.",
+ "example": "The first script round of one science course found 11 side-by-side or left-right requests and reworded them as sequential reveals before rendering.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The grade-7 science script rules hold that video models cannot reliably render two elements side by side in one frame or honour left and right placement, so a comparison is sequenced across beats, swapped in place or shown one item at a time, with no left or right wording in the narration either (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md`, line 82). The first script round found 11 such requests, which were reworded to sequential reveals before any video was generated (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md`, lines 106-107 and 222). The renderability claim is asserted rather than measured: the 11 were script requests caught before rendering, not observed render failures.",
+ "against": "The same course's generation specs allow a deliberate side-by-side when telling two things apart is the learner's task (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, line 48; `grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md`, line 179), and its visual design guide recomposes a plant-versus-animal cell comparison into one frame, one cell above the other (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, lines 234-235). The record on contrast pictures, which keeps framing and scale identical in both halves, assumes both states appear together.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "82",
+   "quote": "Video models cannot reliably render two elements side-by-side in one frame or honor left/right placement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "222",
+   "quote": "Round-0 finding: 11 side-by-side / left-right offenders; video models can't render two-in-one-frame reliably.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "106-107",
+   "quote": "**11 side-by-side / left-right offenders** were reworded to sequential reveals.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "48",
+   "quote": "side-by-side allowed ONLY when discrimination is the learner op.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "179",
+   "quote": "Deliberate side-by-side comparison is allowed when discrimination is the learner operation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "234-235",
+   "quote": "Recompose a wide plant-versus-animal diagram vertically: plant cell above, animal cell below, both within the 9:16 safe area.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,34 @@
+{
+ "id": "intervals-over-clusters-of-shared-material",
+ "title": "Intervals over clusters of shared material",
+ "statement": "When items share a prompt or source, compute confidence intervals over those clusters, since repeated material makes a sample look more precise than it is.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The same AP evaluation contract gives repeated prompt or source clusters a cluster-bootstrap interval, so that duplicated substrate cannot create fake precision. Records built on one prompt or one source are not independent draws, so an interval that counts each as its own observation comes out narrower than the evidence allows.",
+ "against": "The contract was frozen as a design and never run: an AP checkpoint records that no run had been executed for that hand-off (`grade3-reading/knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd`, line 64).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "118-119",
+   "quote": "Repeated prompt or source clusters also receive a cluster-bootstrap interval so duplicated substrate cannot create fake precision.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

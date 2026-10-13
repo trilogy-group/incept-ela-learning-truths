@@ -1,0 +1,51 @@
+{
+ "id": "match-loudness-across-narration-clips",
+ "title": "Match loudness across narration clips",
+ "statement": "Measure each narration clip's loudness and match the clips across a lesson, since gain alone under a true-peak ceiling may not bring them close enough.",
+ "example": "In one build, gain alone under a true-peak ceiling left the clips about 3 decibels apart.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Real-browser QA of a narrated build measured its eight delivered clips at −18.2 to −21.3 LUFS after linear gain capped by a −1.5 dBTP true-peak ceiling, with no compression applied. The spread of about 3 dB passed with a note: acceptable for review, with a limiter needed for tighter matching. The handover lists inconsistent volume or timbre among the faults to check for in every clip.",
+ "against": "The 3 dB bar was a review judgment, not an agreed target: \"Exact mastering targets should be selected and documented for the delivery platform; they have not been agreed here.\" (g9-archive/handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip!/Othello-handover/Othello-project-handover.txt, line 323).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "31",
+   "quote": "delivery −18.2 to −21.3 LUFS (linear gain capped by −1.5 dBTP true-peak ceiling; no compression applied). Within ~3 dB; acceptable for review, a limiter would be needed for tighter matching",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "5",
+   "quote": "Narration: gemini-2.5-pro-preview-tts, voice Orus, eight AAC-LC .m4a clips, 260.2 s total.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "307",
+   "quote": "Check for dropped words, added commentary, misread names, odd emphasis, unintended character voices, truncation, duplicate passages, long accidental silences, distortion, and inconsistent volume or timbre.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

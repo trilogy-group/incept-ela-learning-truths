@@ -1,0 +1,102 @@
+{
+ "id": "measure-the-depth-mix-a-writer-produces",
+ "title": "Measure the depth mix a writer produces",
+ "statement": "Measure the depth mix of generated questions, such as the share needing reasoning rather than recall, as its own figure against a target, since generators skew and accuracy hides it.",
+ "example": "A proven generator produced depth-of-knowledge level 2 on 78 of 80 kept items.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "demand",
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Counted from its two kept forms, the reading project's proven generator emitted depth-of-knowledge level 2 on 78 of 80 kept items and did not reliably produce level 1 or 3 even where the standard supported them (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/assessments/G5_PARAMETERS.md`). The next grade's parameters therefore ask for depth to be an explicit generation setting with the kept-item histogram verified (the same file). The output spec for every grade's generator records the same flag: prompted generators tend to over-emit level 2, and level-3 yield must be measured, not assumed (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md`).",
+ "against": "The counts rest on labels that can be wrong: \"p14 `check` is tagged inference, but it is recall (*\"clear off\"* is quoted). That lowers the real inference share below 36%.\" (`shadow/content-eval/reports/G3-U1-L13-review.md`, line 155).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/assessments/G5_PARAMETERS.md",
+   "lines": "119",
+   "quote": "**Honest reality flag (load-bearing):** the **proven G3 generator emitted DOK 2 on 78/80 kept items** (measured from form_a.jsonl + form_b.jsonl) — it does **not** reliably produce DOK 1 or DOK 3 even when the standard supports them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md",
+   "lines": "47",
+   "quote": "(honest flag: prompted generators tend to over-emit DOK-2; DOK-3 yield must be measured, not assumed).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "345",
+   "quote": "Near-perfect curriculum alignment (10.0) and factual accuracy (9.96), but **Inference & Pedagogy is the weak link** at 6.76/10.0, especially for Grade 12 (4.97). Questions tend toward rote recall rather than higher-order thinking.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "330",
+   "quote": "| Total Questions | 1,030 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "64",
+   "quote": "| `cognitive_demand` | 35 | Questions test recall rather than higher-order thinking |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "96",
+   "quote": "- **Recall-only** questions: \"What year...\", \"Who was...\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-main-review.md",
+   "lines": "91",
+   "quote": "- **Cognitive mix.** Every visible Read-the-text question is literal recall (visible mix: 9 recall / 2 inference / 7 strategy / 1 vocab).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "124",
+   "quote": "all 9 reading-check questions are literal recall",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/KB-NOTES.md",
+   "lines": "80-81",
+   "quote": "the proven G3 generator emitted DOK 2 on 78/80 kept items — content that collapses to all-DOK-2 is the G3 failure mode",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "953",
+   "quote": "five of its six visible reading checks are locate-and-recall while the two richest causal items sit in the JSON hidden.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

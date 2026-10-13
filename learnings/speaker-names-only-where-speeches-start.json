@@ -1,0 +1,42 @@
+{
+ "id": "speaker-names-only-where-speeches-start",
+ "title": "Speaker names only where speeches start",
+ "statement": "In a play's text on screen, show a speaker's name only where a speech starts, as a printed script does, not on every line.",
+ "example": "A test checks that of a scene's first four lines only the first and the fourth carry a speaker's name.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Another build's renderer drew this engine's play text in its own script layout, and its first render showed a speaker's name on every line. It was fixed so that a name appears only where a speech starts, and a test on the exported lesson checks the speakers of the first four lines: a name, none, none, a name.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "46-47",
+   "quote": "(speaker names only where a speech starts, fixed after the first render showed them on every line)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "21",
+   "quote": "a name only where a speech starts",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

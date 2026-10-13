@@ -1,0 +1,187 @@
+{
+ "id": "texts-chosen-for-more-than-readability",
+ "title": "Texts chosen for more than readability",
+ "statement": "Choose a course's texts for their purpose, the knowledge they build in sequence, a balance of genres and their quality, judged by reading them, not by a readability score alone.",
+ "example": "One course chosen mainly by readability had essentially no poetry and no drama, short of its own roughly 40/40/20 target.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "sequence",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A course review found a Grade 3 course's texts chosen mainly by Lexile: overwhelmingly informational, with essentially no poetry and no drama, short of the course's own roughly 40/40/20 literary, informational and vocabulary target; Lexile alone, it noted, mishandles poetry and narrative and cannot tell whether a text is worth reading (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`). It asked for texts chosen for a coherent knowledge sequence and a genre balance, with complexity judged qualitatively as well as by Lexile. The reading team's insights BrainLift holds that text difficulty is a match among text, reader knowledge and task that no single readability number can gate (`grade3-reading/knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd`).",
+ "against": "Another review notes that the 40% target was itself admitted as an assumption with an open source ask (`ti-courseplans-audit/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "51",
+   "quote": "Lexile alone also mishandles poetry and narrative and cannot tell you whether a text is worth reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "53",
+   "quote": "***To change this:*** Choose texts for a coherent knowledge sequence and a genre balance that includes poetry, drama and more literary work, and judge complexity qualitatively as well as by Lexile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "51",
+   "quote": "with literary text a minority and essentially no poetry and no drama. That falls short of even the course’s own roughly 40/40/20 literary/informational/vocabulary target.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "59",
+   "quote": "Text difficulty is a match among text factors, reader knowledge, and task — no single readability number can gate a text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "78",
+   "quote": "Choose texts for a coherent knowledge sequence and a genre balance that includes poetry, drama and more literary work, and judge complexity qualitatively as well as by Lexile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "94",
+   "quote": "Course passages run 58 to 217 words, averaging about 166.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "92",
+   "quote": "STAAR presents up to roughly 2,740 words across two single passages and one paired set",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "94",
+   "quote": "Practising only on very short texts does not build that stamina.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "166",
+   "quote": "G3 was flagged at **~22% literary vs ~40% target** because texts were picked on Lexile alone",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D8-text-quality.md",
+   "lines": "22",
+   "quote": "No rigid monotonic Lexile laddering is imposed, since prior knowledge can make a harder text accessible",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "115",
+   "quote": "complexity judged qualitatively, not by Lexile alone",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "31",
+   "quote": "the ~40/40/20 composition target is admitted as \"an assumption with an open source ask\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "76",
+   "quote": "Lexile alone also mishandles poetry and narrative and cannot tell you whether a text is worth reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "76",
+   "quote": "Selection is driven mainly by Lexile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "76",
+   "quote": "with literary text a minority and essentially no poetry and no drama. That falls short of even the course's own roughly 40/40/20 literary/informational/vocabulary target.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "120-122",
+   "quote": "\"Students will study science and social studies, so some of the knowledge will be covered there. You can factor in much more fiction.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "129-130",
+   "quote": "Followed by convention; the genre mix is visible in `content/course-map.json` but nothing checks it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-06-29.md",
+   "lines": "54",
+   "quote": "Selection is driven mainly by Lexile. The build is overwhelmingly informational (the heaviest standards tags are RI.3.1, RI.3.3, RI.3.2, RI.3.8, RI.3.4), with literary text a minority and essentially no poetry and no drama.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/GENRE-BALANCE.md",
+   "lines": "13",
+   "quote": "**Genre = the FORM of the main text the student reads**, on the literary-vs-informational axis MAP/STAAR use — not the subject matter.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/plan-evaluation.md",
+   "lines": "162-163",
+   "quote": "this is still a **text-count**, not a word-count on sourced material — fiction runs longer, so a word-count balance will tilt further toward literary than the text-count shows.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "351",
+   "quote": "at ~22% literary vs ~40% target by picking texts on Lexile alone)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "351",
+   "quote": "at ~22% literary vs ~40% target by picking texts on Lexile alone",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

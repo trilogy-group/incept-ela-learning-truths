@@ -1,0 +1,56 @@
+{
+ "id": "the-default-branch-is-the-main-path",
+ "title": "The default branch is the main path",
+ "statement": "When most learners carry no placement or mastery signal, design a routing plan's default branch as its main path and check it doesn't hold everyone back.",
+ "example": "In one grade, 1,389 of 1,640 learners (85%) had neither a placement nor a mastery signal.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A feasibility red team on a second-grade reading redesign queried the grade and found 1,389 of 1,640 learners (85%) with neither a placement nor a mastery signal, so the plan's no-signal fallback was the common case, not an edge case (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md`, lines 218-219). It asked the design to justify routing 85% of a grade through a conservative path by default and to show that path doesn't become a universal speed bump (the same file, lines 222-223). A setup review of the same grade concluded that course-entry logic must assume no internal signal as the default branch, since the minority with one was a strong-skewed sample (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md`, lines 50-52).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "218-219",
+   "quote": "**1,640 G2 students; 1,389 (85%) have neither a placement nor a mastery signal.** So the default branch isn't an edge case — **~85% of students hit it.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "222-223",
+   "quote": "the design must justify routing 85% of a grade through a conservative path by default without walling — and prove the on-ramp doesn't become a universal speed-bump.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md",
+   "lines": "50-51",
+   "quote": "you cannot place G2 students off internal mastery for ~82% of the grade, and the 18% you *can* is a biased (strong-skewed) sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-reading-setup-layers.md",
+   "lines": "51-52",
+   "quote": "Any course-entry logic must assume \"no internal signal\" as the default branch.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

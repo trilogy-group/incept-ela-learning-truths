@@ -1,0 +1,41 @@
+{
+ "id": "a-driving-question-the-text-can-answer",
+ "title": "A driving question the text can answer",
+ "statement": "A lesson's driving question is open, never yes or no, answerable from the text alone, about what the text shows or how it shows it, and short.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Texts dropped or pasted into the lesson engine's composer arrive without a lesson question. The engine drafts three, keeps in code those that end in a question mark, run to at most 26 words, open with no yes-or-no word and cite no line number, and asks the judge whether each can be answered from the passage alone and is worth a Grade 9 lesson of about an hour (`g9/transformer/src/question.js`, lines 12-34). The first one the judge confirms becomes the lesson question the blocks are written toward.",
+ "against": "The judge's question joins two claims in one yes-or-no: \"Can question_${i} be answered from passage alone, and is it worth a Grade 9 lesson of about an hour?\" (`g9/transformer/src/question.js`, line 34). The prompt asks for at most 22 words while code allows 26 (lines 23 and 12), and the first confirmed question is kept, not the best one: \"question = qs.find((_, i) => results[i]?.verdict === \"holds\") ?? null;\" (line 35).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "22-23",
+   "quote": "Each is open (never yes or no), answerable from the text alone, about what the text shows or how it shows it, at most 22 words, ending in \"?\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "1-2",
+   "quote": "The writer drafts three; code keeps … the open, well-formed ones; the judge keeps the first it finds answerable from the text alone and worth a lesson",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,56 @@
+{
+ "id": "report-a-banks-coverage-apart-from-quality",
+ "title": "Report a bank's coverage apart from quality",
+ "statement": "When items are served from a bank of pre-checked items, report how many fresh requests the bank covers separately from how good its items are.",
+ "example": "A bank-backed solver passed 37 of 50 fresh requests: every pass was a bank hit, and all 13 misses were topics the bank lacked.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP work, a solver that served pre-checked items from a cache passed 37 of 50 fresh requests on a held-out set; all 37 passes were cache hits, and all 13 misses were requests for sub-standards the cache did not hold (`icloud-work/aptraining/.agent/memory/BEADS.md`). Another cache layer was recorded as delivering 99.7% on the four of five item types it covered (`icloud-work/aptraining/.agent/COMPREHENSIVE_PLAN_v2_2026_06_02.md`). An analysis of an earlier version of the solver judged its deterministic templates to be cherry-picking by another name (`icloud-work/aptraining/.agent/memory/BEADS.md`).",
+ "against": "Both figures come from banks built by agents for narrow scopes: one unit, and four of five item types.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "714",
+   "quote": "37/50 = 74% on fresh Unit-1 MCQ_SET hold-out",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "714",
+   "quote": "37 passes = cache hits; 13 cap_reached = substandards not in cache.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/COMPREHENSIVE_PLAN_v2_2026_06_02.md",
+   "lines": "36",
+   "quote": "| Layer 1 cache delivers 99.7% IB aggregate (4 of 5 cells) | Cheater 09:50Z delivery |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "707",
+   "quote": "deterministic templates are cherry-picking by another name",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

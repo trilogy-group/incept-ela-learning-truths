@@ -1,0 +1,71 @@
+{
+ "id": "check-a-transcript-against-the-voice-heard",
+ "title": "Check a transcript against the voice heard",
+ "statement": "Never take a speech transcript as proof the learner spoke: check it against how much voice the recording held, since a recogniser can invent answers from silence.",
+ "example": "In one build, one second of silence occasionally produced a plausible-looking answer the child had never said.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading build found that one second of silence was occasionally producing a plausible-looking answer the child had never said. It made two independent fixes on 2026-07-30: the transcriber is now told to return nothing when it hears nothing, and, because an instruction is not a guarantee, the player measures how much of the recording held a voice and refuses words that could not have been spoken in that much time. A silent clip is never sent at all.",
+ "against": "Accuracy on real children is unmeasured: the word error rate baseline is 1.2% on a synthetic-proxy corpus, and real child recordings are still unmeasured (grade3-reading/artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md, line 191).",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "157-158",
+   "quote": "One second of silence was occasionally producing a plausible-looking answer the child had never said.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "158-159",
+   "quote": "the transcriber is now instructed to return nothing when it hears nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "160-161",
+   "quote": "the player itself measures how much of the recording actually contained a voice and refuses to accept words that could not have been spoken in that much time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "161",
+   "quote": "A silent clip is never sent at all.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "189-190",
+   "quote": "Generative STT fabricates on empty audio (answers the implied question on silence) — the hardened /stt rejects empty audio; never treat transcript existence as proof of speech.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "191",
+   "quote": "WER baseline 1.2% on the synthetic-proxy corpus; real child recordings still unmeasured",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

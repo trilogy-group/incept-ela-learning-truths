@@ -1,0 +1,179 @@
+{
+ "id": "only-the-grader-of-record-confirms-a-gain",
+ "title": "Only the grader of record confirms a gain",
+ "statement": "Count a gain or certify work only on the grader of record in its current version; stand-in judges, older versions and self-evaluation are design evidence only.",
+ "example": "One AP item type's jump from 0.29 to 0.95 existed only under a discredited judge.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "When the AP project's binding grader failed with an API key error, the project used a substitute model judge for internal go or no-go decisions but held its final claim for the binding grader. A reported jump for one item type from 0.29 to 0.95 existed only under a discredited judge; one synthesis says it collapsed to about 28% on the binding grader, and the other that the binding grader's confirmation was blocked. Either way, the grader of record never confirmed it. Before counting a gain, check that the fix improves the item rather than dodging the check: one multiple-choice fix worked by removing the source so the grader's leak probe was skipped.",
+ "against": "The two same-day syntheses disagree on whether the binding grader ever scored the jump, and both elsewhere put the 28% down to harness bugs, so the collapse figure is not settled; only the rule that the jump doesn't count is. The binding grader's own 28% was later put down to four harness bugs (`grade3-reading/artifacts/alpha-read-packager/FACTS_SHEET.md`), so the refutation rests on the jump appearing only under the discredited judge, not on that figure.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24-25",
+   "quote": "That **0.29→0.95** jump existed only under a **discredited Gemini judge**. On the **binding grader** it **collapsed to ~28%**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "55",
+   "quote": "real-grader confirmation of an uncached served KC is BLOCKED.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_orch/2026-06-01T2032Z_ALERT_IB_grader_v266_curriculum_API_401_pivoting_gemini_judge.md",
+   "lines": "36",
+   "quote": "**Internal go/no-go on v91 warmstart**: Gemini-judge n=100 (this run) — sufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_orch/2026-06-01T2032Z_ALERT_IB_grader_v266_curriculum_API_401_pivoting_gemini_judge.md",
+   "lines": "38",
+   "quote": "**Final mission-claim eval**: requires IB fixed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "36",
+   "quote": "The **\"28%\" was four eval-harness bugs**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "52",
+   "quote": "aptraining's \"real passages = 0.29→0.95 lever\" is **REFUTED**: that jump existed only under a discredited",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "53",
+   "quote": "Gemini judge; on the binding grader it collapsed to 28% (DBQ 0%, MCQ_SET 0%, \"Gemini-judge artifact\"). The",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "54",
+   "quote": "actual MCQ fix was the OPPOSITE — *removing* the stimulus so the grader's leak-probe is skipped (grader-gaming).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24-25",
+   "quote": "That **0.29→0.95** jump existed only under a **discredited Gemini judge**. On the **binding grader** it **collapsed to ~28%** (DBQ 0%, MCQ_SET 0%) and was logged as a **\"Gemini-judge artifact.\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "56",
+   "quote": "(not the model generating); the \"28%\" was **four harness bugs**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "110",
+   "quote": "Use official/current IB only for certification. Diagnostic evaluator and older versions are not interchangeable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "58",
+   "quote": "Keep IB v2.5.7 as the certification target. Older grader wins are design evidence only.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "216",
+   "quote": "Do not use self-eval as certification.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/calibrate.mjs",
+   "lines": "6",
+   "quote": "answers from the labels themselves and so proves the wiring and measures nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "6",
+   "quote": "answers from the labels themselves: proves the wiring, measures nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "24-25",
+   "quote": "\"precision\": 1,\n   \"recall\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "646",
+   "quote": "\"cases\": 31,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "26",
+   "quote": "the offline judge: answers from each entity's own key. It proves plumbing, never the quality of judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "60",
+   "quote": "an unvalidated instrument is being wired in as the outcome measure for other pending submissions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "238",
+   "quote": "The dependency runs one way: this proxy's approval precedes any G5 reliance on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "238",
+   "quote": "If this pilot is not approved, the G5 course's measurement plan reverts to official-MAP-only and its case does not depend on this instrument.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

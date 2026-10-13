@@ -1,0 +1,70 @@
+{
+ "id": "split-a-unit-only-when-success-changes",
+ "title": "Split a unit only when success changes",
+ "statement": "Split a knowledge unit only when what counts as a right answer changes, and keep variants of difficulty, representation and method inside it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course's curriculum-architecture notes fork a knowledge unit only when its success condition changes and absorb difficulty, representation and method variants into the unit instead of spawning new ones (`grade3-reading/ti-courseplans/skills/train-teacher/references/curriculum-architecture.md`, lines 50-51 and 81). A curriculum BrainLift gives the same forking rule and calls a systematic performance shift across representations the clearest sign that a unit is mis-sized or mis-specified: learners who master it in text-based items but fail it as a diagram, graph or symbols are showing evidence about the unit's boundary, not an item quirk (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`, lines 268 and 549).",
+ "against": "The same BrainLift reads such a drop as either several units collapsed into one or a unit that needs representation-specific supports, so the signal can call for a split even when the right answer is the same (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`, line 549).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "50-51",
+   "quote": "**fork a KC only when the success condition changes**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "81",
+   "quote": "**Absorb difficulty/representation/method variants INTO nodes**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "268",
+   "quote": "Forking a KC should be reserved for cases where the success condition changes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "549",
+   "quote": "The clearest sign that a KC is mis-sized or mis-specified is systematic performance shift across representations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "549",
+   "quote": "that is not an item quirk — it is evidence about the KC boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "549",
+   "quote": "Either you are looking at multiple KCs collapsed into one, or the KC requires explicit representation-specific affordances that the current specification doesn't acknowledge.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

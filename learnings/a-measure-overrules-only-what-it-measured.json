@@ -1,0 +1,124 @@
+{
+ "id": "a-measure-overrules-only-what-it-measured",
+ "title": "A measure overrules only what it measured",
+ "statement": "Let a computed check overrule a judge only on the property it measured and only beyond its own error margin.",
+ "example": "A computed reading-level estimate with an average error of about 70 points on its scale fails a passage only when it lands more than 100 points outside the grade band.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An AP evaluator moved reading level from model judgment to a computed estimate, built and calibrated on Grade 3 reading and fitted to r≈0.95 / MAE≈70L, inside its 100L override margin. The estimate fails a passage only when it is outside the grade band by more than that margin, and clears a judge's failure only when the failure was about complexity, not a mechanical defect like merged words. A passing arithmetic check never silences non-mathematical factual errors, and a precedence exception was added so that it does not silence a misattributed distractor error either. A code pass clears only the judge's failures that cite what the code checked, and every other failure stands.",
+ "against": "Calibration outside the Grade 3 range is approximate and pilot-tunable. One guard clears a low source score on mere presence: if the content holds tables, images or SVG tags, a stimulus score under 0.5 is overridden to 1.0. The code's verdict rests on a model's extraction of the problem, which can sometimes misrepresent it; the evaluator's notes therefore let the judge override an incorrect verdict (`icloud-work/inceptbench-main/docs/internals/math-verifier.md`, L62-65).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "72-73",
+   "quote": "The current fit reaches r≈0.95 / MAE≈70L, comfortably inside the 100L override margin.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "7-8",
+   "quote": "Global across grades; built and calibrated on Grade 3 reading.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "39-40",
+   "quote": "**Down-override:** reliable estimate outside the grade band by more than `BAND_OVERRIDE_MARGIN_L` → `reading_level_match = 0.0`.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "41-43",
+   "quote": "**Up-override (conservative):** reliable estimate comfortably in band AND the LLM's failure was about complexity (not a mechanical defect like merged words) → un-fail to 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "89-90",
+   "quote": "Non-mathematical factual errors (history, biology, etc.) are NEVER silenced by a passing arithmetic check.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "dd21268",
+   "lines": "1",
+   "quote": "fix(evaluator): add precedence exception to CRITICAL block so DISTRACTOR ERROR MISATTRIBUTION is not silenced by math-verification override (PR #1070)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "73-74",
+   "quote": "Calibration outside the G3 range is approximate and pilot-tunable",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "38-39",
+   "quote": "If the LLM scored stimulus_quality < 0.5 but the content contains inline markdown tables, images (![...](...)), or SVG tags, override to 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "85-90",
+   "quote": "If the LLM scored factual_accuracy low (< 0.3) and its reasoning explicitly cites mathematical errors, but precomputed SymPy verification says CORRECT, override factual_accuracy to 1.0. Non-mathematical factual errors (history, biology, etc.) are NEVER silenced by a passing arithmetic check.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/docs/internals/math-verifier.md",
+   "lines": "62",
+   "quote": "2. **INCORRECT verdict** (usually reliable): Evaluator SHOULD set `factual_accuracy = 0.0`, but MAY override if its own verification confirms the answer is correct (extraction-error case).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/docs/internals/math-verifier.md",
+   "lines": "65",
+   "quote": "Rule 2 is deliberately permissive because the extraction step can sometimes misrepresent the problem (wrong equation format, missing variables).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/MENACING-TARGETED-FLAG-DISPOSITION-by-residual.md",
+   "lines": "14",
+   "quote": "The key is not longest in characters and exceeds two distractors by only one word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "11",
+   "quote": "| 2.5-pro **Orus** | 44.5 s | 2 | exact | judge: \"decent read\", flagged a sentence pause as a gap |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

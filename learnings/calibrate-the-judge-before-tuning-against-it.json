@@ -1,0 +1,45 @@
+{
+ "id": "calibrate-the-judge-before-tuning-against-it",
+ "title": "Calibrate the judge before tuning against it",
+ "statement": "Calibrate a judge against people before tuning a generator on its scores, and if calibration fails, repair the judge or its rubric rather than tune against it.",
+ "example": "An AP evaluation contract lets generation proceed only once every cell reaches at least 85% exact machine-human agreement and zero machine false negatives on its eight hard gates.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An evaluation contract for AP question generation makes calibrating machine judgment against people a step of its own, ahead of the fixed generation sample. It proceeds only if every cell shows at least 85% exact machine-human agreement on whether a record qualifies and zero machine false negatives on the eight hard gates; if calibration fails, the evaluator or rubric is repaired, and the generator is never tuned against a broken judge. The order matters because a generator tuned to a judge's scores takes on whatever the judge gets wrong.",
+ "against": "The contract was frozen as a design and never run: an AP checkpoint records that no run had been executed for that hand-off (`grade3-reading/knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd`, line 64).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "84",
+   "quote": "### 3. Calibrate machine judgment against people",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "90-96",
+   "quote": "Proceed only if every cell has: - at least 85% exact machine-human qualification agreement; and - zero machine false negatives on the eight hard gates. If calibration fails, repair the evaluator or rubric. Do not tune the generator against a broken judge.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,78 @@
+{
+ "id": "score-a-judges-abstentions",
+ "title": "Score a judge's abstentions",
+ "statement": "When scoring a judge against labelled cases, count every case it failed to judge or abstained on as a miss unless the case truly can't be decided.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An evaluation design for a judge that answers follows, violates or not enough evidence treats the last as a deliberate abstention, reports its precision, recall and coverage, and counts an abstention on a decidable case as wrong (`uae-education-ai/EVALUATION.md`). The same design keeps an ambiguity the labels can't resolve as not enough evidence, or excludes it with a reason, rather than forcing agreement. One development case was labelled undecidable because its rule never says how many examples are enough or which contexts these learners know (`uae-education-ai/data/development_cases.json`); that label is provisional. An item evaluator's release gate likewise counts items that errored as misses, so a green run means enough of the whole set passed, not just the part that finished without errors (`icloud-work/inceptbench-main/src/inceptbench/golden/runner.py`, lines 350-353).",
+ "against": "The same file's per-item stability rate across repeated runs still divides by the runs that finished without error (`icloud-work/inceptbench-main/src/inceptbench/golden/runner.py`, lines 462-463).",
+ "evidence": [
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "49",
+   "quote": "An abstention on a decidable case is not a correct verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "42",
+   "quote": "Preserve unresolved ambiguity as `insufficient_evidence` or an explicit exclusion with a reason, rather than forcing consensus.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "data/development_cases.json",
+   "lines": "264",
+   "quote": "The rule does not define how many examples are enough or which contexts are familiar to these learners. The fragment alone cannot settle either point.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/golden/runner.py",
+   "lines": "350-352",
+   "quote": "Count errored items as misses for the release gate. A green golden run # should mean enough of the whole dataset passed, not just the subset that # completed without provider/runtime errors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/golden/runner.py",
+   "lines": "353",
+   "quote": "pass_rate = (passed / total) if total > 0 else 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/golden/runner.py",
+   "lines": "350-351",
+   "quote": "evaluated = total - errors pass_rate = (passed / evaluated) if evaluated > 0 else 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md",
+   "lines": "79-80",
+   "quote": "That is the correct conservative reading for a blocking gate; a gate cannot credit unparseable output.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

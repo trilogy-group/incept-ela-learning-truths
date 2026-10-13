@@ -1,0 +1,143 @@
+{
+ "id": "fit-the-hint-to-the-kind-of-miss",
+ "title": "Fit the hint to the kind of miss",
+ "statement": "Fit a recall hint to the kind of miss, naming a near spelling or another taught word rather than just saying wrong, and give the word on the second miss.",
+ "example": "A typed word within an edit distance of two is told it is nearly right instead of being given a letter.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "feedback",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's key-word deck copies a 3D version's gap rules in code: a typed word within an edit distance of two of the answer is told it is nearly right, a word from the same deck is shown its own meaning beside the cued one, anything else gets the answer's first letter, and the second miss gives the word with its meaning (`g9/transformer/src/mechanics/key-words.js`). A test plants a near spelling and a mix-up within the deck and checks each line (`g9/transformer/test/mechanics.test.mjs`).",
+ "against": "The last hint gives away part of the answer: `The word you want begins with \"${w.word.charAt(0).toUpperCase()}\".` (`g9/transformer/src/mechanics/key-words.js`, line 121). Nothing measures whether these hints help recall. Whether the slip counts differs by task: in say it back \"a near spelling of a long word is named but not counted as a miss\" (g9/transformer/src/mechanics/say-it-back.js line 3), while in key words a near spelling \"gets a nudge, since a taught word is spelled right\" (g9/transformer/src/mechanics/key-words.js line 4) and comes back marked wrong (line 122).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "119",
+   "quote": "const line = dist(plain(w.word), n) <= 2 ? \"Nearly. That is the word, but the spelling is not right yet.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "120",
+   "quote": "\"${other.word}\" means ${other.meaning}. This one means ${w.meaning}.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "118",
+   "quote": "Here is the word: \"${w.word}\" (${w.meaning}). Hold on to it: you will use it today.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "98",
+   "quote": "assert.match(kw.respond(ki, { type: \"recall\", gap: 0, word: \"leiutenant\" }).feedback, /spelling/);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "99",
+   "quote": "assert.match(kw.respond(ki, { type: \"recall\", gap: 0, word: \"ancient\" }).feedback, /^\"ancient\" means/);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "88",
+   "quote": "say it back, key words and the worked model mark in code: a slip is named, and the second miss gives the answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "22",
+   "quote": "a slip in a word of five letters or more, named but not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "119",
+   "quote": "Nearly. That is the word, but the spelling is not right yet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "101",
+   "quote": "another deck word that fits the sentence is not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "117",
+   "quote": "fits the sentence too. But this meaning is ${w.meaning}. Which word is that?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "3",
+   "quote": "a near spelling of a long word is named but not counted as a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "336",
+   "quote": "Missing magic word (misspelled): \"Oh, you've misspelt the magic word! Here are a few extra letters in your reading notes to help.\" + 3 extra letters revealed on menacing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "337",
+   "quote": "Missing magic word (other): \"Use our special word in your answer to finish.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "334",
+   "quote": "2nd fail: letter-shape hints on the reading-notes spokes, 3 letters visible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L7-2026-09-05.md",
+   "lines": "113-114",
+   "quote": "p16 step3 type blank uses `magic_word` gate with fuzzy synonym detection (\"victorious\", \"winning\" etc. trigger coaching toward the target word)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

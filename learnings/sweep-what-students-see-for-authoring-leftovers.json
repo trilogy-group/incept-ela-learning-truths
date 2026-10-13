@@ -1,0 +1,116 @@
+{
+ "id": "sweep-what-students-see-for-authoring-leftovers",
+ "title": "Sweep what students see for authoring leftovers",
+ "statement": "Sweep everything a student is served, as it renders, for authoring leftovers such as working notes, markup tokens, escaped characters and placeholder codes, which instructions alone don't prevent.",
+ "example": "In one course, 144 items showed escaped characters in their feedback.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Render audits in a reading project found faults that a structural audit could not see, only the rendered page (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd`, line 134). Two passages showed a literal heading token in their text, traced to builders that wrapped every block as a paragraph (`grade3-reading/artifacts/alpha-read-packager/FIX_LIST.md`, line 114), and 144 items showed escaped characters in their feedback (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd`, line 138). A quality-gate report across several courses found two items whose passage was only a standards code, so they could not be answered (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, lines 434-435).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FIX_LIST.md",
+   "lines": "114",
+   "quote": "Both leak the literal authoring token `HEADING:` into student-visible body text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd",
+   "lines": "134",
+   "quote": "the \"looks broken\" class the structural audit can't see",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd",
+   "lines": "138",
+   "quote": "144 items rendered `&#x27;`/`&amp;#x27;`/`&quot;` literally in feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "434",
+   "quote": "passage text is literally the CCSS code string `RI.3.8`. No passage. Unanswerable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "1992",
+   "quote": "Note: Do not include headers or titles in the explanation. Just use new paragraphs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "1855",
+   "quote": "return response.content[0].text",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quiz_an_artful_arrangement_of_incidents_diff3_2025-10-20_12-21-58.json",
+   "lines": "79",
+   "quote": "\"explanation\": \"# Initial Analysis",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "15",
+   "quote": "Text now draws on a separate transparent overlay, and the internal script label for scene 5 has been removed from the student-facing frame.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "342",
+   "quote": "image-slot placeholders (\"Drop a cartoon of William Shakespeare\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "302",
+   "quote": "Separate issue on the same screen: the template placeholders are visible to the student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "115",
+   "quote": "Remove the template placeholders \"\\[word class\\]\" and \"\\[word\\]\" from anything a student sees, and audit for the same leak elsewhere.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "138-139",
+   "quote": "the with-help release message renders as `undefined` when the valve fires.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

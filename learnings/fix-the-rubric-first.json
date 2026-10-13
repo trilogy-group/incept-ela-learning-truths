@@ -1,0 +1,491 @@
+{
+ "id": "fix-the-rubric-first",
+ "title": "Fix the rubric first",
+ "statement": "Fix the scoring rule and the expected answers before measuring, apply them the same way to every option, and leave arguable cases out.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "scoring-guide"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The three-film comparison's rubric was fixed before looking at the other two films' results, and every row was checked\nthe same way on each (`g9/review/three-film-comparison/RUBRIC.md`); the kit's template allows a change afterwards only\nas a dated correction with its reason (`othello-unit-video/kit/templates/review/rubric.example.md`). In the marking test,\narguable criteria were listed as ambiguous and left out of the score\n(`g9/review/2026-10-07-archivist-marking-test/README.md`).",
+ "against": "those labels were the tester's reading of each\nrubric, not a teacher's, and five of the comparison's rows rest on one rater (the same file;\n`othello-unit-video/research/METHODS.md`). A later run found: the AP evaluator's two docs give different pass rules for the same question types, at least 0.85 with every hard fail passed in one and above 0.90 or a borderline band in the other, with different hard-fail lists (`icloud-work/ML learnings/evaluation_methodology.md`). A later run found: a 3D version's marking gate keeps arguable answers in its test set, labelling each with the verdicts a fair marker could give, such as secure or partial, instead of leaving them out (`othello-archive/scripts/qc-judge-cases.json`). A later run found counter-evidence (`othello-archive/scripts/qc-judge-cases.json`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "review/three-film-comparison/RUBRIC.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "kit/templates/review/rubric.example.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-07-archivist-marking-test/README.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "159",
+   "quote": "Changes to evaluator based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "38",
+   "quote": "Pass = overall_score >= 0.85 AND all hard-fail dimensions = 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "46",
+   "quote": "| MCQ | factual_accuracy, educational_accuracy |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/AP_EVALUATION.md",
+   "lines": "159",
+   "quote": "Overall score > 0.90, OR",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "187",
+   "quote": "Prior to v1.4.0, this evaluator was incorrectly weighted 3x.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/user_guides/api.md",
+   "lines": "308",
+   "quote": "Consistency across a batch — if you're midway through an evaluation project and need scores to stay comparable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "209",
+   "quote": "Linking correlation below 0.70 is a **published kill criterion**, not a footnote.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/benchmarks/_index.md",
+   "lines": "57",
+   "quote": "| APLIT Quiz Generation | 0.661 (66%) | 0.832 | 0.612 | 68.3% | 60 (3 sets) | 1.1.7 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/benchmarks/_index.md",
+   "lines": "56",
+   "quote": "| SAT Reading Generation | 0.663 (66%) | 0.619 | 0.712 | 98.7% | 82 (3 sets) | 1.1.5 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/scores/summary.txt",
+   "lines": "41",
+   "quote": "APLIT Quiz Generation        | 0.712 (71%) | 0.823   | 0.602      | 66.7%    | 60 (3 sets) | 1.4.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/scores/summary.txt",
+   "lines": "40",
+   "quote": "SAT Reading Generation       | 0.654 (65%) | 0.605   | 0.704      | 100.0%   | 82 (3 sets) | 1.4.0",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "15",
+   "quote": "PROMPT_VERSION = \"2026.02.24.1\"  # Relaxed cognitive demand - recall is OK",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "88",
+   "quote": "- Recall and memorization questions ARE ACCEPTABLE",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_PROCESS.md",
+   "lines": "159",
+   "quote": "- Changes to evaluator based on benchmark accuracy, not pass rate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "5-7",
+   "quote": "primary metric, test set, baselines, ceiling, and gates are fixed now; any later change is an appended methodology-correction note, never a rewrite.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "53-54",
+   "quote": "Isolates what training added; run it or the result is uninterpretable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "75-76",
+   "quote": "any bar-hit claim needs 2 independent generation runs; a single run is a single-point estimate.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_ib_grader_version_v240_to_v253.md",
+   "lines": "26",
+   "quote": "The same 297 generations from v29 were scored under both; +25.92pp aggregate / +25pp APUSH from the grader swap alone.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_ib_grader_version_v240_to_v253.md",
+   "lines": "42",
+   "quote": "- Refuse to compute deltas across grader versions; require both endpoints to agree on grader version OR re-score one side",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "16",
+   "quote": "| v50 (DPO from curriculum500) | 79.87% (r1) | **56.22%** | 1.54pp |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_mcq_v2.5.6_rubric_tightening.md",
+   "lines": "3",
+   "quote": "educational_accuracy zero-rate jumping from ~0% to 24-30% across v43-soup + v50 + v51",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/HANDOVER_PARALLEL_IDEAS.md",
+   "lines": "23",
+   "quote": "The parent project has old 90%+ results, but those were on older grader behavior. Do not treat them as current performance unless regraded on the current InceptBench version.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "104",
+   "quote": "- Grader-version pinning in every eval artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "148",
+   "quote": "Do not directly equate that 97% with current APUSH IB v2.5.7.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "164",
+   "quote": "5. Claims from older InceptBench versions should be treated as design evidence, not certified current scores.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-22T1845Z_ULTIMATE_DELIVERY_CHALLENGE.md",
+   "lines": "42",
+   "quote": "Acceptance criteria (binary, no negotiation)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-22T1845Z_ULTIMATE_DELIVERY_CHALLENGE.md",
+   "lines": "48",
+   "quote": "| Pass rate on n=50 fresh | ≥39/50 = **78%** | clears 77.6% step-function threshold (MCQ_SET baseline 62.6%) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "33",
+   "quote": "CONTRACT-FIRST (commit before firing)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "35",
+   "quote": "**Baselines (≠0):** v97 freeform = **0.31**; structured 1-stage = **0.6** (Cursor). Beat 0.6.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "38",
+   "quote": "**Kill criterion:** 2-stage doesn't beat `max(0.6+margin, ceiling−margin)` at K-grade after n KCs ⇒ generation lever ALSO closed ⇒ MCQ_SET genuinely grader-capped.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_dbq_solver_v3_validated_addendum_20260524T1810Z.md",
+   "lines": "55",
+   "quote": "Main-a called this \"essentially reached\" within measurement noise. Den's literal audit does not mark complete because `98.8% < 99.0%`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/README.md",
+   "lines": "81",
+   "quote": "**Pass Threshold: 0.85** (fixed, never changes)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/AGENT4_DECISIONS.md",
+   "lines": "54",
+   "quote": "**Decision**: Use 0.85 threshold (NOT 0.94)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "294",
+   "quote": "**Pass threshold: 0.90+**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/README.md",
+   "lines": "234",
+   "quote": "- Question QC with Anthropic key only: 8-9 checks (no too-close or difficulty)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-05-01T1300Z_R44_eval_phantom_class.md",
+   "lines": "50",
+   "quote": "grader v2.5.2 → v2.5.3 schema change silently re-scores; no `grader_version` field in summary_*.json",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "63",
+   "quote": "- Result: Questions are either too simple (cognitive fail) or too complex (difficulty fail)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "346",
+   "quote": "**Failed:** cognitive_demand: \"Requires sophisticated analysis of ideological contradictions, exceeding basic comprehension level\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/GEN5_OPTIMIZATION_REPORT.md",
+   "lines": "112",
+   "quote": "The 85% first-attempt rate was misleading - it was measuring something other than structural validity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/orchestrator/course_checker_blueprint.md",
+   "lines": "16",
+   "quote": "Evaluator:   InceptBench v2.3.3",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "467",
+   "quote": "| **difficulty_alignment flip** | 9 | Prompt contradiction (base vs overlay) |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/core/scorer.py",
+   "lines": "19",
+   "quote": "Pass threshold: 0.85 (fixed, never changes)",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "214",
+   "quote": "passed = not critical_failed and overall_score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "359-360",
+   "quote": "the metric and aggregation may not be changed after pilot results.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "9",
+   "quote": "The bar was REPINNED 2026-06-08 from the original (overall >=0.85 on 99% across all 10 cells, clean K=1) down to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "612",
+   "quote": "don’t create ad-hoc categories after seeing scripts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/.archive/CLONE_VERIFY_GRADER.md",
+   "lines": "12",
+   "quote": "- **+25.92pp swing from grader version alone**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0168-eppc-bias-experiment-terminal-kill-and-salvage.qmd",
+   "lines": "62",
+   "quote": "\"inconclusive therefore continue\" outcome.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/independent-observer/REVIEW.md",
+   "lines": "7",
+   "quote": "Eighteen fixture expectations were fixed in the independent script and written into `run-01/INTENT.json` before the first measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "11",
+   "quote": "File: `eval/eval.jsonl`. Authored 2026-07-21 from source documents BEFORE any system was built.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "5-7",
+   "quote": "primary metric, test set, baselines, ceiling, and gates are fixed now; any later change is an appended methodology-correction note, never a rewrite.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "18",
+   "quote": "## What's REQUIRED (the bar — and it moved)",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "54",
+   "quote": "must set acceptable false-accept, false-reject, abstention, fidelity, cost, and latency thresholds for the intended classroom context",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "81",
+   "quote": "**Pass Threshold: 0.85** (fixed, never changes)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "318",
+   "quote": "so a cross-version comparison would conflate rubric-drift with model-drift.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_mcq_v2.5.6_rubric_tightening.md",
+   "lines": "9",
+   "quote": "What scored 100% on v2.5.3 now hits 24-30% zero-rate on v2.5.6 — this is the rubric driver of the ~25pp aggregate mcq drop.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5fdc954",
+   "lines": "9-11",
+   "quote": "- Fix Section 6/Section 9 contradiction in ecr_evaluation.txt: source texts are required for evidence-based modes only; personal narrative/imaginative writing is explicitly exempted (#3)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/.agent/MEMORY.md",
+   "lines": "44",
+   "quote": "3. **Grader co-evolved with chain.** IB v2.5.3 → v2.5.6 → v2.5.7 → v2.5.11 shifts what \"passes\" mean retroactively. No ensemble, no cross-judge calibration. Treat the grader as a variable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "58",
+   "quote": "Use current IB v2.5.7 only. Do not compare against v2.5.6/v2.5.3 without regrade.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "112",
+   "quote": "// a word class is a judgment call on Shakespeare, so it never holds the block, but one Jev did not confirm is not shown",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "2",
+   "quote": "expect: secure | partial | not-secure (partial or off) | either (secure or partial).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "2",
+   "quote": "either (secure or partial)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "24-25",
+   "quote": "Arguable criteria are listed as `ambiguous` and left out of the score.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

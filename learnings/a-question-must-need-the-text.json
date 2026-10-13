@@ -1,0 +1,1028 @@
+{
+ "id": "a-question-must-need-the-text",
+ "title": "A question must need the text",
+ "statement": "A question about a text must need the text.",
+ "example": "With the text hidden, a stronger model still found the key for 75 of 95 questions that a weaker one had passed.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project, questions were given to a model from a different family with the passage withheld; when it\nstill picked the key, the question did not test the passage. On one seed bank, 4 of 11 items that had all passed a\nquality benchmark leaked\n(`grade3-reading/knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd`). Re-run with a\nstronger solver from another family, only 20 of 95 items that had passed survived, and 187 of 3,146 untested\ncandidates (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`). The\nlesson engine's own give-away check was answered from general knowledge of a famous text until it was narrowed to the\nquestion's own words (`g9/transformer/v02/QA.md`, \"Found and fixed in integration\").",
+ "against": "some leaks were near\nmisses where world knowledge tempts but the key needs the text, and the root cause was encyclopedic passages, not the\nquestions (the same two files). A later run found: the leak verdict depended on the blind solver, since the same audited items had blind accuracy 1.0 under one solver and about 0.0 under another (`grade3-reading/knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd`). A later run found: a model's blind solve may give false positives or negatives against real students, and a solver that bluffs its way through without the passage inflates leak rates (`grade3-reading/knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd`). A later run found: a form rebuilt on a familiar topic went live with all 5 items rated at high risk of being answered from background knowledge, accepted as formative practice rather than a check that the passage was read (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`). A later run found counter-evidence (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd`). A later run found counter-evidence (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`). The first run's headline case no longer stands: a calibrated newer solver answers it 3/3 without either the text or the earlier lessons, and the report withdraws the claim that a plain blind check could not detect it (`grade3-reading/artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md`, lines 7 and 105-113). The capstone counts come from the same dated solver. The first catch is historical, since a newer solver answered that item 3 of 3 times with no text at all (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`), and the one run built to measure the effect used different solvers and bars in its two conditions, so it could not isolate what earlier lessons add (`grade3-reading/artifacts/spine-solve-calibration-2026-07-10/REPORT.md`). A later run found: The lesson engine's give-away check was narrowed to the question's own words after it answered from general knowledge of a famous text, and by design it now passes a question anyone who knows the work can answer; the engine has no other check that a question cannot be answered without the text (`g9/transformer/v02/QA.md`). A later run found counter-evidence (`g9/transformer/src/mechanics/open-check.js`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "97-99",
+   "quote": "The judge cannot reliably distinguish \"question explicitly quotes a stimulus phrase\" from \"question genuinely requires that phrase to answer\". A lexical link is enough for stimulus_quality = 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/AP_EVALUATION.md",
+   "lines": "141",
+   "quote": "Questions must require the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "76",
+   "quote": "~78% of raw machine-generated reading items were answerable without the passage by a cross-family solver",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd",
+   "lines": "26",
+   "quote": "75.3% leakable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "172",
+   "quote": "control-pass rate did not predict blind certifiability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "47",
+   "quote": "An in-lesson knowledge check answerable from explicitly-taught knowledge is legitimate (that's what checking taught knowledge means); the same overlap in a comprehension/transfer item is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "44",
+   "quote": "| Blind accuracy on the audited items | `1.0` | about `0.0` |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "72",
+   "quote": "Passage-dependent items can look \"kid-gameable\" under the wrong blind-solver and still be clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "29",
+   "quote": "Documented blind-solve leakage: MCQ 99.5%, MSQ 100%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0126-claude-takeover-audit-2026-07-13.qmd",
+   "lines": "29-30",
+   "quote": "was exactly solved blind in 3/8 shuffles and that low solver confidence had hidden those hits",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "617",
+   "quote": "→ The stimulus must be **critical and integral** to the educational task — not merely non-harmful, engaging, or decorative.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "671",
+   "quote": "A question is NOT penalized simply because it can be solved from text alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd",
+   "lines": "54",
+   "quote": "IB passed all 11; the different-family blind solve failed 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "47",
+   "quote": "separate from InceptBench, which graded answer-leaking items 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "103-104",
+   "quote": "a course where every item scores IB 1.0 but 90% is blind-solvable is a failed course",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "104-105",
+   "quote": "emitted \"What is the primary function of chlorophyll?\" from a photosynthesis passage — IB 1.0, blind-solve 100%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "40-41",
+   "quote": "PASS if with-passage correct-rate >= 0.80 AND without-passage correct-rate <= chance-rate + 0.15 margin",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "180-181",
+   "quote": "model answers without passage in >=3/5 trials at temp 0.3 = fail",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "233",
+   "quote": "Always run with-passage control before blind certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "61-62",
+   "quote": "120 pass a cross-family blind-solve (binding gate, solver = OpenAI gpt-4o-mini, != Gemini generator) -> 79 also answerable with the passage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "64-65",
+   "quote": "Rejected items recovered far above chance (sequence 58% vs. 3% blind; hot-text 79% vs. 14%; match 86% vs. 41%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "182",
+   "quote": "LLM ablation may false-positive/negative vs real students",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "70",
+   "quote": "A solver that can bluff its way through without the passage will inflate leak rates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd",
+   "lines": "59",
+   "quote": "prefer fictional proper nouns over real-world entities",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd",
+   "lines": "47-48",
+   "quote": "a world-knowledge-rich passage invites guessing; a savvy test-taker could beat it without reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "48-49",
+   "quote": "the `L.3.4` template pre-defined the affix in the stem → rewritten to be passage-dependent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "119-120",
+   "quote": "cold-solvable ~0.8 because camel adaptations are world-famous general knowledge; distractor surgery can't close it, needs full content replacement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "26-27",
+   "quote": "in reading, finding the answer in the passage IS the skill, so the usual history-style \"answer is in the source\" leak check is deliberately skipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "29-30",
+   "quote": "the item is **passage-dependent** -- answerable only by reading the passage, not from world knowledge or test-taking heuristics.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0134-g5-reading-v2-local-design-package.qmd",
+   "lines": "99-100",
+   "quote": "I03 had leaked through forced one-of-four guessing: 5/8 plain-blind exact guesses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0134-g5-reading-v2-local-design-package.qmd",
+   "lines": "108-109",
+   "quote": "I03 became dual-blind safe with 2/8 exact guesses in each blind condition and no leak trigger.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "4",
+   "quote": "**Based on:** Forensic analysis of 150 MCQ + 100 MSQ items (62.7% MCQ leak rate, 51.0% MSQ leak rate)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md",
+   "lines": "3",
+   "quote": "**Status:** MSQ pool is 100% leaked (0 of 1,346 structural-pass items usable).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "313",
+   "quote": "items become **blind-solvable from background knowledge** — all 5 carry `blind_solvable_risk=HIGH`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "314",
+   "quote": "This is the coherence↔leak tension",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/PASSAGE_DESIGN_RULES.md",
+   "lines": "9",
+   "quote": "Could a student who studied this topic in school — but never read this specific passage — answer every one of my questions correctly using only prior knowledge?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "17",
+   "quote": "| sequence | 185 | **58.4%** | 3.0% | **~19×** | adjacent-pair order 85.2% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "14",
+   "quote": "| **All 353** | 353 | **334** | **19** | **94.6%** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "19",
+   "quote": "**Verdict: the 353 are overwhelmingly leaky.** Only **19 items** genuinely require the passage under a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/a2-cross-family-regate.md",
+   "lines": "21",
+   "quote": "anti-leak FORMAT ≠ low leak",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "49",
+   "quote": "Construction, not format or grade, is the lever.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "136",
+   "quote": "| hot-text | 1,479 | ~17.5% | ~1,220 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "140",
+   "quote": "| MCQ (corpus) | 1,473 | 99.5% | 7 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "84",
+   "quote": "- only 4/13 passed the LLM quality-B rubric",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "89",
+   "quote": "Anti-leak success is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "328",
+   "quote": "for reading, \"anti-leak\" is a build-time lint (answer not in the stem, honest distractors) — NOT a comprehension guarantee, since finding the answer in the passage IS the reading skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/VERDICT_TEMPLATE.md",
+   "lines": "70",
+   "quote": "2. **KCT1 Domain-knowledge ≈ 0 — by design.** Domain-recall items are passage-independent → removed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "305-306",
+   "quote": "The key rule: accept only after with-passage control plus cross-family blind failure;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "64-65",
+   "quote": "Rejected items recovered far above chance (sequence 58% vs. 3% blind; hot-text 79% vs. 14%; match 86% vs. 41%), which is the evidence the kept 97 require the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "24",
+   "quote": "**No answer giveaway in the stem** — no pre-defined affix/definition, no cue words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/passage_blind_verdicts.json",
+   "lines": "137",
+   "quote": "Stem giveaway + option self-evidence: the stem restates the full target inference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "69-70",
+   "quote": "a same-family-IB-passed bank that is **36% leaky** (RI.5.9 MCQ stem-giveaway + … RL.5.1 hot-text stem-giveaway; the EBSR pair self-confirmed)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "83",
+   "quote": "include prior-knowledge answerability, EBSR Part-B-restates-Part-A, and keyword-match answerability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "94",
+   "quote": "**Make the target cognitive process unavoidable.** If students can succeed via pattern matching, shallow guessing strategies, or memorizing repeated items, the app is gameable and its signals are untrustworthy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "267-269",
+   "quote": "Anti-leak (kb-0064) means \"you must read the passage to answer\" — it does NOT mean the passage's own facts are sourced or true. A perfectly anti-leak item can sit on an unsourced machine-authored passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "36",
+   "quote": "An in-lesson knowledge check answerable from explicitly-taught knowledge is legitimate (that's what checking taught knowledge means); the same overlap in a comprehension/transfer item is a leak. Mis-classifying the item makes the same text both correct and defective — it took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "73-75",
+   "quote": "KCT1 (domain-knowledge recall) is ~0 **by design** — passage-independent items are exactly what the anti-leak filter removes; covering KCT1 needs a different item design (generation), not relaxed gating.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "100",
+   "quote": "Later items must not be answerable from earlier lessons without reading the new text.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "106-108",
+   "quote": "the solver receives all prior lesson content (on-ramp pre-teach, ledger state, prior passages) but not the new text; later items must fail.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "135-137",
+   "quote": "the historical Gemini 2.5 run found **1 catch of 16**. `rivers-demo-choice-hottext-20` was **0/3 exact plain-blind but 3/3 exact + high confidence spine-conditioned.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "137-140",
+   "quote": "A calibrated 2026-07-13 Gemini 3.5 Flash replication was 3/3 in both conditions, so the same item is currently a direct plain-blind leak and the historical context-lift interpretation does not generalize across model versions.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "106",
+   "quote": "(measured on one theme, not universal)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "90",
+   "quote": "The required current-model check changed the verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "90-92",
+   "quote": "After a `1/1` with-passage calibration, `gemini-group/gemini-3.5-flash` solved the item `3/3` plain-blind and `3/3` with prior-course context.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "92",
+   "quote": "The old context-lift claim does not survive model drift; the item is directly gameable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "276",
+   "quote": "85/90 exact blind-recovered = 94% leak under the strict sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "271",
+   "quote": "- construction is the lever, not format alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "208",
+   "quote": "- MCQ leaked through ordinary school knowledge, vocabulary, or a \"textbook correct\" option;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "66-67",
+   "quote": "~78% of raw generated items were blind-solvable before this gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "279",
+   "quote": "- Redesigning the wrong construction does not work if the item encodes world knowledge or obvious order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "127-128",
+   "quote": "Lesson: anti-leak success alone is insufficient. Some items became mechanical ordering tasks or failed standard fit even after passing the blind gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "24-25",
+   "quote": "different blind-solve leak rates by question *format*: MCQ 99.5%, MSQ 100% — hot-text 1.67%, > sequence 0%, match 0%, EBSR 0% (cross-family run, 2026-06-23/24).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "25",
+   "quote": "The passage is not the only lever.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "32-33",
+   "quote": "A correct inline choice must require the student to have read and understood the passage — it is NOT acceptable if grammar alone (e.g., article agreement) or common knowledge determines the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "66-67",
+   "quote": "- Any option produces an ungrammatical sentence when inserted (all options must fit grammatically — the skill being tested is comprehension, not grammar correction).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e435432",
+   "lines": "5-8",
+   "quote": "Replaces rubric-only passage-dependency (an LLM opinion formed with the passage visible) with an empirical test: strip the passage/stimulus, have a cross-family OpenAI solver attempt the bare item, and hard-override passage_reference -> 0.0 when it answers correctly with high confidence (confident-correct).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/AP_EVALUATION.md",
+   "lines": "141",
+   "quote": "| `stimulus_alignment` | MCQ_SET | Questions must require the stimulus |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "310",
+   "quote": "- Any question can be answered without the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json",
+   "lines": "96",
+   "quote": "Determine whether a student must read this specific passage to answer the question correctly, or if they could answer it using general knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "140-141",
+   "quote": "The judge currently accepts a question-stem phrase quotation as proof of stimulus dependence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-013-mcqset-described-map.md",
+   "lines": "118-120",
+   "quote": "The map is genuinely not load-bearing — students don't NEED it, they just reference it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "136-139",
+   "quote": "- FAIL if questions can be answered without the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md",
+   "lines": "28",
+   "quote": "It can be answered entirely from outside knowledge about Portuguese Indian Ocean strategy without any engagement with the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "433",
+   "quote": "⛔ STIMULUS INTEGRATION TEST: Cover the stimulus. Can ALL parts be answered",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Articles-readable-exp', cell M16",
+   "quote": "There is a reference to Sumni/Shia in the reflection but they are not mentioned in this reading.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "635",
+   "quote": "DBQ passage_reference: questions aren't explicitly referencing their assigned document.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "310",
+   "quote": "- Any question can be answered without the stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "248",
+   "quote": "If the model selects the correct answer in ≥3/5 trials, the item fails — it is answerable from background knowledge alone, not from careful reading of the specific passage.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "55-56",
+   "quote": "The redesign defeats the G8 POC's 98.6%-leak failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/g5_analysis_digest.md",
+   "lines": "41",
+   "quote": "the 120 L.5 vocab seeds LEAK 99.2% and must be re-authored + re-certified, never deployed as-is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "254",
+   "quote": "- Text-dependence ablation uses a language model, which may have different knowledge than a typical G3–G5 student. Items that fail for LLMs may be valid for students (false positives) or vice versa.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "66-67",
+   "quote": "~78% of raw generated items were blind-solvable before this gate; G5 bank certified 1.67%/0%/0% across 172 items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "45",
+   "quote": "An item answerable without the passage is not measuring reading",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/pending_review/2026-05-22T211855Z_exploits_EXPLOIT-003-mcqset-phrase-anchor/source_report.md",
+   "lines": "92-94",
+   "quote": "The judge cannot reliably distinguish \"question explicitly quotes a stimulus phrase\" from \"question genuinely requires that phrase to answer\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/common_pre_checklist.md",
+   "lines": "43",
+   "quote": "- [ ] Question fails the counterfactual: \"if I deleted the stimulus, can the student still get this right?\" — must be NO",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "66-67",
+   "quote": "(~78% of raw generated items were blind-solvable before this gate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "72",
+   "quote": "4. Passage-dependent items can look \"kid-gameable\" under the wrong blind-solver and still be clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "58",
+   "quote": "anti-leak/answerability is a real, construct-general item-quality lever",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "38",
+   "quote": "**But self-containment ≠ passage-dependence.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-e/capstone/exemplars-rubric.md",
+   "lines": "97",
+   "quote": "answerable from prior knowledge, so it fails Transfer and Evidence precision at the root.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "75",
+   "quote": "- Items answerable without the passage are defects, not questions (provenance: ~78% of raw",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "232",
+   "quote": "- **6/6** — the number of items an LLM-judge passed that a blind-solve cracked, the commitment-9",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "43",
+   "quote": "It cites Hirsch and Willingham and then forbids knowledge from helping.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "74-76",
+   "quote": "Passage-dependency is currently judged by LLM rubric and regex, not by an empirical passage-withheld solve. Red-team history says rubric passage-dependency can pass while blind probes solve the items trivially.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "74-75",
+   "quote": "(passage withheld, model+version pinned, temp 0.3, **N=5, FAIL at k≥3/5**, per-format answer-space rules, `ablation_trials[]` persisted)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "77-78",
+   "quote": "prior call was that re-checking IB+Opus-passed items is redundant — logged as corroboration, not re-pushed.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "43",
+   "quote": "6/6 were solvable without the passage:",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "a course-wide audit found **~half of ~700 items gameable**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "172-173",
+   "quote": "Measured lesson: control-pass rate did not predict blind certifiability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "30-31",
+   "quote": "`novelty:\"unseen\"` guarantees the passage is new; it does NOT guarantee passage-dependence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd",
+   "lines": "78",
+   "quote": "(5) treat anti-leak as a build-time lint for reading, not a deep guarantee.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "a course-wide audit found **~half of ~700 items gameable**. InceptBench scored one gameable item **1.0**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "47",
+   "quote": "answerable by any knowledgeable solver with no passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "27-28",
+   "quote": "exempt from passage-dependence **by design**; gated instead on spine membership (taught content only)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "370-371",
+   "quote": "If the key can be picked from general knowledge, the option wording or common sense, the item tests nothing about the text.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "44",
+   "quote": "That leaves one option without any reading.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "266",
+   "quote": "the IB grader thinks the documents in the DBQ are not \"core/integral\" — i.e. the model emits documents but the prompt could be answered without them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "93",
+   "quote": "Fail: more than 20% of questions can be answered without the passage — the lesson is gameable at scale.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "84",
+   "quote": "Verify every question requires the stimulus by testing the counterfactual",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "230",
+   "quote": "all child questions depend on stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md",
+   "lines": "81-82",
+   "quote": "is a schema generalization the earlier lessons make derivable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md",
+   "lines": "83",
+   "quote": "exactly why the item cannot serve as evidence the student read text 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/spine-gate/SPINE-GATE-REPORT.md",
+   "lines": "86-87",
+   "quote": "re-author with distractors that are schema-consistent alternatives only text 4 disambiguates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-e/capstone/gate-capstone-summary.json",
+   "lines": "16",
+   "quote": "\"spine_leaky\": 2,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "32",
+   "quote": "(choice-hottext-20: plain-blind 0/3 but 3/3 with prior-lesson corpus)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "33",
+   "quote": "Current Gemini 3.5 replay: 3/3 in both conditions - direct blind leak; old lift is historical.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "39-40",
+   "quote": "10 candidates, 0 certified, 8 plain-blind leaks, 2 spine-conditioned leaks, 0 defective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "42-43",
+   "quote": "Its immutable protocol still replays 6 certified and 1 spine-leaky.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0098-incept-service-coe-catchup-2026-07-09.qmd",
+   "lines": "39",
+   "quote": "later questions become answerable from earlier lessons without proving true comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "15-16",
+   "quote": "It does not isolate the effect of prior-course context, calibrate the bar, or certify a future themed course.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "139-140",
+   "quote": "its give-away question was answered from general knowledge of Othello (now: the question's own words only)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "77",
+   "quote": "Does the wording of the question by itself reveal which option is correct, without reading the text?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "// its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "13",
+   "quote": "\"stem\": \"When was Shakespeare's play Othello written?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Nothing tests whether a key can be picked without reading.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/checks.ts",
+   "lines": "9",
+   "quote": "expects: ['Othello chose Cassio as his lieutenant instead of Iago (Iago was passed over for promotion)'] }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L25efa0.txt",
+   "lines": "36",
+   "quote": "Part 2's check can be answered without reading part 2.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "550-551",
+   "quote": "A source must be necessary unless the item is explicitly labeled as a retrieval check.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

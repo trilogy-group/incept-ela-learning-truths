@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A research run",
+  "description": "research/<id>/run.json. Every run is stored the same way; scripts/check.py enforces this and schema/RUNS.md says which files each kind of run keeps.",
+  "type": "object",
+  "required": ["id", "title", "date", "kind", "status", "method", "sources", "counts"],
+  "properties": {
+    "id": { "type": "string", "description": "the folder name: <YYYY-MM-DD>-<n>-<slug>, n counting runs on that day" },
+    "title": { "type": "string" },
+    "date": { "type": "string", "description": "YYYY-MM-DD the run started" },
+    "kind": { "type": "string", "enum": ["manual", "agents", "sweep", "merge"], "description": "manual: written from records by hand; agents: single read-only agents with free-text reports; sweep: the learnings-sweep workflow; merge: the learnings-merge workflow on its own" },
+    "status": { "type": "string", "enum": ["planned", "running", "recorded", "assimilated"], "description": "planned (folder made), running, recorded (outputs stored), assimilated (merged into learnings/)" },
+    "method": { "type": "object", "properties": {
+      "workflow": { "type": "string", "description": "the workflow script used, as run" },
+      "workflow_sha256": { "type": "string" },
+      "run_id": { "type": "string", "description": "the Workflow tool's run ID" },
+      "transcript": { "type": "string", "description": "the run's transcript folder, with home as ~" },
+      "agents": { "type": "string", "description": "the agent type and what each was asked" },
+      "verified_by": { "type": "string", "description": "how candidates were checked before being kept" } } },
+    "sources": { "type": "array", "items": { "type": "string" }, "description": "keys of sources/sources.json the run read" },
+    "counts": { "type": "object", "properties": {
+      "directions": { "type": "integer" }, "agents": { "type": "integer" }, "candidates": { "type": "integer" },
+      "kept": { "type": "integer" }, "dropped": { "type": "integer" }, "gaps": { "type": "integer" },
+      "records_added": { "type": "integer" }, "records_updated": { "type": "integer" },
+      "quotes_checked": { "type": "integer" }, "quotes_dropped": { "type": "integer" } } },
+    "notes": { "type": "string" }
+  }
+}

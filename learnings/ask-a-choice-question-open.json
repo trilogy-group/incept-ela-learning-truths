@@ -1,0 +1,65 @@
+{
+ "id": "ask-a-choice-question-open",
+ "title": "Ask a choice question open",
+ "statement": "Ask a choice question open only if its stem stands without the options; accept the right option in any words, and reply to a wrong one with its own feedback.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "format",
+  "stem",
+  "marking",
+  "feedback"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The rule came from exporting the lesson engine's quick checks to a 3D version, whose reading checkpoints are answered in the student's own words: the options leave the page, and the right one is what a secure answer shows (`g9/transformer/src/glue/threejs-render.js`). A stem that only works beside its options, caught by a phrase list such as \"Which of these\", is listed as skipped instead. The marking adapter asks the judge whether the answer gives the right option in meaning, in any wording, and gives a wrong option the judge is sure of that option's own feedback (`g9/transformer/src/glue/threejs-archivist.js`). A test asserts that no options reach the page (`g9/transformer/test/threejs-render.test.mjs`).",
+ "against": "The open-stem test is only a phrase list (`g9/transformer/src/glue/threejs-render.js`), and on the last try the answer is given in place of a wrong option's feedback (`g9/transformer/src/glue/threejs-archivist.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "7",
+   "quote": "a reading checkpoint, asked open: the options go, the right one is what a secure answer shows",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "33",
+   "quote": "a question that only works beside its options (\"Which of these…\") is not asked open",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "145",
+   "quote": "its question only works beside its options",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "82",
+   "quote": "A quick check asked open: the right option in meaning is secure; a wrong option gets that option's own feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "58",
+   "quote": "no options in the page",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,56 @@
+{
+ "id": "wrong-options-stated-as-claims",
+ "title": "Wrong options stated as claims",
+ "statement": "Write each wrong option as a plain claim stated as if true, not as a report of what learners believe.",
+ "example": "Options carried over in the voice 'Some students may believe that...' passed 1 of 5.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "distractors",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A five-item pilot drew wrong options from a bank of misconceptions written in a teaching voice (\"Some students may believe that...\"), and its instruction to preserve meaning carried that voice into the options. It passed 1/5, at about $0.003. The fix was one line in the prompt: strip the teaching frame and state the wrong belief as if a confused student were asserting it as fact.",
+ "against": "none found (the re-run after the one-line fix was not in the files read)",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "188",
+   "quote": "**Result:** 1/5 pass (5 OpenAI + 5 IB calls, ~$0.003).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "190",
+   "quote": "The source corpus (`common_misconceptions`) is written in **pedagogical-meta voice**: \"Some students may believe that...\" The prompt instructed \"preserve semantics,\" which faithfully carried that voice into MCQ distractor text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "190",
+   "quote": "But a real distractor must be a **positive declarative claim** (first-person voice of the wrong belief).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "192",
+   "quote": "**Fix:** One line in prompt — \"Strip any meta-pedagogical framing. The option states the wrong belief AS IF a confused student were asserting it as fact.\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

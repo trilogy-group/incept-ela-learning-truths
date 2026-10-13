@@ -1,0 +1,64 @@
+{
+ "id": "pictures-never-change-a-gate",
+ "title": "Pictures never change a gate",
+ "statement": "Keep pictures out of every reading and question gate, so adding art never changes a page's pacing or reveals a question early, and recheck the gates after any art change.",
+ "example": "When art was added to forty-five reading pages, none of it entered the reading-gate calculation.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "sequence",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Research before atmospheric art was added to the rebuilt lessons found that a teaching page with an illustration but no passage skipped the read-before-question hold, so adding art could change a student's pacing or reveal questions early. The plan made art placement answer to the existing gates and listed artwork that changes reading or assessment gates as a failure to detect with source diffs and reading and why-check tests. In the delivered build, art went onto forty-five reading pages and no artwork entered the reading-gate calculation.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/ASSETS.md",
+   "lines": "60",
+   "quote": "Check gate behavior when adding art. `core.tsx:552–566` makes an illustrated text/frame teaching page without passage skip the reading-before-question hold. Passage/verse questions retain it. `BookLesson.tsx:289` uses this result to lock progress. A decorative asset must not accidentally change student pacing or reveal questions early.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "11",
+   "quote": "Art placement must not suppress checkHeldBy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "30",
+   "quote": "F1 - Artwork changes reading or assessment gates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "31",
+   "quote": "Detect with source diff and reading/why-check tests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "10",
+   "quote": "Forty-five pure passage pages use an illustrated book spread. Practice keeps the source text beside the task. Verse lineation stays intact. No artwork enters the reading-gate calculation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

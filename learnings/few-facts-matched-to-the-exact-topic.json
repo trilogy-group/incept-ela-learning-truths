@@ -1,0 +1,93 @@
+{
+ "id": "few-facts-matched-to-the-exact-topic",
+ "title": "Few facts, matched to the exact topic",
+ "statement": "Fetch an item's sources and facts by its exact topic or objective, not its unit, and give the writer only the few that match, since other topics' facts blend in.",
+ "example": "The research summary advises the 10-15 most relevant facts rather than all 3,347.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "With facts drawn for the whole unit, the AP question work expected an item on one topic to mix in another topic's facts, or to get no help from them (`icloud-work/ML learnings/knowledge_and_rag_pipeline.md`). Facts were then matched to the item's topic cluster first, which was reported as improving relevance, with no pass-rate figure (`icloud-work/ML learnings/week_of_apr_21.md`). The research summary adds the Lost-in-the-Middle problem, that facts in the middle of a long block are ignored most, and advises giving the 10-15 most relevant facts rather than all 3,347 (`icloud-work/ML learnings/research_rag_factual_grounding.md`).",
+ "against": "The cluster change's effect was never measured: \"Cluster-matched facts > unit-level-only improved relevance.\" (`icloud-work/ML learnings/infrastructure_and_tooling.md`, line 158). The writer was only ever given five facts (`icloud-work/ML learnings/knowledge_and_rag_pipeline.md`, line 208), so the comparison with all 3,347 answers a setup nobody ran. Another note favours more facts in the store, not the prompt: \"More facts = better coverage = fewer hallucination opportunities.\" (`icloud-work/ML learnings/knowledge_and_rag_pipeline.md`, line 228). The 75% rests on 8 items, and the two rates come from runs of different sizes, so the size of the gain is uncertain (`icloud-work/ap-social-studies-generator/data/model_findings.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "171",
+   "quote": "If the question topic was about Progressivism but the injected facts were about immigration, the model might generate a question that mixed both — or the curriculum facts wouldn't help at all.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "175",
+   "quote": "**Impact:** Cluster-matched facts are more relevant to the specific question being generated. The model has better grounding for the specific topic rather than unit-level context.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "404",
+   "quote": "**More context injection / longer fact lists:** The Lost-in-the-Middle problem means that making the fact list longer reduces the model's ability to use it. Better to use a retriever (Technique 7) to inject only the 10-15 most relevant facts rather than all 3,347.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "34",
+   "quote": "- **Context position**: Facts buried in the middle of a long context block are more likely to be ignored than facts at the very beginning or end (Lost-in-the-Middle problem).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/week_of_apr_21.md",
+   "lines": "23",
+   "quote": "Cluster-matched facts (not just unit-level) improved relevance.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "407",
+   "quote": "1. **Topic mismatch is the root failure cause.** Bank indexed by (course, unit) — 50 entries spanning 30+ years and multiple topics. A \"Failure of Reconstruction\" request had only 2/50 chance of getting Reconstruction documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "396",
+   "quote": "| DBQ  | 14% (3/22)      | **30% (6/20)**      | +16pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "421",
+   "quote": "**75%** | 0.944 | +45pp ✅ PASS",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "151",
+   "quote": "We were doing fuzzy topic-based MongoDB search and sometimes getting irrelevant facts.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

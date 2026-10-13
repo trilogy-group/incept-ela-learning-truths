@@ -1,0 +1,112 @@
+{
+ "id": "count-a-reading-already-done",
+ "title": "Count a reading already done",
+ "statement": "When a page repeats word for word a text the learner just finished reading, count that reading toward the page's reading hold rather than impose a second wait.",
+ "example": "After the fix, a page repeating a 203-word text armed its reading claim 3,414 ms after Next, where its source had set a separate 60-second hold.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 5 lesson, a page with a 203-word passage held the learner for a reading time its source sets at 81 seconds, and the next page repeated the same text as a reference behind a separate 60-second hold; both figures came from the source, not from timing in a browser. The fix, scoped to Grade 5, lets a reading the learner actually completed earlier in the same lesson arm the repeated page's claim, matching only text of the same type with exactly the same words, and still requires the claim and the answer. A page visit, review-mode activity, a model button or a stored acknowledgment earns nothing, and a fresh direct visit or a new passage keeps its ordinary hold. After the fix the claim armed 3,414 ms after Next, and a fresh direct visit stayed held.",
+ "against": "A second reading can be intended: 'The choice to require rereading must be deliberate.' (`grade3-reading/ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md`, line 41), and a review of the proposal noted that 'the explicit source-first claim contract can intentionally ask for rereading' (`grade3-reading/ui-audit-2026-09-08/round-1/g5-u9/PROPOSAL-REVIEW-by-unit1.md`, line 35).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "43",
+   "quote": "p5 contains203 words and a required reading gate, so self-read dwell is81seconds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "43",
+   "quote": "p6 repeats the exact203-word text as a silent reference and adds a separate60second claim timer before its question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "43",
+   "quote": "These are source-derived values, not measured elapsed browser results.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "48",
+   "quote": "For Grade5 only, arm a silent reference claim without a second dwell when the learner has actually completed the matching earlier reading in the current student lesson state.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "49",
+   "quote": "Do not derive it from visiting a page, the final receipt, unit completion, a model button, reviewer activity, or persisted walk acknowledgments alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "50",
+   "quote": "Start with exact same-type, same-text matching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSALS.md",
+   "lines": "52",
+   "quote": "A fresh direct p6 visit keeps the normal timer. A new passage, even if silent, keeps the normal timer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/PROPOSAL-REVIEW-by-unit1.md",
+   "lines": "39",
+   "quote": "Eligibility must represent normal reading completion, not any generic done bit that could be set by review mode, a model, a page visit or persistence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "20",
+   "quote": "G5 earned reading: actual U9 L1 p5 completion allowed the p6 claim without a second full dwell",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "20",
+   "quote": "an armed claim 3,414 ms after Next",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "20",
+   "quote": "Claim and independent answer were still required.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "20",
+   "quote": "Fresh direct p6 remained held.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

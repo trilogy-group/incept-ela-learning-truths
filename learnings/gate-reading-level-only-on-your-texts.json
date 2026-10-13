@@ -1,0 +1,42 @@
+{
+ "id": "gate-reading-level-only-on-your-texts",
+ "title": "Gate reading level only on your texts",
+ "statement": "Gate a reading-level band only on texts you wrote; on published texts you chose, measure and report it, since they are not yours to rewrite to a number.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "measurement",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A reading engine's rule pack gives its reading-level band two uses, measuring any passage and gating one only when the course wrote it, after an earlier generator spent whole refine budgets enforcing a Lexile target on folktales that were never going to reach it. Its copy rules exempt story prose from the 25-word sentence ceiling for the same reason, since editing a narrative sentence down to hit a number is the Lexile-driven editing its knowledge rules forbid. It matches the rule that a lesson changes to fit its fixed source text, never the reverse (fix-the-lesson-never-the-source).",
+ "against": "A crosswalk for adopting a partner's texts took the other line after finding that they averaged Flesch-Kincaid grade 9.7: \"Every prose text we adopted therefore carries a logged commitment: re-leveled to the Grade-4 band before authoring, with the original kept as the source.\" (`grade3-reading/course-renderer/docs/extras/g4-crosswalk-2026-08-17.md`, line 82). The record text-within-the-grades-reading-band also asks that every passage sit within or just above its grade's band.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "39",
+   "quote": "A band for MEASURING a passage, and for gating one only when we wrote it. gen_v3 spent whole refine budgets enforcing a Lexile target on folktales that were never going to reach it; a published text the academics team chose is not ours to rewrite to a number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "74-76",
+   "quote": "**Story prose.** Literature at grades 4 to 6 runs longer than anything else a child reads. Editing a narrative sentence down to hit a number is exactly the Lexile-driven editing R-KC-6 forbids.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

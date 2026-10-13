@@ -1,0 +1,311 @@
+{
+ "id": "quote-the-evidence-before-the-verdict",
+ "title": "Quote the evidence before the verdict",
+ "statement": "Make a judge quote the text each criterion applies to before it scores, and have it score only from those quotes.",
+ "example": "After a quote-before-score step, 4 scripts whose verdicts had varied scored 0.0 in all 3 independent runs.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An AP evaluator's check on video scripts flipped between 0 and 1 across runs because the judge sometimes asserted that a required bridge was present without locating it. A mandatory audit that makes it quote the orientation beat and the bridge sentences, or write ABSENT, before scoring made the 4 previously variable scripts score 0.0/0.0/0.0 across 3 independent runs. The same gate was then added to lesson-level subjective scores that had flipped between runs on borderline lessons, where scoring one below 1.0 needs the item named and the exact text quoted, and the question rubric likewise fails an answer key only when it can quote the conflicting text. The method has the judge list each fault with its quote and the rule it breaks, and credit a pass or a required part only on quoted text. The quotes are required output: one judge's instructions score a metric 0.0 when its audit is missing (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt`, line 5). Checking each quote against the item in code would also catch a judge citing text that isn't there, which another project reported in about 14% of one item type's failures (`icloud-work/ap-social-studies-generator/workspace/INBOX_FROM_EXTERNAL/2026-04-28T00_first-contact.md`, line 49).",
+ "against": "The lesson-level gate was checked on a 14-item sample run three times, and its own note says a full-course re-measure is the real confirmation; stable verdicts show consistency, not correctness. That gate also passes any borderline call with no quotable evidence, which counts an unsure call as a pass. Only fails that the judge's own reasoning contradicts are reversed: \"Ensure legitimate failures are NOT incorrectly sanitized.\" (`icloud-work/incept/inceptbench/src/inceptbench/evaluators/test_contradiction_validation.py`, line 223). The quote rule on its own left a default pass that cheater runs exploited: '- B4: `specification_compliance` defaults to 1.0 without explicit quoted spec and quoted violation.' (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md`, line 66). The added clause answers it but is untested. The 14% comes from another project's runs on its own instance of the judge, not from this generator's measurements, and the note that reports it is a recreation of a lost original (`icloud-work/ap-social-studies-generator/workspace/INBOX_FROM_EXTERNAL/2026-04-28T00_first-contact.md`). The audits did not settle every case: a gold item once expected to fail now sits on the pass/fail boundary and may vary between INFERIOR and ACCEPTABLE or SUPERIOR across runs (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_962.py`, lines 210-217). One observed case; no run compared the two orders. The question judge takes the opposite stance: its default is pass, and it fails a metric only on a violation it can quote (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, line 5); and in the article judge a pass it cannot support only adds a suggested improvement (`icloud-work/inceptbench-main/src/inceptbench/prompts/article/evaluation.txt`, line 106). The same analysis says the main weakness of such checks is that several are rubric or static checks where the red-team history shows an empirical or deterministic probe is needed (`grade3-reading/knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd`). Rejected on reasoning, not measurement: '*Recorded honestly: the graders, self-critique and generic-judge rejections have not been formally evaluated. They are rejected on reasoning, not on measurement.*' (shadow-bench/docs/brainlift.md line 92).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "abbd10e",
+   "lines": "3-6",
+   "quote": "The evaluator was inconsistently detecting missing bridges — sometimes asserting 'the structure is present' without locating the actual bridge sentence. This caused structure_compliance to flip 0→1 across runs on scripts that genuinely end with summaries or mnemonics.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "abbd10e",
+   "lines": "8-10",
+   "quote": "Adds a mandatory STEP A audit block that requires the evaluator to quote the exact orientation beat and bridge sentences (or write ABSENT) before scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "abbd10e",
+   "lines": "14-15",
+   "quote": "The 4 previously variable atoms now consistently score 0.0/0.0/0.0 across 3 independent runs, confirming stable detection of missing bridges.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "32-34",
+   "quote": "the subjective non-critical dims (construct_coherence, concept_coverage, difficulty_progression, + non_repetitiveness, item_format_variety) flip-flopped 0<->1 between runs on borderline lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "34-36",
+   "quote": "to score any of these below 1.0 the model must name the item_id and quote the exact text proving the violation; a borderline call with no quotable evidence PASSES.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "102",
+   "quote": "**Do NOT over-fire.** Fail only when you can quote the exact conflicting text",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "46-47",
+   "quote": "Validated on a 14-item sample x3: construct_coherence + non_repetitiveness improved on the one lesson that flipped, no regressions.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "49",
+   "quote": "full-course re-measure is the real confirmation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "69",
+   "quote": "- Multi-agent framework: one agent identifies rubric-relevant components, another scores",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "70",
+   "quote": "- Explicit checkpoints constrain reasoning path — improves accuracy and interpretability",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/evaluators/test_contradiction_validation.py",
+   "lines": "4",
+   "quote": "Tests the fix for issue #169: evaluator generating suggestions that contradict",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "64",
+   "quote": "**Step 2: Identify ALL Issues (COMMIT BEFORE SCORING)**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "128",
+   "quote": "- If your reasoning concludes content is correct/compliant but the score is 0.0, you MUST fix the score to 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "133",
+   "quote": "- **Redundancy**: Is the suggestion already the current state of the content? If so, remove it and set score to 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "135",
+   "quote": "- **Hallucinated rules**: If you cite a curriculum rule, verify it actually exists in the provided data. Do NOT invent rules.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "26",
+   "quote": "- `specification_compliance` only fails when there is a clear explicit spec, a quoted requirement, and quoted violating content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/PATTERNS_CATALOG.md",
+   "lines": "105",
+   "quote": "- **P-WWVCD-04** — For judge hallucination, require `evidence_quote` output field + strip write perms from evaluator. Never \"BE STRICT\" in a prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/PATTERNS_CATALOG.md",
+   "lines": "107",
+   "quote": "- **P-WWVCD-06** — Output schemas enforce evidence fields; empty quotes fail the run.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "66",
+   "quote": "- B4: `specification_compliance` defaults to 1.0 without explicit quoted spec and quoted violation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/workspace/INBOX_FROM_EXTERNAL/2026-04-28T00_first-contact.md",
+   "lines": "49",
+   "quote": "- We discovered an **InceptBench v2.4.0 false-positive `integrity_check` failure mode** on MCQ_SET (~14% of failures): the eval cites scoring-directive text that doesn't exist in our outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "26",
+   "quote": "2. Identify ALL issues (with IDs, snippets, explanations)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "27",
+   "quote": "3. Score metrics (each 0.0 must cite an issue)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "12",
+   "quote": "Each audit is a **copy task** — fill the fields by copying exact text from the question content. The failure condition then follows from what you copied, with no room for reinterpretation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "5",
+   "quote": "Skipping the audit is itself a failure of the metric: if the audit is missing, score that metric `0.0`. The audit must use real values from the content, not boilerplate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "395",
+   "quote": "You MUST produce the per-category pattern table above before assigning a score. Claiming \"no patterns found\" without the table is not acceptable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "30f12a3",
+   "lines": "33-34",
+   "quote": "- Fixes: LLM committed wrong score 0.82, reasoning self-corrected to 0.92, but JSON score stayed at 0.82 due to field commit order",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "311",
+   "quote": "**CRITICAL**: Write reasoning BEFORE assigning scores. The score must follow from the reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "ee21a33",
+   "lines": "13-16",
+   "quote": "#342: uniform perfect scoring / rubber-stamp evaluation - Add POSITIVE EVIDENCE REQUIREMENT: must cite specific text for each 1.0 score - Add ANTI-RUBBER-STAMP CHECKS: mandatory checks for reflection repetition, register shifts, and curriculum element enumeration",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "106",
+   "quote": "**POSITIVE EVIDENCE REQUIREMENT**: Even when giving a metric a score of 1.0, you MUST cite at least one specific piece of text evidence from the article that justifies the pass — not just the absence of a problem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "65",
+   "quote": "video script evaluator's quote-before-score `structure_audit` is a good adversarial pattern.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "146",
+   "quote": "**Step 1 — Blind solve.** Attempt the item using only world knowledge and the options",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "147",
+   "quote": "Write down the answer you reach and HOW.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "67-68",
+   "quote": "The main weakness is that several of these are rubric/static checks where the red-team history shows an empirical or deterministic probe is needed.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "46",
+   "quote": "For each issue assign an ID (ISSUE1, ISSUE2...), tag the primary metric, quote the evidence, and explain the problem. Commit this list before moving to Step 3.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "49",
+   "quote": "Score 0.0 or 1.0 based only on issues from Step 2. Do not introduce new issues.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "54",
+   "quote": "Every 0.0 metric must have a specific issue. Every issue must map to a 0.0 metric.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "127",
+   "quote": "Every 0.0 metric must reference a specific ISSUE. Every ISSUE must map to a 0.0 metric.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "87",
+   "quote": "**Generic LLM-as-judge scoring with no structured rubric.** A score with no named defect attached cannot become a permanent check. The system learns nothing from it and nobody can argue with it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "AutoSCORE: Multi-Agent LLM Framework via Structured Component Recognition (arXiv:2509.21910)",
+   "url": "https://arxiv.org/html/2509.21910v1"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

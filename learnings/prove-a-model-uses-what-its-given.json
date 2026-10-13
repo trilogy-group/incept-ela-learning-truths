@@ -1,0 +1,71 @@
+{
+ "id": "prove-a-model-uses-what-its-given",
+ "title": "Prove a model uses what it's given",
+ "statement": "Before crediting a model with using the rules or material it is given, test it with them removed, shuffled, deliberately wrong and contrary to what it already knows.",
+ "example": "In one test accuracy was 30.00% with the supplied material, 32.50% with it removed and 25.83% with it shuffled, so the material was not driving the result.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A recursive-refinement pilot on public synthetic items, which coded teaching principles into a typed schema, ran controls with the supplied reference material removed and with it shuffled. Refinement raised mean exact accuracy from 20.83% to 30.00%, but the removed control reached 32.50% and the shuffled one 25.83%, so the probe failed its dependence check and was aborted. The same experiment's protocol scores runs under deliberately wrong rules twice, for obedience to the rules given and for correctness, because a model that ignores a wrong rule can look right about the world while failing to be controllable. An exploratory probe used rules that contradict ordinary world knowledge so that prior knowledge alone could not explain a pass, and the plan for comparing models calls reciprocal one-field flips necessary to tell obedience from general quality.",
+ "against": "The removal and shuffle controls ran on a synthetic task of coding teaching principles, not on writing or judging student material, and the evidence index lists that result as public and synthetic, with no private or gold evidence (grade3-reading/bias_experiment/experiment-record/evidence/EVIDENCE_INDEX.md line 28). The world-knowledge probe was exploratory.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/03-method-and-results.md",
+   "lines": "25-26",
+   "quote": "The recursive condition scored 30.00%, authority removal scored 32.50%, and authority shuffling scored 25.83%; none produced a complete group.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/03-method-and-results.md",
+   "lines": "26-28",
+   "quote": "Because the recursive result did not beat the authority-removed control, the probe failed its authority-dependence check and was aborted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-agent-qualification-v2-trm-combined-outcome.md",
+   "lines": "12",
+   "quote": "Recursive refinement improved mean exact-object accuracy from 20.83% to 30.00%, but authority-free accuracy reached 32.50% and effective shuffled-authority accuracy reached 25.83%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "411-413",
+   "quote": "score two outcomes independently: obedience to the supplied contract and correctness against the intended gold policy. A model that ignores the wrong contract may look world-correct but has failed controllability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/COUNTERFACTUAL_AUTHORITY_A0_2026-07-17.md",
+   "lines": "47-49",
+   "quote": "The counterfactual A and C shark outputs contradict the model's ordinary world knowledge, so prior-only behavior cannot explain the result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/cross-model-eval-contract-plan.md",
+   "lines": "148",
+   "quote": "Reciprocal one-field flips are necessary to distinguish policy obedience from generic quality.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

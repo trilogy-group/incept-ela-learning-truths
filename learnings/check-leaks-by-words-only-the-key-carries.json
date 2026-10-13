@@ -1,0 +1,320 @@
+{
+ "id": "check-leaks-by-words-only-the-key-carries",
+ "title": "Check leaks by words only the key carries",
+ "statement": "Check hints and wrong-answer replies for leaks in code: none may carry a word only the key or its criterion's answers carry, not counting the criterion's framing words.",
+ "example": "A leak check that counted the criterion's framing words 'reason' and 'any' withheld a hint and left a child on a third miss with only the question restated.",
+ "group": "what-a-student-is-told",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "hints",
+  "feedback",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course checks leaks in code: an item-statistics review collects each criterion's answer words of more than 4 characters and looks for them in that criterion's hints (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md`), and its feedback validator holds any wrong-answer reply that names or paraphrases the key, quotes six words of the correct option, or names a word only the key carries (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md`). A merge then changed what a child got on a third miss: the old check had flagged 'reason' and 'any', words from the criterion's own framing, not from any answer, and withheld the second hint, leaving only the question restated; the version that stopped counting such words gave the hint (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md`).",
+ "against": "A leak gate run on a generated reply, rather than an authored one, had the reply rewritten, and the rewrite misread the story (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`grade3-reading/engine/reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "174",
+   "quote": "Methodology: collect exemplar/answer words (> 4 characters, meaningful) from each criterion's `requirement` field; check whether those words appear in the same criterion's `hint` or `second_hint` text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "6",
+   "quote": "a wrong-answer reply never names or paraphrases the key and never quotes six words of the correct option (validate-feedback)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "175",
+   "quote": "fix = printed-only rewrite of the wrong reply so it names no word only the key carries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md",
+   "lines": "23",
+   "quote": "stopped counting SHAPE words as answer words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md",
+   "lines": "24",
+   "quote": "ours' `leakedWords` flags `[\"reason\",\"any\"]` on that rung; staging's returns `[]`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md",
+   "lines": "27",
+   "quote": "Withholding it was a false positive that left a child on their THIRD miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "116",
+   "quote": "sharedRun(f, c.options[c.answer]) >= Math.max(3, words(c.options[c.answer]).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "22",
+   "quote": "Listen again to hear that the play was written around 1603.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "97",
+   "quote": "Wrong-option feedback does not name the answer: question 2, option A: its feedback names the right answer; question 2, option C: its feedback names the right answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "42-43",
+   "quote": "\"third_nudge\": \"the words to read again, quoted exactly, still not the answer\", \"leak\": [\"the words that would hand the answer over\"]}. No nudge uses a leak word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "66",
+   "quote": "const leaky = item.criteria.flatMap((c) => nudges(c).filter((t) => c.leak.some((w) => has(unquoted(t), w)) || sharedRun(unquoted(t), item.reveal) >= 4));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "127",
+   "quote": "assert.equal(oc.codeChecks(leaky, ctx).find((c) => c.id === \"nudges-no-leak\").ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/fixtures/othello-items.json",
+   "lines": "13",
+   "quote": "\"leak\": [\"lieutenant\", \"promotion\", \"promoted\"]",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "53-54",
+   "quote": "check(\"feedback-no-answer\", \"Wrong-option feedback does not name the answer\", item.feedback.every((f, i) => i === item.answer || sharedRun(f, right) < Math.max(3, right.split(/\\s+/).length)), \"a wrong option's feedback names the right answer\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "15",
+   "quote": "\"Around 1603\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "146",
+   "quote": "question 2, option A: its feedback names the right answer; question 2, option C: its feedback names the right answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "33",
+   "quote": "\"make sacred or declare holy\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "40",
+   "quote": "Examine the sixth line again to consider how the text distinguishes ceremonial speech from making land sacred.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "feedback-no-answer (quick-check.js lines 53-54) fails only on a run as long as the whole key.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "54",
+   "quote": "sharedRun(f, right) < Math.max(3, right.split(/\\s+/).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "64",
+   "quote": "read (its third rung), but it uses no leak word and copies no four-word run of the reveal outside a quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "63",
+   "quote": "a hint may quote the text, even the line to",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "FB-LEAKS-ANSWER (words only the key has; a 6-word run of the key)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-engine-vendor",
+   "path": "lesson-content-eval/SKILL.md",
+   "lines": "60",
+   "quote": "feedback on a *wrong* option names the answer's own distinctive vocabulary — picking that wrong option reveals the right one",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "43",
+   "quote": "No nudge uses a leak word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "71",
+   "quote": "No hint hands the answer over",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "22",
+   "quote": "Exercise the real output boundary with a fixed wrong-answer example and preserve the reply.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/INTEGRATION-DISPOSITIONS.md",
+   "lines": "14",
+   "quote": "A real-browser check of L4 p21 showed that revised authored hints alone were insufficient: the generated second reply still supplied “a lighter feeling,” an accepted answer concept.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/INTEGRATION-DISPOSITIONS.md",
+   "lines": "14",
+   "quote": "This displays the current authored wording without a generated preface or suffix on those misses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "22",
+   "quote": "do not infer a new scoring policy from the wording defect",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "27",
+   "quote": "Words that would hand over a missing idea, per checkpoint (words already in the question are left out).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "70",
+   "quote": "Line pointers are allowed, so quoted text is left out; so are ideas the student already wrote (same stem).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "76",
+   "quote": "Handing over the decisive evidence on a first attempt: the reply quotes two or more of the answer's key phrases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "9",
+   "quote": "The same document explicitly rejects word-overlap thresholds on authored hint ladders: shared words alone do not diagnose a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "720",
+   "quote": "Measured across Unit 1, a `second_hint` shares up to 0.69 of its content words with the hint above it and up to 0.75 with the reveal below",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/SAYBACK-UPGRADE-SPEC-2026-09-05.md",
+   "lines": "24-25",
+   "quote": "hint must NOT contain the target word's own root",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/threads.mjs",
+   "lines": "51",
+   "quote": "a push-back never hands over a lesson word (the student has to find it): replace any reply that names one",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-content-eval/2026-09-29/ADJUDICATION.md",
+   "lines": "15",
+   "quote": "Removed a unique word from the keyed option from each wrong-choice reply.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "13-17",
+   "quote": "Wrong-option feedback names the answer (1 item, real) … Any wrong pick reveals the right one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "37-38",
+   "quote": "feedback \"leak\" is weak: it is a true/false list where every statement is on screen at once, so naming another statement's words gives nothing away.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

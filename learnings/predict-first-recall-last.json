@@ -1,0 +1,100 @@
+{
+ "id": "predict-first-recall-last",
+ "title": "Predict first, recall last",
+ "statement": "A teaching video should have the viewer predict or tell things apart before it gives an answer, and end on a prompted recall rather than a summary.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "practice",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The control spec for a science video agent in the reading course plans makes it a hard rule, tagged as resting on learning evidence: at least one prediction or discrimination beat before the answer, and an outro that is a prompted recall, not a restatement (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, rule 14). The video red-team lists both misses as pedagogy defects owned by the script stage: an answer that arrives before any learner operation, and a summary in place of a prompted recall (`grade3-reading/ti-courseplans/skills/video-red-team/references/finding-taxonomy.md`).",
+ "against": "A later run found counter-evidence (`grade3-reading/artifacts/qc-2026-09-29-staging/new-lesson-qa-invariants.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/qa/new-lesson-qa-invariants.md`). A later run found counter-evidence (`g9/library/text/L9b6d99.txt`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/qa/new-lesson-qa-invariants.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "40",
+   "quote": "14. ≥1 prediction/discrimination beat BEFORE the answer; recall-based outro (a prompted recall, not a restatement)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "83-84",
+   "quote": "| No prediction beat | answer arrives before any learner operation | 01_script (r14) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "84",
+   "quote": "| Restatement outro | summary instead of prompted recall | 01_script (r14) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "946",
+   "quote": "ONE checkpoint per video, riding the end slot",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "946",
+   "quote": "The checkpoint asks about content the video ALREADY SHOWED, recall only, never a prediction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "77",
+   "quote": "the checkpoint tests the video's own content; the picture matches the narration line.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/new-lesson-qa-invariants.md",
+   "lines": "97-99",
+   "quote": "The checkpoint asks about content the video ALREADY SHOWED, recall only, never a prediction (user rule 2026-08-26: a \"what comes next\" ask was rejected on the L2 script).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "97-99",
+   "quote": "The checkpoint asks about content the video ALREADY SHOWED, recall only, never a prediction (user rule 2026-08-26: a \"what comes next\" ask was rejected on the L2 script).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "51",
+   "quote": "One idea per segment. Pause-to-check questions after key segments. Ends with a spoken summary.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "97-99",
+   "quote": "The checkpoint asks about content the video ALREADY SHOWED, recall only, never a prediction (user rule 2026-08-26: a \"what comes next\" ask was rejected on the L2 script).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

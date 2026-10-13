@@ -1,0 +1,92 @@
+{
+ "id": "land-the-key-idea-for-every-learner",
+ "title": "Land the key idea for every learner",
+ "statement": "Put every part of a lesson's key idea where every learner meets it, such as the text, the narration or the closing screen, not only in replies to strong answers.",
+ "example": "A search of one lesson for its scripted key-idea sentence found 0 hits, and 2 of its 3 closing branches dropped the idea.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "evidence-of-learning",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit searched one reading lesson for the key-idea sentence its design scripts and found zero hits: only the closing dialogue's branch for a learner who answered the hardest follow-up first time paraphrased it, and the partial and off branches, the ones struggling readers see, closed on other points. In a second lesson the key idea had two parts and the closing screen landed one, though the learner had just worked on the other. Re-verification confirmed both and proposed landing the idea on a surface every learner meets, the way another lesson states its key idea in the passage itself.",
+ "against": "The course accepts paraphrase rather than verbatim landing: \"the established lesson pattern (confirmed across L4 and L10) is paraphrase-not-verbatim\" (PEDAGOGY-L7-2026-09-05.md lines 132-133). An earlier pass conflicts with the zero-hit search: \"L5 and L6 each land their threshold sentence word-for-word somewhere; L7 does not.\" (kb-0231-pp-depth-6h-doc-diffs.qmd lines 52-53). The fix for the two-part case was parked because that lesson is the signed baseline (REGISTER-PEDAGOGY-2026-09-05.md line 14).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "138-140",
+   "quote": "the doc's threshold sentence never lands verbatim, and two of three closing branches (the ones struggling readers see) drop the power-changes-hands frame entirely.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "148-149",
+   "quote": "Grep of the full L6 JSON for \"change hands and change people\" returns **zero hits**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "164-167",
+   "quote": "So a child who does not land the hardest follow-up on the first try — i.e., exactly the reader this instructional design exists to serve — closes the lesson having heard only \"Peter lost things,\" never \"power changed hands,\" let alone the doc's fixed threshold sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "177-181",
+   "quote": "L10's construction makes verbatim landing performance-independent because the passage itself carries it — L6's threshold is an abstraction the KB layers onto the story (Hook never says \"power has changed hands\"), so it depends entirely on the wrap material to land it, and that wrap material only lands it, partially, for the top-branch child.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L4-2026-09-05.md",
+   "lines": "145-149",
+   "quote": "the KB threshold is a two-part compound (\"rules AND mood\"), and the closing screen only lands one part. A reviewer applying that rule literally would flag this: the child does the rules-inference work (p22 extra-thinking) and then the wrap never confirms or echoes it, so the second half of the day's threshold is not certified as landed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-PEDAGOGY-2026-09-05.md",
+   "lines": "15",
+   "quote": "land the threshold in a universal surface (narration/receipt) the way L10 lands \"brains beat strength\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L7-2026-09-05.md",
+   "lines": "132-133",
+   "quote": "the established lesson pattern (confirmed across L4 and L10) is paraphrase-not-verbatim",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "52-53",
+   "quote": "L5 and L6 each land their threshold sentence word-for-word somewhere; L7 does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-PEDAGOGY-2026-09-05.md",
+   "lines": "14",
+   "quote": "L4 is the reviewer-SIGNED baseline; fixing touches the signed lesson (no-churn).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

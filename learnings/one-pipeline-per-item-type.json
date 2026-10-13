@@ -1,0 +1,62 @@
+{
+ "id": "one-pipeline-per-item-type",
+ "title": "One pipeline per item type",
+ "statement": "Generate each item type through its own steps and its own checks, so that a change to one type cannot break another.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "format"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A synthesis across five corpora of the AP work marks per-type generation as confirmed in four of them and notes that two generators improved when their validators became type-specific (`MASTER_SYNTHESIS.md`, lines 74 and 259). One generator's report makes per-type modules a first rule, with no single prompt shared by every item type, so that one type can change without risking another (`ap_social_studies_generator_distilled.md`, lines 54 and 172). Another lists the type-specific checks to run before scoring: option count, answer count, explanation consistency, answer uniqueness and schema validity (`k_12_social_studies_distilled.md`, line 74).",
+ "against": "No source compares per-type and shared generation head to head: the synthesis tallies where the pattern was confirmed rather than measuring it (`MASTER_SYNTHESIS.md`, line 74).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "74",
+   "quote": "| Per-type generation | confirmed | confirmed | confirmed | confirmed | compatible | T1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "172",
+   "quote": "- Use per-type generator modules. APUSH production should not have one shared prompt surface for all cells.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "54",
+   "quote": "- This is the right ownership boundary: change MCQ_SET without risking DBQ or SAQ.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "74",
+   "quote": "- Add type-specific deterministic validators before scoring: option count, answer count, explanation consistency, answer uniqueness, schema validity.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "259",
+   "quote": "- K-12 and AP generator both improved when validators became type-specific.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

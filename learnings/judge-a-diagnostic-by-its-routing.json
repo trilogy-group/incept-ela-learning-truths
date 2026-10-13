@@ -1,0 +1,71 @@
+{
+ "id": "judge-a-diagnostic-by-its-routing",
+ "title": "Judge a diagnostic by its routing",
+ "statement": "Judge a diagnostic by whether students who follow its routing learn faster, and stop testing once the next item is worth less than the study time it takes.",
+ "example": "A 70% confident finding that a chapter is a gap is enough to route a student, and 10 more items to reach 90% may not be worth the study time.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The diagnostic guide in the reading project's knowledge base treats a diagnostic as a routing decision, not a measurement: it is good if students who follow its recommendations learn more efficiently than students who don't, so a rough but fast one can beat a precise but slow one (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`). Since time spent testing is time not spent studying, it tests only until the expected value of the next item for routing falls below that of spending the time studying. The course's routing contract says diagnostics route study under uncertainty and are not grades (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`).",
+ "against": "The guide is design doctrine; no diagnostic in these sources has yet been judged by how fast its students learn (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "77",
+   "quote": "do students who follow its recommendations learn more efficiently than students who don't?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "39",
+   "quote": "This is a routing decision, not a measurement decision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "40",
+   "quote": "test until the expected value of the next item (in terms of improved routing) is lower than the expected value of the student spending that time studying",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "40",
+   "quote": "time spent testing is time not spent studying",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "77",
+   "quote": "a 70% confident inference that a chapter is a gap is actionable enough to route the student; spending 10 more items to get to 90% confidence costs study time that may not be worth the improved routing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "91-92",
+   "quote": "diagnostics route study under uncertainty and must handle slips, guesses, sampling, grain size, and unassessed knowledge; they are not grades;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

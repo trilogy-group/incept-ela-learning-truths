@@ -1,0 +1,76 @@
+{
+ "id": "media-failure-never-blocks-learning",
+ "title": "Media failure never blocks learning",
+ "statement": "Give every media element a working fallback, so a clip, image or video that fails leaves readable text or the screens it duplicates instead of blocking the learner.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The golden student-course standard accepts a media element only with, among other things, a load test and a failure fallback, and lists media failure that blocks learning as a failure signal. A Grade 5 course's review profile rejects a failed clip that leaves no readable or manual route, and its student flow shows read-to-me as active only once audio really plays, with retry and a visible self-read fallback on failure. A Grade 3 player run without audio renders every line as text and blocks nothing, and that build's background video removes itself on a load error, leaving the screens it duplicates.",
+ "against": "Builds disagree on what the fallback may be: a Grade 5 release gate lets the browser read the exact authored text aloud after the learner's consent when server audio can't play (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, line 52), while a record already there allows only the text in silence, never a synthetic voice.",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "719",
+   "quote": "Each asset has a purpose, factual and rights review, equivalent-access treatment, stable layout, load test, and failure fallback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "720",
+   "quote": "media failure blocks learning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "296",
+   "quote": "Autoplay chains teaching moves, controls disappear, or a failed clip leaves no readable/manual route.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "56-57",
+   "quote": "read-to-me appears active only after audio really plays, and failure exposes retry plus a visible self-read fallback;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "53-54",
+   "quote": "If neither path starts, the failure must remain visible, offer retry, and leave self-reading available.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/AUDIO.md",
+   "lines": "19",
+   "quote": "Run locally without audio: the player degrades gracefully — every line renders as text and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "194-195",
+   "quote": "On `error` the frame and skip button REMOVE themselves, so a missing mp4 degrades to the level-set screens rather than to a broken box.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

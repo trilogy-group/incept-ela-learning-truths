@@ -1,0 +1,335 @@
+{
+ "id": "accept-every-answer-the-text-supports",
+ "title": "Accept every answer the text supports",
+ "statement": "Accept every answer the text defensibly supports, and check that the hints and the reveal don't steer students toward only one of them.",
+ "example": "One audited step accepted only one of two defensible actions.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An external audit of four Grade 3 lessons found a step whose key accepted only one of two defensible actions, rejecting one that the story's next line follows directly, and a blank whose rubric accepted either of two characters while the reveal and the second hint steered only toward one. Both were still open in the register.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "116",
+   "quote": "Only one of two defensible actions is accepted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "97",
+   "quote": "is answerable via either Hook or Wendy per the rubric, but the reveal and second_hint steer only toward Hook",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "48",
+   "quote": "help: one sentence that gives a way in without taking either side.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "67",
+   "quote": "sharedRun(item.help, s.label) >= 3",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "86",
+   "quote": "Does help give a way into question without taking either side?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/90a1089f3e8d7ad5.json",
+   "lines": "160-164",
+   "quote": "\"id\": \"help-open\", \"label\": \"The help leaves both sides open\", \"required\": false, \"verdict\": \"unclear\", \"p\": 0.53",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "5",
+   "quote": "reason is given, never whether the position is right.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "115",
+   "quote": "the side choice \"fails\" on a sure pick of a side, \"holds\" on a sure \"no position\"; unclear is no verdict at all",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "122",
+   "quote": "assert.equal(none.response.correct, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "37",
+   "quote": "then sees one position they could defend. Never marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "7",
+   "quote": "two tries, then the answer is given (\"Here is one way to see it:\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "174",
+   "quote": "Here is one position you could defend:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "713",
+   "quote": "One strong answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "108",
+   "quote": "feedback: say(`Here is one way to see it: ${item.reveal}`, { final: true })",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/runtime.test.mjs",
+   "lines": "105",
+   "quote": "assert.equal(given.response.done, true); assert.match(given.response.feedback, /^Here is one way to see it:/);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "174",
+   "quote": "before_reveal: say(`Here is one position you could defend: ${it.model_position}`, { final: true })",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Judge only that a reason from the text is given, never whether the position is right.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "103",
+   "quote": "C: \"both, or partly each\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "73",
+   "quote": "The help takes no side",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "A counter drafted in advance cannot answer the student's own wording, so it is weaker.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Keep the criteria lenient until they are calibrated (rank 11).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/findings.json",
+   "lines": "147",
+   "quote": "A chosen excerpt must not bias the comparison by supplying only one side",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/PROPOSAL-REVIEW-by-unit9.md",
+   "lines": "34",
+   "quote": "The first paragraph only frees Wendy’s hand, so omitting that context can unfairly weaken this side of the comparison.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit9.md",
+   "lines": "19",
+   "quote": "Include those two exact original paragraphs so Wendy's connection to the children becoming able to fight is visible beside Peter's consequence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/IMPLEMENTATION.md",
+   "lines": "12",
+   "quote": "This preserves balanced causal context for either answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "638",
+   "quote": "questions declare single- or multi-location demand; scoring accepts every defensible evidence set.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "76-78",
+   "quote": "the reveal quotes the passage line byte-exact before stating the answer, or — where there is no single correct pick (a compare turn) — models one complete answer (pick + because + lesson word) rather than crowning a winner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g4-u1-l3.json",
+   "lines": "262",
+   "quote": "Scoring accepts any reason tied to a real clue in the passage rather than matching one exemplar sentence, and the accept-list is written from the clues, because Gygax and colleagues found no consensus even on texts designed to produce one agreed inference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "305-307",
+   "quote": "even on texts designed to produce one agreed inference \"there was no consensus. In fact some readers inferred emotions that were the precise opposite of that intended\" (Kispal, quoting Gygax et al. 2004).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "313-316",
+   "quote": "Second, single-correct motive items are riskier than they look, so the scoring of the child's written motive must accept any reason that is tied to a real clue, and the accept-list has to be written from the clues rather than from one exemplar sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g4-u1-l3.json",
+   "lines": "262",
+   "quote": "Scoring accepts any reason tied to a real clue in the passage rather than matching one exemplar sentence, and the accept-list is written from the clues",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-06.md",
+   "lines": "55",
+   "quote": "Reject a single mechanically keyed emotion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-05.md",
+   "lines": "33",
+   "quote": "Mark this interpretation as evidence-supported, not the only possible adjective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "83",
+   "quote": "A performance example is identified as a performance choice, not the unique correct reading.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3086",
+   "quote": "Assessment must reward textual fit, justified inference and responsiveness to counterevidence rather than agreement with a model answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/dialogue-branches-2026-09-22/BUILD-SPEC.md",
+   "lines": "30-32",
+   "quote": "**Our L4 question is open by design** (\"Tell me why you think she decided to go\", rubric: \"There is no single right reason\"). The branches must therefore judge WHETHER a reason is given and grounded, never steer to one reason.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Cutting-a-Scene-Othello-1.1.pdf",
+   "lines": "128-129",
+   "quote": "Note that all the different choices are good as long as they make textual sense.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "46",
+   "quote": "Iago's motive is an open question: never insist on one reason for his hatred.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/close.ts",
+   "lines": "157",
+   "quote": "Do not demand a single motive; Iago\\'s reasons are his claims, and readers argue about them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L3107a2.txt",
+   "lines": "44",
+   "quote": "Let students take a defensible alternative position and preserve their work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "157",
+   "quote": "Do not make student interpretation appear free while quietly requiring a fixed moral conclusion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "567-568",
+   "quote": "The scoring model must describe the range of historically defensible responses rather than require one hidden preferred example.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "409",
+   "quote": "NO correct pick — the score lives in the reason.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

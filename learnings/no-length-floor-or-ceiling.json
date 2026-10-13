@@ -1,0 +1,154 @@
+{
+ "id": "no-length-floor-or-ceiling",
+ "title": "No length floor or ceiling",
+ "statement": "Put no length floor or ceiling on a learner's answer: a short right answer is secure, and independent practice, writing included, is never capped in time or space.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "marking",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 9 lesson design specification says independent practice grows as students gain expertise and must never be capped at a fixed length, and its build requirements ask for an uncapped writing space. The course brief for a 3D version sets no minimum word counts, so no student pads out a correct answer, and its closing marker is told that a short answer that is right is secure and never to ask for more length. The no-floor half agrees with Mark meaning, not wording.",
+ "against": "The markers read only part of a long answer: the reading checkpoint's marker takes the first 2000 characters (`othello-archive/server/api.mjs`, line 91), and the paragraph marker keeps at most 14 sentences of 600 characters each (`othello-archive/server/tasks/practice.mjs`, line 15). The first-pass review of the lesson prototype asks independent practice to replicate guided practice, with the same five-sentence shape (`g9/sources/Othello_1_Feedback_DevFactory.md`, line 122); a Grade 3 lesson design sizes its extended answer at eleven or twelve sentences (`g9/sources/Readventure - Lesson Design and Scaffolding - Updated.docx`, line 451); and the specification aims for 20-minute lessons (line 307). Another record asks every writing task to state its length, which an uncapped space does not rule out. A Grade 3 design fits each whole lesson to \"the accepted 22 to 29 minute window\", though it protects its unaided task at \"6:30 and up\" rather than capping it (`g9/library/text/L8d5159.txt`, lines 2 and 416-418).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "311",
+   "quote": "It grows as students gain expertise (Section 10) and must never be capped at a fixed length.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "424",
+   "quote": "It is never capped at a fixed length.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "498",
+   "quote": "An uncapped writing space",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "40",
+   "quote": "No minimum word counts. Don't make a student pad out a correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "28",
+   "quote": "A short answer that is right is secure: never ask for more length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "174",
+   "quote": "It grows as students gain expertise",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "174",
+   "quote": "must never be capped at a fixed length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "245",
+   "quote": "It is never capped at a fixed length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "292",
+   "quote": "An uncapped writing space",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "216",
+   "quote": "| Profile | Example | Retrieval | New knowledge | Guided | Independent | Close |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "218",
+   "quote": "| **A. First encounter** | 1.1 | 10 | 30 | 30 | 20 | 10 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "222",
+   "quote": "| **E. Expert** | Whole-text argument | 10 | 5 | 5 | 65 | 15 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "122",
+   "quote": "Rebuild independent practice to replicate guided practice: text visible, the same stem grid, the same five-sentence shape.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "307",
+   "quote": "Aiming for 20 mins | Turns the timing percentages into minutes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "245",
+   "quote": "It is never capped at a fixed length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "292",
+   "quote": "An uncapped writing space",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "218",
+   "quote": "| **A. First encounter** | 1.1 | 10 | 30 | 30 | 20 | 10 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "222",
+   "quote": "| **E. Expert** | Whole-text argument | 10 | 5 | 5 | 65 | 15 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

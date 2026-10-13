@@ -1,0 +1,366 @@
+{
+ "id": "one-question-per-candidate",
+ "title": "One question per candidate",
+ "statement": "With many candidates, ask one yes-or-no question about each and combine the answers in code.",
+ "example": "A twelve-way choice returned nothing at all.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When a judgment has many candidates, the reading engine asks one bounded question per candidate and composes the\nanswers in code; a wide choice is where it kept failing, three times over\n(`grade3-reading/engine/EVIDENCE-2026-09-22.md`). A twelve-way choice spread its probability and returned nothing at\nall (`grade3-reading/engine/src/goal/from-text.js`). Where a choice remains, it carries a none-of-these option, since\nsilence beats a line that doesn't fit (`grade3-reading/engine/src/goal/hunt.js`).",
+ "against": "that same file still picks\ncoach lines with a choice of up to twelve. A later run found counter-evidence (`g9/transformer/v02/QA.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/goal/from-text.js"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/goal/hunt.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "246",
+   "quote": "Every rule in `localization_guidelines.json` is evaluated via its own micro-prompt that returns `score: 1` (pass) or `score: 0` (fail).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "246",
+   "quote": "Section scores are the percentage of rules satisfied",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "48",
+   "quote": "4. **gpt-5.2 atomic-fact decomposes** each response (T2; matches FLAME/R16 cheap-substitute path)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "49",
+   "quote": "5. **Verify each atomic fact via R12 corpora retrieval (LoC, OpenStax, Gutenberg) + curriculum_facts.json**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "50",
+   "quote": "6. Compute: % atomic facts verified, response rate, mean facts per response",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "57",
+   "quote": "the methodology is FActScore (Min EMNLP 2023) applied to AP-CED corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "181",
+   "quote": "- [FActScore — Min et al. EMNLP 2023](https://aclanthology.org/2023.emnlp-main.741/)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0190-jev-skills-and-engine-lane.qmd",
+   "lines": "69-71",
+   "quote": "one bounded `noul` per candidate in batches, argmax in code, never a single wide `choice`. `noMatch` is a real, valid answer — a search with no good hit should return zero results, not the least-bad one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1313-1314",
+   "quote": "five choices with no no-match outcome, which were forcing the closest wrong answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "388",
+   "quote": "plausibility_passes = plausible_distractors >= required_plausible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/README.md",
+   "lines": "120",
+   "quote": "- Each check returns 0 (fail) or 1 (pass)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "108",
+   "quote": "- Factual audit can downgrade `factual_accuracy` by merging audit result via min(main, audit).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/SAQ_RALPH_PROMPT.md",
+   "lines": "17",
+   "quote": "All 12 dimensions score 1.0, but overall score is 0.4-0.6.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "21",
+   "quote": "**Example**: Both runs have C=0, N=0 (all metrics pass). Run 1: LLM outputs `overall.score = 0.97` → ACCEPTABLE. Run 2: LLM outputs `overall.score = 1.0` → SUPERIOR. Pure randomness.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "584",
+   "quote": "There are **zero overall-score-subjectivity flips** (Phase 1 eliminated those entirely).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/localization_evaluator.py",
+   "lines": "49",
+   "quote": "You are a localization quality specialist. Evaluate ONE localization rule at a time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "114",
+   "quote": "(a wide N-way choice never clears the 0.15 margin gate)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "9",
+   "quote": "- **Binary Scoring**: No partial credit - each dimension scores 0.0 (fail) or 1.0 (pass)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "73",
+   "quote": "- **Future judge runs:** build per-format rubrics for mcq_set + dbq (decompose into sub-questions / sub-rubric-items) before re-running held-out.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/analyse.js",
+   "lines": "1-2",
+   "quote": "One bounded yes/no per line, the whole text in the state for context, … at most 40 questions a call. Code ranks; only answers that pass the support gates count.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "41",
+   "quote": "The lines most relevant to the lesson question are ${top}. Prefer them, but use any line that fits the task.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "31",
+   "quote": "46 lines judged relevant to the question",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "32",
+   "quote": "13 lines judged relevant to the question",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "78",
+   "quote": "\"instructions\": \"Does line L3 in lines, read on its own, give clear evidence for the claim?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "226",
+   "quote": "\"value\": 0.89,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/815626dc60c1b455.json",
+   "lines": "475",
+   "quote": "\"value\": 0.87,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "skills/jev/SKILL.md",
+   "lines": "49",
+   "quote": "Give every choice a no-match outcome.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "skills/jev/SKILL.md",
+   "lines": "50",
+   "quote": "options might not cover the input, or the model is forced to pick the closest wrong one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "skills/jev/SKILL.md",
+   "lines": "52",
+   "quote": "none of our five procedures was being labelled with the nearest.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The direct-the-line.js and compare-paragraphs.js choices have no 'none' outcome.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Add a 'none of these' option to the DL 'delivery' and CA 'stronger' choices (pattern 0 of the Jev skill).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "103",
+   "quote": "D: \"no position on question\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/transform.test.mjs",
+   "lines": "44",
+   "quote": "word in focus takes the candidate the judge scores highest",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "31",
+   "quote": "One batched Jev decision; per question id: the answer when it passes the support gates, else null (unsure).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "90-91",
+   "quote": "the writer drafts three, code keeps the open ones, Jev keeps the first answerable from the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "55-56",
+   "quote": "The soft miss: \"They argue about how Othello married Desdemona\" came back not met where the table wants partial; the criterion asks for \"in secret\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "2-3"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/38cf6a0077428ec2.json",
+   "lines": "38",
+   "quote": "\"instructions\": \"Does line L9 in lines, read on its own, give clear evidence for the claim?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "69-70",
+   "quote": "and the vendor skill caught five choices with no no-match outcome, which were forcing the closest wrong answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judge.py",
+   "lines": "16",
+   "quote": "takes of this script, labelled in order.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "39",
+   "quote": "Noticeable audio gap or cut around 0:29.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "63",
+   "quote": "Noticeable audio gap or cut around 0:29.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "14",
+   "quote": "| 2.5-pro Gacrux | 43.5 s | 0 | exact | judged best in one pass |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "41-42",
+   "quote": "Standing lesson, hit three times now: a wide choice never clears the margin gate — ask one bounded question per candidate and compose in code.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "25-26",
+   "quote": "A model asked for an overall grade drifts generous; a model asked one concrete thing stays honest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/jev-select/SKILL.md",
+   "lines": "16-18",
+   "quote": "Never use a single wide choice. Probability spreads across similar options and clears no support gate, so you get nothing back. This failure cost a lesson binding, every taught word, and most illustrations before it was fixed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

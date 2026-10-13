@@ -1,0 +1,37 @@
+{
+ "id": "a-keyed-quote-occurs-once-in-its-passage",
+ "title": "A keyed quote occurs once in its passage",
+ "statement": "Check in code that every keyed quotation occurs exactly once in its passage, since a quotation that recurs elsewhere leaves the evidence ambiguous.",
+ "example": "A quote-integrity gate found one keyed two-word quote repeated inside a later sentence of its passage, and after repair the 55-lesson, 550-item projection passed.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A downstream quote-integrity gate on a Grade 5 course's lesson data rejected one exact-quote collision: a keyed two-word sentence also appeared inside a later sentence of the same passage. The source was repaired without changing the keyed span, the bound quote then occurred exactly once, and the 55-lesson, 550-item projection passed. A check of exactness alone would have passed it, since the quote was exact; it was not unique.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/audit/full-course-review-red-team-interim-2026-07-20.md",
+   "lines": "40",
+   "quote": "- The downstream Course JSON quote-integrity gate exposed and rejected one exact-quote collision in `G5-U7L3-I05`: `U7L3-S23` (`then stops.`) was duplicated inside `U7L3-S30`. The source was repaired without changing the keyed span; the bound quote now occurs exactly once, and the 55-lesson/550-item projection passes.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

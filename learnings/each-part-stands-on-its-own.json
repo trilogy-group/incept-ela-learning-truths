@@ -1,0 +1,283 @@
+{
+ "id": "each-part-stands-on-its-own",
+ "title": "Each part stands on its own",
+ "statement": "Make each question in a set and each part of a multi-part item answerable from the source and scorable alone, with none restating, revealing or depending on another's answer.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "integrity",
+  "scoring-guide"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "One generator spec asks for three or four questions on a shared source, with different skills and independent answers (`icloud-work/evaluator/docs/AP_GENERATOR_SPEC.md`). The pipeline's pass contract forbids parts that depend on one another in a way that blocks independent scoring (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md`), and the external judge's short-answer rules ask for parts that are independently scorable and connected (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md`). The judge flagged a pair of parts where a strong answer to the first could partly pre-answer the second (`icloud-work/evaluator/docs/reports/LATEST.md`). No part should give away or depend on another's answer, and a slip in one should cost nothing in the others.",
+ "against": "Another spec pulls the other way: '- Parts MUST be scaffolded (build on each other OR test related aspects)' (`icloud-work/evaluator/docs/GENERATOR_API_SPEC.md`, line 239). Nothing here measures what a chained part costs; the rule rests on the official guidelines and a writer rule. The same project's generator contract also requires short-answer parts to be scaffolded, building on each other or testing related aspects (`APinceptbench/docs/GENERATOR_API_SPEC.md`), so parts may connect as long as each can be scored on its own. A single item with several parts is handled differently: a well-formed multi-part item \"must allow a student who erred on an early part to still earn later points\", crediting work consistent with the student's own earlier value and keeping at least one part answerable without a prior result (`shadow/bench/src/inceptbench/prompts/question/frq_long_evaluation.txt` lines 109-112). These rules come from writer prompts and were not tested one by one, and the rising-difficulty item calls itself a typical pattern, not a requirement. The 33% is evidence for that course's profile, not a universal format rule, as the same skill says when choosing which format to probe first (`ti-courseplans-audit/skills/course-red-team/SKILL.md`, line 135).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/AP_GENERATOR_SPEC.md",
+   "lines": "44",
+   "quote": "**Rules**: 3-4 questions, different skills, independent answers",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md",
+   "lines": "127",
+   "quote": "- parts that depend on one another in a way that blocks independent scoring,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "72",
+   "quote": "- Parts should be clear, usually labeled, independently scorable, and connected.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "130",
+   "quote": "| Parts (a) and (b) have some potential overlap — a strong answer to (a) could partially pre-answer (b... | 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf",
+   "lines": "pdftotext -layout output, line 12633",
+   "quote": "Each point is earned independently.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "771",
+   "quote": "⛔ Parts must be independently scorable — no chaining.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/AP_GENERATOR_SPEC.md",
+   "lines": "44",
+   "quote": "**Rules**: 3-4 questions, different skills, independent answers",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "229",
+   "quote": "- Are parts logically connected but independently scorable?",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/GENERATOR_API_SPEC.md",
+   "lines": "239",
+   "quote": "- Parts MUST be scaffolded (build on each other OR test related aspects)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "5",
+   "quote": "Each question must be answerable **from the shared stimulus alone**, independently of the other questions' answers (never \"using your answer to the previous question\").",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "55-56",
+   "quote": "- In a stimulus-based set, every item must be answerable **from the shared stimulus alone**, independently of any other item's answer;",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/ap-evaluation.md",
+   "lines": "94",
+   "quote": "A shared data table / graph / particulate diagram / reaction scheme with a few questions, each independently answerable from the stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_saq.md",
+   "lines": "71",
+   "quote": "2. **Chained dependencies.** Part b is impossible to answer without first answering part a correctly. Parts should be independent within a shared context.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_leq.md",
+   "lines": "76",
+   "quote": "4. **Multi-task prompt.** \"Discuss the causes AND consequences AND legacies of X\" — that's three essays. One task per LEQ.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_saq.md",
+   "lines": "83",
+   "quote": "- [ ] Verb difficulty escalates a → b → c (typical pattern)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "67",
+   "quote": "6 of 6 sampled two-part evidence items were blind-solvable, with Part B restating Part A — the same root cause measured at 33% gameable in G3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "69-70",
+   "quote": "a same-family-IB-passed bank that is **36% leaky** (RI.5.9 MCQ stem-giveaway + … RL.5.1 hot-text stem-giveaway; the EBSR pair self-confirmed)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "83",
+   "quote": "include prior-knowledge answerability, EBSR Part-B-restates-Part-A, and keyword-match answerability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "158-159",
+   "quote": "For MSQ, all defensible answers must be keyed. For EBSR, Part B needs one uniquely strongest evidence choice and must not reveal Part A.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "74-75",
+   "quote": "**Do not lean on Part B to rescue a … GK-solvable Part A** — strengthen Part A independently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "78",
+   "quote": "6 of 6 sampled two-part evidence items were blind-solvable, with Part B restating Part A — the same root cause measured at 33% gameable in G3",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "134-135",
+   "quote": "In the recorded G3 case, EBSR was gameable 33% of the time because Part B restated Part A",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "46",
+   "quote": "Part B restates Part A — G3's measured root cause, verbatim present",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-content-integrity/SKILL.md",
+   "lines": "158-159",
+   "quote": "For EBSR, Part B needs one uniquely strongest evidence choice and must not reveal Part A.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "135",
+   "quote": "that is evidence for that profile, not a universal format rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "156-157",
+   "quote": "6 of 6 sampled two-part evidence items were blind-solvable, with Part B restating Part A",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "157-158",
+   "quote": "the same root cause measured at 33% gameable in G3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "16",
+   "quote": "blind probe: compare Part B correct option text to Part A answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "94",
+   "quote": "(ebsr, 3/3 exact, medium conf + persistent)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "94",
+   "quote": "Part-A stem keyword \"curious\" appears verbatim in the correct Part-B evidence quote, and that quote names the action (\"pry open the lock\") matching Part-A option d. Passage-independent — derivable from the option set alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "12",
+   "quote": "**Status: INVALID FOR LIFT OR BAR CALIBRATION.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "5",
+   "quote": "use the named leak vectors as examples and the raw rows as harness evidence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-kit/PLAN.md",
+   "lines": "55",
+   "quote": "| \"sophisticated-option\" EBSR | any | ebsr | leaks (Part B restates A) | refuted this run | **WON'T WORK** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md",
+   "lines": "33",
+   "quote": "**Part B restates Part A** — G3's measured root cause, verbatim present",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "55-56",
+   "quote": "when the correct evidence sentence contains the Part A answer, a blind solver reads it off the option list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "108-110",
+   "quote": "checked every cloze's distractor bank against sibling MCQ answer options on the same page (none collide); checked stems for answering-each-other patterns on shared pages — none found.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

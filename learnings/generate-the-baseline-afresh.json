@@ -1,0 +1,57 @@
+{
+ "id": "generate-the-baseline-afresh",
+ "title": "Generate the baseline afresh",
+ "statement": "When comparing continuous scores, test a new way of generating against a freshly generated baseline, not stored outputs re-scored, because generation varies between runs even at temperature zero.",
+ "example": "The same generator on the same 150 prompts averaged 0.9475 on stored outputs and 0.9307 on fresh ones.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "At temperature 0, the same generator on the same 150 prompts, each set scored three times, averaged 0.9475 on stored outputs and 0.9307 on fresh ones, 1.68 points apart, with short answers moving most (`feedback_baseline_must_be_fresh_gen.md`, lines 3, 12, 24). Compared with a fresh baseline instead of the stored one, two of four configurations that had been reported as regressions were gains (lines 34-39).",
+ "against": "For the pass rate alone a stored baseline is fine, since the pass mark absorbs small shifts (`feedback_baseline_must_be_fresh_gen.md`, line 47). The gap rests on one fresh and one stored generation, each scored three times; how much fresh runs differ from one another is not shown.",
+ "evidence": [
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_baseline_must_be_fresh_gen.md",
+   "lines": "3",
+   "quote": "v29 fresh-gen 3-run continuous = 0.9307; v29 frozen-gen 3-run continuous = 0.9475. Δ 1.68 cont-pp from inference variance (temp=0 not deterministic across gen runs).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_baseline_must_be_fresh_gen.md",
+   "lines": "17",
+   "quote": "**For any continuous-metric model A vs model B comparison, both A and B must use FRESH generations. Don't compare test configs (fresh gens) against frozen baseline (re-scored).**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_baseline_must_be_fresh_gen.md",
+   "lines": "37",
+   "quote": "| field-routed RAG | -0.69 cont-pp | **+0.99 cont-pp** | ✓ REAL LIFT |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_baseline_must_be_fresh_gen.md",
+   "lines": "39",
+   "quote": "| v36b | -0.88 cont-pp | **+0.80 cont-pp** | ✓ REAL LIFT |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

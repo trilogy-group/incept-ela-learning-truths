@@ -1,0 +1,114 @@
+{
+ "id": "check-lines-written-at-answer-time",
+ "title": "Check lines written at answer time",
+ "statement": "Check every line a model writes at answer time against house rules and the authored text beside it, repairing rather than discarding what fails, such as praise repeating the answer.",
+ "example": "Half the words in a conversation, the replies composed at answer time, had escaped the copy rules the other half were checked against.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "feedback",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a younger-grade renderer every authored word passed the build's copy checks, but the praise and hints the scorer composed at answer time never did, so half the words in a conversation were exempt, and a model reaches for an em-dash by default. House style now runs on every reply before it is sent, rewriting rather than rejecting, because no validator can see a line that does not exist until the child answers and a child waiting on an answer is not served by a reply being thrown away and asked for again. The scorer's praise is printed above the authored full answer, so the scorer is told the answer will be printed beneath it and to name only what the child did, and a runtime check then scores how much of the praise's content the answer already contains and cuts the recital back to the acknowledgement, with thresholds pinned by a test against the real reply that prompted it. The rules call that seam between a written line and a generated one the only place nobody is reading.",
+ "against": "The same measure is deliberately not applied to authored hint ladders, where a closer hint shares many of the same words with the hint above it by design (`grade3-reading/course-renderer/docs/rules/questions-and-assessment.md`, lines 462-467).",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "42-43",
+   "quote": "R-COPY-1 and R-COPY-2 apply to every word a child reads, including the praise and the hint composed at answer time by the scorer.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "45-46",
+   "quote": "because no validator can see a line that does not exist until the child answers.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "48-51",
+   "quote": "The coach's replies never touched it, so half the words in a conversation were exempt from the rules the other half were checked against, and a model reaches for an em-dash by default.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "54-56",
+   "quote": "Rewritten rather than rejected. A reply with a dash in it is a good reply with a dash in it, and a child waiting on an answer is not served by it being thrown away and re-asked for.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "452-453",
+   "quote": "The scorer is told that the full answer will be printed beneath it and to name only what the child did, which makes this rare.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "455-457",
+   "quote": "`trimEcho` in `src/lib/scoring/echo.ts` scores the share of the praise's content words that the answer already contains, and cuts the recital back to the acknowledgement above the threshold.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "494-497",
+   "quote": "The praise-against-answer overlap is enforced at runtime instead, by `trimEcho`, since neither line exists until a child answers; its thresholds are pinned by `scripts/echo.test.mjs` against the real reply that prompted the rule.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "467-468",
+   "quote": "The repetition worth catching is at the seam between a written line and a generated one, which is the only place nobody is reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "442-445",
+   "quote": "One bubble, but not one paragraph, and the two halves may not say the same thing. They have different authors who cannot see each other: the praise is composed by the scorer at answer time, the answer beside it was authored with the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "452-455",
+   "quote": "The scorer is told that the full answer will be printed beneath it and to name only what the child did, which makes this rare. It is then MEASURED, because this is the last thing a child reads before the gate opens and a prompt is a request",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "467-468",
+   "quote": "The repetition worth catching is at the seam between a written line and a generated one, which is the only place nobody is reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "494-497",
+   "quote": "The praise-against-answer overlap is enforced at runtime instead, by `trimEcho`, since neither line exists until a child answers; its thresholds are pinned by `scripts/echo.test.mjs` against the real reply that prompted the rule.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,70 @@
+{
+ "id": "misconception-phrases-fail-even-when-negated",
+ "title": "Misconception phrases fail even when negated",
+ "statement": "In science-bearing text, fail any listed misconception phrase even inside a negation, a rejected alternative or a correction, and rewrite it before publication.",
+ "example": "A Grade 5 course added the gate after finding four science-heavy units with no passage-level misconception gate.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "settle",
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A Grade 5 reading course's initial review found four science-heavy units with no passage-level misconception gate. The gate added runs pinned regular expressions over each scoped passage and every string in the matching lesson object, and any match fails it even inside a negation, a rejected alternative or a correction; the process calls this deliberately stricter than a contextual judgment, and its policy requires the phrase to be rewritten before the review is published. After the repair, 27 of 27 records bound 370 of 370 governed objects with zero findings at either tier.",
+ "against": "Records already there point the other way: a check triggered by a word list should filter out negated uses, a common wrong belief should be drawn out and refuted, and wrong options may be built from named misconceptions; this gate fails a listed phrase in each of those places.",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Four science-heavy units had no passage-level misconception gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "86",
+   "quote": "every string in the corresponding canonical lesson object",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "90",
+   "quote": "Any match fails the bounded content-review gate even when it appears inside a negation, rejected",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "91",
+   "quote": "alternative, or correction. This is deliberately stricter than a contextual judgment: the current",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "92",
+   "quote": "hard-string policy requires the phrase to be rewritten before review publication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "27/27 records bind 370/370 governed objects, with zero Tier-1 and zero Tier-2 deterministic findings.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

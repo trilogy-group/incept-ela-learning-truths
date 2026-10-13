@@ -1,0 +1,1074 @@
+{
+ "id": "certify-with-an-independent-judge",
+ "title": "Certify with an independent judge",
+ "statement": "Nothing that wrote, picked or was optimised against an item certifies it: confirm with an uninvolved check from another model family on fresh cases, and read unshared gains as gaming.",
+ "example": "Drafts kept for their best earlier scores were predicted to pass 138 of 150, but fresh scoring passed 126.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one AP generator, a 95.2% benchmark came from the writer's model family grading its own questions; the project filed it as design evidence, its rule is never to trust a self-grade as certification, and its notes say a self-grade of 90% against an outside 60% makes the 90% meaningless (`k_12_social_studies_distilled.md`, lines 10, 60 and 72). In another run the grader's own score chose the best of several drafts: on the same 297 prompts it passed 92.3% of the winners and a held-out judge 49.2%, a 43.1-point gap (`analytics.md`, lines 41, 46, 184 and 185). A verification spec, citing a published self-refine study, warned that small models tend to answer \"yes, this is correct\" to checks on their own flawed drafts (`02_R42_CoVe_DBQ_spec.md`, line 174). The independent check takes no part in writing, picking or optimising the item; verify that independence from the build record, and read a gain the independent check doesn't share as gaming. In a third case, drafts kept for their best earlier scores were predicted to pass 138 of 150 and passed 126 when scored fresh (`aptraining-local/parallel-ideas-lab/experiments/prompt_perfection/NOTES.md`, lines 310 and 314).",
+ "against": "Self-verification did help a large model in a published study, by 15.5 FACTSCORE points on biographies with a 65B model (`02_R42_CoVe_DBQ_spec.md`, line 22). Much of the 43.1-point gap came from two item types the held-out judge failed outright, 0 of 30 where the grader passed 70-100%, which the report says that judge could not yet score; on the other three types it agreed with the grader 70-93% of the time, and the report also notes the grader's lean towards passing (`analytics.md`, lines 46, 64 and 65). an earlier call in the reading project held that re-checking items both graders had passed was redundant; an independent check is only as good as its calibration, since the same audited items had blind accuracy 1.0 under one blind solver and about 0.0 under another; and the AP notes take the top-scored of several drafts to correlate with being genuinely better even when the grader is noisy. A different family may share the same bias: in a study summarised in the reading project, different models converged on a difficulty ranking that diverged from human rankings. the evaluation notes hold that keeping the highest-scored of five also averages out the judge's noise and correlates with being genuinely better even if the noise is high (`icloud-work/ML learnings/evaluation_methodology.md`). The target judge must still be measured as well: \"if you're not running every result through the same grader our task is scored on, you'll think you're improving while not improving the metric.\" (icloud-work/aptraining/workspace/EXTERNAL_AGENT_BRIEF.md, 113) The 97.37% and the 20% differ in two ways at once, fresh objectives and no selection, so that pair doesn't isolate the effect of selection. The larger gap is confounded: on one day self-grading passed 56% where an independent model passed 9.1% (`icloud-work/ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md`, lines 202-203), but the project put part of the 9.1% down to a different question batch and JSON parsing issues (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_VS_GEMINI_EVAL.md`, lines 80-82). On the same 14 items the self-grader was only slightly more lenient, 4 of 14 against 3 of 14 (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md`, line 17), and a manual review of 30 items on 17 February 2026 concluded: \"The problem is NOT \"Gemini grading Gemini too leniently\" - it's the **EVALUATOR being TOO STRICT**.\" (`icloud-work/ap-social-studies-generator/docs/archive/CLAUDE_MANUAL_REVIEW.md`, line 10). The independent judge was never itself scored against person-labelled items, and the held-out-judge check is a plan whose result is not in this evidence. The 11-item case doesn't isolate family: the same-family benchmark grades instructional quality and never ran a blind solve, so family and check type are confounded, and an audit comparing two solvers concluded that blind-solve calibration matters more than judge identity alone. a 28% figure from the same work was traced to four bugs in the evaluation harness (`grade3-reading/knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd`, line 36), so the binding grader's number needs the same scrutiny. A different family is not enough on its own: a weak different-family solver over-credited items that a stronger one caught (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 67-69), and every label in the tuning hand-off came from one solver family (the same file, lines 188-189). The same-family judge also had no test of text-dependence at all (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd`, lines 111-112), so its misses cannot be put down to model family alone. The plan was a draft, and every blind-solve label came from one solver family, with no two-family agreement measured. One note puts the inflation at 43 points ('Goodhart contamination (IB-aggregator → judge says 49% vs IB 92%, 43pp gap).', `icloud-work/aptraining/.agent/memory/MEMORY.md`, line 185), but in the run behind those numbers (49.16% against 92.26% on 297 items) the held-out judge's single generic rubric scored 0 of 30 on every multi-part item type, and that run's note calls it 'Format mismatch, not Goodhart.' (`project_stacked_decode_RAG_judge_result.md`, lines 21-22, 46, 53); the size of the inflation was not measured. The second rubric in the 20-point comparison was later retired as the canonical judge (`icloud-work/aptraining/.agent/memory/MEMORY.md`, line 73). A second judge can fail for its own reasons: one with a generic single-prompt rubric scored 0/30 on every question-set and document-based cell, which the project read as a rubric too generic for multi-part outputs rather than bad items, so it kept that judge as a check on simple formats only, until it has rubrics fit to each format. Unmeasured: such rejections 'are rejected on reasoning, not on measurement' (shadow-bench/docs/brainlift.md line 92), and when the probe was added only its fail-open path had been verified live (shadow-bench, git commit e435432, lines 22-24). A stricter version removed good items: insisting on clean passes cut useful candidates that had some past failures but strong fresh behaviour. A model judge choosing among six drafts did help another item type, from 22/30 to 28/30, but that compared it with a stored bank rather than a single draft, and 22 against 23 of 25 is a one-item gap. The evaluator's own regression set was pruned by the judge's results instead, removing every item that mismatched its expected category or errored across 10 hardening runs to steady a 0.99 gate, and a later change to the same regression suite called pruning whack-a-mole.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "10",
+   "quote": "- Critical caveat: that 95.2% benchmark used Gemini 2.0 Flash self-evaluation of Gemini-generated questions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "60",
+   "quote": "The repo says this directly: if Gemini gives 90% and Claude gives 60%, the 90% is meaningless.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "174",
+   "quote": "Madaan et al. (A5, NeurIPS 2023) report self-refine adds <1pp at <13B and can hurt below 7B; the mechanism is that small models confabulate \"yes, this is correct\" answers to verification questions about flawed drafts, then fail to identify what to revise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "72",
+   "quote": "- Never trust self-eval as certification. Any score that matters must be judged by an external evaluator or official IB.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "41",
+   "quote": "| v29 + RAG + BoN K=8 (v2.4.0) | 92.3% | 49.2% | n/a | ⚠ 43.1pp Goodhart gap |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "46",
+   "quote": "On the same 297 prompts, the IB grader (gpt-5.2 default-PASS bias) gives **92.3%**, but the held-out Gemini-3.1-pro judge gives **49.2%**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "184",
+   "quote": "| v29+BoN K=4 @ T=0.7 | $0 | **~$30 (IB×1188)** | **~14 sec** | **~4/min** | ⚠ aggregator=IB | +21+ (IB-only) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "185",
+   "quote": "| v29+BoN K=8 @ T=0.7 | $0 | **~$60 (IB×2376)** | **~33 sec** | **~1.8/min** | ⚠⚠ judge says 49% vs IB 92% (43pp gap) | +5+ (IB-only) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "34",
+   "quote": "No generated lesson reaches a child on its author's judgment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "34",
+   "quote": "~78% of raw generated reading items were answerable without the passage, correct answers sat at position A 79% of the time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "231",
+   "quote": "Use a different family for the gate than for the author. Never same-family certify.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "26",
+   "quote": "The questions were good because the generator was not trusted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0085-g5-red-team-findings-2026-07-06.qmd",
+   "lines": "30",
+   "quote": "RT-8 self-graded \"PASS — 0 blocking\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd",
+   "lines": "191",
+   "quote": "Current strict local candidates are 3,077, not 8,937.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd",
+   "lines": "195",
+   "quote": "Independent passage-blind review is still required; IB+Opus passing is not enough.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "47",
+   "quote": "InceptBench, which graded answer-leaking items 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "146",
+   "quote": "continuous rewards get gamed by output style (longer, more confident responses get higher scores even with wrong facts)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_model_size_vs_data_quality.md",
+   "lines": "123",
+   "quote": "reward model errors accumulate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_design_and_theory.md",
+   "lines": "171",
+   "quote": "Use a held-out test set that's NOT used during GRPO training.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "77",
+   "quote": "prior call was that re-checking IB+Opus-passed items is redundant",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "44",
+   "quote": "| Blind accuracy on the audited items | `1.0` | about `0.0` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "137",
+   "quote": "which correlates with being genuinely better even if the noise is high",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "64-65",
+   "quote": "an InceptBench judge that runs on the same Gemini as the generator passed answer-leaking items 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "69",
+   "quote": "a same-family-IB-passed bank that is 36% leaky",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "115",
+   "quote": "IB score: 1.0. Blind-solve rate: 100%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "116",
+   "quote": "confirmed the model had converged to structurally-valid leaked questions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "65",
+   "quote": "Do not use the authoring model as its own certifier.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "28",
+   "quote": "The check and the fix shared one author and one mental model, so they shared a blind spot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "398",
+   "quote": "different LLMs converge on a shared difficulty ranking that diverges from human rankings",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "**Why 40% might be the new ceiling:** The training data (raft_combined) itself has fabricated attributions. Some of the 18,768 MCQ_SET records have slightly wrong dates or sources — they just passed InceptBench at the time, which has a 50% flip rate. Training on data that sometimes has wrong attributions = training on signal + noise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "137",
+   "quote": "3. **Best-of-N exploits this.** If we generate 5 candidates and pick the best, we're not just picking the highest-quality generation — we're also averaging out evaluator noise. An item that would flip 50% gets scored 5 times; we keep the one that scored highest, which correlates with being genuinely better even if the noise is high.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "131",
+   "quote": "The Goodhart-disagreement signal is academically rooted in **Gao 2023 ICML** (Scaling Laws for RM Overoptimization): proxy reward and gold reward diverge as optimization proceeds.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "188",
+   "quote": "- [Gao et al. ICML 2023 — Scaling Laws for RM Overoptimization](https://arxiv.org/abs/2210.10760)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1245Z_R30_factuality_benchmark_protocol_review.md",
+   "lines": "129",
+   "quote": "**Cross-grader correlation** is the cheapest sanity check: if our IB grader's scores stop tracking the held-out judge's scores, we're optimizing two different things",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "261",
+   "quote": "The 43.1pp Goodhart gap (IB 92.3% vs judge 49.2%) means **K=8 is picking winners by the metric we're scoring against**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/EXTERNAL_AGENT_BRIEF.md",
+   "lines": "113",
+   "quote": "if you're not running every result through the same grader our task is scored on, you'll think you're improving while not improving the metric.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "180",
+   "quote": "| Goodhart risk | IB says 92.3%, held-out judge says 49.2% — **43.1pp gap** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/DBQ_single_shot_recipe.md",
+   "lines": "25-26",
+   "quote": "**Single-shot fresh single Unit-1 the rate collapses to 20%** — the iterate+best-of-K pipeline was doing most of the lifting.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-06T0825Z_synapse_enrolled_learnings_published.md",
+   "lines": "24",
+   "quote": "Best-of-N with same judge as selector and grader inflates scores via Goodhart",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/DECISIONS.md",
+   "lines": "6",
+   "quote": "- Gemini was grading Gemini (self-grading)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/DECISIONS.md",
+   "lines": "7",
+   "quote": "- Pass rates were inflated by 10-17%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "164",
+   "quote": "Questions Q36, Q44, and Q46 have explanations that contradict their answer keys. Gemini passed Q36 and Q44 despite this critical flaw.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "194",
+   "quote": "Gemini scores content_accuracy at 1.0 for several questions where the explanation contradicts the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "10",
+   "quote": "**The 95.2% benchmark used Gemini self-evaluation, NOT Claude external evaluation.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_best_of_n_decode.md",
+   "lines": "24",
+   "quote": "- If held-out-judge lift << IB-only lift → we're reward-hacking; back off K",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/TRAINING_DECISIONS.md",
+   "lines": "133",
+   "quote": "**Research:** RBoN (NAACL 2025): Vanilla BoN degrades beyond N~16.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/PLAN-finetune-qwen.md",
+   "lines": "553",
+   "quote": "- Score threshold actually correlates with quality (no false positives)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "106-108",
+   "quote": "The binding gate must stay **cross-family** (solver family != generator family); IB self-certification is not anti-leak evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "407-408",
+   "quote": "The audit-only LLM verifier cannot be from the renderer's family.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd",
+   "lines": "21",
+   "quote": "4/11 CONFIRMED leaks. 8/11 answerable-blind. Only 3/11 cleanly passage-dependent. → 36% leaky.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "69",
+   "quote": "Blind-solve calibration matters more than judge identity alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/CHANGELOG.md",
+   "lines": "93",
+   "quote": "**Goodhart risk surfaced:** training rows aligned to grader rubric → higher pass rate, but at risk of optimizing the rubric not actual AP skill.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/CHANGELOG.md",
+   "lines": "93",
+   "quote": "held-out 30-item independent judge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24",
+   "quote": "That **0.29→0.95** jump existed only under a **discredited Gemini judge**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24-25",
+   "quote": "On the **binding grader** it **collapsed to ~28%** (DBQ 0%, MCQ_SET 0%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "26-27",
+   "quote": "it was **REMOVING the stimulus** so the grader's leak-probe is skipped. That's **grader-gaming**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "34",
+   "quote": "The headline **\"99%\" was cache + best-of-N**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "36",
+   "quote": "The **\"28%\" was four eval-harness bugs**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md",
+   "lines": "27-29",
+   "quote": "IB grades *instructional* quality (it scored answer-leaking items 1.0) **and IB itself grades via the same model family as the generator**, so a same-family judge cannot catch leakage. The different-family check is mandatory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "26",
+   "quote": "So **generator and judge are the same model family** — a built-in proxy-gaming hazard (the spec's §8 / §3 anti-leak warning, and exactly aptraining's failure mode).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "64-65",
+   "quote": "an InceptBench judge that runs on the same Gemini as the generator passed answer-leaking items 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0090-fable5-plan-traces-2026-07-09.qmd",
+   "lines": "131",
+   "quote": "a lane cannot certify its own items;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "215",
+   "quote": "The gate was not a self-check. The authoring model family was GPT; the gate solver was Gemini. The blind gate withheld the passage and shuffled affordances so memorized position, key order, and visible labels could not carry the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "366-368",
+   "quote": "After the agent returns, spot-verify checklist items 2, 7, 11, and 17 independently before accepting — those four catch the highest-severity regressions (passage drift, step identity, misconception routing, honesty claims).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "263-264",
+   "quote": "Do not certify your own authored content. The author may fix findings; an independent reviewer must close them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "259-260",
+   "quote": "Use `course-patch/1` plus a different reviewer identity and model family for changed semantic cases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/README.md",
+   "lines": "154-157",
+   "quote": "`verify` replays the patch from the base, carries forward only digest-equivalent passing cases, requires fresh evidence for every changed semantic case, and forbids the repairer identity or model family from verifying its own work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "271-272",
+   "quote": "**The INDEPENDENT-audit rate is the real metric**, not the in-loop self-grade (it is biased generous — it green-lit the item it later rates).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md",
+   "lines": "28-29",
+   "quote": "(it scored answer-leaking items 1.0) **and IB itself grades via the same model family as the generator**, so a same-family judge cannot catch leakage. The different-family check is mandatory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "214-215",
+   "quote": "**The in-loop self-grade is NOT the headline metric.** It is a filter. The real metric is an INDEPENDENT audit by a fresh grader (or human) that did not participate in the loop,",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "21",
+   "quote": "G5: deploying lane certified its own items until the protocol banned it",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "21",
+   "quote": "ask who ran the gate vs who authored the items",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "22",
+   "quote": "G5 R4: 191 choice items certified on a same-family lane while docs said \"every item blind-probed under a different model family\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "22",
+   "quote": "trace each lane's solver family; match docs to the build record",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-content-integrity/SKILL.md",
+   "lines": "263",
+   "quote": "Do not certify your own authored content.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/evaluator-contracts/SEMANTIC-JUDGE.qmd",
+   "lines": "8-9",
+   "quote": "Use a model family independent of generation, pin its identity, require calibration anchors and human qualification, and retain quoted/source-pinned evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D1-gradual-release-explicit-instruction.md",
+   "lines": "45",
+   "quote": "scored on a model family ≠ the generator, with evidence quotes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "186-188",
+   "quote": "reward inversion/Goodhart (a reworded canonical leak scored higher than a genuine requires-reading item under the shipped code)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "182-184",
+   "quote": "Tier B (out-of-loop scheduled cross-family blind-solve on a held-out 50-item probe as the real ground truth and checkpoint-selection signal, not the per-rollout reward).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "190-191",
+   "quote": "the cross-family blind-solve probe is the only binding signal; every heuristic number in this doc is calibration, not proof",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "188-189",
+   "quote": "single-family blind-solve confound (every label comes from one solver family; no two-family agreement had been measured",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "166",
+   "quote": "(Stage 3, DRAFT, 06-25)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "21",
+   "quote": "G5: deploying lane certified its own items until the protocol banned it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "22",
+   "quote": "191 choice items certified on a same-family lane while docs said \"every item blind-probed under a different model family\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "the solver family must differ from the generator's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "263",
+   "quote": "Do not certify your own authored content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "95-97",
+   "quote": "the lane that rendered the fix also re-running this review and closing its own findings; a fresh round by the independent seat is required",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "73-74",
+   "quote": "gates run by a lane that did not train the model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "22",
+   "quote": "trace each lane's solver family; match docs to the build record",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "67",
+   "quote": "with the G5 hardened protocol (cross-family solver, own-id probes, multi-shuffle for ordering items, no self-certification)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "135",
+   "quote": "But the \"100% K=8 majority\" headline used IB-judge for both selection and grading — that's the Goodhart trap.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "75",
+   "quote": "IB rated v29 +20pp over v25b — Goodhart-shaped on IB.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/ARCHITECTURE.md",
+   "lines": "151",
+   "quote": "5. **R5 — Verifier independence.** Verifier profile has no write to training pipeline. Period.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k4_huge_lift.md",
+   "lines": "46",
+   "quote": "Held-out judge (Claude Opus 4.7) re-graded 24 BoN-lifted rows (single-shot failures that BoN passed).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k4_huge_lift.md",
+   "lines": "46",
+   "quote": "**21/24 (88%) agreed.** Mean IB BoN-pick = 0.949, mean Claude judge = 0.889.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_bon_k4_huge_lift.md",
+   "lines": "44",
+   "quote": "Grader = training reward (IB). Worst-case Goodhart configuration.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_best_of_n_decode.md",
+   "lines": "24",
+   "quote": "- If held-out-judge lift << IB-only lift → we're reward-hacking; back off K",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_best_of_n_decode.md",
+   "lines": "19",
+   "quote": "**Goodhart risk in our setup:** grader (IB) = training reward. Worst-case configuration.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_best_of_n_decode.md",
+   "lines": "17",
+   "quote": "**KL anchors (Gao 2023 ICML, reward-model-overopt):** K=4→0.39 nats, K=8→1.20, K=16→1.94, K=32→2.66.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "46",
+   "quote": "Gemini scored 0/30 on EVERY mcq_set and dbq cell.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "48",
+   "quote": "This is NOT actual quality failure across all 240 mcq_set + dbq outputs — that's implausibly bad. It's the **judge rubric being too generic** for complex multi-part outputs:",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "69",
+   "quote": "- **Don't use Gemini judge as a HARD filter on complex formats.** The rubric needs format-specific decomposition (per-question for mcq_set; per-rubric-item for DBQ).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "70",
+   "quote": "- **For simple formats (mcq, saq, leq):** Gemini judge is a useful Goodhart check.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e435432",
+   "lines": "15-16",
+   "quote": "- llm/config.py: blind_solver task (OpenAI gpt-5.4-mini, temp 0) — deliberately a different family from the Gemini evaluator to avoid shared blind spots.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e435432",
+   "lines": "6-7",
+   "quote": "strip the passage/stimulus, have a cross-family OpenAI solver attempt the bare item",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "88",
+   "quote": "**Generator self-critique.** A judge built on the same base model as the generator is least likely to catch the errors that generator is most likely to make.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "320",
+   "quote": "- Single-score banking overfits IB noise. Several candidates that previously scored `1.0` failed when rescored unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "310",
+   "quote": "- Prior-score prediction: `138/150`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "314",
+   "quote": "- Actual: `126/150 = 84.00%`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "553",
+   "quote": "- Prior-score assembly without fresh validation is unreliable. `mixed_step_union_v2` expected `145/150` but fresh-aborted at `47/61`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "578",
+   "quote": "- Need a stability gate: a MCQ_SET candidate should pass at least two independent IB scores or pass after serial retry before it is eligible for assembly.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "563",
+   "quote": "`mixed_step_union_v3` fresh IB was aborted at `57/74 = 77.03%`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "604",
+   "quote": "Built `mixed_stability_v1` with content-signature stability tracking:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "613",
+   "quote": "- Aborted at `89/105 = 84.76%` because reaching `135/150` would require `46/45`, mathematically impossible after the last completed checkpoint.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "702",
+   "quote": "- Aborted at `113/132 = 85.61%`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/BEAD_EVIDENCE_INDEX.md",
+   "lines": "57",
+   "quote": "- Finding: **K=6 + Gemini-judge gives 22/25 = 88%, WORSE than K=1 (23/25)**. MCQ_SET dropped 4/5 → 2/5. Gemini-judge is not a good MCQ_SET discriminator. **Production: K=1 only.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_best_of_n_protocol.md",
+   "lines": "96",
+   "quote": "Do not trust Gemini/LLM judge until calibrated against repeated IB outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_best_of_n_protocol.md",
+   "lines": "192",
+   "quote": "If judge-selected winners are not reliably better than deterministic filters, do not use Gemini judge. Use the deterministic filter plus stable candidate bank instead.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "767",
+   "quote": "- Clean-pass purity hurt selection. It removed useful candidates with some historical fail evidence but strong fresh behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "945",
+   "quote": "- MCQ materially improved from bank v2 `22/30` to best-worlds `28/30`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "947",
+   "quote": "- This confirms K=6 + Gemini absolute judge is valuable for MCQ.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "4acd102",
+   "lines": "3",
+   "quote": "Seed-prune the two known CI mismatches and then remove any item that mismatched expected category or errored across 10 hardening runs (parallel=30) to reduce golden-regression flakiness at the 0.99 gate.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "7-8",
+   "quote": "so single-attempt scoring of borderline LLM judgments is statistically unsatisfiable and pruning is whack-a-mole.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/WINS_20260514.md",
+   "lines": "49",
+   "quote": "- Naive best-of-scored-candidates composite predicted `138/150`, but fresh IB scored `126/150`. Conclusion: single-score banking overfits IB noise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "255",
+   "quote": "Recovery cascade: 1. keep first patch K=1 only; 2. add BoN only in separate bead; 3. require held-out judge before selection.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "254",
+   "quote": "Detection: wrapper adds multi-candidate selection without held-out judge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "40",
+   "quote": "Naive best-of-scored-candidates banking overfit: predicted 138/150, but fresh IB scored 126/150.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-22T1845Z_ULTIMATE_DELIVERY_CHALLENGE.md",
+   "lines": "14",
+   "quote": "It is curation after the fact. It does not generalize to fresh prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "38",
+   "quote": "Run all 12 on the 48 search inputs, then the top 2 on the 48 separate selection inputs (**576 + 96 candidate responses**, before baselines).",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "38",
+   "quote": "No unvalidated LLM judge chooses an edit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "170-172",
+   "quote": "The writer's self-red-team *passed* this atom, rationalizing the negation cards as acceptable \"production signpost text\" copied verbatim from the catalog",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "173-174",
+   "quote": "The **independent** red-team rejected that rationalization and blocked the atom.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "50",
+   "quote": "Rotate reviewers so a repair author does not certify their own work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/final-u9-review.json",
+   "lines": "89",
+   "quote": "This reviewer produced the media earlier. This is a separate content/consistency pass, not an independent external reviewer certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/ATTACKS.md",
+   "lines": "39",
+   "quote": "our own re-probe decertified 7 of 10 self-certified items. Always re-probe a fresh sample.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/MISSION.md",
+   "lines": "15",
+   "quote": "Confirmatory checks (\"did my fix land?\") always pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/workspace-docs.md",
+   "lines": "86",
+   "quote": "but 191 items used 'two-vote agreement (selected-response)' with cross_family: false — and all 191 are author=gemini-3.5-flash / solver=gemini-2.5-flash, i.e. SAME model family.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "196-197",
+   "quote": "Auditors report and verify. They do not quietly patch producer artifacts and then certify their own work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_1_DELIVERY_REQUIREMENTS.md",
+   "lines": "26",
+   "quote": "The gate must run six checks the generator structurally cannot self-do (LLM_GENERATION_BOUNDARY.md): (1) independent cross-family passage-blind solvability;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-final-selection/_internal/GATE_CONSISTENCY_FIX.md",
+   "lines": "21-22",
+   "quote": "GPT-5.5 and gpt-4.1 are the same GPT lineage, so gating GPT-5.5 items with gpt-4.1 = same-family = under-detects.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v06/SHOT-AUDIT-v6.md",
+   "lines": "19",
+   "quote": "Caveat: the person who built the plates judged them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/approval-package/AUDITS_AND_FIXES.md",
+   "lines": "117",
+   "quote": "under it, 7 of the 10 failed and were decertified and removed from the serving surface",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/README.md",
+   "lines": "70-71",
+   "quote": "Canonical `not-run` solver fields record the authoring lane's refusal to certify itself.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "49",
+   "quote": "A label generated by the same builder is not provenance evidence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Madaan et al. 2023, Self-Refine: Iterative Refinement with Self-Feedback, NeurIPS 2023",
+   "url": "https://doi.org/10.48550/arXiv.2303.17651"
+  },
+  {
+   "ref": "Dhuliawala et al. 2024, Chain-of-Verification Reduces Hallucination in Large Language Models, Findings of ACL 2024",
+   "url": "https://doi.org/10.48550/arXiv.2309.11495"
+  },
+  {
+   "ref": "Train for Truth, Keep the Skills: Binary Retrieval-Augmented Reward Mitigates Hallucinations (arXiv 2510.17733, 2025)",
+   "url": "https://arxiv.org/html/2510.17733v1"
+  },
+  {
+   "ref": "Gao et al. 2023",
+   "url": "https://arxiv.org/abs/2210.10760"
+  },
+  {
+   "ref": "Jinnai et al. 2025",
+   "url": "https://doi.org/10.18653/v1/2025.naacl-long.472"
+  },
+  {
+   "ref": "Gao et al. 2023, Scaling Laws for Reward Model Overoptimization",
+   "url": "https://doi.org/10.48550/arXiv.2210.10760"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,77 @@
+{
+ "id": "recheck-a-dropped-final-word-first",
+ "title": "Recheck a dropped final word first",
+ "statement": "Speech recognisers can drop a short clip's last word, so before regenerating a clip flagged for a missing word, recheck it with review-only silence added and a stronger, calibrated recogniser.",
+ "example": "Adding one second of review-only silence recovered the dropped final words of both halves of a split verse line without changing the audio samples.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When a short verse clip was split in two for review, the recogniser dropped an audible final word from each half, although the unsplit clip had been transcribed in full. Repeating the check with one second of review-only silence added recovered the final words without altering the original audio samples. The narration reviews also found that short-clip recognition sometimes omitted final words or gave a shared s sound to the wrong word, so the gate now preserves the raw result, repeats a disputed short clip with review-only padding and uses a separately calibrated stronger listening model before deciding to regenerate.",
+ "against": "\"Padding is not evidence that missing speech has been repaired; the speech samples must be identical.\" (grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md, line 21)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "21",
+   "quote": "A short-clip ASR check can itself drop an audible final word. Our `ere-context-repair` experiment recovered the final words after adding one second of review-only silence, without altering the original PCM.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "21",
+   "quote": "For disputed short clips, preserve the raw result, repeat with review-only padding, and use a separately calibrated stronger listener before deciding to regenerate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit9/review-dispositions.json",
+   "lines": "39",
+   "quote": "Short-clip ASR sometimes omitted final words or assigned a shared s sound to the wrong word",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/ere-context-repair/review.json",
+   "lines": "10",
+   "quote": "\"transcript\": \"We will make amends ere long, else the puck a liar call.\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/ere-context-repair/measured-split-review.json",
+   "lines": "9",
+   "quote": "\"transcript\": \"we will make amends air\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/ere-context-repair/measured-split-review.json",
+   "lines": "44",
+   "quote": "\"transcript\": \"else the puck a liar\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/ere-context-repair/padded-probe.json",
+   "lines": "6",
+   "quote": "\"transcript\": \"We will make amends earlong\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

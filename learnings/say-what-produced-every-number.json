@@ -1,0 +1,524 @@
+{
+ "id": "say-what-produced-every-number",
+ "title": "Say what produced every number",
+ "statement": "Label every number and claim with what produced it, its grader, version, attempts, sample, scope and evidence class, and word the claim no more strongly than that evidence covers.",
+ "example": "One project held seven classes of evidence side by side, from schema-only runs to partial live re-scores, and mixing them caused false confidence.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An action packet in the solver lab required every generation artifact and summary to record its endpoint, model route, deployment health, number of attempts, judge model, bank use, fallback mode, runtime assets, evaluator version, sample size and proof class. The reason given: the project held schema-only, spread-sample, targeted-repair, archived, self-evaluated, older-grader and partial live evidence side by side, and mixing those proof classes 'caused false confidence in earlier work'. Its pass gate was that a new summary can be read without context and say what exactly was measured, and the parallel lab's takeaway was that the best evidence always says which evaluator version, endpoint mode and fallback mode were active. The label names the grader and its version, the build and route, the number of attempts and what picked among them, any bank or fallback, the sample size, the scope and the evidence class.",
+ "against": "For delivery, the serving side treats a cached fallback as the right path for item types that fail badly, a degraded mode that returns known-good items; that serves a student, but it is not a measure of new content. The audit itself found no drift yet.",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "184",
+   "quote": "Every generation artifact and summary should record:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "200",
+   "quote": "The same project now has schema-only, spread-sample, targeted repair, archived full n=150, self-eval, older IB, and partial live-rescore evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "201",
+   "quote": "Mixing those proof classes caused false confidence in earlier work.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "210",
+   "quote": "New `summary.json` files can be read without context and answer: \"what exactly was measured?\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "282",
+   "quote": "Best evidence always says which evaluator version, endpoint mode, and fallback mode were active.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_version_history.md",
+   "lines": "22",
+   "quote": "- Pass rates (N=100, April 21): MCQ 67%, SAQ 67%, LEQ ~98%, MCQ_SET 0%, DBQ 0%, Overall ~6.5%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "153",
+   "quote": "sft-v4 with pipeline went from 6.5% to ~27%. Without pipeline, it was 6.5%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/INDEX.md",
+   "lines": "95",
+   "quote": "| sft-v4 overall | ~60% | N=100,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/fireworks_training_reference.md",
+   "lines": "27",
+   "quote": "MCQ 90%, LEQ 71%, SAQ 67%, MCQ_SET 18%, DBQ 10%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/fireworks_training_reference.md",
+   "lines": "18",
+   "quote": "sft-v3 baseline: MCQ 90%, LEQ 71%, SAQ 67%, MCQ_SET 18%, DBQ 10%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_version_history.md",
+   "lines": "40",
+   "quote": "- The 27% vs 36% discrepancy from earlier session: the 36% was clean units only; 27% is all units",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "104",
+   "quote": "This is a valid 149/150-style stitched evidence result. It is not proof that current live production is solved because the selected window combines builds `6f0ffdf` and `e429b16`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "128",
+   "quote": "Every result must state:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/MASTER_SYNTHESIS.md",
+   "lines": "130-135",
+   "quote": "- evaluator/version; - sample size; - endpoint/mode; - model route versus fallback route; - K value; - whether the score is official IB, local IB, diagnostic eval, older IB, self-eval, targeted repair, spread sample, or schema-only.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "33",
+   "quote": "- Evidence: small calibration sets can validate machinery but cannot prove 99%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-05-30T0640Z_dream_sequence_2_sync.md",
+   "lines": "20",
+   "quote": "Layer distribution (final): 71.2% L3 fresh ML + 28.8% L5 cached fallback + **0% exc** (was 9% pre-fix).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/validated_library_20260525.md",
+   "lines": "54",
+   "quote": "- 50/50 pass = 100.0% with timeout fallback.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/validated_library_20260525.md",
+   "lines": "55",
+   "quote": "- 46/50 strict fresh LLM passes = 92.0%.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/validated_library_20260525.md",
+   "lines": "56",
+   "quote": "- 4/50 timeout fallback passes = 8.0%.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "conscience/audit_log/2026-05-29T0908Z_CHECKIN_to_main_a.md",
+   "lines": "83",
+   "quote": "The argument is mathematically correct (K=5 retry on a 95% per-cell base = 99.97%), but it shifts the gate from \"model passes 95% standalone\" to \"stack passes 99% with model as one component.\"",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "161",
+   "quote": "The lab refuses to conflate evidence classes. Every artifact is labeled:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "167",
+   "quote": "- `LIVE_FULL_IB_EXPORT_ANALYSIS` is NOT `LIVE_FULL_IB`; cross-draw `LOCAL_MIX` is NOT board-quality",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/request_trace/2026-05-21T075822Z_2926c4107df0.md",
+   "lines": "9",
+   "quote": "The trajectory is to operationalize that taxonomy and implement the agreed gates/backlog so future runs do not confuse exploratory local evidence with official live benchmark evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-05-29T1840Z_dream_sequence_sync.md",
+   "lines": "32",
+   "quote": "L5 fallback IS the production-correct path for catastrophic cells (degraded mode returning known-good cached items).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "conscience/audit_log/2026-05-29T0908Z_CHECKIN_to_main_a.md",
+   "lines": "87",
+   "quote": "Currently no drift; flagging the shape so I catch it if it forms.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "157",
+   "quote": "Claims are licensed by instruments, nothing else",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "26",
+   "quote": "Authored, mechanically validated, runtime verified, human accepted, production verified, and outcome validated remain distinct states.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "35-37",
+   "quote": "**Epistemic tags on shipped claims.** Verified (recomputed/measured) · Asserted (stated in a design, checkable only in delivery) · Open (needs data that doesn't exist yet). Never silently promote Asserted→Verified or Open→Asserted.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/rubric.md",
+   "lines": "8",
+   "quote": "An [OH] is never cited as a proven learning threshold.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "256",
+   "quote": "- The ≥0.85 threshold is an authoring decision, not an empirically validated cutoff [AUTHORING-DECISION].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "15",
+   "quote": "| Measure | Complete local inventory | What the count does not prove |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "31",
+   "quote": "7-tag evidence provenance ([Direct-pull]/[Asserted]/[Open]/[AUTHORING-DECISION]/[DERIVED]/[ACADEMIC]/[SIMULATION] as applicable), prove/not-prove pairing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/EXPORT_README.md",
+   "lines": "115",
+   "quote": "(T0 = measured on our data, T1 = single trial, T2 = top-tier paper, T3 = inference, T4 = hearsay)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-parent/.agent/memory/auto/research_parallel_team_takeaways.md",
+   "lines": "12",
+   "quote": "audit_note: T3 not T2 because their stack/account/data may differ; treat as priors not conclusions; low confidence",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "8",
+   "quote": "**Evidence tier:** T2 (cited, scope-flagged). Predicted lift is T4 until Quill measures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/RULES.md",
+   "lines": "4",
+   "quote": "**Confidence tags:** `[LIVE]` walked in the student app myself · `[CENSUS]` exhaustive",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "30",
+   "quote": "state non-leakage as \"grep-verified per item,\" not \"machine-proven.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "44",
+   "quote": "Therefore the verdict is **\"PASS-with-Caliper-unverified\"**, NEVER a bare \"PASS\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "48",
+   "quote": "MAP **0/313** → no RIT, no \"proven growth.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "19",
+   "quote": "is a **naked number** — no field carrying \"model PREDICTION, not measured outcome; no in-cohort pilot validated this; not proven growth\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/V2_MONSTER_DOSSIER.md",
+   "lines": "107",
+   "quote": "**A proxy stays a proxy.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/V2_MONSTER_DOSSIER.md",
+   "lines": "107",
+   "quote": "Never present band or logit as RIT.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0009-timeback-alpha-read-packager.qmd",
+   "lines": "107-108",
+   "quote": "Confidence tags: `[LIVE]` walked in the student app · `[CENSUS]` exhaustive content check · `[PROBE]` one live probe per format · `[CODE]` enforced in code+tests · `[OPEN]` not yet verified.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "6",
+   "quote": "`PASS / PARTIAL / FAIL / UNVERIFIED` per the repo rubric.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md",
+   "lines": "65",
+   "quote": "Do not approve the whole course from a sampled cohort.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "275",
+   "quote": "convert `PASS` on a sampled cohort into a whole-course claim.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "34",
+   "quote": "providers: { judge: describe(judge), writer: describe(writer) }, engine: engineCommit()",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "12-13",
+   "quote": "Judge `jev-1.13.0` (Jev, through TypeSafe), writer `gemini-3.5-flash` through the TrueFoundry gateway, one sample per question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "83",
+   "quote": "reasons: s.reasons, code: s.code, judge: s.judge, tries: t + 1, judgeCalls: mine.length, createdAt: new Date().toISOString() };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "13",
+   "quote": "export const STAGE = \"v01\";",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/adversarial-course-council/AGENTS.md",
+   "lines": "12",
+   "quote": "Label claims `observed`, `inferred`, `proposed`, or `unknown`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "704",
+   "quote": "hypothesis phrased as an observed blocker;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "663",
+   "quote": "**Copy this rule with the numbers**, because a different tokenizer legitimately gives a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "664",
+   "quote": "returns **528**, not 520, since it splits on hyphens and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "665-666",
+   "quote": "An exact word count published without its counting rule cannot be checked, only disagreed with.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R4.md",
+   "lines": "38",
+   "quote": "The \"≥ 6.3 keep line\" was reverse-engineered and presented as a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_PLAN_R4.md",
+   "lines": "39-40",
+   "quote": "No 6.3 threshold exists anywhere in the decision record; it was inferred from the gap between the lowest natural keep (6.35) and the highest non-keep (6.15).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/load-bearing-rubric.md",
+   "lines": "24",
+   "quote": "they document the judgment the existing scores encode; they did not run as an algorithm",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/load-bearing-rubric.md",
+   "lines": "25",
+   "quote": "Re-scoring the field under these formalized scales is a named follow-up",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-quality-review/references/rubric.md",
+   "lines": "9-11",
+   "quote": "**An `[OH]` is a heuristic, never a proven learning threshold — findings cite it as \"outside the doctrine band\", never \"harms learning\".**",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "25",
+   "quote": "Fewer frames: narrow claims to observed motifs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "113-116",
+   "quote": "Their output is labelled **JUDGEMENT**, never measurement, and the model id plus the prompt-pack version hash is recorded in the run manifest so a verdict can be re-run against the same inputs.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "125",
+   "quote": "- Loudness target (−16 LUFS / −1 dBTP) is a documented choice, not an agreed platform spec (§10).",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/agent-skill/SKILL.md",
+   "lines": "24-26",
+   "quote": "report them verbatim; never round them up.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "96",
+   "quote": "“Pending” means there is no successful completion evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "17",
+   "quote": "beat 2 first seen 5.8 s, beat 3 19.4 s, beat 4 28.5 s (sampled at 3× speed, ≤1 s sampling granularity)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CASE-FOR-PLAN-REVIEW.md",
+   "lines": "67",
+   "quote": "Design-level APUSH proposal with a representative Unit 1 slice, pending academic and human historical-content/source review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "231-232",
+   "quote": "The old \"inlined verbatim\" comment overstated this; the comment now says exactly what holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "217",
+   "quote": "*(Formerly labelled \"Score Comparability.\" Relabelled because it measures internal consistency against a synthetic bank — explicitly NOT agreement with MAP.)*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "25",
+   "quote": "Any projected post-linking LoA is a hope stated in advance, not a result — see §4.2.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,55 @@
+{
+ "id": "every-turn-of-a-hint-ladder-stays-visible",
+ "title": "Every turn of a hint ladder stays visible",
+ "statement": "Through a hint sequence, keep every earlier answer and hint on screen, since a hint that builds on the last answer is useless once that answer is gone.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course runs a typed or spoken open answer as a conversation of three scored turns, a hint, a closer hint and then the answer, and its rule keeps every turn on screen, so the child can see what they already said and what they were already told (`grade3-reading/course-renderer/docs/rules/questions-and-assessment.md`, lines 403-420). A hint written to build on the last answer works only while that answer is still there to read.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "418-420",
+   "quote": "Every turn stays on screen. The child can see what they already said and what they were already told, because a hint that builds on their last answer is useless beside an empty box where that answer used to be.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "405-406",
+   "quote": "**Rule.** A typed or spoken open response is a conversation with three scored turns, and the reply escalates on each one.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "418-420",
+   "quote": "Every turn stays on screen. The child can see what they already said and what they were already told, because a hint that builds on their last answer is useless beside an empty box where that answer used to be.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "423",
+   "quote": "A criterion met on any turn stays met for the rest of the question.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,80 @@
+{
+ "id": "run-a-proven-check-on-every-real-item",
+ "title": "Run a proven check on every real item",
+ "statement": "Run every check on every real item before a generated set feeds anything that matters, not on a sample or only on the fixtures it was proven on.",
+ "example": "A readiness audit verified code, hashes and structure without applying the screen to the 120 real spans.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a qualification round for a reading gold set, public tests proved that a privacy screen rejected adversarial fixtures and accepted synthetic safe rows, and the final readiness audit verified code, hashes and structure, but nothing applied the screen itself to all 120 real spans; the record calls these different claims. When the screen was finally run on the would-be public rows, at least one span matched and the round failed closed. Record what each check found.",
+ "against": "Fixtures are still how an inherited check is proven: the reading project's routine for adopting one builds a red-first harness of positive and near-miss-negative fixtures before porting any tool, so fixtures are necessary, if not sufficient (`grade3-reading/knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd`, lines 50-52). The rule covers high stakes only (\"For low-stakes or low-cost claims, fast acceptance is fine.\", `icloud-work/auto-memory-backup/feedback_subagent_skepticism.md`, line 37), and the same file calls the set \"mostly correct\" (line 35).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0165-eppc-g3-reviewer-qualification-terminal-outcomes-human-next-gate.qmd",
+   "lines": "81",
+   "quote": "predicate to all 120 final private spans. Those are different claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0165-eppc-g3-reviewer-qualification-terminal-outcomes-human-next-gate.qmd",
+   "lines": "78-79",
+   "quote": "The public tests proved that the projection detector rejected adversarial fixtures and accepted synthetic safe rows.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_subagent_skepticism.md",
+   "lines": "26",
+   "quote": "I also accepted Quill's D1 with a 3-sample spot-check on 191 rows (1.6% coverage) and didn't flag the 29% sp_fallback (system-prompt fallback) as a real DPO-signal pollution risk.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_subagent_skepticism.md",
+   "lines": "30",
+   "quote": "- Before using a subagent artifact in a training run (DPO pairs, F-DPO collection): require full-coverage validation, not spot-checks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-hostile-gate-v2-failure-record.md",
+   "lines": "83-85",
+   "quote": "The public tests exercised synthetic safe rows plus adversarial fixtures. Neither established that all 120 final private evidence spans passed the exact packet-projection predicate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "140-141",
+   "quote": "the checker's OTHER path, which until 2026-08-24 had zero fixture coverage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "123-124",
+   "quote": "The package's earlier six-passage spot check does not characterize the generated corpus.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

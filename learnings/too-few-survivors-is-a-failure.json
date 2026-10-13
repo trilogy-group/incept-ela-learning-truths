@@ -1,0 +1,115 @@
+{
+ "id": "too-few-survivors-is-a-failure",
+ "title": "Too few survivors is a failure",
+ "statement": "When the items that survive the checks cannot fill the test plan, report a failure, not a pass with named gaps.",
+ "example": "One plan had 36 of 44 vocabulary slots without a single viable item.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity",
+  "alignment"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's gate-report template makes too few survivors a hard floor: if the selected-response items that pass the binding blind-solve gate fall below the blueprint minimum, the verdict is FAIL, not PASS-with-named-gaps, with no green verdict over a vacuous pool (`grade3-reading/artifacts/g5-merged-course/VERDICT_TEMPLATE.md`). It pre-registered that selected-response items would leak about 90%, so survival was expected in single digits. In one course plan, 36 of 45 vocabulary items were answered correctly without the passage, leaving 36 of 44 vocabulary slots with no viable item (`grade3-reading/artifacts/LANE1_COURSE.md`).",
+ "against": "A later run found: A Grade 7 reading course with one standard left practice-only, 14 of 15 gated after no leak-resistant two-text comparison item certified, went forward under a decision of \"go with findings\" for bounded academic and content review rather than a reported failure (`grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/review/evidence/case-for-review.md`, lines 45-50; `grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/review/start-here.md`, line 15). The gap was disclosed, and the decision covered review, not student use (start-here.md, lines 15-18) (`grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/review/evidence/case-for-review.md`). A later run found: A Grade 7 course reported such a gap as a pass: its standards gate reads PASS_WITH_DISCLOSED_RESIDUAL, with 14 of 15 standards gated and its two-text comparison standard taught and practised on 8 items but never gated, because no leak-resistant item certified, and its instructions forbid promoting that standard to gated without one (`incept-package-hub/course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json`). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_1_DELIVERY_REQUIREMENTS.md`). A later run found counter-evidence (`grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/review/start-here.md`). A later run found counter-evidence (`incept-package-hub/course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/VERDICT_TEMPLATE.md",
+   "lines": "28",
+   "quote": "> not PASS-with-named-gaps. No green verdict over a vacuous pool.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/VERDICT_TEMPLATE.md",
+   "lines": "40",
+   "quote": "~90% — survival is expected single-digit, plausibly near-zero",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "234",
+   "quote": "80% leak rate (36/45 items answered correctly without passage).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "246",
+   "quote": "**Implication for vocab slots:** 36 of 44 vocab-mcq slots in V2 skeleton have no viable items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/case-for-review.md",
+   "lines": "45",
+   "quote": "14/15 gated, not 15/15 gated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "15",
+   "quote": "GO WITH FINDINGS for bounded academic and content review of the completed course.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "6",
+   "quote": "\"status\": \"PASS_WITH_DISCLOSED_RESIDUAL\",",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "12",
+   "quote": "\"gated_fraction\": \"14/15\",",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "18",
+   "quote": "Taught + practiced (8 practice items), never fake-gated.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "4",
+   "quote": "Preserve the residual verbatim; never promote RL.7.9 to gated without a certified leak-resistant two-text-comparison item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_1_DELIVERY_REQUIREMENTS.md",
+   "lines": "45",
+   "quote": "8. **Verdict grammar:** every verdict is PASS-with-named-gaps (or PASS-with-Caliper-unverified); a bare PASS is a wording bug.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/review/start-here.md",
+   "lines": "15",
+   "quote": "**Decision:** **GO WITH FINDINGS** for bounded academic and content review of the completed course.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

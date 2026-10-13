@@ -1,0 +1,120 @@
+{
+ "id": "labels-that-match-their-sources",
+ "title": "Labels that match their sources",
+ "statement": "Make every source's label, which work, by whom, where, when and what kind of document, match the source text, in generated items and in the source bank.",
+ "example": "An audit of one bank of real sources found 198 of 436 era tags wrong.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "AP judges failed generated items whose document labels contradicted their content: one document was labelled a manuscript illustration but described as a map, and others carried primary-source titles and dates their text did not match (`icloud-work/aptraining/.agent/research/failure_taxonomy.md`). An audit of the project's bank of real source documents caught 198 of 436 era tags wrong and 4 catalogue entries that pointed to a different work from the one named, errors that would have baked fabrication into the next model's training, and audit gates became mandatory before the next stage (`icloud-work/aptraining/.agent/memory/MEMORY.md`). Check each label against the source text as a claim of its own, and audit the source bank before anything is built from it. Generated source sets fail more on attribution than on their sentences.",
+ "against": "The bank audit was an agent's audit of a training corpus with spot checks, not a full review by a person, and the two judge rationales are single items. Dropping attributions trades one score for another: the variant without them had the best factual accuracy (70%), but the best pass rate (60%) came from the one that also added curriculum facts (`sft_v4_prompt_engineering.md`, line 16). The attribution fixes for document-based items were never re-measured (`findings_sftv7_20260424.md`, line 138).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "296",
+   "quote": "Document 1 contradicts itself: it is labeled as a manuscript illustration of a dhow but described as a historical map with shaded regions and arrows.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "248",
+   "quote": "Several documents are labeled with specific primary-source titles and dates that do not match what the text says",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "72",
+   "quote": "F-D13-12 caught 198/436 era misclassifications.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "72",
+   "quote": "F-D13-18 caught 4 wrong-work Gutenberg IDs in Branch C",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "64",
+   "quote": "15 DBQ failures across 6 units. Dim hits:",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "65",
+   "quote": "- `factual_accuracy`: 9",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "70",
+   "quote": "**NOT failing on document text sentences — failing on attribution and structure.**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "73",
+   "quote": "Model names real explorers but assigns wrong geographic scope.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "12",
+   "quote": "- Removes source attribution from stimulus (main hallucination source)",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "18",
+   "quote": "**Failure pattern:** Model fabricates specific source attributions and dates. SFT training examples should favor general historical description stimuli, not attributed documents.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "22",
+   "quote": "2. no_source: 50% pass, 70% factual_accuracy (best factual dim)",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "16",
+   "quote": "**Why: `no_source` wins on factual_accuracy (70%) but `no_source_facts` wins on pass rate (60%).**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "138",
+   "quote": "3. **DBQ 12%** — all 4 fixes just applied; need fresh benchmark to measure impact",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

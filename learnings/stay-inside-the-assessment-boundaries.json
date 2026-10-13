@@ -1,0 +1,63 @@
+{
+ "id": "stay-inside-the-assessment-boundaries",
+ "title": "Stay inside the assessment boundaries",
+ "statement": "An item that needs content the stated assessment boundaries exclude is out of scope even if it is correct, and only the stated boundaries count as exclusions.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Once the curriculum source began supplying assessment boundaries, the exclusion statements of the course description, the AP Chemistry overlay began to flag an item that requires excluded content, computation or terminology under curriculum alignment even if it is chemically correct (`shadow-bench/src/inceptbench/prompts/question/ap_chemistry_evaluation.txt`). The judge treats the provided boundaries as authoritative and must not invent exclusions beyond them. The same check was mirrored into the multiple-choice set rubric (`shadow-bench`, git commit 44a9d6e) and is documented in `shadow-bench/docs/internals/ap-evaluation.md`.",
+ "against": "Boundaries are optional in the curriculum data, so the check can have nothing to apply: '| `assessment_boundaries`  | array of strings \\| null   |' (`shadow-curriculum/plans/data-hierarchy.md`, line 202).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "24-26",
+   "quote": "an item that requires the excluded content, computation, or terminology is out of scope for AP — flag it under `curriculum_alignment` **even if it is chemically correct**.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "29-30",
+   "quote": "Treat the provided Assessment Boundaries as authoritative; do not invent exclusions beyond them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "44a9d6e",
+   "lines": "9-11",
+   "quote": "out-of-scope detection via the curriculum's Assessment Boundaries (CED Exclusion Statements) — fail educational_accuracy on excluded content even if chemically correct",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/ap-evaluation.md",
+   "lines": "139-140",
+   "quote": "an item requiring excluded content is a `curriculum_alignment` defect even if chemically correct",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/data-hierarchy.md",
+   "lines": "202",
+   "quote": "| `assessment_boundaries`  | array of strings \\| null   |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

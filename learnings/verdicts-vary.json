@@ -1,0 +1,895 @@
+{
+ "id": "verdicts-vary",
+ "title": "Verdicts vary",
+ "statement": "The same marker can give different verdicts on the same answer: send each test answer more than once, and re-send every known miss after each rebuild.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the marking test, 9 of 10 answers sent three times got the same verdict each time, and one right answer met a\ncriterion in 3 of 4 calls; a second marker accepted 14 of 15 right answers in one run and 15 of 15 seven minutes later\n(`g9/review/2026-10-07-archivist-marking-test/README.md`). Re-sent a day later, three of the first test's five misses\ncame back, one timed out twice and one got half credit (`g9/review/2026-10-08-lesson1-build-map/README.md`).",
+ "against": "the second marker's verdicts on 8 repeated answers were the same in both runs. A later run found counter-evidence (`icloud-work/aptraining/.agent/memory/MEMORY.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "review/2026-10-07-archivist-marking-test/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-08-lesson1-build-map/README.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "123-128",
+   "quote": "Flip rates by type (discovered April, N=4 repeated trials): - DBQ: 30% flip rate - MCQ_SET: 50% flip rate (!) - SAQ: 10% flip rate - LEQ: 0% flip rate - MCQ: 0% flip rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "139",
+   "quote": "N=20 at 50% flip rate for MCQ_SET means our pass rate estimate has ±10% uncertainty.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "they just passed InceptBench at the time, which has a 50% flip rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "7",
+   "quote": "the same compound interest question may be scored 1.0 in one run and 0.0 in the next",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "53",
+   "quote": "stale solver results are not certification",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "37-38",
+   "quote": "an identical typed answer getting re-judged to a different verdict on resubmit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "38-40",
+   "quote": "fixed by running the first judging attempt at the most deterministic model setting and caching identical resubmits to return the same verdict instantly",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "123-128",
+   "quote": "**Flip rates by type (discovered April, N=4 repeated trials):**\n- DBQ: 30% flip rate\n- MCQ_SET: 50% flip rate (!)\n- SAQ: 10% flip rate\n- LEQ: 0% flip rate\n- MCQ: 0% flip rate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "130",
+   "quote": "**What \"flip\" means:** Item scored as pass on trial 1, fail on trial 3 (or vice versa), with identical input.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "139",
+   "quote": "4. **Benchmark pass rates have error bars.** N=20 at 50% flip rate for MCQ_SET means our pass rate estimate has ±10% uncertainty. Always run N≥20 for MCQ_SET benchmarks.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "168-173",
+   "quote": "Never make decisions on a single run. For MCQ_SET with 50% flip rate:\n- Single run pass rate = noise\n- 3 runs, average = directional signal\n- 5+ runs, average = reliable signal\n\nFor MCQ/LEQ with 0% flip rate, single run N≥20 is reliable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "135",
+   "quote": "The noise doesn't affect items that score 0.95+ consistently.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "112",
+   "quote": "**Why 40% might be the new ceiling:** The training data (raft_combined) itself has fabricated attributions. Some of the 18,768 MCQ_SET records have slightly wrong dates or sources — they just passed InceptBench at the time, which has a 50% flip rate. Training on data that sometimes has wrong attributions = training on signal + noise.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build27_full_eval/evaluation_report.md",
+   "lines": "9",
+   "quote": "- Failed: 3",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build27_fail3_recheck/evaluation_report.md",
+   "lines": "8",
+   "quote": "- Passed: 3",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build17_fail8_recheck/evaluation_report.md",
+   "lines": "8",
+   "quote": "- Passed: 2",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build17_target7_eval/evaluation_results.jsonl",
+   "lines": "5",
+   "quote": "\"id\": \"apush-u1-041-mcq_set-hard\", \"type\": \"mcq_set\", \"difficulty\": \"hard\", \"substandard_id\": \"c_4kog\", \"overall_score\": 1.0, \"weighted_score\": null, \"overall_rating\": \"SUPERIOR\", \"passed\": true",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build17_fail8_recheck/evaluation_results.jsonl",
+   "lines": "4",
+   "quote": "\"id\": \"apush-u1-041-mcq_set-hard\", \"type\": \"mcq_set\", \"difficulty\": \"hard\", \"substandard_id\": \"c_4kog\", \"overall_score\": 0.8, \"weighted_score\": null, \"overall_rating\": \"INFERIOR\", \"passed\": false",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build27_full_eval/evaluation_report.md",
+   "lines": "12",
+   "quote": "- Batch size: 5",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_deterministic_build27_fail3_recheck/evaluation_report.md",
+   "lines": "12",
+   "quote": "- Batch size: 1",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "5",
+   "quote": "When running InceptBench evaluation **twice on the same 690 Grade 10 questions**, the overall rating (`SUPERIOR` / `ACCEPTABLE` / `INFERIOR`) **disagrees for 38 questions (5.5% variance)**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "402",
+   "quote": "**Finding**: The audit added additional variance on top of Gemini's baseline 5.5%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "422",
+   "quote": "**Finding**: **Wikipedia-grounded Gemini performed WORSE** — caught only 3/22 factual errors (down from 6/22 baseline) and increased variance to 7.0% (up from 5.5%). Gemini apparently got confused by the additional context rather than using it for cross-referencing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/llm/baml_native_evaluator.py",
+   "lines": "31-32",
+   "quote": "Consensus scoring: for borderline overall scores in this range, run a second … BAML call and average. If the two runs disagree on bucket, run a 3rd tiebreaker.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/llm/baml_native_evaluator.py",
+   "lines": "33",
+   "quote": "CONSENSUS_SCORE_RANGE = (0.75, 0.90)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "15b8b5a",
+   "lines": "31-32",
+   "quote": "Golden dataset: 99/100 pass on both default and BAML paths. Zero verdict flips. 1 minor score diff (0.10) on golden-038 (both INFERIOR).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "12",
+   "quote": "Same generations re-scored produce 17pp per-cell variance, ~1-2pp aggregate variance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "82-84",
+   "quote": "vf08 and vf10 flipped to FAIL, vf07 flipped to a note — same images, criteria differing only by the tightening, confirming single-read verdicts on near-photoreal humans are unstable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "91-92",
+   "quote": "any near-photoreal human face now requires three independent reads with majority rule",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "68",
+   "quote": "Measured: ~22% flipped on the 2nd draw, 11.1% on the 3rd unified draw — it asymptotes but",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "70",
+   "quote": "permanently excludes any item that *ever* leaked, so a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "31",
+   "quote": "grader self-agreement was measured first",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "40",
+   "quote": "| **no** | **match** | 2 | **0/2** (1.00↔0.55, 1.00↔0.95) | **flip-band — IB NON-DIAGNOSTIC** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "59",
+   "quote": "This run's feedback misread. The discrepancy confirms the issue is non-deterministic",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "83",
+   "quote": "This run's praise misread. Again non-deterministic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "42",
+   "quote": "Runs 1 and 2 disagreed on vf07 (FAIL → note), vf08 (note → FAIL) and vf10 (note → FAIL)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "44",
+   "quote": "Single-read verdicts on near-photoreal humans are therefore not reliable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "45",
+   "quote": "now requires three independent reads with majority rule on film frames and near-photoreal humans.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "33",
+   "quote": "\"Same answer, different result\" in Build the Meaning (weightless: Almost, then accepted)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "33",
+   "quote": "An identical typed answer now always returns the same verdict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "107",
+   "quote": "the first judging attempt now runs at the most deterministic setting the model can give",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "107",
+   "quote": "an identical resubmitted answer now returns the same verdict instantly instead of a fresh judgment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "42",
+   "quote": "Runs 1 and 2 disagreed on vf07 (FAIL → note), vf08 (note → FAIL) and vf10 (note → FAIL) — the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "The flip-band stably-pass gate is load-bearing hygiene every lens endorsed (0.80-0.85 flips are real defects, >=0.95 holds) but it filters score NOISE, not score BIAS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R24.md",
+   "lines": "67",
+   "quote": "Bands, banked criteria and passing turn are IDENTICAL across routes in 12/12 scenario runs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "35",
+   "quote": "short-phrase scenario's turn 1 (deterministic 3/3, not noise).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R26.md",
+   "lines": "42",
+   "quote": "All 18 turns identical in band AND ticked criteria to the R25 baseline (18/18).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "37-40",
+   "quote": "fixed by running the first judging attempt at the most deterministic model setting and caching identical resubmits to return the same verdict instantly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "91-92",
+   "quote": "any near-photoreal human face now requires three independent reads with majority rule, not a single pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "83-84",
+   "quote": "confirming single-read verdicts on near-photoreal humans are unstable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "82-84",
+   "quote": "(tightened, 7 borderline images): vf08 and vf10 flipped to FAIL, vf07 flipped to a note — same images, criteria differing only by the tightening, confirming single-read verdicts on near-photoreal humans are unstable.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "20",
+   "quote": "**APUSH (n=150):** r1=86.67%, r2=89.33%, r3=86.67% → mean 87.56%, σ=1.54pp, range=2.67pp",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "36",
+   "quote": "**Insight:** DBQ drives ~all the noise. MCQ/LEQ are essentially deterministic. SAQ and MCQ_SET have small (~2pp) variance.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_v29_failure_analysis_3run.md",
+   "lines": "21",
+   "quote": "| Flipped (1-2/3) | 10 | 6.7% | Grader noise — Compass R41 multi-call majority denoises |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "5-7",
+   "quote": "Root cause: re-evaluating the same item repeatedly produced pass/fail flips, concentrated in long/multi-part items (FRQ, MCQ sets) scored on clarity_precision and scoring-criteria clarity.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "7-9",
+   "quote": "The flips were not noise on clean items — the evaluator was *inconsistently detecting genuine defects* that live in the scoring guide / sample-response / rubric region",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "32-33",
+   "quote": "Measured on a fixed set of borderline items, 6 evaluations each, identical conditions (temp 0, seed 42, gemini-3-flash):",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "34",
+   "quote": "- flipping items: 12/17 -> 6/17",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bfc4165",
+   "lines": "17-20",
+   "quote": "Result: 9/10 scripts fully consistent across 3 independent runs. The one remaining flip (photosynthesis_respiration_loop proposition_clarity) is a genuine rubric ambiguity — the opening hook vs orientation-beat distinction requires a script edit, not an evaluator fix.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "32-34",
+   "quote": "the subjective non-critical dims (construct_coherence, concept_coverage, difficulty_progression, + non_repetitiveness, item_format_variety) flip-flopped 0<->1 between runs on borderline lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "46-47",
+   "quote": "Both layers apply to FRQ items, so one defect could be tagged to different metrics across runs — the instability this PR targets.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "36",
+   "quote": "**ORACLE CEILING — MEASURE FIRST:** re-grade SAME mcq_set items Kx → grader self-agreement. ~0.6 ⇒ coin-flip-capped ⇒ generation can't reach 0.99 robustly ⇒ grader-side fix. **No delta is trustworthy until the ceiling is known.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/MCQSET_GENERATION_LEVER.md",
+   "lines": "19",
+   "quote": "the probe flips on *borderline* items",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T192220Z_2026-05-27T1922Z_v80b_n100_unit1_BASELINE_REPORT.md.md",
+   "lines": "109",
+   "quote": "scores cluster 0.55-0.84 just under 0.85 threshold",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "121",
+   "quote": "InceptBench has a stochastic evaluation component (likely using a language model as part of the rubric). Running the SAME generation through the evaluator 4 times produces different results.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/internals/math-verifier.md",
+   "lines": "7",
+   "quote": "**Problem it solves:** LLM evaluators are non-deterministic — the same compound-interest question may be scored 1.0 in one run and 0.0 in the next, depending on whether the LLM's rounding judgment considers a 2-cent difference a factual error.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/golden/runner.py",
+   "lines": "10",
+   "quote": "Supports multi-run stability testing: run evals N times and aggregate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "237",
+   "quote": "LLM-as-judge is non-deterministic at any temperature > 0 (or even at T=0 due to server-side batching / KV-cache timing).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/test_server.py",
+   "lines": "206",
+   "quote": "Some evaluations differ (may be due to LLM variance)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "43",
+   "quote": "This regression is real even after fixing 503s — it's measured on the cells with 0 503s.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "101",
+   "quote": "The InceptBench evaluator has a **20% rating-flip rate** on identical generations across 4 repeated trials.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/evaluation_audit.md",
+   "lines": "237",
+   "quote": "The evaluator passed this but failed similar fill-in questions. Inconsistent application.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/TRAINING_DECISIONS.md",
+   "lines": "133",
+   "quote": "N=3 is safe under a noisy evaluator (InceptBench alpha 0.37–0.50).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "173",
+   "quote": "GPT-5.4-mini at temperature=0.0 had **3x more variance** (15.7%) than Gemini at temperature=1.0 (5.5%).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "586",
+   "quote": "Top remaining source: `curriculum_alignment` (4 flips). This metric asks whether the question aligns with curriculum standards — a subjective judgment where borderline cases will always have some variance at temperature=1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "test_server.py",
+   "lines": "208",
+   "quote": "return matches >= total * 0.8  # Allow 20% variance due to LLM",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T163819Z_reports_mcqset_50_50_live_verified_20260522/source_report.md",
+   "lines": "25",
+   "quote": "- Two inherited-passing candidates failed live IB and were not included in final artifact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_compass_session_close/02_R42_CoVe_DBQ_spec.md",
+   "lines": "151",
+   "quote": "With IB's 17pp per-cell variance on identical inputs (R41 finding), a single 30-prompt DBQ eval is uninterpretable.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "231",
+   "quote": "IB quality scores are the MEDIAN of 3 runs (non-determinism precedent: 0.95/0.92/0.98 on identical content).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "231",
+   "quote": "IB quality scores are the MEDIAN of 3 runs (non-determinism precedent: 0.95/0.92/0.98 on identical content)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "85-86",
+   "quote": "a model that flips its mind can't flap the gate.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "286",
+   "quote": "The two manual reads agreed on every high and on most mediums, but each found things the other missed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_model_lineage_discipline_2026_05_11.md",
+   "lines": "24",
+   "quote": "3-seed eval gate before promotion (Synapse Item 12 — single-seed misranks 30%+ of the time).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/v39_master_record.md",
+   "lines": "62",
+   "quote": "Single-run 90.67% was misleading — passes 2-3 never ran (deployment destroyed by auto-delete trap).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "112",
+   "quote": "MCQ/LEQ deterministic.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_grader_variance_discovered.md",
+   "lines": "57",
+   "quote": "LLM-as-judge is non-deterministic at any temperature > 0 OR even at temp=0 (small variance from server-side batching, KV-cache timing, random sampling fallback paths). Single-call evaluation is unreliable.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "d80947e",
+   "lines": "3-6",
+   "quote": "Video scripts use a single LLM pass with binary pass/fail metrics. Running at temperature=1.0 (the default evaluator config) adds noise without a consensus loop to cancel it out, causing the same script to flip between SUPERIOR and INFERIOR across runs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "61b718c",
+   "lines": "3-5",
+   "quote": "The 0.99 threshold over ~82 non-error items tolerates ZERO failures. With LLM judge nondeterminism flipping 1-3 verdicts per run, this gate is structurally unsatisfiable and blocks valid PRs indefinitely.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "1948",
+   "quote": "the grader showed nondeterminism on repeated MCQ batches.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "61",
+   "quote": "export async function calibrate(sets, { judge, samples = 5, onCase = null } = {}) {",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "70",
+   "quote": "the share of votes that agree with the verdict: a split vote on a labelled case is a control that flips",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "106",
+   "quote": "advisory: status !== \"calibrated\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "49, 417, 791",
+   "quote": "\"word_0_class\": \"verb phrase\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "203",
+   "quote": "\"value\": 0.7,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "571",
+   "quote": "\"value\": 0.41,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "945",
+   "quote": "\"value\": 0.5,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "52, 420, 794",
+   "quote": "\"word_1_class\": \"verb phrase\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "220",
+   "quote": "\"value\": 0.82,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "590",
+   "quote": "\"value\": 0.65,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "966",
+   "quote": "\"value\": 0.72,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "49, 421",
+   "quote": "\"word_0_class\": \"verb phrase\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "203",
+   "quote": "\"value\": 0.75,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "575",
+   "quote": "\"value\": 0.91,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "103",
+   "quote": "label: `\"${w.word}\" is a ${w.cls}`, required: false,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "77-78",
+   "quote": "and its answer table still gave 0 hard fails, 1 soft miss, median 261 ms.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "45",
+   "quote": "**Limits.** One sample per judge question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "203, 571, 945",
+   "quote": "\"value\": 0.41,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "76-78",
+   "quote": "on flat-illustrated book art one read is enough — the drawn-children control was a stable PASS on every read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "78-80",
+   "quote": "On video frames, key frames, and any near-photoreal human, a single read is NOT stable: two independent sonnet reads of the same nine Aladdin frames disagreed on three of them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "80-82",
+   "quote": "Take THREE independent reads (the main loop's own Read counts as one) and rule by majority; record all three verdicts, not just the winner. A 3-way split is a FAIL.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "30",
+   "quote": "Run 2 — tightened criteria (sonnet, 7 images: the borderline five + two controls)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "575",
+   "quote": "At least 20% of artifacts are repeated under a new blind ID to estimate within-reviewer stability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "97",
+   "quote": "A different result the second time is a scorer bug, not the child's fault.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "114",
+   "quote": "Scene 8 \"Othello → a fellow\" (×2) did **not** reproduce: an immediate re-transcription of the same mix segment and of the voice-only segment both came back exact.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-07-brisk-archivist-model/judging/judgments-vo_intro_04.json",
+   "lines": "29",
+   "quote": "Clocking in at 33 seconds, it closely hits the target brisk pace of ~163 wpm while maintaining the elder archivist register.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-07-brisk-archivist-model/judging/judgments-vo_intro_04.json",
+   "lines": "60",
+   "quote": "Delivers a brisker pace closer to the target word count but completely ignores the character constraints, sounding far too young and lacking the requested wisdom and melancholy.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "82",
+   "quote": "note.push(`verdict changed between runs: ${u}`)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "83",
+   "quote": "| `b01` | held back, unstable | held back in 2 of 3 runs |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "96",
+   "quote": "run-1-2026-10-07T1236Z.log` | 14 of 15 | 28 of 28 | 8 of 8 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "104",
+   "quote": "Retry a couple of times before changing anything — the read-back is stochastic.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

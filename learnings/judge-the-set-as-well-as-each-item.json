@@ -1,0 +1,257 @@
+{
+ "id": "judge-the-set-as-well-as-each-item",
+ "title": "Judge the set as well as each item",
+ "statement": "Check a bank, form or course as a set as well as item by item: find repeats, near-duplicates and items that give away, prime or contradict one another.",
+ "example": "65 of 76 lesson bundles scored exactly 0 on a quality judge's check for repeats.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "alignment",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A quality judge's bundle-level check found repeats inside most lessons: non-repetitiveness averaged 0.14, and 65 of 76 bundles scored exactly 0 on it (`grade3-reading/knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd`). A Grade 3 course passed that judge's item-level evaluation but not its holistic course-level one (`grade3-reading/knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd`), and a live test form whose items were bound to an unrelated passage was recorded as the kind of defect that passes item evals and fails the course eval (`grade3-reading/knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd`). In one review round a single word pair cracked the usage checks on two forms (`grade3-reading/knowledge_bot/knowledge/kb-0211-peter-pan-reviewer-round-2708.qmd`), and the project's routing rules make answer position, option length, distractor function, enemy items, blueprints and independent cold review obligations of the form (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`). Check answer positions, option lengths, key spread and coverage across the set, and keep parallel forms disjoint.",
+ "against": "the notes on those results say the zeros on multi-passage bundles say more about how the bundles were packaged for the judge than about their content (`grade3-reading/knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd`, line 94). The set was training data, not items shown to students, and the first fix was a five-row spot check, with a structural audit still to be added (the data session's `HANDOVER.md`, line 287). In that certifier, non-leakage across items was grep-verified per item at authoring time, with a full automated collision check still pending (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, line 398).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Non-repetitiveness is by far the weakest dimension: **avg 0.14; 65 of 76 bundles scored exactly 0** on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd",
+   "lines": "33",
+   "quote": "G3 passed **individual item** evals but **NOT** the holistic **course-level** eval",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0211-peter-pan-reviewer-round-2708.qmd",
+   "lines": "24",
+   "quote": "Both usage checks were crackable via the single pair \"baby\"+\"sleep\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "93-94",
+   "quote": "answer position, option length, distractor function, enemy items, blueprints, and independent cold review are form-level obligations;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "39-40",
+   "quote": "the class of defect that \"passes item evals but fails the holistic course eval.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "81",
+   "quote": "Cueing enemies: one item's stem or options give away the answer to another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "81",
+   "quote": "Redundancy enemies: two items test the same narrow content, distorting the blueprint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "81",
+   "quote": "Contradiction enemies: two items present inconsistent information, confusing the student.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "168",
+   "quote": "have at least two people review the assembled assessment specifically for these relationships.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "280",
+   "quote": "A preceding item defines “opportunity cost,” making the next item easier; fine for an in-lesson quiz, risky for “stable mastery” claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "282",
+   "quote": "For generalisable mastery claims, avoid strong primes or move them out of proximity",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_data_session/HANDOVER.md",
+   "lines": "287",
+   "quote": "Build ran, validated row-count, missed the structural defect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "60",
+   "quote": "| MCQ answer-A bias | A=64.5%, B=27%, C=7.8%, **D=0.7%**, E=0% (vs uniform 25% expected) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_atlas_session/HANDOVER.md",
+   "lines": "357",
+   "quote": "- **T0 D13 full-census, no sampling**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "55",
+   "quote": "`helpers/data/output/sftv39_curriculum_api_full_apush.jsonl` (1036 rows):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "59",
+   "quote": "| Non-canonical KC IDs | 77.5% (803/1036) use opaque hashes (`c_4EvW`, `s_saxW`); only 14% match `KC-X.Y.Z+N` |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "93-94",
+   "quote": "- answer position, option length, distractor function, enemy items, blueprints, and independent cold review are form-level obligations;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "36",
+   "quote": "947 passages collapse to 136 distinct (one reused 22×), 134 stems duplicated, MAP forms A/B share 3 stems. The compliance gate PASSED — it checks none of this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "398",
+   "quote": "4 parallel mastery forms fully **DISJOINT**: 114 distinct items, max pairwise overlap = 0.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0057-incept-team-sync-2-2026-06-18.qmd",
+   "lines": "21-22",
+   "quote": "Question bank has **repeats** (his API generates **one question at a time**, multiple quiz calls → duplicates) → needs an agent cleanup.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0057-incept-team-sync-2-2026-06-18.qmd",
+   "lines": "49-50",
+   "quote": "a **whole-course evaluator agent** (not per-item — catch repeats etc. that manual review catches; IB team could build it)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "32-33",
+   "quote": "Greedy-selection rejection counters: 19,387 duplicate-item-id, 31,240 duplicate-question-text, 1,329 near-duplicate-question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "48-49",
+   "quote": "340 stem clusters duplicated (2,233 excess copies, 28% of pool).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-pp-2026-08-27/REGISTER.md",
+   "lines": "10",
+   "quote": "Cracked both usage checks via \"baby\"+\"sleep\" … Form 2 key de-correlated; gameability sweep over all 31 L4+L5 MCQs finds no other cross-form tell",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "51",
+   "quote": "Form-level answer-position, option-length, duplicate, enemy-item, and blueprint reports.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "41",
+   "quote": "The lines most relevant to the lesson question are ${top}. Prefer them, but use any line that fits the task.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "67",
+   "quote": "what the lesson's earlier blocks of this kind cover: those made or being made (a lone QC-3 makes no QC-1 first);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "focus/08893615be5777b5.json",
+   "lines": "4-7",
+   "quote": "\"p\": 0.96",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/9a28237802fccd82.json",
+   "lines": "16",
+   "quote": "will little note, nor long remember what we say here",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/cee942a6baad8233.json",
+   "lines": "21",
+   "quote": "\"prompt\": \"Find the line that shows this.\"",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "90",
+   "quote": "Cold stem, distractor, cueing, answer-position, duplicate, enemy-item, and blueprint checks apply to release forms, not plan approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/pre-weekend-audit/SKILL.md",
+   "lines": "42-43",
+   "quote": "New surfaces verbatim: tone for the age band, banned punctuation, answer leakage across sibling nodes, factual truth against the SOURCE texts.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

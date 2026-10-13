@@ -1,0 +1,56 @@
+{
+ "id": "quote-the-learner-word-for-word",
+ "title": "Quote the learner word for word",
+ "statement": "When feedback quotes the learner, check in code that every quoted phrase is the learner's own words in order or the text's, and never shorten or belittle what they wrote.",
+ "group": "what-a-student-is-told",
+ "role": "method",
+ "facets": [
+  "feedback",
+  "integrity",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's end-of-lesson reflection sets the learner's first and final answers side by side and has the model name how the thinking moved, quoting the learner only word for word and never shortening or belittling an answer. Code then checks every quoted phrase against the learner's two answers and the scene and scans for belittling phrases such as 'only said'; a reply that breaks a rule is written again once with its fault named, and if it still breaks one, only its clean sentences are kept or a fixed line replaces it.",
+ "against": "Retrieval shows a learner's earlier answer back with taught-word spellings corrected (`othello-archive/src/retrieval/Recall.tsx`, line 9, \"spellings corrected, so a slip is not carried forward\"), so the same build does not always show the learner's words exactly as written.",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "9",
+   "quote": "must be the student's own words, word for word.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "73",
+   "quote": "Quoting rules: when you quote the student, copy their words EXACTLY and in order, inside double quotes. Never shorten or summarize one of their answers into a few words, and never belittle an answer (\"only\", \"just\", \"merely\", \"simply\" said or claimed): each answer is given above in full, and the first one was a fair start.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "79",
+   "quote": "which is not their words in that order",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "88",
+   "quote": "still wrong: never misrepresent the student. Keep only the sentences that break no rule; otherwise say plainly what changed",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

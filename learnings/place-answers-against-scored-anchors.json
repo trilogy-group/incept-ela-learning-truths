@@ -1,0 +1,48 @@
+{
+ "id": "place-answers-against-scored-anchors",
+ "title": "Place answers against scored anchors",
+ "statement": "Where a model's absolute marks drift, have it place each answer against human-scored anchor answers bracketing each score boundary, since models judge relative quality more stably than absolute scores.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation",
+  "scoring-guide"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A grade 4-5 writing module's marker spec makes comparison with anchors its primary scoring mode wherever absolute scores drift: the answer is placed beside human-scored anchor answers on the same skill and passage, bracketing each band cut, and the model is asked whether it is stronger or weaker, never for a raw mark. An assessment BrainLift, citing a published benchmark of model judges, holds that models can be inconsistent on absolute ratings but are more stable on A-versus-B choices, especially with side-swapping and several votes.",
+ "against": "The module has not measured it yet, and its harness makes no certification claim until a real gold set replaces the synthetic seed (`grade3-reading/ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md`, lines 122-123).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "44-46",
+   "quote": "place the response *beside* human-scored anchor exemplars (same KC, same anchor passage, bracketing each band cut) and ask stronger/weaker-than-X. Never an absolute 0/1/2 from the raw LLM.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1962",
+   "quote": "Relative judgements reduce calibration problems. LLMs can be inconsistent on absolute 1–6 ratings but are more stable on “A vs B,” especially with side-swapping and multi-vote aggregation (arena/tournament style).",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (NeurIPS 2023 Datasets and Benchmarks)",
+   "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

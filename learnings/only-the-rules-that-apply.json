@@ -1,0 +1,70 @@
+{
+ "id": "only-the-rules-that-apply",
+ "title": "Only the rules that apply",
+ "statement": "Give a writer only the rules that apply to the piece it is writing, compiled from the rulebook, never the whole rulebook.",
+ "example": "Across 18 models, adherence to constraints fell as instructions got harder.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's proposal for a pedagogy policy compiler has deterministic code pick the rules that apply to one artifact and hand the writer only that small contract, so thousands of dormant rules never enter the prompt (`grade3-reading/knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd`); its experiment intake keeps the raw rule bank out of the writer's prompt (`grade3-reading/knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd`). The proposal calls this its own inference from a published study in which, across 18 models, constraint adherence fell materially as instruction difficulty increased.",
+ "against": "The study measured adherence as instructions got harder, not as the rulebook grew, and the intake's planned comparison at 3, 5, 10 and 20 active rules has no result yet (`grade3-reading/knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "73-74",
+   "quote": "across 18 models, constraint adherence fell materially as instruction difficulty increased",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "74-76",
+   "quote": "**Our architectural inference:** compile a small active contract rather than prompt with the full rule base",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0128-externalized-pedagogy-policy-compiler-decision.qmd",
+   "lines": "45",
+   "quote": "thousands of dormant rules do not enter the prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "285",
+   "quote": "The raw bank never enters the renderer prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/primary-records/reading-81d-externalized-policy-compiler-plan.md",
+   "lines": "273-274",
+   "quote": "Detection: model receives the full rule bank or more than the compiled active contract. Recovery cascade: 1. Evaluate rules outside the model. 2. Emit only the minimal active specification.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Ye et al. 2026",
+   "url": "https://aclanthology.org/2026.findings-acl.99/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

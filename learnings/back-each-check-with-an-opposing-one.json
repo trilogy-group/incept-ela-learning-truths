@@ -1,0 +1,79 @@
+{
+ "id": "back-each-check-with-an-opposing-one",
+ "title": "Back each check with an opposing one",
+ "statement": "Back each check with one that pulls the other way, so that no single relaxed default lets an item pass.",
+ "example": "Against checks that pulled opposite ways, 13 gaming designs topped out at 52% first-try on fresh topics.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A red team tried to game a content judge on five item types (`icloud-work/aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md`). Four had at least one default that granted a free pass, and their recipes reached cited rates of 97.1% to 100% on the topics they were built on; the fifth required a source, questions that analyse it, and answers not derivable from the source alone, and its first recipe scored 0% on fresh topics. There two checks worked in opposition, one failing an item without a source and the other probing an item with one (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-010-mcqset-minimal-stim.md`), the combined defences held (`icloud-work/aptraining/Cheater/reports/PROGRESS_2026-05-23-LATE.md`), and 13 designs in all topped out at 52% first-try (`icloud-work/aptraining/workspace/comms/from_cheater/2026-05-25T1138Z_DEFINITIVE_CLOSURE_MCQSET_13_attempts.md`). The checks that pull against each other can be that the item must need its source, that the source must not give the answer away, and that the item must match the real format.",
+ "against": "Opposing checks stopped structural tricks, not selection by the judge itself: keeping the drafts the judge scored best reached 31 of 31 on fresh topics for the same item type (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-018-cache-build-K6.md`, line 7). An earlier audit found the judge for the same item type passing 29 of 30 sets regardless of whether their excerpts were authentic (`icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md`, line 38). The evidence is one item type, one red team and one judge.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md",
+   "lines": "35-40",
+   "quote": "**MCQ_SET is the structural outlier** (0% fresh). It's the only cell whose rubric requires (a) a stimulus, (b) that the questions analyze it, and (c) that the answers not be derivable from the stimulus alone. The other 4 cells have at least one rubric default that grants a free metric pass without meaningfully constraining the content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-010-mcqset-minimal-stim.md",
+   "lines": "61-63",
+   "quote": "The two metrics work in opposition: emit no stimulus → test_preparedness fails; emit a stimulus → stimulus_quality and child probes fire.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/PROGRESS_2026-05-23-LATE.md",
+   "lines": "62-64",
+   "quote": "The rubric's combined defenses (stimulus_quality + test_preparedness + child educational_accuracy + aggregation 80%) hold against v80b synthetic content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-25T1138Z_DEFINITIVE_CLOSURE_MCQSET_13_attempts.md",
+   "lines": "25",
+   "quote": "| **12** | **EXPLOIT-013 v8 = v4 prompt + temp=0.0** | **52% (13/25) ← BEST** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-018-cache-build-K6.md",
+   "lines": "7",
+   "quote": "- **MCQ_SET Unit-1-3 fresh: 31/31 = 100.00%** (avg 0.991)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "38",
+   "quote": "29 of 30 v40h rows are IB false-positives. The IB grader passes essentially every MCQ_SET row regardless of stimulus authenticity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "32-33",
+   "quote": "The document checked the proposal against four rules in `validate-contracts.mjs` and never opened the second validator, which holds the mirror of the rule it did check.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

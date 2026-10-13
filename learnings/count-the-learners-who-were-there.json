@@ -1,0 +1,93 @@
+{
+ "id": "count-the-learners-who-were-there",
+ "title": "Count the learners who were there",
+ "statement": "Compute an outcome rate over the learners actually enrolled, from one consistent measure, and follow the same learners over time.",
+ "example": "Averaged over every student in the network, one course's completion read 0.007; counting only enrolled students and the app's own measure, it was 0.707.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of a low-completion finding for second-grade reading ruled the headline numbers ~90% measurement artifact: the report view held one row per active student in the network, 18,359, of whom 140 were enrolled, and it mixed the app's bounded progress with an unbounded fallback, so the course that looked catastrophic at 0.007 had the highest average completion of its group, 0.707, once only enrolled students and the app's own measure were counted (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/dropout-3-data-integrity.md`). A red-team pass on the grade's reading data found a cross-grade slide of 77 to 50 to 45 to be a Simpson's-paradox artifact of which campuses entered the sample in which season: within one season there was no slide, and current students tested twice rose 7.8 percentile points (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-1-data-integrity.md`). A wrong denominator or a changing mix of learners manufactures failures and declines.",
+ "against": "A real but weaker signal remained underneath: among enrolled students who started, average completion ran 0.39 to 0.71 across the four courses (the same audit).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/dropout-3-data-integrity.md",
+   "lines": "12",
+   "quote": "**The headline \"low completion\" numbers are ~90% MEASUREMENT ARTIFACT, not abandonment.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/dropout-3-data-integrity.md",
+   "lines": "29",
+   "quote": "the course that looked catastrophic at `avg_pct = 0.007` — actually shows the **highest** average completion of the bunch (0.707)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-1-data-integrity.md",
+   "lines": "14",
+   "quote": "2. **The \"G1→G3 slide (77→50→45)\" is a Simpson's-paradox / season-composition artifact, not a within-student decline (FATAL to the causal framing).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "40",
+   "quote": "\"mean RIT 206.4 ≈ 72nd percentile,\" computed from 409 OneRoster records.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "40",
+   "quote": "An adversarial review recomputed the *full current* G3 population from the reporting view `rpt2_map_scores`: **n = 915, mean RIT 196.0, mean percentile 46.3**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "40",
+   "quote": "The old figure was not an arithmetic slip but a compound of three biases we have now quantified (Direct-pull → computed): repeat-record over-weighting of long-tenured students (+5.4 RIT at G3), cohort staleness (91/173 G3 latest records predate SY 2024-25; current-year-only mean is 198.3), and — largest and unfixable from OneRoster — source coverage: the OneRoster MAP batch import is itself a selected, high-achieving slice, sitting at mean percentile ~74 in *every* grade while the full reporting population sits near 46.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "17",
+   "quote": "an independent whole-population analysis of the reporting database (`rpt2_map_scores`) that our own credentials cannot reach",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "15",
+   "quote": "Within-student, current G2 readers **gain +4.5 percentile** (123 up / 52 down). No slide.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/g2-completion-and-course-findings.md",
+   "lines": "35",
+   "quote": "the \"77→50→45 slide\" was cross-sectional composition (Title-I campuses entering the denominator late).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

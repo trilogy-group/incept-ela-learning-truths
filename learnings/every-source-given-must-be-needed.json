@@ -1,0 +1,71 @@
+{
+ "id": "every-source-given-must-be-needed",
+ "title": "Every source given must be needed",
+ "statement": "When the skill is combining sources or formats, every source given must be needed to reach the answer.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Integration items carried pictures their own explanations never used, and synthesis items came down to matching a single note. The ELA rubric now fails alignment for any stimulus that isn't load-bearing and requires integration to demand combining at least two formats (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt`); a deterministic check fails an integration item whose explanation never refers to its image (`icloud-work/inceptbench-main/src/inceptbench/evaluators/question.py`); and the reading and writing rubric fails the alignment of a synthesis item that keyword matching against one note can answer (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`). It carries the rule that a question must need its text over to items with several sources.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "19",
+   "quote": "- ANY row with `load_bearing=NO` → `curriculum_alignment = 0.0`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "20",
+   "quote": "Integration must demand combining at least two formats to reach the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "904-907",
+   "quote": "if the item carries an image_url but the answer_explanation never references any visual element, the image is decorative and the item fails the integration demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "100-102",
+   "quote": "If the aim is so narrow that only one note is relevant and the student can identify the correct answer by simple keyword matching, the item reduces synthesis to a matching exercise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "281-282",
+   "quote": "the stem itself states the direction (urchin→otter), so a student can answer correctly from the stem's own wording without ever consulting the diagram or applying the rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "357-358",
+   "quote": "the rule now lives only in the passage/key text, never on the map.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

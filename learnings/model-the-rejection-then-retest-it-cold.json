@@ -1,0 +1,83 @@
+{
+ "id": "model-the-rejection-then-retest-it-cold",
+ "title": "Model the rejection, then retest it cold",
+ "statement": "Model rejecting a known misconception in the worked example, then retest it cold on a new tempting case, with no hints before the attempt and the repair only in feedback.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "An audit's verification pass attacked a Grade 5 lesson's misconception design as a possible leak and upheld it against the live build: the worked example pre-models the rejected hunter-to-prey reading, and the independent trap item is attempt-first, with no hints before the try and the repair only in post-attempt feedback. The course's bar pins the pre-modelling at the worked example and a cold re-elicitation at release. The worked example works the first arrow on the map and the release item asks about the second, so the retest is on a new case.",
+ "against": "The lesson's design note and its evaluation document describe the design as elicit-only, \"The misconception is elicited, never pre-taught\" (grade3-reading/artifacts/u4l2-build/content/u4l2-content.json, line 519) and \"hunter→prey is THE misconception, elicited and repaired only AFTER an attempt.\" (grade3-reading/artifacts/g5-deploy/EVALUATION-API.md, lines 93-94), which the audit calls a mislabel. The record refute-the-misconception-learners-bring draws the belief out first, as a prediction, before refuting it. The audit shows the design is canonical and not a leak, not that it teaches better.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "566-567",
+   "quote": "Misconception pre-teach design (I-do models, You-do re-elicits cold) is canonical, not a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "568-570",
+   "quote": "supposed to pre-model the rejected hunter-to-prey alternative; the You-do's `trap_item` is `attempt_first: true` with \"No hints before you try\" and the repair appearing only in post-attempt feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "517",
+   "quote": "canon pins pre-modeling at M2, re-elicits cold at release",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "57",
+   "quote": "I'm going to work the very first solid arrow on the map, the one between kelp and sea urchin",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "290-291",
+   "quote": "Look at the second solid arrow on the map, the one between the sea urchin and the sea otter.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/content/u4l2-content.json",
+   "lines": "519",
+   "quote": "The misconception is elicited, never pre-taught",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "93-94",
+   "quote": "hunter→prey is THE misconception, elicited and repaired only AFTER an attempt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "518",
+   "quote": "this note's wording mischaracterizes the design as elicit-only",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

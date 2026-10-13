@@ -1,0 +1,43 @@
+{
+ "id": "label-test-answers-with-every-fair-verdict",
+ "title": "Label test answers with every fair verdict",
+ "statement": "When testing a marker, label each test answer with every verdict a fair marker could give, such as secure or partial for an arguable answer, rather than one expected verdict.",
+ "example": "In one marking gate, 26 of 48 test answers carry a two-verdict range: 21 partial or off, and 5 secure or partial.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "marking",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A 3D version's marking gate sends 48 realistic Grade 9 answers to its reading-checkpoint marker as the lesson sends them, each labelled secure, partial, not secure (partial or off) or either (secure or partial). On verdicts it fails only when an answer labelled partial or not secure comes back secure, and only notes a right answer held back, so each label names the verdicts a fair marker could give rather than one it must hit. Eight of the answers are sent three times to catch verdicts that change between runs.",
+ "against": "Another review left arguable cases out of the score instead (Fix the rubric first). The gate never checks the verdict on an answer labelled either, so an off verdict on one passes unnoted, and its labels were set by the gate's builders; nothing records an independent labelling (Person-labelled cases first).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "2",
+   "quote": "expect: secure | partial | not-secure (partial or off) | either (secure or partial).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "62",
+   "quote": "if (v === 'secure' && (c.expect === 'partial' || c.expect === 'not-secure'))",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

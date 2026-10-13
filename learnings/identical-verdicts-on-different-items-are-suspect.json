@@ -1,0 +1,84 @@
+{
+ "id": "identical-verdicts-on-different-items-are-suspect",
+ "title": "Identical verdicts on different items are suspect",
+ "statement": "When one prompt asks a model to judge several items, treat identical verdicts on different items as a reason to re-check them.",
+ "example": "A judge gave two different takes the same scores and the same gap at 0:29, though one had no pause of 0.9 s or more.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A blind pass judged seven voice takes in one request. Two different takes got the same scores, the same 'audio gap or cut around 0:29' and the same one-line verdict, yet a silence measure found no gap of 0.9 s or more in one of them, and the decision record read the other's gap as an ordinary sentence pause. The evidence is one pair in one pass, so it is a reason to look again, not a measured rate.",
+ "against": "Identical verdicts can be right: in the same pass the four takes that read the prompt aloud got identical scores and the same issue, and all four did read it (g9/narration/auditions/2026-10-06-scene1/judging/judgments.json, lines 50, 74, 86 and 110; g9/narration/auditions/2026-10-06-scene1/DECISION.md, line 37). The 0.9 s silence measure also cannot rule out a shorter pause or a cut at 0:29.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judge.py",
+   "lines": "16",
+   "quote": "takes of this script, labelled in order.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judge.py",
+   "lines": "19",
+   "quote": "Listen to every take fully.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "39",
+   "quote": "Noticeable audio gap or cut around 0:29.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "41",
+   "quote": "A decent read, but ruined by a jarring audio gap.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "63",
+   "quote": "Noticeable audio gap or cut around 0:29.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "65",
+   "quote": "A decent read, but ruined by a jarring audio gap.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "14",
+   "quote": "| 2.5-pro Gacrux | 43.5 s | 0 | exact | judged best in one pass |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "11",
+   "quote": "| 2.5-pro **Orus** | 44.5 s | 2 | exact | judge: \"decent read\", flagged a sentence pause as a gap |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,93 @@
+{
+ "id": "script-the-conversational-check",
+ "title": "Script the conversational check",
+ "statement": "Run a conversational check as a fixed script, with set prompts, a capped number of follow-ups and declared supports, because free chat can lead the witness.",
+ "example": "One suggested turn budget is one prompt and up to two follow-ups chosen from a fixed menu.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The assessment pattern library in the reading project's knowledge base warns that ungoverned model prompts in an oral or conversational task can lead the witness, and that free conversation makes unequal demands unless a state machine is locked (`grade3-reading/knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd`). Its design properties are fixed, neutral prompt wording, explicit branches with capped turns and an end rule for when the answer can't be reached, follow-ups chosen from a fixed menu, and no spontaneous hints unless they are tagged as support and named in the mastery claim.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "564",
+   "quote": "State machine, not free chat",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "555",
+   "quote": "Ungoverned LLM prompts can lead the witness (construct creep and validity loss).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "557",
+   "quote": "Free conversation creates unequal cognitive demands unless you lock a state machine.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "562",
+   "quote": "Set min/max turns and branching conditions (e.g., 1 prompt + up to 2 follow-ups).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "546",
+   "quote": "Short, branched follow-ups targeted at a known misconception or missing warrant (e.g., ≤2 follow-ups chosen from a fixed menu).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "The recovery was declared before execution in the frozen journey and next-session guide; it was not adapted to the first hint.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks-v7.json",
+   "lines": "2",
+   "quote": "Own-words steps are followed by one scripted probe in",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "338",
+   "quote": "Nothing tells the child, or the app, when the quote has been understood. A stem-based task ends when the paragraph is complete; a chat ends when someone gives up.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "51",
+   "quote": "If it is an attempt: push back ONCE.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

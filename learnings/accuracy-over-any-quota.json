@@ -1,0 +1,50 @@
+{
+ "id": "accuracy-over-any-quota",
+ "title": "Accuracy over any quota",
+ "statement": "Let accuracy override any length or span quota in a writer's instructions, because a writer that can't meet a quota truthfully may bend the facts to meet it.",
+ "example": "A minimum of 20 years made the writer stretch a shorter period back in time.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP generator's essay rule asked for the full period or a large subset, at least 20 years (`icloud-work/ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md`). For a topic spanning only 12 years, the writer moved its start date earlier to meet the minimum, which made the prompt historically inaccurate. The rule was replaced on the principle that historical accuracy outranks arbitrary length requirements (the same file).",
+ "against": "One case; the proposal is marked implemented, but no result measured after the change is recorded (`icloud-work/ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "18",
+   "quote": "\"Use the FULL period or a large subset (minimum 20 years)\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "31",
+   "quote": "4. LLM extends to 1850 to meet 20-year minimum → historically inaccurate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "34",
+   "quote": "**Principle:** Historical accuracy > arbitrary length requirements",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

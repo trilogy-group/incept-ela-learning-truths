@@ -1,0 +1,45 @@
+{
+ "id": "cap-the-length-of-a-scored-highlight",
+ "title": "Cap the length of a scored highlight",
+ "statement": "Where a highlighted span earns credit by how much of a keyed span it covers, cap its length, since a whole-passage highlight covers every key.",
+ "example": "A draft rule credits a span that covers at least half of a keyed span and caps it at three times that span's length.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "integrity",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Drafting deterministic acceptance rules for a find-and-explain task, a reading project credited a student's selected span when it covered at least half of some keyed span. Because a whole-passage highlight would trivially meet that rule, the draft adds a guard: the student's span may be at most three times the length of the best-matching keyed span. The guard follows from scoring by coverage, so it applies wherever a free highlight is credited that way.",
+ "against": "The draft marks its thresholds as uncalibrated proposals for Grade 3, and says the guard becomes unnecessary if the app ships sentence-level selection (`grade3-reading/_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz::scripts/lane-tools/drafts/m5-acceptance-rules.md`, lines 6-7 and 127-128).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "29",
+   "quote": "- SPAN-VALID: `r* >= 0.50` -- the student span covers at least half of some keyed span.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "30-31",
+   "quote": "- SPAN-GUARD: student span length `<= 3 x` the length of the best-matching keyed span (blocks highlight-everything; a whole-passage highlight can trivially satisfy SPAN-VALID).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,128 @@
+{
+ "id": "typed-checks-with-a-fixed-passing-answer",
+ "title": "Typed checks with a fixed passing answer",
+ "statement": "Write each judged check as a typed question with its passing answer fixed in advance, and let code, not the judge, turn the answer into a verdict.",
+ "example": "A yes-or-no check expecting yes holds when the judge's value is 0.5 or more and its answer clears the support gates, fails below that, and is unclear when the gates fail.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every block in the lesson engine lists its judged checks as an id, a label, a typed question (yes or no, a choice or a score) and the answer that passes it, and a block's checks go to the judge in one batched decision that carries only the questions and their state, never the passing answers (`g9/transformer/src/judge.js`). One verdict function, used at play time as well, reads each answer: one that fails the judge's support gates is unclear, never a pass, and otherwise the check holds only when the answer goes the expected way. Code then decides from the verdicts alone: a required check that does not hold keeps the block from shipping (`g9/transformer/src/transform.js`).",
+ "against": "How sure counts as sure has not been calibrated: a required check held at p 0.6 in the first live proof, and the precision of the judge's checks is not yet measured (`g9/transformer/v01/proof-2026-10-09.json`, `g9/transformer/v01/QA.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "1-2",
+   "quote": "A check holds only on positive … evidence: an answer that fails the support gates is \"unclear\", never a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "8",
+   "quote": "const { answers } = await decide(state, checks.map((c) => c.q), { provider, samples, log, tag });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "12",
+   "quote": "One check's verdict from its typed answer (also used by the runtime, whose question ids are namespaced).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "17",
+   "quote": "ok = c.expect === \"no\" ? a.value < 0.5 : a.value >= 0.5;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/judge.js",
+   "lines": "20",
+   "quote": "const verdict = !a.pass ? \"unclear\" : ok ? \"holds\" : \"fails\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "29",
+   "quote": "[\"noul\", \"choice\", \"score\"].includes(c.q.type)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "163",
+   "quote": "typed decisions (choice, score, yes/no) batched per tick through Jev, with support gates and a log of every decision",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "59-60",
+   "quote": "Jev answers one bounded yes-or-no question per remaining check, with the evidence in its state. Only a confident answer the right way passes; an unsure Jev holds the block.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "76",
+   "quote": "const failing = results.filter((r) => r.required && r.verdict !== \"holds\");",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "259-262",
+   "quote": "\"id\": \"weaker-honest\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "46",
+   "quote": "their precision is not yet measured (v04)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "34-35",
+   "quote": "**Do NOT prompt \"score this 0/1/2.\"** Per `[WF 3482]` \"the LLM's job is to describe the item, not to judge it\"; feature-extraction + simple model reaches r≈0.87 vs moderate for direct rating",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "38",
+   "quote": "**LLM extracts observable features:** claim present (y/n), #evidence citations",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "41-42",
+   "quote": "**A transparent rubric function** maps the feature profile → 0/1/2",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

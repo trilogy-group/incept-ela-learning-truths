@@ -1,0 +1,106 @@
+{
+ "id": "find-the-cause-in-the-failing-items",
+ "title": "Find the cause in the failing items",
+ "statement": "Name why items fail from what the judge was given and what it said about the failing items.",
+ "example": "One analysis blamed a missing field for 62% of failures, though the judge had failed the analysis's own example item for a disallowed option.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One analysis named a missing 'type' field as the cause of 62% of failures and expected '+30-40% pass rate' from adding it, but the type sat only in the request, 'not in the question content being evaluated', in passing items as much as failing ones, and the judge failed the analysis's own example item for including '+' among comparison symbols (`icloud-work/incept/nova_forge/PASS_RATE_ANALYSIS.md`, `icloud-work/incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md`). The opposite slip happened too: fill-in and multiple-select items passed at 0% while the answer extractor read only one field name, so the judge saw empty keys, one of them beside an explanation naming B and C, yet the fill-in 0% was put down to missing examples (`icloud-work/incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md`, `icloud-work/incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md`). A field the failures share need not be the cause, and an empty or misread field scores like a bad item.",
+ "against": "Neither diagnosis was isolated. The field fix was recorded as a success, '| Type Field Present | 38% | 100% | +62% |' (`icloud-work/incept/nova_forge/README.md`, line 228), but a later 298-item run that reached '- **Pass Rate:** 55.4%' mixed original, corrected and regenerated items (`icloud-work/incept/nova_forge/RUN_LOG.md`, lines 34-35), and the extractor fix and the new examples were deployed together (`icloud-work/incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md`, lines 491 and 493).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "38",
+   "quote": "### CRITICAL ISSUE #1: Missing 'type' Field (62% of failures)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "43",
+   "quote": "- All questions with 0.00 spec compliance score are missing `content.type`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "44",
+   "quote": "- Type is only in `request.type`, not in the question content being evaluated",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "45",
+   "quote": "- Example from failed question cc-math-4-mcq-easy-6:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "67",
+   "quote": "**Expected Impact:** +30-40% pass rate (fixes 108 spec compliance failures)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "293",
+   "quote": "- Issue: Violates the boundary to use only >, <, and = by including \"+\" as an option.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md",
+   "lines": "46",
+   "quote": "1. **Targeted Learning:** Fill-in questions were 0% pass rate because model had no fill-in examples",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md",
+   "lines": "126",
+   "quote": "1. **Bug Found:** Fill-in answers were empty because code only looked for `correct_answer`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md",
+   "lines": "130",
+   "quote": "- MSQ uses `\"correct_answers\": [\"B\", \"C\"]`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/ITD_ENHANCED_FEW_SHOT.md",
+   "lines": "137",
+   "quote": "\"answer\": result.get(\"correct_answer\", \"\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "154",
+   "quote": "Answer field is [\"\"] but explanation states correct choices are B and C",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

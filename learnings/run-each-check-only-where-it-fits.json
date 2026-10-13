@@ -1,0 +1,57 @@
+{
+ "id": "run-each-check-only-where-it-fits",
+ "title": "Run each check only where it fits",
+ "statement": "Run each check only on the kinds of item it was written for.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "format"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons records that treating every item with options as a single-answer item produces false findings of a missing answer index and missing feedback, since its multi-select and tap-a-sentence items leave the correct options without feedback by convention (`shadow/content-eval/SKILL.md`). Its checks that answers and wrong options are grounded in the story now run only on recall stations, because vocabulary items use invented example sentences and two stations ask about the student's own thinking, and checking those against the story gave false positives.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "127-129",
+   "quote": "Treating every option-bearing node as `mcq` produces false \"missing answer_index\" and \"missing feedback\" findings.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "117-119",
+   "quote": "Grounding checks (`ANSWER-AHEAD-OF-TEXT`, `DISTRACTOR-UNGROUNDED`) run **only on recall stations** (Read the story, Show what you know, Try it together, Write about it, Look back).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "119-121",
+   "quote": "Word Power uses invented example sentences, and Skill/Story Pattern are metacognitive — checking any of those for story grounding is a false positive.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/generator_review/leak_control_and_certification_schema.md",
+   "lines": "13-15",
+   "quote": "In a knowledge subject, an answer you can find *in the source* is a leak. **In reading, finding the answer in the passage *is* the skill** — so we deliberately **skip the history-style \"answer is in the source\" check.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

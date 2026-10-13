@@ -1,0 +1,1354 @@
+{
+ "id": "no-cue-in-the-item-itself",
+ "title": "No cue in the item itself",
+ "statement": "No surface feature may single out the key: keep options alike in length, grammar, register and scope.",
+ "example": "In one generated bank, 512 multiple-choice items failed a check for a key more than 20% longer than the other options.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "integrity",
+  "distractors",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Generated multiple-choice items were given to a model from another family with the passage withheld; it recovered the key for 62.7% of them, and the leaked items showed wrong options with absolute words, a key that was systematically the longest, wrong options that contradict each other, and keys that were the obvious balanced or textbook-sounding answer. Selection-from-the-text items leaked when the question or span wording signposted the right phrases, and in one unit they survived only with at least two competing spans of the same shape and a question the solver could not resolve without the text. Sorting items leaked when passage titles were the category labels, while neutral labels (Source A, Source B, Both) gave the construction that produced 700 certified items, and two-part answer-and-evidence items with elaborate options were left out because one part could solve the other. The key is never the longest, shortest, most specific, most hedged, odd one out or only option sharing a distinctive word with the stem or source. Use no absolute words or 'all/none of the above'. Check lengths in code, item by item and across the set, and move reasoning from the key into its feedback where it runs long.",
+ "against": "A length cue matters only where length can be exploited: a review left a sorting item's uniquely short extra alone, because extras are not keyed to prompts (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-04-R16.md`, line 52). Removing cues does not fix leaks whose cause is the passage: for the same generator's items, the report judged the leak not fixable with option-length patches (`grade3-reading/artifacts/LANE2_GENERATOR.md`, line 31). a blind solver that guessed from option length and wording flagged items that needed the passage and were clean, so a solver's guess alone does not prove a cue. The measured effect comes from four exams at one institution and covers item-writing flaws of every kind; the AP rule is a stated criterion with no count of failures; and a research summary warns that the most plausible wrong options are also the likeliest to be learned as true when no feedback follows. The same generator's structure judge is told that \"Sentence length alone (unless extreme like a phrase vs. paragraph)\" is not a structural difference (`icloud-work/incept/sat-reading-generation/sat-prompts.json`, line 80), leaving length to the code check. A grades 9-10 reading generator makes the cue a fixed rule, \"The correct answer MUST NEVER be the longest option.\" (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json`, line 12, and again on lines 6, 18, 48 and 54); a key that is never the longest is a pattern of its own. The absolute-language list also catches ordinary words such as only, so a word filter can fail sound options (`icloud-work/evaluator/ap_benchmark/hard_fail/rules.py`, line 38). And the pipeline's fixed key order, 'Use locked answer keys A, C, and B in that order.' (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`, line 201), balances each set but repeats one position pattern across every set, which is itself a surface cue. A word ban is blunt: one validation rule fails a true statement for its absolute words (`icloud-work/ap-social-studies-generator/docs/validation_rules.md`). The writer's banned-word list had no enforcement, absolute language still appeared in 35% of items, and no rate after enforcement is recorded (`icloud-work/k_12_social_studies/python/improvement_plan_prompts.md`). The length cue rests on guidance, not on a measured case. Ordinary topic-word overlap is acceptable (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`, lines 75-76), and a single echo of a category label is borderline unless it is the dominant word in the label (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt`, line 379). A fixed word list is blunt: the AP benchmark's check before the judge fails an item when any option, distractor or key, contains words such as \"total\", \"complete\" or \"never\", while the judge's own rule allows absolutes when they are historically accurate. The validators look for the tells a blind solver would exploit rather than solving the item blind, which the same file says needs a model. A recalibrated blind solver certified 10 questions an older solver had over-flagged, and the leak vectors behind those flags included the right option being the longest. In a select-all item the length cue is confounded: picking the two longest options gave one right and one wrong (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md`, line 102). An automated shape flag can be a false positive, kept on record so the raw score is not taken at face value (`grade3-reading/artifacts/feedback-inceptbench-2026-09-18/REGISTER.md`, line 14). a solver audit certified as clean ten questions that an over-eager solver had flagged, partly by picking the longest option (`grade3-reading/knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd`, lines 49-63). Most mechanical form flags were false positives once read: \"The options are parallel; they only open with different words.\" (`shadow-content-eval/reports/G3-U1-L14-review.md`, line 112); \"in none of them is the correct option the longest or shortest outlier in a way that gives it away.\" (`shadow-content-eval/reports/G3-U1-L11-review.md`, line 106). The thresholds were set, not measured, and neither the tell's rate in real items nor its effect on students is on record. Copying is not always a cue: a validator's first version \"over-blocked known passing rows because InceptBench tolerates some source-referential wording\" (aptraining-local/den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md, line 24), and the records read give no measured effect of the check on its own. A later run found counter-evidence (`grade3-reading/engine/reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "60",
+   "quote": "1. **Absolute language tells** — wrong options use \"always\"/\"never\"/\"all\"/\"completely\" → flagged",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "61",
+   "quote": "2. **Longest-option wins** — correct answer systematically longest (>20% margin)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "64",
+   "quote": "5. **Paired contradiction** — two wrong options logically contradict each other",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "68",
+   "quote": "**512 MCQ items** fail `longest-option-tell` (>20% character length margin)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "270",
+   "quote": "- MCQ also leaked when one option was the obvious balanced or textbook-sounding answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "272",
+   "quote": "- Hot-text leaked when the question or span wording signposted the correct phrases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "66",
+   "quote": "- hot-text survives only with >=2 same-shaped competitor spans AND a stem referent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "69",
+   "quote": "Arc-schema stems, paraphrase-matchable stems, and self-evident-cost spans all leaked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "16",
+   "quote": "- Passage titles were never used as category labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "315",
+   "quote": "- Passage titles as categories: titles leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "314",
+   "quote": "- Sophisticated-option EBSR: Part A/Part B can self-solve.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "77",
+   "quote": "the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0068-g5-static-dataset-intake-2026-06-23.qmd",
+   "lines": "117",
+   "quote": "longest-option-tell: 626",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "78",
+   "quote": "6 of 6 sampled two-part evidence items were blind-solvable, with Part B restating Part A",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "29",
+   "quote": "it guessed from option-length and wording tells;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "72",
+   "quote": "Passage-dependent items can look \"kid-gameable\" under the wrong blind-solver and still be clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "63-64",
+   "quote": "The right option must not be the longest, the shortest, the odd one out, or the one that reuses the most words from the stem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "68-70",
+   "quote": "`validate-blind-solve.mjs` fails the single shortest option, an answer that stands apart from a tightly clustered distractor set, the option that echoes the stem most, and a distractor set that is all eliminable as absolutes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "103",
+   "quote": "re-read the stem with options covered. If you cannot answer from the stem alone, revise the stem.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "79",
+   "quote": "- Answer choices aren't plausible distractors (one obvious correct answer)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "82",
+   "quote": "An educational accuracy failure means the question isn't usable on an AP exam regardless of factual accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "35",
+   "quote": "**MCQ:** One stimulus (primary source), one question stem, four answer choices (A-D), exactly one correct answer, three plausible distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "78",
+   "quote": "47% of students passed flawed items vs. 53% passing standard items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0160-multiple-choice-questions-evidence-base.qmd",
+   "lines": "80",
+   "quote": "Medical education context. Small sample of four exams from one institution.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "175",
+   "quote": "the very distractors that are best for diagnosis are also the most dangerous for false learning",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/src/validator.py",
+   "lines": "1391",
+   "quote": "This helps prevent students from selecting the correct answer just based on its length.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/src/validator.py",
+   "lines": "1451",
+   "quote": "if correct_length > 1.1 * longest_distractor:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/hard_fail/rules.py",
+   "lines": "64",
+   "quote": "r'all\\s+of\\s+the\\s+above',",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/README.md",
+   "lines": "95",
+   "quote": "- **Absolute language** in distractors: \"total\", \"complete\", \"immediate\", \"all\", \"never\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/mcq.py",
+   "lines": "20",
+   "quote": "- Answer options should not give away the answer through grammar clues",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "53",
+   "quote": "- Ensures consistent grammatical structure across all answer options",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "61",
+   "quote": "- All options belong to the same conceptual category",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "66",
+   "quote": "- Prevents correct answer from being notably more specific or vague than distractors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "74",
+   "quote": "- Prevents patterns where correct answer is consistently longest/shortest",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "406",
+   "quote": "- Issue: One option (“+”) is non-parallel and implausible for a comparison task, reducing distractor quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json",
+   "lines": "12",
+   "quote": "**SPECIAL CONSTRAINT**: The correct answer MUST NEVER be the longest option.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/mcq.py",
+   "lines": "13",
+   "quote": "- All options should be roughly similar in length",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/mcq.py",
+   "lines": "20",
+   "quote": "- Answer options should not give away the answer through grammar clues",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/hard_fail/rules.py",
+   "lines": "64",
+   "quote": "r'all\\s+of\\s+the\\s+above',",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "191",
+   "quote": "Avoid reusing distinctive nouns, verbs, or historical labels from the stimulus in only the correct option.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/python/docs/EVALUATION-RESULTS-2026-02-23.md",
+   "lines": "34",
+   "quote": "**Frequency:** 191 questions (35% of all generated)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/archive/OPENCLAW_HUMAN_REVIEW.md",
+   "lines": "34",
+   "quote": "Option A (\"immediate collapse\") is a weak distractor — students could eliminate it by word choice alone",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "54",
+   "quote": "| Absolute words (always, never, all, none) | Too easily eliminated |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/best_practices.md",
+   "lines": "57",
+   "quote": "| Options significantly longer/shorter than key | Provides visual cues |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/social_studies_evaluation.txt",
+   "lines": "16",
+   "quote": "When the stem names a region and the correct answer is the only option that also names that region, students can identify the correct answer by simple keyword matching rather than subject knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "411",
+   "quote": "- **Syntactic giveaway pattern**: Items in the same category share a distinctive grammatical structure that items in other categories do not — allowing a student to sort by syntax alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "73-75",
+   "quote": "A student should not be able to identify the key from the task line alone. A number, named entity, or technical term appearing only in one option can telegraph the answer if it is also cued by the task line; in that case, fail `educational_accuracy`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "597",
+   "quote": "- Length imbalance reveals answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "392",
+   "quote": "- Also check tonal giveaway: if items in one category consistently use negative language (failure, decline, erosion, instability) while another uses neutral or positive language → FAIL.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/AP_GENERATOR_SPEC.md",
+   "lines": "29",
+   "quote": "**Rules**: 4 options, 1 correct, plausible distractors, parallel structure, no absolutes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "34",
+   "quote": "Closed-response items must require the target reasoning and must not be answerable by surface cues, keyword matching, option length, or test-wise elimination.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/hard_fail/rules.py",
+   "lines": "97",
+   "quote": "description=\"Distractor contains absolute language (total, complete, never, etc.)\",",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/hard_fail/rules.py",
+   "lines": "104",
+   "quote": "description=\"Correct answer contains absolute language\",",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/hard_fail/checker.py",
+   "lines": "215",
+   "quote": "failed=len(triggered_rules) > 0,",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/official_ap_prompts.py",
+   "lines": "34",
+   "quote": "5. Avoid absolute language (\"always\", \"never\", \"all\", \"none\") unless historically accurate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "77",
+   "quote": "79% of correct answers in a generated course sat at option position A, and the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "64-65",
+   "quote": "it is obvious what the right answer is from the length and phrasing of the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "67-68",
+   "quote": "fails an answer that is the single longest option (code comment: \"anti-gaming rule: length must never be the tell\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "133",
+   "quote": "Closed-response items must require the target reasoning and must not be answerable by surface cues, keyword matching, option length, or test-wise elimination.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "76-77",
+   "quote": "which checks the *tells* a blind solver would exploit rather than actually scoring the item blind",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd",
+   "lines": "24",
+   "quote": "option 2 reworded from a *the*-opener to match the wh-form distractors",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd",
+   "lines": "30-31",
+   "quote": "two absurd distractors replaced with near-misses a confused child could plausibly pick",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "49-50",
+   "quote": "The audit says 10 MCQs were over-flagged under the old blind-solver and correctly certified after the re-baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "56",
+   "quote": "correct_is_longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "34",
+   "quote": "At course scale the tell is endemic: 289/794 keyed MCQs have the correct option strictly longest (~36%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GENERATOR_REPAIR_KIT.md",
+   "lines": "16",
+   "quote": "| Correct answer is the longest option | 28% | n/a | Length cue alone recovers the key |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/L5-REVIEW-GAPS-2026-09-17.md",
+   "lines": "8",
+   "quote": "the first wording made the correct option the single longest (95 vs 91) — validator caught it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "6",
+   "quote": "an mcq key is never the longest/shortest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "8",
+   "quote": "\"The answer is the only option not shaped like a question\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "10",
+   "quote": "\"The correct sentence is the only one that does not use 'because'\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "9",
+   "quote": "key is the only option without an article",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/BUILD-SPEC-batch.md",
+   "lines": "6",
+   "quote": "options open in parallel form (no odd article/opener)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FIX_LIST.md",
+   "lines": "92",
+   "quote": "Student discriminates by sentence-TYPE, not support-relationship. Hottext variants leak because the prompt reuses the key's distinctive content words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FIX_LIST.md",
+   "lines": "108",
+   "quote": "The verbatim-keyword sentence (h9) is a DISTRACTOR; the key (h8) shares no prompt keywords — keyword-matching points AWAY from the key",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "79",
+   "quote": "Key is the only option that repeats the stem's verb ('find'→'found')",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FIX_LIST.md",
+   "lines": "102",
+   "quote": "`mainidea-earthworm-mcq-05` leaks instead via the \"pick the broadest option\" main-idea heuristic (its foils are all true narrow details).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "66",
+   "quote": "79% of correct answers in a generated course sat at option position A, and the correct option was systematically the longest",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "65-66",
+   "quote": "**No surface tells.** Length- and structure-match the contending options. The key must … NOT be the longest, the most specific, the most hedged, or the only grammatical fit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "67-68",
+   "quote": "the **longest-option-tell self-check**: if the key is the longest option, rewrite until … key length is at or below the median option length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "101-102",
+   "quote": "The evaluators do not check the \"correct answer is longest\" tell. Build per-item and per-course length-parity census over correct vs distractor options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "86-87",
+   "quote": "**msq** — exactly one defensible correct SET; the keyed set must NOT be \"the two/three … longest\"; include at least one live-trap distractor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "51",
+   "quote": "Form-level answer-position, option-length, duplicate, enemy-item, and blueprint reports.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "165-166",
+   "quote": "**79% of correct answers sat at position A and the key was systematically the longest**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "149-151",
+   "quote": "IB does **not** check the \"correct answer is the longest option\" tell",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "156-157",
+   "quote": "per-item key-vs-distractor character and word length; per-lesson max same-key run. Stdlib-only, no solver, no secret.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "172",
+   "quote": "key longest by word count 12 v 11 but not by characters 61 v 62",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "130-131",
+   "quote": "**Length parity**: verdict in the option, mechanism in per-option feedback — the key is never systematically longest.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "19",
+   "quote": "Options parallel in length, grammar, register; the key is not systematically longest/most-hedged",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "91-92",
+   "quote": "STEM-LEAK (no distinctive content word may sit in both the stem and only the correct option)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "63",
+   "quote": "MCQ correct answer never longest",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "10 (textutil text)",
+   "quote": "Rule 2 — Multiple-choice discipline. The correct option rotates across A/B/C/D; all four options are the same length and register; each item carries one deliberate misconception distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 2. Should We Save the Rainforests - WEIGH - Lesson Design.docx",
+   "lines": "12 (textutil text)",
+   "quote": "Correct answer rotates A/B/C/D; options length-matched; correct is never the longest; exactly one misconception distractor each.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 6. Life in Water - CONNECT - Lesson Design.docx",
+   "lines": "10 (textutil text)",
+   "quote": "options are matched in length, and distractors are as long as the correct answer or longer, so the correct one never stands out by length.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "36",
+   "quote": "≥4 plausible options; no yes/no; no stem echo; key never the longest | Guessable items measure test-wiseness, not comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "69",
+   "quote": "a few distractors carry small length pads so the key is never the longest option",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx",
+   "lines": "sheet 'V7.0 Executive Summary', cell A75",
+   "quote": "Two fixes applied: em-dashes removed, MCQ lengths balanced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "225",
+   "quote": "the correct option being consistently the longest/most-detailed, and distractors using absolute/absurd language",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "225",
+   "quote": "the rubric gate passed 6/6 such items (g4 F1)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "214",
+   "quote": "The key is the only option of its grammatical kind",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "215",
+   "quote": "Position shuffling does not remove this",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "217-218",
+   "quote": "An option that is not a grammatical answer to the stem is eliminable on syntax alone",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "220-221",
+   "quote": "no option uniquely carrying a hedge or a dash (see A1), consistent grammatical form across all four.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "2002",
+   "quote": "read the stem, cover the options, and ask whether a knowledgeable student could formulate an answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1996",
+   "quote": "\"All of the above\" and \"None of the above\" should never be used",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "65",
+   "quote": "a content word from the stem appears in the correct option **and in no distractor** — word-matching finds the answer without comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "343-347",
+   "quote": "The correct option being the only one that is specific, the only one naming a character, the only one that is semantically *different in kind* from the rest.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "106",
+   "quote": "- \"Instead of flowers\" in the key names and rejects that distractor, so the two options argue with each other and the student can pick without reading.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "100",
+   "quote": "*\"The mood of the tale's closing part\"* is the only abstract option. The others are concrete details (the tunnel's history, the number of weasels, the cell).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "5-6",
+   "quote": "Two test-wise answer-key tells were unchecked in the lesson bundle (the course has answer_balance; the lesson bundle had nothing):",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "7-8",
+   "quote": "- G3 correct-is-longest: the correct option being the unique longest lets a student guess by length.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "15-17",
+   "quote": "Report-only at lesson scale — a single lesson has too few items to gate reliably; score-gating happens course-side (#1104) where item counts are large",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ef4a069",
+   "lines": "19-20",
+   "quote": "- tools/item_tells.py: pure functions + is_tell/is_skewed thresholds (>=4 items & >60% for length; >=8 items & >50% for position).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/cell_family_archetype_scout_20260523.md",
+   "lines": "84",
+   "quote": "Answer leakage: direct MCQ can become trivial when the stem copies the correct option's nouns.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "19",
+   "quote": "answer phrase leakage from stimulus to correct option;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "227",
+   "quote": "no copied answer phrase",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1905Z_hidden_acceptance_repair_status.md",
+   "lines": "75",
+   "quote": "The IB critique is consistent: factually sound, but too many question-level failures due answer leaks, weak distractors, or insufficient AP-level cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "51",
+   "quote": "Math.max(...wc) <= 1.6 * Math.min(...wc)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "51",
+   "quote": "Length does not give the stronger one away",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "23",
+   "quote": "write two short paragraphs (50 to 90 words each)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "55",
+   "quote": "Math.max(...lens) <= 2.2 * Math.min(...lens)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "55",
+   "quote": "No option stands out by length",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "24",
+   "quote": "Keep the options a similar length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "55",
+   "quote": "No option stands out by length\", Math.max(...lens) <= 2.2 * Math.min(...lens)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "23-24",
+   "quote": "- Exactly three options. Exactly one is right given the text; the other two are tempting to a skimmer but the text rules them out. Keep the options a similar length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "55",
+   "quote": "check(\"length-balanced\", \"No option stands out by length\", Math.max(...lens) <= 2.2 * Math.min(...lens), \"one option is much longer than the others\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "24",
+   "quote": "rules them out. Keep the options a similar length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "49",
+   "quote": "\"A modern political appointment.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "50",
+   "quote": "An absolute claim of supreme power and absolute authority over all other rulers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "51",
+   "quote": "\"A temporary rank given during wartime.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "whether only the key echoes the stem",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Port three content-eval tests into src/mechanics/util.js as code checks:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-engine-vendor",
+   "path": "lesson-content-eval/SKILL.md",
+   "lines": "53",
+   "quote": "word-matching finds the answer without comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-engine-vendor",
+   "path": "lesson-content-eval/SKILL.md",
+   "lines": "41",
+   "quote": "one option breaks the others' grammatical form — visible odd-one-out",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "content-eval's margins were tuned on Grade 3 items with four options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/final-u9-review.json",
+   "lines": "72",
+   "quote": "Warmth check contrasts amends with danger, fighting and crime, so the correct option follows from general positive tone rather than close reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/final-u9-review.json",
+   "lines": "73",
+   "quote": "Use related alternative grounds such as the goodbye alone, a presumed absence of mistakes, the mere fact it is the last speech, versus the promise of amends.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "121",
+   "quote": "L7’s model why-check uses overly remote distractors, so it is instruction with weak diagnostic value and must not count as independent mastery evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "17",
+   "quote": "Question shape checks passed one screen but failed another character-based rule",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "17",
+   "quote": "Run the actual release validator on the integrated artifact, then read whether alternatives remain plausible. Do not pad distractors simply to satisfy length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/CURRENT-HANDOFF.md",
+   "lines": "17",
+   "quote": "Silent CFUs in `lesson-video-scripts.json` were revised against real contract rules, including character lengths, script overlap, proper-noun cues and first-key position.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "195-197",
+   "quote": "- 9/48 EBSRs have Part-A-answer → correct-Part-B overlap coefficient `>=0.50`; the key is the unique highest-overlap option in all nine. - Across all 48, the correct Part B is the unique highest lexical match in 26.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "238-240",
+   "quote": "a content evaluator run over L4–L7 (83 items, 126 mechanical signals, 9 high) with ONE confirmed defect — L6 p13 / L7 p13 `item-5-rail-hinge`: the keyed option is the only one repeating the stem's \"what a character did\" (stem-echo leak).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20736",
+   "quote": "| **AOTA / NOTA / negative stem** | \"all/none of the above\", \"which is NOT\" | hard fail |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "56",
+   "quote": "| No T/F, AOTA, NOTA | PASS | 0 True/False items or option sets; 0 All/None-of-the-above; 0 classic EXCEPT/least/not-true exclusion stems. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "80",
+   "quote": "**M12. The p3b vocabulary check can be answered by tone alone.** The options are friendly, **menacing**, gentle, caring: the key is the only unkind word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/ADJUDICATION-pr662.md",
+   "lines": "13",
+   "quote": "Added a plausible `-ing` wrong option to each. The keyed *enchanting* and *menacing* are no longer the only options with that form.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/ADJUDICATION-pr662.md",
+   "lines": "13",
+   "quote": "Three high `PARALLEL-LEAD` signals across L4/L5 fell to zero after this and the next repair.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "121-125",
+   "quote": "The same gate catches six anti-gaming defects at once: a key that is the single shortest option (x2), a key that echoes the stem's own wording, an evidence question built on only two candidate sentences (a coin flip), a correct answer whose own feedback never confirms it, and a key one character shorter than its nearest distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "116",
+   "quote": "**M19. The p15b Search key echoes the question.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "117",
+   "quote": "\"Where Peter whispers jobs through the hatch while the pirates sleep\" is the only option with \"sleep\" and \"jobs\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/item-types/mcq.md",
+   "lines": "9-10",
+   "quote": "No meta-options: never \"all of the above,\" \"none of the above,\" \"both A and B.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/pipeline/gates/deterministic.mjs",
+   "lines": "337",
+   "quote": "no All/None-of-the-above style option, which is answerable without reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "975",
+   "quote": "(4) p6's puppy and bus were nonsense rather than misconceptions, and the key was the only plant in a plants lesson; the key is now a lizard and one distractor is a tree, so topic priming misleads instead of helping.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "975",
+   "quote": "(2) p10's three distractors were all about the plant, so the stem's own words picked the key; two are now about other living things and wrong on the science, and the three wrong-option feedbacks no longer point at breathing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "975",
+   "quote": "(3) p8's distractors were wrong on their quantifiers (two opened 'Only'), so elimination found the inclusive key; they are now wrong on the facts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "14",
+   "quote": "\"All/none of the above\" never appear",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "88-90",
+   "quote": "**\"All of the above,\" \"none of the above,\" and negative stems** (\"which is NOT…\") are also **banned outright** — they test test-taking convention, not the target skill.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "41",
+   "quote": "**No All-of-the-above / None-of-the-above:** 0 of 96.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/item-types/mcq.md",
+   "lines": "9-10",
+   "quote": "No meta-options: never \"all of the above,\" \"none of the above,\" \"both A and B.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/subjects/reading.md",
+   "lines": "44-46",
+   "quote": "The usage checks ask which sentence uses the word correctly, with distractor sentences whose feeling or meaning is wrong, never sentences that give the answer away by valence alone.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/judge/distractor-quality.md",
+   "lines": "15-16",
+   "quote": "an option is answerable from the stem alone, without having read the text (general knowledge, valence, or grammar gives it away).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "62",
+   "quote": "D5.3 (no AOTA/NOTA): scanned all 13 MCQ + 5 dialogue-branch option sets — no 'all/none of the above' option anywhere.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "133-136",
+   "quote": "the odd-one-out ban is not limited to grammatical kind — `checkOptionStyle` in `validate-contracts.mjs` now fails the build when the key is the sole option carrying a proper noun, the sole option carrying a number, the sole option carrying a quoted phrase, or every distractor shares an opener the key does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "136-140",
+   "quote": "The length tell is checked against the single longest/shortest distractor, not an average: the key fails if it is more than 1.25x the length of the longest distractor, OR less than 1/1.25 the length of the shortest distractor. Any of these mechanical surface tells lets a child eliminate by form rather than comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "7",
+   "quote": "The taught word is pickable by its shape (2 items) — highest value",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "8",
+   "quote": "the key is the only `-ing` form.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "10",
+   "quote": "A child can pass the vocabulary check without knowing the word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "19",
+   "quote": "Word-matching finds the answer (2 items)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "20",
+   "quote": "only the key repeats *character* and *did*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "22",
+   "quote": "Fix: reword the key, or put the echoed word in a distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "4",
+   "quote": "Every item below was re-read in `grade-3.json` before being listed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "5",
+   "quote": "Nothing here has been changed; this is a proposal list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "121-123",
+   "quote": "The same gate catches six anti-gaming defects at once: a key that is the single shortest option (x2), a key that echoes the stem's own wording",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "559-561",
+   "quote": "is content-based and shares no content words with the key sentence (line 472); the positional cue exists only in `hint_after_2` (line 482); all four candidate sentences share vocabulary so no lexical shortcut discriminates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "563-564",
+   "quote": "must preserve this independence property in the locate step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "49-50",
+   "quote": "evidence as content never position",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/schema-video.md",
+   "lines": "47",
+   "quote": "All four choices have five words. Character lengths are 33, 33, 36 and 28; the key is neither a unique longest nor a unique shortest option.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "198-200",
+   "quote": "- 14/192 single-key MCQ/EBSR surfaces fail the prior Round-2 correct-is-longest rule (key at least 15 characters or 20% longer than the largest distractor): 5 MCQ, 6 EBSR-A, 3 EBSR-B.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "404",
+   "quote": "A child who reads nothing gets it right.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "728",
+   "quote": "the doc's wording made the key the single shortest option",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "30-31",
+   "quote": "The proposed closing checkpoint, the item the whole revision exists to fix, fails `scripts/validate-blind-solve.mjs` as written and would red the build.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "341",
+   "quote": "`tapPulse` scaling of the correct option before the pupil taps it (the answer is literally pulsing)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/scene/Moment.tsx",
+   "lines": "49",
+   "quote": "(a 'choose' names every figure on stage: the student chooses by who they are, never by a ring)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "65",
+   "quote": "checked all 13 MCQ option sets for register/length/grammar parity — consistently parallel",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "24-25",
+   "quote": "Mild shape tells (3 items, cheap) … the key is the only option with a definite article",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "29-30",
+   "quote": "Option-length spread (11 items) — style, not a defect … Lengths span 44–91% of the mean on those items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "275",
+   "quote": "**length-parity keys** (the correct option never systematically longest), one-difference",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,53 @@
+{
+ "id": "curriculum-context-from-real-sources-only",
+ "title": "Curriculum context from real sources only",
+ "statement": "Give a judge only curriculum data from a real source, and where the source has nothing, leave the field empty rather than have a model fill it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "On an unmerged branch that widens the AP judge's curriculum context, the merged data is described as a pure data combination with no model-generated content (commit fb17482 in `icloud-work/inceptbench`), and the context block as real framework or curriculum-repository content only, with no model-generated scaffolding (commit 082d3a3 in `icloud-work/inceptbench`). Where the published framework has no boundaries or misconceptions for a course, the branch leaves them out rather than fabricate them. A real source is the published framework or the curriculum's own authored records.",
+ "against": "It exists only on that unmerged branch; versions 2.6.3 and 2.6.6 still send the judge a flat seven-field record (`icloud-work/inceptbench-main/src/inceptbench/evaluators/base.py`, L796-817).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "082d3a3",
+   "lines": "42-45",
+   "quote": "(CB CED has no published boundaries/misconceptions for APEURO; we don't fabricate them)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "082d3a3",
+   "lines": "38-39",
+   "quote": "Block size on the consolidated dataset (real CB / curriculum-repo content only — no LLM-generated scaffolding):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "fb17482",
+   "lines": "5",
+   "quote": "Pure data combination — no LLM-generated content.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

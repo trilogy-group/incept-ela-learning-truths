@@ -1,0 +1,91 @@
+{
+ "id": "one-job-per-generation-step",
+ "title": "One job per generation step",
+ "statement": "Make a complex item in steps that each do one job the writer can't do well alongside the others, rather than in a single pass.",
+ "example": "A single call writing all 7 documents of one item drifted from its context by documents 4 to 7 and began inventing attributions.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's rule is that splitting generation into complementary steps is the only reason to add steps, and its research summary's test is whether each stage does one thing the model can't do well alongside other things. A single call writing all 7 documents of an item drifted from its context by documents 4 to 7 and began confabulating attributions, and writing the source and its questions in one step gave tightly coupled outputs that were hard to diagnose. The records credit the large writer's 97% to splitting complex types into steps, but hold no clean measurement of splitting. The steps can be, for example, plan, then source, then questions.",
+ "against": "A jump from 0% to 18% once credited to the pipeline came from a token-limit change, since the 3-step pipeline was already running at 0%; an added research step left results at 60% against 80% without it; and outputs that must refer to each other can't be made apart.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/failures_and_false_starts.md",
+   "lines": "110",
+   "quote": "Breaking generation into multiple complementary steps is the only reason to add steps — verification and regeneration are not valid approaches.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/pipeline_architecture_insight.md",
+   "lines": "5",
+   "quote": "Gemini doesn't score 97% because it's a smarter model. It scores 97% because complex question types (MCQ_SET, DBQ) are broken into multiple complementary steps, each optimized for a specific subtask.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_qwen3_structured_multistage.md",
+   "lines": "215",
+   "quote": "**The right question is not \"how many stages\" but \"does each stage do one thing the model can't do well simultaneously with other things?\"**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "25",
+   "quote": "- Stimulus generation and question generation in one step produced tightly coupled outputs that were hard to diagnose",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "88",
+   "quote": "**Why factual accuracy fails in DBQ:** 7 documents, each needing a plausible historical source, date, and content. The model generates all 7 in one call. By documents 4-7, it's drifted from its context and starts confabulating attributions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/decisions_and_pivots_timeline.md",
+   "lines": "82",
+   "quote": "**The surprise:** `.env` already had `LLM_BACKEND=fireworks` set. The routing was already there. The ONLY change needed was reducing token limits from Gemini scale to sft-v4 scale. That was a 5-minute code change.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "154",
+   "quote": "| sft-v4, Apr 22 | 0% | 3-step pipeline, Fireworks | No MCQ_SET in training data |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "44-46",
+   "quote": "1. Research→Compile (single step): 60% — worse than before\n2. Research→Stimulus→Questions (3 steps): 60% — same problem\n3. Stimulus (from scratch, no research)→Questions: 80% — best",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_qwen3_structured_multistage.md",
+   "lines": "251",
+   "quote": "- When the sub-task outputs need tight semantic coupling (e.g., you can't generate the introduction and body separately if they need to reference each other)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

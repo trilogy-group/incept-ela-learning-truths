@@ -1,0 +1,229 @@
+{
+ "id": "captions-and-redundancy",
+ "title": "Captions and redundancy",
+ "statement": "Captions word for word with the narration: they make a film usable without sound, but in one study text identical to the narration impaired learning.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "media",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Captions are on by default in the film player (`g9/player/index.html`), and they match the script exactly\n(`othello-unit-video/research/METHODS.md`).\nIn a published study, on-screen text identical to the narration impaired learning (Yue, Bjork & Bjork 2013,\nhttps://doi.org/10.1037/a0031971), yet captions are what make a film usable without sound. To settle it: the same film\nwith captions on and off, compared on later recall, with access needs kept separate.",
+ "against": "A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0027-learning-science.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0174-august-consolidation-and-scout-lesson-feedback.qmd`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "player/index.html"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "18",
+   "quote": "WPM self-read hold, captions, UI standardization",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0027-learning-science.qmd",
+   "lines": "47",
+   "quote": "Combine verbal and visual when both add value. Avoid redundancy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "129",
+   "quote": "nothing may be spoken that is not printed, sentence for sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "182",
+   "quote": "captions are NEVER hand-written",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "183-184",
+   "quote": "derives a WebVTT track from the authored `transcript[]`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "184",
+   "quote": "plus the clip's real measured duration via `ffprobe`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "186",
+   "quote": "`validate-contracts.mjs` fails a unit video with no caption track",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "187-188",
+   "quote": "captions are the only way through for a child who cannot hear",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "59",
+   "quote": "- Nothing is spoken that is not printed on the same page, sentence for sentence — a spoken line",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "61",
+   "quote": "exists because two pages drifted 16 lines into paraphrase).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "60",
+   "quote": "readable on screen. Read-aloud is OFF by default at G5: the lesson must be 100% followable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/G3-U1-L4-RESIDUAL-ADJUDICATION-2026-08-21.md",
+   "lines": "90",
+   "quote": "read-along rule runs one way; printed-but-unspoken is",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "39",
+   "quote": "Read-to-me audio matches the printed words exactly, word-highlighted | Any mismatch breaks decoding support and the child’s trust in the voice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "150",
+   "quote": "Every video carries a VTT; captions toggle works",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0194-g3-book-audio-clip-conventions.qmd",
+   "lines": "151-153",
+   "quote": "a page may print words nobody reads aloud (question stems are deliberately silent per R-AUD-6), but it may **never speak words it does not print**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0027-learning-science.qmd",
+   "lines": "47",
+   "quote": "| **Multimedia**   | Combine verbal and visual when both add value. Avoid redundancy.                  |",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/rubric.md",
+   "lines": "99-100",
+   "quote": "suppressed when a text card shows the same words (r18).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0174-august-consolidation-and-scout-lesson-feedback.qmd",
+   "lines": "65",
+   "quote": "captions for Scout (headphones cannot be assumed)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "286",
+   "quote": "Strong evidence is L2/vocab; benefit for fluent learners in dense instructional video is not established.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "76",
+   "quote": "| Caption duplicates text card | same words twice on screen | 09_captions suppression (r18) |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "72-76",
+   "quote": "### Anti-patterns (instructional failures per Mayer's multimedia learning principles) These patterns add extraneous cognitive load without aiding learning: - Decorative talking head (a face that adds no instructional content) - Stock footage that does not teach the KC - Karaoke subtitles (duplicating full narration text on screen)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "108",
+   "quote": "const captions = beats.flatMap((b) => captionsFor(b.narration, b.start + LEAD, b.audio_seconds));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "81",
+   "quote": "on by default. Key words in bold as they are spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "142",
+   "quote": "Captions: on by default. Key words in bold as they are spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "148-149",
+   "quote": "A meta-analysis of 57 studies found that verbatim redundant text impairs learning while extracted key terms can help [17].",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "318",
+   "quote": "Caption text must match actual spoken wording.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Yue, Bjork & Bjork 2013",
+   "url": "https://doi.org/10.1037/a0031971"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

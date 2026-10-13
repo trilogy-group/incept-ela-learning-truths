@@ -1,0 +1,50 @@
+{
+ "id": "test-a-rewritten-task-with-the-old-answer",
+ "title": "Test a rewritten task with the old answer",
+ "statement": "When an open task is rewritten, test its scoring with a fluent answer to the task it replaced, which must now fail, alongside good answers to the new one.",
+ "example": "One unit rewrote three independent tasks that narration had already answered, and the rule now requires each replacement's scoring to reject a fluent answer to the old question.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "scoring-guide",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A final review of one unit found three independent tasks whose answers narrated commentary had already supplied, so a student could pass by repeating what the lesson said. Each was replaced by a task needing a new claim or new evidence, and each replacement's scoring examples list an answer to the superseded prompt among those to reject. The course then made it a rule to give every replacement task separate positive and negative scoring examples, including a fluent response to the superseded question that must now fail.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "119",
+   "quote": "It found three independent tasks whose answers had already been supplied by narrated commentary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "125",
+   "quote": "Also use separate positive and negative scoring examples for the replacement task, including a fluent response to the superseded question that must now fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/u9-independent-transfer-patch.json",
+   "lines": "12",
+   "quote": "Earlier reading-b explicitly supplies a long basket search as a way to show doubt.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,135 @@
+{
+ "id": "show-the-medium-the-skill-uses",
+ "title": "Show the medium the skill uses",
+ "statement": "When the skill is working with a medium itself, such as reading a map or listening, the item must present that medium; for reasoning about content, text will do.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "stimulus",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Items were swapping the medium a standard names for a structurally different one (audit SIG-6, issue 962), while other items were failed for lacking media their skill did not need. An item evaluator's rubric now holds that a different medium, such as a data table, trains a different operation even when it carries the same information, and asks whether the missing medium makes the question unanswerable or merely less authentic (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`). Graphs and tables are other such media. Neither shipping the text alone nor deleting the reference fixes a missing medium.",
+ "against": "Rewriting the text helped but did not pass: fixed questions went from 0.60 to 0.76 on average, the main fix being references to missing images or figures (`icloud-work/incept/nova_forge/qwen3-math/delivery/README.txt`, lines 36-37), still under the 0.85 threshold the project's analyses used. The generator's image strategy lists blocking delivery on a failed image among the things not to do (`icloud-work/incept/nova_forge/svg-llm/docs/SVG_GENERATION_STRATEGY.md`, line 69), in the document that says such questions are unusable without visuals (line 18). The benchmark's evaluator does not ask that a picture be needed: \"A question is NOT penalized simply because it CAN be solved from text alone\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt`, line 629).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "134",
+   "quote": "A structurally different medium (e.g., a data table) trains a different cognitive operation even when it conveys the same information.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "403",
+   "quote": "The distinction: does the absence of the actual medium make the question *unanswerable*, or merely *less authentic*? If the student can fully exercise the target skill using the text provided, the format is acceptable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/IMPORTANT_TECHNICAL_DECISIONS.md",
+   "lines": "453",
+   "quote": "**Decision:** Continue serving requests even if SVG generation fails, returning questions without images.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "11",
+   "quote": "Comprehensive analysis of 1,888 existing test questions across grades 4, 6, 7, and 8 with a quality threshold of 0.85.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "239",
+   "quote": "**Problem:** Questions reference diagrams, tables, or number lines that aren't provided",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "302",
+   "quote": "- **Missing Stimulus:** 168 questions unsolvable without images",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "378",
+   "quote": "- Issue: The question targets “with models” but provides no models to interpret, so it does not assess the intended skill.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/stimulus_reference_detector.py",
+   "lines": "4",
+   "quote": "This module detects when question text references an illustration/diagram/image",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/stimulus_reference_detector.py",
+   "lines": "5",
+   "quote": "but no actual visual stimulus is provided.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/delivery/README.txt",
+   "lines": "36",
+   "quote": "• Fixed questions improved from 0.60 avg → 0.76 avg (+16 points)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/delivery/README.txt",
+   "lines": "37",
+   "quote": "• Main issues fixed: References to missing images/figures",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/docs/SVG_GENERATION_STRATEGY.md",
+   "lines": "18",
+   "quote": "**Result: Questions are unusable without visuals**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/docs/SVG_GENERATION_STRATEGY.md",
+   "lines": "69",
+   "quote": "- Block question delivery on SVG failure",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "629",
+   "quote": "**IMPORTANT:** A question is NOT penalized simply because it CAN be solved from text alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/GATE4_COHERENCE_REPORT.md",
+   "lines": "105",
+   "quote": "RF.5.3.A (297), RF.5.4.A (338), RF.5.4.B (333), RF.5.4.C (370) are oral reading / decoding standards — they cannot appear in a silent comprehension course.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

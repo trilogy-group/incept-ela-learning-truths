@@ -1,0 +1,82 @@
+{
+ "id": "keep-facts-inside-the-period-asked",
+ "title": "Keep facts inside the period asked",
+ "statement": "Keep every fact in an item, its sample answers and marking notes included, inside the period and region the request names, and check dates in code.",
+ "example": "In one 1,080-item run, 41 items were found out of period.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "scoring-guide"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Failure analysis of a 1,080-row export of AP history items counted 41 out-of-period items and 39 factual errors, with named anachronism families recurring. Essay marking notes and short-answer sample responses routinely cited years outside the unit, and in a calibration one essay's marking notes used evidence from a region outside the one its prompt named. It holds where a request fixes a period and region, as in the AP history courses.",
+ "against": "A simple year check caught little on its own: 1 of 7 essay chronology failures, about 14%, with no false positives (icloud-work/aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md, lines 135-137).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "3",
+   "quote": "Complete 1080-row export; 926/1080 = **85.7%** overall, MCQ_SET 67.1%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "25",
+   "quote": "**Symptom**: 21 sample_response_error + 41 out_of_period + 39 factual_error + named-content-trap families (`content_lakota_pre1607` 14, `content_muscovy_east_india` 7, `content_navigation_acts` 3, `content_requerimiento_overclaim` 2) = chain hallucinating concrete, name-able anachronisms in Unit 1 content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "46",
+   "quote": "**Symptom**: LEQ rubric_notes routinely cite years outside Unit 1 (1491-1607); SAQ sample_responses do the same.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "45",
+   "quote": "- `apush-u1-1505-leq-medium`: LEQ rubric included Northeastern evidence outside a Southwest / Great Basin prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "52",
+   "quote": "This creates period drift and can make an item look plausible while testing Unit 2 content. ... later context must be labeled and never required for the Unit 1 key.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "156-159",
+   "quote": "Dates matter because they bound what can cause what. ... Context can reach outside a prompt period, but the response must explain the relationship instead of smuggling later knowledge into the claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT-SPECS.md",
+   "lines": "71-72",
+   "quote": "Do not use a later event as period evidence, invent a direct quotation, treat Indigenous societies as interchangeable, or make the stimulus itself reveal the answer.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

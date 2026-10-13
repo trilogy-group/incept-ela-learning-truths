@@ -1,0 +1,136 @@
+{
+ "id": "calibrate-a-judge-on-what-reaches-it",
+ "title": "Calibrate a judge on what reaches it",
+ "statement": "Calibrate a judge on the inputs it actually receives and on cases only judgment can settle; cases a rule already decides test the rules, not the judge.",
+ "example": "9 of the 10 bad cases in one judge's 20-case gold set fail pattern rules before any model call.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The item benchmark's drift check asks for at least 95% agreement on 20 gold cases, but its loader rebuilds each case without its difficulty or curriculum context, so every case is judged as 'medium' with substandard 'UNKNOWN'. Re-applying the benchmark's own pattern rules, 9 of the 10 bad cases fail before any judge call (recall stems, absolute words, explanations under 50 characters, wrong option counts), because the hard-fail checks run first. The tenth is labelled 'too easy for hard', and the loader drops its 'hard' label, so the 95% bar mainly measures whether the judge passes the 10 good cases. Cases only judgment can settle have several valid approaches, competing goals or missing context. Cases an explicit or pattern rule already decides, or that lost the context that makes them bad, test the rules and the loader, not the judge.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/calibration/validator.py",
+   "lines": "116",
+   "quote": "difficulty=example.question_dict.get(\"difficulty\", \"medium\"),",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/core/evaluator.py",
+   "lines": "227",
+   "quote": "hard_fail_result = check_hard_fails(question_dict, actual_type)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/calibration/gold_standard.json",
+   "lines": "308",
+   "quote": "\"failure_reason\": \"Too easy for 'hard' difficulty; requires no analysis\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/hard_fail/rules.py",
+   "lines": "227",
+   "quote": "if len(explanation) < 50:",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "5",
+   "quote": "Applying explicit rules to short fragments is a control for rule lookup, output formatting, and basic rule application. It is not yet a distinctive test of pedagogical judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "DECISIONS.md",
+   "lines": "33",
+   "quote": "Create a separately authored value set involving multiple valid approaches, goal conflicts, and insufficient context.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "40",
+   "quote": "Keep the 12 synthetic seeds in development, even if they later inspire new examples.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "4-6",
+   "quote": "Each case's state is built by the mechanic\n// itself (judge for a block's checks, judgeAction for a play-time answer) and asked through runChecks, as a block or a\n// play asks it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "105",
+   "quote": "the seed cases: one file per check, sorted as the 3D build sorts its answers, each labelled and built by its mechanic",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "147",
+   "quote": "a case that cannot be built is an error that fails the run, including an answer code settles first",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "6",
+   "quote": "a seed set this small is diagnostic only.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "5",
+   "quote": "Only a saved answer reaches the judge: nonsense, a box too thin and a quotation that is not the text's exact words are stopped by code first (cer-frame respond), so they have no cases here.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "53",
+   "quote": "not asked: code settles this answer before the judge sees it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "54",
+   "quote": "43 answers, 0 hard fails, 1 soft miss. 31 reached the judge",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "2",
+   "quote": "Archivist's judge exactly as Reading.tsx does (question, expects, the section's passage, attempt, lesson title) and",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "define-difficulty-per-skill",
+ "title": "Define difficulty per skill",
+ "statement": "Define each difficulty level per skill and check every label against that skill's own definition, because one global rule for easy or hard mislabels items.",
+ "example": "Across 1,888 judged items, difficulty alignment caused 564 failures, second only to factual accuracy.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "demand",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Across 1,888 judged math items, difficulty alignment was the second most common failure, with 564 failures (40.0%) after factual accuracy's 650 (`icloud-work/incept/nova_forge/EXECUTIVE_SUMMARY.md`, lines 11 and 52-56). The judge read each standard's own definitions, for example finding an item labelled easy that matched the medium definition for its standard (`icloud-work/incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md`, line 23). A grade 4 curriculum file defines the levels per skill, for example by which step of a pattern the question asks about (`icloud-work/incept/incept-multilingual-generation/edu_configs/curriculum_grade_4.jsonl`, line 1). A pass-rate analysis traced the failures to generic guidance such as \"EASY: small numbers\" (`icloud-work/incept/nova_forge/PASS_RATE_ANALYSIS.md`, line 81); that is its diagnosis, not a measurement.",
+ "against": "The pipeline then hard-coded one number range per level for every skill, \"'easy': (100, 999),\" (`icloud-work/incept/nova_forge/FIX_SUMMARY.md`, line 71), and its README reports \"<1% range errors (was 15%)\" (`icloud-work/incept/nova_forge/README.md`, line 197) with no scored run cited for it.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "11",
+   "quote": "Comprehensive analysis of 1,888 existing test questions across grades 4, 6, 7, and 8 with a quality threshold of 0.85.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "52",
+   "quote": "1. **Factual Accuracy** - 650 failures (46.1%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "56",
+   "quote": "2. **Difficulty Alignment** - 564 failures (40.0%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "23",
+   "quote": "- **Issue:** Labeled as Easy but matches the provided Medium definition for this standard.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/edu_configs/curriculum_grade_4.jsonl",
+   "lines": "1",
+   "quote": "\"difficulty_matrix\": \"EASY\\n- Steps one to three are given and the question asks about step 4.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "81",
+   "quote": "- Generic difficulty guidance (\"EASY: small numbers\") doesn't match specific requirements",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FIX_SUMMARY.md",
+   "lines": "71",
+   "quote": "'easy': (100, 999),",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/README.md",
+   "lines": "197",
+   "quote": "- **Result**: <1% range errors (was 15%)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

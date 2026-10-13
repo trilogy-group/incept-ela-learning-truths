@@ -1,0 +1,82 @@
+{
+ "id": "tuning-finds-what-the-score-misses",
+ "title": "Tuning finds what the score misses",
+ "statement": "A writer tuned or selected against a score can converge on whatever the score doesn't test, so anything a question must have has to be part of the selection.",
+ "example": "Tuned against a structure-only score, a writer produced a question rated 1.0 that a solver answered without its passage every time.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project's tuning run, the reward measured structural quality only and had no concept of passage-dependency; it plateaued at ~0.14 once the writer had converged to structurally valid leaked questions. The spec concluded that the two quality dimensions are orthogonal and both must be in the reward signal. The follow-up directive was to optimize the course, not the item: a course where every item scores 1.0 but 90% is blind-solvable is a failed course, as a question scored 1.0 with a blind-solve rate of 100% showed. In the AP work, a fix that raised a question set's score did it by removing the stimulus, which skipped the grader's leak probe. Needing its text is one such property a question must have.",
+ "against": "The cheap text-dependence terms proposed for the reward barely separated leaky items from clean ones (AUC ~= 0.5), and under the shipped reward a reworded leak scored higher than a genuine requires-reading item (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 170-171 and 186-188). The recommended design keeps a cross-family blind solve outside the loop, as ground truth and for checkpoint selection, not as the per-rollout reward (the same file, lines 180-184).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "111-112",
+   "quote": "InceptBench (existing reward function) measures structural quality: well-formed stem, single key, near-neighbour distractors, valid CCSS label. **It has no concept of passage-dependency.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "115-116",
+   "quote": "Reward plateau at ~0.14 confirmed the model had converged to structurally-valid leaked questions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "118",
+   "quote": "The two quality dimensions are orthogonal. Both must be in the reward signal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "102-105",
+   "quote": "the correction is \"optimize the course, not the item\" — a course where every item scores IB 1.0 but 90% is blind-solvable is a failed course (proof: DAPO epoch 0 emitted \"What is the primary function of chlorophyll?\" from a photosynthesis passage — IB 1.0, blind-solve 100%).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "26-27",
+   "quote": "The actual MCQ fix was the **OPPOSITE** of \"add a real passage\" — it was **REMOVING the stimulus** so the grader's leak-probe is skipped. That's **grader-gaming**, not a provenance win.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "251-256",
+   "quote": "- 13/13 passed deterministic quality-A and the loosened sound gate; - only 4/13 passed the LLM quality-B rubric. That pilot is a key negative lesson. Anti-leak is not enough. Some sequence rewrites could pass blind gating while becoming weak, mechanical, or misaligned tasks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/GENERATOR_DIRECTIVE.md",
+   "lines": "28",
+   "quote": "Reward plateaued ~0.14: convergence to structurally-valid **leaked** questions, because that is what a structural-only signal rewards.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

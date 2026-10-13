@@ -1,0 +1,89 @@
+{
+ "id": "neutral-labels-for-which-source-items",
+ "title": "Neutral labels for which-source items",
+ "statement": "In an item that asks which source states a detail, use neutral labels and statements balanced across the sources' topics, so only reading the sources tells which one says what.",
+ "example": "Built this way, one run kept 700 items that a solver could answer with the sources but not without them.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "options",
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 5 generation run, source-attribution items produced the volume: categories were neutral (Source A, Source B, Both), passage titles were not category labels, statements were topically symmetric, Both meant explicit shared support, and the key required reading which source stated the detail (`grade3-reading/knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd`). The retrospective says this removes title, topic and keyword leakage and avoids chronology and world-knowledge paths, and its final cut kept 700.",
+ "against": "Those 700 were certified under a loosened blind bar, and no quality review was run over them (the same file).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "44-48",
+   "quote": "- categories were neutral: `Source A`, `Source B`, `Both`; - passage titles were not category labels; - statements were topically symmetric; - `Both` meant explicit shared support, not broad inference; - the keyed category required reading which source stated the detail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "52-53",
+   "quote": "- it removes title/topic/category keyword leakage; - it avoids chronology/process/world-knowledge paths;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "144",
+   "quote": "| final cut | 700 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "69",
+   "quote": "the 700 MATCH tranche used a Gemini cross-family gate with `loosened` bar",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "217-220",
+   "quote": "Quality-B was not run across every final item: - used on the small sequence MODIFY pilot; - not run over the final 700 MATCH or final 167 non-match items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "335-336",
+   "quote": "- every item needed at least one Source A, one Source B, and one Both statement; - `Both` required explicit shared support, not a broad topic-level inference;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "272-275",
+   "quote": "The 417 source-attribution candidates that failed with-passage control were not mostly \"leaky.\" They were often ambiguous or overbroad around `Both`, frequently missing one statement in an otherwise near-correct match. This is why with-passage control is a quality gate, not just an answerability formality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/RUN_REPORT_2026-07-08.md",
+   "lines": "54",
+   "quote": "Gemini blind leak gate run until enough additions were certified: 715 certified, 0 blind leaks observed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

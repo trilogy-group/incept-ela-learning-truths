@@ -1,0 +1,120 @@
+{
+ "id": "keep-the-text-apart-from-the-inference",
+ "title": "Keep the text apart from the inference",
+ "statement": "Keep what the text says apart from what the student infers: an inference never fills the slot for the text's words and never sits inside quotation marks.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The reading course's criteria register keeps inferred mood words in the 'I know' step of its reasoning frame, never inside 'The text says' (`grade3-reading/artifacts/criteria-register.csv`, line 72). Two external audits of its lessons found modelled inferences wrapped in quotation marks as if they were the text's words, against the lessons' own rule that quote marks mean the text's exact words (`grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`, line 14; `grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`, line 113).",
+ "against": "A contract in the same engine requires the modelled inference in a reveal beat to be wrapped whole in curly quotes; the clash was recorded as a contradiction awaiting a ruling, and the lessons kept the quote marks as the contract demands (`grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`, line 57). A later run found counter-evidence (`grade3-reading/artifacts/qc-2026-09-30-staging/contradictions.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/rules/contradictions.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "72",
+   "quote": "Inferred mood words (gloomy, enchanting, etc.) live only in the 'I know' step, never inside 'The text says'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "14",
+   "quote": "quote marks around words the writer never wrote",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "113",
+   "quote": "puts quotation marks around the model's own inferential words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1175",
+   "quote": "Saved original46/47 show tomorrow night / thy father’s house running directly into their explanation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1175",
+   "quote": "BookClassicModel.renderBeat joins every narration line with inline spaces.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3437",
+   "quote": "What the clues show runs directly into the explanation in one paragraph.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1187",
+   "quote": "frozen original48pass/15fail→63pass/0fail with original47 cases identical and all28 quote excerpts across14 models.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/procedures/infer.md",
+   "lines": "16-18",
+   "quote": "The inference itself NEVER sits inside the \"the text says\" part — the quote is evidence, the \"So I think\" part is the built meaning, and collapsing them models circular reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/procedures/infer.md",
+   "lines": "19-21",
+   "quote": "The \"I know that\" move supplies WORLD knowledge (what anyone knows about being trapped, being tired, wanting to be safe), never a second quote and never a fact the text already states.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "278",
+   "quote": "NOT applied: M3 (quote marks around the model's inference) — `validate-contracts` requires them; contradiction row 10 recorded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "21",
+   "quote": "REQUIRES the pulled-out line wrapped whole in curly quotes \"so the child reads it as the writer's message\"; the InceptBench quick-check of L1 (29.09, M3) calls the same quote marks a defect because the lesson teaches that quote marks mean the text's exact words",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/contradictions.md",
+   "lines": "21",
+   "quote": "`validate-contracts` (checkStagedModel, since the L1 FIND rebuild) REQUIRES the pulled-out line wrapped whole in curly quotes \"so the child reads it as the writer's message\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "205",
+   "quote": "(Text-says holds only verbatim quotes; every trait word sits in the \"I know\" / \"So\" part, never in \"The text says.\")",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

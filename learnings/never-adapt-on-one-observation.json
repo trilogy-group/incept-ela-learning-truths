@@ -1,0 +1,185 @@
+{
+ "id": "never-adapt-on-one-observation",
+ "title": "Never adapt on one observation",
+ "statement": "Don't adapt to a student on fewer than three observations.",
+ "example": "A first version adapted off one lucky tap.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "practice"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading engine adapts to a student only after three observations: thin evidence is not evidence\n(`grade3-reading/engine/src/goal/lesson.js`). Its first version adapted off one lucky tap\n(`grade3-reading/engine/EVIDENCE-2026-09-22.md`), and the lesson engine's plan for a director keeps the rule\n(`g9/transformer/v05/README.md`).",
+ "against": "three is not calibrated. A later run found counter-evidence (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-best-of-everything.json`). A later run found: The Grade 9 strategy adapts on a single observation: one first-try pass on a parallel item offers a skip of the modelled turn, on the strength of a rapid first-step test that correlated with traditional tests at up to .92 in grade 9–10 algebra and geometry (Kalyuga & Sweller 2004, https://doi.org/10.1037/0022-0663.96.3.558); it is a design proposal, not a measured result (`othello-course-renderer-draft/repo/docs/design/grade-9/strategy/grade-9-strategy.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/goal/lesson.js"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v05/README.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "62",
+   "quote": "A 5-item quiz is useful for retrieval practice but too unreliable for mastery decisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "339",
+   "quote": "On a four-option MCQ, a student with zero knowledge has a 25% chance of answering correctly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "339",
+   "quote": "a single correct answer is not proof of knowledge and a single incorrect answer is not proof of ignorance.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "75",
+   "quote": "- Single-draw conclusions FLIP between draws (e.g., SAQ best-profile changed from `exam_precision` (single-draw) to `tight_alignment` (3-draw mean)).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_analyzer/2026-05-29T0644Z_dream_sequence_sync_06Z.md",
+   "lines": "21",
+   "quote": "single-seed n=50 Path β ablation showed +10pp lifts (cell-conditional); multi-seed n=90 revealed those were noise.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_4way_verdict_20260526.md",
+   "lines": "79",
+   "quote": "Per-cell, the 2.5 \"DBQ 3/3 vs 0/3\" was small-N noise — both DBQ cells normalized to 2/3 on 3.5.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "71",
+   "quote": "a single correct answer is not proof of knowledge and a single incorrect answer is not proof of ignorance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "159",
+   "quote": "so that a single lucky guess or unlucky slip doesn't derail the binary search.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "62",
+   "quote": "Do not infer knowledge from one noisy response.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "42",
+   "quote": "No mastery decision rests on a single MCQ (≥25% guess); use item bundles",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1999",
+   "quote": "A 5-item quiz is useful for retrieval practice but too unreliable for mastery decisions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "499",
+   "quote": "- 1/2 → Uncertain. In a low-stakes diagnostic context, treat as a probable gap and route to remediation",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "76",
+   "quote": "- **Rule:** every recommendation requires ≥3-seed evidence before shipping a packet.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v05/README.md",
+   "lines": "5",
+   "quote": "never adapt on fewer than three observations",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "The thresholds (3, 0.8, 0.5) are Grade 3 engineering choices, not calibrated values.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/strategy/grade-9-strategy.md",
+   "lines": "143",
+   "quote": "a student who passes a parallel item on the first try is offered \"Skip my walkthrough?\".",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "150",
+   "quote": "In grade 9–10 algebra and geometry, a rapid \"first step\" knowledge test correlated with traditional tests at up to .92.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "284-285",
+   "quote": "One item can diagnose one attempt; claims about a stable learner pattern require evidence across items.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "90",
+   "quote": "Wrong on the same procedure three lessons running",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "112",
+   "quote": "For the first 2 items, the likelihood function is nearly flat and MLE is unstable.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

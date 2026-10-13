@@ -1,0 +1,387 @@
+{
+ "id": "measure-a-generator-on-one-try",
+ "title": "Measure a generator on one try",
+ "statement": "Measure and headline a generator on one attempt per input fixed in advance, per item type, in the mode that ships, on untuned topics, reporting retried or best-of-several rates apart.",
+ "example": "An AP generator's headline 99% came from keeping the best of several tries at build time and serving from cache, not from the model generating.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP course's evaluation contract freezes raw generator quality as one candidate and one attempt, with no retry, reranking, repair, cache substitution, rejection sampling, best-of-N or hidden human selection, fixed at 100 preregistered records per family with no early success or denominator top-up, and keeps served-bank and cache evidence in a separate lane. An earlier AP generator's headline 99% had proved to be a build-time best-of-N and serve-from-cache exploit, which its own scoreboard said was not the model generating. Rates after retrying, reranking, filtering or keeping the best of several tries are each reported apart from the first-attempt rate. A Grade 5 reading course's intake standard gates on first-attempt passes per item type with template copies removed, because a total of 8,937 passes had counted re-samples and template copies, one template stamped about 1,475 times (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md`, lines 30-38).",
+ "against": "The contract is frozen but has not been run: no benchmark run had been executed for that hand-off. This is not a controlled comparison: the filtered report covers five grades over '- **Evaluation Period:** September 30, 2025 to October 02, 2025' (`icloud-work/incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md`, line 17), while the 8.48 run is a single grade-3 set whose report does not say it was unfiltered. The contract is a frozen design: no run under it had been executed when the AP work paused (`grade3-reading/knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd`). Generating several items and shipping only verified ones is a legitimate way to build a production bank, so long as its yield is not reported as a single-attempt claim (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md`). Shipping best-of-K verified items is called a fine way to build a bank; only the claim about the model changes (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md`, lines 260-262). Selection still has a place in what students are served: a Grade 5 retrospective credits the delivered bank's quality partly to discarding large volumes of plausible-looking output (`grade3-reading/knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd`, line 36), so a served bank can be good where the generator alone is not. The per-type samples behind the 52% and 86% are tiny and partly mismatched ('(different prompts; clean N=3 is too small)', `icloud-work/aptraining/.agent/research/failure_taxonomy.md`, line 349), and the baseline report's '~70 pp' of lift compares a different model, judge and server, so it overstates the effect (`icloud-work/aptraining/.agent/research/eval_baseline.md`, line 243). A retry on a failed delivery that never looks at the output was kept as legitimate ('Transport-level retry on transient 5xx — does not condition on output content.', `icloud-work/aptraining/.agent/research/inference_clean.md`, line 42). iterating and keeping the best of five tries does recover the rate on fresh topics, at a higher cost per item, and one generator's design permits picking the best of three internally. The measured drop mixes the pick with a change of rows: the four-attempt figures came from rows 50-99, which the repairs had targeted, and the single-attempt figures from fresh rows 100-149, and the question-set lane's 100% in both was predicted, not graded. The 8 of 20 retest also used a thinner prompt: \"The missing lift is in the actual specialist solver mechanics, not the thin deployable generic prompt.\" (aptraining-local/den-of-ideation/from_den/2026-05-25T0758Z_BLOCKED_WORKFLOW_GENERIC_MCq_RETEST.md, line 18).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "58-60",
+   "quote": "Raw generator quality is `raw_k1`: one candidate, one attempt, no retry, reranking, repair, cache substitution, rejection sampling, best-of-N, or hidden human selection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "60-62",
+   "quote": "Raw acceptance is fixed at 100 preregistered records per family, with no early success or denominator top-up. Served-bank and cache/runtime evidence stays in a separate lane.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "9",
+   "quote": "BUT the headline '99%' is a build-time best-of-N + serve-from-cache EXPLOIT (SCOREBOARD_99 itself: 'NOT the model generating'), which violates the K=1/no-BoN constraint",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "64",
+   "quote": "No InceptBench run has been executed for this APUSH handoff.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md",
+   "lines": "81",
+   "quote": "3. **Quality Filtering:** Only questions scoring ≥8.0/10.0 are retained in the dataset",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/incept_benchmark_report.md",
+   "lines": "13",
+   "quote": "- **Weighted Overall Score:** 9.28/10.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/Readme.md",
+   "lines": "156",
+   "quote": "Analyze question scores and remove low-performing questions from the database.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/evaluator/reports/evaluation_13-01-37_report.md",
+   "lines": "17",
+   "quote": "| **Weighted Score** | **8.48/10.0** | 300 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "73",
+   "quote": "The \"8,937 passes\" is the served-99 best-of-N exploit reborn.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "73-75",
+   "quote": "Generator never produced >820L; EBSR only ≤560L; passages ~104 words; ~98% DOK-2; no `sequence` template; 0/8,937 sequence/match survive strict QA; EBSR is the largest high-Lexile pass-type via **ONE template stamped 1,475×** (same-family trivial auto-pass).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "76",
+   "quote": "Gate G5 on a RAW-K=1, first-attempt, per-template-deduped yield",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "34",
+   "quote": "The headline **\"99%\" was cache + best-of-N**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "60-61",
+   "quote": "Raw acceptance is fixed at 100 preregistered records per family, with no early success or denominator top-up.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "61-62",
+   "quote": "Served-bank and cache/runtime evidence stays in a separate lane.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/GENERATOR.md",
+   "lines": "152-153",
+   "quote": "But it is **NOT a K=1 single-model claim.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/GENERATOR.md",
+   "lines": "154",
+   "quote": "they are the yield of a search-plus-filter loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "55",
+   "quote": "the \"99%\" was **cache + best-of-N**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "56",
+   "quote": "(not the model generating); the \"28%\" was **four harness bugs**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "36",
+   "quote": "- The **\"28%\" was four eval-harness bugs** — weeks burned on a measurement artifact, not a model failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md",
+   "lines": "33-36",
+   "quote": "A total like \"8,937 passes\" is **best-of-N reborn** — the same crutch aptraining's \"served-99%\" turned out to be — when it counts re-samples and template clones: in the G5 intake **one EBSR template was stamped ~1,475× and 0/8,937 sequence/match items survive the strict grader.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/generator-output-spec.md",
+   "lines": "36-38",
+   "quote": "Intake therefore gates on `raw_pass_rate[type]` = (unique-template first-attempt passes) / (unique-template first attempts), reported **per type**, with template-clone inflation removed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "93",
+   "quote": "aptraining's headline \"99%\" was a **build-time best-of-N + serve-from-cache exploit** (kb-0063; SCOREBOARD_99 \"NOT the model generating\"), and the raw K=1 model floored at mcq/mcq_set 0.292 while the stack masked it [M8].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "28-29",
+   "quote": "G5 intake gates on **first-attempt, per-template-deduplicated `raw_pass_rate` per type** — \"1 prompt → 1 sampled item → graded\", NOT \"cell has ≥20 survivors after N samples\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "47-48",
+   "quote": "**The headline \"99% / served-99\" is NOT a model achievement.** SCOREBOARD_99 itself says the served numbers are **\"cache-backed… NOT the model generating\"** and **\"not a verified 99%.\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "260-262",
+   "quote": "**Inference-time generate-and-verify is legitimate for a PRODUCTION generator** — shipping best-of-K verified items is a fine way to build a bank. But it is **NOT a K=1 single-model claim.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "93",
+   "quote": "(Our regenerate-until-pass loop is itself a soft best-of-N; report raw first-attempt yield separately.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "93",
+   "quote": "aptraining's headline \"99%\" was a **build-time best-of-N + serve-from-cache exploit**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "262-263",
+   "quote": "Do not report these numbers as \"the model produces clean G5 items at K=1\"; they are the yield of a search-plus-filter loop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "260-262",
+   "quote": "shipping best-of-K verified items is a fine way to build a bank. But it is **NOT a K=1 single-model claim.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "34-35",
+   "quote": "The headline **\"99%\" was cache + best-of-N** — its own scoreboard flagged it as **\"NOT the model generating\" / \"not a verified 99%.\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "50",
+   "quote": "So the \"99%\" is process, not a clean model win.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "352",
+   "quote": "Aggregate APUSH+APWH for these two N=30 runs: **52% (clean) → 86% (+crutch) = +34pp**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "382",
+   "quote": "**Crutch-inflation summary:** the 83.3% headline on sft-v4-14b BoN+2bi is roughly **34-50pp inflated** over clean one-shot when you average across the matrix.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "16",
+   "quote": "The prior pipeline hid this with retry; one-shot exposes it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "194",
+   "quote": "BoN K=N is data-harvest + diagnostic + param-discovery only, never quoted as goal progress.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "3",
+   "quote": "0/50 = 0% on fresh KCs). Cited 32/33 on my 17 baseline KCs did NOT generalize.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T163819Z_reports_mcqset_50_50_live_verified_20260522/QUARANTINE_REASON.md",
+   "lines": "5",
+   "quote": "fresh n=50 re-test at 10.00% (vs 78% step-function bar)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "15",
+   "quote": "the prior 83.3% was inflated by inference crutches; clean one-shot SFT v7 is at 13%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md",
+   "lines": "53-54",
+   "quote": "The iteration pattern (iterate + K=5 best-of) DOES recover the rate, but at higher API cost per item.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/03-ARCHITECTURE.md",
+   "lines": "53",
+   "quote": "The generator's internal candidate selection (e.g., generate 3 → pick best 1) is permitted.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/current_completion_audit_20260524T2053Z.md",
+   "lines": "40",
+   "quote": "Do not mislabel this as deployable K1 production `>=99%`.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T202325Z_2026-05-24T2022Z_UNIT1_LEQ_SOLVER_v3_VALIDATED_99_6pct.md.md",
+   "lines": "140",
+   "quote": "**Deployable bound is K=1 single-shot.** Slice-2 K=1 (rows 100-149) was 239/250 = 95.6% with LEQ v2.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-25T0615Z_TASK_concrete_deployable_workflow.md",
+   "lines": "88",
+   "quote": "No more \"99.6% goal complete\" framing in production-facing docs. Use the K=1 numbers as headlines.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-25T0615Z_TASK_concrete_deployable_workflow.md",
+   "lines": "68",
+   "quote": "Production must run WITHOUT IB grader access (Render can't reach LAN IB).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "280",
+   "quote": "K-of-N judging is useful for experiments and selection, but it is not proof of K=1.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/from_den/2026-05-25T0758Z_BLOCKED_WORKFLOW_GENERIC_MCq_RETEST.md",
+   "lines": "12",
+   "quote": "`/no_think` generic deployable MCQ: `8/20 = 40.0%`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "211-213",
+   "quote": "- Stop a cell as failed when its threshold is mathematically unreachable even if all remaining planned records passed. Do not add prompts to dilute the failure. - Never stop early for success.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "101",
+   "quote": "There is no early pass, retry, best-of-N pool, cache read, or denominator top-up.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "13-14",
+   "quote": "1. **Raw K=1** measures one frozen model call for one frozen request. It permits no retry, repair, reranking, best-of-N selection, cache substitution, or hidden human choice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "714",
+   "quote": "Served quality is a pipeline result and cannot be relabeled as the generator's raw pass rate.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

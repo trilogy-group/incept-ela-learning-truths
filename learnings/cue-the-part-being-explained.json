@@ -1,0 +1,73 @@
+{
+ "id": "cue-the-part-being-explained",
+ "title": "Cue the part being explained",
+ "statement": "Cue the one element the narration is explaining at that moment, with a brief accent or arrow, so learners never have to search for it.",
+ "example": "Across 103 studies and 12,201 learners, cueing improved retention by an effect size of 0.53 and transfer by 0.33.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The grade-7 science visual design guide makes signalling a rule because a novice does not yet know which boundary, part or arrow matters, and a restrained cue turns visual search into guided inspection (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, lines 74-79). It cites a meta-analysis of 103 studies and 12,201 learners in which cueing improved retention (g+=0.53) and transfer (g+=0.33) and reduced cognitive load (Schneider, Beege, Nebel & Rey 2018). Its storyboard rule cues one current part with a reserved accent plus a shape, arrow or glow and dims earlier labels to about 60% (line 258), and the course's generation spec highlights the narrated element while it is narrated, one highlight at a time (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, line 35).",
+ "against": "The guide expects signalling, like coherence, segmenting and pre-training, to add most when prior knowledge is low (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, lines 244-245), and another record cites a study in which added signals linking text and pictures were detrimental for students with high prior knowledge (Richter, Scheiter & Eitel 2018).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "78-79",
+   "quote": "**Evidence.** Across 103 studies and 12,201 learners, cueing improved retention (*g*+=0.53), transfer (*g*+=0.33), and reduced cognitive load [10].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "75-76",
+   "quote": "A novice does not yet know which boundary, organelle, or arrow is diagnostic. A restrained cue converts visual search into guided inspection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "258",
+   "quote": "Cue one current part with the reserved accent plus shape, arrow, or glow; dim earlier labels to approximately 60%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "35",
+   "quote": "Reveal-while-explaining and highlight the narrated element WHILE narrated; ≤1 highlight at a time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "244-245",
+   "quote": "coherence, signaling, segmenting, and pre-training evidence all predict greater value when knowledge is low",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Schneider, Beege, Nebel & Rey 2018",
+   "url": "https://doi.org/10.1016/j.edurev.2017.11.001"
+  },
+  {
+   "ref": "Richter, Scheiter & Eitel 2018",
+   "url": "https://doi.org/10.1037/edu0000220"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

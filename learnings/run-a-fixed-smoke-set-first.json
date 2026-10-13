@@ -1,0 +1,106 @@
+{
+ "id": "run-a-fixed-smoke-set-first",
+ "title": "Run a fixed smoke set first",
+ "statement": "Before any full run and after every change, run a small fixed smoke set end to end, and use it to find bugs, not to estimate rates.",
+ "example": "A five-item probe surfaces format collapse and breakage for about 3% of a full run's cost.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "review"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two builds burned full 150-row grading runs before their collapse showed, one with 0 of 150 parsing and one 16.2 points down, so the project required a five-item smoke first: one item per type, drawn from the held-out pool and fixed across runs so results compare. A later backlog turns each recurring failure family into 3 to 5 fixed regression prompts run locally and live after every deploy, after five deploys had each carried an unverified gain claim. The set holds one item of each type plus a few per known failure family and runs through the whole make-and-check path.",
+ "against": "A tiny smoke set cannot judge everything: a 7-response smoke showed question-set uniqueness of 1 of 2, which at that size was only a warning (icloud-work/aptraining-crystal-copy-20260521/evidence/RUN_MODE_TAXONOMY_AND_GATES_20260521.md, line 95).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/scripts/SHIP_PRECONDITIONS.md",
+   "lines": "76-78",
+   "quote": "v38 (262 rows, eval=0/150 parse_ok) and v39 (1036 rows, −16.2pp binary) both burned the full 150-row IB-grader run before their collapse was visible.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/scripts/SHIP_PRECONDITIONS.md",
+   "lines": "79-80",
+   "quote": "A 5-item probe surfaces format collapse, deployment-side breakage, and obvious regressions for ~3% of the cost.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/scripts/SHIP_PRECONDITIONS.md",
+   "lines": "82-85",
+   "quote": "**Smoke composition.** 5 APUSH items, one per cell type (`MCQ`, `MCQ_SET`, `SAQ`, `DBQ`, `LEQ`), drawn from the held-out eval pool (NOT the training set). Items are fixed across runs so smoke results are comparable;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "209",
+   "quote": "- Convert each family into 3-5 fixed regression prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "210",
+   "quote": "- Run them locally and live after every deploy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/system_improvement_brainstorm.md",
+   "lines": "25",
+   "quote": "**Value**: HIGH. Right now we have 5 deploys with no measured impact. Each deploy carries an unverified +N pp claim.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "188",
+   "quote": "**Result:** 1/5 pass (5 OpenAI + 5 IB calls, ~$0.003).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-04-30T1700Z_comprehensive_lessons_learned.md",
+   "lines": "194",
+   "quote": "**Why this matters:** The 13K-row curriculum-API scaleup ($25-40) was gated on this 5-row pilot. The pilot worked — it found the bug cheaply. But the bug blocked the whole pipeline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/discovery/discovery_q9_untried_levers_brainstorm.md",
+   "lines": "33",
+   "quote": "v44, v44b, v44d3 all produced 100% gen_fail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/discovery/discovery_q9_untried_levers_brainstorm.md",
+   "lines": "35",
+   "quote": "A 10-item smoke test would have caught this.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-04-30T0700Z_v37c_DONE_postmortem.md",
+   "lines": "69",
+   "quote": "The pilot's 100/80/20/10/0 spread was small-N noise on 5 cherry-picked cells.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

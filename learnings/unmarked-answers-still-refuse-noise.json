@@ -1,0 +1,163 @@
+{
+ "id": "unmarked-answers-still-refuse-noise",
+ "title": "Unmarked answers still refuse noise",
+ "statement": "Even where answers are kept and never marked, refuse noise such as gibberish, the question given back or a copied line, and ask plainly for the student's own answer.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "marking",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An animated version's guards refuse noise even where an answer is kept, not marked, such as the first thoughts on the lesson question that its reading page asks for when a lesson has no quick check (`g9/transformer/src/glue/animated.js`). The lesson engine's plain lines for those guards, used only where the build's own cannot be read, answer gibberish with \"That is not an answer yet. Write a sentence of your own.\" and the question given back with \"That is the question. What is your answer to it?\". Played in that build's renderer, the claim-evidence-reasoning page, which keeps its reasoning unmarked, refused \"asdf qwer zxcv\" (`g9/transformer/v02/QA.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "31",
+   "quote": "lesson question for first thoughts: the build's guards refuse noise, and the answer is kept, not marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "252",
+   "quote": "gibberish: \"That is not an answer yet. Write a sentence of your own.\", echo: \"That is the question. What is your answer to it?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "253",
+   "quote": "quote_only: \"Those are the text's words. Now say, in yours, what they show.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "249",
+   "quote": "Used only where the build's own lines cannot be read (no mirror): plain, and never the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "61",
+   "quote": "CER-1 refused \"asdf qwer zxcv\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/03-INSTRUCTION-DESIGN.md",
+   "lines": "262-263",
+   "quote": "Pre-reading beats judge only whether the child said something real — no passage sent, no vocabulary required, nothing to cite.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "354",
+   "quote": "**1.3 / 7.1 / 8.2 not a chatbot** — \"Send\" + \"The Archivist will reply\" rejected; gibberish praised; no convergence",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/README.md",
+   "lines": "33-34",
+   "quote": "Not a chatbot: nothing replies to typed text. Own-words answers are kept and shown back, refused only if gibberish or too short, and never scored.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "41",
+   "quote": "Own-words answers are stored, never judged by a keyword match and never replied to; gibberish and too-short text are refused with a plain prompt (feedback 1.4, 8.2).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "16",
+   "quote": "\"fdsf\", \"fdsf sdfsd qwrt zxcv\", \"aaaaaa bbbbbb cccc dddd\", \"audience knows\" all refused, no reply; a real sentence saved and shown back as \"YOUR WORDS\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "41",
+   "quote": "On the quote break-down screen, the input \"fdsf\" receives a courteous Socratic reply.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "127",
+   "quote": "Reject gibberish. Do not reply to noise as though it were an answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "338",
+   "quote": "The independent practice cannot distinguish an answer from noise.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "41",
+   "quote": "On the quote break-down screen, the input \"fdsf\" receives a courteous Socratic reply.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "41",
+   "quote": "This is the same defect as the Aladdin answer checker accepting gibberish, which makes it platform-level rather than content-level: it will recur anywhere free text is accepted, in any unit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "127",
+   "quote": "Reject gibberish. Do not reply to noise as though it were an answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "8-9",
+   "quote": "In the page, rules catch empty answers, \"don't know\", gibberish, echoes of the question and quote-only answers on a first attempt; those never reach the model.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L1716c4.txt",
+   "lines": "16",
+   "quote": "Check 3 own words: \"fdsf\", \"fdsf sdfsd qwrt zxcv\", \"aaaaaa bbbbbb cccc dddd\", \"audience knows\" all refused, no reply; a real sentence saved and shown back as \"YOUR WORDS\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "68",
+   "quote": "The page's own rules: the answers were written to pass them.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

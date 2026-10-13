@@ -1,0 +1,48 @@
+{
+ "id": "make-the-changes-then-walk-once",
+ "title": "Make the changes, then walk once",
+ "statement": "Make the changes and run the quicker checks before one full walk-through of a lesson, rather than walking, failing, patching and walking again.",
+ "example": "The rule came after two cycles of walking, failing and patching were stopped.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a rebuild of a reading lesson, a \"changes-first, then one walk\" discipline started formally at tick 30, after two walk-fail-patch-walk cycles (journeys 32 and 33) were stopped: from then on a fan-out of the driver lens and the verifiers ran before the single walk (`grade3-reading/knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd`). The walks are runs of a Playwright-based walker (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "115-116",
+   "quote": "**\"Changes-first, then one walk\" discipline** (memory `changes-first-then-one-walk`) started formally at tick 30",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "116-117",
+   "quote": "two walk-fail-patch-walk cycles (journeys 32/33): a driver-lens + verifier fan-out runs BEFORE the single walk from tick 30 onward.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "112",
+   "quote": "**Driver** (Playwright-based walker)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

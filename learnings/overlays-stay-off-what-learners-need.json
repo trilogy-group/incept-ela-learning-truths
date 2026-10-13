@@ -1,0 +1,131 @@
+{
+ "id": "overlays-stay-off-what-learners-need",
+ "title": "Overlays stay off what learners need",
+ "statement": "Never let a caption, control, card, panel border or crop cover or cut what the learner still needs, such as teaching text, a clue or a character's face.",
+ "example": "A feedback popup covered three clues the learner needed for the next answer.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "feedback",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Native captures found a film's default caption covering the slide text, a centred Play button covering instructional diagrams on several films, and a fixed feedback popup over three glowing clues needed for the next answer (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, lines 2451 and 2419). A supplied UI review of another lesson found the play button over the speaking character's face, over the figures a mid-video check asks about and over one of the things the screen teaches (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, line 42). The repairs gave captions and labelled controls reserved space outside the picture, moved film controls to a strip beneath the video, and kept clue feedback off the passage (`grade3-reading/ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md`, line 18).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2451",
+   "quote": "Default caption covers the slide text Topics name a subject; central blue Play covers instructional diagrams on several other G5 films.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2451",
+   "quote": "Captions and labelled playback controls occupy reserved space outside the picture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2419",
+   "quote": "Actual: fixed feedback popup overlays three glowing clues needed for the next answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2419",
+   "quote": "Expected: feedback readable below clue box/right panel/margin and never covering active passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "42",
+   "quote": "Centre placement puts it over the speaking character's face, over the running figures the learner is being asked about in the mid-video check, and over \"BUT something changes\", one of the five things the story-grammar screen teaches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md",
+   "lines": "18",
+   "quote": "Peter Pan film controls occupy a permanent strip beneath the contained video, retaining the native video's object-fit/ratio behaviour.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "53",
+   "quote": "Expected: preserve the principal character’s face when adapting portrait artwork to the tablet banner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "52",
+   "quote": "On L4/p27 the natural artwork is 848×1264, rendered in a 753×410 box.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/FILM-SPLASH-LAYOUT-REVIEW.md",
+   "lines": "11",
+   "quote": "`film.tsx:321` uses a fill image; the surrounding `.bk-art img` rule uses `object-fit: cover`, which crops instructional poster text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/ASSETS.md",
+   "lines": "58",
+   "quote": "Moving these slides into the ordinary full-bleed art slot would crop labels and source notes. Text-heavy posters should not acquire a title/button overlay over their instructional words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "24",
+   "quote": "Play obscures faces/teaching words",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "68",
+   "quote": "A comic-panel gutter previously crossed Cassio’s face. That defect was corrected in the later visual treatment. Treat it as a concrete composition regression test.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "357",
+   "quote": "Recheck image continuity and the Cassio composition.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "22",
+   "quote": "check 3 card covered Desdemona bottom-left (moved to bottom-right)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

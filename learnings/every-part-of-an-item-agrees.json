@@ -1,0 +1,285 @@
+{
+ "id": "every-part-of-an-item-agrees",
+ "title": "Every part of an item agrees",
+ "statement": "An item's parts must agree: the stem asks for what the options offer, the key names an option that exists, and the explanation and feedback support that key.",
+ "example": "An answer letter that disagreed with its explanation made 7 of 30 questions fail a cross-check by another model.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "options",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a 295-item run, 34 items failed the judge's factual-accuracy check while the pipeline's maths check reported 'math_errors_found: 0' (`icloud-work/incept/nova_forge/PASS_RATE_ANALYSIS.md`). The project's judged failures include a key contradicted by its own explanation (`icloud-work/incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md`), a stem that asks for a model while only numeric answers are offered, and a key labelled 'A' on an item with no choices (`icloud-work/incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md`). The explanation and feedback are written once the option order is fixed and tied to the options' wording rather than their letters, and they say why the common wrong choices are wrong. The agreement is checked in code.",
+ "against": "In an earlier 257-item run the maths check and the judge agreed, with '- **Result:** ✅ All math is already correct!' and '- Math accuracy: 100% ✅' (`icloud-work/incept/nova_forge/archive/old_docs/gvc/GVC_FINAL_ARCHITECTURE.md`, lines 60 and 65); that run's failures were put down to format. the generator's first code check for the mismatch looked only at whether the key was called right or wrong, never at a wrong option called correct, and passed by default when it found neither. When code has proved the key right, the committed evaluator counts a mismatched explanation as a clarity fault, not a wrong fact: \"This is a `clarity_precision` failure, NOT a `factual_accuracy` failure.\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 99). It fits the record on feedback that sends the student back only once a student's attempts are over, since that record says feedback on a wrong answer never says what the student has to produce.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "117",
+   "quote": "- 34 questions failed factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "118",
+   "quote": "- GVC shows \"math_errors_found: 0\" but InceptBench still finds issues",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/inceptbench_lambda/TRAINING_GUIDE.md",
+   "lines": "138",
+   "quote": "- Generated: Answer \"A\" but explanation proves \"B\" is correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "78",
+   "quote": "- **Issue:** The stem asks for a model, but only numeric answers are provided and no model is shown, creating conflicting cues about what action is required.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "208",
+   "quote": "- **Issue:** Field mismatch: the answer is labeled “A” but no choices are presented; the item appears to be fill-in.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "106",
+   "quote": "Fixed answer bias (all answers were \"B\") by shuffling options after generation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "49",
+   "quote": "Still shuffling after generation, which is fundamentally fragile",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "6",
+   "quote": "This bug caused 7 out of 30 questions (23%) to fail in Claude cross-evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/URGENT-BUG-STILL-PRESENT.md",
+   "lines": "28",
+   "quote": "Result: 7 out of 10 questions (70%) have the bug.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "30",
+   "quote": "Gemini Score: 0.96 | Claude Score: 0.75",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "35",
+   "quote": "Answer is listed as \"A\" but explanation says \"correct answer is B\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/CLAUDE_CROSS_EVAL_REPORT.md",
+   "lines": "164",
+   "quote": "Gemini passed Q36 and Q44 despite this critical flaw.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md",
+   "lines": "121",
+   "quote": "Place correct answer at position {pos}.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md",
+   "lines": "127",
+   "quote": "{answer} is correct. Explain why {answer} is right and others are wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/HOLISTIC_REVIEW_2026-02-19.md",
+   "lines": "130",
+   "quote": "100% first-attempt pass rate (up from 72%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "65",
+   "quote": "IT DID NOT CHECK IF A WRONG ANSWER WAS MARKED AS CORRECT",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MCQ_BUG_HISTORY.md",
+   "lines": "66",
+   "quote": "Default return was `True` when no indicators found (should be `False`)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "552",
+   "quote": "| 4 | Explanation references wrong option | factual_accuracy (Critical) | Option reordering after explanation written | Generate explanations LAST |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "457",
+   "quote": "\"explanation\": \"The Declaration's assertion of equality fueled debates about expanding democratic participation and who deserved the rights it proclaimed.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "591",
+   "quote": "5. REORDER OPTIONS so the correct content lands in the assigned position.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "87",
+   "quote": "- **FIELD MISMATCH**: Explanations, hints, feedback templates, or `additional_details` describe distractors, answers, or values that do NOT match the actual options or correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "1829",
+   "quote": "do not use 'Choice A', 'Choice B', etc; quote the beginning and the end of the option.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "104",
+   "quote": "Every question must include an explanation of why the correct answer is correct and why common wrong choices are incorrect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "57",
+   "quote": "| `missing_explanation` | 18 | Question lacks required explanation for correct answer |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "211",
+   "quote": "3. **Answer key consistency** -- explanation must match the marked answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "98",
+   "quote": "- **Missing explanation**: No or minimal explanation provided",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "93",
+   "quote": "Questions are automatically rejected (score=0.0) without API call if:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "50",
+   "quote": "the explained word is not in the quotation",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "51",
+   "quote": "the reasoning never mentions the word it explains",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "83",
+   "quote": "The rebuild, set right, makes its sentence",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "68",
+   "quote": "if (codeFail.length) { reasons = codeFail.map((c) =>",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "118",
+   "quote": "find((c) => c.id === \"rebuild-makes-sentence\").ok, false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "42-44",
+   "quote": "every blank's `answer` is a member of the top-level `bank`; every blank's `feedback` dict covers exactly `bank - {answer}` (checked per-blank, not just presence).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L7.md",
+   "lines": "79-81",
+   "quote": "All `hot_text` nodes have correctly-`null` feedback on their own correct indices (no accidental \"wrong\" message on a correct tap).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext lines 205-206)",
+   "quote": "Our error was that the hunt asked for London while cueing lines that did not contain it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/pre-weekend-audit/SKILL.md",
+   "lines": "40-41",
+   "quote": "Child-path integrity: every answer key internally consistent (index ranges, permutations, bank membership, feedback coverage).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

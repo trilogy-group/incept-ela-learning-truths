@@ -1,0 +1,84 @@
+{
+ "id": "plan-the-whole-cluster-before-splitting-it",
+ "title": "Plan the whole cluster before splitting it",
+ "statement": "Plan a sequence or group of related knowledge as a whole, with one target performance, a throughline and a persistent example, before splitting it.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "sequence"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's alignment plan makes the cluster (one named performance, 1–2 knowledge types, 2–5 KCs, one load-bearing throughline) the unit of design, generation and reteaching, and generates the cluster's reasoning before decomposing it into knowledge components and then items (`grade3-reading/ti-courseplans/docs/academics-alignment-plan.md`). It records the round-2 sequencing finding that atomising first on narrative subjects produced \"locally-correct micro-lessons that never cohere\". The curriculum BrainLift gives the upper limit: as the surface area of the task grows, the precision and discipline of a model's output degrade (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`). Keep each generated unit to one performance.",
+ "against": "The curriculum BrainLift says this matters little for modular, abstract material such as much of maths, where atomising first is close to lossless (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`, line 538). The finding is stated for narrative subjects (`ti-courseplans-audit/docs/academics-alignment-plan.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/academics-alignment-plan.md",
+   "lines": "14-15",
+   "quote": "the *cluster* (one named performance, 1–2 knowledge types, 2–5 KCs, one load-bearing throughline)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/academics-alignment-plan.md",
+   "lines": "16-18",
+   "quote": "Atomise-first on narrative subjects produces \"locally-correct micro-lessons that never cohere\" — the round-2 sequencing finding.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "544",
+   "quote": "as the surface area of the task grows, the precision and discipline of the LLM's output degrade",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "538",
+   "quote": "For modular, abstract material (much of maths) this matters little, because the atoms genuinely are near-independent and atomise-first is close to lossless.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/academics-alignment-plan.md",
+   "lines": "15-16",
+   "quote": "Generate cluster reasoning first (throughline, persistent example, narrative order), then decompose to KCs, then items.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/academics-alignment-plan.md",
+   "lines": "16-18",
+   "quote": "Atomise-first on narrative subjects produces \"locally-correct micro-lessons that never cohere\" — the round-2 sequencing finding.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "97",
+   "quote": "per-item generation with no throughline reasoning → \"locally-correct micro-lessons that never cohere\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "97",
+   "quote": "does the design record show cluster-level reasoning (throughline, persistent example) before KC decomposition?",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

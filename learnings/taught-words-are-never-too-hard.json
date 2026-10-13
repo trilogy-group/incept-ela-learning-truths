@@ -1,0 +1,56 @@
+{
+ "id": "taught-words-are-never-too-hard",
+ "title": "Taught words are never too hard",
+ "statement": "Don't mark a word as too hard when the material teaches it, and fail reading level only on several untaught words or constructions that are off-level.",
+ "example": "One script rubric fails reading level only when 3 or more off-grade words or constructions are not being taught.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "wording",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Guards against false failures in the evaluator's script rubric say that words a script explicitly defines and teaches are always grade-appropriate, whatever their difficulty (`shadow/bench/src/inceptbench/prompts/video_script/evaluation.txt` line 360). The judge may not fail reading level without citing at least 3 specific off-grade words or constructions, and they must not be ones the script teaches (lines 92 and 364). The short-answer rubric says the same of curriculum terms being explicitly taught (`question/scr_evaluation.txt` line 127).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "360",
+   "quote": "Words being explicitly defined and taught in the script are always grade-appropriate regardless of difficulty — that is the point of the video.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "92",
+   "quote": "- Do not fail reading_age_fit without citing at least 3 specific words or constructions that are clearly off-grade",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "364",
+   "quote": "**Fail:** 3 or more words or constructions are clearly above or below grade level AND are not being taught as new vocabulary in the script.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "127",
+   "quote": "curriculum terms being explicitly taught are always allowed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

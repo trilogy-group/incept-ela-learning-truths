@@ -1,0 +1,72 @@
+{
+ "id": "score-keyed-answers-in-code",
+ "title": "Score keyed answers in code",
+ "statement": "Score an answer that has a key in code and pick its feedback by lookup from the score and option chosen, so no model decides either.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "feedback",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 course's corrective-feedback policy rules out a model grader on its auto-scored path. Feedback must be a deterministic function of the machine-scored response, the key and the option or span the learner chose, and no model call decides correctness, partial credit or which feedback string fires.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/corrective-feedback-policy.md",
+   "lines": "32-34",
+   "quote": "Feedback selection must be a deterministic function of the machine-scored response (the key + the option/span the learner chose). No model call decides correctness, partial credit, or which feedback string fires on the scoring path.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4-5",
+   "quote": "Play needs no judge and replays … exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "70",
+   "quote": "// Play time: a line outside the accepted set is put to the judge, so a fair answer the author did not foresee counts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "3-4",
+   "quote": "A word the reader adds counts at once if it is a form of the … centre or a key word; any other word is put to the judge, generously",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "21",
+   "quote": "8 ticks in all: one wrong answer on the quick check, and one tap on a line nobody keyed in the evidence hunt.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "22",
+   "quote": "Jev decided at play time on 2 ticks",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

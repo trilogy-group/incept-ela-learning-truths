@@ -1,0 +1,50 @@
+{
+ "id": "fix-a-cue-in-a-wrong-option",
+ "title": "Fix a cue in a wrong option",
+ "statement": "If an authored item breaks a form rule, such as a longest-option key, minimally rephrase a wrong option, log the edit, and leave the stem and key alone.",
+ "example": "When a rewrite left a 41-character key the shortest option, the fix shortened a wrong option below it instead of lengthening the key.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "distractors",
+  "options",
+  "integrity"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A reading engine's generator has one licensed form edit: where an authored wrong option breaks a form rule, for example by leaving the key the single longest or shortest option, it may minimally rephrase that option and record the edit, and its fidelity gate makes sure the stem and the key are never touched. A critique of a film script's checkpoint item made the same call by hand: a rewrite had cut the key from 49 to 41 characters while three long wrong options stayed, turning a passing item into a failing one, and the fix shortened one wrong option instead, since the key's wording, taken from the script's definition line, was the point of the rewrite. It keeps options alike in length (no-cue-in-the-item-itself) without editing signed content.",
+ "against": "A hand-built lesson in the same engine fixed the same gates on the key's side, logging ten divergences from its signed design that it says touch no correct option's meaning, the first because \"the doc's wording made the key the single shortest option\" (`grade3-reading/course-renderer/content/lesson-plans/g3-u2-l1.json`, line 728), so a word was added to the key.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "89-93",
+   "quote": "One licensed form edit exists: where an AUTHORED distractor breaks a form rule (e.g. it leaves the correct answer the single longest or shortest option), the generator may minimally rephrase THAT distractor, recording it in `_gates.form_edits`. The stem and the correct option are never touched — the fidelity gate enforces exactly that split.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "65-67",
+   "quote": "The rewrite shortened the key from the shipped 49-character \"A long story about a hero's journey and its trials\" to 41 characters while leaving three long distractors in place, and turned a passing item into a failing one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "72-73",
+   "quote": "**Fix.** Do not lengthen the key: its wording is line 8 and that is the point of the rewrite. Shorten one distractor below 41 characters instead.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

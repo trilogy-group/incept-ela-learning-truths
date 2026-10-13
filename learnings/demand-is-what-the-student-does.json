@@ -1,0 +1,122 @@
+{
+ "id": "demand-is-what-the-student-does",
+ "title": "Demand is what the student does",
+ "statement": "A task's thinking demand is the operation a learner must perform to answer it, not its stem's verb, the skill it claims, its difficulty label or expected pass rate.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Items whose evaluate, explain or justify stems reduced to matching text, and items that described a skill instead of exercising it, were passing an item evaluator. Its base rubric now says such verbs describe the cover, not the demand (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`); its reading-and-writing rubric requires items to exercise the targeted skill, not describe it (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`); and a regression test fails vocabulary-in-context items that pair an everyday word with a direct synonym, since they test synonym recognition (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_969.py`). An item's level should be tagged by the work it requires, and even an easy item needs some thinking.",
+ "against": "the label effect was pilot-only and didn't generalize when stacked with other tricks, and the same rubric accepts recall where the curriculum's own definition of a level describes recall.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "114",
+   "quote": "Verbs like *evaluate / claim / analyze / explain / justify* in the question stem do **not** rescue the item — they describe the cover, not the actual cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "80-81",
+   "quote": "Items must exercise the targeted SAT R&W substandard, not describe the substandard in the abstract.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_969.py",
+   "lines": "5-7",
+   "quote": "Items that use a foundational everyday word and a direct synonym answer test synonym recognition rather than determining meaning in context, and should fail `curriculum_alignment`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "88",
+   "quote": "they describe the cover, not the actual cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "27-29",
+   "quote": "hits the analytical sweet spot on the rubric's wording without any actual increase in cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "333",
+   "quote": "do not start from the labeled level and try to justify it",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/EXPLOIT_CATALOG.md",
+   "lines": "14",
+   "quote": "label downgrade | 4/4 vs 1/4 control (+75pp)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/STATISTICAL_ANALYSIS.md",
+   "lines": "180",
+   "quote": "Add cognitive_demand pre-check for easy questions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/STATISTICAL_ANALYSIS.md",
+   "lines": "181",
+   "quote": "Easy ≠ \"recall only\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FINAL_REPORT.md",
+   "lines": "65",
+   "quote": "EXPLOIT-007 difficulty=easy label | pilot-only; doesn't generalize when stacked",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "523",
+   "quote": "explicitly describes recall, identity facts, or base fact recognition as the expected cognitive level",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "73",
+   "quote": "When tagging items by cognitive level, describe the cognitive process required, not the expected pass rate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "96",
+   "quote": "your \"difficulty alignment\" check will confirm the misclassification because it's using the same flawed definitions.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,97 @@
+{
+ "id": "keep-cold-test-topics-out-of-prompts",
+ "title": "Keep cold test topics out of prompts",
+ "statement": "Keep a ledger of the topics reserved for cold transfer tests, block any generation prompt or exemplar that names one, and retire each topic once it is served.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading project's practice-layer specification keeps a cold benchmark that is sealed, drawn from never-taught topics and burned once served, and requires a ledger that keeps those topics out of every generation prompt. The tool built for it runs against every generation prompt and exemplar set before a campaign starts; any hit blocks the campaign until the prompt is scrubbed or the ledger corrected, and a topic is retired once a cold window has served it. A Grade 5 course's generation contract gives the reason: teaching from or gating on the cold pool contaminates the benchmark and turns transfer evidence into rehearsal evidence.",
+ "against": "The tool matches names and aliases only, so a prompt about \"coastal rock basins\" would evade a \"tide pools\" entry; its seeded topics are placeholders; and a retired topic stops gating, a choice the specification leaves open (`grade3-reading/ti-courseplans/scripts/lane-tools/contamination-ledger/README.md`, lines 64-77).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "25-27",
+   "quote": "Run this tool against **every generation prompt and exemplar set BEFORE a campaign starts**. Any hit blocks the campaign until the prompt is scrubbed or the ledger is corrected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "7-9",
+   "quote": "Supporting clauses: section 2/P5 (cold benchmark = sealed, never-taught topics, burn-after-serve) and section 4 (cold passages are never teaching material).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "47",
+   "quote": "after a cold window serves a topic, retire it (burn-after-serve)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "593",
+   "quote": "### G5-POL-PRA-009: Keep cold passages out of teaching and mastery gates, draw them from never-taught topics, and treat their results only as a transfer read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "596",
+   "quote": "- **Rationale:** Teaching from or gating on the cold pool contaminates the benchmark and turns transfer evidence into rehearsal evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "7-9",
+   "quote": "Supporting clauses: section 2/P5 (cold benchmark = sealed, never-taught topics, burn-after-serve) and section 4 (cold passages are never teaching material).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "25-26",
+   "quote": "Run this tool against **every generation prompt and exemplar set BEFORE a campaign starts**. Any hit blocks the campaign until the prompt is scrubbed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "47",
+   "quote": "after a cold window serves a topic, retire it (burn-after-serve)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/contamination-ledger/README.md",
+   "lines": "73-74",
+   "quote": "The tool matches names and aliases only; a prompt about \"coastal rock basins\" would evade a \"tide pools\" entry.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

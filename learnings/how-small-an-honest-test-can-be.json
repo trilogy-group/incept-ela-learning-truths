@@ -1,0 +1,64 @@
+{
+ "id": "how-small-an-honest-test-can-be",
+ "title": "How small an honest test can be",
+ "statement": "Size a test to the claim it must settle; how small an honest validation gate can be is still open.",
+ "example": "At 50 items per type, one item moves a rate by 2 points, so a 98.8% average could not be told from a 99% target.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Pass rates per item type on 50-item sets were averaged into a 98.8% projection against a 99% target; the report called the target essentially reached while noting that resolution at n=50 per cell is ±2pp and that 98.8% sits within the noise band of 99% (24 May 2026). The parallel lab's distillation left open what the smallest statistically honest validation gate is that predicts full quality without a multi-day scoring run.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T175907Z_2026-05-24T1759Z_UNIT1_DBQ_SOLVER_v3_VALIDATED_TARGET_REACHED.md.md",
+   "lines": "135",
+   "quote": "avg(100, 100, 100, 98, 96) = 98.8%",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T175907Z_2026-05-24T1759Z_UNIT1_DBQ_SOLVER_v3_VALIDATED_TARGET_REACHED.md.md",
+   "lines": "137",
+   "quote": "Statistical resolution at n=50 per cell is ±2pp; 98.8% sits within the noise band of 99%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "85",
+   "quote": "What is the smallest statistically honest validation gate that predicts full 26,355-row quality without a multi-day scorer run?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "528-530",
+   "quote": "The C critical-recall gate alone needs roughly 299 independent critical-positive cases with zero misses for a nominal one-sided 95% bound before clustering/multiplicity.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/COUNTERFACTUAL_AUTHORITY_A0_2026-07-17.md",
+   "lines": "99-100",
+   "quote": "This probe has only two rule dimensions, one prompt shell, one call per cell, no authority-removal/placebo arm, and no robust confidence bound.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

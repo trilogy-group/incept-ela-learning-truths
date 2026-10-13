@@ -1,0 +1,92 @@
+{
+ "id": "replaced-content-gets-a-new-identity",
+ "title": "Replaced content gets a new identity",
+ "statement": "When an item, its rubric or a lesson is changed or replaced, give it a new identity, so old answers, verdicts, progress and art don't attach to it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evidence-of-learning",
+  "media"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Rebuilt Grade 5 lessons that reused the old lesson IDs inherited unrelated completion and artwork from the lessons they replaced. The integration rule that followed requires identity changes across progress, session state, unit introduction and asset fallback, keeping the old records without applying them to the new content, and the release checklist bars legacy IDs from preserving mastery for replacement content. The restoration plan had named the danger beforehand: with identical IDs both the unit and lesson lookups would prefer the old content, and art keyed by lesson ID could survive new text.",
+ "against": "Even a wording-only change retires a learner's progress: \"On a new build, the old completed/partial p22 state can return to the genuine starting gate.\" (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 3373).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "15",
+   "quote": "Reused Grade 5 lesson IDs inherited unrelated completion and art",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "15",
+   "quote": "Curriculum revisions require identity changes across progress, session state, unit introduction and asset fallback. Preserve old records without applying them to replacement content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/RESTORATION-PLAN.md",
+   "lines": "76",
+   "quote": "The dangerous false success is attaching a correct map to incorrect lessons with identical IDs: both the unit and lesson lookup would prefer the old content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/RENDERER-PLAN.md",
+   "lines": "47",
+   "quote": "Tier 1: existing `/book` artwork may be keyed by lesson ID, so old scenery can survive new text unless explicitly replaced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "109",
+   "quote": "legacy IDs cannot falsely preserve mastery for replacement content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Old verdicts, including the native false pass, cannot restore under the changed assessment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Reading or rejecting old records must not delete or rewrite their bytes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3373",
+   "quote": "Existing decoders preserve old raw storage bytes on read; they do not grant credit under a new fingerprint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1988",
+   "quote": "The real opening assessment identity will change, so any old verdict must be treated according to the existing source-sensitive resume contract; no automatic credit migration or silent deletion is proposed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

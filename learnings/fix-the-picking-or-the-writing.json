@@ -1,0 +1,71 @@
+{
+ "id": "fix-the-picking-or-the-writing",
+ "title": "Fix the picking or the writing",
+ "statement": "When a pipeline that picks among drafts fails, check whether any draft passed: if one did, fix the picking; if none did, fix how drafts are written.",
+ "example": "Fixing the routing rescued 9 of 11 failures where a passing item existed and 0 of 4 where none did.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Of one run's 159 failures, 114 were for objectives where a passing item already sat in the bank of past winners and 45 for objectives with none (`LAB_PIPELINE_GUIDE.md`). A fallback that fixed the routing rescued 9 of 11 of the first kind and 0 of 4 of the second. The lab's rule is that if a passing candidate exists but was not selected, fix retrieval or the selector, and if none exists, fix generation or data; elsewhere, new guards caught the previous leaks but the writer filled the gap with new failure modes, so more generic guards were judged likely to chase symptoms. More checks cannot rescue a pipeline in which no draft passes, since checks can only reject.",
+ "against": "The rescue counts are small, 11 and 4 items.",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "109",
+   "quote": "If a passing candidate exists but was not selected, fix retrieval/selector; if none exists, fix generation/data.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "97",
+   "quote": "- **bank_miss = 114 rows (71.7% of all failures)**: substandard IS in parent's `unit1_live_winner_bank.json` but live still failed.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "98",
+   "quote": "- **bank_gap = 45 rows (28.3%)**: substandard NOT in bank.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "106",
+   "quote": "- bank_miss rescue rate **9/11 = 81.8%**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "107",
+   "quote": "- bank_gap rescue rate **0/4 = 0%** (confirmed: parent's fallback can't help; lab mining needed)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/LLM_FINAL_ROUTE_STATUS_20260522T185623Z.md",
+   "lines": "179",
+   "quote": "The new guards caught the previous leaks, but the LLM filled the gap with new failure modes. More generic guard stacking is likely to chase symptoms.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

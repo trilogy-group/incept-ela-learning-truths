@@ -1,0 +1,112 @@
+{
+ "id": "keep-the-attempt-require-a-fresh-correction",
+ "title": "Keep the attempt, require a fresh correction",
+ "statement": "After a wrong answer, keep the attempt visible, diagnose its misconception, and pass only the learner's own fresh correction, never an auto-filled answer or a repeated stale selection.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "Three rule sets for the reading courses agree. A lesson-acceptance checklist asks that a wrong answer preserve the attempt, diagnose the misconception and require a fresh correction; a Grade 5 teaching-flow release lists preserved wrong work, misconception-specific repair and a required fresh correction among what it proves at source and test level; and a course-experience preflight's outcome rule has feedback diagnose the submitted response, preserve work, withhold hints until an attempt and require correction or retry. None of them records an effect on learning.",
+ "against": "A draft acceptance ladder for written answers offers one retry and then lets the student proceed anyway, queuing the attempt for review (`grade3-reading/ti-courseplans/scripts/lane-tools/drafts/m5-acceptance-rules.md`, lines 77-78), and another rule on record gives the answer after two tries. Two other builds release or settle after two tries instead. The lesson engine's evidence hunt and debate \"now release after two tries\" (`g9/transformer/v02/QA.md`, line 141), and a Grade 3 sample player settles graded items on the second try and records the miss separately: \"It always completes by attempt 2 whether or not the child fixed the answer\" (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md`, line 326).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/04_HUMAN_CHECK_LESSONS.md",
+   "lines": "175",
+   "quote": "- [ ] A wrong answer preserves the attempt, diagnoses the misconception, and requires a fresh correction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/02-g5-feedback-and-teaching-flow-hardening/HANDOVER.md",
+   "lines": "46",
+   "quote": "- Wrong work is preserved, misconception-specific repair is shown, and a fresh correction is required.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "206",
+   "quote": "6. **Respond to the learner's actual thinking.** Feedback diagnoses the submitted response, preserves work, withholds hints until an attempt, and requires correction/retry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "81",
+   "quote": "Wrong A remains blocked; a distinct wrong B reveals support but remains blocked; only a fresh learner-selected correct retest exposes Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "44",
+   "quote": "two-error support that never auto-fills or unlocks the answer and always requires a fresh retest;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "65-67",
+   "quote": "4. The retry path did not require two distinct wrong attempts, answer support, and a fresh explicit correct selection. An implementation could therefore reveal and advance without a genuine retest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "22",
+   "quote": "one primary action, targeted repair, and successful retest before progression;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/METHODS-CHECKLIST.md",
+   "lines": "208-210",
+   "quote": "**D8. Wrong work stays visible; correction is fresh.** A wrong attempt remains displayed (preserved, diagnosed) and passing requires a fresh learner-made correct action — the UI never auto-fills or lets the same stale selection pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "12",
+   "quote": "response submission discards the editable draft",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "13",
+   "quote": "Grade 5 responses remain editable after misses or service failures. Duplicate-answer safeguards, attempt accounting, teaching exits and success behavior remain intact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "43",
+   "quote": "The revised editor correctly preserved the answer and kept Next gated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md",
+   "lines": "12",
+   "quote": "Preserve submitted Grade 5 answers for revision after misses or service failures.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

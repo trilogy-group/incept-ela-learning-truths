@@ -1,0 +1,611 @@
+{
+ "id": "review-as-a-student",
+ "title": "Review as a student",
+ "statement": "Review a lesson in the mode students get: one player's reviewer mode let a seek skip its checks, and the students' mode never did.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Notes on another build's film player said a seek skipped its checks; in its live code that was true only in reviewer\nmode, and learners had no forward seek, so both notes were corrected (`g9/review/three-film-comparison/COMPARISON.md`,\n\"Corrections made in this pass\").",
+ "against": "our own automated runs were muted, with audio checked by its source, not by\near (`g9/player/qa/QA.md`). A later run found counter-evidence (`shadow-bench/src/inceptbench/prompts/question/_base_evaluation.txt`). A later run found counter-evidence (`g9/transformer/web/app.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "review/three-film-comparison/COMPARISON.md"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "120",
+   "quote": "earned a stamp on \"The Amazing Axolotl\" at about 20 percent accuracy by clicking through without reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "54-55",
+   "quote": "Publish-time flattening created NEW defects the local lint could not see (passage-last ordering, pre-answered releases) - the live-rendered surface must be reviewed, not just source artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "14-15",
+   "quote": "a PUT can return 200 yet silently revert.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "44",
+   "quote": "\"authored\" ≠ \"resolves\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0216-codex-visual-audit-2026-09-07.qmd",
+   "lines": "44-45",
+   "quote": "the content-check battery is desktop-only, so all three classes were invisible to it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/hub-review-model.md",
+   "lines": "325-326",
+   "quote": "the checks proved that elements existed, but did not prove that a learner could see, understand, hear, correct, complete, and resume the released experience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/hub-review-model.md",
+   "lines": "337",
+   "quote": "all run \"at mobile and desktop viewports.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "29-31",
+   "quote": "the checks proved that elements existed, but did not prove that a learner could see, understand, hear, correct, complete, and resume the released experience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "76",
+   "quote": "All checks run against the contract-pinned candidate at mobile and desktop viewports.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "52",
+   "quote": "InceptBench should not overclaim runtime behavior or package truth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "49",
+   "quote": "| 2 | runtime / behavioral enforcement | live student-seat walkthrough harness | only encoded intent, not actual enforcement |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "23-24",
+   "quote": "A student is not a solver, a row in a ledger, a completed QTI attempt, or an ideal reviewer clicking the intended path.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0179-g3-peter-pan-close-out-state-and-reusable-process.qmd",
+   "lines": "35-36",
+   "quote": "gate the unlabelled reviewer-mode toggle behind `?review=1` / `NEXT_PUBLIC_REVIEWER_UI`, red-first test)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1717-1718",
+   "quote": "the reviewer toggle only behind `?review=1` / `NEXT_PUBLIC_REVIEWER_UI`; red-first test",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "232",
+   "quote": "this lane, baselines included, is therefore a read of the deprecated surface, not of the page the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "3",
+   "quote": "most of the items reported as \"done & live\" are not yet resolved in the app",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "42",
+   "quote": "`public/lesson-json/grade-3.json` was modified at 11:48:39",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/build-closing-questions-2026-09-25/verify/DIGEST.md",
+   "lines": "42",
+   "quote": "every verdict in this digest is against the 11:41 build",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/leaky-vs-gate-unreachability.md",
+   "lines": "85",
+   "quote": "leaky items inside 60 of the 81 gating forms",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/leaky-vs-gate-unreachability.md",
+   "lines": "86",
+   "quote": "Pool-purity and gate-purity are separate properties; only the former is satisfied",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "111-113",
+   "quote": "**Root cause:** `validate-passage-refs` only proves the span text is a SUBSTRING of the passage; it does not run the engine's own unit-boundary logic (`unitsOf`/`partOfLine`), so a span that is textually valid but unit-misaligned passes the validator and silently fails the student experience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "139-140",
+   "quote": "Lesson: any shell/layout change gets a rendered look (screenshot or computed layout of the control) before the PR, not only a markup-presence assertion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/app-package-agent.md",
+   "lines": "46",
+   "quote": "Stop if screenshots are being used as proof of interaction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0193-g3-book-grade-agnostic-vs-specific-g9-checklist.qmd",
+   "lines": "170-172",
+   "quote": "a key-set diff alone misses mid-page beats (best-pick, a reread hold, a follow-up ask) — walk the live page with a Playwright driver per mechanism, not just diff JSON.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0241-alpha-read-contract-investigation-and-packager-build-2026-06.qmd",
+   "lines": "121-124",
+   "quote": "the only path to the real render is **Impersonate/View as Student**, which lists real student accounts -- **that line was not crossed**. Recommended safe resolution (not yet executed at this draft stage): provision a dedicated sandbox test-student account and impersonate that, never a real child.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "91-92",
+   "quote": "No \"done & live\" without an independent student-seat walkthrough on the same surface",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0241-alpha-read-contract-investigation-and-packager-build-2026-06.qmd",
+   "lines": "123-124",
+   "quote": "provision a dedicated sandbox test-student account and impersonate that, never a real child.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "321",
+   "quote": "Colons, parenthetical asides, appositives and list constructions survive silently on the page and collapse in a voiceover.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "355",
+   "quote": "A line that fails any of these usually reads perfectly well on the page. That is why the pass has to be spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "102-103",
+   "quote": "every fixed-claim carries dated evidence from an independent student-seat walkthrough",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "230",
+   "quote": "The script counts 12 recall, 4 inference, 10 strategy, 2 vocab, **including hidden items**. Visible items only: **9 recall, 2 inference, 7 strategy, 1 vocab.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "304-305",
+   "quote": "The hidden nodes in L5 and L7 carry old unnumbered heads; counting them produced 21 false `STEP-UNNUMBERED` hits.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "318-319",
+   "quote": "a hidden item can be unhidden, and its defects come with it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "62",
+   "quote": "**CC's finding:** The training format was actually CLOSER to the evaluation format than the production generator format. Stage 2 learned to respond to simplified prompts correctly. Running it through the production generator (the MOST out-of-distribution option) would make things worse, not better.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_failures_deep_dive.md",
+   "lines": "39",
+   "quote": "**The critical lesson:** ALWAYS test the raw rollout format, not the production pipeline format. They are NOT the same. Production: `model → strip_thinking → json.loads`. GRPO rollout: `model → json.loads`. That stripping step is not there.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "11",
+   "quote": "Failing `clarity_precision` because content references formatting (\"underlined word\", \"bolded term\") not visible in serialized text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles', cell M32",
+   "quote": "This article is great, but the column F link does not contain any images. The images in the column H link look great.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/simple_content_qc.py",
+   "lines": "86",
+   "quote": "6) Look for any unrendered LaTeX anywhere within the text in the image",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "700-701"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "docs/COURSE_PACKAGE_STANDARD.md",
+   "lines": "156",
+   "quote": "Copying an application's stylesheet, rebuilding its shell, or describing an artifact as an approximation never satisfies the presentation declaration, even when the Hub can preserve those bytes exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "99",
+   "quote": "they want to click through a complete lesson exactly as a student would to confirm the flow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "54",
+   "quote": "Publish-time flattening created NEW defects the local lint could not see",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/RULES.md",
+   "lines": "42",
+   "quote": "and \"AlphaBuild shows it Valid\" do **not** mean it renders in reading — only a live student-app walk proves",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "94",
+   "quote": "static grep proved dishonest twice on 2026-08-25",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-argus-ui-2026-09-30/REGISTER.md",
+   "lines": "31",
+   "quote": "any shell change gets a rendered look (screenshot or computed layout of the control) before the PR, not only a markup assertion",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "12",
+   "quote": "child's screen\" below is what the engine renders, not what the JSON suggests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-27-R12.md",
+   "lines": "52",
+   "quote": "Why the suite missed it: `item-engine.test.mjs` tests the pure module and MsqItem's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/CRITIC.md",
+   "lines": "7",
+   "quote": "Why: what the child sees ≠ what the file holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "104-108",
+   "quote": "reproduced twice in dev-server walks but **zero times in production-build walks** (journey-23-prod: 27/27 clean). Root cause: the two dev reproductions coincided with concurrent file writes inside the worktree (other agents editing harness files, or `npm run` steps writing caches) triggering a Next.js hot-reload remount — never reachable by a real student on Amplify. Rule added to the recipe: dev-server walks need an idle worktree; proofs that must be clean run against the production build.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "36",
+   "quote": "**Instruction quality — 3/5, CANNOT VERIFY from pull.** Pull is assessment-only; the instructional dose (hook→teach→guided→read→CFU→check) lives in PowerPath, not OneRoster.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "207",
+   "quote": "A gate proven on one surface proves nothing about another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "54-55",
+   "quote": "the live-rendered surface must be reviewed, not just source artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0009-timeback-alpha-read-packager.qmd",
+   "lines": "116-117",
+   "quote": "They push fine (201, valid QTI, GET 200) but the quiz body is empty",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "387",
+   "quote": "every capture in this document is from the deployed reviewer build, taken this week in student mode with read-to-me on, by walking each screen’s real interactions (including wrong answers).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "280-281",
+   "quote": "~29 gates all ran at 1400×1000, hiding a top-bar overflow on **every beat of every lesson**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "255",
+   "quote": "if either renders in authored order, \"always click the first option\" clears the 90% gate",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "230",
+   "quote": "Visible items only: **9 recall, 2 inference, 7 strategy, 1 vocab.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "32",
+   "quote": "- Failing `clarity_precision` because content references formatting (\"underlined word\", \"bolded term\") not visible in serialized text. Content will be rendered with formatting applied — this is NEVER a clarity issue.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "140-141",
+   "quote": "the two-tries release did not fire in sessions (the runtime now passes the attempt count)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "184-185",
+   "quote": "That view now stops the same way; before, the film played straight through with every question listed under it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "58",
+   "quote": "the runtime knows how many tries this entity has had, so a mechanic's release rule (two tries, then the answer)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "59",
+   "quote": "works in a session as it does in a page that counts its own",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "12-13",
+   "quote": "A reviewer sees the lesson as a student meets it, with a short identifier on every block (`QC-1`, `EH-2`) to cite;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "46-47",
+   "quote": "speaker names only where a speech starts, fixed after the first render showed them on every line",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "4",
+   "quote": "Class names and nesting follow the build's src/nodes (Reading, Practice, Opening) and src/components; no style of ours.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "626",
+   "quote": "the 3D build's app takes its route in the hash; review=1 opens every step, so a chip can go straight to its block",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "So any model node with screens, its own Lesson 1 included, never types its first move, and Next stays locked outside reviewer mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "781-782",
+   "quote": "A gate that silently measured the suppressed path is a vacuous green wearing a passing badge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/XP-SIM.md",
+   "lines": "414",
+   "quote": "a green full-gate sweep says nothing whatsoever about whether XP works",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "778-779",
+   "quote": "an XP assertion driven from a preview page reads an empty store and reports a working integration as broken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "780-781",
+   "quote": "**assert the precondition** — `PREVIEW === false` — rather than trusting it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/XP-SIM.md",
+   "lines": "337-338",
+   "quote": "a preview-mode gate would assert a full award against a player forbidden from awarding and pass on `0 === 0`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/WALKTHROUGHS.md",
+   "lines": "5",
+   "quote": "Use only visible student controls; do not jump to page URLs, enable reviewer mode, seed progress or bypass listening/reading gates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/PLAN.md",
+   "lines": "28",
+   "quote": "Adversarial review: reviewer bypass can hide student problems; direct navigation cannot establish all-gate completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "37",
+   "quote": "If you can see timers, page counters, or Skip, you are in the wrong app. Stop. Most of one review round described previewer-only chrome.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "273",
+   "quote": "Student mode matters because review mode can bypass progression gates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "112-113",
+   "quote": "**D2. Judge every clip at 1.25×** — playback speed in both apps; a voice reviewed raw sounds wrong at ship speed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "140",
+   "quote": "**Seeking across a stop never triggers it, and seeking while a card is open dismisses it** — the check is bypassable by scrubbing. **Correction, 6 Oct evening:** only in reviewer mode.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/verify-fix2.mjs",
+   "lines": "1",
+   "quote": "Real gating: no ?review=1.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "51",
+   "quote": "In the live code that is true only in reviewer mode; learners have no forward seek.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "119",
+   "quote": "playback 1.25x in both apps (judge voices at 1.25x)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "98",
+   "quote": "a named human accepts by using the lesson, not from screenshots.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

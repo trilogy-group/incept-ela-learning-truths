@@ -1,0 +1,58 @@
+{
+ "id": "one-idea-per-teaching-piece",
+ "title": "One idea per teaching piece",
+ "statement": "Give each short teaching piece exactly one idea: something that can be stated as a single testable sentence.",
+ "example": "A well-sized idea can be explained in under 60 words and tested by a single multiple-choice question.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "sequence",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's check for short instructional video scripts treats one knowledge component per video as critical: an idea that can't be stated as a single testable proposition is likely two (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). Its test asks whether two independent multiple-choice questions could be written from the script, each on a different core concept, with a student able to answer one without knowing the other. A well-sized idea can be expressed in under 60 words and tested by a single question.",
+ "against": "Depth within one idea is allowed: '- Explaining all steps of a single multi-step process (depth within one KC is allowed)' (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`, line 252).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "22",
+   "quote": "If a KC cannot be stated as a single testable proposition, it is likely two KCs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "233",
+   "quote": "**The two-MCQ test:** Could you write two independent MCQs from this script, each testing a different core concept, where a student could answer one without knowing the other? If yes, the script is teaching two KCs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "229",
+   "quote": "**What this checks:** Whether the script teaches exactly one KC — one idea that can be expressed in under 60 words and tested by a single MCQ.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "252",
+   "quote": "- Explaining all steps of a single multi-step process (depth within one KC is allowed)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

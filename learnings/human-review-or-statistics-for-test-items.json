@@ -1,0 +1,64 @@
+{
+ "id": "human-review-or-statistics-for-test-items",
+ "title": "Human review or statistics for test items",
+ "statement": "Whether a measurement test's machine-written items need a person's review before students see them, or a gate on every item plus response statistics is enough, is disputed.",
+ "example": "One package's machine gate screened all 786 items, and its recheck still advised a 60-item human sample.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "review",
+  "measurement",
+  "generation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An adversarial review of a pre-pilot reading assessment objected that no person had read its machine-written items for young students. The package answered that for a measurement instrument the load-bearing check is statistical, not editorial: a 14-dimension machine gate screens every item, misfitting items are dropped or re-estimated at calibration, and its scores carry no consequence before validation (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md`). The recheck scored the point answered, not closed, a refusal with reasons rather than a fix, and still advised a 60-item human sample (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md`).",
+ "against": "Both sides agree that items which passed no gate may not be served: 32 items written while the gate was down were replaced (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md`, line 67; `grade3-reading/ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md`, line 83).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "65",
+   "quote": "For a measurement instrument, the load-bearing QC is statistical, not editorial.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "66",
+   "quote": "Its scores carry no mastery, grade, or accountability consequence before validation — by code, not by promise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "64",
+   "quote": "the gate screened all 786.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "19",
+   "quote": "But it is a *refusal with reasons*, not a fix",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "67",
+   "quote": "sampling remains advisable even under the §9 stance — a 60-item human sample is cheap insurance",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

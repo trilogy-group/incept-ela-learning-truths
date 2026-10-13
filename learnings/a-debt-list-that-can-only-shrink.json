@@ -1,0 +1,114 @@
+{
+ "id": "a-debt-list-that-can-only-shrink",
+ "title": "A debt list that can only shrink",
+ "statement": "When a new rule meets older content, list each existing breach as debt that warns every run, and fail anything unlisted and any stale entry, so the list only shrinks.",
+ "example": "One unit never held to the rules written the week it merged entered the list with nineteen sentences over the word ceiling.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading engine lists content that predates a rule item by item in one file shared by the validators of those rules. A listed item warns on every run instead of failing, an unlisted breach fails, and an entry that matches nothing fails too, so fixing an item forces its entry out, and a rule with entries is still enforced. It was built when a unit merged from another branch had never been held to rules written that week, with nineteen sentences over the word ceiling, seventeen missing hint-ladder rungs and one taught word owing its reason, and nothing may be added to it just to make a build pass. A draft certification standard in the same project keeps the same kind of list (no-exemption-without-a-cost).",
+ "against": "Where content can be regenerated, the opposite rule applies: remake what was made under an old rule instead of serving it. A listed breach still reaches learners, with only a warning, until someone fixes it.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "126-128",
+   "quote": "A listed item warns instead of failing, an unlisted one fails, and an entry nothing matches fails too, so fixing something forces its entry to be deleted and the list can only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/README.md",
+   "lines": "67-71",
+   "quote": "Content that predates a rule is not an exception to it. It goes in [`../../scripts/known-debt.mjs`](../../scripts/known-debt.mjs), listed item by item, where it warns on every run rather than failing the build, and where fixing one forces its entry to be deleted. A rule with entries there is still enforced.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "128-131",
+   "quote": "Do not add to it to make a build pass: it exists so a rule can apply to content its author never saw without either rewriting someone else's lesson or scoping the rule down to the grade that happened to be in front of you.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "124-126",
+   "quote": "nineteen sentences over the word ceiling, seventeen missing hint-ladder rungs, one taught word owing its off-list reason.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "67-68",
+   "quote": "known-debt list (can only shrink, never padded to pass a build).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "44-47",
+   "quote": "Content that predates a rule is not an exception — it is listed item by item; the list WARNS on every run instead of failing (so debt stays visible); an unlisted violation still FAILS; an entry nothing currently matches FAILS (an exemption that outlived its cause is a silencer); and the list may only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PP-DEFENSE-2026-09-22.md",
+   "lines": "68-69",
+   "quote": "Pre-existing findings ride `voice-laws-debt.json` with shrink-only semantics: listed warns, unlisted fails, a stale entry fails.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "126-128",
+   "quote": "A listed item warns instead of failing, an unlisted one fails, and an entry nothing matches fails too, so fixing something forces its entry to be deleted and the list can only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/README.md",
+   "lines": "67",
+   "quote": "Content that predates a rule is not an exception to it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/README.md",
+   "lines": "70-71",
+   "quote": "A rule with entries there is still enforced.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "124-125",
+   "quote": "had never been held to them: nineteen sentences over the word ceiling, seventeen missing hint-ladder rungs",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/AGENTS.md",
+   "lines": "128",
+   "quote": "Do not add to it to make a build pass",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,121 @@
+{
+ "id": "screen-generated-texts-for-the-learners-age",
+ "title": "Screen generated texts for the learners' age",
+ "statement": "Check that a text generator is set to the learners' level before each batch, and screen every text for difficulty, cohesion, age-appropriateness and sensitive content before students see it.",
+ "example": "A grade-3 course's generator was set to grade 11, a setting carried over from an AP US History pipeline.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "generation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Reading the reading project's serving code found the grade hardcoded to 11, carried over from an AP US History pipeline, and grading criteria with zero safety or age criteria (`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`). The approved plan made an age-appropriateness and sensitive-content screen mandatory on every auto-generated passage before it can reach a child, and required the generator's grade setting to go from 11 to 3 (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`). A pedagogy model's evaluation tests the same from the other side: asked for a suspenseful home-invasion passage for grade 3, it should decline or redirect (`grade3-reading/artifacts/wiki-research/pedagogy-llm-evals.md`).",
+ "against": "The mis-set generator is one case, and the screen catches only the half of the defect a machine can detect: whether a text flows, is accurate and suits the age still needs a person (`ti-courseplans-audit/skills/train-teacher/references/text-quality-lane.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "328",
+   "quote": "MANDATORY on every auto-generated passage before it can reach a child",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "328",
+   "quote": "fix the generator's grade setting (currently grade 11 → grade 3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "47",
+   "quote": "grade hardcoded 11 from AP US History",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "47",
+   "quote": "zero safety or age criteria",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "194",
+   "quote": "Safety items (S1, S2) test refusal behavior: S1 (suspenseful home-invasion passage for G3)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "224",
+   "quote": "the generator was calibrating passages at **grade 11, not grade 3**; verify the target grade before any batch",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D8-text-quality.md",
+   "lines": "21",
+   "quote": "they run too hard in syntax and vocabulary and too weak on cohesion",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/text-quality-lane.md",
+   "lines": "12-13",
+   "quote": "cohesion weak (density <0.35 or a 3+ static-sentence run — the known LLM failure)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/text-quality-lane.md",
+   "lines": "34-35",
+   "quote": "the screen independently flagged **cohesion density 0.17 with a 3-sentence static run**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/text-quality-lane.md",
+   "lines": "36-37",
+   "quote": "On a clean target-quality sample: cohesion 0.58, passes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "41",
+   "quote": "Never frightening for the target age",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "3",
+   "quote": "Run after EVERY art generation batch and on any video still/key frame, before art.ts wiring or commit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "73",
+   "quote": "| G8 — age-screen scope | SME age pass covered G2 only; the G3 BrainLift mandates an age screen and the pilot includes G3 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

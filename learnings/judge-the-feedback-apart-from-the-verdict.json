@@ -1,0 +1,86 @@
+{
+ "id": "judge-the-feedback-apart-from-the-verdict",
+ "title": "Judge the feedback apart from the verdict",
+ "statement": "Check a marker's feedback text on its own, apart from its verdicts: every verdict can be right while the feedback misreads the text or the student's answer.",
+ "example": "In one probe all 16 verdicts were right, and 2 replies misread the text or the child's answer.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "feedback"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A live probe sent 16 answers to a reading engine's marker on four open items: all 16 verdicts were right, with no held pass and no passed hold, but two replies misread, one steering the child toward the wrong trigger for a character's habit and one crediting a story detail the child had never mentioned (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md`). The probe classed both as failures of the feedback text, not of the scoring, so a test of verdicts alone would have passed them; an earlier run of the same inputs had given correct replies.",
+ "against": "The probe was an AI review's: its expected verdicts were set by agents, not labelled by a person (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/LENSES-RESULT.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "37",
+   "quote": "All 16 bands are correct. No held pass and no passed hold found. Two coaching-text issues found on p19, both in the `swyk-dialogue` node.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "97",
+   "quote": "These findings are coaching-text quality failures, not scoring failures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "124",
+   "quote": "a child who gave a *wrong* answer was being congratulated",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "126",
+   "quote": "written before the verdict existed, so it could not possibly have agreed with it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "The guide then claimed that the learner explained Peter's defeat and Wendy's decision, which the submitted answer expressly denied.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1988",
+   "quote": "That is a new event not supplied by the learner or supported by the relevant story.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "17",
+   "quote": "The guide then claimed that the learner explained Peter's defeat and Wendy's decision, which the submitted answer expressly denied.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/l6-dialogue-ship-wording/SHIP-WORDING-TRIAGE.md",
+   "lines": "19",
+   "quote": "That is a new event not supplied by the learner or supported by the relevant story.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

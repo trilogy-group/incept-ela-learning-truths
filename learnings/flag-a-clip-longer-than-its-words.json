@@ -1,0 +1,212 @@
+{
+ "id": "flag-a-clip-longer-than-its-words",
+ "title": "Flag a clip longer than its words",
+ "statement": "Flag any narration clip longer than its text predicts, and look for added words before blaming slow delivery, since extra length usually means the voice spoke beyond the script.",
+ "example": "One eight-word clip ran 16.5 seconds because the voice had spoken its whole style prompt inside it.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading course's contract check flags any clip held longer than 3.5 seconds plus 0.75 seconds a word, because that usually means the voice spoke extra words. In a build of 101 clips, a cached eight-word sentence came back with the voice's whole style prompt spoken inside it, 16.5 seconds long, and shipped into every place that speaks the sentence; a sync check caught it playing past its last mark, and a transcript showed the prompt. The fix deletes the cached clip, makes it again and confirms about 0.5 seconds a word and a clean transcript.",
+ "against": "A long clip is not always extra words: colon enumerations \"trigger slow deliberate enumeration; one such clip took 10 fresh syntheses to land in-spec\" (`grade3-reading/.claude/skills/tts-clips/SKILL.md`, lines 106-107). The bound is one course's setting. The fix relies on a clean transcript, and a model transcription check can miss spoken extras: of four narration takes that all read their style instruction aloud, it flagged only the one where it heard 230 words against a 90-word script (`g9/narration/auditions/2026-10-06-scene1/gemini-3.8-flash-tts-Algenib/vo_intro_01.transcript.json`, lines 5-6) and passed the other three (`g9/narration/auditions/2026-10-06-scene1/DECISION.md`, line 40), while blind audio judges named all four takes as reading the prompt (`g9/narration/auditions/2026-10-06-scene1/judging/judgments.json`, lines 16 and 157).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "104-105",
+   "quote": "validate-contracts flags a mark holding the clip longer than 3.5s + 0.75s/word — usually the TTS spoke extra words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "162",
+   "quote": "Two failure classes caught 2026-09-25 (closing-questions build, 101 clips)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "164-165",
+   "quote": "came back from the TTS with the whole Scout STYLE prompt spoken inside it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "165-166",
+   "quote": "16.5 s for eight words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "166",
+   "quote": "it shipped identically into every node that speaks that sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "167",
+   "quote": "`validate-voiceover-sync` catches it (\"plays 16.5s past its last mark\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "167-168",
+   "quote": "listen-qa's transcript shows the prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "169",
+   "quote": "confirm duration ≈ 0.5 s/word and a clean transcript.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "106-107",
+   "quote": "trigger slow deliberate enumeration; one such clip took 10 fresh syntheses to land in-spec",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "13",
+   "quote": "Cache actual PCM and measured durations. Flag duration outliers before packaging.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/repair-narration.py",
+   "lines": "16",
+   "quote": "anomalous=p.exists() and n.duration(p)>max(12,len(s.split())*1.1)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/narration-outliers/cd5107c03e2724cfba014e9663d4e24eaf349b62d5d1c218fef5642745e43753.json",
+   "lines": "2",
+   "quote": "\"expected\": \"Her curiosity turned toward the garden as she went outside.\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/review/narration-outliers/cd5107c03e2724cfba014e9663d4e24eaf349b62d5d1c218fef5642745e43753.json",
+   "lines": "5",
+   "quote": "she glanced at the big green flowers that grew near the fence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/narration/unit1/review-dispositions.json",
+   "lines": "13",
+   "quote": "Replaced before final node packaging; exact literal-boundary repairs and final whole-node transcription show no remaining invented continuation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/EXACT-NARRATION-GATE.md",
+   "lines": "7",
+   "quote": "The files are preserved under `review/narration-outliers` and `narration/*/repairs/*/prior.wav`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "37",
+   "quote": "The 3.8 Flash TTS takes read the style instruction aloud in **all four** takes, not two. Each take opens with the spoken instruction, lasting 21 to 31 s, before the script starts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "40",
+   "quote": "**What the table above got wrong:** the no-hint Gemini check flagged one take (Algenib) and passed three. So the \"exact\" marks for the Orus paced and Gacrux takes are wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/gemini-3.8-flash-tts-Gacrux/vo_intro_01.transcript.json",
+   "lines": "6",
+   "quote": "\"heard_words\": 90,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/gemini-3.8-flash-tts-Gacrux/vo_intro_01.transcript.json",
+   "lines": "7",
+   "quote": "\"exact_match\": true,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "17",
+   "quote": "(found by whisper during alignment; the Gemini checker had passed it)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "7",
+   "quote": "It was not read aloud in any take.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "39",
+   "quote": "the four takes were re-transcribed with Whisper (small and large-v3-turbo, no prompt) during the public write-up.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/narration/verify_take.py",
+   "lines": "31",
+   "quote": "Transcribe every spoken word in this audio verbatim from the very first sound to the last, including any instructions, preamble, or meta-commentary that precede or follow the story text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "41",
+   "quote": "**The pace note:** \"25–55% slower\" is also wrong. The extra length is the spoken instruction, and the script spans run 35.8–41.4 s, against 43.1–45.0 s for 2.5 Pro.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "18",
+   "quote": "| 3.8-flash Orus paced | 66.8 s | 3 | exact | pace instruction made it slower |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "26",
+   "quote": "3.8 Flash pace is 25–55% slower; the full script would run 5.5–6 minutes against a 234 s edit.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

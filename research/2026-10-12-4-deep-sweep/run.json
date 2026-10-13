@@ -1,0 +1,62 @@
+{
+ "id": "2026-10-12-4-deep-sweep",
+ "title": "Run 4: the deep sweep of the AP and knowledge work",
+ "date": "2026-10-12",
+ "kind": "sweep",
+ "status": "assimilated",
+ "method": {
+  "workflow": "research/2026-10-12-4-deep-sweep/workflow-as-run.js",
+  "workflow_sha256": "5cd4e9917f96cd0827c134d0e89c4a1a8357ccf8a096616068e144cec037f8e5",
+  "run_id": "wf_8d6e1149-6b1",
+  "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_8d6e1149-6b1",
+  "agents": "one deep reader per direction, an adversarial verifier per reader, a completeness critic, gap readers and verifiers, one synthesis",
+  "verified_by": "the verifiers re-read every cited line; scripts/add_records.py checks every quote again when it is written",
+  "merge": {
+   "workflow": ".claude/workflows/learnings-merge.js",
+   "run_id": "wf_605f4940-c1c",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_605f4940-c1c",
+   "items": 2296,
+   "batches": 92,
+   "batch_size": 25
+  },
+  "review": {
+   "workflow": ".claude/workflows/learnings-review.js",
+   "workflow_sha256": "35ab4f827955e10a7d39839c36445edba1d5c771e4d01a3623a9351eb64f4e76",
+   "batches": 20,
+   "slices": 22,
+   "pairs": 74,
+   "run_id": "wf_a62d8bcb-309",
+   "transcript": "~/.claude/projects/{home}-Projects-g9/f16151f5-451c-478d-832e-dbb74b328a33/subagents/workflows/wf_a62d8bcb-309"
+  }
+ },
+ "sources": [
+  "icloud-work",
+  "APinceptbench",
+  "downloads",
+  "grade3-reading",
+  "ti-courseplans-audit"
+ ],
+ "counts": {
+  "directions": 19,
+  "agents": 52,
+  "candidates": 1898,
+  "kept": 1864,
+  "dropped": 34,
+  "gaps": 6,
+  "merge_batches": 92,
+  "merge_records": 766,
+  "merge_folded": 913,
+  "records_added": 765,
+  "records_updated": 1563,
+  "quotes_checked": 9330,
+  "quotes_dropped": 23,
+  "evidence_unregistered": 0,
+  "review_fixes": 501,
+  "review_drops": 0,
+  "review_folded": 106,
+  "review_flags": 240,
+  "records_after_review": 659,
+  "review_undone": 1
+ },
+ "notes": "The synthesis agent failed (prompt too long: 1,864 verified candidates); the candidates were taken from the journal and merged in batches."
+}

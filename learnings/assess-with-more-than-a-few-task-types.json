@@ -1,0 +1,104 @@
+{
+ "id": "assess-with-more-than-a-few-task-types",
+ "title": "Assess with more than a few task types",
+ "statement": "Assess with more than a few kinds of task, because what a test asks shapes what is taught and one usual format can narrow teaching to it.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A reading project's research synthesis quotes the RAND Reading Study Group: assessments that are widely used today focus heavily on only a few tasks and thus may inadvertently limit the reading curriculum to preparation for those few tasks (p. xix) (`ti-courseplans-audit/docs/reading-science/SYNTHESIS.qmd`). The same passage adds that while comprehension is defined by default as reading a passage and answering a few multiple-choice questions, there is little incentive to teach the deeper construct (p. 113). Never let one format, such as a passage with a few multiple-choice questions, become the definition of a skill.",
+ "against": "It is a study group's argument from 2002, not a measurement. A later run found counter-evidence (`grade3-reading/ti-courseplans-wiki/Perfect-Course-Rulebook.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`).",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/SYNTHESIS.qmd",
+   "lines": "127-129",
+   "quote": "\"assessments that are widely used today focus heavily on only a few tasks and thus may inadvertently limit the reading curriculum to preparation for those few tasks.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0108-rand-appendix-b-assessment-rfa.qmd",
+   "lines": "127-129",
+   "quote": "as long as we define comprehension by default as reading a passage and answering a few multiple-choice questions about it,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0108-rand-appendix-b-assessment-rfa.qmd",
+   "lines": "120-122",
+   "quote": "the absence of attention to these consequences in widely used reading assessments diminishes the emphasis on them in instructional practices as well.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "699",
+   "quote": "**114. Defaulting to 'read a passage, answer a few multiple-choice questions' as the operational definition of comprehension gives teachers little incentive to teach toward a deeper, more accurate conception of the construct.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "759",
+   "quote": "**124. No single assessment can satisfy all these requirements; the RFA instead calls for building an integrated system of multiple assessments serving different purposes (accountability, diagnosis, instruction-guidance) and different reader groups.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "233-234",
+   "quote": "Variety is not a quality goal. The same format can be excellent for one construct and invalid for another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "36",
+   "quote": "Variety for its own sake is noise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "664",
+   "quote": "Do not let single-select MCQ dominate; STAAR caps it at 75 percent of points and the 2026-06-29 build was at about 87 percent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "286-288",
+   "quote": "\"about 87 percent of items are single-select multiple choice, STAAR's inline-choice and text-entry item types are missing, and at least one item is mistagged.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/academics-review-2026-06-29.md",
+   "lines": "88",
+   "quote": "But about 87 percent of items are single-select multiple choice, STAAR’s inline-choice and text-entry item types are missing, and at least one item is mistagged (a vocabulary item labelled Inference and Evidence), which weakens the claim of full standards alignment.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "RAND Reading Study Group 2002, Reading for Understanding: Toward an R&D Program in Reading Comprehension (MR-1465)",
+   "url": "https://www.rand.org/pubs/monograph_reports/MR1465.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,394 @@
+{
+ "id": "words-that-carry-the-knowledge",
+ "title": "Words that carry the knowledge",
+ "statement": "Teach and gloss the words that carry what a reader needs to know, not the rarest ones, each for its sense in its own line.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The word in focus is chosen by the knowledge it carries, not by difficulty\n(`g9/transformer/src/mechanics/word-in-focus.js`). A first word-web draft's key words were the passage's hard words,\nand the judge held it; with the prompt sharpened, the next draft passed on its first try (`g9/transformer/v02/QA.md`,\n\"Word web\"). Every gloss must fit its word as its own line uses it, since a wrong gloss misleads quietly\n(`g9/transformer/src/mechanics/glossary.js`).",
+ "against": "whether a reader needs a word is only an advisory check (the\nsame file).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles-readable-exp', cell M2"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "44",
+   "quote": "REVISE cannot swap payload words out",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "46",
+   "quote": "FLAG -> SCAFFOLD: vocabulary_support pre-teach for \"erosion\" and \"gorge\" (pronunciation + meaning) before the reading dose",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/lesson-instruction-agent.md",
+   "lines": "52",
+   "quote": "Vocabulary ledger: target word, blocking words, disposition, audio/definition requirement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "59",
+   "quote": "| F3 | major | \"producer\"/\"habitat\" are deep-taught as if they were blocking vocabulary (they aren't). |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "352",
+   "quote": "Apposition in the prose is **not** a gloss until it is verified to read as one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "355",
+   "quote": "the gloss has failed by demonstration; make it explicit.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "399",
+   "quote": "**Pass:** Every technical term used in the script is either (a) defined within the script, or (b) something a typical G7 student would know from general K-6 schooling.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "384",
+   "quote": "By **mastering roughly 300–400 high-utility academic words per grade level**, students gain the linguistic precision needed for strong reading comprehension and confident written expression.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Sheet9', cell C3"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'ReadabilityExperiment-dev-inter', cell L10",
+   "quote": "Prefer the term, 'factor' over 'trend' because the exam will use the word 'factor' in questions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Sheet9', cell C71"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/inputs/procedures/Example_Lesson_Components.txt",
+   "lines": "9",
+   "quote": "Exactly one high-leverage word is taught — chosen to unlock this text and to feed the Phase 3 inference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/VOCAB-DECISIONS-U9.md",
+   "lines": "68",
+   "quote": "all clear the counting rule and are still wrong to teach: a Grade-5 card is spent on a word",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "210",
+   "quote": "iter-3: 12 of 46 taught words never occur in their own passage, so they can't be met in context or tapped there",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "59",
+   "quote": "\"producer\"/\"habitat\" are deep-taught as if they were blocking vocabulary (they aren't).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "9 (textutil text)",
+   "quote": "Exactly one high-leverage word is taught — chosen to unlock this text and to feed the Phase 3 inference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "136-137",
+   "quote": "4. Only ~5–15 of 100 unfamiliar words met in natural reading are learned; misdirective contexts teach approximately zero (Beck et al. 2013, pp. 5–8).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "105",
+   "quote": "`theft` and `charge` (legal sense) carry p14, p21 and p23 and aren't glossed. p14 `check` tests them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "10",
+   "quote": "const GAIN = [\"almost none: an everyday word\", \"a little\", \"some: an older sense or an idiom\", \"a lot: a rank, a title or a historical idea\", \"essential: the scene cannot be understood without it\"];",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "17",
+   "quote": "summary: \"The word that carries the most knowledge, glossed for this line and asked about. Chosen by knowledge carried, not by difficulty.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-in-focus.js",
+   "lines": "67",
+   "quote": "How much does knowing what \"${c.word}\" means in this passage (gloss: ${c.gloss}) help a Grade 9 reader understand it?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "3",
+   "quote": "Jev checks every note fits its word as the line uses it, each one required",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "125",
+   "quote": "label: `The note fits \"${e.term}\" as its line uses it`, required: drafted,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "307-310",
+   "quote": "\"gloss_fits_9\": { \"id\": \"gloss_fits_9\", \"type\": \"noul\", \"value\": 0.59,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "319-321",
+   "quote": "\"pass\": false, \"gate_reasons\": [ \"top<0.6\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "47",
+   "quote": "\"term_9\": \"owe\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/366b8d2c7104a608.json",
+   "lines": "544",
+   "quote": "\"term_9\": \"peculiar end\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "85-86",
+   "quote": "Not words a Grade 9 reader already knows, and never a name.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "130-131",
+   "quote": "a drafted word Jev is sure a Grade 9 reader knows unaided is dropped, unless … that would leave nothing",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "136",
+   "quote": "return kept.length && kept.length < item.entries.length ? { ...item, entries: kept } : item;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/839053e70062cbb5.json",
+   "lines": "352-354",
+   "quote": "\"label\": \"A Grade 9 reader needs \\\"proposition\\\" explained\", \"required\": false, \"verdict\": \"fails\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "41-43",
+   "quote": "each clearly part of a web for the centre (a kind of it, a sign of it, a word for someone who shows it, or what it does to people), such as \"betrayal\" or \"duplicity\" for deceit. Not a hard word from the text that is only loosely linked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "83-84",
+   "quote": "The first draft's key words were hard words from the text (\"obsequious\", \"homage\", \"peculiar\") for \"resentment\", and Jev held it;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/9bce29e80207fd23.json",
+   "lines": "90",
+   "quote": "belongs in a web for the centre: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "55",
+   "quote": "the words that carry the answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "3",
+   "quote": "Jev checks every note fits its word as the line uses it, each one required, since a wrong gloss",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "432",
+   "quote": "The word class of each word in focus as it is used in its line, for its 3D card: one Jev choice per word, and \"\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "180",
+   "quote": "\"follow\" glossed as loyal: the writer now gets a correction it can act on, below.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "128",
+   "quote": "In frame_${k}, is what is said of \"${a.word}\" true of that word in the quotation?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "83-85",
+   "quote": "The first draft's key words were hard words from the text (\"obsequious\", \"homage\", \"peculiar\") for \"resentment\", and Jev held it; with the prompt sharpened, the block was ready on the first try",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "49",
+   "quote": "about it (a rank, an older sense, a word for what a character does or is), to study and then recall from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "optionally, judgeTerms with readingGrade 9 keeps only words a reader would not know unaided",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "233-236",
+   "quote": "`content/vocab-word-lists.json` (the Alpha 2026 Vocabulary sheet) is a REFERENCE from a different curriculum, not this course's scope: prefer a word the sheet tests at this grade where choice is free, and never teach a word it places a grade or more below without a recorded `off_list_reason`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-DECISION-LOG.md",
+   "lines": "43",
+   "quote": "`producer` and `habitat` receive the full blocking-word-style deep-teach cycle, though habitat is a K-3 science word and neither is the pinned blocking word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-DECISION-LOG.md",
+   "lines": "43",
+   "quote": "RULE_G3_D4.2 (don't pick a word the child already knows), RULE_G3_D7.11 (\"new\" judged against a G5 reader)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-selection-and-generative-items.md",
+   "lines": "17",
+   "quote": "there are six key word characteristics that should be considered when selecting target words for instruction … Centrality to understanding a text, frequency of use in a text, likelihood of appearing in other content areas, having multiple meanings, containing affixes, and having cross-language potential.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-selection-and-generative-items.md",
+   "lines": "19",
+   "quote": "some words that are important to understanding a text may not be bolded, but they may be good choices for target instructional words as well.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-selection-and-generative-items.md",
+   "lines": "21",
+   "quote": "sometimes those words, they're not conceptually central and they don't need to be taught. Or they may be words that your students already know. So you may just wanna review them rather than teach them in-depth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "330",
+   "quote": "Domain-specific theatre/literary meaning is required here. Earlier vocabulary placement does not establish prior teaching in this new unit.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "176",
+   "quote": "\"in truth\", said sarcastically here",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

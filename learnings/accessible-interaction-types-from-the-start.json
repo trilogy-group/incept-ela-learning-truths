@@ -1,0 +1,243 @@
+{
+ "id": "accessible-interaction-types-from-the-start",
+ "title": "Accessible interaction types from the start",
+ "statement": "Every interaction a student uses must work by keyboard and assistive technology and be legible, checked from the start, because an item a learner can't operate yields an invalid score.",
+ "example": "In one reading course, 406 of 1,005 items (40%) could not be operated by keyboard or assistive technology.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "format",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A round-1 red team of a grade 4 reading course counted 406 of 1,005 items (40%) that could not be operated by keyboard or assistive technology (`grade3-reading/ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md`). In a grade 5 course the anti-leak design deliberately concentrated items in hot-text, sequence and match formats (525 of 772), precisely the accessibility-risk types (`grade3-reading/ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md`). A review of the grade 3 course found its drag-and-drop and matching items unusable this way and added that an item type that cannot be made accessible is also not a faithful rehearsal of the test. The item generator's rubric now builds accessibility in from the start, because the team's own evaluation had never checked it (`grade3-reading/ti-courseplans/docs/course-formula-agents.md`). This covers drag-to-order, text selection and audio controls. No anti-guessing control may block an accessible path or let a screen reader give part of the answer away, as when 192 of 198 match items announced an unused decoy category to screen readers (`grade3-reading/artifacts/g5_build_2026_07_02/package/G5_EXECUTED_ACTIONS_CHECKLIST.md`, line 39; `ti-courseplans-audit/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, line 535).",
+ "against": "The grade 4 count was disclosed as platform-dependent: whether an item can be operated also depends on the platform that serves it (`grade3-reading/ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md`). The same checklist says a clean static scan does not imply a WCAG 2.1 AA pass, and the dynamic half of the audit was not done. the 406/1,005 figure is marked platform-dependent (`ti-courseplans-audit/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md`). The real test uses the same formats for Grade 3, so the fix is to build them accessibly, as the test does, rather than drop them: \"MAP uses these for G3 — check MAP's implementation\" (`grade3-reading/knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd`, line 21).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "63",
+   "quote": "* Accessibility: 406/1,005 (40%) not keyboard/AT-operable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "15",
+   "quote": "the anti-leak thesis deliberately concentrates items in the TEI formats (hot-text/sequence/match = 525/772) that are precisely the accessibility-risk types.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "An item type that cannot be made accessible is also not a faithful rehearsal of the test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "224",
+   "quote": "*WCAG in the rubric, not as an afterthought* — G3 was flagged because the team's own eval **never checked accessibility** (a criteria gap)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "41",
+   "quote": "an inaccessible item isn't just bad UX, it's an invalid score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "103",
+   "quote": "An item type that cannot be made accessible is also not a faithful rehearsal of the test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/package/G5_EXECUTED_ACTIONS_CHECKLIST.md",
+   "lines": "39",
+   "quote": "192/198 match items announce a `__decoy_unused` \"Unused category\" target to screen readers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/package/G5_EXECUTED_ACTIONS_CHECKLIST.md",
+   "lines": "38",
+   "quote": "a clean static scan does **not** imply a WCAG 2.1 AA pass (dynamic half in NOT-done)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "126",
+   "quote": "must be accessible to all students (WCAG 2.1 AA and Section 508)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "The drag-and-drop and matching items are not keyboard or assistive-technology operable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "one hot-text item offered twelve selectable options, an excessive motor and cognitive load for an eight-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "130",
+   "quote": "Engineer keyboard and assistive-technology support for every interaction and cap the number of selectable options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0085-g5-red-team-findings-2026-07-06.qmd",
+   "lines": "25-26",
+   "quote": "RT-2 accessibility: anti-leak concentrates items into TEI formats (525/772), no attestation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "370",
+   "quote": "**Accessibility (#10) is now a hard LEGAL blocker** (drag-to-order + hot-text keyboard/AT; check how MAP implements).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/app-package-agent.md",
+   "lines": "37",
+   "quote": "Keyboard-operable and screen-reader-aware vocabulary and audio controls.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "15",
+   "quote": "the anti-leak thesis deliberately concentrates items in the TEI formats (hot-text/sequence/match = 525/772) that are precisely the accessibility-risk types.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g4-reading-redteam-round1-2026-07-07.md",
+   "lines": "63",
+   "quote": "Accessibility: 406/1,005 (40%) not keyboard/AT-operable",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "535",
+   "quote": "Anti-gaming controls must not block legitimate accessibility paths.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "An item type that cannot be made accessible is also not a faithful rehearsal of the test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "105",
+   "quote": "The Axolotl lesson's opening selection item rendered black text on a black background, legible only on hover.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "130",
+   "quote": "Engineer keyboard and assistive-technology support for every interaction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/STUDENT_READY_CRITICISM_FRAMEWORK.qmd",
+   "lines": "126-128",
+   "quote": "The student may use keyboard navigation, assistive technology, non-hover access, or high-contrast needs. Drag/match/hot-text designs cannot be defended by saying they are good anti-leak items if the renderer blocks some students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/approval-package/VISUAL_RUNTIME_ACCEPTANCE.md",
+   "lines": "16-17",
+   "quote": "- `D10-ACCESSIBILITY-EVIDENCE.md`: match and hot-text keyboard paths passed the recorded inspection; sequence keyboard movement failed to reorder neighbours and remains a renderer/platform defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "50",
+   "quote": "- **Skeleton V2 decision (G5):** MCQ/MSQ eliminated from the build after 99.5–100% leak; match pool culled to 653; this SUPERSEDED the MCQ-regen effort — don't restart regen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "535",
+   "quote": "Anti-gaming controls must not block legitimate accessibility paths.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/accessibility.md",
+   "lines": "40-42",
+   "quote": "\"The drag-and-drop and matching items are not keyboard or assistive-technology operable... An item type that cannot be made accessible is also not a faithful rehearsal of the test.\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/scene/Moment.tsx",
+   "lines": "62",
+   "quote": "keyboard: Enter makes a click move (the canvas is not focusable)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "28",
+   "quote": "Tab lands skip-link → settings → content → footer; `:focus-visible` 3 px #b98c45 outline; 0 icon-only buttons",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "72",
+   "quote": "**Accommodations policy now, WCAG audit moved up from Stage 4** — an inaccessible assessment item is an invalid score, not a cosmetic gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/ADDRESS_STATUS.md",
+   "lines": "51",
+   "quote": "**WCAG**: automated audit DONE + fixes merged (PR #55: critical 4→0, serious 2→0, EBSR keyboard fixed)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

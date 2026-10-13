@@ -1,0 +1,177 @@
+{
+ "id": "set-the-bar-the-judge-can-reach",
+ "title": "Set the bar the judge can reach",
+ "statement": "Set each pass or leak bar above the item's chance score, computed from how the live system scores it, and within what the judge can reliably reach, never near-perfect.",
+ "example": "An earlier AP effort found a 95% single-shot bar on one format to be a structural wall, with a cap near 52%.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's plan for its question writer takes from an earlier AP question-writing effort the rule to define the evaluation contract up front, with an oracle ceiling, a class-prior baseline and a guard against shortcut learning, and, on any format where the judge's agreement with itself is low, to set the bar at the ceiling minus a margin rather than 99% (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md`). The AP effort's own summary calls a 95% single-shot bar on its multi-question format a credible structural wall, with a cap near 52% (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`). The chance score is that of the item as it is actually scored, and what the judge can reach depends on its agreement ceiling and its run-to-run flip rate without retries.",
+ "against": "The gate was later taken out of the blocking path and replaced by a stub that always passes. With retries, an item counts as failed only if it fails every attempt, so the gate itself no longer sees flips. The probe limits itself to what it tried, telling a reader to \"not generalize beyond the probed endpoint and item shapes.\" (`grade3-reading/artifacts/scoring-rule-probe-2026-07-10/scoring-rule-probe.md`, line 8), so a new scorer or item shape needs its own probe.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "78",
+   "quote": "**Define the eval contract up front** (oracle ceiling, class-prior baseline, shortcut-learning guard) — aptraining [P8]. On any format where judge self-agreement is low, the bar is `ceiling − margin`, not 99%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "44",
+   "quote": "**MCQ_SET ≥95% single-shot is a credible structural wall (~52% cap).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "285",
+   "quote": "a 0.60 pair-accuracy threshold was too close to chance and flagged noise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "284",
+   "quote": "sequence pair-accuracy has a chance floor around 0.50.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "40-41",
+   "quote": "PASS if with-passage correct-rate >= 0.80 AND without-passage correct-rate <= chance-rate + 0.15 margin",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "61b718c",
+   "lines": "3-5",
+   "quote": "The 0.99 threshold over ~82 non-error items tolerates ZERO failures. With LLM judge nondeterminism flipping 1-3 verdicts per run, this gate is structurally unsatisfiable and blocks valid PRs indefinitely.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "3-4",
+   "quote": "Three consecutive CI runs (errors already eliminated) showed the gate failing on a *different* disjoint set of borderline items each time",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "6-7",
+   "quote": "Across 3 runs ~19 distinct items flipped category at least once. The 0.98 gate tolerates only 1 failure in ~92 items,",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "19-20",
+   "quote": "- Stability tool pins retry_attempts=0 so it still measures raw per-item flip rates rather than masking them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "df34ea5",
+   "lines": "13-14",
+   "quote": "An item only counts as failed/errored if it fails EVERY attempt — the signature of a deterministic regression.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f0c53a2",
+   "lines": "3-4",
+   "quote": "- quality-gates.yml: replace the golden-regression job with a no-op stub that always passes, so PRs are never blocked by it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/scoring-rule-probe-2026-07-10/scoring-rule-probe.md",
+   "lines": "60",
+   "quote": "submitted array to its **first element** and pays full credit if that single token matches",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/scoring-rule-probe-2026-07-10/scoring-rule-probe.md",
+   "lines": "70",
+   "quote": "is **k/n_tokens** (e.g. 2 of 12 → ≈ 0.167), not 1/C(n,k) (≈ 0.015) — an order of magnitude",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "77",
+   "quote": "Standing rule: chance floors are computed per item from its responseDeclaration, never from the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/cross-cutting.md",
+   "lines": "180",
+   "quote": "items certified against one seeded shuffle; multi-shuffle re-probe decertified 72 incl. one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "63",
+   "quote": "scored on >=8 shuffles for order/selection formats, with per-format chance floors as computed in",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "64",
+   "quote": "any threshold set >=0.20 above its floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "29",
+   "quote": "For an N-item sequence, random guessing scores ~0.50 pair-accuracy, so a naive `mean < 0.60` gate sits inside the noise — the certified core itself measures ~0.5. The sound test locates the chance floor first:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/GOAL_ANALYSIS.md",
+   "lines": "57",
+   "quote": "**no chance/heuristic baseline** exists, so 97.4% can't be partitioned into \"leak\" vs \"answer-format prior\" (hot-text 22/22, msq 20/20 are structurally near-100% recoverable even when clean)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-final-selection/_internal/GATE_CONSISTENCY_FIX.md",
+   "lines": "30-31",
+   "quote": "**Match scored too lax:** match's chance floor is ~0.30 (few categories), so a flat `mean<0.60` passes almost automatically.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

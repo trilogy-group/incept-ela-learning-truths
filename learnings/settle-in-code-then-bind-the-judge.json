@@ -1,0 +1,682 @@
+{
+ "id": "settle-in-code-then-bind-the-judge",
+ "title": "Settle in code, then bind the judge",
+ "statement": "Settle in code everything code can decide, such as format, parts and key validity, before a judge sees the item, then give the judge those results as binding facts.",
+ "example": "With a symbolic checker ahead of the judge, 81 math questions run 3 times each scored the same every time, with 0 regressions in 486 evaluations.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "key"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The question evaluator used in the AP work added a math checker because a model judge could score the same compound-interest question 1.0 in one run and 0.0 in the next. A symbolic library now computes the answer before the judge scores the item, and when it proves the answer correct the judge must accept factual accuracy as 1.0. Tested on 81 math questions with 3 runs each, 486 evaluations gave 0 regressions and the same score every time. Code can settle the format, the parts present, the number of options, the key's validity and the final score, leaving the judge only questions of meaning.",
+ "against": "the step that turns an item into something the checker can compute can misrepresent the problem, so the judge may still override an \"incorrect\" verdict, and the measured gain was 3 net improvements. The binding is only as good as what the code was given: when the math verifier calls an answer incorrect, the judge may still override it, because \"the extraction step can sometimes misrepresent the problem (wrong equation format, missing variables)\" (`icloud-work/incept/inceptbench/docs/internals/math-verifier.md`, lines 62-65). The lookup was proposed, not built or tested. None found. The hard-fail rules there are word patterns, for example any distractor containing \"never\" or \"always\", and no rate of wrong hard fails is recorded (`icloud-work/evaluator/docs/EVALUATION_PROCESS.md`, line 133). Filing format faults under alignment is what the judge's rubric asked for: it asks whether the format is correct and fails curriculum alignment if not, though that rubric file postdates the run. Where a code check rests on a model's own extraction, the same evaluator leaves the judge free: a math check's finding of an error may be overridden because \"the extraction step can sometimes misrepresent the problem\", and a picture check may lift a fail while its contradictions stay advisory. The cue fix changed several things at once and was tried on two samples, so the effect of naming the excuses alone is unknown. Code checks catch only the obvious: a validator probe found that visible deterministic rules cannot reliably identify the evaluator's latent concerns without damaging items that passed, and the rejected branch already ran local validators before its model ranker. The reading-level code also defers to the model near a band edge or on unreliable text. None found. The split is an adopted rule, and nothing in this evidence compares the two kinds of check. Under that project's one-attempt rule a failed check is logged, never used to call the model again: the same audit counts validation that triggers a retry as a crutch (`icloud-work/aptraining/.agent/research/inference_clean.md`, line 400). A probe of a deterministic validator suite on 461 generated AP items caught 19 of 102 failures and rejected 22 of 351 passes: \"The visible deterministic rules catch the obvious defects but cannot reliably identify the evaluator's latent concerns without damaging passed controls.\" (icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md, line 42).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "7",
+   "quote": "the same compound interest question may be scored 1.0 in one run and 0.0 in the next",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "5",
+   "quote": "to verify mathematical claims in K-12 educational content before the LLM evaluator scores them",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "84",
+   "quote": "Evaluator MUST accept `factual_accuracy = 1.0`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "109",
+   "quote": "81 unique math questions (51 core + 30 edge cases), 3 runs each",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "113",
+   "quote": "Total evaluations | 486",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "114",
+   "quote": "Regressions | **0**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "116",
+   "quote": "Perfect consistency (0 variance) | All 81 questions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "88",
+   "quote": "the extraction step can sometimes misrepresent the problem",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "115",
+   "quote": "Net improvements | **+3**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "224",
+   "quote": "### 3.8 Answer Balance (Non-critical) — Chi-Square Gate",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "226",
+   "quote": "This is computed **programmatically** before the LLM evaluator runs. The LLM is instructed to use the programmatic score exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/internals/math-verifier.md",
+   "lines": "61",
+   "quote": "1. **CORRECT verdict** (mathematically provable): Evaluator MUST accept `factual_accuracy = 1.0`. Explanation-wording errors go under `clarity_precision`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/src/validator.py",
+   "lines": "472",
+   "quote": "# This validator programmatically replaces the blank with the correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/internals/math-verifier.md",
+   "lines": "62",
+   "quote": "2. **INCORRECT verdict** (usually reliable): Evaluator SHOULD set `factual_accuracy = 0.0`, but MAY override if its own verification confirms the answer is correct (extraction-error case).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/internals/math-verifier.md",
+   "lines": "65",
+   "quote": "Rule 2 is deliberately permissive because the extraction step can sometimes misrepresent the problem (wrong equation format, missing variables).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "129-131",
+   "quote": "A deterministic curriculum-API lookup that flags any named statute outside the period would catch the rest.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/EVALUATION_PROCESS.md",
+   "lines": "127",
+   "quote": "Hard fails trigger BEFORE the API call, saving time and money.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "24",
+   "quote": "**15 out of 26 curriculum alignment failures (58%) are due to FORMAT MISMATCH.**",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "24",
+   "quote": "**15 out of 26 curriculum alignment failures (58%) are due to FORMAT MISMATCH.**",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "139-140",
+   "quote": "factual_accuracy: \"Cannot verify factual accuracy because the actual answer choices are missing\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "245",
+   "quote": "| Dim 13: Format compliance | Item structure matches format token (MCQ/MSQ/EBSR/hot-text/sequence/gap-match) | Hard gate |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "39",
+   "quote": "3. Is the format correct (MCQ vs MSQ vs fill-in vs article)?",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "ap_benchmark/prompts/base.py",
+   "lines": "41",
+   "quote": "If ANY of these fail, the content fails `curriculum_alignment` which is CRITICAL.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "10-13",
+   "quote": "- Reframe cue as \"VERIFY AND PENALIZE IF CONFIRMED\": adds an explicit definition of stem redundancy, a narrow false-positive list, and an explicit list of disallowed rationalizations (including the exact \"common formatting style\" wording the LLM previously used).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "4",
+   "quote": "soft cue produced inconsistent verdicts on structurally identical defects.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "22",
+   "quote": "now flags both as INFERIOR",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "510-511",
+   "quote": "If the LLM ignored that directive, this guard enforces the contract deterministically.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "513-516",
+   "quote": "Override clause is honored: if the LLM's own reasoning quotes a valid override per the signal block (i.e., its reasoning includes explicit visual-derivation evidence or stylistic-synonym mapping), the existing score stands. Without such quoting, we flip to 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/docs/internals/math-verifier.md",
+   "lines": "61",
+   "quote": "1. **CORRECT verdict** (mathematically provable): Evaluator MUST accept `factual_accuracy = 1.0`. Explanation-wording errors go under `clarity_precision`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/docs/internals/math-verifier.md",
+   "lines": "62",
+   "quote": "2. **INCORRECT verdict** (usually reliable): Evaluator SHOULD set `factual_accuracy = 0.0`, but MAY override if its own verification confirms the answer is correct (extraction-error case).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/docs/internals/math-verifier.md",
+   "lines": "65",
+   "quote": "Rule 2 is deliberately permissive because the extraction step can sometimes misrepresent the problem (wrong equation format, missing variables).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "181-183",
+   "quote": "When images show 2-option questions and visual label extraction confirms high-confidence option-key consistency, un-fail factual_accuracy (0.0 → 1.0).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "185-187",
+   "quote": "Contradictions remain advisory because visual label extraction is not allowed to overrule the evaluator's direct reasoning after the fact.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_PROCESS.md",
+   "lines": "127",
+   "quote": "Hard fails trigger BEFORE the API call, saving time and money.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/EVALUATION_PROCESS.md",
+   "lines": "136",
+   "quote": "| `mcq_wrong_option_count` | MCQ | Not exactly 4 options |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "35",
+   "quote": "\"attempting\"-gameable written step (F4 must log justification as attention evidence, machine-check the citation half)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "132",
+   "quote": "- Object counts and answer balance analysis are AUTHORITATIVE - do NOT attempt to re-count or recalculate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "156",
+   "quote": "**You MUST use these pre-computed values exactly.** Do NOT recalculate them yourself.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_set_evaluation.txt",
+   "lines": "367",
+   "quote": "If answer balance analysis is provided to you as part of a prompt, you MUST use that exact score and distribution data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "12",
+   "quote": "**Catch deterministic structural tells** (longest-option, key-validity, identity-order) — it estimates, doesn't count",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "12",
+   "quote": "Deterministic script floor (`anti_leak_grader.py`), exit non-zero on any FAIL",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "34",
+   "quote": "a post-deploy structural probe then caught 5/15 longest-option tells *both* earlier graders missed.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "69-70",
+   "quote": "op-lint's deterministic layer catches **6 of the 10 round-2 academics failure shapes**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "27",
+   "quote": "14 dimensions, each binary 0.0/1.0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "28-29",
+   "quote": "two metrics (`reading_level_match`, `answer_balance`) are deterministic, not LLM-judged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "29-30",
+   "quote": "The LLM's own `overall` score is discarded; real aggregation is tier-weighted average",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bfc4165",
+   "lines": "5-7",
+   "quote": "1. Deterministic length_discipline: replace LLM word-count judgment with a Python counter + mechanism-keyword classifier. Word counting is exact data — asking the LLM to do it added noise without adding value.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bfc4165",
+   "lines": "17",
+   "quote": "Result: 9/10 scripts fully consistent across 3 independent runs.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "35-37",
+   "quote": "1. **Inject.** The reading and question evaluators prepend a `## DETERMINISTIC READING-LEVEL ANALYSIS` block (computed Lexile + target band) to the LLM prompt, so the model reasons *with* the measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "38",
+   "quote": "2. **Override (bounded).** After the LLM pass, guards adjust the metric:",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/unit1_workflow_v2_branch_result_20260525T093757Z.md",
+   "lines": "34",
+   "quote": "- K=4 parallel v80bchain generation for non-DBQ cells.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/unit1_workflow_v2_branch_result_20260525T093757Z.md",
+   "lines": "79",
+   "quote": "- v80bchain repeatedly produced answer-leaky stimuli and sometimes truncated answer options.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/unit1_workflow_v2_branch_result_20260525T093757Z.md",
+   "lines": "81",
+   "quote": "- Gemini did not reliably reject these candidates.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "75",
+   "quote": "- Gemini ranking must happen after deterministic local validators remove obvious bad candidates.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "76",
+   "quote": "- Do not trust Gemini to catch MCQ_SET answer leaks, truncated options, wrong crop direction, or DBQ source hallucination. Evidence from the rejected branch shows it missed these.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_validator_probe_20260519.md",
+   "lines": "42",
+   "quote": "The visible deterministic rules catch the obvious defects but cannot reliably identify the evaluator's latent concerns without damaging passed controls.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/unit1_workflow_v2_branch_result_20260525T093757Z.md",
+   "lines": "38",
+   "quote": "- Local branch validators for shape, period drift, MCQ_SET truncation, MCQ_SET answer leaks, and known Columbian Exchange inversion.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/unit1_workflow_v2_branch_result_20260525T093757Z.md",
+   "lines": "82",
+   "quote": "- Local validators caught more bad candidates after patching, but the live K=4 pool still selected or emitted failing MCQ_SET content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "44-46",
+   "quote": "**Defer:** near a band edge, or unreliable text (too short / too few sentences / high out-of-vocabulary ratio — e.g. MAP standalone passages) → the LLM score stands.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "38",
+   "quote": "- No validation that correct answer is actually in the options",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "418",
+   "quote": "- reject any item where computed answer ≠ keyed answer",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_shadow_helper.md",
+   "lines": "64",
+   "quote": "| Type | Judgment-bearing (does this paragraph cite this source faithfully?) | Mechanical (URL resolves, schema valid, hash matches) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_shadow_helper.md",
+   "lines": "69",
+   "quote": "When in doubt about which helper owns a verification task: if the verdict needs interpretation (\"is this corpus good enough?\"), Shadow. If the verdict is mechanical (\"do all 1000 URLs resolve?\"), Atlas.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "78",
+   "quote": "Validates correct_answer matches answer_options keys, explanation matches answer letter.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "240",
+   "quote": "**Structural failure:** the DBQ has only 4 documents instead of the required 7 (`generated_content.documents` has length 4).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_unit1_trap_verifier.md",
+   "lines": "25",
+   "quote": "These are deterministic trap failures. Retrieval and prompting can reduce them, but a verifier can catch them cheaply.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_unit1_trap_verifier.md",
+   "lines": "13",
+   "quote": "This should run after generation and before the item is returned/scored.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "178",
+   "quote": "2. Split schema normalization from content generation so unsupported fields cannot leak.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MSQ_FIX_RESULTS.md",
+   "lines": "100",
+   "quote": "1. **Deterministic**: Single-answer MSQs always fail, not dependent on model",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/EXPERIMENT_RESULTS_2026-02-18.md",
+   "lines": "104",
+   "quote": "- Prompt instruction alone doesn't enforce length",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/improvement_plan_prompts.md",
+   "lines": "39",
+   "quote": "- BANNED WORDS has no **detection/rejection mechanism** - it's advisory only",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "953",
+   "quote": "Chinese character `绥靖` (\"suí jìng\", appeasement) embedded in English text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "2",
+   "quote": "Code checks only what is fact: each box has real words, and the evidence is an exact quotation from the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "100",
+   "quote": "Copy the words exactly from the text, so your quotation can be found.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "61",
+   "quote": "CER-1 refused \"asdf qwer zxcv\", sent \"I follow him because I love him\" back as",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "5",
+   "quote": "nonsense, a box too thin and a quotation that is not the text's exact words are stopped by code first (cer-frame respond)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "98",
+   "quote": "if (thin(text) || (action.type === \"argue\" && bare(text))) return null;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "58",
+   "quote": "for (let size = 1; size <= 4; size++) {",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "1-2",
+   "quote": "For each step: the writer drafts, code checks the facts, the … judge checks the rest on positive evidence, and a failing draft gets exactly one correction pass with the reasons.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "68",
+   "quote": "if (codeFail.length) { reasons = codeFail.map((c) => `${c.label}: ${c.detail}`); step.reasons = reasons; step.status = \"held\"; continue; }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "56-59",
+   "quote": "Code checks its shape and the facts code can settle: exact quotations, lengths, give-aways. … Jev answers one bounded yes-or-no question per remaining check, with the evidence in its state.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "40-41",
+   "quote": "A first live run on Othello showed two faults no check caught",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "37",
+   "quote": "TASK: a short video essay (60 to 100 seconds) that opens the lesson: three or four beats, each one frame with narration",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/a2189e24065794e4/manifest.json",
+   "lines": "5",
+   "quote": "\"duration\": 26.2,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/4eb30567cbe4e315/manifest.json",
+   "lines": "5",
+   "quote": "\"duration\": 33.92,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/cd48a45d510f4e3e/manifest.json",
+   "lines": "5",
+   "quote": "\"duration\": 34.04,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/7fc2d6f7b8e85a6b/manifest.json",
+   "lines": "5",
+   "quote": "\"duration\": 36.76,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "films/f13d567b87dac256/manifest.json",
+   "lines": "5",
+   "quote": "\"duration\": 38.04,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "35",
+   "quote": "normalize rejects a reply of the wrong shape",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "36",
+   "quote": "assert.throws(() => getMechanic(\"quick-check\").normalize({ stem: \"Who?\", options: [\"a\", \"b\"], answer: 0, feedback: [], evidence: [1] }, ctx), /exactly 3/);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "37",
+   "quote": "assert.throws(() => getMechanic(\"evidence-hunt\").normalize({ claim: \"x\", evidence: [999], hint: \"h\", reveal: \"r\" }, ctx), /lines that exist/);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "47",
+   "quote": "its new odd-one-out rationale incorrectly describes the options' lengths/structure and is independently adjudicated unsupported.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

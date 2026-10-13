@@ -1,0 +1,263 @@
+{
+ "id": "judge-the-artifact-not-the-writer",
+ "title": "Judge the artifact, not the writer",
+ "statement": "Check every generated item independently, since a writer's score on teaching questions, its grasp of a pedagogy and its own report of compliance are no evidence of what it makes.",
+ "example": "A model that scored 96.52% on a pedagogy benchmark was published with the caution that this is not evidence of effective tutoring.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "generation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's comprehension doctrine deliberately rejects two kinds of evidence about generated lessons: pedagogy-benchmark scores, which measure knowing that rather than generating content that embodies it, and a model's unaudited assessment of its own content (`grade3-reading/knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd`). Its experiment intake lets a model assist extraction but never certify its own atom, and counts a model's self-reported compliance as no evidence (`grade3-reading/knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd`); its feedback routing says no lane can self-certify the whole course (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`). A published model tuned for pedagogy reached 96.52% on a pedagogical-knowledge benchmark, and the paper itself says such performance is not evidence of effective classroom tutoring (`grade3-reading/knowledge_bot/knowledge/kb-0124-eduqwen-pedagogical-llm-paper.qmd`). The independent check should come from a different model family than the writer.",
+ "against": "The doctrine's 'empirically worthless' points to a leak rate in raw generated items, not to a study of self-assessment (`grade3-reading/knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd`). the same paper reports that its training moved the model toward guided-learning responses rather than giving answers, a project plan proposes training a model on its own teaching principles, and whether that reaches generated material was left as an experiment. This is the project's own synthesis, which marks itself as paraphrase-level and not quote-checked, so the 78% and 79% are summaries of its measurements, not the measurements themselves (`grade3-reading/knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd`). judging with three model families was proposed but not approved, and no evidence was presented that it reduces evaluator flakiness (`grade3-reading/knowledge_bot/knowledge/kb-0127-incept-service-coe-catchup-2026-07-14.qmd`, lines 85-86).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "255",
+   "quote": "A model may assist extraction but may not certify its own atom.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "465",
+   "quote": "Model self-reported compliance is not evidence; measure agreement before adjudication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "26",
+   "quote": "unaudited LLM self-assessment of its own content (empirically worthless — see DOK1-11)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "26",
+   "quote": "pedagogy-benchmark scores as evidence of teaching ability (measures knowing-that, not generating-aligned)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "157-158",
+   "quote": "no lane can self-certify the whole course.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0124-eduqwen-pedagogical-llm-paper.qmd",
+   "lines": "94-95",
+   "quote": "strong benchmark performance on pedagogical knowledge questions does not itself constitute evidence of effective classroom tutoring",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0124-eduqwen-pedagogical-llm-paper.qmd",
+   "lines": "12",
+   "quote": "reaches 96.52% on the Cross-Domain Pedagogical Knowledge (CDPK) benchmark",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "46",
+   "quote": "Knowing-that (answering pedagogy questions) and generating-aligned (producing content that embodies the pedagogy) are different capabilities",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "46",
+   "quote": "the gap is invisible to benchmarks and only measurable at the artifact level",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "34",
+   "quote": "a dose that \"knew\" gradual release still leaked its item's answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0124-eduqwen-pedagogical-llm-paper.qmd",
+   "lines": "87-89",
+   "quote": "RL shifted behavior \"toward guided-learning-like response patterns… rather than direct answer provision\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0125-coe-catchup-2026-07-13.qmd",
+   "lines": "92-93",
+   "quote": "training an LLM specifically on the team's pedagogical principles rather than only using it to generate content",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "126-127",
+   "quote": "left downstream transfer as an experiment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "23",
+   "quote": "Generation systematically betrays declared pedagogy — \\~78% of raw generated reading items were answerable without the passage, correct answers sat at position A 79% of the time, and a dose that \"knew\" gradual release still leaked its item's answer — and design-time contracts alone demonstrably failed to prevent any of it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "35",
+   "quote": "Knowing-that (answering pedagogy questions) and generating-aligned (producing content that embodies the pedagogy) are different capabilities; the gap is invisible to benchmarks and only measurable at the artifact level.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/ROUTER.md",
+   "lines": "65",
+   "quote": "REJECTS pedagogy-benchmark scores as teaching evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "256-257",
+   "quote": "filed with its own caveat that benchmark PCK ≠ teaching ability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "2",
+   "quote": "Our own synthesis (paraphrase-level cites), NOT external evidence — not quote-gated.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "79-81",
+   "quote": "Knowing-that (answering pedagogy questions) and generating-aligned (producing content that embodies the pedagogy) are different capabilities; the gap must be measured at the artifact level rather than inferred from benchmark scores.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "304-305",
+   "quote": "knowing-that != generating-aligned (kb-0121 SPOV2, kb-0124 EduQwen authors' own limitation)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/train-teacher-requirements.md",
+   "lines": "19-20",
+   "quote": "a generator can \"know\" gradual release and still emit answer-reveals.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "26",
+   "quote": "The questions were good because the generator was not trusted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0090-fable5-plan-traces-2026-07-09.qmd",
+   "lines": "129-131",
+   "quote": "- do not trust LLM self-report; - only gate outputs and read-back artifacts count; - a lane cannot certify its own items;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "231",
+   "quote": "3. Use a different family for the gate than for the author. Never same-family certify.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "106-108",
+   "quote": "The binding gate must stay **cross-family** (solver family != generator family); IB self-certification is not anti-leak evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "78-79",
+   "quote": "A model's pedagogical knowledge does not survive the trip into its generated content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "80-81",
+   "quote": "the gap must be measured at the artifact level rather than inferred from benchmark scores.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "11-12",
+   "quote": "Does training on pedagogical principles produce a model that GENERATES aligned lessons -- not merely one that answers pedagogy questions?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "545-546",
+   "quote": "knowing pedagogy does not prove generated content embodies it. This is why JSON validity and question accuracy cannot be the headline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "465",
+   "quote": "Model self-reported compliance is not evidence; measure agreement before adjudication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "121",
+   "quote": "- treating \"model says it is fixed\" as evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "312-313",
+   "quote": "beats were paraphrased instead of copied verbatim from the catalog, and the self-red-team log had **falsely claimed \"verbatim.\"**",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Application-driven pedagogical knowledge optimization of open-source LLMs via reinforcement learning and supervised fine-tuning, Frontiers in Artificial Intelligence 2026",
+   "url": "https://doi.org/10.3389/frai.2026.1851993"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

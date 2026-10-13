@@ -1,0 +1,58 @@
+{
+ "id": "needing-the-text-can-weaken-distractors",
+ "title": "Needing the text can weaken distractors",
+ "statement": "A passage that rules out the obvious answers makes an item need reading but leaves wrong options easy to drop once read, so weigh that cost against the item's purpose.",
+ "example": "A quality screen flagged weak distractors on 14 of 26 items built so that a solver without the passage could not answer them.",
+ "group": "writing-questions",
+ "role": "context",
+ "facets": [
+  "integrity",
+  "distractors",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 course's quality report made items resist a passage-blind solver by having the passage rule out the obvious world-knowledge causes; a cross-family quality screen then flagged weak distractors on 14 of 26 items, though every flagged key was correct, and the report judged the trade acceptable for checking that a student read an unseen passage but a limitation for telling abilities apart. When a mis-assembled form was rebuilt to match its passage on a familiar topic, all five items were rated at high risk of being answered from background knowledge and only one part of one item truly needed the passage. The report calls this the coherence-leak tension and accepted it because the form is formative practice, not a check that the passage was read. The other side of the trade is that on a familiar topic an item that matches its passage can often be answered without reading it, so choose for each item which cost its purpose can bear.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "96",
+   "quote": "The quality screen flagged this on **14 of 26** items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "98-99",
+   "quote": "For a \"did the student read this unseen passage?\" transfer check that trade is acceptable; for MAP-style *ability discrimination* it is a noted limitation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "313",
+   "quote": "items become **blind-solvable from background knowledge** — all 5 carry `blind_solvable_risk=HIGH`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "314",
+   "quote": "This is the coherence↔leak tension",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

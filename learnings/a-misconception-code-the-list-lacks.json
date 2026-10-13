@@ -1,0 +1,44 @@
+{
+ "id": "a-misconception-code-the-list-lacks",
+ "title": "A misconception code the list lacks",
+ "statement": "Whether a wrong option grounded in the text may carry a misconception code the governing list does not name, or must be remapped to the nearest listed one, is unsettled.",
+ "example": "One audit found a lesson's governing standard pinning exactly four misconception codes while a wrong option grounded in the passage carried a fifth.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "distractors",
+  "feedback",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An audit of a Grade 5 reading lesson found a wrong option coded to a misconception id outside the four ids its governing bar pins, although the option, a confusion about population size, was correctly grounded in the passage. The audit left the choice to be confirmed against the governing curriculum: allow a fifth id, or remap the option to the nearest pinned one. The shipped content file still carries the invented code.",
+ "against": "Another learning takes each item's wrong options from the misconceptions recorded for its knowledge statement, which leans toward remapping.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "511-514",
+   "quote": "G5-BAR §7 pins exactly four `feedback_map` ids; this one isn't among them even though the content it's attached to (line 420, population-size confusion) is correctly grounded in the passage. Suggested fix: confirm with canon whether a fifth id is permitted, or remap to the nearest pinned id.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/content/u4l2-content.json",
+   "lines": "541",
+   "quote": "\"D\": \"mc-population-overreach\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

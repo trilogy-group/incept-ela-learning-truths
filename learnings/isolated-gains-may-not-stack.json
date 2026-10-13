@@ -1,0 +1,127 @@
+{
+ "id": "isolated-gains-may-not-stack",
+ "title": "Isolated gains may not stack",
+ "statement": "Gains from small isolated tests don't simply add up and can reverse once combined, so re-measure the full combination on fresh items, one change at a time.",
+ "example": "Two prompt changes that lifted small paired pilots by 60 and 75 points cut one item type's fresh first-try rate from 80% to 76% once stacked.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Two prompt changes, a stated time period at the start of the stem and an easy difficulty label, each lifted a hand-made paired pilot, by 60 points on 5 pairs and by 75 points on 4 (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md`; `icloud-work/aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md`). Once stacked into the working prompts, first-try rates on fresh topics fell for three item types, from 88% to 76%, 79% to 75% and 80% to 76% (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md`; `icloud-work/aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md`). Add or remove one change at a time, and keep only changes whose removal measurably hurts.",
+ "against": "The isolated lifts rested on 4 and 5 hand-made pairs, \"on the SAME 4 stems × 4 options × 1 answer\" (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md`, line 8), and each stacked drop is a few items out of 25. The pilot had four items, so its lift may have been noise rather than a real effect that other changes undid. Per-type counts rest on 3 to 5 items from one seed, and the source puts the noise floor at about one item per type at 15 items. The directive set as a whole was worth +8 passes (15/25 to 23/25), so additions don't generally hurt, and the losing bundle also ran through repair routes that bypassed its instructions.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "3-6",
+   "quote": "**Status**: **CONFIRMED on pilot; DOES NOT GENERALIZE when stacked into cell-specific cheat-prompts.** Stacked fresh-holdout on SAQ dropped 88% → 76%; LEQ dropped 79% → 75%; MCQ dropped 80% → 76%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md",
+   "lines": "87-89",
+   "quote": "pilot showed +60pp lift in isolation but when bundled into the cheat-prompts, stacked fresh-holdout MCQ DROPPED from 80% to 76%. **Do not stack.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-006-period-anchor.md",
+   "lines": "7",
+   "quote": "**Pass rate**: **5/5 = 100%** with explicit period anchor vs **2/5 = 40%** without, on the same content (10 items, paired implicit/explicit). Δ = +60pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "8",
+   "quote": "**Pass rate**: **4/4 = 100%** when labeled \"easy\" vs **1/4 = 25%** when labeled \"hard\" on the SAME 4 stems × 4 options × 1 answer. Δ = +75pp.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-007-difficulty-downgrade.md",
+   "lines": "4-6",
+   "quote": "Stacked fresh-holdout on SAQ dropped 88% → 76%; LEQ dropped 79% → 75%; MCQ dropped 80% → 76%. Pilot-isolation lift is real; production stacking is not.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_search_20260526.md",
+   "lines": "19",
+   "quote": "It produced `candidate_top_n20_repair_recorded`, which lost the random100 gate **73/100 vs incumbent 76/100** at avg overall `0.8904` vs `0.9094`, while still depending on `dbq_source_repaired` (18/20) and `mcq_set_repaired` (19/20) routes — i.e., not strict-fresh at all.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/handovers/20260526T064354Z_TYPED_DUCK_COMBO_HANDOVER.md",
+   "lines": "124",
+   "quote": "These do not add cleanly. The first is the primary DBQ policy. The second is fallback style only when real packs are unavailable. Treating them as simultaneous positive ingredients is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/combo_tournament_protocol_20260525.md",
+   "lines": "129",
+   "quote": "3. If performance does not drop, remove that duck permanently.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "62",
+   "quote": "3. **Grounding ducks (the new inventory adds) hurt overall.** Despite static_pass and despite intuitive appeal, M/N/O/P all underperform their non-grounded parents. Hypothesis: prompt-attention dilution. Verified by P (lean+grounding) ≤ I (lean), M ≤ C, N ≤ G.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "66",
+   "quote": "5. **n=15 noise floor is roughly ±1 row per cell.** Per-cell numbers like \"2/3 vs 0/3\" should be interpreted as directional only.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "49",
+   "quote": "1. **`ib_rubric_criterion_alignment` is the breakthrough duck.** Adding it to G yields the unique top recipe at 23/25 with the highest avg score (0.978) AND MCQ_SET 4/5. Predicted at -5 from n=15, actual at +3.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "53",
+   "quote": "3. **Surprise: dropping `serve_time_single_ib_grade_contract` from G lifts MCQ_SET 1/5 → 3/5.** That directive may be confusing Gemini's MCQ_SET focus. Worth investigating word-level rephrase.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "38",
+   "quote": "| 2 | G drop_serve_time_single_ib_grade_contract | 22 | 22/25 | 0.942 | 5/5 | 5/5 | 4/5 | **3/5** | 5/5 |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "57",
+   "quote": "5. **The duck system is worth +8 passes = +32pp** (F baseline 15/25 → G+ib_rubric 23/25).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

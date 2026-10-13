@@ -1,0 +1,107 @@
+{
+ "id": "write-layout-checks-against-the-template",
+ "title": "Write layout checks against the template",
+ "statement": "Write any check that depends on where things sit against a shared template, never against one example's arrangement, or it won't carry to the next one.",
+ "example": "Twelve lesson-level checks were written, and not one has been named that would carry to a lesson in a course it wasn't built for.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "format"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The evaluator's lesson-level checks were written against one reference course, so each structural variation needed bespoke handling instead of a repeatable rubric, and of twelve such checks not one has been named that would carry to a course it was not built for. The team agreed to adopt a template per content type and to rebuild the lesson checks against it rather than extend them from the reference course. The test it set itself: a check written for one course's lessons fires on a defect in a lesson from a different course built to the same template.",
+ "against": "The source records objections from both sides: that 'a bespoke check that catches a real defect today is worth more than a portable check that does not exist yet', and that 'form should follow the learning goal, and giving a vocabulary page and a problem set the same template flattens real differences between subjects' (shadow-bench/docs/brainlift.md line 125). The claim is not yet earned: '*Weakest point:* the two lanes are still not a clean experiment.' (line 132).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "33",
+   "quote": "A check that depends on where things sit is written against the template, never against one course's arrangement (S2).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "45",
+   "quote": "twelve lesson-level checks have been written, and not one has been named that would carry to a lesson in a course it was not built for (DOK1-4, DOK2-6).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "201",
+   "quote": "QC work has been using one course as the reference structure, so each structural variation needs bespoke handling instead of a repeatable rubric.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "201",
+   "quote": "In response, the team agreed to adopt a standardized content structure with a template per content type",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "47",
+   "quote": "the lesson lane is to be rebuilt against that standard rather than extended from the reference course (DOK1-10).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "49",
+   "quote": "a check written for one course's lessons fires on a defect in a lesson from a different course built to the same template.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "497",
+   "quote": "U2-L1 is the exemplar, not the shape.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "501",
+   "quote": "version of this table gave U2-L1…L7-only ranges",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "502-503",
+   "quote": "and every one of those was narrower than the shipped 18-lesson corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "503-504",
+   "quote": "If you are validating an authored lesson, validate it against the invariants below, never against these ranges:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/signoff-packet/AUDIO-TRANSCRIPT-QA-2026-08-31.md",
+   "lines": "171",
+   "quote": "Flagging the absence of 'slowly' against those was a false positive from a check written for L4's pattern only.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

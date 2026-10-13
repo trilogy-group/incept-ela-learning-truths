@@ -1,0 +1,193 @@
+{
+ "id": "no-yes-or-no-questions",
+ "title": "No yes-or-no questions",
+ "statement": "Never ask a question a student can answer yes or no or by a two-way pick: ask what or how, and give choice questions several plausible options.",
+ "example": "A blocking checklist row requires 4 or more plausible options on every choice question and zero two-option coin flips.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "options"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A content review of a reading lesson asked that a yes-or-no question be dropped altogether, even though the app said it couldn't be answered yes or no, and recast as a what question (`grade3-reading/artifacts/feedback-aladdin-2026-08-25/feedback-text.txt`). The course's QC checklist makes it a blocking row: every choice question has 4 or more plausible options and there are no two-option coin flips (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, row B8).",
+ "against": "A later run found: A Grade 9 unit's knowledge base ends each lesson's closing questions on an 'X or Y?' evaluation and flags a question that is not 'X or Y' as merely descriptive, and its lesson design specification's evaluation example asks learners to pick one of two readings and justify the view (`g9/sources/1. Act 1 - Knowledge Base - Overview.csv`). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md`). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz`). A later run found counter-evidence (`grade3-reading/course-renderer/authoring/peter-pan/fill/l4-parity/README-p24-ladder.md`). A later run found counter-evidence (`g9/sources/1. Act 1 - Knowledge Base - Overview.csv`). A later run found counter-evidence (`g9/sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md`). A later run found counter-evidence (`g9/sources/3-D-Shakespeare-Othello-1.1.pdf`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-aladdin-2026-08-25/feedback-text.txt",
+   "lines": "25",
+   "quote": "Even though the app says you can't just answer it yes or no, we should just avoid these questions altogether.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "50",
+   "quote": "Every MCQ has ≥4 plausible options; zero two-option coin flips",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "46",
+   "quote": "It is an open question (How far, To what extent, How, Why or What), never one answered yes or no.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "11",
+   "quote": "/^(is|are|does|do|did|can|could|would|will|was|were|has|have|had|should)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "30",
+   "quote": "map((q) => String(q).trim()).filter(wellFormed)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "124",
+   "quote": "find((c) => c.id === \"question-open\").ok, false",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "90-91",
+   "quote": "the writer drafts three, code keeps the open ones, Jev keeps the first answerable from the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "94",
+   "quote": "the yes-or-no draft is dropped",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "112",
+   "quote": "code checks hold a gap that gives its word away, a rebuild that does not make its sentence, a phrase not in the question, a yes-or-no debate and a hint that leaks",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "11",
+   "quote": "const YES_NO = /^(is|are|does|do|did|can|could|would|will|was|were|has|have|had|should)\\b/i;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "35",
+   "quote": "answers in a sentence of their own after one careful reading. Not a yes or no question, and not a choice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "124",
+   "quote": "assert.equal(db.codeChecks(db.normalize({ ...FIX.debate, question: \"Can we sympathise with Iago?\" }, ctx), ctx).find((c) => c.id === \"question-open\").ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "140",
+   "quote": "TASK 3 evaluate (\"\"X or Y?\"\").",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "147",
+   "quote": "is descriptive, not \"\"X or Y\"\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "192",
+   "quote": "\"Is Iago more dangerous because he hides his feelings from Othello, or because he reveals them to the audience? Justify your view.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "60",
+   "quote": "off-track→down/supply+mimic; no-response→binary choice then say-together) — directly reusable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "622",
+   "quote": "- **Allowed two-option use:** A two-option response may appear only as a named formative subdecision inside a larger evidence-producing task or bundle, with its 0.50 chance floor recorded and no independent advancement effect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l4-parity/README-p24-ladder.md",
+   "lines": "52-54",
+   "quote": "`ladder.floor.options` has TWO options, not four. The exemplar has two, the schema (`page-contract.ts` LadderFloor: \"exactly TWO — a forced choice, not an MCQ\") and `checkScaffoldLadder` (`options.length !== 2` fails) require two.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/1. Act 1 - Knowledge Base - Overview.csv",
+   "lines": "140",
+   "quote": "TASK 1 mimicry (the Archivist says the sentence; the student repeats it). TASK 2 apply to the extract. TASK 3 evaluate (\"\"X or Y?\"\").",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/3-D-Shakespeare-Othello-1.1.pdf",
+   "lines": "123-125",
+   "quote": "If you see a shy student who is not offering any suggestions, ask him or her some simple A/B questions such as “Do you want Character A to enter from the left side or the right side?",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "15",
+   "quote": "the instruction is over 16 words, or a yes/no question",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "60",
+   "quote": "every MCQ in L4 has exactly 4 options (13/13 items); the one msq has 8; no 2-option or T/F item anywhere in the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "26",
+   "quote": "no yes/no stems",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

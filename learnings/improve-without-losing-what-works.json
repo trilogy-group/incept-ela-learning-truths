@@ -1,0 +1,157 @@
+{
+ "id": "improve-without-losing-what-works",
+ "title": "Improve without losing what works",
+ "statement": "Improve a lesson by fixing flawed parts in place or adding new ones, never by deleting what passed, and rerun a guard on each protected strength after every change.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course's quality standard has a strength-preservation item: improvement never flattens or deletes behaviour that already benefits learners, and each guard on a proven strength is rerun on the changed bytes and must pass an equivalence-or-better test (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`, line 33). Its refinement workflow treats the source course as the content floor: a refined clone adds compliance, delivery, assessment and evidence layers without cutting source content, and a missing source id fails the build (`grade3-reading/ti-courseplans/docs/standards/source-course-refinement.qmd`, lines 5 and 47). The course's response to one review round opened with what was landing well, marked keep and do not break. What is protected is what reviews explicitly liked and the verified decisions nearby, so a change that drops or weakens one fails its guard.",
+ "against": "The standard lets a different implementation stand in for a strength when it meets the same outcome with equal or stronger evidence (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, line 184). What is protected is what a review liked, not a measured effect; nothing in these files measures what the pattern teaches, and liking is not learning.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "33",
+   "quote": "Improvement never flattens or deletes behavior that already benefits learners.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "33",
+   "quote": "Impact analysis names affected PRESERVE results; each guard is rerun on changed bytes and passes an equivalence-or-better test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/FEEDBACK_RESPONSE.md",
+   "lines": "8",
+   "quote": "## What's landing well (KEEP — do not break these)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/source-course-refinement.qmd",
+   "lines": "5",
+   "quote": "The refined clone adds compliance, delivery, assessment, and evidence layers without cutting source content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/source-course-refinement.qmd",
+   "lines": "47",
+   "quote": "| No silent cuts | Missing source ids fail the build. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "34",
+   "quote": "item-count + per-lesson item-id set ≥ a frozen source baseline; no validated item dropped/replaced — fixes are in-place or pure-add. `--assert-no-cut` → `no_cut_ok:true`. *(new — the hard rule; without it \"compliance\" can be faked by deleting hard items)*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "16-18",
+   "quote": "**Never cut / drop / replace a question.** Every item passed validation — it is good content. The only allowed operation is **fix-in-place** (edit metadata / passage / rawXml / wiring of the SAME item) or **pure addition** (new items for spacing/forms). Restoring a validated original counts as a fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "19",
+   "quote": "**Every fix cites a knowledge_bot principle** (kb id) as its justification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "74-75",
+   "quote": "Five \"do-not-touch\" items were explicitly called out so a later patch pass wouldn't regress a verified-correct decision while fixing an adjacent F-id",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "45-47",
+   "quote": "**challenged and upheld** (an attack raised during the lens audit was refuted on re-verification — 5 such entries collected with file/line evidence as a diligence record, not noise).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "122",
+   "quote": "The answer-becomes-dialogue-with-Scout pattern on wrong answers is explicitly liked — do not remove in any redesign",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "122",
+   "quote": "protective criterion (no-churn)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-aladdin-2026-08-25/REGISTER.md",
+   "lines": "72",
+   "quote": "recorded so nobody \"fixes\" it away (no-churn)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "356",
+   "quote": "- **Rationale:** The reviewer explicitly praised these features. Repairing weaknesses by removing the strengths would repeat the product failure in reverse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "259-261",
+   "quote": "**Prefer splicing to re-recording**: when a line changes by a sentence, keep the original take and synthesise only the new sentence, cutting at measured pauses",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "362",
+   "quote": "Once in scope, integrate the files while retaining exact text, all three checks, the no-skipping rule, replay, transcript access, saved writing, and protected independent work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/02-LESSON-STRUCTURE.md",
+   "lines": "140-143",
+   "quote": "\"don't delete the we-do, improve it in place.\" … never dropped from the beat sequence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "136-137",
+   "quote": "an agent HIDING a node to kill a forward reference (rewording keeps the narration sequence its tests pin).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

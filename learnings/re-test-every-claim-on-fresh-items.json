@@ -1,0 +1,487 @@
+{
+ "id": "re-test-every-claim-on-fresh-items",
+ "title": "Re-test every claim on fresh items",
+ "statement": "Count fixes, gains or checks as proven only on fresh held-out items written apart from whoever built them, kept from tuning, training and repair, never rerun to chase a pass.",
+ "example": "A recipe self-reported at 95.56% scored 5 of 50 on fresh prompts.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP project, a recipe self-reported at 95.56% scored 5/50 on fresh prompts independent of the 30 it was tuned on, and a method claimed at 100% scored 45/50 on fresh items sharing no knowledge components with the set it was claimed on (`icloud-work/aptraining/.agent/memory/BEADS.md`). The plan made a spot-check that no test prompt appears in the 5,927-row training corpus a gate before promotion, and the eval template has a verifier confirm that inputs are not from the training distribution (`icloud-work/aptraining/.agent/PLAN.md`; `icloud-work/aptraining/.agent-v2/templates/eval-cycle.md`). Where there is an untrained baseline, compare against it too: a pre-registered evaluation plan runs the untrained base model on the same prompts and briefs to isolate what training added (`ti-courseplans-audit/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md`, lines 53-54).",
+ "against": "The first data audit had no near-duplicate check between hold-out and training items ('**No near-dup leakage protection.** This audit does NOT yet de-near-dup against the training pool.', `icloud-work/aptraining/.agent/research/data_audit.md`, line 190), and the plan's spot-check samples only 10 prompts. Part of the reported drop came from dropping iteration, not from the new topics, and re-selecting with the same judge recovered the rate at a higher cost per item (`icloud-work/aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md`, lines 51-54). For one item type's first drafts the topic effect was small, \"# Single-shot 17 KCs × 2 variants: ~91% pass\" (`icloud-work/aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md`, line 101), against 88% on fresh topics. The project's 97% headline was measured on the same 28 benchmark files that served as the push's acceptance test, so it is not a held-out figure (`icloud-work/ap-social-studies-generator/python/CLAUDE.md`). it is a plan, pre-registered before any training run, not a result (`ti-courseplans-audit/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md`). Overlap with the self-tests' sample was checked (\"no overlap with Den's selftest step-sample\", aptraining-local/den-of-ideation/reports/validation_triage/20260524T073015Z_2026-05-24T0601Z_UNIT1_MCQ_SOLVER_REPAIR.md.md, line 114), and the first challenge required a prompt diff: \"I'll diff your prompt list against my n=50; any overlap = automatic FAIL\" (icloud-work/aptraining/workspace/comms/to_den/2026-05-22T1845Z_ULTIMATE_DELIVERY_CHALLENGE.md, line 52). On fresh rows 100-149 the graded lanes partly held (SAQ 43/50, LEQ 47/50, MCQ 49/50, DBQ 50/50), though the 239 of 250 also counts 50 question-set passes that were predicted, not graded. The risk was flagged at the time: \"A fresh hidden seed is still the real gate.\" (icloud-work/aptraining/workspace/comms/from_den/2026-05-22T1936Z_DELIVERED_pipeline_solver.md, line 77). A fresh set can be harder than the one it replaces: in one note a model passed 0 of 176 attempts on hold-out prompts against about 20% on the evaluation baseline, and the note says 'Holdout prompts are systematically harder.' (icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md, line 69). One self-test held, 50 of 50 on its own test and on the fresh re-test, 46 of 50 by the strict count (`icloud-work/aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md`). The drop to 0% rests on a partial re-test of 10 items, and the re-tests drew on one 50-item hold-out file (`icloud-work/aptraining/artifacts/INCLUSION_CRITERIA.md`). The project's plan for example items drew them from the held-out set (\"- Demos selected from holdout where IB `overall ≥ 0.95`. Same 3 demos per cell type, locked across evals.\", `icloud-work/auto-memory-backup/research_fewshot_format_not_facts.md`, line 62), and whether it ran is not recorded. No contamination incident or its effect is measured in this evidence. none found; the inflated score is the notes' expectation, not a measurement, since the leak was caught before training. The independent cases were written on a shared writable machine, which gives independent review but not enforced isolation (`grade3-reading/artifacts/codex-qa/experience-2026-09-14/RESULT.md`, `grade3-reading/artifacts/codex-qa/experience-2026-09-14/independent-observer/REVIEW.md`), and the repair loop's boundary was planned, not yet shown to be enforced on that machine (`grade3-reading/artifacts/codex-qa/controller-2026-09-14/PLAN.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "705",
+   "quote": "FAIL: 5/50 = 10.00% on n=50 fresh Unit-1 prompts (independent of den's 30-prompt training set). Delta -85.56pp from den's self-reported 95.56%. Recipe does NOT generalize.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "708",
+   "quote": "FAIL: 45/50 = 90.00% on n=50 fresh Unit-1 MCQ from e7e1d980 (no KC overlap with Cheater's 16-KC apush_baseline). -10pp delta from claimed 100%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/PLAN.md",
+   "lines": "280",
+   "quote": "**Contamination spot-check passes**. Sample 10 random eval prompts; verify none appear in the 5,927-row audited training corpus. If any match → F14 (poison candidate; do not promote).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/templates/eval-cycle.md",
+   "lines": "34",
+   "quote": "Verifier confirms inputs not from training distribution",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "3",
+   "quote": "**Status**: **QUARANTINED** (main-a fresh-holdout 2026-05-23: 0/50 = 0% on fresh KCs). Cited 32/33 on my 17 baseline KCs did NOT generalize. KC selection bias: the baseline 17 admit abstract-rhetoric stimuli; broader corpus contains KCs (narrower topics, court cases, specific organizations) that don't.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-003-mcqset-phrase-anchor.md",
+   "lines": "62",
+   "quote": "v14 fresh single-shot variant (17 KCs) → 5/17 = 29.4% (single-shot still hard)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "53",
+   "quote": "v2 generic-attribution + qualitative-claims + difficulty=\"easy\" → 23/35 = 65.7%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md",
+   "lines": "22",
+   "quote": "| DBQ (EXPLOIT-008) | 97.37% | **54.2%** (13/24), avg 0.702 | −43pp | second_tier→quarantine risk |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md",
+   "lines": "51-52",
+   "quote": "For T1 with iteration (cited rates) the cheat-prompts hit T1 on 17-19 KCs, but the rate degrades on fresh KCs without iteration.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FRESH_HOLDOUT_2026-05-23.md",
+   "lines": "53-54",
+   "quote": "The iteration pattern (iterate + K=5 best-of) DOES recover the rate, but at higher API cost per item.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "101",
+   "quote": "# Single-shot 17 KCs × 2 variants: ~91% pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "135",
+   "quote": "- **89% (5,219/5,878) prompts identical to training prompts** (500-char fingerprint match)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "466",
+   "quote": "5. Only checkpoint if improvement holds across 2+ units",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/OPTIMIZATION_LOG.md",
+   "lines": "42",
+   "quote": "**Problem:** Gen 1 winner tested on easy topics. Needed harder topics.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "68-69",
+   "quote": "**Contamination ledger applies to TRAINING DATA:** cold topics excluded from every training pair.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "71-72",
+   "quote": "A model trained on a cold topic cannot be evaluated on it.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "53",
+   "quote": "**Arm B (base): the untrained base model + the SAME prompts and briefs.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "53-54",
+   "quote": "Isolates what training added; run it or the result is uninterpretable.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "65",
+   "quote": "**Same inputs to every arm:** one pinned brief set",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "75-76",
+   "quote": "any bar-hit claim needs 2 independent generation runs; a single run is a single-point estimate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1936Z_DELIVERED_pipeline_solver.md",
+   "lines": "15",
+   "quote": "This version targets the exact failure classes main-a shared from the first hidden run without reading the hidden prompt file.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1936Z_DELIVERED_pipeline_solver.md",
+   "lines": "39",
+   "quote": "- Prewarmed live-IB-backed cache entries for the repaired hidden failure classes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1936Z_DELIVERED_pipeline_solver.md",
+   "lines": "70",
+   "quote": "- now live-IB-backed passes: 4/13",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2019Z_DELIVERED_pipeline_solver_v4.md",
+   "lines": "82",
+   "quote": "Expected if the previous hidden miss distribution recurs: prior `37/50` plus `13/13` repaired prior misses implies ceiling around `50/50` on the same failure mix.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/main_a_acceptance_runs/den_solver_acceptance_20260522T182953Z_summary.json",
+   "lines": "13",
+   "quote": "\"input_jsonl\": \"/tmp/holdout_for_den_v2.jsonl\",",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z_summary.json",
+   "lines": "13",
+   "quote": "\"input_jsonl\": \"/tmp/holdout_for_den_v2.jsonl\",",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T073015Z_2026-05-24T0601Z_UNIT1_MCQ_SOLVER_REPAIR.md.md",
+   "lines": "114",
+   "quote": "hidden validation input: `/tmp/unit1_mcq_holdout_n50.jsonl` (MCQ rows 50-99 from",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_mcq_solver_v2_validated_addendum_20260524T085013Z.md",
+   "lines": "17",
+   "quote": "- Comparability: same MCQ rows `50-99` as the v1 repair run.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_dbq_solver_v2_repair_delivery_20260524T105934Z.md",
+   "lines": "30",
+   "quote": "input: `experiments/dbq_v2_failure_probe/unit1_dbq_v1_failure_rows.jsonl`",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_leq_solver_v3_final_gap_repair_delivery_20260524T1840Z.md",
+   "lines": "31",
+   "quote": "input: `experiments/leq_v3_failure_probe/unit1_leq_v2_failure_rows_27_49.jsonl`",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T202325Z_2026-05-24T2022Z_UNIT1_LEQ_SOLVER_v3_VALIDATED_99_6pct.md.md",
+   "lines": "140",
+   "quote": "**Deployable bound is K=1 single-shot.** Slice-2 K=1 (rows 100-149) was 239/250 = 95.6% with LEQ v2.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-23T1808Z_DEN_REQUEST_validate_unit9_mcq_solver_v1.md",
+   "lines": "26",
+   "quote": "third public n=10 was `10/10`, but runner sanity failed `1/2`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/memory/project_den_routing_98pct_unit1_2026_05_24.md",
+   "lines": "51",
+   "quote": "- Per-cell heuristics tuned via iterative repair against hidden hold-out",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/den_solver_acceptance_20260522T210237Z_summary.json",
+   "lines": "13",
+   "quote": "\"input_jsonl\": \"/tmp/holdout_for_den_v2.jsonl\",",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/INCLUSION_CRITERIA.md",
+   "lines": "62",
+   "quote": "5. **Reproducible**: re-running the validation on a different n=50 sample must clear the threshold ±2pp (no luck-of-the-draw cherry-picks)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1830Z_den_solver_v2_online_K_N_with_cache/SECOND_TIER_REASON.md",
+   "lines": "50",
+   "quote": "13 failures = substandards NOT in cache (mostly mcq_set/hard from KC-1.2.III+1+A through KC-1.3.II+4+A range, per failure audit logs). 37 passes = substandards in cache from prior runs (e7e1d980 pipeline outputs).",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "30",
+   "quote": "This sample cannot prove tight 5-point noninferiority or broad safety; if the improvement interval includes zero, call the result inconclusive. Never tune on final outputs or rerun a hidden test to chase a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "36",
+   "quote": "Do not infer a tuning gain from development cases.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T1755Z_den_mcqset_50_50_proof/QUARANTINE_REASON.md",
+   "lines": "4",
+   "quote": "**Source claim:** 172/180 = 95.56% candidate pass on Unit-1 cherry-picked source prompts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T1755Z_den_mcqset_50_50_proof/QUARANTINE_REASON.md",
+   "lines": "5",
+   "quote": "**Independent re-test:** 5/50 = **10.00%** on Unit-1 prompts from e7e1d980 (no overlap with den's 30-prompt training set)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md",
+   "lines": "33",
+   "quote": "| Den v2/v3 (cache) | 43/50 = 86% | 37/50 = 74% (second_tier) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md",
+   "lines": "34",
+   "quote": "| Den v6 (fresh K=2) | 10/10 = 100% | 32/50 = 64% (second_tier) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md",
+   "lines": "36",
+   "quote": "| Cheater EXPLOIT-002 (stim-strip MCQ) | 32/32 = 100% | 45/50 = 90% (second_tier) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md",
+   "lines": "37",
+   "quote": "| Cheater EXPLOIT-003 (phrase-anchor MCQ_SET) | 14/16 = 87.5% | 0/10 partial = 0% (**QUARANTINE**) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/INCLUSION_CRITERIA.md",
+   "lines": "24",
+   "quote": "Cherry-picked subsets, single-prompt wins, and self-reported metrics from sub-agents do NOT qualify. main-a re-tests every claim on fresh n=50 against the production IB v2.5.11 grader.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/quarantine/2026-05-22T2120Z_cheater_exploit_003/QUARANTINE_REASON.md",
+   "lines": "35",
+   "quote": "| Den v8 (fresh + timeout-fallback) | 50/50 = 100% | 50/50 = 100% / 46/50 = 92% strict → **VALIDATED** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/INCLUSION_CRITERIA.md",
+   "lines": "16",
+   "quote": "Hold-out at `artifacts/quarantine/2026-05-22T1755Z_den_mcqset_50_50_proof/validation_prompts_unit1.jsonl` (50 fresh Unit-1 MCQ_SET prompts).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_oracle_helper.md",
+   "lines": "24",
+   "quote": "- `evaluator_code/inceptbench_src/golden/golden_dataset.json` — InceptBench's regression eval set (REFERENCE ONLY; training on these = direct test contamination)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_grape_data_selection_v28.md",
+   "lines": "31",
+   "quote": "2. Verify zero overlap with the 297-record holdout (dedupe by row_id)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v8_best.md",
+   "lines": "18",
+   "quote": "- Dataset: 2,821 records — APUSH+APWH MCQ only, `quality_tier=high` (≥0.95), holdout-excluded, no images",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_eval_contamination_check_all_eval_files.md",
+   "lines": "18",
+   "quote": "my first contamination check compared only against `apush_baseline.jsonl` (n=30 mcq_set hashes)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_eval_contamination_check_all_eval_files.md",
+   "lines": "18",
+   "quote": "Found APUSH overlap was 100% — those \"30 unique\" rows were in fact eval-identical.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_eval_contamination_check_all_eval_files.md",
+   "lines": "20",
+   "quote": "Had I trained on those rows, v54 would have learned its eval set verbatim → fake pass rate, contamination, useless iteration. Caught before training; saved the cycle.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "training_data_70k.md",
+   "lines": "80",
+   "quote": "- `data/combined_val.jsonl` and `data/combined_test.jsonl`: 21% overlap with catchup_raw via cu-* IDs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/RESULT.md",
+   "lines": "29",
+   "quote": "The original visibility implementation passed its 48 controls but missed 10 of 18 independently authored cases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/independent-observer/REVIEW.md",
+   "lines": "7",
+   "quote": "Eighteen fixture expectations were fixed in the independent script and written into `run-01/INTENT.json` before the first measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/experience-2026-09-14/RESULT.md",
+   "lines": "35",
+   "quote": "Shared writable files give independent review, not enforced repair/judge isolation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/controller-2026-09-14/PLAN.md",
+   "lines": "30",
+   "quote": "Tier 1: independent acceptance files must be outside the worker's enforced writable boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/controller-2026-09-14/PLAN.md",
+   "lines": "58-59",
+   "quote": "Pass: real commands can write their designated proposal directory but cannot alter protected source, judge, contract or evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md",
+   "lines": "105",
+   "quote": "Hashes are not protection against a writer who can alter both result and evidence consistently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-boundary-reciprocal-mismatch-repair-plan.md",
+   "lines": "80-81",
+   "quote": "Hash disjointness must be supplemented by a paraphrase-level audit; case, spacing, and one-token edits do not make an exposed example fresh.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-agent-qualification-v2-plan.md",
+   "lines": "175",
+   "quote": "Exact raw/normalized hashes catch literal reuse but not lexical near-copy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-agent-qualification-v2-plan.md",
+   "lines": "178-179",
+   "quote": "This does not prove abstract semantic non-equivalence; freshness additionally relies on a new author with no v1 text access and an explicit no-reuse attestation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "107",
+   "quote": "The regression is fit on 80% of the concurrent study sample and validated on the held-out 20% [DERIVED from standard cross-validation practice].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "101",
+   "quote": "Retire all 60 exposed texts permanently; do not reuse them.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

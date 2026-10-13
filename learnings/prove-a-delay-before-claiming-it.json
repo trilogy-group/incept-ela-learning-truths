@@ -1,0 +1,81 @@
+{
+ "id": "prove-a-delay-before-claiming-it",
+ "title": "Prove a delay before claiming it",
+ "statement": "Call a check delayed only when the time that passed is recorded and proves the delay, because success on the same day shows short-term memory, not learning.",
+ "example": "A unit planned a 24-hour delay before its checkpoint, but the platform did not enforce it and no elapsed time was captured.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement",
+  "sequence"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A demo reading unit's 90% gate was verified, but the platform did not enforce the intended 24-hour delay and no elapsed-time evidence was captured, so it is not a verified delayed assessment (`ti-courseplans-audit/docs/handoffs-2026-07-13/course-eval-layer/README.md`). The practice spec licenses \"acquired at checkpoint\" and adds \"delayed\" only when timestamp evidence proves the interval, and never counts release-day completion, since same-day testing measures working memory, not learning (`ti-courseplans-audit/docs/practice-layer-spec.md`). It sharpens the rule that learning needs a later test on new items: the test has to be provably later.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/handoffs-2026-07-13/course-eval-layer/README.md",
+   "lines": "116-117",
+   "quote": "The platform does not enforce the intended 24-hour delay, and no elapsed-time evidence was captured, so this is not a verified delayed assessment.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "38-40",
+   "quote": "release-day completion never qualifies (Practice BrainLift: same-day testing measures working memory, not learning).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "59",
+   "quote": "append \"delayed\" only when timestamp evidence proves the ≥24h interval",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "A same-session checkpoint cannot establish durability",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "durable mastery requires a different-day, feedback-free check on novel forms; and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "892",
+   "quote": "A durable-mastery layer was added: a delayed per-unit retest, 7 to 14 days later, about 5 novel items, feedback off, plus the capstone as the course-level durable instrument.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/PLAN-EVALUATION.md",
+   "lines": "108-110",
+   "quote": "7–14 days after the acquisition gate, ~5 novel items on the unit's chart, no feedback during the set, ≥80% bar.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

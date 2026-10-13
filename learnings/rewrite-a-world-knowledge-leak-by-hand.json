@@ -1,0 +1,42 @@
+{
+ "id": "rewrite-a-world-knowledge-leak-by-hand",
+ "title": "Rewrite a world-knowledge leak by hand",
+ "statement": "When general knowledge answers an item, rewrite it by hand rather than tie it to obscure passage details, which raises difficulty without testing the targeted skill.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation",
+  "demand"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An analysis of a regenerate-on-leak plan for a Grade 5 reading bank found regeneration the wrong tool for a large share of leaks: items answerable from world knowledge or general reasoning can't be honestly locked to the passage, and forcing it turns a science-reasoning item into an obscurity item, harder without testing more of the targeted skill. Its plan regenerates passage-locked replacements only for leaks caused by construction flaws, such as weak distractors or tells in the options, and flags world-knowledge leaks for a person to rewrite.",
+ "against": "It is a plan: at the time nothing consumed the regeneration requests, so the split between kinds of leak was never tried (`grade3-reading/artifacts/g5-course-candidate-v0/GOAL_ANALYSIS.md`, lines 92 and 168).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/GOAL_ANALYSIS.md",
+   "lines": "92",
+   "quote": "(3) Regeneration is the **wrong tool for a large share of leaks** — world-knowledge/general-reasoning leaks (~27 sequence-id/world-knowledge) can't be honestly passage-locked; doing so converts a science-reasoning item into an *obscurity* item (raises difficulty without raising the targeted skill — the transfer trap).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/GOAL_ANALYSIS.md",
+   "lines": "168",
+   "quote": "flag world-knowledge leaks for human rewrite, not auto-passage-lock.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

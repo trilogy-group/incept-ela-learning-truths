@@ -1,0 +1,254 @@
+{
+ "id": "regenerate-only-the-stage-that-failed",
+ "title": "Regenerate only the stage that failed",
+ "statement": "When a check rejects a draft, regenerate only the stage that failed and pass the specific reason, not a generic 'try again'.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "Two staged designs put a deterministic check between generation stages: a lab directive of 19 May 2026 had the validator re-ask only the failing stage instead of restarting, and the parallel lab's question-set architecture ended its validator with 'repair or regenerate with specific reason'. The solver lab's action packet recommended regenerating with concrete rejection reasons between stages, not a broad 'try again'. Neither variant was measured in the records read.",
+ "against": "The same directive took the opposite line on reasons: \"the question-generator doesn't see the validator's reasoning, only the reject signal.\" (icloud-work/aptraining/workspace/comms/to_den/2026-05-19T1541Z_gate0_prototype_in_lab.md, line 39).",
+ "evidence": [
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/MAIN_AGENT_ACTION_PACKET.md",
+   "lines": "75",
+   "quote": "Regenerate with concrete rejection reasons between stages, not a broad \"try again\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "233",
+   "quote": "-> repair or regenerate with specific reason",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-19T1541Z_gate0_prototype_in_lab.md",
+   "lines": "39",
+   "quote": "Between stages, the validator rejects + re-asks ONLY the failing stage (not full restart).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "2-3",
+   "quote": "a failing draft gets exactly one correction pass with the reasons. … A step ships only as \"ready\"; otherwise it is \"held\" with what failed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "20",
+   "quote": "YOUR PREVIOUS DRAFT FAILED THESE CHECKS. Fix every one and return the whole JSON again:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "77",
+   "quote": "a held draft is tried once more; an unchecked one is not (a second try has no judge either)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/transform.test.mjs",
+   "lines": "18",
+   "quote": "a failing required check gets one correction pass with the reason, then the step is held",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/transform.test.mjs",
+   "lines": "28",
+   "quote": "a correction that fixes the draft ships",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "31-32",
+   "quote": "othello-1-1: 6/6 ready, 6 writer calls, 9 judge calls, 14.0 s … ozymandias: 6/6 ready, 6 writer calls, 8 judge calls, 13.2 s",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "70",
+   "quote": "all six re-made, ready on the first or second try",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "87-88",
+   "quote": "near finds quotations that are nearly, not exactly, the text's … get the text's wording for the correction; any other quotation that is not the text's is held too",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "93",
+   "quote": "is not the text's wording, which is",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "140",
+   "quote": "the word web's hint check did not say which word to take out;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "180",
+   "quote": "\"follow\" glossed as loyal: the writer now gets a correction it can act on, below.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "191",
+   "quote": "it now asks for a version that plainly holds; before, it only said \"unclear\".",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/d2d7d0787d6754d9.json",
+   "lines": "97",
+   "quote": "The film belongs with this text: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "79",
+   "quote": "the judge could not confirm this; rewrite it so that it plainly holds, or choose another",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "140",
+   "quote": "the word web's hint check did not say which word to take out",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "63",
+   "quote": "the reply could not be used",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/096b952e5ee95da5.json",
+   "lines": "99",
+   "quote": "\"The hint names none of the likely words: the hint names a likely word\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "74",
+   "quote": "// the reason names the words, so the one correction pass can take them out",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "51",
+   "quote": "for (let attempt = 1; attempt <= 2; attempt++) {",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "78",
+   "quote": "// an unsure judge is not a no: the correction asks for a version that plainly holds, not for its opposite",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0e36e4f6c770a7b1.json",
+   "lines": "120",
+   "quote": "\"Beat 3: the first reading can be defended: the judge found this unclear\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "80",
+   "quote": "const lesson = await transform({ text, question, track: [mechanic] }, { judge, writer, samples, log: mine, focus, avoid });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "2",
+   "quote": "a failing draft gets exactly one correction pass with the reasons.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "21, 304",
+   "quote": "\"q\": \"According to Iago, what is his only reason for continuing to serve Othello?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "26, 309",
+   "quote": "\"requirement_0\": \"The student must state that Iago serves Othello to exploit him or use him for his own personal advantage.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "394",
+   "quote": "\"value\": 0.62,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/856ace1aed960671.json",
+   "lines": "89",
+   "quote": "\"value\": 0.54,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/c98cc9de312f4d43.json",
+   "lines": "89",
+   "quote": "\"value\": 0.5,",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "86",
+   "quote": "Your last reply broke the rules: ${bad.join('; ')}. Write it again.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

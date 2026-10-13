@@ -1,0 +1,193 @@
+{
+ "id": "checks-at-boundaries-after-short-films",
+ "title": "Checks at boundaries, after short films",
+ "statement": "Break any long film that carries content a student needs with required quick checks, placed only at natural boundaries, and put a short film's check straight after it.",
+ "example": "The line sits at about 60 seconds: under a minute, a pause is likely to feel like an odd interruption, longer perhaps than the film itself.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "sequence",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "One version of the intro-video BrainLift uses checks inside videos over about 60 seconds and puts the check straight after shorter ones (`downloads/BrainLift - What makes a good intro video.md`, line 309). Its reason is that a check earns its interruption by landing on a boundary, where it consolidates what was just taught and clears working memory before the next thing arrives (line 311). Its worked 60-second script has no embedded checks (line 363), while a built Grade 3 lesson's 1:54 film pauses twice for a check (`downloads/SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md`, line 25). A short film here is one under about a minute.",
+ "against": "The source calls the rule \"a sensible estimate based on experience\" (`downloads/BrainLift - What makes a good intro video.md`, line 311). A rule for intro films bars any question after the film that asks what happens next, because choosing what to repeat leaks which threads matter; that covers a short preview, not video that carries content. A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`grade3-reading/artifacts/qc-2026-09-29-staging/new-lesson-qa-invariants.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/qa/new-lesson-qa-invariants.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/qa/new-lesson-qa-invariants.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "309",
+   "quote": "For videos under \\~60s, the sync check comes immediately after.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "311",
+   "quote": "A check earns its interruption by landing on a boundary: it consolidates the thing just taught and clears working memory before the next arrives.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "311",
+   "quote": "N.B. this is a sensible estimate based on experience.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "363",
+   "quote": "125 spoken words, \\~60 seconds, narrator only, no stamp, no embedded checks.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "25",
+   "quote": "A 1:54 film of the riverbank world with captions available; it pauses twice for a check beside the frame",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "31",
+   "quote": "If video carries essential context, interrupt it with mandatory quick checks so the learner does not watch a long unexamined clip.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0248-g9-video-research-full-files.qmd",
+   "lines": "211-212",
+   "quote": "Interpolated memory tests inserted into recorded lectures cut mind-wandering by roughly a third and improved recall versus uninterrupted video.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "42",
+   "quote": "two checks one beat apart",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "154",
+   "quote": "narration length, and the spacing of the questions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "105",
+   "quote": "The checks follow different beats, not one after the other",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "105",
+   "quote": "afters.every((a, i) => i === 0 || a - afters[i - 1] >= 2)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "946",
+   "quote": "ONE checkpoint per video, riding the end slot",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/new-lesson-qa-invariants.md",
+   "lines": "94-96",
+   "quote": "**C4. ONE checkpoint per video, riding the end slot** (user rule 2026-08-25): it surfaces in the last seconds, never pauses, and gates the advance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "94-97",
+   "quote": "**C4. ONE checkpoint per video, riding the end slot** (user rule 2026-08-25): it surfaces in the last seconds, never pauses, and gates the advance. Design docs that author two or more sync checks are trimmed to the load-bearing one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-and-visual-plan.md",
+   "lines": "334-336",
+   "quote": "Two in-video checks are proposed below, at 70.50s and 95.50s, both on shot boundaries so neither interrupts a spoken line, both landing immediately after the material they test.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v03/render/QA.md",
+   "lines": "16",
+   "quote": "Check pauses (end of scene, inside the silent tail): 97.9 s, 172.2 s, 205.7 s.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello Unit Video_ Info Sheet for Devfactory.md",
+   "lines": "78",
+   "quote": "the three checks pause the video; the student answers, then the video continues. The answers feed Lesson 2 retrieval.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/act1/Othello Unit Video - Info Sheet for Devfactory.txt",
+   "lines": "139",
+   "quote": "Pause-to-check: the three checks pause the video; the student answers, then the video continues. The answers feed Lesson 2 retrieval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "171-172",
+   "quote": "median engagement was approximately 100% below 6 minutes, 50% at 9–12 minutes, and 20% at 12–40 minutes [1][2][4].",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "94-97",
+   "quote": "**C4. ONE checkpoint per video, riding the end slot** (user rule 2026-08-25): it surfaces in the last seconds, never pauses, and gates the advance. Design docs that author two or more sync checks are trimmed to the load-bearing one.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "133",
+   "quote": "The three checks are student interactions after scenes 2, 4, and 5.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "179-180",
+   "quote": "Every video carries exactly one quick check, and it fires at the very end, never mid-clip: a video is watched through before it is checked, not interrupted to be checked.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Szpunar, Khan & Schacter 2013",
+   "url": "https://www.pnas.org/doi/pdf/10.1073/pnas.1221764110"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "say-each-new-term-aloud",
+ "title": "Say each new term aloud",
+ "statement": "Have learners say each newly taught term aloud as unscored practice, since clicking a word doesn't build command of it.",
+ "example": "One course gave all 165 academic terms and 124 blocking words a spoken prompt, and captured and scored none of the speech.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "format"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 reading course's pedagogy policy requires spoken production for every pre-taught term: an academic term carries a say-it prompt answered aloud, a blocking word a say-back prompt after its model pronunciation, and on-ramp answers are said aloud before they are selected (`incept-package-hub/course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json`, line 999). Its rationale is that students learn from what they produce, saying, writing or typing it, not from what they click, and the rule rests on review feedback rather than a measurement. A later refresh gave all 165 academic terms and 124 blocking words productive oral prompts, and every articulation selects evidence, rehearses aloud, then types an own-words explanation. Its review notes also require an unscored spoken rehearsal of claim and evidence before typing (`incept-package-hub/course-packages/courses/g5-reading/review/start-here.md`, line 70).",
+ "against": "No speech is captured, scored or used in progression (`incept-package-hub/.worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md`, lines 90-91), so the effect was never measured. Counted as evidence of production, single-word say-backs are discounted as trivial by a red-team taxonomy in the reading project (`grade3-reading/ti-courseplans/skills/course-red-team/references/finding-taxonomy.md`, line 183).",
+ "evidence": [
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "999",
+   "quote": "Every pre-taught term requires spoken production",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1000",
+   "quote": "Students learn from what they produce - saying it, writing it, typing it - not from what they click; recognition-only vocabulary contact does not build expressive command of a term.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "79",
+   "quote": "all 165 academic terms and 124 blocking words have productive oral prompts;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "81",
+   "quote": "every articulation selects evidence, rehearses aloud, then types an own-words explanation;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "70",
+   "quote": "articulation requires an unscored spoken rehearsal of claim and evidence before typing;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".worktrees/codex-g5-july27-publish/course-packages/courses/g5-reading/review/start-here.md",
+   "lines": "90-91",
+   "quote": "Spoken production remains prompted and self-checked only: no speech is captured, scored, or used in progression.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,92 @@
+{
+ "id": "fix-the-lesson-never-the-source",
+ "title": "Fix the lesson, never the source",
+ "statement": "When a lesson's passage and its fixed source text disagree, change the lesson, never the source.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons holds every visible passage to the fixed source text, rates an added, removed or replaced word as high severity, and says to update a text by replacing its file, never by editing it to match a lesson (`shadow/content-eval/SKILL.md`, `shadow/content-eval/README.md`). Aligning whole nodes reported legitimate excerpts as rewrites, so it compares each paragraph against its own window of the source.",
+ "against": "A house style can require a change: the audit treats a source dash replaced by other punctuation as information, mandated by a rule against dashes in text shown to children, not a defect (`shadow/content-eval/SKILL.md`).",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "110-111",
+   "quote": "To update a text, replace its file. Don't edit it to match a lesson: the lesson is what gets fixed.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "242",
+   "quote": "Whole-node alignment reported both as rewrites.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "227",
+   "quote": "| `PASSAGE-TEXT-CHANGED` | high | a word is added, removed or replaced relative to the fixed text |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/RESTORATION-PLAN.md",
+   "lines": "80",
+   "quote": "Only semicolons inside exact registered quotations are exempt; unrelated authored prose remains checked. Negative regression tests cover a changed quotation and an extra semicolon.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-04.md",
+   "lines": "3",
+   "quote": "Quotation fidelity takes precedence in this source packet",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/test-source-quotations.txt",
+   "lines": "5",
+   "quote": "Literary quotations: exact edition verified; altered quotes and authored semicolons remain rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "393-394",
+   "quote": "Record one sequence-wide policy for assigned words absent from source prose. Do not mutate story text or silently substitute a validator-friendly word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/HANDOVER-2026-08-25-PR27.md",
+   "lines": "185-186",
+   "quote": "Rewriting the story, swapping the assigned word, or enlarging generic known debt are all wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.5 (pdftotext line 226)",
+   "quote": "We have not written around this and we have not edited the story to host the word.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

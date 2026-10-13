@@ -1,0 +1,48 @@
+{
+ "id": "evidence-across-two-sentences-is-one-pick",
+ "title": "Evidence across two sentences is one pick",
+ "statement": "When the evidence for an answer spans two sentences, make them one selectable unit, so the learner isn't asked to choose between two right answers.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a tap-the-evidence item in a grade 3 reading course found the correct answer split into two sentences, which left the reader unsure which to pick when both were right. The course now highlights such evidence as one selectable unit, beside a rule that evidence may be more than one sentence, or two ideas from different places that the child synthesises (`grade3-reading/course-renderer/docs/rules/questions-and-assessment.md`, lines 81-92).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/ui.md",
+   "lines": "165-166",
+   "quote": "If the correct evidence spans two sentences, present them as one selectable thing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "90-92",
+   "quote": "where the correct answer spans two sentences, highlight them as one so the child is not asked to choose between two right answers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "81-82",
+   "quote": "**Rule.** Allow and expect evidence that is more than one sentence, or two ideas from different places that the child synthesises.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

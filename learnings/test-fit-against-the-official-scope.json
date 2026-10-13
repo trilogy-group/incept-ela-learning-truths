@@ -1,0 +1,46 @@
+{
+ "id": "test-fit-against-the-official-scope",
+ "title": "Test fit against the official scope",
+ "statement": "Test a question's fit to the curriculum by checking that the unit's official scope can answer it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A study summarised in the AP question work measured validity partly with a question-answering test, on the view that a curriculum-aligned question should be answerable using the curriculum's own scope definition, alongside similarity to the official curriculum (`icloud-work/ML learnings/research_educational_content_generation.md`). With that yardstick, grounding generation in official curriculum documents took validity from 12-15% to 92-96% with the same generator. That result is about grounding, so it shows the test in use, not that the test is valid.",
+ "against": "The test's own accuracy is not reported; it was the yardstick, not the thing tested. The study covers one other subject, secondary mathematics (`icloud-work/ML learnings/research_educational_content_generation.md`, line 276).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "94",
+   "quote": "**How validity is measured:** Semantic Textual Similarity against official curriculum + RAG-QA test (a curriculum-aligned question should be answerable using the curriculum's own scope definition). This is analogous to our curriculum_alignment dimension.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "92",
+   "quote": "RAG methods go from 12-15% validity to 92-96% validity by grounding generation in official curriculum documents. The study uses GPT-4o as the generator for all conditions — the variable is retrieval, not the model.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Automated Generation of Curriculum-Aligned MCQs for Malaysian Secondary Mathematics (arXiv:2508.04442)",
+   "url": "https://arxiv.org/html/2508.04442"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

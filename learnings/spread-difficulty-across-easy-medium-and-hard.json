@@ -1,0 +1,72 @@
+{
+ "id": "spread-difficulty-across-easy-medium-and-hard",
+ "title": "Spread difficulty across easy, medium and hard",
+ "statement": "Spread a test's items across easy, medium and hard, since an all-medium form puts weak students at the floor and strong ones at the ceiling.",
+ "example": "One adaptive engine serves only hard items from a score of 90, so an all-medium bank leaves it nothing to serve there.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "measurement",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The staged assessment standard fails an all-medium form because it disables discrimination, putting weak readers at the floor and strong ones at the ceiling, and requires a spread across easy, medium and hard (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md`). The course checklist adds that all-medium items silently disable adaptivity (`grade3-reading/knowledge_bot/CHECKLIST.md`), since the adaptive engine it targets chooses difficulty by the current score: easy from 0 to 49, medium and hard at 75% and 25% from 50 to 89, and hard only from 90 to 99 (`grade3-reading/knowledge_bot/knowledge/kb-0054-reference.qmd`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "89-90",
+   "quote": "A 100%-medium form **disables discrimination** — it floors weak readers and ceilings strong ones, measuring nothing. The form **must spread** across easy / medium / hard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "29",
+   "quote": "items carry easy/medium/hard (NOT 100%-medium) so PowerPath can ease/ramp. *(new — 100%-medium silently disables adaptivity)*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0054-reference.qmd",
+   "lines": "238-239",
+   "quote": "difficulty by current score (0–49 easy; 50–89 medium+hard 75%/25%; 90–99 hard only)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "72",
+   "quote": "A fixed-form cannot:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "74",
+   "quote": "1. Measure students across the full G2–G5 ability range (RIT 161–227) in 40 items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "76",
+   "quote": "3. Track growth meaningfully when the same items are administered repeatedly",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,50 @@
+{
+ "id": "isolate-a-model-by-staging-its-inputs",
+ "title": "Isolate a model by staging its inputs",
+ "statement": "Give a reviewing or play-testing model a staged copy of its allowed inputs and nothing else, since an instruction or a read-only sandbox doesn't stop it reading more.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "review",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An adversarial audit of a course-experience preflight rejected its first implementation partly because isolation was policy prose: read-only sandboxing prevented writes but did not stop reads of the host, the repository or sibling runs, and home-directory settings, absolute artifact paths and an ignore-rules flag weakened the boundary further. The audit rejected an instruction not to read other files as isolation, and the clean process must now receive a staged input directory and nothing else. A separate audit of a multi-agent review setup found that admitting evidence by filename or extension let another agent's memory, mailbox, transcript or secrets be copied into a worker's context under an unexpected name.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "366",
+   "quote": "7. **Isolation was policy prose.** Read-only sandboxing prevented writes but did not stop host/repository/sibling reads. `HOME`, `CODEX_HOME`, absolute artifact paths, and `--ignore-rules` weakened the boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "605",
+   "quote": "The adversarial audit rejected “please do not read other files” as isolation. The clean process must receive a staged input directory and nothing else.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/03_AUDIT_FINDINGS_AND_OPEN_RISKS.md",
+   "lines": "27",
+   "quote": "The evidence admission path used narrow filename/extension checks. Another agent's memory, full mailbox, transcript, or secret content under an unexpected filename could be copied into a worker context.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

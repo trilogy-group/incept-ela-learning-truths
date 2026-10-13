@@ -1,0 +1,99 @@
+{
+ "id": "fail-on-a-picture-only-when-measured",
+ "title": "Fail on a picture only when measured",
+ "statement": "Fail an item on picture evidence only when that evidence was measured or the error is gross, because a model's free description of an image can misplace fine detail.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator splits image evidence into Tier 1, structured analysis with counts, shapes or measured properties that it treats as ground truth, and Tier 2, the analysis model's best visual guess, which it says can be wrong about exact positions on number lines and placement within nested diagrams. When only Tier 2 contradicts an answer that is internally consistent and sound, the judge must not fail factual accuracy, and it fails on Tier 2 only for gross, obvious errors; the committed base prompt adds a conservative default for counting ambiguities. These failure modes are the project's stated view, not measured here, and a trace-analysis script lists analyzer crashes and missing JSON blocks among the causes of Tier 2, so measured evidence can silently drop to a model's description.",
+ "against": "The structured analyser can be wrong too: a regression test covers a 2x2 labelled layout where an old ordering by x alone swapped two panels (`icloud-work/inceptbench-main/tests/test_issue_363_visual_false_alarms.py`, L36).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "108",
+   "quote": "This is the analysis model's best visual guess, NOT verified programmatic data.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "109",
+   "quote": "→ If Tier 2 analysis contradicts the content's answer BUT the answer is internally consistent and mathematically/logically sound, do NOT fail factual_accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "200",
+   "quote": "**Conservative default**: For counting ambiguities (tick marks, shaded squares, number line positions), do NOT fail `factual_accuracy` from image evidence alone unless deterministic checks report explicit FAIL or the contradiction is unambiguous at normal viewing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/scripts/langfuse_tier_analysis.py",
+   "lines": "3",
+   "quote": "Determine why each image-containing item ended up as Tier 1 or Tier 2.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "279",
+   "quote": "It can be wrong about exact positions on number lines, placement of items within nested diagrams (Venn diagrams, set diagrams), and fine spatial details.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "277",
+   "quote": "**Tier 1 — Structured image analysis** (header says \"Programmatic image analysis\"; contains object counts, shape classifications, or visual property measurements): This is GROUND TRUTH.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "281",
+   "quote": "Only fail factual_accuracy based on Tier 2 analysis when the error is gross and obvious",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "257",
+   "quote": "**Conservative default**: For counting ambiguities (tick marks, shaded squares, number line positions), do NOT fail `factual_accuracy` from image evidence alone unless deterministic checks report explicit FAIL or the contradiction is unambiguous at normal viewing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_issue_363_visual_false_alarms.py",
+   "lines": "36",
+   "quote": "2x2 labeled layout where old x-only ordering swaps B and C.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "476",
+   "quote": "- Findings: no visual defect. Every reviewer BLOCKER/UNSURE re-read at full size = his clue-fly animation mid-frame, an anchored popover, the dimmed right leaf during true/false, or a thumbnail artifact.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

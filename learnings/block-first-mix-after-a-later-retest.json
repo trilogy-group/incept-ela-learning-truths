@@ -1,0 +1,102 @@
+{
+ "id": "block-first-mix-after-a-later-retest",
+ "title": "Block first, mix after a later retest",
+ "statement": "Practise a new skill on its own while it is being learned, and mix it into review only after it passes a retest on new items on a later day.",
+ "example": "A skill becomes eligible for mixing only after a retest at least 24 hours later on new parallel items.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "sequence",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's practice spec keeps a skill in blocked practice while it is being acquired and makes it eligible for interleaving only after a delayed (≥24h) retest passed on new parallel items; completion on the day of release never qualifies, because same-day testing measures working memory, not learning (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`). The course standard draws the same boundary, introducing interleaving only after prerequisite acquisition is secure and listing same-day success called durable as a failure signal (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, Q024). In mixed review, no two items in a row are on the same skill.",
+ "against": "The Grade 3 criteria differ on the stage: one row admits an item to mixed review after the delayed retest, another interleaves only after the later mastery stage (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md`, D6.6 and D6.7). These are design rules, not results: nothing here measured the effect of the order, and the course graph is a draft pending rulings (`grade3-reading/knowledge_bot/knowledge/kb-0122-g3-reading-course-graph.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "37-40",
+   "quote": "**Interleaving eligibility = E2-cleared**: a delayed (≥24h) retest passed on *new* parallel items — release-day completion never qualifies",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "433",
+   "quote": "- Claim boundary: Interleaving is introduced only after prerequisite acquisition is secure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "160",
+   "quote": "- Interleaving is only appropriate after the skill is ready; massed/blocked first, interleaved later.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "37",
+   "quote": "Blocked practice while a skill is in acquisition.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "38-40",
+   "quote": "a delayed (≥24h) retest passed on *new* parallel items — release-day completion never qualifies (Practice BrainLift: same-day testing measures working memory, not learning)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "40-41",
+   "quote": "Cumulative interleaved review keeps every cleared track alive, no two consecutive items on the same skill",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "17",
+   "quote": "An item joins cumulative review only after a delayed (≥24h) retest passed on NEW parallel items; release-day success never qualifies",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "18",
+   "quote": "Practice is blocked while a skill is in acquisition; interleave only post-E4; no two consecutive same-skill items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0122-g3-reading-course-graph.qmd",
+   "lines": "53",
+   "quote": "**Gateway discriminations** (taught explicitly, interleaved after both learned)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "605",
+   "quote": "### G5-POL-PRA-010: Admit an operation to interleaved review only after a delayed retest on new parallel items has cleared it, and never place two consecutive review items on the same operation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

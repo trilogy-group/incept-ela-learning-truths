@@ -1,0 +1,79 @@
+{
+ "id": "stop-after-the-same-fix-fails-twice",
+ "title": "Stop after the same fix fails twice",
+ "statement": "When the same fix has failed twice, stop and review the process instead of applying it again.",
+ "example": "Re-authoring the items that had leaked raised the leak rate from 0.615 to 0.812; new item designs in the next round lowered it to 0.615.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A bounded repair controller for a Grade 3 course allows at most three attempts, stops earlier after two identical ineffective remedies, and sends two identical failures to process review rather than another retry. In a Grade 3 item pool's regeneration log, re-authoring the items that had leaked to a passage-blind solver raised the leak rate from 0.615 to 0.812, and it fell back to 0.615 in the next round, when new item designs landed.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/controller-2026-09-14/PLAN.md",
+   "lines": "76",
+   "quote": "stop earlier after two identical ineffective remedies",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/controller-2026-09-14/PLAN.md",
+   "lines": "82",
+   "quote": "Two identical failures stop for process review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "59",
+   "quote": "| Round 2 | 32 | 26 | 6 | 0.812 | re-author R1 leakers — leak rate *rose* (hard residue) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "60",
+   "quote": "| Round 3 | 26 | 16 | 10 | 0.615 | counter-conventional + EBSR decisive-fix designs land |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "125",
+   "quote": "After two failed repair attempts with the same symptom and cause, stop that approach.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "DESIGN.md",
+   "lines": "104",
+   "quote": "Stop a repeating same-cause failure after two attempts for independent diagnosis.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/DESIGN.md",
+   "lines": "104",
+   "quote": "Stop a repeating same-cause failure after two attempts for independent diagnosis.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

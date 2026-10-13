@@ -1,0 +1,170 @@
+{
+ "id": "write-down-which-source-governs",
+ "title": "Write down which source governs",
+ "statement": "Write down which source governs a lesson, its own most specific named design over generic rules or a sibling lesson, and sort new feedback against it before acting.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's QC checklist names its order of authority for when it and a source disagree: a dated ruling beats an undated principle, and a later ruling beats an earlier one (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`). Its criteria register puts a lesson's own design before the generic components document, the knowledge workbook and the procedure page, a rule promoted on 2026-08-25 after one lesson was built a tier too general (`grade3-reading/artifacts/criteria-register.csv`, TOOL-01). A decision baseline written after a review proposed a large change of direction sorts incoming feedback into a demonstrated defect, a compatible refinement, a change of direction or insufficient evidence, holds any change of direction for one consolidated decision, and lets only an accepted amendment change the baseline and its tests (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/DECISION-BASELINE.md`). The analysis beside it says not to alternate between competing standards without recording which one governs (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md`). The governing design is cited exactly, by paragraph number.",
+ "against": "Specificity is not the only rule of precedence: a later change-control baseline holds that recency, confidence and citation count do not supersede an earlier academic decision (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`, line 70). A later run found counter-evidence (`grade3-reading/artifacts/qc-2026-09-30-staging/contradictions.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "296",
+   "quote": "a dated ruling beats an undated principle; a later ruling beats an earlier one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "91",
+   "quote": "Authority order: per-lesson v3 doc > generic components doc > KB workbook > procedure HTML",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "91",
+   "quote": "promoted 2026-08-25 after L4 was built a tier too general",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/DECISION-BASELINE.md",
+   "lines": "17",
+   "quote": "| Demonstrated defect | A factual/content error or observed malfunction with a clear expected behavior, consistent with the agreed approach.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/DECISION-BASELINE.md",
+   "lines": "9",
+   "quote": "Recency, reviewer confidence and the number of citations do not automatically supersede an earlier academic decision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/DECISION-BASELINE.md",
+   "lines": "35",
+   "quote": "Only an accepted amendment changes the baseline and its tests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "24",
+   "quote": "do not alternate between competing standards without recording which one governs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0179-g3-peter-pan-close-out-state-and-reusable-process.qmd",
+   "lines": "67-69",
+   "quote": "a named source-of-truth document per lesson-design decision, cited by paragraph number, beats \"mirror a sibling lesson\" or \"the portal's own text\" every time a content dispute comes up.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0210-aladdin-2508-feedback-and-pr27-safety-snapshots.qmd",
+   "lines": "119-120",
+   "quote": "both of those are real authorities but one tier too general.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "52-53",
+   "quote": "A dated ruling beats an undated principle; a later ruling beats an earlier one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/HANDOVER-2026-08-25-PR27.md",
+   "lines": "100",
+   "quote": "Curriculum authority wins over the reviewer's ideal count",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3132",
+   "quote": "I’d used it as the proposed lesson sequence without making that distinction clear.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3134",
+   "quote": "“Men should be what they seem” belongs to Act 3.3, so the brainlift should label that worked example as a proposed extension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "20",
+   "quote": "the curriculum sheet wins on routing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "48-49",
+   "quote": "When two inputs disagree about a lesson, the winner is fixed and the disagreement is RECORDED in the run manifest rather than silently resolved:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "107",
+   "quote": "Use the current exact spoken text and recording manifest for narration wording. Use the newer verified working files for actual implementation, after a file comparison.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.1 (pdftotext line 5)",
+   "quote": "Ten findings, each checked against a named authority rather than against opinion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "64",
+   "quote": "A dated ruling newer than the design doc (rulings beat docs; docs beat siblings).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/directive-capture/SKILL.md",
+   "lines": "29",
+   "quote": "Date it; rulings beat docs, newer beats older.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "34-35",
+   "quote": "A reviewer objection should identify which rule is violated… otherwise, it is a new preference or scope change.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

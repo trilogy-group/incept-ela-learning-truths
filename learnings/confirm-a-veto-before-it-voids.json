@@ -1,0 +1,85 @@
+{
+ "id": "confirm-a-veto-before-it-voids",
+ "title": "Confirm a veto before it voids",
+ "statement": "Before one judge sample's critical failure voids a whole lesson, draw more samples and let the veto stand only when most of them fail.",
+ "example": "A single sample hard-vetoed about 2 of 126 otherwise fine lessons to 0.0 in each run.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In an AP evaluator's lesson check, one lesson-level sample occasionally failed every critical score on an otherwise fine lesson, and because those scores are critical it hard-vetoed the lesson to 0.0, on about 2 of 126 lessons per run. The fix draws up to 3 samples only when the first reports a critical failure and trusts the veto only if a strict majority of the available samples fail; when samples disagree, the result carries a low-confidence flag and is treated as needing review. When confirmation samples errored the rule fell back to a single-sample veto, until a guard for fewer than 2 usable samples returned the failure as low-confidence instead. A flagged verdict is treated as needing review, not as a precise score.",
+ "against": "It was validated on a 14-item sample run 3 times during a provider outage, and a majority of samples shows consistency, not correctness. A confirmed failure keeps one whole sample rather than voting score by score, so its other scores rest on that one sample.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "5-7",
+   "quote": "A single Phase-2 lesson-level sample occasionally tanks ALL critical metrics (factual/educational/stimulus) on an otherwise-fine lesson; because they're critical that hard-vetoes the bundle to overall 0.0 (~2/126 lessons per run,",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "11-13",
+   "quote": "only if it reports a critical failure do we draw up to 3 samples and require a strict majority of AVAILABLE samples to fail before trusting the veto.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "15-17",
+   "quote": "+ low_confidence flag on the result when confirmation samples disagree (some pass, some fail) — a genuinely borderline lesson whose overall score is not reliable; treat as needs-review instead of forcing a precise number.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "86",
+   "quote": "- Consensus degenerated to a single-sample veto when all confirmation samples errored",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "87-88",
+   "quote": "Added a <2-sample guard that returns the failure as low_confidence instead of a confirmed hard-veto.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "23",
+   "quote": "Validated on a 14-item sample x3 (during a live Gemini 503 storm)",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "112-114",
+   "quote": "Documented that the confirmed-fail path intentionally returns ONE coherent sample rather than reconciling non-critical metrics across samples (per-metric voting would decouple each score from its own reasoning text).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

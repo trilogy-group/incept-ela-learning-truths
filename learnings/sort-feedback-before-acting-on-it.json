@@ -1,0 +1,91 @@
+{
+ "id": "sort-feedback-before-acting-on-it",
+ "title": "Sort feedback before acting on it",
+ "statement": "Sort each piece of review feedback as a proven defect, a compatible refinement, a conflict of direction or insufficient evidence before acting on it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A change-control baseline for a review and decision brief (2026-09-10) kept the earlier academic direction as the working baseline and ruled that recency, confidence or citation count do not supersede an earlier academic decision (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). It sorted each point into four classes, where a demonstrated defect gets a minimal correction, a compatible refinement is optional, a change of direction or conflict is held for one consolidated decision, and insufficient evidence stays explicitly unresolved, and it found two reviews genuinely in conflict, the earlier one having asked for the very frame the later one proposed replacing (the same file). An audit of one lesson against nine principles found a live contradiction in the rules: one rule says steps are named, never numbered, while the validator requires a numbered 'Step N:' format and fails any node without it, so the lesson could not satisfy both (`grade3-reading/knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd`). Any contradiction found in the rules themselves is logged.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "70",
+   "quote": "recency/confidence/citation-count do not supersede an earlier academic decision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "70-73",
+   "quote": "Four disposition classes: **demonstrated defect** (minimal correction, still no implementation while analysis-only) / **compatible refinement** (optional, not a submission blocker) / **change of direction or conflict**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "70-74",
+   "quote": "**insufficient evidence** (stays explicitly unresolved)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "74-75",
+   "quote": "Evidence found that the two reviews genuinely conflict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "103-104",
+   "quote": "**Live contradiction:** R-PED-19 (`pedagogy-and-lesson-structure.md:333`) states steps are \"NAMED, never numbered,\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "103-105",
+   "quote": "*requires* the \"Step N: ...\" numbered format and fails any node without it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "14",
+   "quote": "Classify incoming items as a demonstrated defect, compatible optional refinement, conflicting change of direction, or insufficient evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4505",
+   "quote": "The first bullet is an observed tension; the others are decisions to make explicit or validate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "73-74",
+   "quote": "the reviewer's format is the vessel; equal-strength pedagogy adopts it, weaker defers, never force-fit.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

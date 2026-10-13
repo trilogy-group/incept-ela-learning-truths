@@ -1,0 +1,141 @@
+{
+ "id": "raise-one-demand-at-a-time",
+ "title": "Raise one demand at a time",
+ "statement": "Raise one demand at a time: bring in a harder text only once its reading move is known, and withdraw supports singly, so a failed check points to one change.",
+ "example": "One course plans its texts to climb from 740 to 940 on a text-difficulty scale, within units as well as across them, so a harder text never arrives with a new move.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The Grade 4 course rationale has text difficulty climb inside a unit as well as across the course, so the harder text arrives after the reading move is known and never at the same time (`othello-course-renderer-draft/repo/content/course-rationale.json`, line 17); its climb, 740L to 940L, is a set of authoring targets rather than measurements (line 13). A research brief applied the rule when sizing a lesson's second passage, since doubling it would add reading load at the same time as a new reading move (`othello-course-renderer-draft/repo/docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md`, lines 446-448). A Grade 3 writing scaffold keeps its two fades in step, so a child is never asked to find evidence unaided and organise the essay unaided in the same jump (`othello-course-renderer-draft/repo/docs/extras/alpharead-writing-scaffold-overview.md`, line 31).",
+ "against": "It is a design rule, not a measured result, and the source is another course's design (\"Not our course.\", `grade3-reading/course-renderer/docs/extras/alpharead-writing-scaffold-overview.md`, line 12). The plan under review used the nine-dimension fade dial (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/skeleton-v2.md`, lines 133-134), and a grade-3 synthesis dropped a permanent picture wrapper because an engagement scaffold \"must fade to cold plain text or it teaches dependency\" (`grade3-reading/ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md`, line 289).",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/course-rationale.json",
+   "lines": "17",
+   "quote": "Lexile climbs inside a unit as well as across the course, so the harder text arrives after the move is already known and never at the same time as it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/course-rationale.json",
+   "lines": "13",
+   "quote": "740L to 940L, authoring targets rather than measurements",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "446-448",
+   "quote": "Doubling the second narrative does not add alignment, it adds reading load at the same time as a new reading move, which is what the graph's own reading order tries to avoid.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "31",
+   "quote": "The two fades stay in step: a child is never asked to self-source evidence *and* self-organise the essay in the same jump.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "17",
+   "quote": "Lexile climbs inside a unit as well as across the course, so the harder text arrives after the move is already known and never at the same time as it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "13",
+   "quote": "740L to 940L, authoring targets rather than measurements",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "6",
+   "quote": "Draft for review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/course-rationale.json",
+   "lines": "21",
+   "quote": "It is what this repo now follows",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "31",
+   "quote": "The two fades stay in step: a child is never asked to self-source evidence *and* self-organise the essay in the same jump.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "29",
+   "quote": "how much of the frame is *pre-filled* shrinks — full echo → clause starter → bare stem → blank box (entry 5) — and how much help the child gets *finding the evidence* shrinks — passage shown → region only → nothing (entry 2).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "12",
+   "quote": "Not our course.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "134",
+   "quote": "Fading nine dimensions (illustration → cast → tone → audio → schema-load → length → syntax → inference → topic-predictability) simultaneously means that when a Band-B student fails the sequence gate, you cannot tell *which* faded support caused it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "134",
+   "quote": "as an *automated* per-student adaptation it is too many confounded knobs for a population this young and a signal this noisy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "134",
+   "quote": "picture support is a legitimate comprehension scaffold at this age (dual-coding; the picture-walk tradition), and fading it as if it were decoration may remove a real comprehension support, not just training wheels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/skeleton-v2.md",
+   "lines": "133-134",
+   "quote": "the **9-dimension fade dial** (illustration → cast → tone → audio → schema-load → length → syntax → inference → topic-predictability)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "289",
+   "quote": "Engagement scaffold must fade to cold plain text or it teaches dependency",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

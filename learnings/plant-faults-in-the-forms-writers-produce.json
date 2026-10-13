@@ -1,0 +1,92 @@
+{
+ "id": "plant-faults-in-the-forms-writers-produce",
+ "title": "Plant faults in the forms writers produce",
+ "statement": "Plant each check's test faults in the forms writers actually produce, not only the blatant one, since a check that catches its planted form can pass every other.",
+ "example": "A line-number check tested only on digits passed 13 lines in three ready blocks that pointed by position in words, such as 'the tenth line'.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The lesson engine's house check for line numbers matches only 'L' or 'line' followed by digits, and its test plants only digit forms such as 'line 12'. On a poem and a speech the writer kept to the letter of the rule and pointed by position in words instead, such as 'the sixth line', 'the opening line' and 'the first sentence': 13 such lines passed in three ready blocks, 5 of them in what a student is shown. The check that a wrong option's feedback doesn't name the answer has one planted fault, which writes a whole right option of several words into the feedback, so nothing showed that it needs a shared run of at least three words and can never fire on a key of one or two words; a film block's feedback saying the play was written 'around 1603', for the key 'Around 1603', passed.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "8",
+   "quote": "Text a student reads never cites a line number (no \"L12\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "46",
+   "quote": "const LINE_NUMBER = /\\b(?:L\\d+|lines?\\s+\\d+)/i;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "65",
+   "quote": "assert.equal(houseChecks({ feedback: [\"Look again at line 12.\"] })[0].ok, false);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a75bd9643fa602d9.json",
+   "lines": "38",
+   "quote": "Re-read the sixth line to see what spiritual quality the speaker says cannot be bestowed by speeches alone.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/5722a3741161394e.json",
+   "lines": "57",
+   "quote": "Re-read the tenth line to consider the permanent claim of power in the title.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "55",
+   "quote": "(i === wrong ? `No: the answer is ${right}.` : f)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "116",
+   "quote": "sharedRun(f, c.options[c.answer]) >= Math.max(3, words(c.options[c.answer]).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "15",
+   "quote": "\"Around 1603\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "22",
+   "quote": "Listen again to hear that the play was written around 1603.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

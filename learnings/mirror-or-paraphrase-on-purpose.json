@@ -1,0 +1,64 @@
+{
+ "id": "mirror-or-paraphrase-on-purpose",
+ "title": "Mirror or paraphrase on purpose",
+ "statement": "Decide on purpose whether a question repeats the text's wording or paraphrases it: a student who only matches words can answer the first but not the second.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 standards map splits finding stated information into two components, one where the question uses wording similar to the text and one where it paraphrases or uses different words. The second names the failure it catches: a child who can find answers only when the question's words exactly match the text, and fails when synonyms or rephrasing are used. A paraphrased question needs the student to match meaning, not words.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/G3 Standards and Standard components.xlsx",
+   "lines": "sheet 'Standard components', cell D2",
+   "quote": "Find explicitly stated information when the question uses similar wording to the text",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/G3 Standards and Standard components.xlsx",
+   "lines": "sheet 'Standard components', cell D3",
+   "quote": "Find explicitly stated information when the question paraphrases or uses different words",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/G3 Standards and Standard components.xlsx",
+   "lines": "sheet 'Standard components', cell E3",
+   "quote": "Child can only find answers when the question words exactly match the text. Fails when synonyms or rephrasing are used.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "27",
+   "quote": "The claim must not copy five or more consecutive words from those lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "46",
+   "quote": "check(\"claim-no-copy\", \"The claim does not copy the line\", run < 5,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

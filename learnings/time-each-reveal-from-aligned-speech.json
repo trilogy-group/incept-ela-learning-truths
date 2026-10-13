@@ -1,0 +1,170 @@
+{
+ "id": "time-each-reveal-from-aligned-speech",
+ "title": "Time each reveal from aligned speech",
+ "statement": "Time each on-screen reveal and caption from when the voice says its words, taken from an aligned take, not by spreading them evenly or by sentence length.",
+ "example": "One pilot bound 14 animation cues to 62 aligned words of a measured take, each cue at its word's start.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "accessibility"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A pilot for short narrated films aligned a measured take to its script, 62 aligned words in all, and set each of its 14 animation cues to the start of its word, by its own rule that measured speech times drive the cues (`g9/tools/unit-video-essay/README.md`, `g9/tools/unit-video-essay/INTEGRATION.md`). The lesson engine that later took in the pilot's frame modules spreads each part's reveals evenly across the part's narration and times captions by each sentence's share of the part's characters (`g9/transformer/src/video/beats.js`, `g9/transformer/src/video/produce.js`), although the module contract expects the host to map word-alignment cues. No harm from the even spread has been recorded, so this stays an adopted rule.",
+ "against": "Timing from an alignment is not approval of the take: the pilot's notes say its generated voice has had no human listening or curriculum sign-off, and \"matched alignment flags are not such proof.\" (g9/tools/unit-video-essay/INTEGRATION.md line 44). The lesson engine's own films spread each part's reveals evenly across its narration and time captions by each sentence's share of the narration's length, and no harm from that has been recorded (`g9/transformer/src/video/beats.js`, `g9/transformer/src/video/produce.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "20",
+   "quote": "Let measured speech times drive the cue IDs. Edit the visual sequence to the voice before adding motion.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "44",
+   "quote": "sets each animation cue to its word start",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/README.md",
+   "lines": "18",
+   "quote": "binds the script (`script/v04`), the existing 22.12-second WAV, 62 aligned words, four beats, and 14 animation cues.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/beats.js",
+   "lines": "3",
+   "quote": "element appears in step with the voice, spread across the narration that follows the beat's lead-in.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "43",
+   "quote": "/** Captions for one beat: its narration's sentences, timed by their share of its length. */",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "core/README.md",
+   "lines": "26",
+   "quote": "The host maps word-alignment cues to these relative times.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "204",
+   "quote": "A vocabulary highlight began after the spoken phrase it was meant to mark.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "206-207",
+   "quote": "Timing was interpolated rather than measured against real speech onset and playback behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "212",
+   "quote": "File presence, decodability, and text hash do not prove synchronized narration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "214",
+   "quote": "Measured word onset at the serving playback rate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "451-452",
+   "quote": "timing is measured at the real playback rate",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "45",
+   "quote": "Rule: the first shot of a scene opens the scene; every later cut lands at the measured start of its storyboard anchor phrase minus a 0.12 s lead, frame-rounded.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "74",
+   "quote": "Cue start = aligned first-word time − 0.05 s; cue end = last-word end + 0.3 s, clipped to the next cue.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "score/SOUND-DESIGN.md",
+   "lines": "24",
+   "quote": "`cue-sheet.json` binds each musical move to a literal spoken phrase.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v00/FULL-WIP.md",
+   "lines": "7",
+   "quote": "retime cuts and captions to the actual take",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "123",
+   "quote": "No human has watched the cuts for rhythm; the cut lead (0.12 s) and lead-in/tail values are authored defaults.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "269-271",
+   "quote": "**Verify every clip**: read it back with Gemini speech-to-text word for word, and check every mark sits in a pause (a mark inside speech cuts the previous line's last word).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "39",
+   "quote": "Scene 7 and 8 captions were authored in a different order from the narration (documented in `prototypes/app-narrated/AUDIO-INTEGRATION.md`). The cues follow speech, so two stills in scene 7 and 8 are held very briefly/late. A content revision reordering those captions is recommended.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "17",
+   "quote": "Still beats change on measured cues",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/TREATMENT.md",
+   "lines": "18",
+   "quote": "Hold one image long enough to inspect the positions and flag.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

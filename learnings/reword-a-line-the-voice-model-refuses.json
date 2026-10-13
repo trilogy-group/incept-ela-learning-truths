@@ -1,0 +1,50 @@
+{
+ "id": "reword-a-line-the-voice-model-refuses",
+ "title": "Reword a line the voice model refuses",
+ "statement": "When a voice generator falsely refuses a line, find the refused sentence by trying sentences one at a time, reword it in print and voice, and never ship silence.",
+ "example": "One batch of lessons met 2 false refusals of harmless instruction lines, each found by trying sentences one at a time.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation",
+  "wording"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course renderer's invariants for new lessons require every new clip to be listen-checked, and say a false prohibited-content refusal must be rephrased and retried, never shipped as silence (`grade3-reading/course-renderer/docs/qa/new-lesson-qa-invariants.md`, lines 126-131). In one batch of lessons from September 2026 the voice model refused two harmless instruction lines, 'Use them in your answer if you can.' and 'Choose all that fit.' (`grade3-reading/course-renderer/authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md`, lines 11-12 and 57). Each was found by trying the sentences one at a time and reworded in the printed and the spoken copy alike, as 'Bring those clues into your answer if you can.' and 'Tap every one that fits.'",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "126-128",
+   "quote": "**D7. Listen-check every new clip**: false PROHIBITED_CONTENT refusals must be rephrased and retried (never ship silence); watch for elision (\"Rat\"→\"Rot\", \"The So row\"→\"the sorrow\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "11-12",
+   "quote": "TTS refused \"Use them in your answer if you can.\" (PROHIBITED_CONTENT, stable; per-sentence bisect `tmp/bisect-l6-p16.py`) → \"Bring those clues into your answer if you can.\" printed + spoken",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "57",
+   "quote": "Second TTS refusal, bisected: \"Choose all that fit.\" (L5 p18, L6 p17 msq stems) → \"Tap every one that fits.\" printed + spoken.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "vary-the-learners-moves",
+ "title": "Vary the learner's moves",
+ "statement": "Give each interactive move in a course its own action, and never run three moves of one kind in a row, so the moves don't feel repetitive.",
+ "example": "A static gate fails a course in which one verb is used twice or three moves of one kind come in a row.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Review feedback on a 3D version of the Grade 9 lessons noted stage moves repeating across lessons, such as taking a mask off and putting it back (`othello-archive/scripts/check-moments.mjs`, lines 8-9). Every move now needs a verb unique in the course, and a static gate fails the course when a verb is used twice or when three moves in a row in one lesson are of one kind, click, drag or choose (`othello-archive/src/scene/moments/kit.ts`, line 35; `othello-archive/scripts/check-moments.mjs`, lines 8 and 13).",
+ "against": "The gate allows one deliberate pair, a mask taken off and put back, under a course budget of two mask moves (`othello-archive/scripts/check-moments.mjs`, line 10).",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "8",
+   "quote": "the same verb is used twice in the course",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "9",
+   "quote": "take mask, put mask across lessons",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "13",
+   "quote": "three moves in a row in one lesson of the same kind (click/drag/choose)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/scene/moments/kit.ts",
+   "lines": "35",
+   "quote": "Make a move. Every move needs a course-unique `verb` (the variety gate checks it) and an `expect` (the vision gate).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-moments.mjs",
+   "lines": "10",
+   "quote": "more than 2 mask moves in the course (L1's take-off / put-back pair is the only one)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

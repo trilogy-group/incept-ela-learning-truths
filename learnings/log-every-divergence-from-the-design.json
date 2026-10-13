@@ -1,0 +1,136 @@
+{
+ "id": "log-every-divergence-from-the-design",
+ "title": "Log every divergence from the design",
+ "statement": "Log every deliberate divergence from the design with the ruling that covers it, and say where the live build differs from what was authored instead of reconciling it quietly.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The walkthrough of a built Grade 3 lesson logs every knowing divergence from its design in a deviations ledger with the ruling that covers it, and shows the open ones as amber flags (`downloads/SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md`, line 15). It collects the open questions in one place so nothing hides in the prose (line 386), and its method note says that where a screen's behaviour on the live build differs from its authored intent, the difference is stated rather than reconciled quietly (line 387).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "15",
+   "quote": "Every knowing divergence is logged in a deviations ledger with the ruling that covers it; the open ones appear in this walkthrough as amber flags.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "387",
+   "quote": "Where a screen’s behaviour on the live build differs from its authored intent, the difference is stated in the text rather than reconciled quietly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/scene.js",
+   "lines": "2",
+   "quote": "Only steps that passed their checks ship; the rest are listed as excluded, with their reasons.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "8",
+   "quote": "blocks export to the animated build's lesson shape: reading checks, key terms, apply; the rest listed, not forced",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "197",
+   "quote": "a changed item is listed, never forced",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "28",
+   "quote": "Inheritance from main/staging proves origin; it does not itself approve a departure from a lesson design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "15",
+   "quote": "For every named original-design difference, record the governing source or specific approved exception;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "15",
+   "quote": "Do not close merely because main/staging share the difference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "14",
+   "quote": "These are source-backed curriculum differences, not newly failing native controls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "367-369",
+   "quote": "The adversarial pass refuted six of nine serious findings using authored exemptions, dated known-debt entries, and validator carve-out comments that were *already written down*",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v03/CHANGES.md",
+   "lines": "3",
+   "quote": "Her Option A rule is \"adjust timings and visuals, but not the facts, quotes or the A to B frame\"; going below her own 2:30 floor means some wording is trimmed, so **this needs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "133-134",
+   "quote": "**F4: Hidden design judgment.** Detection: an agent changes grouping, edge, or lesson count without a record. Recovery: restore the declared map and raise a bounded design proposal.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L5.md",
+   "lines": "21",
+   "quote": "This is an authored, self-documented adaptation, not a silent drift",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext lines 206-207)",
+   "quote": "We are flagging it because if you re-check the original finding you will find the London question is gone rather than corrected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "142-143",
+   "quote": "is folded into the I-do — a declared, open decision needing sign-off, not itself a violation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

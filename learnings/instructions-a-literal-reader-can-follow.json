@@ -1,0 +1,157 @@
+{
+ "id": "instructions-a-literal-reader-can-follow",
+ "title": "Instructions a literal reader can follow",
+ "statement": "Write instructions a literal reader can follow: verbs match actions, units match what can be selected, and each fill-in frame stays grammatical and sensible for every possible value.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "stem",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of a Grade 5 course found a prompt that kept a selection verb on a free-writing box, so a student would look for four sentences to pick, and an item that said to tap two sentences when each tappable unit was a whole paragraph (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md`). An outside review of a Grade 3 lesson found a fill-in frame that broke grammar ('has a enchanting'); it was rewritten so it stays grammatical whichever word fills the blank (`grade3-reading/artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md`).",
+ "against": "No standing script does the substitution yet; the checklist runs it as an agent's sweep (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, line 49). The shorthand \"a(n) _____\" is not an error in itself: it should resolve to the right article (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 250).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "172",
+   "quote": "selection verb on a free-writing box; a child looks for four sentences to pick.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "159",
+   "quote": "the child taps three-sentence paragraph blocks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/baseline-submission/CHANGES-FOR-REVIEW-L4-2026-08-31.md",
+   "lines": "32",
+   "quote": "frame breaks grammar ('has a enchanting')",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "49",
+   "quote": "an article/agreement mismatch (\"has a enchanting\") is a defect, not a copy nit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "17",
+   "quote": "assembled you-do sentence carries Peter's \"me\" (\"Captain Hook 'hates me…'\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "248",
+   "quote": "For fill-in-the-blank: mentally insert the correct answer into the blank and read the COMPLETE resulting sentence aloud.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "282-283",
+   "quote": "Detect ungrammatical double-determiner patterns in ELA fill-in-the-blank questions (e.g. ``a(n) an adverb``) and override factual_accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "35-36",
+   "quote": "which stays grammatical regardless of the filling word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "39",
+   "quote": "checks a lead's grammatical fit under substitution",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "38-40",
+   "quote": "no validator in `validate-contracts.mjs` checks a lead's grammatical fit under substitution",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "12",
+   "quote": "**1. p21 `step4` — the Step 4 sentence frame is ungrammatical for 3 of the 4 clues it accepts, including its own reveal.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "139",
+   "quote": "- whether a frame's start plus the accepted quote and answer reads as a sentence (items 1, 4, 5),",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "163",
+   "quote": "- whether the frame lead plus each accepted answer and the reveal read as the taught sentence (items 3, 7, 8),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2262",
+   "quote": "The fixed scaffold ending because John displays raw accepted text immediately afterward, producing because John He makes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2136",
+   "quote": "The labelled Sentence starter is a detached comma-leading connective followed by an ellipsis plus the authored full stop: , so my answer is …",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "845",
+   "quote": "- on-ramp audio previously said “Say each answer aloud” while the visible task only allowed option selection;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/FINDINGS.md",
+   "lines": "90",
+   "quote": "No check assembles a write frame with a sample answer (items 1, 12).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "535-537",
+   "quote": "the old hardcoded noun frame produced ungrammatical G5-register strings for the new set (\"A evidence is...\", \"a correspond is to match up...\")",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

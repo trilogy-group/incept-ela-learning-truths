@@ -1,0 +1,92 @@
+{
+ "id": "pitch-model-answers-at-a-strong-student",
+ "title": "Pitch model answers at a strong student",
+ "statement": "Pitch a model answer at what a strong student of the grade could write in the time, not at expert writing.",
+ "example": "On the live proof, the judge's check that a model paragraph is something a strong Grade 9 student could write in about five minutes held with a confidence of 0.84 and 0.86.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The writer prompts of four blocks in the lesson engine pitch their model writing at Grade 9 students, three of them at a strong one, and the claim-evidence-reasoning prompt at what such a student could write in five minutes. Two blocks also ask the judge, as an advisory check, whether the model could come from such a student: one asks whether a strong one could write it in about five minutes, the other whether both paragraphs read like Grade 9 writing rather than an adult critic's. On the live proof the first check held at p 0.84 and 0.86.",
+ "against": "Both judge checks are advisory and never hold a block: the drama comparison's student-voice check came back unclear at p 0.59 and the block shipped. Nobody has measured whether students find the pitch right.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "61",
+   "quote": "Is this model answer something a strong Grade 9 student could write in about five minutes?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "24",
+   "quote": "could write in five minutes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "23",
+   "quote": "answer the lesson question the way two Grade 9 students",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "62",
+   "quote": "Do both paragraphs read like writing by Grade 9 students",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "52",
+   "quote": "a position a strong Grade 9 student could defend, with a reason from the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "36",
+   "quote": "how to answer the lesson question before the student writes, as a strong Grade 9",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "237-240",
+   "quote": "\"id\": \"grade-9\", \"required\": false, \"verdict\": \"holds\", \"p\": 0.84",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "509-512",
+   "quote": "\"id\": \"grade-9\", \"required\": false, \"verdict\": \"holds\", \"p\": 0.86",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "265-268",
+   "quote": "\"id\": \"student-voice\", \"required\": false, \"verdict\": \"unclear\", \"p\": 0.59",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

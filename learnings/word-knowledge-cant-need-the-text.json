@@ -1,0 +1,73 @@
+{
+ "id": "word-knowledge-cant-need-the-text",
+ "title": "Word knowledge can't need the text",
+ "statement": "A skill that is word knowledge, such as word parts, synonyms or connotation, can't be tested by a question that needs the text, so decide separately how to assess it.",
+ "example": "With the passage hidden, a model answered 36 of 45 generated vocabulary items, every word-part, synonym and connotation item among them.",
+ "group": "writing-questions",
+ "role": "context",
+ "facets": [
+  "format",
+  "integrity",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A text-hidden check answered 36 of 45 generated vocabulary items, and every word-part, synonym and connotation item, because the skill is word knowledge rather than inference from the passage. The course plan concluded that those slots needed a fundamentally different design, or a decision that they cannot be tested as text-dependent items and should leave the comprehension blueprint. A later bank of 120 vocabulary seed items leaked 99.2% and was marked to be rewritten and re-certified, never used as it stood.",
+ "against": "Context-clue items partly worked: 8 of 15 survived, those using words in technical or domain senses (`grade3-reading/artifacts/LANE1_COURSE.md`, line 240).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "242",
+   "quote": "Skill IS word-part knowledge, not passage inference — cannot be made passage-dependent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "246",
+   "quote": "cannot be tested as passage-dependent items and should be excluded from the comprehension-course blueprint",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/g5_analysis_digest.md",
+   "lines": "41",
+   "quote": "the 120 L.5 vocab seeds LEAK 99.2% and must be re-authored + re-certified, never deployed as-is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "205-206",
+   "quote": "L.5 vocabulary items fail blind-solve at high rates (~99%) when the target word carries its common meaning and the student can guess from background knowledge alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "222-223",
+   "quote": "**The correct answer must require a passage-specific context clue that overrides or narrows the word's common meaning.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "25",
+   "quote": "L.5 vocab 80% blind-solve leak (36/44 slots need redesign; some substandards may be inherently world-knowledge)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "find-story-words-by-their-concentration",
+ "title": "Find story words by their concentration",
+ "statement": "To catch a question that needs a story detail not yet read, track only words concentrated in at most two of the collection's texts, measured from the texts themselves.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A forward-reference checker for Grade 3 narrative lessons flags a question, option, hint or feedback line that depends on a concrete story noun the child has not read yet. It builds a document-frequency table over every lesson's passages, so a word found across many stories counts as general vocabulary and only words concentrated in one or two stories are tracked, measured from the file rather than a hand-written list. It skips the preview pages before a lesson's first passage, which were its largest source of false alarms on approved lessons.",
+ "against": "It tracks named things only: \"It will not catch a forward dependency on an unnamed fact\" (grade3-reading/curriculum-gen/checks/KNOWN-LIMITS.md lines 61-62). It was never calibrated for expository Grade 5 lessons, where it reports 10 findings and every one checked was mechanically false (same file, lines 69-70), and none of the sources read records a real defect it caught on approved content. It skips the preview pages before a lesson's first passage, yet a separate case study found a pre-reading vocabulary check that gave away a story's ending and calls for a chronology audit of every pre-reading example and checkpoint (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`, lines 134 and 145).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-forward-reference.mjs",
+   "lines": "5-7",
+   "quote": "A question, option, feedback or hint on page N must not depend on a concrete story noun the child has not read yet: one whose first passage appearance is on a page AFTER N, or which appears in no passage of the lesson at all.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-forward-reference.mjs",
+   "lines": "29-31",
+   "quote": "Only words concentrated in one or two stories can be story nouns. This is measured from the file, not guessed from a hand-written list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-forward-reference.mjs",
+   "lines": "22-24",
+   "quote": "pages before the lesson's first passage are not checked for forward reference. Checking them was this rule's single largest false-positive source on the approved lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "134",
+   "quote": "A pre-reading vocabulary check disclosed the story’s ending.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "145",
+   "quote": "Chronology audit for every pre-reading example and checkpoint",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,56 @@
+{
+ "id": "a-closed-list-of-thinking-operations",
+ "title": "A closed list of thinking operations",
+ "statement": "Tag items against a closed, versioned list of thinking operations kept apart from format and knowledge labels, so each item is labelled by the work it demands.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "demand",
+  "evaluation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 5 reading project's taxonomy calibration found that, with knowledge labels admissible as operation tags, verdicts on whether an item's tag matched its work were ill-posed: an evidence item could classify to a format label for selecting evidence instead of the operation of telling supported from unsupported claims. An open vocabulary was rejected on that measurement, and a proposal declares a closed list of operations, versioned with the graph and open to challenge at review, with facts, schemas and format knowledge kept as knowledge rather than operations. It calls the list a design commitment, not a discovery, since reading comprehension has no natural set of operations.",
+ "against": "The closed list is still a proposal (`grade3-reading/artifacts/semantic-judge-calibration-2026-07-10/kc-graph-change-proposal.md`, line 9), and in the same calibration a judge relabelled one honestly tagged evidence item to a neighbouring operation, which as a blocking gate would false-flag such items (`grade3-reading/artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md`, lines 81-84).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/kc-graph-change-proposal.md",
+   "lines": "90-93",
+   "quote": "Without a declared closed label set, tag-vs-work verdicts are ill-posed: with knowledge KCs admissible as labels, an evidence item can classify to the format KC `exam_hottext_select_evidence` instead of the cognitive op `disc_supported_vs_unsupported`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/kc-graph-change-proposal.md",
+   "lines": "35-37",
+   "quote": "rejected on measurement - ground 2 of the op-taxonomy NO-GO; tag-vs-work verdicts become ill-posed and evidence items classify to format KCs (exam_hottext_select_evidence) instead of cognitive work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/kc-graph-change-proposal.md",
+   "lines": "30-33",
+   "quote": "The closed operation vocabulary is a curriculum design commitment, not a discovery: ELA comprehension has no domain-intrinsic operation set, so this list is a choice this build makes, versioned with the graph (graph_version bump + rationale to change it) and challengeable at review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/JUDGE-CALIBRATION-REPORT.md",
+   "lines": "83-84",
+   "quote": "As a blocking gate this behavior would false-flag honestly tagged evidence items.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

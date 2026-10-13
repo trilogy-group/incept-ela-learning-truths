@@ -1,0 +1,90 @@
+{
+ "id": "limit-the-load-of-each-step",
+ "title": "Limit the load of each step",
+ "statement": "Limit what each step asks a reader to hold: few new names per section, few short options per item, no long reading without a check, each task on one screen.",
+ "example": "A scan of one course found 137 of 772 items over a five-option cap.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "options",
+  "accessibility",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Reviews of a Grade 5 course flagged a ~204-word part that introduced eight new proper names before an item asked students to compare four options of ~50–70 words each, and four consecutive reading pages with no interaction (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md`, `grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md`). A simulated outside review of four Grade 3 lessons found 3 narrated passage chunks, of 241, 273 and 279 words, that kept students passive for more than 60 seconds before a check (`grade3-reading/artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md`). An outside review of a Grade 3 course called one item's twelve selectable options an excessive motor and cognitive load for an eight-year-old (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`); a scan of a Grade 5 course found 137 of 772 items over a cap of 5 (`grade3-reading/artifacts/g5-merged-course/option_cap_report.md`), and a one-screen census found tasks running past the fold at 1440×900 and split them (`grade3-reading/artifacts/qc-run-2026-09-04/`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "43",
+   "quote": "~204-word part introduces EIGHT new proper names",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "258",
+   "quote": "- **W-11. WORTH-FIXING — four consecutive reading pages with no interaction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D7-D8-D10-D12.md",
+   "lines": "493",
+   "quote": "3 passage chunks exceed 60s passive during autoplay narration",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "103",
+   "quote": "one hot-text item offered twelve selectable options, an excessive motor and cognitive load for an eight-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/option_cap_report.md",
+   "lines": "7",
+   "quote": "- items over cap: **137**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-run-2026-09-04/QC Run Report — Peter Pan L4-L7 + G5 (2026-09-04).md",
+   "lines": "31",
+   "quote": "### 3. HIGH — one-screen census, our lane (additions row I/census)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/LOAD-BEARING-METRIC.md",
+   "lines": "88",
+   "quote": "**Rule of thumb (declared, not measured):** at G3, a single lesson introduces **≤ ~5 new allusive/vocabulary anchors**, and a unit spirals them rather than front-loading.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/LOAD-BEARING-METRIC.md",
+   "lines": "100",
+   "quote": "its **G3 delivery cap** is the tightest; the same topic can spend more of its density at G6+.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

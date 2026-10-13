@@ -1,0 +1,310 @@
+{
+ "id": "compare-on-the-same-frozen-mix",
+ "title": "Compare on the same frozen mix",
+ "statement": "Compare runs only on the same frozen items, mix and checks, or else type by type, because a shift in mix or difficulty moves the numbers by itself.",
+ "example": "One essay type passed 99.3% in a run with none of one unit's requests and 90.0% in a run made only of them, which its notes call a test distribution change, not a code regression.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one generator's notes, an essay type's pass rate fell from 99.3% to 90.0% because the second run was made entirely of one unit's requests, whose time period clashed with their topics; the notes call it a test distribution change, not a regression. A 12-item mini run scored 100% while the 116-item run scored 50.0%, because the mini run never checked cognitive demand. A training note declined to compare against results from older checker versions, since that would conflate rubric drift with model drift. The mix means the topics, item types and levels, and the checks include the checker's version. A changed baseline, such as new standards, also moves the numbers by itself.",
+ "against": "The weakest type's own pass rate also changed between those runs, from 23% to 45%, so the mix explains only part of the change: '| fill-in | 66% | 50% | **21%** | 25% | 23% | 45% | **38%** |' (`icloud-work/evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md`, line 107). The Run 8 report contradicts its own figure for the same removal, giving 58% in one place and 66.1% in another; 39 of 59 is 66.1% (`APinceptbench/docs/reports/BENCHMARK_RUN8_REPORT.md`). That run also had no matching items and 39 generation errors, so its mix was not comparable with earlier runs. Per-type pass rates also moved between iterations 3 and 5, multiple choice from 87.5% to 50.0% and multi-select from 22.2% to 58.3%, so the mix is not the only change (`icloud-work/incept/workflow/reports/REPORT_20260223_144619.md`, lines 31-32; `icloud-work/incept/workflow/reports/REPORT_20260223_154247.md`, lines 29-30). The comparison mixed sampling methods, 176 attempts at three per prompt against a pass rate of about 20%, so part of the gap may come from sampling; the source still concludes the held-out prompts are harder.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "248",
+   "quote": "The 99.3% LEQ pass rate (run fda3ba0f) had zero APUSH-5 LEQ requests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "249",
+   "quote": "The 90.0% LEQ pass rate (run ee6fb4af) was 100% APUSH-5 LEQ requests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "251",
+   "quote": "This is not a code regression but a test distribution change",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "10",
+   "quote": "Mini benchmark (100%) was misleading.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "14",
+   "quote": "Run 6 Mini | 12 | 100% | Not evaluated",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "15",
+   "quote": "Run 6 Comprehensive | 116 | 50.0%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/RUN6_ANALYSIS.md",
+   "lines": "199",
+   "quote": "The mini benchmark was misleading because it didn't evaluate cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "318",
+   "quote": "a cross-version comparison would conflate rubric-drift with model-drift.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "502",
+   "quote": "| Run 6 | 39 | 26 | 28 | 23 | 116 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "503",
+   "quote": "| Run 7 | 20 | 33 | 34 | 29 | 116 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "50",
+   "quote": "| Run 6 | 116 | 58 | 58 | 50.0% | 0.801 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "51",
+   "quote": "| Run 7 | 116 | 73 | 43 | 62.9% | ~0.82 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "137",
+   "quote": "| Pass Rate | 49.4% | **66.1%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "29",
+   "quote": "| match | 48% | N/A | (no data) |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "137",
+   "quote": "| Pass Rate | 49.4% | **66.1%** |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "502",
+   "quote": "| Run 6 | 39 | 26 | 28 | 23 | 116 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "503",
+   "quote": "| Run 7 | 20 | 33 | 34 | 29 | 116 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "115",
+   "quote": "Would be 58% pass rate without fill-in",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "25",
+   "quote": "**Trend:** Pass rate improved by 18.0 percentage points from previous iteration.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144953.md",
+   "lines": "15",
+   "quote": "| **Pass Rate** | **18.0%** | +0.0pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144953.md",
+   "lines": "41",
+   "quote": "**These problems did NOT exist before. What changed?**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144953.md",
+   "lines": "72",
+   "quote": "| 4 | 2026-02-23 | 50 | 9 | 18.0% | UP |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144953.md",
+   "lines": "96",
+   "quote": "*Source: evaluation_20260223_144514.json*",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "121",
+   "quote": "*Source: evaluation_20260223_144514.json*",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_154247.md",
+   "lines": "21",
+   "quote": "| **Pass Rate** | **26.0%** | +8.0pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144619.md",
+   "lines": "31",
+   "quote": "| MCQ | 8 | 7 | 87.5% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_154247.md",
+   "lines": "29",
+   "quote": "| MCQ | 6/12 (50.0%) | **POOR** |",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "54",
+   "quote": "Use paired, case-level comparisons between the prompted base and SFT arm.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "69",
+   "quote": "Root cause: paqpgdst's MCQ_SET pass rate on HOLDOUT prompts is **0%** (0/176 K=3 attempts), vs ~20% on eval baseline. Holdout prompts are systematically harder.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/templates/eval-cycle.md",
+   "lines": "29",
+   "quote": "Hold-out set freeze with checksum",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent-v2/templates/eval-cycle.md",
+   "lines": "30",
+   "quote": "Seeds locked",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "171",
+   "quote": "**DOK2-8.** A measure compared across a changed baseline records the change in baseline, not progress.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "139",
+   "quote": "issues per batch cannot be compared across the curriculum change, so the series has to start again from the restart.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "139",
+   "quote": "Treat a fall in issues per batch while volume rises as the first real evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "16",
+   "quote": "The 86% is word-level oral-reading scoring, not item accuracy — incomparable constructs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "160-161",
+   "quote": "the \"fluency spine\" is word-level oral-reading scoring, not item scoring — ~181 scored \"questions\" per activity row vs ~3.2 for the comprehension app",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "169",
+   "quote": "Alpha Reading Fluency 181.2 q/row @ 0.860; Alpha Read 3.2 q/row @ 0.783.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/README.md",
+   "lines": "79-80",
+   "quote": "Refine budget is declared in the rule pack, not passed on the command line, so two runs of the same lesson are comparable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "78",
+   "quote": "The RMSE worsening is partly compositional — the wider prior includes the floor region; the worst band is θ∈[−2,−1] at 0.43 logits — while core-band precision is unchanged (SEM 3.18 RIT, reliability 0.929).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "80",
+   "quote": "**Sim 4 caveats.** The narrower ±8.1 RIT LoA is not directly comparable to the old ±11.3 figure: 50% of the synthetic MAP-like bank's items were format-relabelled to satisfy the production TEI floor (a label-only change; the Rasch math is unaffected), and the old run's 18/14/8 MAP-side quota split was not reproducible because production hardcodes 13/13/13.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

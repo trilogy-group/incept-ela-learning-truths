@@ -1,0 +1,87 @@
+{
+ "id": "check-every-tag-outside-the-generator",
+ "title": "Check every tag outside the generator",
+ "statement": "Check each grade and standard tag outside the generator, against the delivered text and the skill it tests.",
+ "example": "Told to write for grade 5, generating agents produced 17 of 20 items at grade 3 standards.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Agents told to write for grade 5 produced 17 of 20 items at grade 3 standards, a pull toward their usual grade, so the reading project's account of what its generator can't do for itself puts an external grade-band and standards check in the gate, rejecting off-band tags (`grade3-reading/artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md`). A genre-aware audit of 26 items' standard tags made four corrections, one of them a literary tag on a purely informational passage, and left four borderline items flagged, not flipped, to avoid a confident wrong guess (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`). A standards backfill for a grade 5 unit tagged an item only where the live passage still matched the tested one, 558 of 600, and left the 42 whose passage had been swapped uncoded, since coding them from the stale snapshot would be fabrication (`grade3-reading/artifacts/alpha-read-packager/SUMMARY_AGENT_G5.qmd`). Leave an item untagged where the delivered text no longer matches its source.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "38",
+   "quote": "Told \"G5,\" generate-agents produced 17/20 items at RI.3.x (prior-pull)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/LLM_GENERATION_BOUNDARY.md",
+   "lines": "48",
+   "quote": "reject off-band tags; verify tag matches construct vs CASE",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "147",
+   "quote": "(literary tag on a purely informational creature passage)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "151-152",
+   "quote": "flagged not flipped, to avoid a confident wrong guess",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/SUMMARY_AGENT_G5.qmd",
+   "lines": "39",
+   "quote": "each Unit-2 item was tagged **only where the live passage still",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/SUMMARY_AGENT_G5.qmd",
+   "lines": "42",
+   "quote": "558 high-overlap (tagged), 42 low-overlap (left uncoded).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/SUMMARY_AGENT_G5.qmd",
+   "lines": "45",
+   "quote": "from the stale snapshot would be fabrication, so they stay uncoded and named.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "326",
+   "quote": "**G5 gaps:** RI.5.4 is catastrophically over-concentrated (35 items, ~23% of the G5 bank on one standard). This likely comes from the G5 JSONL curation which mapped L.5.4/L.5.5 vocabulary to RI.5.4. Needs redistribution.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

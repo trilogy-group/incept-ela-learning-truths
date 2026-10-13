@@ -1,0 +1,96 @@
+{
+ "id": "does-a-strict-schema-cost-quality",
+ "title": "Does a strict schema cost quality",
+ "statement": "Open question: does forcing a strict output schema on a writer buy structural compliance at the cost of quality in its free-text parts?",
+ "example": "A strict schema made 5 of 5 document-based items structurally valid against 0 of 5 in plain structured-object mode.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "On 5 document-based items, schema-constrained output gave 5/5 structural compliance against 0/5 in plain structured-object mode, and the strict mode was deployed (`findings_sftv7_20260424.md`). A research note in the same project cites a study in which three of four models lost 25 to 63 points on a math-reasoning benchmark in JSON mode, and the project's index keeps strict modes off by default for free-form item types (`research_constrained_decoding_per_cell.md`, `MEMORY.md`).",
+ "against": "Five items only (`findings_sftv7_20260424.md`, line 28). The cited losses are on math reasoning, and the same study found JSON mode helped on a classification task, 41.6% to 60.3% for one model (`research_constrained_decoding_per_cell.md`, line 30).",
+ "evidence": [
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "28",
+   "quote": "Diagnostic: 5 DBQ items:",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "29",
+   "quote": "- `json_schema`: **5/5 = 100% structural compliance**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "30",
+   "quote": "- `json_object`: **0/5 = 0% structural compliance**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "33",
+   "quote": "**Fix deployed:** `python/agents/fireworks.py` → `_build_response_format()` uses `json_schema` mode.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "63",
+   "quote": "JSON mode loses 25-63pp on reasoning tasks; per-cell decision; default OFF for free-form cells.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_constrained_decoding_per_cell.md",
+   "lines": "19",
+   "quote": "GSM8K reasoning, same model, same prompts, free-form vs JSON-mode constrained:",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_constrained_decoding_per_cell.md",
+   "lines": "28",
+   "quote": "Three of four mainstream models lose 25–63pp on a reasoning task in JSON mode.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_constrained_decoding_per_cell.md",
+   "lines": "30",
+   "quote": "Same paper shows JSON mode *helps* on classification (Gemini-1.5-Flash 41.6% → 60.3% on DDXPlus). **Direction depends on task.**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "research_constrained_decoding_per_cell.md",
+   "lines": "62",
+   "quote": "*Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models*, EMNLP 2024 Industry Track](https://aclanthology.org/2024.emnlp-industry.91/)",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Tam et al., Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models, EMNLP 2024 Industry Track",
+   "url": "https://aclanthology.org/2024.emnlp-industry.91/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

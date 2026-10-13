@@ -1,0 +1,66 @@
+{
+ "id": "mix-the-kinds-of-demand-in-a-set",
+ "title": "Mix the kinds of demand in a set",
+ "statement": "Judge a question set as a whole: it mixes kinds of demand, such as literal, inferential and evaluative, and no one kind dominates.",
+ "example": "One reading generator's set check asks for at least two of three competency areas, with none in more than 70% of the questions.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading-question generator's quality control has a check that runs on the whole set rather than on single items: it fails a set that 'focuses too narrowly on a single competency' among literal comprehension, inferential thinking and evaluative analysis (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json`). A pedagogy framework in the same project asks that questions move 'from basic recall to application to reasoning' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md`). Both are adopted rules, with no measurement.",
+ "against": "A later run found counter-evidence (`grade3-reading/engine/reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json",
+   "lines": "114",
+   "quote": "Set should include questions from at least 2 of the 3 competency areas",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/ck_gen - prompts.json",
+   "lines": "114",
+   "quote": "No single competency should dominate (>70% of questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "263",
+   "quote": "Questions move from basic recall to application to reasoning, helping students strengthen understanding step by step.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "150",
+   "quote": "The closing must include three distinct intellectual actions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "33-34",
+   "quote": "(all seven comprehension questions literal) is by design: the 2026-09-20 ruling keeps Peter Pan reading checks literal, with inference after the you-do.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

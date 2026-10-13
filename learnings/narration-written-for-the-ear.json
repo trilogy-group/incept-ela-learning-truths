@@ -1,0 +1,61 @@
+{
+ "id": "narration-written-for-the-ear",
+ "title": "Narration written for the ear",
+ "statement": "Write narration for the ear: introduce a shorthand once and then say it in full, because a repeated bare abbreviation is read aloud as a string of letters.",
+ "example": "One automated check flags a token of 2 to 5 capital letters used at least twice and never expanded.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script tools adopt the convention from an internal instruction guide: narration is read aloud, so a domain shorthand should be introduced once and then spoken in full, since bare repeated acronyms come out as robotic letter strings (`shadow-bench`, git commit 0250c70). A lint flags a token of 2–5 uppercase letters that is not a normally spoken acronym, is never expanded in the script, and is used at least twice.",
+ "against": "'Report-only by design — acronym heuristics are noisy, so this advises generators rather than failing scripts.' (`shadow-bench`, git commit 0250c70, lines 17-18).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "0250c70",
+   "lines": "5-7",
+   "quote": "Narration is read aloud (Generic §18): a domain shorthand (\"MB\") should be introduced once and thereafter spoken in full — bare repeated acronyms read as robotic letter-strings.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "0250c70",
+   "lines": "7-9",
+   "quote": "Adds a high-precision, report-only lint that flags a token only when it is 2–5 uppercase letters, not a normally-spoken acronym (DNA/GDP/…), not expanded anywhere in the script, and used at least twice.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "0250c70",
+   "lines": "17-18",
+   "quote": "Report-only by design — acronym heuristics are noisy, so this advises generators rather than failing scripts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "315",
+   "quote": "the SPOKEN strings never say \"the So row\" — TTS elides it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

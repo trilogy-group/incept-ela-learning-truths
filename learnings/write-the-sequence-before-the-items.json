@@ -1,0 +1,251 @@
+{
+ "id": "write-the-sequence-before-the-items",
+ "title": "Write the sequence before the items",
+ "statement": "Write the course sequence before items: declare its policy and feed sources to a model in order of authority, never blended, then check the order it proposes against that policy.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "sequence",
+  "generation",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A source atom of the reading project's course standard says to author the curriculum graph and lesson sequence before item authoring, so that available questions cannot become the curriculum by accident (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json`). The curriculum BrainLift warns that a model asked for the best sequence without an explicit policy imports its own assumptions, so every output becomes a debate about taste rather than a review against a policy, and it names the policy's parts: the progression spine, the entry assumptions, the prerequisite strictness and the sequencing priority order (`grade3-reading/ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md`).",
+ "against": "The merge attempt shows only that naive merging fails; keeping each state's detail under a shared node is offered as an untested possibility (`grade3-reading/knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd`). a later project plan proposes training a model on the team's own teaching principles instead, which is untested. A meeting report said the lesson-writing skill now authors all curriculum and content; the project's notes record it as a meeting claim that conflicts with the verified contract of a human-supplied graph, kept but not allowed to override it (`grade3-reading/knowledge_bot/HOTBUCKET.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "308",
+   "quote": "Author the curriculum graph and lesson sequence before item authoring so available questions cannot become the curriculum by accident.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "48",
+   "quote": "Every output becomes a debate about taste rather than a review against a policy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "49",
+   "quote": "At minimum, this means: the progression spine (chronological? spiral? model-building?), the entry assumptions (what do students already know?), the prerequisite strictness (how many hard gates per lesson?), and the sequencing priority order (what wins when constraints conflict?).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "74",
+   "quote": "the sequence will reflect whatever assumptions the model happens to import",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "67",
+   "quote": "is not synthesis at all; it is compromise",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "68",
+   "quote": "Proper synthesis is staged. Different sources contribute different things and must be processed in order:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "69",
+   "quote": "Standards set the intended scope. They are the scope authority.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "70",
+   "quote": "Assessments reveal what counts as acceptable evidence and typical task conditions. They are the evidence authority.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "51",
+   "quote": "The result was flattened abstractions that lost the specificity needed for teaching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "52",
+   "quote": "it proves that naive merging (abstracting away specifics to find a common description) is the wrong approach.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "59",
+   "quote": "use the standard to constrain scope (what must appear), but apply independent judgement about order, depth, prerequisite structure, and cognitive demand.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "119",
+   "quote": "Standards constrain scope but do not provide a teachable sequence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/ROUTER.md",
+   "lines": "64",
+   "quote": "SUPERSEDES conflicting local docs on sequencing/synthesis/spacing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0125-coe-catchup-2026-07-13.qmd",
+   "lines": "92-93",
+   "quote": "training an LLM specifically on the team's pedagogical principles rather than only using it to generate content",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "269-270",
+   "quote": "never blend sources in one pass; supply the sequence policy to the model;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/g3-course-graph.qmd",
+   "lines": "69",
+   "quote": "sequence judgment is human-supplied",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/ROUTER.md",
+   "lines": "70",
+   "quote": "Load the candidate SKILL.md to author a G3 lesson (start from a course-graph unit spec, not ad hoc).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "31-33",
+   "quote": "**You cannot outsource sequence judgment to the model** — the human supplies the policy (spine, entry assumptions, prereq strictness, priority order); the model generates an auditable proposal obeying it.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "71-72",
+   "quote": "so sequence judgment cannot be outsourced to a generator",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "75-77",
+   "quote": "Any model-generated sequence is an auditable proposal reviewed against this policy, not against taste.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Curriculum & Knowledge BrainLift.md",
+   "lines": "41",
+   "quote": "The model will average conflicts (producing something that matches no source well), import hidden assumptions from lower-authority sources (textbook idiosyncrasies becoming core curriculum), and expand scope without anyone noticing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/curriculum-architecture.md",
+   "lines": "27-30",
+   "quote": "Stage by authority: **standards = scope authority; assessments = evidence authority; textbooks = representational authority** (may not expand scope without human sign-off).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-modes-spec.md",
+   "lines": "108-109",
+   "quote": "a text that smuggles new scope fails placement rather than silently widening the theme.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "It lets inventory rather than learning dependencies choose the sequence.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "346",
+   "quote": "Generate artifacts in the order curriculum graph, curriculum outline, lesson plans, then questions for those lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "347",
+   "quote": "Questions and lessons need the course decisions they are supposed to realize; reversing the order promotes bank accidents into curriculum choices.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "66-72",
+   "quote": "When edges conflict, use this priority: 1. Period integrity and factual chronology. 2. Explicit topic/KC scope from v1. 3. Required prerequisite or revisit activation. 4. Reasoning progression and source availability. 5. Pacing preference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "3",
+   "quote": "never ask a model to invent the sequence, delete scope to meet pacing, or treat a curriculum edge as a domain fact.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/codex-2026-10-02-curriculum-research/GRADE9-CURRICULUM-OPTIONS.md",
+   "lines": "36",
+   "quote": "Generate full lessons after that review.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "196-197",
+   "quote": "One-pass blending averages conflicts and silently imports lower-authority scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/SEQUENCING-BRIEF.md",
+   "lines": "37-39",
+   "quote": "If a local asset conflicts with the fingerprinted CED, the CED wins and the conflict is recorded in `CED-LOCAL-RECONCILIATION.md`; do not silently blend the sources.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,247 @@
+{
+ "id": "the-design-document-is-the-build-spec",
+ "title": "The design document is the build spec",
+ "statement": "Write a lesson from its own design document and audit the built lesson part by part against it, because builds drop or adapt designed parts silently.",
+ "example": "One lesson was authored, reviewed and deployed missing three components its design document required.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project corrected its order of authority: the build spec for a lesson is its own design document, not the more general workbook or procedure page, and one lesson as authored, reviewed and deployed had been missing three components its design document mandated. Its spec-first build routine was reported proven over three lessons, with defects falling each time and the last shipping zero content-validator defects, though that is a self-report over consecutive lessons and is confounded with the team's own learning. A later brief found curriculum alignment verified at the passage level but not yet at the programme level. Write a lesson only once the course plan is fixed (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/curriculum-agent.md`), turn its design into a build spec before authoring, record why each item format was chosen (`grade3-reading/artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md`), and audit the built lesson against the whole programme as well.",
+ "against": "The same brief calls the programme-level gap an open scope question, not a defect (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`, lines 87-89). Not every gap is a defect: a programme-level mismatch with prescribed materials was ruled an open scope question, not a defect (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`, lines 86-89).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0210-aladdin-2508-feedback-and-pr27-safety-snapshots.qmd",
+   "lines": "114-115",
+   "quote": "the build spec for a lesson is its own per-lesson **design doc**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0210-aladdin-2508-feedback-and-pr27-safety-snapshots.qmd",
+   "lines": "120-121",
+   "quote": "L4 as authored/reviewed/deployed was missing three components the design doc mandated",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0187-skill-catalogue-and-workflows-index.qmd",
+   "lines": "62",
+   "quote": "proven L5→L6→L7 (defects fell monotonically; L7 shipped zero content-validator defects).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "87",
+   "quote": "but not yet at the programme level",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "81",
+   "quote": "- One plan per lesson, written before authoring, reviewed against the built lesson after; the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "82",
+   "quote": "assessment blueprint records WHY each format was chosen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/04-evidence-contract.md",
+   "lines": "3",
+   "quote": "Per `eval-contract`, define success before building the prototype.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/curriculum-agent.md",
+   "lines": "48",
+   "quote": "Do not start lesson authoring from unresolved unit architecture.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/lesson-instruction-agent.md",
+   "lines": "58",
+   "quote": "Do not author from a bare topic or unplaced text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "164",
+   "quote": "start the clock only from frozen architecture/scope/acceptance inputs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/ROUTER.md",
+   "lines": "59",
+   "quote": "Promoted 2026-08-25 after G3-U1-L4 was built from the KB workbook + procedure HTML alone: both correct, both a tier too general, and the design doc mandated three components the lesson lacked entirely (the Component 6 cloze, the Magic Doors, the INFER step rail) plus a canonical video we do not hold.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0176-g3-peter-pan-pr-timeline.qmd",
+   "lines": "22-24",
+   "quote": "**\"named designs govern\"** made the four original Peter Pan lesson-design DOCX (`~/Downloads/5. Curriculum`, PP1-PP4) the build specification for L4-L7, not the sourcing portal's 17-chapter novel.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0226-g3-pre-submission-closure-audit-2026-09-24.qmd",
+   "lines": "30-31",
+   "quote": "adapted rows outnumber as-designed rows in every lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0233-aug31-sweeps-prose-and-slotmap.qmd",
+   "lines": "80-81",
+   "quote": "**Slot 3, Aladdin Part 3, is MISSING outright** — spec slot real, design doc exists on disk, but no lessonId was ever authored/shipped for it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "25-28",
+   "quote": "**defect count tracks build order and spec quality, not review count.** L5 (built from a packet + doc, first of the arc) drifted most; L7 (built last, from a spec that carried every rule earned during the week) shipped cleanest despite being the only never-human-reviewed lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "106-107",
+   "quote": "Defect density anti-correlates with spec completeness, not with human review count — evidence: L7 (never reviewed, best spec) vs L5 (reviewed era, thin spec).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "21",
+   "quote": "| L5 (pp2, INFER) | 0 | 6 | 3 | 4 | most drift — 4 whole components missing |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "23",
+   "quote": "| L7 (pp4, FIND) | 0 | 1 | 1 | 5 | cleanest; zero structural bugs |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "9-11",
+   "quote": "defect density anti-correlates with spec completeness, not with human review count. L5 (thin spec) drifted on 4 whole components; L7 (spec carried every rule up front, never human-reviewed) shipped cleanest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "3",
+   "quote": "Spec-carries-rules procedure proven L5→L6→L7 (defects fell monotonically; L7 shipped zero content-validator defects).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "21-22",
+   "quote": "A component-by-component enumeration of the design doc with an explicit DELIVERED / ADAPTED (how+why) / DROPPED (why) plan for EACH.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "100-101",
+   "quote": "Build specs must enumerate EVERY doc component with DELIVERED/ADAPTED/DROPPED — \"mirror the sibling\" is how Magic Doors vanished from three lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "14",
+   "quote": "but PP1v3/PP2v3/PP3v3/PP4v4 require teaching components absent or different",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "10",
+   "quote": "Renderer parity includes teaching operations, not just node names.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "15-17",
+   "quote": "G3-U1-L4 was built from the KB workbook and the procedure HTML, both correct but both a tier too general, and the design doc turned out to mandate three whole components the lesson did not have",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/README.md",
+   "lines": "22",
+   "quote": "Definitions from the original PP3 design were omitted from the passage dictionaries.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/curriculum-verification-2026-09-10/README.md",
+   "lines": "21",
+   "quote": "Main/staging inheritance establishes origin, not permission to omit a design requirement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "41",
+   "quote": "Building against the wrong source failed a whole review round.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-08-28.md",
+   "lines": "37-38",
+   "quote": "mirroring a sibling propagates its gaps; conformance must be checked against the DOC, not the neighbor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/axis-decision-memo.md",
+   "lines": "39",
+   "quote": "This is the same failure shape as the G3 *build* (designed 6 item formats → shipped 87% MCQ; designed a 90% gate → never encoded it): a defensible artifact that changes little.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "21-24",
+   "quote": "A component-by-component enumeration of the design doc with an explicit DELIVERED / ADAPTED (how+why) / DROPPED (why) plan for EACH. … \"mirror L5\" propagated L5's omissions. Enumerate; never inherit.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

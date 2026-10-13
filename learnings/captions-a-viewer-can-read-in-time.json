@@ -1,0 +1,64 @@
+{
+ "id": "captions-a-viewer-can-read-in-time",
+ "title": "Captions a viewer can read in time",
+ "statement": "Keep captions readable and check it in code: a capped reading rate and line length, at most two lines, and never covering the visual being explained.",
+ "example": "One course caps captions at 15 characters per second as a target and 17 as a hard limit.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The grade-7 science video generation spec requires an accurate caption track for every video as an accessibility requirement and sets readability limits as operating defaults: 15 characters per second as a target and 17 as a hard limit, at most two lines of about 25-32 characters, about 0.83 to 6 seconds on screen, a bottom-centre safe band, and never over an essential visual (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, line 44). A conformance audit of the course's render pipeline found that its caption check verified karaoke alignment only, with no ceiling on rate, line count or duration, and asked for a deterministic check with re-segmentation (`grade3-reading/ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md`, line 51). The companion design guide tags the coverage and access obligation as a requirement and the numeric tolerances as production defaults (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, line 275).",
+ "against": "The numbers are production defaults, not study results: the guide calls caption evidence strong for access, second-language learning and vocabulary, while exact layout and timing thresholds remain defaults (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md`, line 337). Builds differ, too: one film pilot wraps caption lines at 42 characters (`g9/tools/unit-video-essay/render-essay.py`, line 652).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "44",
+   "quote": "≤15 CPS target / ≤17 hard; ≤2 lines, ~25–32 chars/line; ~0.83–6 s; bottom-center safe band; never obscure an essential visual",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md",
+   "lines": "51",
+   "quote": "`12_caption_verify` checks karaoke *alignment* only — no CPS/line-count/duration ceiling",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "275",
+   "quote": "The coverage and access obligation are [AR]; numeric production tolerances are [OH].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-human-v0.1.md",
+   "lines": "337",
+   "quote": "Caption evidence is strong for access, second-language learning, and vocabulary; exact layout and timing thresholds remain production defaults",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/render-essay.py",
+   "lines": "652",
+   "quote": "textwrap.wrap(phrase, width=42, break_long_words=False, break_on_hyphens=False)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

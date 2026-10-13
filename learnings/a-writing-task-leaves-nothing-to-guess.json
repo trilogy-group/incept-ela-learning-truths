@@ -1,0 +1,50 @@
+{
+ "id": "a-writing-task-leaves-nothing-to-guess",
+ "title": "A writing task leaves nothing to guess",
+ "statement": "A writing task must say what to write about, in what form, at what length and from which sources, leaving the student nothing to guess.",
+ "example": "One rubric requires four things of every extended-writing prompt: the topic, the form, the length and the sources.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "stem",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's extended-writing rubric requires every prompt to specify what to write about, the form, how long or how many paragraphs, and what sources to use (`shadow/bench/src/inceptbench/prompts/question/ecr_evaluation.txt` lines 119-120). A mandatory audit fails the prompt outright when the writing mode is unclear or a student can't tell the genre from the prompt alone (lines 54-60). The short-answer rubric likewise requires the stem to say exactly what the student needs to write about, and fails vague stems and stems that ask two questions (`question/scr_evaluation.txt` lines 124-129).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "119-120",
+   "quote": "- The prompt must specify: (a) what to write about, (b) what form to write in, (c) how long/how many paragraphs are expected, (d) what sources to use.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "59-60",
+   "quote": "A student must be able to determine what kind of writing is expected without guessing.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "124",
+   "quote": "- The question stem must specify exactly what the student needs to write about.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

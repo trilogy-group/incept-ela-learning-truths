@@ -1,0 +1,64 @@
+{
+ "id": "own-words-first-then-the-choices",
+ "title": "Own words first, then the choices",
+ "statement": "To have a learner commit before seeing options, ask for an answer in their own words first, keep it on screen, then have them check it against the choices.",
+ "example": "One check asks 'In your own words: what is dramatic irony?', shows the answer back, then asks the student to check it against 3 choices.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "format",
+  "options",
+  "practice"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 9 film's checks were rebuilt so that a definition check first asks for the answer in the student's own words, keeps it and shows it back as 'Your words', and then asks the student to check that idea against three choices. The own-words answer is kept but never judged or replied to, and gibberish or too-short text is refused. There are no learner data on whether committing first helps.",
+ "against": "The committed answer is never checked against anything: \"Own-words answers are stored, never judged by a keyword match and never replied to; gibberish and too-short text are refused with a plain prompt (feedback 1.4, 8.2).\" (g9/player/content/archivist-checks.json, line 41).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "30",
+   "quote": "\"type\": \"own_words_then_confirm\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "31",
+   "quote": "In your own words: what is dramatic irony?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "32",
+   "quote": "Now check your idea. Which of these defines dramatic irony?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/README.md",
+   "lines": "33",
+   "quote": "Own-words answers are kept and shown back",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "16",
+   "quote": "a real sentence saved and shown back as \"YOUR WORDS\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

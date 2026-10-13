@@ -1,0 +1,43 @@
+{
+ "id": "fail-false-passes-review-held-back-answers",
+ "title": "Fail false passes, review held-back answers",
+ "statement": "When gating a marker, fail it for passing a wrong or partial answer, and send a right answer it holds back to review rather than failing the gate.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "marking",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's marking gate fails on a wrong or partial answer marked secure, a '!' or a praise word in a reply, and a final attempt that is not secure but does not give the answer. It only reports right answers held back, partial answers marked off, replies that may name the missing idea, and verdicts that change between repeated runs. The gate gives no reason for weighting a false pass above a false hold.",
+ "against": "The marker's own instructions treat holding back a right answer as a fault (`othello-archive/server/api.mjs`, line 93: \"Do not demand more from an answer that is already right.\"). A held-back right answer therefore reaches students unless a person reads the gate's notes, since a check that only reports stops nothing.",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "5",
+   "quote": "Fails on: a wrong or partial answer marked secure;",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "63",
+   "quote": "if (c.expect === 'secure' && v !== 'secure') note.push(",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

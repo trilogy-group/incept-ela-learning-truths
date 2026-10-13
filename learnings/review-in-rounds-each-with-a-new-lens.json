@@ -1,0 +1,127 @@
+{
+ "id": "review-in-rounds-each-with-a-new-lens",
+ "title": "Review in rounds, each with a new lens",
+ "statement": "Review in rounds, each through a new lens and again after every change, fixes and display code included, and stop only after two rounds in a row find nothing new.",
+ "example": "On one set of nine lessons, successive rounds found 5, 5, 5, 1 and 1 critical faults before a round found none.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One course's review loop changed its lens each round; its lenses included a walk as a student who gets everything right and one who gets every gated item wrong twice, a line-by-line check against the source lessons, a simulated first read by someone outside the project, and a comparison with a course already shipped. On the same nine lessons the first five rounds found 5, 5, 5, 1 and 1 critical faults, and the sixth, run on what had changed, found none (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md` and the later rounds beside it). After the content had converged, 8 new engine commits brought a round that found two critical faults, and the loop's rule then sent the fix commit itself to fresh eyes; an earlier round had found a fix that solved its target while breaking a field it didn't need to touch.",
+ "against": "Re-review is scoped to what changed: by the loop's rule, \"a lens never runs twice on unchanged content\" (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R6.md`, lines 9-10).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "4",
+   "quote": "(a) gets everything right, (b) gets every gated item wrong twice before recovering.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "5",
+   "quote": "R1's recorded findings (A-1/A-2/A-3, B-1, D-1/D-2, E-1/E-2/E-3, its five CRITICALs and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "276",
+   "quote": "| CRITICAL | 5 (doubled phrase in U1-L4 wedo;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R3.md",
+   "lines": "19",
+   "quote": "Totals: **5 CRITICAL / 2 WORTH-FIXING / 1 POLISH.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R4.md",
+   "lines": "178",
+   "quote": "| CRITICAL | 1 (U1-L6 item-4-evidence self-negating keyed answer) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R5.md",
+   "lines": "243",
+   "quote": "| CRITICAL | 1 (G5 vocab cards drop the oral says-the-word criterion G4 always used, 28/28 vs 12/12) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R6.md",
+   "lines": "12",
+   "quote": "**Result: ZERO CRITICALs.** No CRITICAL findings on the changed surface.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-21-R8.md",
+   "lines": "10",
+   "quote": "*content* surface; this round exists because 8 new engine commits landed after R7's base.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-21-R9.md",
+   "lines": "4",
+   "quote": "R8 fixed its two CRITICALs in commit 544b6bd",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-21-R9.md",
+   "lines": "6",
+   "quote": "the loop's rule is that a fix commit gets fresh eyes before the loop may claim convergence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R7.md",
+   "lines": "133",
+   "quote": "is exactly the defect class this round was asked to hunt: a fix that solved its target problem",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "3-4",
+   "quote": "each layer must go **dry** (two consecutive rounds, zero new findings) before the next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/contrib/taxonomy-additions.md",
+   "lines": "13",
+   "quote": "Two consecutive clean rounds only count against the SAME frozen tag.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/MISSION.md",
+   "lines": "21",
+   "quote": "**Two consecutive independent rounds** each recompute every load-bearing figure from raw and find **zero new material findings**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

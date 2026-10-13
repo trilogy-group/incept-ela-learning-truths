@@ -1,0 +1,69 @@
+{
+ "id": "context-on-the-way-into-the-passage",
+ "title": "Context on the way into the passage",
+ "statement": "Show an older text's context note on the route learners actually take, before the passage, and leave the original text unaltered.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a Grade 5 course built on an older novel, assigned-reading links went straight into a chapter whose original text shows racial prejudice, skipping the course's context notice, which appeared only in a collapsed disclosure on the book's index page. The repair placed the unchanged notice inside each assigned entry, before the original text, and the audit's proposal ruled out silently censoring the original. A browser review then saw the notice above the first selected reading.",
+ "against": "A general notice is not preparation for a particular passage: 'The general Secret Garden notice is present, including anchored entries; the remaining gap is specific advance teaching, not a total absence of context.' (`grade3-reading/ui-audit-2026-09-08/round-5/curriculum-verification-2026-09-10/README.md`, line 31).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "63",
+   "quote": "As the student reads beyond the unmarked selection endpoint, the original's racial prejudice appears without the app's existing context notice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "65",
+   "quote": "renders reader_notice only in the index's collapsed About this older book disclosure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "67",
+   "quote": "make the already-authored concise reader_notice visible on the actual assigned entry before the learner proceeds into the original.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u1/PROPOSALS.md",
+   "lines": "71",
+   "quote": "Do not silently censor the original or author that frame as though approved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g5-u1/IMPLEMENTATION.md",
+   "lines": "13",
+   "quote": "The unchanged `reader_notice` appears inside the actual selected `p-N` anchor before its original text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g5-u1/READER-PATH-ACCEPTANCE-by-unit9.md",
+   "lines": "13",
+   "quote": "The existing older-book notice is visible above selected moment 1 of 6, Chapter 4 paragraphs 18–25.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

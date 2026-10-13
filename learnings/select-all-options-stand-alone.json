@@ -1,0 +1,50 @@
+{
+ "id": "select-all-options-stand-alone",
+ "title": "Select-all options stand alone",
+ "statement": "In a select-all question every option must be decided by the text alone, and finding one right answer must not point to another.",
+ "example": "Of 1,346 select-all items that had passed structural checks, 0 were usable: the whole pool leaked.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "format",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A grade 5 select-all pool was found 100% leaked: none of 1,346 items that had passed structural checks was usable (`grade3-reading/artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md`, line 3). Its regeneration guide gives the reasons: each option is judged true or false on its own, so world knowledge reaches further than in a single-choice item, and a student who knows one right answer from school can guess the other; the single-choice fixes are necessary but not sufficient (the same file, lines 7-21). It requires every option to rest on a detail of the passage and the right answers not to be paired by theme (the same file, lines 25-42).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md",
+   "lines": "3",
+   "quote": "**Status:** MSQ pool is 100% leaked (0 of 1,346 structural-pass items usable).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md",
+   "lines": "12",
+   "quote": "In MSQ each option is judged true/false independently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md",
+   "lines": "41",
+   "quote": "**5. Knowing one correct answer must not help you find the other.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

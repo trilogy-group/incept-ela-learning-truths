@@ -1,0 +1,78 @@
+{
+ "id": "judge-a-writing-aid-by-its-items",
+ "title": "Judge a writing aid by its items",
+ "statement": "Judge a writing aid, such as a specification or prompt, by the items it leads to, against a no-aid baseline on the same requests, not by how it reads.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two ways of producing generation contracts, a fine-tuned small model and a deterministic compiler, were set up as a bake-off whose winner is whichever improves the downstream pass rate, retries, cost and failure mix on the same benchmark requests fed to the same generator, not whichever contract sounds better (`icloud-work/evaluatorML/.agent/memory/deterministic_compiler/parallel_experiment_note.md`). It uses identical requests and generator settings and a no-helper baseline, and its rule is that the compiler wins by measured downstream outcomes (`icloud-work/evaluatorML/.agent/memory/deterministic_compiler/README.md`).",
+ "against": "At planning time the comparison had not run, and no result was found: '- No no-compiler baseline or compiler A/B harness has run.' (`icloud-work/evaluatorML/.agent/memory/plans/2026-05-25-ib-pattern-compiler-prelaunch-revision.md`, line 61).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/deterministic_compiler/parallel_experiment_note.md",
+   "lines": "26",
+   "quote": "The winner is not whichever contract sounds better. The winner is whichever path improves downstream InceptBench pass rate, retry count, cost, and failure distribution when feeding the same APUSH/APWH/APEuro benchmark requests into the same generator.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/deterministic_compiler/README.md",
+   "lines": "29",
+   "quote": "Use identical benchmark rows and generator settings:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/deterministic_compiler/README.md",
+   "lines": "31",
+   "quote": "1. No helper baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/deterministic_compiler/README.md",
+   "lines": "46",
+   "quote": "The deterministic compiler wins by measured downstream outcomes, not by sounding clever.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "31",
+   "quote": "quality-check-evaluatable item bank without further interpretation. A proposal",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "32",
+   "quote": "fails if it requires guessing, overclaims MAP equivalence, or violates a hard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "238",
+   "quote": "outscores a long, overclaiming one. Judge on substance, not word count.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

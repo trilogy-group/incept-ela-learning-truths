@@ -1,0 +1,297 @@
+{
+ "id": "a-judge-checks-it-doesnt-hunt",
+ "title": "A judge checks; it doesn't hunt",
+ "statement": "Use a judge to check a bounded claim, not to hunt for faults.",
+ "example": "Hunting, one flagged 47% of items nobody had ever complained about.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Asked to find defects in raw items, the reading engine's judge flagged 47% of items nobody had ever complained about,\nand every fix worth making came from fixed checks instead (`grade3-reading/engine/skills/jev-triage/SKILL.md`); its\nfirst calibration run flagged 69 of 70 such items (`grade3-reading/engine/EVIDENCE-2026-09-22.md`). So the judge sorts\nwhat fixed checks find, and at its measured precision a single judgment never holds a finished lesson back\n(`grade3-reading/engine/src/course/checks.js`).",
+ "against": "the lesson engine does hold a new draft on a single required\njudgment; a held draft is only redrafted, but the cost of a false hold there has not been measured\n(`g9/transformer/src/transform.js`). A later run found counter-evidence (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py`). A later run found counter-evidence (`ti-courseplans-audit/skills/train-teacher/references/gauntlet-spec.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/skills/train-teacher/references/gauntlet-spec.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading-engine",
+   "path": "skills/jev-triage/SKILL.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/course/checks.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "141-142",
+   "quote": "- Factual Accuracy: **83%** (vs 72% standard CoT, 78% CoT+RAG)\n- Hallucination Rate: **12%** (vs 25% standard CoT, 18% CoT+RAG)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "137",
+   "quote": "3. Verify each claim against internal knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "301",
+   "quote": "LEAF is a three-component framework: (1) **RAFE** — a fact-checking module using retrieval to evaluate response accuracy claim-by-claim; (2) **Fact-Check-then-RAG** — inference-time correction without parameter updates; (3) **Learning from Fact Check** — either SFT on fact-checked responses or SimPO/DPO using fact-check scores to rank chosen vs. rejected. The training approach uses fact-checking scores as pseudo-labels to construct preference pairs, requiring no human annotation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "307",
+   "quote": "- **83% improvement in factuality scores** in healthcare deployment (proprietary medical documents)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/master_strategy_apr24.md",
+   "lines": "52-55",
+   "quote": "Add a verification step after SAQ/LEQ/DBQ generation that:\n1. Extracts all specific historical claims from rubric fields (dates, names, events)\n2. Checks each against `curriculum_facts.json` \n3. Substitutes unverified claims with category descriptions or verified alternatives",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "84",
+   "quote": "* **Regex prefilter** cuts 5,396 strings to ~65 suspects, so the LLM judges 1% of the corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "11-13",
+   "quote": "The type overlays already named these as defects, but only as passive statements, so the check ran ad hoc — caught on some runs, skipped on others.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "15-17",
+   "quote": "Fix: make the audit mandatory and explicit. The grader must inspect the answer-key region on every item that has one (not just the student-facing stem), record the result in internal_reasoning, and fail only on a quotable contradiction.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "34",
+   "quote": "- flipping items: 12/17 -> 6/17",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "35",
+   "quote": "- items reaching a stable verdict: 5/17 -> 11/17",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "81-83",
+   "quote": "so the same item yields the same finding when re-evaluated (this check is not optional and must not depend on whether a defect happens to catch your eye)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "225",
+   "quote": "A metric at 0.0 requires a specific, concrete issue. Vague concerns are not sufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "52",
+   "quote": "Be THOROUGH. Find every problem.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/gvc/NEXT_STEPS.md",
+   "lines": "19",
+   "quote": "❌ Claude not finding format problems",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "74",
+   "quote": "Adding a structured `stimulus_classification` field with explicit categories (`real_unmodified` / `fabricated_attributed` / `real_with_modification` / etc.) prompted the judge to evaluate stimulus authenticity directly, where the prior generic prompt let the judge default to \"looks plausible enough → factual_accuracy = 1.0\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_oracle/2026-05-04T1507Z_v40h_mcq_set_n30_fabrication_audit.md",
+   "lines": "71",
+   "quote": "- **1355Z first run (n=6 sample):** 2/6 (33%) flagged via implicit fabrication detection by the BAML rubric metrics.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "52-60",
+   "quote": "Be THOROUGH. Find every problem.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "174-176",
+   "quote": "It does not represent a genuine student misconception and therefore weakens distractor quality.\", 'severity': 'minor'",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "118",
+   "quote": "| No significant structural or validity issues identified. | 2 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "23",
+   "quote": "- Default evaluator stance is pass, but mandatory audits in overlays override that leniency.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/workspace/INBOX_FROM_EXTERNAL/2026-04-28T00_first-contact.md",
+   "lines": "49",
+   "quote": "the eval cites scoring-directive text that doesn't exist in our outputs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/_base_evaluation.txt",
+   "lines": "5",
+   "quote": "You should only fail a metric when you find a clear, concrete, unambiguous violation that you can quote and explain.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0190-jev-skills-and-engine-lane.qmd",
+   "lines": "92-93",
+   "quote": "used AS the detector on raw items, it flagged 47% of items nobody had ever complained about",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "211",
+   "quote": "calibrate**: v4 sprays (26 hits / 494 false-positive extras / 4-of-10 clean-correct out of a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/pedagogy-llm-evals.md",
+   "lines": "120",
+   "quote": "— but v4 \"sprays ~12 uncited extras per artifact\" (root cause: S3 stream was 6:1 flawed:clean).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "96-97",
+   "quote": "Above the default case limit, an unscoped run refuses to proceed; split by changed cohort instead of paying for an incoherent sweep.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "38-39",
+   "quote": "adversarial framing (\"try to refute that this teaches\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "38-40",
+   "quote": "Three judge agents from model families the Builder never used, adversarial framing (\"try to refute that this teaches\")",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "data/development_cases.json",
+   "lines": "265",
+   "quote": "A reviewer would need a clearer rule and learner context to make a stable judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "76",
+   "quote": "- Do not trust Gemini to catch MCQ_SET answer leaks, truncated options, wrong crop direction, or DBQ source hallucination. Evidence from the rejected branch shows it missed these.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "59",
+   "quote": "Jev answers one bounded yes-or-no question per remaining check, with the evidence in its state.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "45-46",
+   "quote": "Judge checks are bounded questions with the evidence supplied; their precision is not yet measured (v04).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/index.js",
+   "lines": "2",
+   "quote": "codeChecks (facts), judge (bounded questions with positive evidence), view (what the student sees; never a key)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "60, 187, 794, 1401",
+   "quote": "\"instructions\": \"Is film_narration about the same work as passage, so that it can open a lesson on it?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "5",
+   "quote": "Findings: 11; survived self-refutation (non-NOTE): 4; stand after adversarial verification: 2.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

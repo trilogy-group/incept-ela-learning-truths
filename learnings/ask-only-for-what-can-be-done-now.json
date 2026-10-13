@@ -1,0 +1,155 @@
+{
+ "id": "ask-only-for-what-can-be-done-now",
+ "title": "Ask only for what can be done now",
+ "statement": "Tie every instruction, hint and status line to the step the learner is on, never an earlier or hidden one, and ask only for what they can do now.",
+ "example": "An independent visual review found 40 word-meaning cards whose status told students to explain the word before any box for explaining it was on screen.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "scoring-guide",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of a Grade 3 and a Grade 5 reading course found three requests the screen could not meet. A lesson's opening rubric required tapping a line before the tapping control existed, a rehearsal page asked for a written plan with no box and no place named for it, and an independent visual review caught 40 word-meaning cards telling students to explain the word before the explanation step appeared. The repairs made the rubric ask for what a spoken or typed answer can supply, named a notebook for the plan and gave each card the instruction for its current stage. Earlier tests had never asked whether every instruction to produce something had a place to do it, and the course's published rules say every question on screen has an input.",
+ "against": "The rubric case was found in source, not as a live grader rejection: 'No real grader rejection is established; the health response remains `ok:false`.' (`grade3-reading/ui-audit-2026-09-08/round-1/g3/PROPOSAL-REVIEW-by-unit9.md`, line 53). Other records let help point back: a-recap-of-the-worked-example lets students open a recap of what the worked example did, and point-only-at-steps-that-exist allows a line to point to another step as long as that step exists. Neither rule's effect on students was measured.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/PROPOSALS.md",
+   "lines": "54",
+   "quote": "L5 p19 opening assessment requires “Taps the line…” (`grade-3.json:12963–12965`), while `DialogueExchange` sends that assessment at line174 and mounts the evidence interaction only after `oa.done` at line218.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/IMPLEMENTATION.md",
+   "lines": "14",
+   "quote": "`G3-U1-L5/p19` opening rubric, criterion and hints now request a spoken/typed explanation supported by quoted or closely paraphrased words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/parity-verification-2026-09-10/browser-final/g5-independent-review/VOCABULARY-STATUS-PROPOSAL.md",
+   "lines": "3",
+   "quote": "Word meaning **1 of 3** prints the definition and offers **Compare the examples** in the footer, but the adjacent status instructs **Explain what [word] means first.** There is no explanation surface at this stage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/parity-verification-2026-09-10/README.md",
+   "lines": "9",
+   "quote": "Independent visual review then caught a stage-status contradiction on the40 meaning cards; the same .110 repair now gives the appropriate instruction before the explanation task exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/findings.json",
+   "lines": "31",
+   "quote": "p10 contains passage plus two text nodes, so no response component renders.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g5-u9/findings.json",
+   "lines": "36",
+   "quote": "Previous tests preserve runtime pages and passage/text nodes but do not ask whether every productive instruction has an available response surface.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit1.md",
+   "lines": "39",
+   "quote": "The new guidance identifies the previous emphasis choice, a notebook as the silent-plan destination, and the next page as the place to explain a revision.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1270",
+   "quote": "Every question on screen has an input. A closing prompt with no way to respond is not a closing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/footer.md",
+   "lines": "6",
+   "quote": "Authored Im done reading footer persists after reading and answering are finished.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2326",
+   "quote": "after correct first answer shows enabled Next question but footer says Answer the question first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2326",
+   "quote": "Current status derives the hidden unanswered next node instead of visible completed question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1582",
+   "quote": "Frozen browser-ef1140fc-l4-model capture04 shows the completed bank and the new strongest-choice demand while the old instruction still says to tap four clues.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3405",
+   "quote": "Expected: guidance describes the remaining supported action, without implying speech is still mandatory after explicit silent continuation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "185",
+   "quote": "A hint must always coach the CURRENT screen, never recap a past one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "185-187",
+   "quote": "A hint that references or re-narrates a previous teacher action or an earlier step teaches the child to listen for the wrong screen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "188",
+   "quote": "the hints should ALWAYS be about the CURRENT screen. Not something in the past.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "188-189",
+   "quote": "Fixed by rewriting all 16 `teacher_recap` strings to present-tense current-step coaching",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "190-191",
+   "quote": "swept forward with a second pass on remaining `second_hint` strings still pointing at prior screens",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

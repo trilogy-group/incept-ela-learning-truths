@@ -1,0 +1,92 @@
+{
+ "id": "no-text-in-generated-pictures",
+ "title": "No text in generated pictures",
+ "statement": "Keep words and labels out of generated images and video frames.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The look rules of an intro-video BrainLift for a Grade 3 reading course include no text in generated frames (`downloads/BrainLift - What makes a good intro video.md`, line 965), and the course's image prompts say the same: no text or labels in the image (`downloads/5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx`, line 60 of its text) and no text baked into the art (`downloads/5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx`, line 44). No outcome was measured.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "965",
+   "quote": "No text in generated frames",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "60 (textutil text)",
+   "quote": "no text or labels in the image",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "44 (textutil text)",
+   "quote": "no text baked into the art.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/MEDIA-INSPECTION-by-residual.md",
+   "lines": "7",
+   "quote": "Labels participate in authored read-aloud marks; the scoped CSS improves their contrast without replacing or rasterising them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/video-scripts/U1.md",
+   "lines": "7",
+   "quote": "No on-screen text in any shot — Veo garbles lettering, so the narration carries every word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-intro-audit.md",
+   "lines": "60",
+   "quote": "AI-artifacted nonsense lettering, and it is the only text in the video. Presented to nine and ten year olds who are being taught to read, on the closing image.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/briefs.json",
+   "lines": "2",
+   "quote": "No text, lettering, speech balloons, borders, logos or watermarks.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "60",
+   "quote": "AI-artifacted nonsense lettering, and it is the only text in the video. Presented to nine and ten year olds who are being taught to read, on the closing image.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "37",
+   "quote": "No lettering — zero text/labels/arrows anywhere.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,60 @@
+{
+ "id": "let-either-fact-checker-fail-it",
+ "title": "Let either fact checker fail it",
+ "statement": "Independent fact checkers can catch different errors, so let either one fail an item rather than trust a single checker, and expect more run-to-run variance in return.",
+ "example": "On one item set, a separate fact audit caught 16 confirmed factual errors the main judge missed, the judge caught 6 the audit missed, and none overlapped.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An item evaluator's main judge was compared with a separately prompted fact audit run on a model from another family: the audit caught 16 confirmed factual errors the judge missed, the judge caught 6 the audit missed, and none overlapped (`icloud-work/inceptbench/docs/EVALUATOR_VARIANCE_FIX.md`, deleted in commit e5be84f). The audit is now merged as the lower of the two scores, so either can fail a question (`icloud-work/inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py`), and the same document found the merged audit added run-to-run variance on top of the judge's baseline 5.5%.",
+ "against": "This is one comparison of two models on one Grade 10 set. The audit misread sequence positions as date errors until it was switched off for sequence questions (commit 20bb29e), it now runs only for social studies (`icloud-work/inceptbench-main/src/inceptbench/config/constants.py`, lines 22-26), and the document contradicts itself on whether the audit affects scores (lines 135 and 286).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "407-409",
+   "quote": "- GPT audit caught **16 confirmed factual errors** that Gemini completely missed - Gemini caught **6 different factual errors** that the GPT audit missed - **Zero overlap** — the two models detect entirely different kinds of errors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "13-15",
+   "quote": "The audit result is **merged** into the main evaluator's ``factual_accuracy`` score via ``min(main, audit)`` — if either the main evaluator or the audit catches a factual error, the question fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "402",
+   "quote": "**Finding**: The audit added additional variance on top of Gemini's baseline 5.5%.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "17",
+   "quote": "| 3.8-flash Orus | 59.2 s | 0 | **reads the style instruction aloud for 22 s** (found by whisper during alignment; the Gemini checker had passed it) | slow |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,69 @@
+{
+ "id": "guard-every-path-that-writes-content",
+ "title": "Guard every path that writes content",
+ "statement": "Run blocking content checks on every path that writes content, hand edits included, and roll back any write that fails them.",
+ "example": "Before its direct-edit path was guarded, one course's rework reintroduced 5 misconception phrasings, caught only by a manual sweep.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 reading course's science misconception gate, as its re-approval package's compliance log records, guarded regeneration: a regenerated lesson whose truth-asserting text still held a Tier-1 (absolute-prohibition) phrase failed and, if the phrase outlasted refinement, was discarded and rolled back. The direct-edit path was not guarded at first, so a rework of the teaching moves done by direct edit reintroduced 5 Tier-1 phrasings, which a manual sweep caught and fixed. An edit guard then snapshotted each file, applied the edit, re-swept it and rolled back to the snapshot if the edit introduced a Tier-1 phrase, so that the sweep blocked shipping on both write paths and a hand edit could no longer leave such a phrase on disk. The check sits on the write itself, rather than on a rerun after the fact.",
+ "against": "One incident in one course; the log reports no later edit that the guard rolled back, so how often it fires is unmeasured.",
+ "evidence": [
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "99",
+   "quote": "Earlier in this effort the direct-edit path was NOT guarded, so the teaching-move rework transiently reintroduced 5 Tier-1 phrasings that were caught and fixed by a manual sweep",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "97",
+   "quote": "**rolls back to the snapshot if the edit introduces a Tier-1 phrase**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "95",
+   "quote": "**The Tier-1 sweep is enforced ship-blocking on BOTH write paths:**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "96",
+   "quote": "a regenerated lesson whose truth-asserting text contains a Tier-1 phrase fails the PASS condition",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/MISCONCEPTION-COMPLIANCE-LOG.md",
+   "lines": "97",
+   "quote": "so a hand-edit cannot leave a Tier-1 phrasing on disk either",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

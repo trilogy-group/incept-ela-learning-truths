@@ -1,0 +1,50 @@
+{
+ "id": "the-key-must-trace-to-the-source",
+ "title": "The key must trace to the source",
+ "statement": "Every claim in a keyed answer must trace to something the source says, but naming the category of what it describes is not an error.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "For argument-conclusion items, an audit maps each claim in the correct option to a point the passage makes, and a correct option with an unmapped claim fails factual accuracy; appeals to synthesis don't rescue a genuine shift of domain, but naming the category of what the passage described is the skill the standard asks for (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt`). The audit was narrowed after it over-flagged exactly those category-label summaries and failed good concluding-statement items (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py`).",
+ "against": "The audit is written for argument conclusions, and applied strictly it misfired on legitimate synthesis until it was narrowed (`icloud-work/inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py`, lines 17-19).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/ela_evaluation.txt",
+   "lines": "39",
+   "quote": "- ANY correct option with a `NONE` claim → `factual_accuracy = 0.0`. \"Pedagogical synthesis\" / \"appropriate inference for hard items\" do NOT rescue genuine domain shifts. They DO rescue category-label synthesis covered by the bullet above — that is the standard's intended skill, not a violation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_411_418.py",
+   "lines": "17-19",
+   "quote": "concluding-statement items were failing on `factual_accuracy` because Audit B was over-flagging the exact category-label synthesis the standard expects.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/course-graph-guide.md",
+   "lines": "33",
+   "quote": "True-but-unsupported is wrong; the correct answer must have a citeable evidence line (inference-overreach trap).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

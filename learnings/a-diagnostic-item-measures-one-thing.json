@@ -1,0 +1,142 @@
+{
+ "id": "a-diagnostic-item-measures-one-thing",
+ "title": "A diagnostic item measures one thing",
+ "statement": "An item used to diagnose must test one piece of knowledge, because a wrong answer to a bundled item can't say what is missing.",
+ "example": "With about 10 students per course, a bundled item can't be untangled by statistics, so it has to measure one thing by design.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "evidence-of-learning",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A diagnostic-assessment BrainLift worked through on AP courses names items that confound core knowledge with experience of the question format as a common failure, since a wrong answer then can't say why it is wrong (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, lines 310 and 336). With about 10 students per course at a time, a bundled item can't be decomposed statistically, so each item must measure one thing by design, in the simplest format that gives the information, and a multi-part item whose part (b) needs part (a) is split for diagnostics (lines 337, 397 and 402). It judges a diagnostic by whether students who follow its recommendations learn more efficiently (line 307), and the reading courses' adversarial review asks of every item whether a wrong answer identifies one component (`grade3-reading/ti-courseplans/skills/course-red-team/references/finding-taxonomy.md`, line 165). Test that knowledge in the plainest format that shows it, and split dependent parts into separate items; bundled items are often exam-style ones.",
+ "against": "Both sources allow a stimulus-based item when the stimulus is the skill, as in reading comprehension (the BrainLift, line 397; the checklist, line 165), and the reading comprehension BrainLift holds that no valid diagnostic comprehension test exists (`grade3-reading/ti-courseplans/docs/teaching-reading-comprehension-brainlift.md`, lines 88-89). The taxonomy makes one exception for reading: bundling is acceptable when the stimulus itself is the knowledge component being tested, with everything else stripped (`ti-courseplans-audit/skills/course-red-team/references/finding-taxonomy.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "310",
+   "quote": "Using test items (such as AP-style exam questions) that confound core knowledge with experience in answering that type of question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "336",
+   "quote": "If a student gets it wrong, you don't know *why* they got it wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "337",
+   "quote": "we must ensure, by design, that each item measures one thing cleanly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "397",
+   "quote": "Prefer the simplest format that gives you the diagnostic information you need.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "402",
+   "quote": "If the student fails, you learn about part (a) but nothing about part (b). For diagnostics, split these into independent items.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "307",
+   "quote": "A diagnostic is good if students who follow its recommendations learn more efficiently than students who don't.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "165",
+   "quote": "does a wrong answer identify ONE KC? (reading exception: OK when the stimulus IS the KC, then strip everything else)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "68",
+   "quote": "The question is evaluative (it tells you whether the student can do this task) but not diagnostic (it doesn't tell you what's missing).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "69",
+   "quote": "Estimating how each item loads on multiple latent dimensions requires thousands of students, not hundreds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "69",
+   "quote": "~10 students per course at a time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "69",
+   "quote": "we must ensure, by design, that each item measures one thing cleanly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "86",
+   "quote": "For diagnostic assessment, the much-maligned MCQ is not a compromise — it is the optimal format.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0155-diagnostic-assessment-evidence-base.qmd",
+   "lines": "255",
+   "quote": "The completed practice test is insufficient to establish this proficiency at topic level.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "165",
+   "quote": "passage-parse + content + reasoning in one item → wrong answer uninterpretable",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "29",
+   "quote": "Each diagnostic item isolates one KC — no bundling (e.g. reading comprehension inside a science item)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "31",
+   "quote": "No all-or-nothing multi-part item where (b) depends on (a); split into independent items",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

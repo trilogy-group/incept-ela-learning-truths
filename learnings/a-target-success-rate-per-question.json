@@ -1,0 +1,65 @@
+{
+ "id": "a-target-success-rate-per-question",
+ "title": "A target success rate per question",
+ "statement": "Give each question a target success rate and treat a result far from it, either way, as a fault in the question.",
+ "example": "One design targets about 100% success on its first closing question and about 80% on its second.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "demand"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The closing-questions design sets a success gradient of about 100% for naming the idea, about 80% for finding it in the text and no key for using it: if children fail the first it is built wrong, and if nearly everyone aces the second it is too easy to be worth asking (`grade3-reading/artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt`). It grounds the gradient in a high success rate in guided practice, which it rates well evidenced and attributes to Rosenshine.",
+ "against": "No rate has been measured: an audit found the target rates, and whether children actually infer, could not be checked from the lesson files (`grade3-reading/artifacts/curriculum-adherence-2026-09-24/CRITIC.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "110",
+   "quote": "Success gradient: about 100%, about 80%, no key. If children are failing Q1, it is built wrong. If nearly everyone aces Q2, it is too easy to be worth asking.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "162",
+   "quote": "Rosenshine. The basis for the ~100% / ~80% gradient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/design-mock-l1.html",
+   "lines": "202",
+   "quote": "~100% / ~80% / no key; failing Q1 means it is built wrong; nearly everyone acing Q2 means it is too easy",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_08 10_30 CEST - Notes by Gemini.md",
+   "lines": "322",
+   "quote": "we need to really analyze the questions and see is it because the questions are faulty or is it because a lack of knowledge with the student",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L612555.txt",
+   "lines": "322",
+   "quote": "A lot of the questions are they're uh they're not well-ritten questions in the sense that they're there's two or three plausible answers whereas to hit a mastery rate of 90% you want to you know have clarity on that.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "offer-help-never-pick-the-answer",
+ "title": "Offer help, never pick the answer",
+ "statement": "After repeated misses on a search or a used-up hint ladder, offer help through one button the student must tap to accept, and never pick the answer unasked.",
+ "example": "After four missed taps on a hunt or hint ladder, help came as a single button the child had to tap to accept.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A ruling for a Grade 3 reading course set that after four missed taps on any hunt or hint ladder, the lesson's guide offers help with a single button the child must tap to accept, and never marks the answer unprompted. It was first set on clue hunts and then extended to every used-up ladder before an automatic pick, so every backstop that picked the answer for the child after a number of tries now sits behind that one offer. No outcome was measured.",
+ "against": "The record two-tries-then-the-answer gives the answer after two tries so that a student who never gets it right can still finish. The same course records an unresolved conflict for single-select checks: \"during-reading checks get two attempts then a reveal) and the §3 no-reveal rule above give opposite instructions on the exact item\" (grade3-reading/ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md, lines 223-224).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "95-96",
+   "quote": "After four missed taps on any hunt or ladder, Scout offers to help with a single button; the child must tap to accept, and Scout never marks the answer unprompted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "100-101",
+   "quote": "Every `reveal_after_tries` backstop that picked FOR the child is now gated behind the one ScoutOffer flow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "223-224",
+   "quote": "during-reading checks get two attempts then a reveal) and the §3 no-reveal rule above give opposite instructions on the exact item",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

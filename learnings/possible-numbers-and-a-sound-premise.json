@@ -1,0 +1,57 @@
+{
+ "id": "possible-numbers-and-a-sound-premise",
+ "title": "Possible numbers and a sound premise",
+ "statement": "Every number in a question's setup must be possible and consistent with the others, and the reasoning to the answer must rest on a true premise, not just correct arithmetic.",
+ "example": "A yield above 100% or a probability outside its range fails even when the arithmetic is right.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "stem",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's science rules, which apply to science questions in any curriculum and question type, count a computation that is arithmetically right but rests on a wrong scientific premise as a factual-accuracy defect. Quantities must be physically plausible and dimensionally sane: consistent units, realistic magnitudes and no value past a physical bound. The chemistry free-response rules add that quantities must be chemically possible and internally consistent. No measurement comes with these rules.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "11-13",
+   "quote": "A computation can be arithmetically right yet rest on a wrong scientific premise — that is still a `factual_accuracy` defect.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "14-18",
+   "quote": "- Quantities must be **physically plausible and dimensionally sane**: units are consistent and convert correctly; magnitudes are realistic for the phenomenon; a value cannot violate a physical bound (e.g. a negative amount of a conserved quantity, a probability/fraction outside its range, an efficiency or yield above 100%).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "3",
+   "quote": "These rules apply to science questions across any curriculum and question type.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "141-143",
+   "quote": "Quantities must be chemically possible: equilibrium constants, concentrations, pH for dilute aqueous systems, yields (≤ 100%), and thermodynamic signs must be internally consistent and within plausible ranges.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

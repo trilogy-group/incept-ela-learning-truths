@@ -1,0 +1,51 @@
+{
+ "id": "ask-young-learners-for-the-target-skill",
+ "title": "Ask young learners for the target skill",
+ "statement": "For young learners, ask for the target skill directly, and give prerequisite results or split the item into steps rather than packing a chain of sub-problems into one stem.",
+ "example": "A Grade 3 question asked students to solve two prerequisite problems and then combine the results, and was judged too complex for the grade.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "stem",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 question asked students to first solve two prerequisite problems and then use those results to solve a composite problem, and review found the framing too complex for the grade. The math rules now say that for the lower elementary grades (approximately K–3), a stem packed with prerequisite sub-problems, without scaffolding or worked-example framing, can overwhelm working memory and comprehension and fails educational accuracy. The rule rests on that one reviewed item.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "8",
+   "quote": "The question should be self-contained and ask for the target skill directly; prerequisite computations should be provided or the item should be broken into separate steps.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "8",
+   "quote": "For the lower elementary grades (approximately K–3), a question stem that asks students to first solve multiple prerequisite sub-problems and then use those intermediate results to solve a composite problem — without scaffolding or worked-example framing — can overwhelm working memory and comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "6078ea3",
+   "lines": "3-4",
+   "quote": "A Grade 3 question asked students to first solve two prerequisite problems and then use those intermediate results to solve a composite problem.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

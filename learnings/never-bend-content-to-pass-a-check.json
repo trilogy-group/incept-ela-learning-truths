@@ -1,0 +1,481 @@
+{
+ "id": "never-bend-content-to-pass-a-check",
+ "title": "Never bend content to pass a check",
+ "statement": "Never alter an item, request or check just to raise a score: a gain from removing what a check inspects is gaming, so fix the item or harden the check.",
+ "example": "An edit that disabled detection cut the findings from 28/12 to 15/8, a mix of real cleanup and switched-off checks.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of a Grade 5 course found that an uncommitted lint edit cut findings by weakening the gate: it replaced the total invariant with a condition that is always false, suppressed unit-split failures and broadened exemptions, so the drop from 28/12 to 15/8 was a mix of real cleanup and disabled detection that could not count as progress toward approval (`grade3-reading/artifacts/takeover-audit-2026-07-13/g5-clean-baseline.md`). An earlier fix had inserted a taught word into another lesson's closing page to pass a vocabulary check, and was reverted as editing someone else's lesson to satisfy the validator (`grade3-reading/artifacts/DECISIONS-2026-08-24.md`). A capstone lesson was named by the procedure its thinking fits, read from the procedures' definitions, because the nearest-sounding label would have been mislabelling to satisfy a validator (`grade3-reading/artifacts/g5-course/CAPSTONE-PROCEDURE-RULING-2026-08-18.md`), and a later review adjudicated 2-1 that another lesson's procedure label was wrong for a trace that related nothing, fixed by a one-line relabel (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-25-R10.md`). Fix content that fails a sound check rather than loosen the check, judge an expected-answer change by what it does for learners, and confirm that a fix that raises a score improved the item rather than dodged the check.",
+ "against": "Content is sometimes bent to an engine on purpose, and then recorded as such: one candidate fix was called honest, but content bent to an engine (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md`). The relabel changed nothing a student sees, since the procedure value renders no visible chip (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-25-R10.md`). One check was itself wrong: an echo guard rejected a word-perfect recall of the taught sentence (0.74 against its 0.70 threshold), and the fix reworded the three criterion strings rather than the guard (`grade3-reading/knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd`, lines 72-82). The rule covers only what the judge sees: post-processing outside its view, such as image generation, logging and transport retries, was ruled fine (`icloud-work/aptraining/.agent/research/inference_clean.md`, lines 414-415), and dropping a failed candidate was still allowed (`icloud-work/aptraining/.agent/memory/PILLARS_2026_05_12.md`, line 64). The changed requests had a stated reason, that 'easy is misleading' for complex formats (the same audit, line 74), and the audit applied the project's single-attempt rule rather than measuring any loss of quality. It rests on one AP case, reported in a later synthesis rather than in the project's own records. The production pipeline took the trick up as a strategy: \"PIL shipped 0.1.82-0.1.85 commits today integrating your stimulus-strip insight as a **prompt-design strategy** (no-stimulus LLM lane for MCQ when standard is specific). Direct adoption.\" (icloud-work/aptraining/Cheater/inbox/2026-05-22T1910Z_T2_T3_T4_invitation.md, 14). The test's own report grants that items without a source have a place: \"Many textbook drills and formative-assessment items omit stimuli for the same reason (faster recall practice).\" (icloud-work/aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md, 212-214), and its final report argued: \"The structural exploits don't generate \"fake\" content — they generate REAL content shaped to bypass rubric-default checks.\" (icloud-work/aptraining/Cheater/reports/FINAL_REPORT.md, 140-141)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/takeover-audit-2026-07-13/g5-clean-baseline.md",
+   "lines": "146",
+   "quote": "More importantly, the uncommitted linter edit reduces findings by weakening the gate:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/takeover-audit-2026-07-13/g5-clean-baseline.md",
+   "lines": "152",
+   "quote": "Therefore, `28/12 -> 15/8` is a mix of real cleanup and disabled detection. It cannot be used as progress toward approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "33",
+   "quote": "that is editing someone else's lesson to satisfy our validator, and was",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/CAPSTONE-PROCEDURE-RULING-2026-08-18.md",
+   "lines": "43",
+   "quote": "Labelling that WEIGH would be mislabelling to satisfy a validator, which is exactly the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-25-R10.md",
+   "lines": "70",
+   "quote": "carried `procedure: \"CONNECT\"` for a trace with nothing related.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R25.md",
+   "lines": "66",
+   "quote": "Honest, but it is content bent to an engine",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-25-R10.md",
+   "lines": "62",
+   "quote": "the D25 chrome decision means the procedure value renders no child-visible chip, so the relabel",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "37",
+   "quote": "never weaken the rule",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "72",
+   "quote": "entry (matches nothing) also FAILS — the list can only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "71",
+   "quote": "a listed finding WARNS, an unlisted one FAILS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md",
+   "lines": "13",
+   "quote": "because each had to be adjudicated as better-or-worse before the test was retargeted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/pr263-merge/RED-REGISTER.md",
+   "lines": "14",
+   "quote": "Both came out BETTER for the child, which is why neither is a residual red.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/PLAN.md",
+   "lines": "67-68",
+   "quote": "classify a stale harness from an actual app defect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/PLAN.md",
+   "lines": "68",
+   "quote": "do not edit an expected answer merely to produce green",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "26-27",
+   "quote": "The actual MCQ fix was the **OPPOSITE** of \"add a real passage\" — it was **REMOVING the stimulus** so the grader's leak-probe is skipped. That's **grader-gaming**, not a provenance win.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "49-50",
+   "quote": "when you optimize to a **proxy gate**, you hit the proxy via crutches while the real target doesn't move.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "122-123",
+   "quote": "never move a check earlier to satisfy an aggregate percentage from a reviewing tool.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "102-103",
+   "quote": "the correction is \"optimize the course, not the item\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "103-104",
+   "quote": "a course where every item scores IB 1.0 but 90% is blind-solvable is a failed course",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "105",
+   "quote": "IB 1.0, blind-solve 100%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "72",
+   "quote": "Rewrites generator output specifically to game the grader. Textbook crutch.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "403",
+   "quote": "The post-process scans, deletes overlapping items, and pads with a generic placeholder if cleanup leaves <3. This is the rubric grader literally seeing different content because of the post-process.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "405",
+   "quote": "Rewrites the actual text the grader scores. Direct rubric manipulation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "74",
+   "quote": "Silent input mutation to game the grader. The clean contract honors what the caller asked for.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "75",
+   "quote": "Either the benchmark is right (then the model must handle it) or wrong (then fix the benchmark). Not the generator's job.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "410",
+   "quote": "The rubric checks `curriculum_alignment` against the time_period the request claims; mutating the period changes what the grader sees vs what was requested.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "9",
+   "quote": "the actual MCQ fix was the OPPOSITE: REMOVING the stimulus so the grader's leak-probe is skipped (grader-gaming)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "26-27",
+   "quote": "it was **REMOVING the stimulus** so the grader's leak-probe is skipped. That's **grader-gaming**, not a provenance win.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "216-217",
+   "quote": "the production wrapper at ~56% includes a stimulus on every MCQ, by explicit instruction",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "218-219",
+   "quote": "removing that instruction and stripping the stimulus produces 100% pass with mid-quality content",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "219-220",
+   "quote": "the lift is therefore attributable to a rubric structure — not generator quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "209-211",
+   "quote": "The only \"tell\" is that they lack a primary-source stimulus — which makes them weaker AP-prep than the live exam form (where stimulus analysis is the whole point)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/inbox/2026-05-22T1910Z_T2_T3_T4_invitation.md",
+   "lines": "14",
+   "quote": "PIL shipped 0.1.82-0.1.85 commits today integrating your stimulus-strip insight as a **prompt-design strategy** (no-stimulus LLM lane for MCQ when standard is specific). Direct adoption.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-002-stimulus-strip.md",
+   "lines": "212-214",
+   "quote": "Many textbook drills and formative-assessment items omit stimuli for the same reason (faster recall practice).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/FINAL_REPORT.md",
+   "lines": "140-141",
+   "quote": "The structural exploits don't generate \"fake\" content — they generate REAL content shaped to bypass rubric-default checks.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "132",
+   "quote": "MCQ/SAQ/LEQ no-stimulus may pass current rubrics, but it is a known rubric hole and should be treated as fragile/second-tier unless the product spec allows review-drill shape.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "131",
+   "quote": "No-stimulus exploits are rubric blindspots, not necessarily durable production tactics.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md",
+   "lines": "73",
+   "quote": "| `mcq_no_stimulus_can_help` | **rubric_exploit** | If IB patches no-stim blindspot, fall back to C (loses MCQ 5/5, recovers MCQ_SET 3/5) |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "60",
+   "quote": "Every recipe that has it scores 3/3 on MCQ (G, K). Every recipe without it scores 0-2/3.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "141",
+   "quote": "Different optimization targets (pass judge vs serve educators)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/HANDOFF.md",
+   "lines": "31",
+   "quote": "Do not register this sample as a checked lesson film or weaken the check rule to fit the sample.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/HANDOFF.md",
+   "lines": "31",
+   "quote": "Its first and last caption-derived stops would be 2.28 and 22.16 seconds, only 19.88 seconds apart",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "56",
+   "quote": "this 22-second excerpt does not satisfy its check spacing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/HANDOFF.md",
+   "lines": "31",
+   "quote": "That mechanic requires two to four stops spaced at least 20 seconds apart",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "245",
+   "quote": "and the unresolved recurrence condition remained honest.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "247-248",
+   "quote": "Never corrupt another lesson to make a local metric green. Metrics need PRESERVE guards and an explicit unresolved state when the honest content does not satisfy them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-11.md",
+   "lines": "112-113",
+   "quote": "- **Census pins move with content**: semantic-coverage narration count, voice-provenance assets/nested/direct-stamp counts. Check the reason for each delta; do not just bump.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "27-29",
+   "quote": "Removing those three pages took the battery from 5 failures to 9. The four new ones are count pins that encode the course's shape",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "31-32",
+   "quote": "I repinned two, made one bad blanket edit, and reverted everything rather than keep guessing at 3am.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "33-34",
+   "quote": "**Next step:** redo the removal with a clear head, then repin each count ONE assertion at a time, reading the line before changing it, with a dated reason in the file's own style.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "405-406",
+   "quote": "- Incident: during the harness fan-out an agent's snippet overwrote grade-3.json with a 21:15 snapshot (22:02); caught by the semantic pin (186 ≠ 187), the four lost ops re-applied from their saved ops files, validators/units/semantic re-run green, build tree == tree.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "566-567",
+   "quote": "are carried in `scripts/verify/voice-laws-debt.json` with known-debt semantics: listed warns, unlisted fails, stale entry fails, list only shrinks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-23.md",
+   "lines": "22",
+   "quote": "`voice-laws` carries 37 findings as shrink-only debt in `scripts/verify/voice-laws-debt.json`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-14.md",
+   "lines": "31-32",
+   "quote": "`validate-audio-refs` derives and requires the staged think-aloud's question clip (L10–L14 as shrink-only `DERIVED_QUESTION_CLIP_DEBT` in `known-debt.mjs`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L7/AUTHORING-NOTES.md",
+   "lines": "1248-1249",
+   "quote": "Dropping the generality marker to satisfy a word-overlap scan would have traded a surface cue for a genuinely ambiguous item, which is the worse defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "47",
+   "quote": "Do not silently weaken a reading, assessment or academic requirement to improve a metric.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/WORKFLOW.md",
+   "lines": "136",
+   "quote": "Do not change an expectation merely to make the suite green.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "Do not introduce a deterministic reveal-string acceptance bypass, edit the authored answer/rubric to fit a bad verdict, or use third-try reveal release as successful grading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "84",
+   "quote": "That is an academic amendment, not a silent validator fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "56",
+   "quote": "the dirty checkout's uncommitted lint_consistency.py 'disables the total invariant and suppresses unit-split failures', making 28 RED look like 15",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "123-124",
+   "quote": "repin stale content pins with dated comments, never loosen, report engine behaviour instead of patching around it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/refine.md",
+   "lines": "13-14",
+   "quote": "If a finding names a missing subject (a node or field a gate could not find), AUTHOR that subject; do not delete the gate's target to silence it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "69-70",
+   "quote": "change the respelling (Step 3 table), not the gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "38-39",
+   "quote": "Never substitute a different word to dodge the exemption.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

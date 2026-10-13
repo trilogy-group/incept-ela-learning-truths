@@ -1,0 +1,223 @@
+{
+ "id": "read-aloud-off-by-default-for-proficient-readers",
+ "title": "Read-aloud off by default for proficient readers",
+ "statement": "For fluent or upper-grade readers, as in Grade 9 literature, keep read-aloud of the text off by default but available on request, so reading time goes to unaided reading.",
+ "example": "A review's evidence notes put the benefit of reading while listening at an effect size of about 0.06 when readers set their own pace.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a Grade 9 prototype made read-aloud the learner's choice and off by default, and kept word-by-word highlighting out of the default as a separate decision. Its evidence notes, which name no study, report a small overall benefit of reading while listening (g ≈ 0.18) that is largely a pacing artifact, one eye-tracking study in which text-to-speech disrupted proficient readers, and per-word highlighting that tested null against none in children with reading difficulties.",
+ "against": "The notes limit the transfer to drama: \"That literature is about prose, where speaker attribution is not a problem, so the general null does not straightforwardly transfer to multi-voice drama.\" (`g9/sources/Othello_1_Feedback_DevFactory.md`, line 403). The cited meta-analysis was mostly of college students (`othello-course-renderer-draft/repo/docs/design/grade-9/research/learners-voice-guide.md`, line 87). Young readers are another case: a Grade 3 lesson design never gives the read-aloud up, since \"Without the text there is no lesson.\" (`g9/library/text/L8d5159.txt`, lines 111 and 403), and Grade 3 keeps a read-aloud option throughout (`othello-course-renderer-draft/repo/docs/rules/audio-and-voiceover.md`, line 193). A Grade 4 lesson keeps passage autoplay on as a deliberate hold against the guidance to stop it for older students, since turning it off before anyone knows what Grade 4 children actually do would trade a working lesson for an untested principle (`othello-course-renderer-draft/repo/content/lesson-plans/g4-u1-l1.json`, line 520; `grade3-reading/course-renderer/docs/pedagogy/grade-4-vs-grade-3.md`, line 76; `grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 204-205). A Grade 5 course keeps an explicit read-to-me or read-myself choice (`grade3-reading/edullm-review-hub/course-packages/courses/g5-reading/review/start-here.md`, line 56), against a Grade 7 plan's claim that fading audio holds at every grade (`grade3-reading/edullm-review-hub/course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md`, line 370). Another record lets a text read aloud in full sit above the learners' reading level. It rests on one review remark, not a measurement, and a performed audio version is still built for every speech (`othello-archive/scripts/play_audio.py`, line 1).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "96",
+   "quote": "Make read-aloud the student’s choice and off by default.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "97",
+   "quote": "Do not pair audio with word-by-word highlighting by default. That is a separate decision.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "403",
+   "quote": "The reading-while-listening literature gives a small overall benefit (g ≈ 0.18) which is largely a pacing artifact — experimenter-paced g ≈ 0.41 against self-paced g ≈ 0.06 — and one eye-tracking study found text-to-speech actively disrupted proficient readers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "410",
+   "quote": "Karaoke-style per-word highlighting tested null against no highlighting in children with reading difficulties.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "96",
+   "quote": "Make read-aloud the student’s choice and off by default.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "97",
+   "quote": "Do not pair audio with word-by-word highlighting by default. That is a separate decision.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "403",
+   "quote": "The reading-while-listening literature gives a small overall benefit (g ≈ 0.18) which is largely a pacing artifact — experimenter-paced g ≈ 0.41 against self-paced g ≈ 0.06 — and one eye-tracking study found text-to-speech actively disrupted proficient readers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "94",
+   "quote": "Make the audio available during the reading itself, not as a separate feature.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "87",
+   "quote": "A meta-analysis of 57 studies, mostly with college students, compared three formats.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "87",
+   "quote": "Spoken-plus-written was no better than written-only.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "87",
+   "quote": "It beat spoken-only only for low-prior-knowledge learners, system-paced materials and materials without pictures.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "90",
+   "quote": "Keep read-aloud as an opt-in tool for struggling or ELL readers.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "193-195",
+   "quote": "For older students, the app should stop reading the text automatically, keeping audio for specific accessibility needs.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/strategy/grade-9-strategy.md",
+   "lines": "57",
+   "quote": "The guide's words matter far more than its face, and narrating text to fluent readers mostly does not help.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "193-195",
+   "quote": "Grade 3 gets a read-aloud option throughout. For older students, the app should stop reading the text automatically, keeping audio for specific accessibility needs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/grade-4-vs-grade-3.md",
+   "lines": "26-27",
+   "quote": "Note what this does not say: the audio still exists. What goes is the default.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "168",
+   "quote": "### SPOV2 — Knowledge-first, no read-aloud crutch",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "172-173",
+   "quote": "Audio = pronunciation/gloss that fades; the transfer target is cold plain text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "370",
+   "quote": "Knowledge-first pedagogy, no-video, untimed, audio-fades | **Adopt** (grade-invariant)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "405",
+   "quote": "## Dropped approaches (inherited from G3; confirmed apply at G7)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "412",
+   "quote": "audio as first-class instruction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/brainlift.html",
+   "lines": "340"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "44",
+   "quote": "No voice reading the play text by default",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "44",
+   "quote": "By grade 9, its a little more serious reading",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/ReadingRoute.tsx",
+   "lines": "1",
+   "quote": "Reading time is the page reader: most of the screen is the play text, nothing else moving",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/ReadingRoute.tsx",
+   "lines": "2",
+   "quote": "scene reader (PlayScene) stays reachable for comparison with ?play=1; students never see it.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "3",
+   "quote": "The students are 14-15, US, working alone",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Adesope & Nesbit 2012",
+   "url": "https://doi.org/10.1037/a0026147"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

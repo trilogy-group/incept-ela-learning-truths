@@ -1,0 +1,57 @@
+{
+ "id": "fine-units-or-rich-units",
+ "title": "Fine units or rich units",
+ "statement": "Whether spaced review should keep fine-grained knowledge units and group them, or merge them into fewer, richer units.",
+ "example": "One math curriculum's ~1,500 skills were collapsed into 427 knowledge units with 658 prerequisite links, and the complexity moved into each unit.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "sequence",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A knowledge-graph BrainLift in the reading project's knowledge store finds that a fine-grained graph works for first teaching and remediation but makes retrieval scheduling unwieldy, and that there is one proven response and one speculative alternative, with no clear winner (`grade3-reading/knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd`). The proven response cuts the number of atoms, which moves the complexity into each one; the alternative keeps fine atoms and groups them into clusters for retrieval (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "83",
+   "quote": "There is one proven response and one speculative alternative, and it is not yet clear which is better.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "85",
+   "quote": "collapsing Math Academy's ~1,500 skills into 427 atoms with far cleaner prerequisite chains (658 edges vs thousands).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "85",
+   "quote": "This works, but the complexity does not disappear — it moves.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0116-graph-architecture-brainlift-core.qmd",
+   "lines": "86",
+   "quote": "An alternative is to keep the fine-grained atoms but aggregate them into clusters for retrieval purposes",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

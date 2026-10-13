@@ -1,0 +1,41 @@
+{
+ "id": "reword-a-question-that-fails-the-design",
+ "title": "Reword a question that fails the design",
+ "statement": "When a judged question fails most items because of a deliberate design choice, reword it before it gates anything.",
+ "example": "One screenshot question failed 24 of 30 pages, all on a layout chosen on purpose.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A screenshot judge's question asking whether the task was the most prominent thing on screen failed 24 of 30 pages of one lesson, every one on a split layout that keeps the passage beside its question on purpose (`grade3-reading/artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md`). The calibration concluded that a question failing 80% of a lesson's screens on a documented, intentional layout has low information value as worded, and would need rewording, for example to ask whether the split is reasonable, before it could inform a gate (the same file).",
+ "against": "The same run asked for a person to look at whether any of the 24 pages had a real layout problem despite the deliberate design (`grade3-reading/artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "203",
+   "quote": "**`task-dominance`: 24/30 pages fail**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "218",
+   "quote": "layout choice has low information value as currently worded",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

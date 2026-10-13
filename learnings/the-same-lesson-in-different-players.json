@@ -1,0 +1,107 @@
+{
+ "id": "the-same-lesson-in-different-players",
+ "title": "The same lesson in different players",
+ "statement": "Whether one lesson gives comparable results in different players is open, since a block can become a different task in each and be marked by different rules.",
+ "example": "An animated version's export sets three tries by default, two on its open check and debate, and one for each word added to its word web.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "measurement",
+  "format",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "Reading how two players and the lesson engine's own view draw the same blocks found that a quick check, a choice in an animated version, is asked open in a 3D version, and that an evidence hunt, a tap on a line in the engine's view, becomes a written quotation in both players (`g9/transformer/src/glue`; `g9/transformer/web/lesson.js`). Their marking adapters differ too: the number of tries, whether earlier tries count, and what an unsure judge does, which is an offline case in one player, a could-not-check line in the other and pending in the engine's view (`g9/transformer/v02/QA.md`). No single rule set across players is in place.",
+ "against": "The written checks the animated export adds do follow the 3D version's release rule of two tries, then the answer (`g9/transformer/src/glue/animated.js`, line 42).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "7",
+   "quote": "a reading checkpoint, asked open: the options go, the right one is what a secure answer shows",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "3",
+   "quote": "a reading page's quick multiple-choice checks (ReadingMcq)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "260",
+   "quote": "Tap the line in the text, on the left.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "8",
+   "quote": "a reading checkpoint: which words show the claim, quoted (settled on the quotation in code)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "5",
+   "quote": "a reading page of its own (ReadingNode) whose written check asks for the words",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "68",
+   "quote": "source, max_tries: 3, criteria, misreadings: [], lines:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "113",
+   "quote": "{ max_tries: 1 }",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "83",
+   "quote": "Taking answer together with earlier_answers, does the student say this, in meaning (any wording counts)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "130",
+   "quote": "Taking answer on its own, does the student say this, in meaning? Any wording counts, and a short answer that says it is enough:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "127-129",
+   "quote": "in the 3D build it is its own offline case (not an attempt, the answer kept), in the animated build's pages the student is told it could not be checked (its generous word web takes the word), in our view it stays pending.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "42",
+   "quote": "two tries, then the answer (the 3D build's release rule), for the written checks this file adds",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

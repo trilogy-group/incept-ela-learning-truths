@@ -1,0 +1,184 @@
+{
+ "id": "scan-student-text-for-contradictions",
+ "title": "Scan student text for contradictions",
+ "statement": "Scan every line a student reads for internal contradictions: mismatched counts, one term used two ways, directions that don't fit the interaction, and references to things not on the page.",
+ "example": "One modelled step said it took the \"two strongest\" and then wrote one quote.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "wording",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Review rounds on a Grade 3 course found lines that contradicted themselves: a modelled step said \"two strongest\" but wrote one quote (`grade3-reading/knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd`), and a word card set \"three parts\" against \"two meaningful parts\". A scan then walked 3,003 child-facing strings across four lessons, hunting by pattern for number words that don't fit their nouns, one term with two meanings, instructions that don't fit the interaction, references to things off the page, and rubric counts that don't match their lists (`grade3-reading/knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd`). Its 95 raw hits all triaged clean, for 0 live contradictions.",
+ "against": "The scan has only guarded so far: it found 0 live contradictions, and the word-card case was fixed before it ran, so every contradiction on record was found by people reading the lessons (the same two files).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "65",
+   "quote": "**3,003 child-facing strings**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "65-66",
+   "quote": "regex-hunting for number-word/countable-noun mismatches, same-term double-meanings, instruction/interaction-type mismatches, off-page references",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "67-68",
+   "quote": "**Result: 0 live contradictions** — 95 raw regex hits were all triaged clean;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "68-69",
+   "quote": "(\"three parts\" vs. \"two meaningful parts\" on a vocab card) was already fixed by a prior commit before the scan started.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd",
+   "lines": "52",
+   "quote": "L6 p14 I-do state[9] contradicted its own write-up (said \"two strongest\" but wrote one quote)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/spelling.md",
+   "lines": "6",
+   "quote": "Original BookTypeIt cleared the draft and told the child to listen despite a visible word comparison task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/spelling.md",
+   "lines": "8",
+   "quote": "Keep exact editable input; use Look guidance; retain second-miss copy help and exact-letter completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "104",
+   "quote": "Two facts about the same thing on one screen must agree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "105",
+   "quote": "check they agree with each other, not just that each is individually right",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "105",
+   "quote": "No validator compares sibling fields.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "33",
+   "quote": "same-screen fact agreement (the three-parts/two-parts collision)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "32",
+   "quote": "syllables versus meaningful parts, current stage versus named procedure, count versus selected list, film checkpoints versus archived plan.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/course-core/NURSERY-SOURCE-TRACE.md",
+   "lines": "12",
+   "quote": "hide dictionary dots when they conflict with the same card's meaning-part boundaries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/course-core/NURSERY-SOURCE-TRACE.md",
+   "lines": "15",
+   "quote": "`vocab.tsx` distinguishes the sound-out stage from the later meaning boxes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3405",
+   "quote": "Expected: guidance describes the remaining supported action, without implying speech is still mandatory after explicit silent continuation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/README.md",
+   "lines": "29",
+   "quote": "The index offered “Watch again” for a unit landing with nothing to replay; labels depended on earlier landing visits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "107",
+   "quote": "If the instructions promise a quick check, the check must actually appear.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/g3-internal-review-2026-08-05.md",
+   "lines": "43",
+   "quote": "It says “So close!” and also “You correctly explained…” which is contradictory",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "73",
+   "quote": "Currently three moves are described where four are named.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "84",
+   "quote": "Style the words the student brought with them differently from the new ones, so the line about it is true on screen.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "200-202",
+   "quote": "A child could read \"Finish the lesson\" as a promise the lesson is ending, then land on one more (admittedly optional) page.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "203-204",
+   "quote": "The bank contradicted its own stem (\"Drag a word to each blank, or tap it\") by being invisible before engagement",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

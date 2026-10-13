@@ -1,0 +1,77 @@
+{
+ "id": "a-judgment-call-key-needs-a-blind-pick",
+ "title": "A judgment-call key needs a blind pick",
+ "statement": "Where the key is a judgment call, such as the stronger of two answers, ship only when a judge that never saw the key picks it by a clear margin.",
+ "example": "On a poem and a speech, all 4 blind picks matched the key, at 0.91 to 1.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "key",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two of the lesson engine's blocks have keys that are judgment calls: compare two answers, where the reader picks the stronger of two paragraphs, and direct the line, where the reader picks how a line should be spoken. In both, the judge gets the same material without the key and must pick the keyed option with a clear margin, so there is one defensible pick. On a poem and a speech all 4 such blocks were ready: the blind pick matched the delivery at 0.91 and 1 and the stronger paragraph at 0.99 and 0.99.",
+ "against": "Judge precision is unmeasured: \"bounded questions with the evidence supplied; their precision is not yet measured (v04).\" (`g9/transformer/v01/QA.md`, line 46). In all 4 blocks the key sat in one position, B for the delivery and A for the stronger paragraph, so a judge's lean toward one position was not ruled out.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "2",
+   "quote": "The judge must choose the same paragraph with a clear margin, so there is one defensible pick.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "2",
+   "quote": "The judge, reading the same lines around it, must pick the same delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "57",
+   "quote": "const state = { paragraph_A: item.paragraphs[0], paragraph_B: item.paragraphs[1] };",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/e47511c58b5dd64c.json",
+   "lines": "93",
+   "quote": "\"label\": \"The judge also picks delivery B, with a clear margin\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/eb9231d930fa07c4.json",
+   "lines": "96",
+   "quote": "\"p\": 0.91,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/3258f1e56c815eaa.json",
+   "lines": "68",
+   "quote": "\"label\": \"The judge also picks paragraph A, with a clear margin\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/3258f1e56c815eaa.json",
+   "lines": "71",
+   "quote": "\"p\": 0.99,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

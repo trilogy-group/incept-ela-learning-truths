@@ -1,0 +1,163 @@
+{
+ "id": "choose-the-number-of-options-on-purpose",
+ "title": "Choose the number of options on purpose",
+ "statement": "Choose how many options a question offers on purpose: avoid two-option items, cap how many a young reader must weigh, and never add a filler option to reach a count.",
+ "example": "One item offered an eight-year-old twelve selectable options.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "distractors",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of the Grade 3 course asked for at least four options on multiple-choice questions, because a two-option yes-or-no item permits a 50/50 guess (`grade3-reading/knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd`). An earlier review found a hot-text item with twelve selectable options, too heavy a motor and cognitive load for an eight-year-old, and asked for the number to be capped (`grade3-reading/knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd`). The project's routing note says an agent must not settle the question of three or four options by adding filler (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`), and later course feedback agrees that the four-option request is not a license for a weak fourth distractor (`grade3-reading/knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd`). Two-option and yes/no items let a guess get them right half the time. Offer only as many options as can be made plausible.",
+ "against": "the multiple-choice BrainLift the project follows reports a research consensus favouring three options and recommends four only when every distractor stays plausible and diagnostically useful, so the default count is still open (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`, lines 102-104). The reading course standardised on exactly four options to prevent guessing (`grade3-reading/knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd`), and its v2 review asked for at least four (`grade3-reading/knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd`), which leaves filler or a broken rule wherever a fourth plausible option can't be written. The sources split on the default: one rule fixes exactly four options and a review asks for at least four, while the multiple-choice BrainLift favours three and leaves the default to an explicit decision. The cap of five is a chosen limit; the scan counted items over it rather than measuring an effect on students. A later run found counter-evidence (`grade3-reading/course-renderer/docs/extras/alpharead-lesson-design-aladdin-part-1.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "112",
+   "quote": "MCQs need at least four options. A two-option yes/no item permits a 50/50 guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "128",
+   "quote": "one hot-text item offered twelve selectable options, an excessive motor and cognitive load for an eight-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "104-105",
+   "quote": "An agent must not resolve this by adding filler",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "51",
+   "quote": "not a license to create a fourth weak distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "130",
+   "quote": "cap the number of selectable options.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "69",
+   "quote": "clearly favours three options: most items cannot sustain more than two plausible distractors, and non-functioning distractors waste time without improving measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "69",
+   "quote": "if you cannot write a third plausible distractor for a given item, use three options rather than adding filler.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0159-mcq-principles-blueprints.qmd",
+   "lines": "69",
+   "quote": "A weak fourth distractor is worse than no fourth distractor because it provides testwiseness cues and wastes time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "80-81",
+   "quote": "to prevent guessing\" — a two-option item is a 50/50 guess)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "112",
+   "quote": "A two-option yes/no item permits a 50/50 guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "102-103",
+   "quote": "the MCQ BrainLift reports a research consensus favoring three",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "132-133",
+   "quote": "flagged 137/772 items over a 5-option cognitive-load cap (mostly hot-text)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "140",
+   "quote": "accessibility option-count caps;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1206",
+   "quote": "Do not put a large field of selectable targets in front of an eight- or nine-year-old.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/accessibility.md",
+   "lines": "56-57",
+   "quote": "\"one hot-text item offered twelve selectable options, an excessive motor and cognitive load for an eight-year-old.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-aladdin-part-1.md",
+   "lines": "254",
+   "quote": "The whole passage is split into tappable segments: 3 correct and 11 distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Avoids filler distractors while preserving misconception-grounded choice sets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "371-372",
+   "quote": "replace the filler distractors with plausible, passage-grounded wrong answers that key a real misreading",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Rodriguez 2005",
+   "url": "https://doi.org/10.1111/j.1745-3992.2005.00006.x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

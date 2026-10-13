@@ -1,0 +1,184 @@
+{
+ "id": "real-word-parts-checked-against-a-reference",
+ "title": "Real word parts, checked against a reference",
+ "statement": "Check every word-part split, affix meaning and pronunciation against a dictionary or rule-based reference, never intuition, because invented splits teach false word-parts.",
+ "example": "Checked against a rule-based reference, 5 of 23 authored word-part splits were flagged, two of them teaching a flatly wrong rule.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Verifying a course's 23 authored word-part splits against a rule-based reference flagged 5 for review: two taught a flatly wrong rule on screen, two were folk splits and one was defensible but non-standard (`grade3-reading/knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd`, lines 49-66). The course's QC checklist, which counts all 5 as wrong, now requires every split checked that way, never by intuition, with words that don't decompose taught as word families (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`, row L2). Reviews found affix glosses that over-generalise, such as '-ing means it is happening right now' for two descriptive words, and a gloss built on a verb that doesn't exist, 'one who stranges' (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md`; `grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`), and an audit found a suffix printed without its hyphen, which a young reader takes for the insect (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). A calibration log ranks this class, content correctness against an outside authority, as the most frequent judgment machines couldn't make: 4 hits across all 9 logged rounds (`grade3-reading/artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md`). Teach only real word parts: print each affix with its hyphen, and teach a word that doesn't split as a word family.",
+ "against": "No verified morpheme reference was in the repository to diff against, so the class was judged not automatable honestly (`grade3-reading/artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md`). the word-part tool generates its splits by rule rather than looking them up, so its own verdicts need the same check. One lesson's rule, recorded in walkthroughs that have since been superseded.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "224",
+   "quote": "5 of 23 authored splits wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "224",
+   "quote": "Morph splits verified against a rule-generated reference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md",
+   "lines": "37",
+   "quote": "(\"-ing means it is happening right now\" for enchanting / menacing, whose definitions are descriptive)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "28",
+   "quote": "morpheme gloss inaccurate (stranger ≠ \"one who stranges\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "132",
+   "quote": "the morpheme gloss writes \"the suffix ant\" without a hyphen (reads as the insect to a grade-3 student)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md",
+   "lines": "266",
+   "quote": "judgment across all 9 logged rounds (4 hits, the top-ranked residue class).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "49",
+   "quote": "rule-generated not looked-up",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "50",
+   "quote": "to all 23 authored vocab decompositions; 5 flagged for review",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "65-66",
+   "quote": "merciless and stranger are the two teaching a flatly wrong rule on screen",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "96-97",
+   "quote": "look up dictionary IPA (Wiktionary + Merriam-Webster), never guess",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "55",
+   "quote": "The family stage teaches only real derivations — *eerily, eeriness* — never invented splits, because syllables are not morphemes.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "21",
+   "quote": "Syllable breaks for saying; meaning-parts only when real | Inventing splits (ee+rie) would teach false word-parts",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "89",
+   "quote": "Only *cheerful* of the three genuinely decomposes, so only *cheerful* gets a meaning-parts stage — the others get word families instead.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "340-341",
+   "quote": "the morpheme split is a separate, later move. \"Morphemes are meaningful elements, syllables are spoken parts\" — the two must never be conflated on one tile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/contract-drafts/DICTIONARY-TILE-PROPOSAL-2026-08-31.md",
+   "lines": "43-45",
+   "quote": "That fallback is why syllables and morphemes are already conflated in code: today, if a word has no `morph`, the pronunciation hyphens are pressed into service as if they were morpheme chips.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-vocab-design-2026-09-21/REGISTER.md",
+   "lines": "10",
+   "quote": "say the WHOLE word, highlighted as spoken (\"not be-tray-al\"), then the child says it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "420-423",
+   "quote": "prefix/suffix reference list covers ~90% of multisyllabic words the course will teach; the remaining ~10% (and judgment calls even within the covered 90%) require HUMAN judgment — morpheme analysis has no formulaic AI approach, because Latin, Greek, and Old English root patterns vary in ways a fixed rule set will not reliably catch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "423-425",
+   "quote": "Do not attempt to fully automate morpheme-split generation; treat the prefix/suffix list as the high-coverage starting reference, not a replacement for a human pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/glossary/HINT-AND-MORPHOLOGY-TRIAGE.md",
+   "lines": "29",
+   "quote": "“The suffix ing means it is happening right now.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "16",
+   "quote": "the taught `-less` is a suffix, not the model's claimed prefix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/EIGHT-GAP-ROUND-SPEC-2026-09-11.md",
+   "lines": "32",
+   "quote": "\"The suffix ing means it is happening right now.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "16-20",
+   "quote": "Look the word up, never guess … Write the IPA into the record before touching anything.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

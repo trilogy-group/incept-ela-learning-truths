@@ -1,0 +1,114 @@
+{
+ "id": "reviewer-controls-leave-no-evidence",
+ "title": "Reviewer controls leave no evidence",
+ "statement": "Controls for previewing or reviewing a lesson, such as free navigation, answer reveal and reset, leave mastery, rewards, completion and unlocks exactly as they were.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "evidence-of-learning",
+  "review"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course plans' quality checklist marks reviewer isolation as universal: free navigation, answer reveal, reset and reviewer-only controls leave mastery, reward, completion and unlock records unchanged, so exploring a course can't mint a learner's achievements or alter progression (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd`, Q011). The practice layer's app requirements include a reviewer mode that unlocks lessons without minting mastery evidence, and stamps earned under compressed calendars are marked non-evidence (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "34",
+   "quote": "Free navigation, answer reveal, reset, and reviewer-only controls leave mastery, reward, completion, and unlock records unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "152-153",
+   "quote": "a reviewer mode that unlocks lessons **without minting mastery evidence**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "663",
+   "quote": "The correct checkmark, disabled options, praise and enabled One more check remain in student mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "663",
+   "quote": "BookLesson isolates gates, stale async callbacks, reading reveals and the keyed spread only for Grade 5.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "663",
+   "quote": "This resets preview-local state at mode change, rather than recording it as student achievement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "14",
+   "quote": "Isolate preview and student state before child controls mount. Completion requires explicit student traversal and final confirmation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/laptop-review/README.md",
+   "lines": "21",
+   "quote": "Review mode and receipt deep links cannot create completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "456",
+   "quote": "Reviewer navigation must not mint learner mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/mode-isolation/REPAIR.md",
+   "lines": "5",
+   "quote": "The correct checkmark, disabled options, praise and enabled One more check remain in student mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "198",
+   "quote": "Free navigation, answer reveal, reset, and reviewer-only controls leave mastery, reward, completion, and unlock records unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "189-192",
+   "quote": "In Review mode every arrival at a page, by Next, Back, Skip, the journey picker or a direct url, starts that page as though it had never been completed, while a student's banked progress and the session ledger stay untouched",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "109",
+   "quote": "no XP is earned, no state persisted, no resume offered",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

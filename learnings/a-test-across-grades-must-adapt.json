@@ -1,0 +1,42 @@
+{
+ "id": "a-test-across-grades-must-adapt",
+ "title": "A test across grades must adapt",
+ "statement": "A test that must measure learners across several grades should adapt to each one, since a fixed form of normal length spread over that range is imprecise everywhere.",
+ "example": "One assessment design rejected a fixed 40-item form because it could not measure readers from grade 2 to grade 5 with a standard error of 4 or less.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "measurement",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The validity BrainLift of an interim reading assessment for grades 2 to 5 holds that a fixed 40-item form cannot measure scores from about 161 to 227, from the fall of grade 2 to the spring of grade 5, with a standard error of 4 or less, because items informative for a struggling grade-2 reader are noise for an advanced grade-5 reader; an earlier fixed-form design was superseded on the record for this reason (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md`, line 49). Its argument is arithmetic: information concentrates where an item's difficulty is near the learner's ability, and 40 items spread across a 6.5-logit range leave too little anywhere, which is why the published test it mirrors is adaptive too (line 51). It qualifies the record that spreads a test's items across easy, medium and hard: over several grades, even a spread fixed form is thin at every level.",
+ "against": "The argument assumes a 40-item length and a target error of 4 or less, and it is reasoned from measurement theory rather than measured on these learners.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "49",
+   "quote": "A fixed 40-item form cannot measure RIT ~161–227 (G2 fall through G5 spring) with SEM ≤ 4: items informative for a struggling G2 reader are noise for an advanced G5 reader.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "51",
+   "quote": "this is arithmetic, not preference — Fisher information concentrates near |θ − b| ≈ 0, and 40 items spread across a 6.5-logit range leaves too little information anywhere.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

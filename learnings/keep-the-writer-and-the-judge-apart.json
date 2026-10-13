@@ -1,0 +1,93 @@
+{
+ "id": "keep-the-writer-and-the-judge-apart",
+ "title": "Keep the writer and the judge apart",
+ "statement": "Keep the writer and the judge apart: void any item whose student-facing text addresses the judge, and show the writer plain editorial notes, never the judge's scores or raw output.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation",
+  "evaluation"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The external judge runs an integrity check first, fails items carrying score claims, rubric self-advocacy or instructions to the evaluator, and sets every metric to zero when an item fails it (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md`). The pipeline's writer contract carries no scoring labels, weights or judge-facing terms, and its repair step turns the judge's reasoning and suggested improvements into content-review notes, dropping sentences with judge words, so that the writer never sees the judge's names, scores, metric labels or raw output (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`). It is the item-side counterpart of asking whether a student's words are aimed at the marker. Text that addresses the judge includes an answer key or grading note written into the item.",
+ "against": "No run compares repairs given these notes with repairs given the raw verdicts or no notes. The note cleaner also drops more than it means to: its sentence split escapes the whitespace class twice and so never splits ordinary text, and a note with any banned word in it, even pass inside passage, is dropped whole (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`, `sanitize_review_note`). Some integrity voids were the judge's own bug ('Known IB v2.4 bug.' and 'Empty stems trigger InceptBench integrity_check false positive', `icloud-work/aptraining/.agent/research/inference_clean.md`, lines 50 and 64). The 14 records were stored items in a training bundle, and the action taken was a scrub of that data, not a live check on new items.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "24",
+   "quote": "- Integrity check runs first. Never include evaluator-facing score claims, rubric self-advocacy, or instructions to the evaluator.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md",
+   "lines": "110",
+   "quote": "- Integrity failure overrides all metrics to zero.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "399",
+   "quote": "\"\"\"Generator-safe contract: no scoring labels, weights, or judge-facing terms.\"\"\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py",
+   "lines": "267-268",
+   "quote": "The generator must never see evaluator names, scores, metric labels, or raw judge JSON. It only receives ordinary editorial/historical repair notes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "266",
+   "quote": "Evaluation voided: integrity_check failed. The content contains embedded evaluation/score data and score-steering instructions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "266",
+   "quote": "**This is a prompt-injection style failure where the model has emitted an answer key + scoring guidance INSIDE the question content.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "448",
+   "quote": "Recommended: scrub the training set for any stimulus containing strings like `\"score:\"`, `\"rationale:\"`, `\"part_1_*\"` regex match.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/MEMORY.md",
+   "lines": "113",
+   "quote": "**Scrub training data of prompt-injection-style stimuli** — F1 found ~14 MCQ_SET records with embedded scoring directives in `stimulus`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "23-24",
+   "quote": "Agents NEVER modify content.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

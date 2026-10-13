@@ -1,0 +1,60 @@
+{
+ "id": "find-repeats-in-code-then-by-meaning",
+ "title": "Find repeats in code, then by meaning",
+ "statement": "Find repeated questions with a code check for near-identical wording, which gives the same answer every run, and list a judge's same-meaning pairs separately, at lower confidence.",
+ "example": "A code check gave the same answer every run but missed a same-meaning pair whose word overlap was 0.5, below its 0.85 bar.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The judge's calls on repeated questions flip-flopped between runs and flagged unlike items, such as a short constructed response and a sequence item, as redundant. A code detector (same interaction type and question-stem token-set Jaccard >= 0.85) was fully reproducible and matched the cases the judge got right without its false positives, but missed same-meaning pairs with a token overlap of 0.5. The hybrid keeps the code detector as the floor and adds the judge's structured same-meaning pairs as a separate, lower-confidence list; the code detector was validated on a 14-item sample x3.",
+ "against": "Validated on a small sample: 'full-course re-measure is the real confirmation.' (shadow-bench, git commit 69d56ab, line 49).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "41-44",
+   "quote": "same interaction type + question-stem token-set Jaccard >= 0.85. Fully reproducible; matches the cases the LLM got right (identical / near-identical stems) without its false positives (e.g. an SCR + a sequence item wrongly flagged as \"redundant\").",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "55-57",
+   "quote": "The deterministic detector (#30) is high-precision + zero-variance but misses SEMANTIC duplicates … token overlap 0.5, below the 0.85 bar",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "57-58",
+   "quote": "The old LLM approach caught those but flip-flopped",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "69d56ab",
+   "lines": "66-67",
+   "quote": "The LLM-only subset is surfaced separately as `semantic_repetitive_items` (lower confidence) so consumers",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

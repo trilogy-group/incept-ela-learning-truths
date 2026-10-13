@@ -1,0 +1,99 @@
+{
+ "id": "evidence-that-doesnt-give-itself-away",
+ "title": "Evidence that doesn't give itself away",
+ "statement": "In a two-part evidence item, hinge the first part on a detail only the passage gives, and keep the keyed evidence from announcing itself or containing that part's answer.",
+ "example": "Across eleven redesign families, 2 of 13 two-part items passed a text-hidden solve on both parts, both built on an arbitrary passage detail and de-signalled evidence.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "format",
+  "options"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A grade-5 conversion round took 13 two-part evidence items that had all leaked and rebuilt their option text and prompts across eleven design families, keeping only items whose two parts both failed blind and both succeeded with the passage under a cross-family solver. Only 2 of 13 were certified, both hinging the first part on an arbitrary passage detail with a flat one-in-four prior, rewriting the keyed quote so it no longer announced itself as the evidence, and using real, topically parallel passage sentences as the wrong quotes. The other 11 leaked on the evidence part, because when the right evidence sentence contains the first part's answer a blind solver reads it off the option list, which the report calls a property of the format under a strong solver. A grade-4 probe found the same pattern, with evidence options restating the first part's answer.",
+ "against": "Every rebuild kept the keys and changed only option text and prompts (`grade3-reading/ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md`, lines 26-29), so the ceiling was measured under that constraint. A grade-4 plan carries an earlier grade-5 figure of about 0% cross-family leak for two-part items (`grade3-reading/ti-courseplans/courses/g4-reading/approval-package/topic-selection.md`, lines 252-253), so measured leak rates for the format differ between gates.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "3",
+   "quote": "**Headline: EBSR moves from 0-certified to 2-certified. 2 / 13 certified.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "5-6",
+   "quote": "baseline: 0/13 clean; the g5-blind-solve finding put EBSR leak at ~94% on encyclopedic passages",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "37-38",
+   "quote": "Keeper = **both parts blind-fail on all votes AND both parts with-passage succeed**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "43",
+   "quote": "11 design families explored",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "21-22",
+   "quote": "the correct evidence is a real passage sentence that *self-identifies* as the best-stated evidence, so a blind lexical solver back-solves it directly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "47-48",
+   "quote": "**Arbitrary passage-specific fact + de-signaled evidence.** Part A hinges on a concrete detail with a flat 1-of-4 prior a blind solver cannot know",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "50-51",
+   "quote": "rewritten so it does **not** announce itself as \"the evidence,\" and the three distractor quotes are each real, topically-parallel passage sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "55-56",
+   "quote": "when the correct evidence sentence contains the Part A answer, a blind solver reads it off the option list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/analysis/rt5-ebsr-2026-07-06/README.md",
+   "lines": "79-80",
+   "quote": "This is a real property of the two-part select-the-evidence format under a strong cross-family solver, not a tooling gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md",
+   "lines": "33",
+   "quote": "**Part B restates Part A** — G3's measured root cause, verbatim present",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

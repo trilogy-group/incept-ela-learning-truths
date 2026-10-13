@@ -1,0 +1,63 @@
+{
+ "id": "answer-on-the-diagram-not-only-about-it",
+ "title": "Answer on the diagram, not only about it",
+ "statement": "When the skill is reading a diagram, make its elements selectable and include steps answered on the diagram itself, such as tracing a path, not only sentences picked about it.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "format",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 lesson on reading a food-web diagram ruled that a rendering whose elements can't be addressed fails the construct, and it blocked a planned guided step in which the student sequences the arrows on the diagram itself rather than tapping a passage sentence. The fix gave every node and arrow an id and made them selectable, and the guided step now has the child tap two arrows in order on the map, with the dashed connector and the third arrow live as wrong targets. The lesson's scored release item still asks about an arrow through sentence options, which the audit upheld.",
+ "against": "Sentence options about a diagram still have a place: the audit upheld a release item that asks about an arrow through sentence options (grade3-reading/artifacts/u4l2-build/GRADE5-AUDIT.md, lines 295-296), so the rule asks for some steps on the diagram, not every step.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "309-310",
+   "quote": "a rendering where the diagram is not element-addressable … fails the construct",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "161-162",
+   "quote": "handoff where the student sequences/selects A1→A2 (kelp→urchin, urchin→otter) on the diagram itself rather than tapping a passage sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "314",
+   "quote": "make nodes/arrows clickable/selectable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "740-742",
+   "quote": "the child taps `#arrow-kelp-urchin` then `#arrow-urchin-otter` on the map itself (F11 ids; dashed connector and third arrow are live wrong-answer targets",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "295-296",
+   "quote": "option B \"The sea urchin is food for the sea otter, so energy moves from the urchin to the otter\" still stands fine",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

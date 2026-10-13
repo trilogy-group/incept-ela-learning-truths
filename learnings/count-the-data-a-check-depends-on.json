@@ -1,0 +1,51 @@
+{
+ "id": "count-the-data-a-check-depends-on",
+ "title": "Count the data a check depends on",
+ "statement": "Before trusting a check that depends on reference data, count how often that data exists.",
+ "example": "All three difficulty levels are '<unspecified>' for 6,437 of 6,437 standards from one exam board in the shipped curriculum files, so the difficulty check passes by default there.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "alignment"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The evaluator scores difficulty alignment 1.0 when no level definitions are supplied. In the v1.5 curriculum files it ships, all three levels are '<unspecified>' for 6,437 of 6,437 College Board standards, 114 of 114 SAT standards, 8,633 of 9,209 Common Core entries and 97 of 243 TEKS entries, and misconceptions are 'None specified' for 4,696 of 6,437 College Board and 114 of 114 SAT entries (counted with grep). The files are a dated snapshot (17 Mar 2026) and the evaluator fetches its curriculum at run time, so difficulty is auto-passed wherever the live data matches the snapshot. A check that passes by default when its data is missing never runs where the data is absent.",
+ "against": "Missing misconceptions do not pass by rule; the judge falls back to its own knowledge: \"- If NO: Use general pedagogical knowledge of common errors\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, line 264).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "164",
+   "quote": "- **No definitions** (all `<unspecified>` or absent): `difficulty_alignment = 1.0`. Do NOT invent criteria.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/curricula/v1.5/college_board_1.5.md",
+   "lines": "32-34",
+   "quote": "Difficulty Definitions:\n* Easy:\n  <unspecified>",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/curricula/v1.5/sat_1.5.md",
+   "lines": "32-34",
+   "quote": "Difficulty Definitions:\n* Easy:\n  <unspecified>",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,120 @@
+{
+ "id": "fix-the-source-not-only-the-copy",
+ "title": "Fix the source, not only the copy",
+ "statement": "Put every fix into the generator or specification that made the content, not only into the stored items, because regeneration undoes fixes made only to the output.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 3 reading course, a generator's output was copied by hand into the shipped lessons, with no script or manifest linking the two, so no build step could report a drift between them (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md`, §D). A rule fixed in the generator prompt did not reach lessons already on disk, and a fix applied on disk did not survive the next regeneration, which has happened, so the course now gives every adopted rule both homes. Its content-integrity skill treats upstream generation specifications as content: a rendered lesson that quietly fixes a bad specification does not close the defect, because regeneration can bring it back (`grade3-reading/ti-courseplans/skills/course-content-integrity/SKILL.md`). A defect repeated across a batch is the generator's, not a set of separate item faults.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "390",
+   "quote": "**The generator and the shipped lesson are not coupled by anything.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "392-393",
+   "quote": "A rule fixed in the generator prompt does not reach any lesson already on disk, and a fix applied on disk does not survive the next regen",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "394-395",
+   "quote": "So every adopted rule needs BOTH homes, and a verdict that names only one of them is half a fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "44",
+   "quote": "Upstream generation specifications are active content authorities.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "45-46",
+   "quote": "A rendered lesson that silently fixes a bad specification does not close the upstream defect because regeneration can reintroduce it.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "218",
+   "quote": "systematic defect patterns (same defect class across a whole batch = generator prompt bug, not per-item fixes).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "218",
+   "quote": "systematic defect patterns (same defect class across a whole batch = generator prompt bug, not per-item fixes)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "217",
+   "quote": "**Catches (the canonical four):** factual errors; teleological claims (\"the hoverfly *wants* to be mistaken\"); absent passage quotations; multiple defensible answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "213-214",
+   "quote": "Every rule below was **added or tightened in response to an observed failure**, so the same mistake cannot recur silently at scale.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L6-2026-09-05.md",
+   "lines": "131-132",
+   "quote": "if L6's vocab node were rebuilt on the newer schema, the density gap in §2 would close on its own.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "91-94",
+   "quote": "Every FAIL: fix the MANIFEST first … The wrap failure was a cast/scene contradiction — the manifest was the bug, not the model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "480-481",
+   "quote": "that instruction must be corrected once this function changes, or it will re-propagate the bug on the next port.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "117-118",
+   "quote": "Port the CURRENT `evaluate_locally` behavior, not a simplified keyword-overlap tally",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

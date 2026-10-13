@@ -1,0 +1,656 @@
+{
+ "id": "mark-meaning-not-wording",
+ "title": "Mark meaning, not wording",
+ "statement": "Mark meaning, not wording: any wording that says it counts, a short answer can be enough, and a point made on an earlier try still counts.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The open check asks the judge whether the student's text says each requirement in meaning: any wording counts, and a\nshort answer that says it is enough (`g9/transformer/src/mechanics/open-check.js`). A requirement met on an earlier try\nstill counts, and an answer is off task only on a confident no with nothing met\n(`g9/transformer/test/animated-judge.test.mjs`; `g9/transformer/v02/QA.md`).",
+ "against": "on another build's own answer\ntable, one answer came back not met where the table wants partial, its criterion asking for a specific phrase, and the\ntwo builds differ on earlier tries: one judges an answer with the earlier ones, the other on its own\n(`g9/transformer/v02/QA.md`; `g9/transformer/src/glue/`). A later run found: a content review flagged as urgent a misspelled answer the judge had marked fully correct, and whether spelling counts in comprehension answers is still undecided (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/REGISTER.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found counter-evidence (`g9/transformer/src/glue/threejs-archivist.js`). A later run found counter-evidence (`g9/transformer/src/mechanics/key-words.js`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md`). A later run found counter-evidence (`g9/player/qa/QA.md`). The course's bar calls such answers unscorable rather than in need of work: \"negated/hedged → unscorable\" (grade3-reading/artifacts/u4l2-build/GRADE5-AUDIT.md, lines 467-468). The audit asked for negation near the fact words, \"in proximity to the fact-bearing keywords\" (grade3-reading/artifacts/u4l2-build/GRADE5-AUDIT.md, line 473), but the shipped check flags a negation word anywhere in the answer (grade3-reading/artifacts/g5-deploy/server.py, lines 354 and 361), so a right answer worded like the lesson's own model line, \"The arrow follows the meal, not the attack.\" (grade3-reading/artifacts/g5-deploy/audio/GENERATION-REPORT.md, line 61), which the code's own comment says \"mentions the attack but carries the food-first reasoning.\" (grade3-reading/artifacts/g5-deploy/server.py, line 327), would be sent back once it reaches the coverage bar, against guards-must-accept-what-the-question-asks. Keyword floors can also be bridged by \"an answer that names one source plus the other side's content word\" (grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md, lines 788-789).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "25",
+   "quote": "- 20% LO-drift across all three courses (6/30 lo_drift drops) — Gemini was strict on edge cases where API was more specific than CED framework framing; not a factual divergence",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "27",
+   "quote": "- 8/30 statement_divergence: API more specific than CED; Gemini-strict calls",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "67",
+   "quote": "20% LO-drift was Gemini-strict — API was more specific than the CED framework on edge cases. NOT a factual divergence; semantic-strictness disagreement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "67",
+   "quote": "Mark on meaning, not wording. Both halves present, in any phrasing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "68",
+   "quote": "Never string-match. Matching on “broken” passes “trust can never be broken,” which is the opposite of the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "114",
+   "quote": "A vocabulary floor. No answer accepted that uses weaker language than the text supplies, without one push first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/REGISTER.md",
+   "lines": "17",
+   "quote": "Misspelled answer marked correct (\"magician\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "16",
+   "quote": "The spelling policy: what earns comprehension credit, when spelling is separately corrected, and how typed versus transcribed answers differ.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "175",
+   "quote": "*Check:* no `scoring`/`accept` spec passes on keyword presence alone — negated, hedged, or",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "176",
+   "quote": "off-topic responses route to unscorable/needs-work",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "132",
+   "quote": "U2-L6's SCR required the term \"sacrifice\"; its own model answer said \"gave up\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1468",
+   "quote": "Default: use a micro-rubric (0/1/2) for short text and explanations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1470-1472",
+   "quote": "- Switch to a rubric if any of these are true: - Your “acceptable answers” list exceeds ~15–20 variants. - You’ve edited the key twice post-launch to add more exceptions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "1469",
+   "quote": "Reserve full automation for numeric/diagram/property-based tasks with explicit tolerances.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "357",
+   "quote": "**Does the rubric reject the negation?** \"Trust can *never* be broken\" must fail.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "references/closing_questions_pattern.md",
+   "lines": "42",
+   "quote": "**never string-match**, because matching \"broken\" passes \"trust can *never* be broken\";",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "266",
+   "quote": "| Q1 marks on meaning and rejects the negation | **Yes** (the rubric explicitly rejects \"no part has a job\"). Clean up the \"word for word\" clause. |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_saq.md",
+   "lines": "39",
+   "quote": "- Scoring criteria are concrete enough to grade consistently — describe what makes an answer correct, don't dictate the exact answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "112",
+   "quote": "Do **not** fail solely because a listed synonym is **pedantically narrower or broader** than a historian would prefer if it still denotes the **same classroom concept** the explanation teaches",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ap-history-ib-expectation-matrix.md",
+   "lines": "162",
+   "quote": "- Expected-response/rubric criteria are specific enough to grade and flexible enough to accept valid variants.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf",
+   "lines": "pdftotext -layout output, line 12638",
+   "quote": "Clarity: Exam responses should be considered first drafts and thus may contain",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "629",
+   "quote": "If language mechanics are not part of the claim, either score them separately or don’t score them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "72",
+   "quote": "The local evaluation fallback grades free responses by keyword overlap, and a porting note propagates that defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "25",
+   "quote": "Misspelled \"magician\" marked correct; decide a comprehension spelling policy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/agent-B-D5-D6-D11-D13.md",
+   "lines": "58",
+   "quote": "\"never mark down for grammar, spelling, or shortness\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "8",
+   "quote": "Correctness must not collapse to keyword presence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "156",
+   "quote": "Accent or hesitation never fails a child; type path always offered",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-brief-2026-09-10/DECISION-BRIEF.md",
+   "lines": "57",
+   "quote": "The judge accepted a misspelled \"magician\" as full credit. Comprehension currently tolerates",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "175",
+   "quote": "no `scoring`/`accept` spec passes on keyword presence alone",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "72",
+   "quote": "| F16 | major | The local evaluation fallback grades free responses by keyword overlap, and a porting note propagates that defect. |",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "655",
+   "quote": "Keyword or word-count pass called comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D5-assessment-item-construction.md",
+   "lines": "32",
+   "quote": "Short-text items use a small 0/1/2 micro-rubric, not an ever-growing exact-match list",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0225-g3-closing-questions-adoption-2026-09-24.qmd",
+   "lines": "36",
+   "quote": "no string matching (judge on rubric meaning)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/evidence/AGENT-LIBRARY-USABILITY-CLEAN-ROOM-2026-08-07.qmd",
+   "lines": "64",
+   "quote": "2. Written-response completion can accept a fluent but false response through length and selection counts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "655",
+   "quote": "- Failure signals: Keyword or word-count pass called comprehension; unbounded judgment; no uncertainty route; hidden target leaked to learner.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "152",
+   "quote": "- The question is about a plant that loses its leaves, so nearly every answer contains \"leaves\", including passing ones such as \"without leaves it can't make food\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "126",
+   "quote": "`compare_accept` includes `away`, `house` and `home`, which match almost any answer.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "34",
+   "quote": "counts substring markers and first-token KL, which do not measure pedagogical quality.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "173",
+   "quote": "Delete the \"word for word is the goal\" clause so no marker reads it the other way.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "46",
+   "quote": "| Q1 marked on meaning | **Mixed.** The criterion says \"in any words\", but the rubric also says \"word for word is the goal\". |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "72",
+   "quote": "Regex-rewrites generator output: `the excerpt → the passage`, `the source → the text`, `Source: → Origin:`.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "113",
+   "quote": "(b) the scoring rubric sets an impossible bar (e.g., requires exact phrasing not in the passage),",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "1",
+   "quote": "Say it back: the first of the Grade 9 close questions (mimicry, then application, then evaluation).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "2-3",
+   "quote": "Code checks … that every key word is there",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "42",
+   "quote": "the student says it back. Every key word must be there.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "39-40",
+   "quote": "- criteria: 1 to 3 things a good answer must say, in meaning; a short answer that says them is enough. Each {\"requirement\": \"what the answer must say\", \"accept\": [\"three short answers that say it, in varied wording\"],",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "100",
+   "quote": "Answers that say it look like: ${c.accept.map((a) => `\"${a}\"`).join(\"; \")}.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "128",
+   "quote": "assert.ok(c.nudge && c.second_nudge && c.third_nudge && c.accept.length === 3);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "11",
+   "quote": "The same paragraph misspelt: spelling is not one of the changes the check chooses between.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "100",
+   "quote": "Any wording counts, and a short answer that says it is enough.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "57",
+   "quote": "a criterion met on an earlier try still counts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "83",
+   "quote": "Taking answer together with earlier_answers, does the student say this, in meaning (any wording counts):",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "56-57",
+   "quote": "Its ladder runs on its authored lines, and a criterion met on an earlier try still counts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "130",
+   "quote": "Taking answer on its own, does the student say this, in meaning? Any wording counts, and a short answer that says it is enough:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "100",
+   "quote": "Does student_text say requirement_${k}, in meaning? Any wording counts, and a short answer that says it is enough.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right; the second miss gives the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "14",
+   "quote": "a short answer that says it is enough (the 3D build's marking rule), so only noise is turned away before Jev",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "| Factual false now, but factual ID in `metAlready` | Full; prior truth overrides the fresh false verdict |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "A flagged criterion must be re-evaluated against the answer built over the conversation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Preserve earlier valid content when a learner only adds a missing language feature.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "When the learner explicitly retracts or reverses an earlier factual claim, judge the current position rather than treating the earlier claim as irrevocable truth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Controlled model replies establish route arithmetic, not semantic reliability of the live model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Reviewer-Feedback-2026-08-18.md",
+   "lines": "17",
+   "quote": "min-word limits forcing padding (zero in G5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INTEGRATED-READINESS-REVIEW.md",
+   "lines": "15",
+   "quote": "No arbitrary word or paragraph count, no fixed interpretation, and no claim to observe revision from final text alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/L7-ESSAY-ORGANIZATION-PATCH.json",
+   "lines": "11",
+   "quote": "Do not score by phrase matching, spelling, paragraph count or response length alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "95",
+   "quote": "The correct idea, at **meaning level** — not an exact string. A grade-4 child restating it in their own words counts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "102",
+   "quote": "**Author keys at the level of meaning, not exact wording.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "A prior factual ID cannot override a fresh false verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-grading.md",
+   "lines": "80",
+   "quote": "they are **meaning-level** hints, not exact-string matchers (grade-3/4 leniency is intended).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "63",
+   "quote": "When the learner explicitly retracts or reverses an earlier factual claim, judge the current position rather than treating the earlier claim as irrevocable truth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "720",
+   "quote": "A criterion met on any turn stays met for the rest of the question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "426-428",
+   "quote": "On the retrieval check that opens G4-U1-L2 that is exactly what happened: \"test\" met the first criterion, \"he can lose his life\" met the second, both had been said, and the child was told they were still short.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/qa/QA.md",
+   "lines": "16",
+   "quote": "\"fdsf\", \"fdsf sdfsd qwrt zxcv\", \"aaaaaa bbbbbb cccc dddd\", \"audience knows\" all refused, no reply",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "44",
+   "quote": "Recall is the goal: a short, correct answer is secure. One correct name or idea is enough when the question asks \"who\" or \"what\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "44-46",
+   "quote": "A child answering \"bright and cheerful\" was rejected three times because the judge demanded the exact authored phrase back.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "62",
+   "quote": "grades the reasoning, never the phrasing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "458-461",
+   "quote": "grades student answers by token overlap with `targetFacts` (coverage ≥ 0.5, or ≥ 4 raw hits, triggers \"strong\"), with no reading of stance — a hedged, negated, or off-topic answer that happens to contain the right keywords scores as correct.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "468",
+   "quote": "the evaluator must read stance, not tokens",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "474-475",
+   "quote": "route to `needs_work` with a scaffold prompting the student to commit to a clear claim, even if raw keyword coverage is high.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "667",
+   "quote": "hedged full-coverage → needs_work, negated full-coverage → needs_work",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "467-468",
+   "quote": "negated/hedged → unscorable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "473",
+   "quote": "in proximity to the fact-bearing keywords",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/server.py",
+   "lines": "354",
+   "quote": "\" not \", \" no \", \" never \",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/server.py",
+   "lines": "361",
+   "quote": "has_negation = any(m in padded for m in negation_word_markers)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/server.py",
+   "lines": "327",
+   "quote": "mentions the attack but carries the food-first reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "61",
+   "quote": "The arrow follows the meal, not the attack.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "788-789",
+   "quote": "can be bridged by an answer that names one source plus the other side's content word",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "serialise-changes-to-shared-content",
+ "title": "Serialise changes to shared content",
+ "statement": "When several people or agents change the same content, let them analyse in parallel but apply changes one at a time, and check the merge against every intended change.",
+ "example": "Two audit lanes edited the same sentence array, and a later write silently overwrote a correct anti-gaming fix while local checks passed.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a case study of one Grade 3 reading lesson, two audit lanes edited the same sentence array, each change sound on its own, and a later write silently overwrote a correct anti-gaming fix; passing local checks did not detect the lost intent, and the fix was reapplied during the final diff review (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`, lines 254-262). Its durable rule is to parallelise analysis but serialise writes to shared learner content, and to require an intent-aware final diff for every merge, not just conflict-free bytes (same file, lines 264-265). The prevention it names is ownership of each path or field before editing, rereading the latest bytes before a patch, a post-merge diff against both intended changes and rerunning the checks the change invalidated (same file, lines 267-268).",
+ "against": "The evidence is one lesson's case study, which says it is not a standard and is no evidence about lessons not inspected (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`, lines 4-5).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "256-257",
+   "quote": "A later write silently overwrote a correct anti-gaming fix.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "259-260",
+   "quote": "Each lane’s proposed change was sound in isolation, but both assumed they owned the shared content surface.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "260",
+   "quote": "Passing local checks did not detect lost intent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "264-265",
+   "quote": "Parallelize analysis; serialize writes to shared learner content. Every merge requires an intent-aware final diff, not just conflict-free bytes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "267-268",
+   "quote": "post-merge diff against both intended changes",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,84 @@
+{
+ "id": "check-a-markers-reply-against-its-criteria",
+ "title": "Check a marker's reply against its criteria",
+ "statement": "Check that a model marker returns exactly one verdict per authored criterion, and treat a missing, invented, duplicated or malformed verdict as a marking failure, never a pass or miss.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 5 open answer was rejected although it was the course's own supported answer, byte-identical to its reveal (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 72). Replaying the exact request through the real scoring route returned a positive judgment under an invented criterion ID, which the route counted as a miss. Once the route accepted only the exact authored criterion IDs, each with one complete boolean, malformed output stopped becoming a learner's wrong answer and the unchanged answer was accepted (line 84). The recount repair applies the rule from the other side: a required criterion whose verdict is missing, duplicated with conflicting verdicts or malformed cannot pass (line 197).",
+ "against": "The live failure's raw reply was lost, so its cause rests on a reproduction: \"Its internal cause is not yet isolated because the original HTTP/model response was not captured.\" (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 72). The closure keeps that limit and records no human or deployment acceptance (line 84).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "The current grading path rejected the exact authored supported answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "That text is byte-identical to `assessment.reveal`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "The isolated exact-request production-route diagnostic reproduces the cause with invented criterion ID despite a positive semantic judgment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "84",
+   "quote": "Technical cause fixed in 801a01a5: exact authored criterion IDs and complete/unique boolean validation prevent malformed model output from becoming learner-wrong; valid false and Grade3 rules preserved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Factual criterion missing, duplicated with conflicting verdicts, or malformed is held.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Missing, false or non-boolean model evidence for a flagged criterion cannot pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-10/G5-WALKTHROUGH.md",
+   "lines": "19",
+   "quote": "| Provider invented rubric criterion IDs (.106) | Only exact, unique authored criterion verdicts can be scored/cached. Malformed replies become an unscored service failure, never a learner mistake or automatic pass. | Actual POST 39/39; factual controls 52/52; fresh native supported answer and adjacent recovery. |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "247",
+   "quote": "Two of three authored criteria. Counted over the AUTHORED criteria, never over whatever the model chose to mention.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

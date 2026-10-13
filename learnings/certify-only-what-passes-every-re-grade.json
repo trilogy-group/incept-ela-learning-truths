@@ -1,0 +1,88 @@
+{
+ "id": "certify-only-what-passes-every-re-grade",
+ "title": "Certify only what passes every re-grade",
+ "statement": "Certify a generated item only if it passes every identical re-grading, treating a flip as a sign of a real defect.",
+ "example": "Items flipping at scores of 0.80 to 0.85 were real defects, and items at 0.95 or above held.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "generation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of a proposed item factory found that every lens endorsed its flip-band, stably-pass gate: items that flipped at 0.80-0.85 were real defects and items at 0.95 or above held (`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`). The same record warns that the gate filters score noise, not score bias, so a confidently mis-graded item certifies forever. A review of eight course proposals kept flip-band, stably-pass certification as part of the one proposal that manufactures and re-certifies item banks (`grade3-reading/artifacts/PROPOSAL_REVIEW_2026_06_16.md`).",
+ "against": "The evidence came from AP history items (`grade3-reading/artifacts/PROPOSAL_REVIEW_2026_06_16.md`), and a tightly specified AI marker in a reading lesson did not flip at all, identical in 12 of 12 scenario runs (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-16-R24.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "The flip-band stably-pass gate is load-bearing hygiene every lens endorsed (0.80-0.85 flips are real defects, >=0.95 holds) but it filters score NOISE, not score BIAS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "67",
+   "quote": "a confidently mis-graded item certifies forever",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "49",
+   "quote": "flip-band/stably-pass certification",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Make blocks with samples 2 in createBlocks. Blocks are cached, so this costs once per block. Keep samples 1 at play time.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "Rank 2 step 7 (make blocks with samples 2) was not done.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/bin/transformer.mjs",
+   "lines": "17",
+   "quote": "const samples = Number(opt.samples ?? 1);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "samples 2 doubles the Jev calls made while blocks are made.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/sound-out-respell/SKILL.md",
+   "lines": "78-80",
+   "quote": "a word whose joined chunks read back as another word (menacing → \"Manganese\", 2026-09-21) fails the class even if its gate passed once.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,105 @@
+{
+ "id": "practice-items-without-a-source",
+ "title": "Practice items without a source",
+ "statement": "Whether questions with no source to read serve practice as well as source-based ones is untested: a judge passed both, but only the source-based form matches the exam.",
+ "example": "Items stripped of their source passed the AP evaluator on 45 of 50 fresh requests.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "stimulus",
+  "practice",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "A red-team test stripped the source from AP choice questions, and generated items without one passed on 45 of 50 fresh requests, because the evaluator's most punishing checks only run when a source is present; the report credits the lift to the rubric's structure, not the generator's quality (`SECOND_TIER_REASON.md`, line 25; `EXPLOIT-002-stimulus-strip.md`, lines 31-34 and 216-217). The same report notes such items lack the source analysis that is the point of the exam form, while many textbook drills leave sources out for faster recall practice, and the project kept them only as an option for review-drill products (`EXPLOIT-002-stimulus-strip.md`, lines 206-211; `SECOND_TIER_REASON.md`, line 19). Nothing measured what students learn from either form. To settle it: the same objectives practised with and without a source, compared on a later test that has one.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "206-208",
+   "quote": "The only \"tell\" is that they lack a primary-source stimulus — which makes them weaker AP-prep than the live exam form (where stimulus analysis is the whole point)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "209-211",
+   "quote": "Many textbook drills and formative-assessment items omit stimuli for the same reason (faster recall practice).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/SECOND_TIER_REASON.md",
+   "lines": "19",
+   "quote": "- **Stem-only review-drill products**: explicit non-exam-format MCQs (no stimulus) for AP-prep practice apps, where the IB grader rubric matches the product shape.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/SECOND_TIER_REASON.md",
+   "lines": "25",
+   "quote": "- Pass rate 90% (45/50) — partial generalization works on diverse Unit-1 KCs",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "31-34",
+   "quote": "The IB rubric's most punishing checks — the **educational_accuracy zero-knowledge counterfactual probe** and the **stimulus_quality harm check** — only fire when a stimulus is present.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/EXPLOIT-002-stimulus-strip.md",
+   "lines": "216-217",
+   "quote": "the lift is therefore attributable to a rubric structure — not generator quality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "274-277",
+   "quote": "Under the new contract, every SAQ is sourced: question 1 uses one or more secondary text sources, question 2 uses a primary text source, and question 3 uses a primary or secondary non-text source. The three questions focus on different historical periods.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "284-285",
+   "quote": "The legacy local generator allowed source-free SAQs, so the course rejects that behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "46",
+   "quote": "That is incompatible with the May 2027 all-sourced SAQ contract.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "46",
+   "quote": "No legacy SAQ is accepted by shape alone. Every authored SAQ must carry a verified source and source type.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

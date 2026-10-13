@@ -1,0 +1,115 @@
+{
+ "id": "dont-stop-at-one-copied-quote",
+ "title": "Don't stop at one copied quote",
+ "statement": "An evidence or written task must not be passable by copying one sentence from the source.",
+ "example": "One redesign had students judge six statements, two of which the text contradicts, after finding their evidence.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A value analysis of a redesigned reading lesson named its old ending, one tapped block, one copied quote and one word, as the strategy's known failure: evidence located, concept never built. The redesign had the student judge six statements, two of which the text contradicts, and asked for two different quotes, since one quote proves only that the student can copy (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md`, lines 9-23).",
+ "against": "The analysis calls its case \"NOT measured learning.\", and the additions cost about three to five minutes, with the second quote partly transcription (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md`, lines 4 and 32-35). When locating evidence is itself the skill, finding the answer in the text is intended: 'When the stem asks for evidence, the central idea, a theme statement, or an error within the passage, the answer being located in the text is the assessed reading skill' (`shadow-bench/src/inceptbench/prompts/question/hot_text_evaluation.txt`, lines 19-21).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md",
+   "lines": "10-11",
+   "quote": "evidence located, concept never built",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md",
+   "lines": "11-12",
+   "quote": "The new Refine step makes the child judge six statements, two of which the text contradicts; that is retrieval PLUS falsification",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md",
+   "lines": "20-21",
+   "quote": "One quote proves the child can copy; two different quotes prove the claim is supported",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "172-173",
+   "quote": "- Score 0.0: A student can earn full credit by copying a single sentence from the passage without demonstrating understanding.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/scr_evaluation.txt",
+   "lines": "121",
+   "quote": "- Fails if the question only requires copying a sentence from the passage (locating, not inferring).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "168",
+   "quote": "- Fails if the prompt reduces to a summary task or copying from the source.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "19-21",
+   "quote": "When the stem asks for evidence, the central idea, a theme statement, or an error within the passage, the answer being located in the text is the assessed reading skill",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "169",
+   "quote": "**F3. Quote words never satisfy the own-words blank.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/g3-parity-audit.md",
+   "lines": "29",
+   "quote": "deterministic client parrot rule in SpeakGate (>= 0.9 content-word overlap, or >= 6-word verbatim run at >= 0.8): a parroted pass becomes a miss with own-words feedback",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "308-309",
+   "quote": "The rubric accepts semantically defensible variants and rejects evidence-free or copied text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "460",
+   "quote": "shown when ≥60% of 8-grams overlap the tapped line",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge-cases.json",
+   "lines": "242-244",
+   "quote": "\"answer\": \"it means he is not what he is\",",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

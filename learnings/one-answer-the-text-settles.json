@@ -1,0 +1,639 @@
+{
+ "id": "one-answer-the-text-settles",
+ "title": "One answer the text settles",
+ "statement": "A choice question needs one answer the text settles; check the right option, and each wrong one, on its own.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "distractors"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every choice block asks the judge whether the keyed option is right, given what the student has read or heard, and\nseparately whether each other option is wrong (`g9/transformer/src/mechanics/quick-check.js`,\n`g9/transformer/src/mechanics/film-check.js`, `g9/transformer/src/mechanics/video-essay.js`). All of them have to hold.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/AP_EVALUATION.md",
+   "lines": "140",
+   "quote": "Exactly one answer must be defensibly correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/MATH_VERIFIER.md",
+   "lines": "70",
+   "quote": "Check all distractors against computed answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "141",
+   "quote": "| with-passage Gemini control pass | 735/1,152 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "35",
+   "quote": "**MCQ:** One stimulus (primary source), one question stem, four answer choices (A-D), exactly one correct answer, three plausible distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "249",
+   "quote": "- Issue: All options A–D equal 7/11, but the key lists only A and C.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0091-g5-question-generation-retrospective-codex-2026-07-09.qmd",
+   "lines": "146-147",
+   "quote": "The 417 with-passage control failures were often ambiguity or broad `Both` keying, not necessarily blind leakage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "36",
+   "quote": "genuinely ambiguous with the text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-18/REGISTER.md",
+   "lines": "11",
+   "quote": "NOT the report's own suggestion (a plant nursery is a CORRECT use of the word and cannot be a wrong option in \"uses the word correctly\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "104-105",
+   "quote": "Root cause: a causal-**chain** passage + a \"what causes X?\" prompt makes several links defensible, and anti-leak keying the *non-proximate* link worsens it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/BUNDLE_CONTENT_BUGS.md",
+   "lines": "53",
+   "quote": "The passage is one continuous transitive causal chain",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "158-159",
+   "quote": "For MSQ, all defensible answers must be keyed. For EBSR, Part B needs one uniquely strongest evidence choice and must not reveal Part A.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "86-87",
+   "quote": "**msq** — exactly one defensible correct SET; the keyed set must NOT be \"the two/three … longest\"; include at least one live-trap distractor",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0134-g5-reading-v2-local-design-package.qmd",
+   "lines": "104",
+   "quote": "Independent review found an initial competing S07 plus S09 interpretation.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "338 (textutil text)",
+   "quote": "Each Refine step has exactly 6 statements, 4 true and 2 incorrect; the incorrect ones are falsifiable directly from the text.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "292 (textutil text)",
+   "quote": "Not true (opposite of the text: the slab slammed shut on him)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "301 (textutil text)",
+   "quote": "Not true (he kept it \"pressed against his chest\")",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "179 (textutil text)",
+   "quote": "Note: the don't-fit words are exactly the things Aladdin does NOT ask for, which is what the text points out.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "154-156",
+   "quote": "`PASS` requires one stable best answer/set and no material alternative. One credible competing answer is `NEEDS_HUMAN`; repeated support for two answers is `FAIL`. \"The intended answer is stronger\" does not repair a hard-scored item when another option also answers the question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "148",
+   "quote": "hide the intended key;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "151",
+   "quote": "repeat with at least three option-aliased or shuffled views;",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "68",
+   "quote": "- Two or more options produce identical meaning in context (the blank has no unique correct answer).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ebsr_evaluation.txt",
+   "lines": "65-66",
+   "quote": "- a NON-keyed Part B option has `supports_part_a_keyed_answer: YES` (a distractor is itself valid supporting evidence, so the Part B key is not the unique/complete set).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/science_evaluation.txt",
+   "lines": "26-27",
+   "quote": "- A reading-the-data or interpret-the-graph task must give enough information for the intended answer to be determinate.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "100-101",
+   "quote": "`orderability` is high when the cohesive cues admit exactly one coherent arrangement, and low when two or more arrangements read as equally coherent.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "118-120",
+   "quote": "The subjective-ordering failure still holds: if the stem orders by a subjective axis with no text-fixed answer (e.g., \"arrange these themes from least to most important\" with no basis in the passage) → `orderability = 1`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "12",
+   "quote": "2. All 3 questions must be independently answerable from the stimulus alone",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/AP_EVALUATION.md",
+   "lines": "140",
+   "quote": "| `answer_validity` | MCQ, MCQ_SET | Exactly one answer must be defensibly correct |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "21",
+   "quote": "Equally Text-Supported**: Both correct answer and distractor are equally supported by passage evidence",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/scores/aplit-quiz-generation/results.txt",
+   "lines": "13",
+   "quote": "Accuracy:         66.7%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md",
+   "lines": "71",
+   "quote": "**Verdict: Oracle's call CONFIRMED.** Multiple-correct-answers defect. A thoughtful student picking C is not factually wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/msq.py",
+   "lines": "22",
+   "quote": "- Each correct answer must be independently correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "22-27",
+   "quote": "| answer_validity | 146 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter1.md",
+   "lines": "10",
+   "quote": "There are two defensible correct answers.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/mcq_set.py",
+   "lines": "400",
+   "quote": "TEST: \"Could an AP teacher argue this distractor is also correct?\" → if yes, CHANGE IT.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "979-983",
+   "quote": "Narrative-writing-evaluation items (standards naming engage/orient reader, event sequence, establish context with characters) that ask the student to pick the BEST among multiple long parallel options (drafts/passages of 40+ words each) carry a high risk of containing distractors that a reasonable student could defensibly pick.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "21",
+   "quote": "Degree-Only Difference**: Differs only in degree/intensity when the passage doesn't clearly establish the distinction",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "241",
+   "quote": "| Dim 9: Answer key defensibility | Correct answer is uniquely defensible from text | Hard gate |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/mcq_evaluation.txt",
+   "lines": "387",
+   "quote": "- **Borderline-correct distractors**: an option labeled incorrect is actually a defensible answer under the stem's *named* criteria.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0223-g3-review-rounds-and-tooling-2026-09-18-to-21.qmd",
+   "lines": "31",
+   "quote": "explicitly **not** the report's own suggested fix (a plant nursery is itself a correct use of the word).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "102",
+   "quote": "6 practice items dropped after the screen credibly showed a **multi-defensible key** (verified by reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-item-stats.md",
+   "lines": "258",
+   "quote": "Either way the correct answer should be statable with a single-sentence verbatim pointer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "186",
+   "quote": "- **W-8. WORTH-FIXING — `item-8-match` prompt 1 is a coin-flip between two dated",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-25-R10.md",
+   "lines": "104",
+   "quote": "per the lesson's own gloss pattern) can defensibly pick the distractor and be marked wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "154-156",
+   "quote": "`PASS` requires one stable best answer/set and no material alternative. One credible competing answer is `NEEDS_HUMAN`; repeated support for two answers is `FAIL`. \"The intended answer is stronger\" does not repair a hard-scored item when another option also answers the question.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-content-integrity/SKILL.md",
+   "lines": "155-156",
+   "quote": "\"The intended answer is stronger\" does not repair a hard-scored item when another option also answers the question.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/evidence/AGENT-ENTRYPOINT-CLEAN-ROOM-G3-U4-L1-2026-08-06.qmd",
+   "lines": "59-60",
+   "quote": "One hot-text prompt can reasonably be answered by either winter or spring camouflage, while only the winter sentence is keyed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-content-integrity/SKILL.md",
+   "lines": "155-156",
+   "quote": "\"The intended answer is stronger\" does not repair a hard-scored item when another option also answers the question.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "46",
+   "quote": "`secret` makes a grammatical, true sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "131",
+   "quote": "A child who taps it is corrected for a defensible answer.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "113",
+   "quote": "As written, \"Things I already know\" is a correct answer to many questions.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "continuous_improvement.md",
+   "lines": "48",
+   "quote": "- `answer_validity` — MCQ must have exactly 1 correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "218-222",
+   "quote": "the answer key itself must be both **complete** (every option that is correct under the stem is keyed) and **exclusive** (no keyed option is actually incorrect). A correct option left out of the key, or an incorrect option included in the key, mismeasures every student and is a factual error in the item — not a stylistic preference. Do NOT excuse a missing-correct option by arguing the keyed options are \"the best\" ones; \"select all that apply\" means all.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/hot_text_evaluation.txt",
+   "lines": "57-59",
+   "quote": "A hot text item must have exactly the keyed set as its defensible answer. \"It is the best span\" does NOT rescue the item when another selectable span also satisfies the literal instruction — ambiguous keys mismeasure students.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "116",
+   "quote": "8. **Multi-correct**: two options are defensibly correct. Verify with the rationale that only ONE option survives strict reasoning.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "66",
+   "quote": "use overly broad \"best explains\" stems with multiple defensible answers.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2024",
+   "quote": "row 336 MCQ_SET easy scored 0.75 because Q2 asked for European disagreement not actually present in the stimulus,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "50",
+   "quote": "the other two are wrong about the text or the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "97",
+   "quote": "rebuilt(item, x.k, x.o)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "106",
+   "quote": "Is sentence_${x.k}_${x.j} wrong about quote or about passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "120",
+   "quote": "makes the rebuilt sentence wrong: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "333-334",
+   "quote": "\"verdict\": \"fails\", \"p\": 0.31",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "68",
+   "quote": "The keyed answer is right, judged from the cited lines",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "70",
+   "quote": "is wrong, judged from the whole text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/direct-the-line.js",
+   "lines": "2",
+   "quote": "The judge, reading the same lines around it, must pick the same delivery.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "105-106",
+   "quote": "that the keyed option is right, the others wrong, and that every option is well formed (added after a draft offered \"he is not what he am\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "86",
+   "quote": "every option is well-formed English",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "106",
+   "quote": "every option is well formed (added after a draft offered \"he is not what he am\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "68",
+   "quote": "{ id: \"answerable\", label: \"The keyed answer is right, judged from the cited lines\", q: noul(\"answerable\", \"Using only evidence_lines, is the option named by keyed_answer a correct answer to the question?\"), expect: \"yes\" },",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "70",
+   "quote": "id: `wrong-${letters[i]}`, label: `Option ${letters[i]} is wrong, judged from the whole text`,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/quick-check.answerable.json",
+   "lines": "5",
+   "quote": "A block's check, on both samples: is the keyed option right, judged only from the cited lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/quick-check.answerable.json",
+   "lines": "5",
+   "quote": "Seed cases only: obvious ones",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "58-62",
+   "quote": "\"long remember\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "334",
+   "quote": "\"p\": 0.31,",
+   "verified": "script"
+  },
+  {
+   "source": "learning-truths",
+   "path": "research/2026-10-12-6-transformer-ideas/universality-test-gettysburg.txt",
+   "lines": "5",
+   "quote": "The world will little note, nor long remember what we say here, but it can never forget what they did here.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "6",
+   "quote": "\"status\": \"ready\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "14",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/c98cc9de312f4d43.json",
+   "lines": "6",
+   "quote": "\"status\": \"ready\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/c98cc9de312f4d43.json",
+   "lines": "14",
+   "quote": "\"answer\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "105",
+   "quote": "question is answered by what has been said by its stop, that the keyed option is right, the others wrong, and that",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "105",
+   "quote": "that the keyed option is right, the others wrong",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "55, 288",
+   "quote": "\"sentence_0_2\": \"The noun wrinkled lip implies that the king held his subjects in utter contempt and felt entirely superior to them.\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "292",
+   "quote": "Its rollercoaster option can also seem dangerous under the actualdefinition; feedback rejects it using fun/laughter absentfromtheoption.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "14",
+   "quote": "Separately, the fast/steep/screaming rollercoaster can reasonably seem dangerous.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_08 10_30 CEST - Notes by Gemini.md",
+   "lines": "322",
+   "quote": "A lot of the questions are they're uh they're not well-ritten questions in the sense that they're there's two or three plausible answers whereas to hit a mastery rate of 90% you want to you know have clarity on that.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L612555.txt",
+   "lines": "128",
+   "quote": "Hendrick explained that test items must feature single, unambiguous correct answers rather than multiple plausible options",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

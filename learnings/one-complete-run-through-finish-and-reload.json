@@ -1,0 +1,89 @@
+{
+ "id": "one-complete-run-through-finish-and-reload",
+ "title": "One complete run through finish and reload",
+ "statement": "Test a lesson in one complete learner run from an empty state through its finish, reloading partway and after saving, and check that progress, gates, rewards and saved work survive.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "evidence-of-learning",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 click-through exposed several failures at once, among them a correct response that appeared to earn no XP and a reading control that looked active without narration having started (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`, lines 18-27). Its postmortem found that the checks proved elements existed but not that a learner could see, understand, hear, correct, complete and resume, and that XP, completion, unlock and persistence had been checked in pieces rather than as one stateful journey through completion and reload (lines 29-31 and 68-69). The release gate now fails closed unless one complete run proves lesson completion, the correct preview XP result, next-lesson unlock and the same state after reload, and review-mode navigation must leave that state unchanged (line 87).",
+ "against": "The QA run reloaded once, mid-scene; none of its checks reloaded after writing had been saved (`g9/prototypes/app-narrated-qa/QA.md`, lines 9-33).",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "30",
+   "quote": "existed, but did not prove that a learner could see, understand, hear, correct, complete, and resume",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "68-69",
+   "quote": "5. XP, completion, unlock, and persistence were checked in pieces rather than as one stateful journey through completion and reload.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "87",
+   "quote": "One complete run proves lesson completion, the correct Preview XP result, next-lesson unlock, and the same state after reload.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "429",
+   "quote": "A fresh browser profile starts cleanly",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "5",
+   "quote": "fresh isolated browser context (empty localStorage)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "400",
+   "quote": "Audio ending, manual Continue, transcript fallback, and reload each preserve the correct scene and check state.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "428",
+   "quote": "Writing is retained after reload in the same browser and origin.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "23",
+   "quote": "Reload mid-scene preserves scene and check state | PASS | reload on scene 3 with 0.2 s heard: panel 3, clipDone {1,2}, check_intro_world done, heard 0.2079 s, Continue disabled",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

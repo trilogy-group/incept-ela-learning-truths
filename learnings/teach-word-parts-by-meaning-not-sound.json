@@ -1,0 +1,133 @@
+{
+ "id": "teach-word-parts-by-meaning-not-sound",
+ "title": "Teach word parts by meaning, not sound",
+ "statement": "Once learners decode fluently, as expected from grade 3, leave phonics out of vocabulary teaching and break taught words into the parts that carry meaning.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A Grade 3 reading course's published rules say not to teach phonics or phonemic awareness at Grade 3 and above: leave decoding out and teach morphology, breaking words into meaningful units, since its readers have mastered phonics. A mechanical rule requires vocabulary cards to break words by meaning parts, not sounds, though its detector for phonetic splits is still owed. The same course's recorded decisions keep a sound-it-out and say-it stage in its vocabulary sequence as an intentional audio action, so the sources disagree on whether a card may also break a word by sound.",
+ "against": "The same course keeps a sound-out stage: 'Vocabulary follows the current sound/say/teach/example/type sequence, with genuine attempt handling and later inability fallback.' (grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md, line 17), and 'explicit sound-out remains an intentional audio action' (the same file, line 19). It is followed by convention, and the check that would fail phonetic splits in child-facing text is still owed: \"OWED: fail phonetic-split content\" (`grade3-reading/course-renderer/docs/qa/new-lesson-qa-invariants.md`, lines 63-64). It is followed by convention rather than enforced (`othello-course-renderer-draft/repo/docs/rules/knowledge-and-curriculum.md`, line 224), and the check that would fail phonetic splits in learner-facing text is still owed (`othello-course-renderer-draft/repo/docs/qa/new-lesson-qa-invariants.md`, lines 62-64).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "115",
+   "quote": "Do not teach phonics or phonemic awareness at Grade 3 and above",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "118",
+   "quote": "Leave decoding out. Teach morphology instead: break words into meaningful units.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "392",
+   "quote": "Morphological teaching, never phonetics. G3 has mastered phonics; cards break words by meaning parts (`morph.parts`), not sounds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "393",
+   "quote": "phonetic-split detector OWED",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "17",
+   "quote": "Vocabulary follows the current sound/say/teach/example/type sequence, with genuine attempt handling and later inability fallback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "19",
+   "quote": "explicit sound-out remains an intentional audio action",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "211-212",
+   "quote": "**Rule.** Leave decoding out. Teach morphology instead: break words into meaningful units.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "61-62",
+   "quote": "**B2. Morphological teaching, never phonetics.** G3 has mastered phonics; cards break words by meaning parts (`morph.parts`), not sounds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "214-215",
+   "quote": "are expected to have already acquired these foundational decoding skills",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "215-216",
+   "quote": "with a reading fluency baseline of approximately 110 words per minute",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "63-64",
+   "quote": "OWED: fail phonetic-split content",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/knowledge-and-curriculum.md",
+   "lines": "211-212",
+   "quote": "**Rule.** Leave decoding out. Teach morphology instead: break words into meaningful units.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/knowledge-and-curriculum.md",
+   "lines": "216-218",
+   "quote": "Instead, teach morphemes: \"the word 'transportation', where isolating the root 'port' (travel) and the prefix 'trans' (across) provides a systematic strategy for deriving word meaning.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/knowledge-and-curriculum.md",
+   "lines": "215-216",
+   "quote": "with a reading fluency baseline of approximately 110 words per minute",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "61-62",
+   "quote": "**B2. Morphological teaching, never phonetics.** G3 has mastered phonics; cards break words by meaning parts (`morph.parts`), not sounds.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

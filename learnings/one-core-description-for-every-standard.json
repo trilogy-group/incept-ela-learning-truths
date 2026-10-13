@@ -1,0 +1,71 @@
+{
+ "id": "one-core-description-for-every-standard",
+ "title": "One core description for every standard",
+ "statement": "Give every standard the same core description (key concepts, learning objectives, assessment boundaries, common misconceptions, and easy, medium and hard definitions) in one versioned source that writers and judges read.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation",
+  "evaluation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The curriculum repository is the source of truth for the standards used across all generators, with one version number shared by all curricula, and the evaluator's prompts refer to the same data by concept, such as assessment boundaries and difficulty definitions, not by format. Its core attributes (lesson name, key concepts, learning objectives, assessment boundaries, common misconceptions and difficulty definitions) are strictly typed because downstream tools build interfaces and evaluations around them, while each curriculum may add its own keys beside them.",
+ "against": "The core set is 'validated with strict types when present', and each core field may be null (shadow-curriculum/schemas/standard-leaf.schema.json lines 34-61); parent standards carry none: 'Leaf nodes have `attributes`; non-leaf nodes have `attributes: null`' (shadow-curriculum/plans/curriculum-api-plan.md line 249). Without definitions the judge skips the check: 'Without definitions → 1.0.' (shadow-bench/src/inceptbench/prompts/question/_base_evaluation.txt line 35). Some core fields were inferred by a model with no outside source (shadow-curriculum/plans/data-hierarchy.md line 267), and the bundled AP social-studies courses are judged from a local file instead, resolving their 'curriculum context **offline** from that file' (shadow-bench/docs/internals/ap-evaluation.md lines 10-12).",
+ "evidence": [
+  {
+   "source": "shadow-curriculum",
+   "path": "README.md",
+   "lines": "3",
+   "quote": "Central repository for all curriculum data. This is the **source of truth** for curriculum standards used across all generators.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "README.md",
+   "lines": "42",
+   "quote": "All curricula share a single version number.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "49",
+   "quote": "**Core attributes (still strictly typed):** `lesson_name`, `key_concepts`, `learning_objectives`, `assessment_boundaries`, `common_misconceptions`, `difficulty_definitions`.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "66",
+   "quote": "**Secondary:** strict types on the core set stay important because those fields are the ones downstream tools build UIs and evals around. Flexibility at the edges, rigor at the core.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "62",
+   "quote": "Hence the hybrid: enforce the names and types of the core set, let curricula add their own keys beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "plans/02-curriculum-api-transition-plan.md",
+   "lines": "17",
+   "quote": "The LLM evaluation prompts already reference curriculum data by concept (Assessment Boundaries, Difficulty Definitions, etc.) -- not by format.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

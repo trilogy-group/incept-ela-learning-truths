@@ -1,0 +1,71 @@
+{
+ "id": "likely-misreadings-in-a-rubric",
+ "title": "Likely misreadings in a rubric",
+ "statement": "Whether a rubric should list a question's likely misreadings, each checked on its own and answered when nothing else is met.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "scoring-guide",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The lesson engine's marking adapter for an animated version asks the judge about each misreading a rubric lists, as a question of its own, and reports one only when no criterion is met and none is unsure (`g9/transformer/src/glue/animated-judge.js`). Every rubric the engine exports sets that list to empty (`g9/transformer/src/glue/animated.js`), and its adapter for a 3D version has no misreading check at all.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "87",
+   "quote": "Does answer show this misreading:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js",
+   "lines": "104",
+   "quote": "const misreading = met.size || unsure.length ? null :",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "68",
+   "quote": "misreadings: [],",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "98",
+   "quote": "Common wrong turns → these should score 0. This is what makes the grader *discriminate*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "122",
+   "quote": "Proof — the real graded response (good answer → 2/2)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "145",
+   "quote": "**Off-target** (\"Seeds need sunlight and good soil\") → **0**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,79 @@
+{
+ "id": "an-instruction-is-not-a-guard",
+ "title": "An instruction is not a guard",
+ "statement": "Telling an agent not to change content doesn't stop it: hash content files before and after automated work, and keep every change as an edit that can be replayed.",
+ "example": "An agent told never to edit a lesson file overwrote it from a stale copy, caught only because a test's count came out 186 instead of 187.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "During a fan-out of model agents in the reading project, one agent left the lesson file at a stale snapshot and four content edits vanished, despite an explicit prompt clause never to edit that file; it was caught only because a test's count pin came out 186 instead of 187 (`grade3-reading/knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd`). The root cause it records is that a prompt instruction is not a write guard, since an agent's shell can write wherever the main loop can; the fix is to hash every content file before a fan-out, check it when each agent returns, treat any change as an incident, and keep every content change as an operations file so re-applying it is one command (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "145-148",
+   "quote": "left the working file at a 21:15 snapshot — four content ops (tappability spans, a decoy line) vanished — despite an explicit prompt clause \"never edit public/lesson-json/grade-3.json.\" Caught only because `semantic-coverage.test.mjs`'s count pin moved (186 ≠ 187).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "149",
+   "quote": "**Root cause:** a prompt instruction is not a write guard — a fan-out's Bash has the same filesystem",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "152-155",
+   "quote": "before any fan-out that touches harnesses/tests, record `md5 -q public/lesson-json/grade-3.json` (and any other content file); re-check it when every agent returns and treat any change as an incident (re-apply from saved ops files, never hand-patch). Keep every content mutation as an ops file under the batch record (`apply-ops.py`) so re-application is one idempotent command.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit1.md",
+   "lines": "41",
+   "quote": "I compared the entire current U9 Lesson7 parsed object with baseline da0b0b42 after excluding only that new node. **They are equal.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "406-407",
+   "quote": "Lesson for the fan-out rule: forbid any JSON write in the prompt AND check the file's md5 after agents return.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/runs/2026-08-20T15-49-54-024Z-G3-U2-L1.json",
+   "lines": "632",
+   "quote": "only 1 of 4 authored options survived; that is a rewrite, not a form edit",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/build_content.py",
+   "lines": "12",
+   "quote": "--check  rebuilds in memory and fails if the committed JSON differs or any quote is not verbatim.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

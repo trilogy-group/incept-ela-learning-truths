@@ -1,0 +1,79 @@
+{
+ "id": "keep-simulated-review-perspectives-apart",
+ "title": "Keep simulated review perspectives apart",
+ "statement": "Run each simulated review perspective in its own process, blind to the others' prompts and results until code combines them.",
+ "example": "One preflight ran three simulated perspectives against one lesson, each in a fresh process.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 lesson preflight runs three isolated simulated characters against one exact learner artifact, one fresh process per character, and none receives another's prompt or result; cross-character visibility is forbidden until deterministic aggregation. Its contract forbids numeric scores and any whole-course claim from one lesson, and sets that human sign-off may not be minted by simulation.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "5",
+   "quote": "Run three isolated reactions against one exact Grade 5 learner artifact",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "84",
+   "quote": "\"processes\": \"one fresh process per character\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "85",
+   "quote": "\"cross_character_visibility\": \"forbidden until deterministic aggregation\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "skills/course-experience-preflight/SKILL.md",
+   "lines": "44",
+   "quote": "No character receives another character's prompt or result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "97",
+   "quote": "\"human_signoff_may_be_minted_by_simulation\": false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "104",
+   "quote": "\"numeric_scores\": \"forbidden\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/adversarial-preflight/contract.json",
+   "lines": "105",
+   "quote": "\"whole_course_claim_from_one_lesson\": \"forbidden\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

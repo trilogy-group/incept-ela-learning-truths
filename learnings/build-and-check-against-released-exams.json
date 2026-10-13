@@ -1,0 +1,59 @@
+{
+ "id": "build-and-check-against-released-exams",
+ "title": "Build and check against released exams",
+ "statement": "Build and check generated items and marking guides against the exam's official released items, scoring guidelines and scored sample answers wherever they exist.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "scoring-guide",
+  "measurement"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The research survey in the AP question work found no academic benchmark for this kind of question generation, and named the exam body's released past exams, with complete scoring guidelines, evidence examples and sample student responses, as the only verified items and guides (`icloud-work/ML learnings/research_educational_content_generation.md`). It called them the ground-truth rubrics a training set should be derived from or validated against. This is a recommendation: the project's checks did not yet use them.",
+ "against": "The released set is small: \"The College Board releases approximately 3 years of past exams publicly.\" (`icloud-work/ML learnings/research_educational_content_generation.md`, line 164). Nothing in the folder tried it.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "162",
+   "quote": "- Complete scoring guidelines with rubrics, evidence examples, and sample student responses",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "164",
+   "quote": "**These are the highest-quality labeled AP rubric examples available.** The College Board releases approximately 3 years of past exams publicly. These are the ground-truth rubrics that a fine-tuning dataset should be derived from or validated against.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "168",
+   "quote": "No academic dataset or benchmark for AP history question generation appears in the literature. The College Board materials are the only source of verified AP-style questions and rubrics. Any training dataset must be built from these or synthetically generated and verified against InceptBench.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "AP United States History: past exam questions (College Board)",
+   "url": "https://apcentral.collegeboard.org/courses/ap-united-states-history/exam/past-exam-questions"
+  },
+  {
+   "ref": "AP World History: Modern: past exam questions (College Board)",
+   "url": "https://apcentral.collegeboard.org/courses/ap-world-history/exam/past-exam-questions"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

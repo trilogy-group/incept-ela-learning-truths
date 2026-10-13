@@ -1,0 +1,133 @@
+{
+ "id": "fit-the-documents-to-the-question",
+ "title": "Fit the documents to the question",
+ "statement": "Every document in a set bears on its question, together they cover the time and place it asks about, and their differing viewpoints support more than one defensible argument.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Failures of document tasks in public runs were repaired by adding missing decades and dissenting documents to foreign-policy rows, and by replacing documents on the wrong aspect of a question, such as social and global legacy documents on a route about why one side won (delivery notes of 24 May 2026). One task rose from 0.55 to 0.70 to 1.0 after, among other changes, documents from an under-represented perspective were added (23 May 2026). Their distinct provenance and opposing points of view, dissent included, are what make more than one argument possible, since a redundant, one-sided or neutral, list-like set fails.",
+ "against": "The repairs were checked on the same public items they were made against: \"Public failures were repaired before delivery, including Second Great Awakening causation routing, foreign-policy coverage/dissent\" (aptraining-local/den-of-ideation/to_main/2026-05-24T0208Z_DEN_REQUEST_validate_unit4_dbq_solver_v1.md, line 30). Only five items, and a spot check of the set with the 14-year gap found that an invented document alone failed it in another model's run: \"Doc 4 alone is sufficient to fail this DBQ.\" (icloud-work/aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md, 138)",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0208Z_DELIVERED_unit4_dbq_solver_v1_candidate.md",
+   "lines": "30",
+   "quote": "foreign-policy rows lacked 1830s/1840s coverage and dissenting documents",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0102Z_DELIVERED_unit3_dbq_solver_v1_candidate.md",
+   "lines": "29",
+   "quote": "American-victory hard route used social/global legacy docs",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1958Z_DELIVERED_unit1_dbq_solver_v1_candidate.md",
+   "lines": "73",
+   "quote": "Cultural perspective row improved 0.55 -> 0.70 -> 1.0 after replacing summary docs with source-like excerpts and adding Indigenous-perspective documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-07T1130Z_v45_failure_analysis.md",
+   "lines": "77",
+   "quote": "5 items are chronic across v29, v43, and v45 (all < 0.85 or majority fail in every model tested).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-07T1130Z_v45_failure_analysis.md",
+   "lines": "84",
+   "quote": "| 60433 | c_01hF | Documents only cover 1960-1966 but prompt asks 1960-1980 (missing 14 years) | 0.55 | 0.49 | 0.26 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-05-07T1130Z_v45_failure_analysis.md",
+   "lines": "87",
+   "quote": "**Pattern:** Every chronic fail is a DBQ with either (a) fabricated primary-source attribution/date, or (b) severe temporal/geographic omission in the document set. These are data-veracity bound — the model invents or truncates documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-04T1430Z_v40h_spot_verify.md",
+   "lines": "138",
+   "quote": "Doc 4 alone is sufficient to fail this DBQ.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/dbq_evaluation.txt",
+   "lines": "54",
+   "quote": "- Score 1.0: Every document can be used to support, complicate, or inform an analysis related to the prompt",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/dbq_evaluation.txt",
+   "lines": "60",
+   "quote": "- Score 0.0: All documents point to one obvious conclusion; no real analysis or argumentation is possible",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/raw_rubrics/dbq_evaluation.txt",
+   "lines": "44",
+   "quote": "- Score 1.0: Multiple documents have clear perspective, purpose, or context that students can analyze; sourcing/analysis opportunities exist",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "448",
+   "quote": "- DBQ `medium-7`: individual-liberties document pack was accurate but redundant and one-sided.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "450",
+   "quote": "- Targeted proof: `dynamic_32b_full_failed_export_v1_dbq_medium7_repaired_v28` scored 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2008",
+   "quote": "rows 61-62 DBQ hard/medium failed because the documents were too neutral and list-like for sourcing analysis,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2010",
+   "quote": "- Source commit `2d07c05` (`Repair Unit 1 environment DBQ and MCQ set`) changes the environment DBQ documents into sourceable accounts with distinct provenance and rewrites the c_9eQY MCQ_SET route away from direct artifact matching.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/ultimate_v80chain_pipeline_20260525T0945Z.md",
+   "lines": "97",
+   "quote": "- source-role diversity for demographic/disease prompts;",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

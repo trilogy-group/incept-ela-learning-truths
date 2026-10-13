@@ -1,0 +1,108 @@
+{
+ "id": "one-skill-per-lesson",
+ "title": "One skill per lesson",
+ "statement": "Teach at most one well-defined new skill or named procedure per lesson, remove anything that doesn't serve it, and let its review steps use only skills already taught.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A pedagogy framework's first attribute of a good lesson is a single objective, and its path to mastery focuses each lesson 'on a single, well-defined skill' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md`). Its cognitive-load rule removes the rest: lessons 'eliminate unnecessary complexity, visuals, and multitasking'. It is an adopted rule, with no measurement in the project.",
+ "against": "The project's own page on direct instruction records a criticism of the approach: '- May not fully encourage critical thinking or open-ended exploration' (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/direct-instruction.md`, line 63). Review across units is unsettled: the lint's lesson contract records cross-unit review identity as an open question (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/lesson-schema.md`, lines 73-74).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "208",
+   "quote": "Each lesson targets one skill or concept only. Students should know exactly what they are learning and why it matters.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "91",
+   "quote": "Each focuses on a single, well-defined skill.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "223",
+   "quote": "Lessons eliminate unnecessary complexity, visuals, and multitasking. Students focus on one process at a time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "25",
+   "quote": "4. **Design for cognitive load limits.** Keep granularity tight, reduce noise, avoid bundling multiple new skills in one lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "17",
+   "quote": "| L6 | one new operation per dose | every non-review atom carries exactly the lesson's one `operation_id`. Catches the round-2 skill-switching you-do (together with L1). |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/lesson-schema.md",
+   "lines": "72",
+   "quote": "(an undeclared new operation cannot be smuggled in as phase:\"review\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/lesson-schema.md",
+   "lines": "73-74",
+   "quote": "Spec is silent on cross-unit review identity - recorded as an open question.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - The Living World - Complete KB.xlsx",
+   "lines": "sheet 'Overview', cell B35",
+   "quote": "FIND fits the fact-based texts (Plants, Mammals, Invertebrates, Microorganisms). The comparison texts (Feathers and Scales, Life in Water) use CONNECT - compare two groups, then draw the deeper link. The Animal Kingdom uses SORT (classify by shared features); the persuasion texts (Rainforests, Whose World Is It) need WEIGH / fact-vs-opinion.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "12",
+   "quote": "The steps are printed verbatim on the skill intro, the model, the guided try, the independent write, and the wrap recap — the rail never changes mid-lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "181",
+   "quote": "An advance organizer for a procedure: the child meets the rail once, cold, before watching it run — so the model that follows is recognition, not first contact.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "1",
+   "quote": "Demonstrate one complete APUSH unit contract before scaling: exact CED knowledge, one explicit historical operation per lesson, verified source provenance, AP-format evidence, scoring keys, and correction routes.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

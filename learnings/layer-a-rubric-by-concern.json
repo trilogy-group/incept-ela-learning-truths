@@ -1,0 +1,60 @@
+{
+ "id": "layer-a-rubric-by-concern",
+ "title": "Layer a rubric by concern",
+ "statement": "Keep a rubric's format rules apart from its subject, curriculum and grade specifics, and supply the standard's text at evaluation time rather than writing it into the rubric.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "alignment"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Changes to the evaluator's prompts took grade-level standard codes and difficulty calibration out of a format overlay, assessment-specific framing out of two item-type prompts, and one course's unit and practice names out of a prompt, since those arrive at evaluation time from the curriculum source. The rules stated with them: type overlays hold format-specific behaviour only, grade and curriculum specifics belong in curriculum-subject overlays, item types are described the same way whatever the assessment, and hard-coding standard text is an anti-pattern. No measurement comes with these changes.",
+ "against": "A newer rubric breaks the rule by naming one grade's science authority in the prompt itself: '**Authority for G7 Science:** NGSS standards and standard middle school science curricula (state frameworks, widely used textbooks).' (shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt line 160).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "42fbc13",
+   "lines": "3-6",
+   "quote": "The AP Chemistry unit names and science-practice names are curriculum content that is injected at evaluation time via the curriculum context (incept-curriculum API). Hard-coding the taxonomy in the prompt is the \"no hard-coded standard text\" anti-pattern.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "66ae146",
+   "lines": "8-10",
+   "quote": "Type overlays must hold format-specific behavior only; grade/curriculum specifics belong in curriculum-subject overlays.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ea8fdeb",
+   "lines": "3-4",
+   "quote": "The evaluation methodology is the same regardless of assessment (STAAR, MAP, etc.) — item types should be described generically.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5fdc954",
+   "lines": "7-8",
+   "quote": "curriculum-specific guidance belongs in curriculum overlays, not type overlays per the prompt-layering rule",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

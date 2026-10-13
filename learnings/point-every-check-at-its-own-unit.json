@@ -1,0 +1,52 @@
+{
+ "id": "point-every-check-at-its-own-unit",
+ "title": "Point every check at its own unit",
+ "statement": "Before checking a unit, confirm the grade, subject and reference files the check uses are that unit's own, since a check pointed at another unit's says nothing about this one.",
+ "example": "Checked against a replaced unit's files, every passage would have shown a 100% mismatch.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 5 adversarial review found that its brief cited the canonical files of the unit's superseded subject; comparing the rebuilt literary unit against them would have produced a 100% spurious mismatch on every passage and claim, so the run used the unit's current design source instead. A convergence review of a Grade 3 reading grader found its grade hardcoded to 11, carried over from AP US History.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R17.md",
+   "lines": "18-21",
+   "quote": "Comparing the new literary content against the geology canonical files would produce a 100% spurious mismatch on every passage and every claim (different characters, different subject matter, different vocabulary). That is not a useful canon-fidelity check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md",
+   "lines": "47",
+   "quote": "Verified in-repo: production serves on the cheap Gemini judge, grade hardcoded 11 from AP US History",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-07.md",
+   "lines": "13-15",
+   "quote": "- **Codex caught MY lens lying** (tail-replace URL bug made every page-check run on the arrival page — a false 15/15 clean). Lens now builds paths and asserts the landed page id.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

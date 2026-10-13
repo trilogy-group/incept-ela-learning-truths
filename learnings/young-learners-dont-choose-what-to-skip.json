@@ -1,0 +1,338 @@
+{
+ "id": "young-learners-dont-choose-what-to-skip",
+ "title": "Young learners don't choose what to skip",
+ "statement": "Don't let young learners skip or speed up instruction on their own judgment, but let them move through each modelled step with a tap rather than on a timer.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A walkthrough of a Grade 3 reading course summed up its points as no child control over pace or skipping, since children are poor judges of what they can skip (`grade3-reading/ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md`), and the course removed audio-speed control because children rush (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md`, C2). The same ruling put staged reveals on a tap, never a timer, because a timer cannot pace itself to a slow reader, and a later walkthrough asked for a next button between modelled steps so learners can take each one in before the next.",
+ "against": "Skipping can be earned: the course's direct instruction brainlift allows testing out of a lesson only after repeated mastery on earlier ones (`grade3-reading/ti-courseplans/feedback/feedback1/Direct Instruction BrainLift.md`). A later run found: Other parts of the same renderer pull the other way. Its narrated stages are reached by whichever comes first, the voice or the tap, with the button hidden while the voice plays, so with the voice on the narration paces each reveal (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 208-232). A lesson component sheet of 2026-08-06 has the modelling moment as one continuous block, and the renderer records whether stepping inside one page still counts as one block as awaiting a decision (`grade3-reading/course-renderer/docs/rules/pedagogy-and-lesson-structure.md`, lines 379-388) (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`). A later run found: A Grade 3 reading lesson design lets a child skip the first three modelled steps by default once a procedure has been modelled, removes that choice only when the child was not secure on the procedure last time, and never lets the write-up step be skipped (`g9/sources/Readventure - Lesson Design and Scaffolding - Updated.docx`). A later run found: The same younger-grade rules also let the voice pace reveals: long teaching text arrives in step with the voice, after a review asked for a section to be revealed on a timer, and staged pages reach a stage by whichever comes first, the voice or the tap (`othello-course-renderer-draft/repo/docs/rules/content-and-copy.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`g9/library/text/L8d5159.txt`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "58",
+   "quote": "- No child control over pace or skipping (children are poor judges of what they can skip).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "309-310",
+   "quote": "the same reasoning that removed audio-speed control, because children rush.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "310-311",
+   "quote": "A timer also cannot pace itself to a slow reader. Tap-to-continue satisfies both.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "390",
+   "quote": "between each step have a ‘next’ button so they can pause a moment themselves after each step to take it in before having to listen to the next step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback1/Direct Instruction BrainLift.md",
+   "lines": "19",
+   "quote": "**Require students to earn Test Out through repeated mastery on prior lessons**",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Model.tsx",
+   "lines": "9",
+   "quote": "Nothing moves on its own: no timers, no typing, no auto-advance.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "never types its first move, and Next stays locked",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The animated build's model typing gate is now fixed upstream; the mirror is at 9dc95fb.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "22-23",
+   "quote": "No user speed control (2026-08-04: kids max the slider) EXCEPT the single \"Slower\" pill (≈0.85× → ~111 wpm heard)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/METHODS-CHECKLIST.md",
+   "lines": "93-95",
+   "quote": "Read-to-me playback exposes no control that lets the child rush the sequence faster than an age-appropriate rate (kb-0172 active-screen rule); a slow-down option is permitted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/contradictions.md",
+   "lines": "14",
+   "quote": "Settled in practice as normal-and-slower, never formally withdrawn.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "30-31",
+   "quote": "110–120 wpm (R-AUD-3), which ~111 wpm Slower meets and ~131 wpm Normal exceeds — an open tension, not a settled equivalence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "135-137",
+   "quote": "**E1. Reveal on Next, everywhere, both modes.** Every step, chart row, ladder rung and sub-thought arrives on exactly one Next tap; the voice never reveals or advances.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "382-384",
+   "quote": "Acting on the 2026-08-11 review, the build \"Added a 'Next' button between steps\" and \"reduced text on screen\" in the modelling moment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "228-230",
+   "quote": "`useStageProgress` in `src/components/lesson/StageNext.tsx`, used by `VocabNode` and `ThinkAloudNode`: a stage is reached by whichever came first, the voice or the tap, and the button hides while `isPlaying`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "210-211",
+   "quote": "Anything a page reveals as the narration reaches it must also be reachable by the child's own tap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "381-382",
+   "quote": "component sheet has the modelling moment as one continuous block (R-PED-18, 2026-08-06)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "386-388",
+   "quote": "One thing at a time (R-UI-4) pushes towards stepping; one continuous block pushes against it. Needs a decision on whether stepping inside one page counts as one block.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "285",
+   "quote": "The rule in one line: the child may skip the Modelling Moment, but not step 4.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "303",
+   "quote": "Every other lesson. The default once a procedure has been modeled once.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "304",
+   "quote": "The child skips straight to step 4, which plays in full.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "87",
+   "quote": "Auto-restore fires next time. The choice is removed.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "README.md",
+   "lines": "86",
+   "quote": "Nothing auto-advances. The student makes every move.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-stillness.mjs",
+   "lines": "3",
+   "quote": "Rule: with NO click or key press, no step may (1) move on to another step, (2) change its visible text after it has",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-stillness.mjs",
+   "lines": "5",
+   "quote": "Loads every step of every lesson as a student AND as a reviewer, waits for it to settle, then watches it untouched.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-stillness.mjs",
+   "lines": "7",
+   "quote": "the word web's 90 s auto-add",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "294",
+   "quote": "Text writes out progressively, with narrated thinking alongside.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/prototype/README.md",
+   "lines": "37",
+   "quote": "Every screen reveals its parts in order, and the student asks for each one (\"Then what happened?\", \"Show her proof\").",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/prototype/README.md",
+   "lines": "37",
+   "quote": "Nothing is on a timer, nothing that has appeared goes away, and Next only appears once everything on the page has been seen.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "135-137",
+   "quote": "**E1. Reveal on Next, everywhere, both modes.** Every step, chart row, ladder rung and sub-thought arrives on exactly one Next tap; the voice never reveals or advances.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "287",
+   "quote": "**Rule.** Long teaching text arrives in step with the voice, not as a wall.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "289-290",
+   "quote": "Reveal each section of text in this vocab section on a timer so it doesn't all appear at once.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "229-230",
+   "quote": "a stage is reached by whichever came first, the voice or the tap, and the button hides while `isPlaying`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "86-89",
+   "quote": "a tap on a line is a rewind, never a skip. Only lines the voice has already reached are tappable (`reachedIndex` in `useAudioNarration.ts`), \"because a child who can tap ahead can clear a page's gate without hearing the part that teaches it\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "302",
+   "quote": "A modelling moment says which of the seven procedures it is running and shows the step the guide is on, advancing as the voice reaches it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1044",
+   "quote": "Anything a page reveals as the narration reaches it must also be reachable by the child's own tap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "75-76",
+   "quote": "Next button between modelling steps; identical step names across I-do/we-do/you-do (\"Step 2: HUNT FOR KEYWORDS\");",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "304-307",
+   "quote": "Clicking a line of text is a REWIND, never a skip. Only lines the voice has already reached are tappable (`reachedIndex` in `useAudioNarration`), because a child who can tap ahead can clear a page's gate without hearing the part that teaches it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "295",
+   "quote": "The child was not secure on this procedure last time. The choice is removed.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "525",
+   "quote": "The app decides when and where extra guidance is given.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "285",
+   "quote": "The rule in one line: the child may skip the Modelling Moment, but not step 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext lines 169-170)",
+   "quote": "the modelling page now advances through states instead of autoplaying one clip over a bare passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/06-AUDIO-NARRATION.md",
+   "lines": "248-250",
+   "quote": "While a line sounds the way-on is held, same rule as every sibling state, so a line can never be skipped",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "93",
+   "quote": "is the only clock — no idle watchdog on this branch (it would make the button decorative).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,63 @@
+{
+ "id": "evidence-of-the-kind-the-claim-makes",
+ "title": "Evidence of the kind the claim makes",
+ "statement": "Accept a claim only on evidence of its kind, runtime evidence for behaviour, independent review of the exact text for meaning, access testing for access, however much weaker evidence agrees.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The student-course quality standard asks of every requirement verdict whether the evidence type matches the claim: runtime claims use runtime evidence, semantic claims independent semantic review, access claims access testing, and state and event claims a reconciliation of recorded behaviour (`grade3-reading/edullm-review-hub/course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd`, lines 97-102). Its failure signals are static prose used for runtime behaviour, self-review used as independent judgment and screenshots used for accessibility, and it holds that a weaker evidence type cannot be upgraded by confidence or repetition (lines 103-104). The Grade 5 instruction-review profile applies it: presentation claims need runtime evidence because source files or tests alone cannot prove them, and semantic claims need the exact learner-facing text in context (`grade3-reading/edullm-review-hub/course-packages/courses/g5-reading/review/generated/instruction-review-profile.json`, lines 154-155).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "102",
+   "quote": "Runtime claims use runtime evidence; semantic claims use independent semantic review; access claims use access testing;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "103",
+   "quote": "Failure signals: Static prose used for runtime behavior; self-review used as independent judgment; screenshots used for accessibility.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "104",
+   "quote": "A weaker evidence type cannot be upgraded by confidence or repetition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "154",
+   "quote": "Presentation claims require runtime evidence; source files or tests alone cannot prove them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "155",
+   "quote": "Semantic claims require exact learner-facing text in context; documentation is not behavior evidence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

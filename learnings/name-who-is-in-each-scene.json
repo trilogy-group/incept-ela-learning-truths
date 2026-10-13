@@ -1,0 +1,43 @@
+{
+ "id": "name-who-is-in-each-scene",
+ "title": "Name who is in each scene",
+ "statement": "When generating story pictures, name for each scene who is in the frame and who is not, since one shared cast list put characters where the text has none.",
+ "example": "With one cast list for every scene, six of nine pictures had to be regenerated.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "contested",
+ "detail": "A reading lesson's pictures were first generated with one three-person cast for every scene, and the model put people where the story does not, among them a stranger at the family's table before he has met them and in the celebration crowd after he has betrayed them. Six of nine pictures were regenerated. The fix was a second, two-person cast that names who is in frame and who is not, with explicit ALONE and NOT present wording in the scene line, and the notes say to treat a scene's cast as content, not styling. A character shown before the text brings him in is what media-never-runs-ahead-of-the-text forbids.",
+ "against": "Notes for a video generator advise against negatives: \"Never write \"no X\" in a positive prompt; it reinforces X. State the desired thing positively instead (\"mouth closed, calm smile\", not \"not talking\").\" (`grade3-reading/course-renderer/docs/extras/video-recut-drafts-2026-08-31.md`, lines 10-11). The two notes concern different generators, and neither reports a comparison of the two wordings.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/book-art/README.md",
+   "lines": "26-32",
+   "quote": "The first pass used one three-person cast for every scene, and the model put people where the story does not: the mother at the market, in the valley and at the split ground; the stranger at the family's table before he has met them, and grinning in the celebration crowd after he has betrayed them. Six of nine were regenerated. The fix was a second, two-person cast that names who is in frame **and who is not**, plus explicit \"ALONE\" / \"NOT present\" wording in the scene line.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/book-art/README.md",
+   "lines": "33",
+   "quote": "treat a scene's cast as content, not styling.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

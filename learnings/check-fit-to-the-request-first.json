@@ -1,0 +1,56 @@
+{
+ "id": "check-fit-to-the-request-first",
+ "title": "Check fit to the request first",
+ "statement": "Check first that an item tests exactly the topic or skill, the difficulty and the format that were asked for, and let any miss fail it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP item benchmark's judge starts with a curriculum alignment phase marked critical: before anything else it asks whether the content tests the exact topic or skill in the curriculum context, whether the difficulty fits what was requested and whether the format is right, and if any of these fail, the content fails curriculum alignment (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py`, lines 34-41). The same prompt puts curriculum alignment first among its critical dimensions and fails any deviation from the curriculum context (lines 72-76). The evidence is a rubric, not a measured effect. A miss fails the item rather than just lowering its score.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "34",
+   "quote": "### PHASE 1: CURRICULUM ALIGNMENT CHECK (CRITICAL)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "37",
+   "quote": "1. Does this content test the EXACT topic/skill specified in the curriculum context?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "41",
+   "quote": "If ANY of these fail, the content fails `curriculum_alignment` which is CRITICAL.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py",
+   "lines": "76",
+   "quote": "- FAIL for ANY deviation from the curriculum context",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

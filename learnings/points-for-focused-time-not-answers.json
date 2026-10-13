@@ -1,0 +1,143 @@
+{
+ "id": "points-for-focused-time-not-answers",
+ "title": "Points for focused time, not answers",
+ "statement": "Give points once at the finish, for whole focused minutes and a passed checkpoint, never for each correct answer.",
+ "example": "One contract gives 1 point per whole focused minute at a 90% checkpoint, and none per answer.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "practice",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading app's points code was found inventing quiz points at three per correct answer, with no 80% floor and no link to time; the fix recorded only raw correctness and left points to the platform's gradebook, where the only points shown are time-based. A later release contract for a Grade 5 course gives no per-answer points: a correct answer records progress and feedback, and points are counted once at a successful finish from whole focused minutes, one per minute, if the finish avoids the gaming condition and meets a 90 percent checkpoint. The sources state the rule but give no reason for it tied to learning.",
+ "against": "The same contract lists a correct response that appeared to earn no points among the failures that prompted it, and answers by stating the rule on screen rather than changing it. A later run found counter-evidence (`grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/XP-RUBRIC.md`). A later run found counter-evidence (`othello-archive/BRIEF.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "52-53",
+   "quote": "The broker previously **fabricated** quiz XP (`correct × 3`, no 80% floor, not time-based",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "53-54",
+   "quote": "Now it records only raw correctness/accuracy and lets TimeBack's gradebook own XP; the only XP surfaced (Caliper `xpEarned`) is time-based.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "37",
+   "quote": "A correct response records immediate progress and feedback; it does not award per-answer XP.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "38-40",
+   "quote": "Preview XP is calculated once at a successful lesson finish from whole focused minutes at one XP per minute. The finish must resolve required evidence and repairs, avoid the gaming condition, and meet the 90 percent preview checkpoint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0174-august-consolidation-and-scout-lesson-feedback.qmd",
+   "lines": "31-32",
+   "quote": "no per-answer XP; preview XP once at finish; 1 XP per whole focused minute; 90% checkpoint",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "21",
+   "quote": "a correct response changed progress but appeared to earn no XP;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "44-46",
+   "quote": "The interface must state that distinction before completion, then show the completion result, awarded Preview XP when nonzero, and the next unlocked lesson without implying that one correct answer should mint XP.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "99",
+   "quote": "paying for a partial set is farmable in a way that is easy to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "100",
+   "quote": "miss: answer one question correctly — now the child is at 100% and clears the floor — then never",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "938",
+   "quote": "test exercises the happy path fully, a precondition that only matters on partial input is invisible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/XP-COMPLIANCE-AUDIT.md",
+   "lines": "78-79",
+   "quote": "XP is awarded for ANY correct answer — `1/10` correct still writes `3 XP`. The rule says NO XP below 80% accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/FIXES-CALIPER-XP.md",
+   "lines": "25-26",
+   "quote": "`xpEarned` is derived from focused **minutes** (1 XP = 1 min), not from correctness.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/critique.md",
+   "lines": "9",
+   "quote": "pins the XP product contract: no per-answer XP; Preview XP computed once at successful finish, 1 XP per whole focused minute, 90% preview checkpoint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "33",
+   "quote": "pays a small, fixed amount for each teaching step the child finishes.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "42",
+   "quote": "Serious Grade 9 tone: no cartoons, no mascots, no confetti, no badges or points.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "65",
+   "quote": "no per-answer XP; preview XP once at successful finish; 1 XP per whole focused minute; 90% checkpoint",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

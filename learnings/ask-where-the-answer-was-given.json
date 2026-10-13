@@ -1,0 +1,331 @@
+{
+ "id": "ask-where-the-answer-was-given",
+ "title": "Ask where the answer was given",
+ "statement": "Ask a question right after the part that answers it, make sure it needs that part, and never stop mid-sentence.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A line was added to the film so that the check after its second scene could be answered from what had been heard\n(`g9/film/v03/render/QA.md`). In an animated version's first lesson, one part's check could be answered without reading\nthat part (`g9/review/2026-10-08-lesson1-build-map/README.md`, \"Measured\"), and in another film the first stop cut in\nmid-sentence (`g9/review/three-film-comparison/COMPARISON.md`). The film player pauses at the end of a scene, in its\nsilent tail (`g9/player/content/archivist-checks.json`). The lesson engine stops a film 0.3 s after the words that\nanswer a question, and asks the judge whether each question is answered by what has been said by then\n(`g9/transformer/src/mechanics/film-check.js`).",
+ "against": "A later run found: a review cited a 2001 study in which inferential questions asked during reading cut grade-4 recall from .30 to .07, and asked for reading questions after the text rather than during it; it was left for a ruling (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found: In a published study, interpolated inferential questions cut grade-4 recall from .30 to .07 (van den Broek et al. 2001, https://doi.org/10.1037/0022-0663.93.3.521), and a design review of a reading lesson asked for questions after reading, not during it; this record's evidence is from film, and the timing question is open in its own record (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found counter-evidence (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd`). A later run found counter-evidence (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "film/v03/render/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-08-lesson1-build-map/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/three-film-comparison/COMPARISON.md"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "42-43",
+   "quote": "interpolated inferential questions cut grade-4 recall .30->.07",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "43",
+   "quote": "ask AFTER not DURING reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "27",
+   "quote": "**14 written causal questions per story** appeared during reading, after reading, or not at all.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "29",
+   "quote": "The quoted **.30 control → .07 during-reading** result is Grade4 recall of **untargeted information**, not overall comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/RESEARCH-BOUNDARIES.md",
+   "lines": "31",
+   "quote": "**Design conclusion:** frequent unsupported interruptions can be costly for younger readers.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "204",
+   "quote": "G3 iter-3: the passage is one block read ONCE, all questions after it (0 mid-passage stops across 18 lessons)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "205",
+   "quote": "stop at key points INSIDE the text and ask right there (REL West), not only at the end",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D3-reading-architecture.md",
+   "lines": "13",
+   "quote": "Questions are posed at key points *inside* the text, not only at the end",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "89 (textutil text)",
+   "quote": "Pure literal FIND: the answer is stated in the sentence just read.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 10. The Wind in the Willows, Part 3 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "85 (textutil text)",
+   "quote": "FIND only: the answer is stated word-for-word in the sentence just read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "43",
+   "quote": "inferential questions cut grade-4 recall .30->.07; her rule is ask AFTER not DURING reading, a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/criteria-register.csv",
+   "lines": "25",
+   "quote": "the answer is stated in the just-read sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "145",
+   "quote": "p7–p12 (never more than 2 reads without a check)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0218-devfactory-review-and-decision-brief-2026-09-10.qmd",
+   "lines": "42-44",
+   "quote": "interpolated inferential questions cut grade-4 recall .30->.07; her rule is ask AFTER not DURING reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "205",
+   "quote": "stop at key points INSIDE the text and ask right there (REL West), not only at the end",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "639",
+   "quote": "- Failure signals: Analysis before encounter; hidden source; universal title shortcut; valid synthesis rejected.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "66",
+   "quote": "the correct option is supported only by passage text *after* this page — unanswerable when asked",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "431",
+   "quote": "The CFU is the primary encoding event — retrieval immediately after instruction is what converts short-term exposure to durable memory (testing effect; Roediger & Butler, 2011).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "45",
+   "quote": "Cut the text so that each checkpoint comes right after the lines its answer is in (the build asks one checkpoint per",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "57",
+   "quote": "a cut moves on to the end of its speech, a few lines at most, and never into the lines the next checkpoint asks about",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "62",
+   "quote": "a short tail joins the last section rather than standing alone, a section with nothing to ask",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "162",
+   "quote": "the build asks one checkpoint per section, and no lines are left after its evidence for one more",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "40",
+   "quote": "is read before its checkpoint",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "84",
+   "quote": "the animated build asks the rebuild under the first word's card (\"did you follow what I just said?\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "6",
+   "quote": "its reading sections, cut so that each checkpoint comes right after the lines it asks about",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "105",
+   "quote": "question is answered by what has been said by its stop",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "110",
+   "quote": "const stops = plan.checks.map((c) => ({ after: c.after, at: +(beats[c.after].start + LEAD + beats[c.after].audio_seconds + 0.3).toFixed(2) }));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "36",
+   "quote": "- cue: the number of the caption whose words answer it (the film stops right after that caption).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/media/Othello-opening-full.vtt",
+   "lines": "27",
+   "quote": "in love with his wife, Desdemona,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "30",
+   "quote": "the text becomes the build's reading sections, cut so each checkpoint follows the lines it asks about",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "72",
+   "quote": "each stop right after its beat's narration",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5177",
+   "quote": "Every question for me is showing up before the content is presented. I wonder if that was because I had paused the content and went back 10 secs once in the beginning.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5321",
+   "quote": "I didn’t reproduce the reported timing drift. Straight playback and an early pause/rewind test both triggered the first question at 1:18, on the same Cyprus-map frame.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/CHANGES.md",
+   "lines": "6",
+   "quote": "Without it, check 1 part 2 (\"who holds power there?\") was inferable but never stated.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v03/render/QA.md",
+   "lines": "16",
+   "quote": "so the Archivist check after scene 2 is answerable from what was heard.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v03/render/QA.md",
+   "lines": "16",
+   "quote": "Scene 2 clip regenerated (42.0 s, word-exact), realigned (matched 1.0).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks-v5.json",
+   "lines": "2",
+   "quote": "the other three are DRAFTS from what the narration has just said.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5162",
+   "quote": "You come across this question before you have been informed about where acts 2-5 are set",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Ldb4a38.txt",
+   "lines": "15",
+   "quote": "The first stop cuts in mid-sentence after \"Acts 2 to 5 move to Cyprus:\", just before \"…where the general's word is law\", which is the answer to the second stop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.3 (pdftotext lines 118-119)",
+   "quote": "Still owed: the two questions ask about moments at roughly 0-8s and 24s but both fire in the final seconds. Reachable is not the same as well timed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

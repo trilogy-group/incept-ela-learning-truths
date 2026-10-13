@@ -1,0 +1,56 @@
+{
+ "id": "decide-first-then-regenerate-once",
+ "title": "Decide first, then regenerate once",
+ "statement": "Settle the decisions that change what content must be, such as its target level, before regenerating anything, then fold every fix into one gated regeneration.",
+ "example": "One remediation plan refused to regenerate 75 passages before deciding whether the course was meant to be at grade level, and the decision it recorded needed no passage rebuild.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A grade-6 reading course's remediation plan, written after an adversarial review, ordered its work by dependency and leverage rather than severity: two critical findings were decisions, not builds, and they gated the costly content work (`grade3-reading/ti-courseplans/courses/g6-reading/G6-REMEDIATION-SEQUENCE.md`, lines 4-6). Because raising the reading level forces passage regeneration and the items are tied to their passages, it folded every content fix into one gated regeneration rather than re-shipping the items five times (lines 39-41). The decision recorded afterwards, following a recheck of the reading-level estimate, found the texts already at band, so the build needed no passage rebuild (`grade3-reading/ti-courseplans/courses/g6-reading/G6-FORK-DECISION.md`, lines 14 and 16).",
+ "against": "It rests on one plan, and the five-fold re-ship it avoided is the plan's own projection, not a measured cost.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-REMEDIATION-SEQUENCE.md",
+   "lines": "4-6",
+   "quote": "**Ordering principle:** dependencies + leverage, not raw severity. Two Criticals are *decisions*, not builds, and they gate the expensive content work. Do not regenerate 75 passages before deciding whether the course is even meant to be at grade level.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-REMEDIATION-SEQUENCE.md",
+   "lines": "39-41",
+   "quote": "because raising it forces passage regeneration and items are passage-linked, bake EVERYTHING into one gated regen rather than re-shipping items 5×:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION.md",
+   "lines": "16",
+   "quote": "What this means for the build (post-Lexile-recheck: all cheap, no passage rebuild)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-reading/G6-FORK-DECISION.md",
+   "lines": "14",
+   "quote": "Keep the grade-6 mastery claim — the text is already at band (consensus 1020L), so it's honest.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "cite-each-block-by-a-fixed-label",
+ "title": "Cite each block by a fixed label",
+ "statement": "Give every block a short label that is never renumbered or reused, name every automatic finding by it, and show the labels beside any page that carries none.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine's composer gives each block a code and a number, keeps the highest number ever given per code, and never renumbers or reuses one (`g9/transformer/web/app.js`). Its playtest names every engine finding by the block's label (`g9/transformer/src/server.js`), and because the players' own pages carry no labels, a line over the frame names the blocks they are showing. The engine's own lesson view prints each label on the page (`g9/transformer/web/lesson.js`), and its decisions ask for a short identifier on every block to cite (`g9/transformer/DECISIONS.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "87",
+   "quote": "the highest number ever given per code: numbers are never renumbered or reused",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "234",
+   "quote": "The composer shows the result as one line; an engine finding is named with its block's label",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "639",
+   "quote": "The block labels on the build's page now on screen, over the frame and on the strip (its pages carry none).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "13",
+   "quote": "with a short identifier on every block (`QC-1`, `EH-2`) to cite",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "54",
+   "quote": "const tag = (id) => h(\"span\", { class: \"label brass\", id: `tag-${id}` }, id);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "AGENTS.md",
+   "lines": "175-178",
+   "quote": "The step is the page's own authored id, never its position: a position rots the moment the lesson changes shape, and it did — five probes pinned to `?page=<n>` moved to a different screen the day L1 grew an opening video.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,43 @@
+{
+ "id": "check-a-models-importance-labels",
+ "title": "Check a model's importance labels",
+ "statement": "Check a model's labels of which facts are essential against people's judgment before they decide what is taught or tested.",
+ "example": "A model's essential-or-supporting label and the level people set differed on 370 of 1,533 knowledge nodes, 222 of them labelled essential but set to supporting.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Across the nine unit sheets of an AP history course's knowledge schema, the generator's label in its 'Classification' column and the level people set agree on 1,163 nodes and differ on 370, about a quarter. Of those, 222 nodes the model labelled essential were set to supporting, 139 went the other way, and 7 labelled both were set to essential. There is no baseline of two people agreeing, so the 24% measures disagreement, not model error.",
+ "against": "Nothing records whether people set the level before or after seeing the model's label, so the agreement may be inflated.",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 1 Nodes', row 1, column D (generator label)",
+   "quote": "Classification",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 1 Nodes', row 1, column L (human-set level)",
+   "quote": "Essential/Supporting/Nuanced detail",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

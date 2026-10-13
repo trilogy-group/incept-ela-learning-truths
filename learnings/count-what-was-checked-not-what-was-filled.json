@@ -1,0 +1,137 @@
+{
+ "id": "count-what-was-checked-not-what-was-filled",
+ "title": "Count what was checked, not what was filled",
+ "statement": "Count what was checked, not what was filled: a populated answer, score or 'verified' field says nothing about whether the content is right or whether anyone reviewed it.",
+ "example": "One report on 4,165 extracted questions turned an answer field filled for 99.7% of them into a claim that 99.7% have correct answers.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A report on 4,165 questions extracted from 1,993 PDF resources presented field population as quality: an answer field filled for 99.7% of questions became \"99.7% have correct answers\", and the summary claimed 99.9%+ accuracy in core educational data (`icloud-work/incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md`). Its human-verified field was 100% populated although the schema gives it a default of false, so the count shows a filled field, not a review.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md",
+   "lines": "233",
+   "quote": "- 99.7% have correct answers",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md",
+   "lines": "150",
+   "quote": "| `correct_answer`     | 4,153/4,165 (99.7%) | Answer key            |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md",
+   "lines": "246",
+   "quote": "- Achieved 99.9%+ accuracy in core educational data",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md",
+   "lines": "191",
+   "quote": "| `human_verified`       | 4,165/4,165 (100%) | Verification status   |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/UAE_EDUCATIONAL_ANALYSIS_FINAL_REPORT.md",
+   "lines": "364",
+   "quote": "| human_verified           | boolean                        | NULL     | false",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Do not seed a “correct” saved record to prove a real semantic result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/README.md",
+   "lines": "10",
+   "quote": "This is not 346 completed student interactions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/independent-evidence-audit.md",
+   "lines": "11",
+   "quote": "Source answers, intended keys, page arrival and enabled Next alone do not count.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "38",
+   "quote": "These captures are not 1439 independent tests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "49",
+   "quote": "Field coverage and correct source paths do not prove the explanation is true.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "22",
+   "quote": "Stored phase is not evidence of mastery",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6213",
+   "quote": "I’ll check against what you asked for, rather than trusting the tasks’ “completed” status.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/PRODUCT.md",
+   "lines": "205",
+   "quote": "Human disposition exists only when an authorized account explicitly changes its own review status; passive activity never creates one.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "109",
+   "quote": "A populated media folder is not proof that the final video contains speech.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT-SPECS.md",
+   "lines": "236",
+   "quote": "An item-bank count is not proof that any of those conditions hold.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

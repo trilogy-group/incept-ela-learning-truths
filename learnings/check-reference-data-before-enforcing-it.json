@@ -1,0 +1,50 @@
+{
+ "id": "check-reference-data-before-enforcing-it",
+ "title": "Check reference data before enforcing it",
+ "statement": "Check reference data before enforcing it, because a standard's record can carry a wrong rule, such as one fixed correct answer for every item, that would fail correct items.",
+ "example": "One standard's entry, present in four curriculum versions, fixes a single correct answer for every item under it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "key",
+  "evaluation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "A curriculum entry, present in versions 1.2 to 1.5, ends its assessment boundaries with an override that fixes the correct answer for every item under that standard. Issue #169's third case is a judge failing an item and demanding that answer, 'No, it is much too low', when it was already the key. An older prompt, kept in the stashed half of a conflicted file and in a commit of 9 Apr 2026, tells the judge to recompute any override and ignore it if it is mathematically incorrect; the committed prompt has only generic checks against hallucinated rules and redundant suggestions.",
+ "against": "The committed prompt treats curriculum data as authoritative: \"1. **Curriculum API data** (when provided) — AUTHORITATIVE, use exactly as provided\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt`, line 144), and the stashed half also says \"**For GUARANTEED and HARD confidence:** No exceptions - Curriculum API data MUST be used as provided.\" (line 729).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/curricula/v1.5/common_core_1.5.md",
+   "lines": "83151",
+   "quote": "Override: The correct answer should be \"No, it is much too low\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "823",
+   "quote": "3. If the override is **mathematically incorrect**, you MUST **ignore it entirely** and evaluate based on the mathematically correct answer.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/evaluators/test_contradiction_validation.py",
+   "lines": "166",
+   "quote": "Issue #169 Case 03: Evaluator says \"answer should be 'No, it is much too",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

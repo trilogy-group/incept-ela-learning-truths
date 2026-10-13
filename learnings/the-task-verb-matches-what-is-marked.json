@@ -1,0 +1,175 @@
+{
+ "id": "the-task-verb-matches-what-is-marked",
+ "title": "The task verb matches what is marked",
+ "statement": "The task verb, the skill an item claims and what its rubric rewards must match, so the instruction a student sees and the rubric ask for the same things.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "scoring-guide",
+  "demand",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP Chemistry overlay pairs each kind of skill with its task verbs, such as calculate or determine for a quantitative skill and justify or explain for an argument, and calls a verb that contradicts the skill an item claims a defect (`shadow-bench/src/inceptbench/prompts/question/ap_chemistry_evaluation.txt`). The free-response audit's first check is that the action the scoring criteria reward is the action the verb asks for, and the criteria must not secretly demand reasoning the verb did not ask for (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`). A key that rewards a different action, such as a task that says 'describe' with a key that rewards 'draws', was among the defects the judge caught only on some runs (`shadow-bench`, git commit 5dae036). The instruction a student sees and the rubric ask for no more and no less than each other: reviews of reading lessons found a rubric asking for more than its prompt and an instruction asking for a word the rubric never required (`shadow-content-eval/reports/G3-U2-L1-review.md`, `shadow-content-eval/reports/G3-U1-L2-review.md`).",
+ "against": "Paraphrase is not a mismatch: 'A key that paraphrases the task in different words, lists acceptable equivalent forms, applies ECF, or shows a correct worked solution with self-consistent numbers is **clean**' (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`, lines 104-106).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "20-21",
+   "quote": "A task verb that contradicts the skill the item claims to assess is a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "17-20",
+   "quote": "- The **task verb should match the assessed skill**: a quantitative/mathematical skill ↔ calculate/determine; an argumentation skill ↔ justify/explain/evaluate-a-claim; a model- or data-representation skill ↔ draw/represent/complete a diagram or graph; an experimental-design skill ↔ design or analyze a procedure.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "85-86",
+   "quote": "1. **Action match** — the action the scoring criteria / sample response *reward* must be the same action the part's task verb *asks the student to perform*.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "54-55",
+   "quote": "The scoring criteria must not secretly demand reasoning the verb did not ask for.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "5dae036",
+   "lines": "7-11",
+   "quote": "The flips were not noise on clean items — the evaluator was *inconsistently detecting genuine defects* that live in the scoring guide / sample-response / rubric region (e.g. a task that says \"describe\" but a key that rewards \"draws\"; an intermediate value in a worked key that cannot yield the stated answer; the same single action awarded two independent points).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "104-106",
+   "quote": "A key that paraphrases the task in different words, lists acceptable equivalent forms, applies ECF, or shows a correct worked solution with self-consistent numbers is **clean**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "145",
+   "quote": "- A child who answers what was asked (\"bees and animals\") meets only half the rubric and is sent back to say what each helper carries, which the prompt never asked for.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-review.md",
+   "lines": "74",
+   "quote": "12. **p24 speak:** the instruction says *\"use at least one of our lesson words\"*, but the rubric says a lesson word is *\"never required.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "62",
+   "quote": "- The rubric then says the word is \"welcome and never required\", so the ask promises something the marking ignores.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/practice.ts",
+   "lines": "118",
+   "quote": "'I zoomed in on two words and named their word class.',",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/practice.ts",
+   "lines": "119",
+   "quote": "'I used two or more key words.',",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "43",
+   "quote": "These are strengths, NOT requirements: a second analysed word, correct word-class labels, taught vocabulary, using the exact stem wording, length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3373",
+   "quote": "The local prompt asks only what rules Neverland might have.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3373",
+   "quote": "Its observed rejection is consistent with the single authored criterion, which explicitly requires rule **and** feeling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/full-student-sweep/rehearsal-pardon-scoring-review.md",
+   "lines": "7",
+   "quote": "That is legitimate meaning to teach, yet should be explicit in the task if its omission must cause a miss.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INTEGRATED-READINESS-REVIEW.md",
+   "lines": "13",
+   "quote": "A compact list of correct comparisons can meet those criteria without an organized essay.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/l4-extra-rule-mood-clarity/CAUSE-AND-PROPOSAL.md",
+   "lines": "15",
+   "quote": "The local question should state that the answer needs a plausible rule and its effect on how the place feels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/PROPOSAL-REVIEW-by-unit9.md",
+   "lines": "64",
+   "quote": "Do not add an unannounced quotation requirement to the opening solely to replace the impossible tap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "209-211",
+   "quote": "If a prompt says \"evaluate\" but the key rewards identification, or a lesson claims to teach sourcing but only asks who created a document, the verb-object-evidence chain does not align.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "569",
+   "quote": "The prompt verbs and scoring guidance must ask the same operation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

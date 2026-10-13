@@ -1,0 +1,56 @@
+{
+ "id": "difficulty-across-a-shared-text",
+ "title": "Difficulty across a shared text",
+ "statement": "Should questions that share one text sit at one difficulty level, or span easy to hard like a quiz?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "demand",
+  "stimulus",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The evaluator first routed sets of questions on one shared text through its quiz rules, which need all three difficulty levels present and no level above 60%, and the generator specification still requires that spread. A later dedicated evaluator expects uniform difficulty and fails a set only for wildly inconsistent levels. Both positions coexist in this snapshot: the committed half of the classifier sends such sets to the dedicated evaluator, while its stashed half still routes them to the quiz rules.",
+ "against": "The generator specification's pipeline still routes such sets through the quiz rules: \"Classifier fast-path → ContentType.QUIZ\" (`icloud-work/incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md`, line 13).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "157",
+   "quote": "- All three difficulty levels present (Easy, Medium, Hard)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "3",
+   "quote": "Unlike quizzes which require Easy/Medium/Hard distribution, MCQ sets are expected to have UNIFORM difficulty - all questions should be at the same appropriate difficulty level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/classifier/content_classifier.py",
+   "lines": "38",
+   "quote": "# MCQ set → dedicated evaluator (uniform difficulty expected, unlike quizzes)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/classifier/content_classifier.py",
+   "lines": "45",
+   "quote": "# MCQ set → classified as quiz (decomposed into individual MCQs)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

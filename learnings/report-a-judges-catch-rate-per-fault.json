@@ -1,0 +1,201 @@
+{
+ "id": "report-a-judges-catch-rate-per-fault",
+ "title": "Report a judge's catch rate per fault",
+ "statement": "Score a judge on labelled cases per kind of fault, counting misses and false alarms against a baseline that always gives the majority verdict, with its bar from human agreement.",
+ "example": "In a 100-item regression set with 1 faulty item among its 77 reading items, a judge that passed every reading item would still clear a 0.98 bar.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The evaluator's 100-item regression set is labelled 88 ACCEPTABLE, 2 SUPERIOR and 10 INFERIOR; 77 are reading and language items, of which 1 is INFERIOR, and 9 of the 10 INFERIOR items are math. The runner folds ACCEPTABLE and SUPERIOR into one pass category and reports a single pass rate with no breakdown by label or subject, against a bar of 0.95 in the dataset and 0.98 by default in the runner. A judge that passed every reading item would miss 1 of 100 and still clear both bars (counted from the dataset). Calibrate the judge on a labelled set that holds known failures of each kind, report each rate over its own denominator, and add a chance-corrected agreement figure.",
+ "against": "A later run found counter-evidence (`grade3-reading/bias_experiment/.agent/memory/g3-agent-qualification-v2-plan.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/golden/golden_dataset.json",
+   "lines": "4",
+   "quote": "\"pass_threshold\": 0.95,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/golden/runner.py",
+   "lines": "285",
+   "quote": "threshold: float = 0.98,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/golden/runner.py",
+   "lines": "32",
+   "quote": "_PASS_VERDICTS = {\"ACCEPTABLE\", \"SUPERIOR\"}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/golden/golden_dataset.json",
+   "lines": "3",
+   "quote": "\"description\": \"Curated golden dataset for evaluation regression testing\",",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/runs_calibrate_gemini_vs_ib_after_swap/calibration_summary.json",
+   "lines": "6-7",
+   "quote": "\"agreement\": 0.9777777777777777, \"kappa\": 0.0,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/runs_calibrate_gemini_vs_ib_after_swap/calibration_summary.json",
+   "lines": "8-14",
+   "quote": "\"confusion\": { \"tp\": 88, \"tn\": 0, \"fp\": 0, \"fn\": 2 }, \"ib_pass_rate\": 1.0,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/calibrate_gemini_vs_ib.py",
+   "lines": "4-6",
+   "quote": "Uses the 90 Cheater Layer 1 cached items as the calibration sample (each has authoritative IB v2.5.11 score from build-time). Grades each through Gemini judge. Computes agreement + correlation. AC requires ≥0.95 agreement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/serve/eval_v90c_gemini_raw.py",
+   "lines": "4",
+   "quote": "Uses Gemini-3.1-flash-lite judge via layer3_gemini_judge.py (~97.8% IB correlation).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "140",
+   "quote": "| IsUse 5/4 | 962/4 ⚠ 99.6% degenerate-at-5 (gpt-4o-mini ceiling) |",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "46",
+   "quote": "Score the three verdicts with a confusion matrix and per-class precision/recall, reporting counts and denominators.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "46",
+   "quote": "Report by rule and family as well as overall, including high-impact cases such as leaked independent-practice answers and adversarial content.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "48",
+   "quote": "**False reject:** `violates` prediction on a labeled `follows` case; report count / all `follows` cases. Report mistakes involving `insufficient_evidence` separately.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "28",
+   "quote": "Report quartet all-pass, false approvals/rejections, semantic leakage in every learner-visible field, repair quality, and ordinary/safety controls.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "50",
+   "quote": "Report rating distribution and failures, not only an average.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "316-318",
+   "quote": "compute a per-rule modal-decision prior and an always-modal strict artifact-pass baseline; report per-rule macro-F1 and minority-decision recall so class imbalance cannot masquerade as contract obedience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "398-399",
+   "quote": "Semantic-label ceiling is measured agreement from independent human/expert reviewers before adjudication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "399-400",
+   "quote": "The OC-WMPF decision floor equals that measured ceiling minus a separately preregistered margin",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "3-4",
+   "quote": "the grade 3 engine's calibration measures per check: precision of holds,\n// recall of fails, and false holds (good cases the check would hold back).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "90",
+   "quote": "the gap between the groups: the lowest p among cases that hold and the highest among cases that fail",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "94",
+   "quote": "threshold: lo > hi ? +((lo + hi) / 2).toFixed(3) : null",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/calibrate.mjs",
+   "lines": "4",
+   "quote": "Each case goes through runChecks with several votes; per check it reports precision, recall, false holds and the gap",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "317-318",
+   "quote": "report per-rule macro-F1 and minority-decision recall so class imbalance cannot masquerade as contract obedience.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-agent-qualification-v2-plan.md",
+   "lines": "115-116",
+   "quote": "Class-prior accuracy is not a meaningful baseline for a structured 11-field exact-match object.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "724-725",
+   "quote": "Machine-human exact qualification agreement must reach at least 85 percent in every calibration cell, with zero machine false negatives on hard gates.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,50 @@
+{
+ "id": "one-answer-many-wordings",
+ "title": "One answer, many wordings",
+ "statement": "When a part has one intended answer, its scoring guide accepts other wordings of that answer, not related ideas or a broader or narrower category.",
+ "example": "One guide accepted three related but distinct concepts as the one answer.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "key",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Three separate reviews of the AP generator's short-answer items failed scoring guides that accepted related but distinct concepts as one answer, both an event and a whole era, or a document in place of the movement asked for (`icloud-work/ap-social-studies-generator/docs/analysis/evaluation_audit.md`; `icloud-work/ap-social-studies-generator/python/benchmark_runs/analysis_iter2.md`; `icloud-work/ap-social-studies-generator/python/benchmark_runs/failures_20260226_172346.md`). The first review said the mixed list created grading inconsistency, and the second called it an internal contradiction. The rule is for a part with one intended answer; a part that asks for one example among many is a different case.",
+ "against": "Parts that ask for one example out of many rightly accept several distinct answers, and official scoring guidelines list them ('Examples that earn this point include the following:', `icloud-work/ap-social-studies-generator/curriculum/ceds/ap-european-history-ced.pdf`). The generator's own writer rules push for inclusive lists of every valid response (`icloud-work/ap-social-studies-generator/python/generators/saq.py`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/evaluation_audit.md",
+   "lines": "69",
+   "quote": "4. The accepted answers (popular sovereignty, consent of governed, social contract) are related but distinct concepts, creating grading inconsistency",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter2.md",
+   "lines": "40",
+   "quote": "Part (a) scoring criteria lists both 'Compromise of 1877' and 'Reconstruction' as acceptable answers, which creates an internal contradiction",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/failures_20260226_172346.md",
+   "lines": "79",
+   "quote": "'95 Theses' as equivalent to 'Protestant Reformation,'",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

@@ -1,0 +1,419 @@
+{
+ "id": "no-decorative-or-missing-pictures",
+ "title": "No decorative or missing pictures",
+ "statement": "Attach a picture only when the task uses it, and supply every picture, chart, document or clip the task points to, since a description in words doesn't take its place.",
+ "example": "Making every document text-only, instead of describing pictures that weren't there, gained about 2%.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP evaluator marked short-answer questions with decorative images inferior (`icloud-work/ML learnings/gemini_benchmark_relentless.md`). Document sets that described visual documents without actual images failed outright, and making all 7 documents text-based cut those failures significantly, about a 2% gain (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`; `icloud-work/ML learnings/gemini_benchmark_relentless.md`). Another team found its model referring to missing images, a failure specific enough that such a reference was almost always wrong, and down-weighting those training items helped remove it (`icloud-work/ML learnings/cross_team_learnings_full.md`).",
+ "against": "the evaluator is calibrated to an exam whose short-answer questions never have images, so the first finding follows that exam's convention (`icloud-work/ML learnings/gemini_benchmark_relentless.md`); pictures in question sets were stripped before evaluation and never judged (`icloud-work/ML learnings/mcq_set_journey.md`); and the other team's fix was assessed as not well validated (`icloud-work/ML learnings/cross_team_learnings_full.md`). the generator's spec allows image, map and chart stimuli, and in one pipeline images were stripped before judging, so whether they helped was never judged. A picture generator in the same work draws one whenever the topic is on a fixed list, such as geometry or fractions, or the question contains a visual word; the topic rule does not ask whether the task uses the picture (`icloud-work/incept/nova_forge/svg-llm/README.md`, \"SVG Generation Logic\"). every verdict here is an AI evaluator's or a review comment, not a measure of learning, and the generator's own architecture planned political cartoons and images as descriptions for text-based generation (`icloud-work/ap-social-studies-generator/docs/03-ARCHITECTURE.md`). None found. The same grader passes an item with no stimulus when none is required (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-inceptbench-prompt-audit.md`, line 76). A picture mentioned inside a story, such as a character looking at a diagram, is a different case: the report's own stress test judged that flagging such mentions risks crying wolf and downgraded one to a rewording (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`). A picture mentioned inside the story, rather than one the student is told to consult, was judged a different class: reword it, not a render bug (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, line 534). The note itself says \"Not well-validated per common knowledge\", and the remedy was a weight in training, not a check on the questions. The check over-fired on mentions: a question that only mentioned a standard reference tool (\"when used with the periodic table\") was taken by the model extractor as a promised picture and scored 0.0 for stimulus quality with no image attached, and the prompt now says such a mention is not a visual promise. The question-set writer was told to give any image a rich caption because the judge sees text, not the image (`icloud-work/aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md`, line 51), so the judge's verdicts on pictures were verdicts on their captions, and a status report held that the image policy must be tested against the exact judge version (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md`, line 155). The rule is about pictures that are not there: the lab calls its visual policy evaluator-version sensitive, and text-only the safest choice unless the exact evaluator proves otherwise.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "45",
+   "quote": "**InceptBench's evaluation:** SAQs with decorative images are marked as INFERIOR on the `stimulus_quality` dimension. The evaluator is calibrated to AP exam standards where SAQs never have images.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "23",
+   "quote": "Visual documents without actual images → hard fail. Made all 7 DBQ docs text-based. Removed visual mandate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "69",
+   "quote": "**Impact:** DBQ failures related to visual document type dropped significantly. ~2% improvement.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "137",
+   "quote": "**One team tried:** 0.01 weight on items where model references missing images. Helped eliminate that specific failure mode.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/cross_team_learnings_full.md",
+   "lines": "138",
+   "quote": "**Assessment by community:** \"Not well-validated.\" Probably worked because that failure mode was highly specific (reference to missing image = almost always wrong).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "71",
+   "quote": "- Image is stripped before InceptBench evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "45",
+   "quote": "SAQs with decorative images are marked as INFERIOR on the `stimulus_quality` dimension.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "49",
+   "quote": "~2-3% improvement",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "65",
+   "quote": "A \"visual document\" with no image is a structural contradiction.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "69",
+   "quote": "~2% improvement",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/AP_GENERATOR_SPEC.md",
+   "lines": "11",
+   "quote": "primary_source|secondary_source|image|map|chart",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "71",
+   "quote": "Image is stripped before InceptBench evaluation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/Incept Pedagogy & Learning Science Overview.md",
+   "lines": "306",
+   "quote": "Distractions, unnecessary visuals, and redundant explanations are eliminated to keep cognitive load low.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/demo_articles/grade4_fractions.md",
+   "lines": "22",
+   "quote": "**Question:** The rectangle below is divided into 8 equal parts, with 3 parts shaded.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/edu_configs/curriculum_grade_4.jsonl",
+   "lines": "1",
+   "quote": "\"stimulus_needed\": 1.0, \"stimuli_categorization\": \"draw_stepwise_shape_pattern\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/README.md",
+   "lines": "116",
+   "quote": "1. **Topic is in SVG-beneficial list:**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "54",
+   "quote": "The InceptBench evaluator marks decorative SAQ images as INFERIOR (hard-fail on stimulus_quality).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark/CHANGELOG_RELENTLESS.md",
+   "lines": "62",
+   "quote": "the evaluator saw a document declared as \"visual\" with no actual image, triggering a stimulus_quality hard-fail. 17 such failures in the baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/HANDOFF-finetune-status.md",
+   "lines": "64",
+   "quote": "**Result:** DBQ scores shifted 0.80-0.82 → 0.84-0.98. Overall 80% → 83.3%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "124",
+   "quote": "Document 3 provides a text description of a painting instead of the image itself.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles-readable-exp', cell M45",
+   "quote": "There is a map the text references but it is not included in the article.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/03-ARCHITECTURE.md",
+   "lines": "88",
+   "quote": "- Political cartoons and images (descriptions for text-based generation)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/deterministic_compiler/package_report.md",
+   "lines": "56",
+   "quote": "- Test names show coverage for evaluator prompt rules, factual audit gating, stimulus promise/reference detection, stem redundancy, extraneous-topic guards, and MCQ-set behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "7",
+   "quote": "A promised stimulus is anything the question tells the student to look at, read, listen to, watch, or use to answer — regardless of whether the artifact is actually present in the content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "13",
+   "quote": "The fact that the content offers a prose description instead of an image does NOT remove the promise — record the illustration, not the description.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "ee21a33",
+   "lines": "24-25",
+   "quote": "#344: article text referencing missing/unprovided stimulus not flagged - Add MISSING-PROMISED STIMULUS CHECK to stimulus_quality STEP 1",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "ee21a33",
+   "lines": "26-28",
+   "quote": "- Detects section headers (Map Study, Look at diagram), directional text (Using the map provided, In the map above), and reference language - Scores stimulus_quality = 0.0 with specific instructional gap reasoning",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/BUNDLE_CONTENT_BUGS.md",
+   "lines": "3",
+   "quote": "Found while QA-ing **576** deployed items from the shared `course_bundle.jsonl`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/BUNDLE_CONTENT_BUGS.md",
+   "lines": "4",
+   "quote": "**20 must-fix** (broken/unanswerable)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/BUNDLE_CONTENT_BUGS.md",
+   "lines": "15",
+   "quote": "unanswerable-needs-visual | asks how a picture/diagram helps; image not rendered |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "418",
+   "quote": "\"Look at the labeled diagram to see where they are!\" — no image, no CDN URL, no inline labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "534",
+   "quote": "Flagging diegetic mentions risks crying wolf.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "31",
+   "quote": "8 content bugs (mostly dangling-visual)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "418",
+   "quote": "`u0-l2-q11-mcq-s` — **dangling-visual.** \"Look at the labeled diagram to see where they are!\" — no image, no CDN URL, no inline labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "534",
+   "quote": "This is a different class from the real dangling-visuals (`u0-l2-q10/q11`, `u2-l1-q04`) where the student is directly instructed to consult a missing figure.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "team_learnings_20260422.md",
+   "lines": "69",
+   "quote": "- 0.01 weight on bad items helped eliminate questions that reference missing images",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "team_learnings_20260422.md",
+   "lines": "70",
+   "quote": "- Not well-validated per common knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "7",
+   "quote": "A promised stimulus is anything the question tells the student to look at, read, listen to, watch, or use to answer — regardless of whether the artifact is actually present in the content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "13",
+   "quote": "- \"Read the description of the illustration.\"      → STILL promises an illustration (visual). The fact that the content offers a prose description instead of an image does NOT remove the promise — record the illustration, not the description.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "23",
+   "quote": "The artifact promised is the visual / audio / video / multimedia, NOT the prose block.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "31",
+   "quote": "A promise requires an **imperative directive aimed at the student** — a present-tense or implied instruction telling the student to consult something. If that directive is absent, there is no promise regardless of what nouns appear.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "4b763a2",
+   "lines": "6-9",
+   "quote": "A question that merely mentions these tools (e.g. \"when used with the periodic table\") was incorrectly extracted as a visual promise by the LLM-based extractor, causing stimulus_quality to be scored 0.0 when no image was attached.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/stimulus_promise_extraction.txt",
+   "lines": "49",
+   "quote": "A periodic table, equations/constants sheet, or similar standard reference that is universally provided to students on an exam (e.g. AP Chemistry) is NOT a visual promise when the question merely mentions it as an available tool",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/HANDOVER_PARALLEL_IDEAS.md",
+   "lines": "52",
+   "quote": "the model emits fabricated visual/document promises that InceptBench hard-zeroes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "151",
+   "quote": "- prose description of a missing visual is invalid,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "51",
+   "quote": "- If image: provide rich descriptive caption (the grader sees text, not image).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pipeline_status_2026-05-18.md",
+   "lines": "155",
+   "quote": "4. DBQ visual/image policy must be tested against the exact evaluator version.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/HANDOVER_PARALLEL_IDEAS.md",
+   "lines": "54",
+   "quote": "Challenge this from evidence. If it is wrong, prove it. If it is right, build the fix path.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "57",
+   "quote": "InceptBench hard-zeroed those because the stimulus was not real analyzable source material.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "56",
+   "quote": "The generator emitted fake maps, charts, photographs, and cartoon descriptions as if they were documents.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D8-text-quality.md",
+   "lines": "32",
+   "quote": "Reject passages whose graphics decorate rather than carry meaning",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "36",
+   "quote": "| Decorative filler | b-roll/motion with no fact_id |",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "56 (textutil text)",
+   "quote": "a single wide juxtaposition illustration that does this lesson's real work",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "56 (textutil text)",
+   "quote": "This is the \"power can change hands, and change people\" idea made visible before the child reads.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "250-253",
+   "quote": "**When a lesson needs one:** iff the canonical passage carries a `diagram_contract` (or other representation contract with `status: \"original-diagram-required\"`). No contract ⇒ no diagram — never decorate a lesson with an invented visual, and never substitute a placeholder image (no-placeholders rule: real contracted artifact or honest redesign + CONTENT-NOTES entry).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

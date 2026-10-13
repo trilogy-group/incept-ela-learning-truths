@@ -1,0 +1,185 @@
+{
+ "id": "options-that-differ-in-meaning",
+ "title": "Options that differ in meaning",
+ "statement": "Check that the options differ in meaning, not just in wording: identical or equivalent options leave more than one right answer and no real distractor.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "distractors",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In two runs of 298 generated items that passed at 3.7% and 3.0%, factual accuracy failed on 78% of items, among them items whose four options were identical (`icloud-work/incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md`, lines 10-11, 21 and 24). A production math generator's wrapper filters equivalent distractors, and its requirements rule out pairs such as 1/2 and 5/10 unless multi-answer is supported (`icloud-work/incept/nova_forge/qwen3-math/docs/inceptml_full_report.md`, lines 41 and 73). A reading question check flags a distractor that uses different wording for essentially the same meaning as the right answer (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json`, line 21).",
+ "against": "Equivalent options are allowed when every one of them is keyed: the rule holds only \"unless multi-answer is supported\" (`icloud-work/incept/nova_forge/qwen3-math/docs/inceptml_full_report.md`, line 73).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "10",
+   "quote": "**Run 1:** 3.7% pass rate (11/298 passed)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "11",
+   "quote": "**Run 2:** 3.0% pass rate (9/298 passed)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "21",
+   "quote": "### 1. Factual Accuracy (78% failure rate)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/platform/PATTERN_ANALYSIS_RESULTS.md",
+   "lines": "24",
+   "quote": "- All options are identical (e.g., all 4 choices say \"Four thousand five hundred sixty-seven\")",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "41",
+   "quote": "- filtering equivalent distractors",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "73",
+   "quote": "- Avoid **equivalent distractors** (e.g., `1/2` vs `5/10`) unless multi-answer is supported.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "21",
+   "quote": "Synonymous or Near-Synonymous**: Uses different wording but conveys essentially the same meaning",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "54",
+   "quote": "\"sentence_0_1\": \"The phrase long remember presents spoken rhetoric as something fragile that will quickly fade from human memory.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "271",
+   "quote": "\"value\": 0.24,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "55",
+   "quote": "\"sentence_0_2\": \"The noun wrinkled lip implies that the king held his subjects in utter contempt and felt entirely superior to them.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "288",
+   "quote": "\"value\": 0.53,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "55",
+   "quote": "\"sentence_0_2\": \"The phrase \\\"upon him\\\" reveals his purely opportunistic nature.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "288",
+   "quote": "\"value\": 0.51,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "423",
+   "quote": "\"sentence_0_2\": \"The phrase \\\"long remember\\\" implies that official speeches leave almost no mark on history.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "658",
+   "quote": "\"value\": 0.48,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "796",
+   "quote": "\"sentence_0_1\": \"The phrase long remember suggests that spoken dedications carry minimal lasting weight in human history.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "1017",
+   "quote": "\"value\": 0.31,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/be97f27fc4c4a65a.json",
+   "lines": "120",
+   "quote": "makes the rebuilt sentence wrong: the judge found this does not hold",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "271",
+   "quote": "\"value\": 0.78,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "288",
+   "quote": "\"value\": 0.96,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "271",
+   "quote": "\"value\": 0.85,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "965",
+   "quote": "p12's Amazon option was dropped rather than kept as a near-miss because 'is home to' reads as shelter, which the key already names, so it was arguably a third correct answer.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

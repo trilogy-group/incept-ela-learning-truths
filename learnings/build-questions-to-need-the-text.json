@@ -1,0 +1,144 @@
+{
+ "id": "build-questions-to-need-the-text",
+ "title": "Build questions to need the text",
+ "statement": "Make a question need its text by how the text and the item format are built, not by filtering, patching or regenerating questions afterwards.",
+ "example": "Built to need the text, 60% of items survived the without-text check, against 6% of encyclopedic clones.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity",
+  "format"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the Grade 5 course, items generated construction-first survived the anti-leak gate at 60% against 6% for encyclopedic clones, and raw generated banks leaked ~94% blind (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, lines 21-23). On the same encyclopedic passages, a cross-family run found leak rates of MCQ 99.5% and MSQ 100% against hot-text 1.67% and 0% for sequence, match and two-part evidence items, and conversion lanes showed the leaky formats could be redesigned into passage dependence (choice 142/234 converted; hot-text 90/117) (`grade3-reading/ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd`, lines 23-29). Questions built to need their text survive the without-text check far more often.",
+ "against": "The 0% for ordering items came from a gate that scored one seeded shuffle per item, and a re-probe under four shuffles later decertified 65 of 118 (`grade3-reading/ti-courseplans/courses/g5-reading/analysis/seq-reprobe-2026-07-07/README.md`); the spec calls the 60% and 6% a historical basis for pricing and design, not current readiness (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, line 20). A change of format alone did not fix it: a later check by two model families found 94.6% of 353 items in the formats thought safe still leaked, confirming that a leak-resistant format is not the same as a low leak rate (`grade3-reading/artifacts/g5-merged-course/a2-cross-family-regate.md`, line 21).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "21",
+   "quote": "construction-first generation survived the anti-leak gate at 60% vs 6% for encyclopedic clones",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "22-23",
+   "quote": "raw generated banks leaked ~94% blind",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "24-25",
+   "quote": "different blind-solve leak rates by question *format*: MCQ 99.5%, MSQ 100% — hot-text 1.67%, > sequence 0%, match 0%, EBSR 0% (cross-family run, 2026-06-23/24).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "26",
+   "quote": "**MCQ/MSQ format does not force reading; hot-text, sequence and match do.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "28",
+   "quote": "be *redesigned into* passage-dependence (choice 142/234 converted; hot-text 90/117)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/brainlifts/v0.6.qmd",
+   "lines": "29",
+   "quote": "leaky-by-default formats convert under per-item redesign.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "167",
+   "quote": "Regen pilot (Wave 3) showed 9.5pt improvement in MCQ leak (99.5% → 90.0%) but leak remained",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "31",
+   "quote": "**Fix verdict:** NOT fixable with option-length patches. Requires passage strategy redesign.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "152",
+   "quote": "- Skeleton redesign (V2) resolves the regen problem by eliminating MCQ/MSQ from the build and substituting passage-dependent formats with sufficient pool depth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "555-557",
+   "quote": "First, prefer the resistant formats for anything carrying weight: hot text, match, sequence and short constructed response, which have no options to guess between.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "305",
+   "quote": "re-anchoring rewrites converted only 1/11",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "305-306",
+   "quote": "The one converting rewrite was a **text_entry item whose answer is a verbatim passage phrase**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/course-graph-guide.md",
+   "lines": "54",
+   "quote": "Verbatim passage-phrase text-entry — answer is a verbatim passage phrase (the G8-POC's one converting rewrite; strongest passage-binding).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "610",
+   "quote": "Mastery gate hardened live, 84.2% → 64.0% blind-solvable after 47 hardened items deployed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/ASSEMBLY_REPORT_V2.md",
+   "lines": "11-13",
+   "quote": "the root cause is not item quality — it is passage design. Encyclopedic passages make MCQ/MSQ/EBSR answerable without reading, at rates that regeneration alone cannot fix without rewriting the passage corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/BRAINLIFT.md",
+   "lines": "81-82",
+   "quote": "Fact-disjointness is a design input, not a red-team afterthought",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

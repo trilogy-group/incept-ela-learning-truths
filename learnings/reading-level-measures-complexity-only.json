@@ -1,0 +1,72 @@
+{
+ "id": "reading-level-measures-complexity-only",
+ "title": "Reading level measures complexity only",
+ "statement": "Strip markup, tables and equations before estimating reading level, and check mechanical faults such as merged words or stray symbols separately, because a readability estimate measures only complexity.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "measurement",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP evaluator estimates reading level in code from average sentence length and how common the words are, and strips formatting such as markup, tables and equations before measuring, so layout is never mistaken for difficulty. Its reading rubric keeps automatic fails for merged non-words and confusing symbols whatever the computed level, because the estimate measures complexity, not mechanical defects, and the estimate may clear a judge's failure only when that failure was about complexity.",
+ "against": "The estimate was built and calibrated on Grade 3 reading; outside that range it is approximate and pilot-tunable.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "203",
+   "quote": "An open estimate is derived from two inputs, average sentence length and how common the words are, which are the two drivers of the proprietary Lexile Framework.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "203",
+   "quote": "Formatting such as markup, tables and equations is stripped before measuring, so layout is never mistaken for difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/fiction_reading/evaluation.txt",
+   "lines": "400-402",
+   "quote": "The automatic-fail readability patterns (merged non-words, confusing symbols) ALWAYS apply regardless of the computed Lexile — the estimate measures complexity, not mechanical defects.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "41-43",
+   "quote": "**Up-override (conservative):** reliable estimate comfortably in band AND the LLM's failure was about complexity (not a mechanical defect like merged words) → un-fail to 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "7-8",
+   "quote": "Global across grades; built and calibrated on Grade 3 reading.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/internals/lexile_evaluation.md",
+   "lines": "73-74",
+   "quote": "Calibration outside the G3 range is approximate and pilot-tunable",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

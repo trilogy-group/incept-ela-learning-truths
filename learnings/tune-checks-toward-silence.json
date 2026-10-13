@@ -1,0 +1,107 @@
+{
+ "id": "tune-checks-toward-silence",
+ "title": "Tune checks toward silence",
+ "statement": "Where a person reviews the output anyway, let a check fire only on positive evidence that the fault is there and abstain when it can't tell.",
+ "example": "Without one extra condition, a check for near-duplicate options gave seven false alarms on a single passage.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The project's research summary tunes every check toward silence: a check ships when it is nearly certain and abstains when it cannot measure, because a false alarm costs someone the time to read the flag, check the content and find nothing, and people stop reading empty flags. Both of its documented code checks are built that way: the reading-level check declares itself unreliable below a minimum amount of text and defers, and the near-duplicate option check needs six conditions at once, one of them added after seven false alarms on a single passage. A guard for pictures that give the answer away fires only when image analysis confirms the answer is visible, not merely because the explanation never mentions the picture, and skips when the analysis is inconclusive.",
+ "against": "The source limits it to defects a person would catch anyway: 'This holds only for defects a human would catch anyway, and the boundary is not where it can currently be drawn.' (shadow-bench/docs/brainlift.md line 151), and leaves the direction for cross-lesson checks open. One extractor is tuned the other way, toward catching: 'False negatives there hurt — they let \"fool the evaluator with a text description\" patterns through.' (shadow-bench/src/inceptbench/prompts/stimulus_promise_extraction.txt line 73). A later run found: A claim-fidelity check was kept deliberately loud: its exact match also flags faithful paraphrase, and all 4 findings it raised on approved content were ruled noise, but its notes refuse to loosen it because fuzzy matching would let through the very defect it exists for, so its false alarms go to someone who reads the passage instead (`grade3-reading/curriculum-gen/checks/KNOWN-LIMITS.md`).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "32",
+   "quote": "A check ships when it is nearly certain, and abstains when it cannot measure.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "149",
+   "quote": "A false alarm costs someone the time to read the flag, check the content and find nothing",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "149",
+   "quote": "the reading-level check declares itself unreliable below a minimum amount of text and defers",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "207",
+   "quote": "without it, options differing only between two animal names produced seven false alarms on a single passage.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1501",
+   "quote": "Trigger (all must hold — guards against decorative-image false positives):",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1513-1514",
+   "quote": "(positive-evidence fallback — fires only when we can prove the image reveals the answer, skips conservatively when analysis is inconclusive).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1636-1637",
+   "quote": "the explanation does not reference the image, but that does NOT … mean the image reveals the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "1638",
+   "quote": "and fire ONLY when structured evidence confirms the answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "16",
+   "quote": "Judging that needs the passage read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "18-19",
+   "quote": "This is the limit, not a bug to fix: loosening the match to fuzzy similarity would let through exactly the defect the class exists for.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "24",
+   "quote": "### Adjudicated 2026-08-24: 4 findings on approved `grade-5.json`, 0 real",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

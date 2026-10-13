@@ -1,0 +1,72 @@
+{
+ "id": "fail-a-fact-only-with-its-correction",
+ "title": "Fail a fact only with its correction",
+ "statement": "Let a fact check fail an item only when it can state the wrong claim and a well-documented correction.",
+ "example": "A retrieved passage that does not address a claim scores 1.0, not a fail.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The evaluator's independent fact audit runs in parallel with the main judge, typically on a different model and grounded in retrieved Wikipedia passages, and is merged with the main verdict by taking the lower score. Its correction test opens with a gate that requires stating the error and the correction, holds that 'Absence of recall is not absence of fact', and forbids failing a claim that a document or quotation does not exist, since the model cannot verify archives or verbatim text from memory. A retrieved passage that does not address a claim scores 1.0, and with several consensus runs an error is flagged only when all of them agree, which leans toward passing. The error must also be one that would leave a student believing something substantively wrong.",
+ "against": "The other judge in scope fails any factual error: \"- FAIL for ANY factual error (even minor ones)\" (`icloud-work/incept/ap-benchmark-standalone/ap_benchmark/prompts/base.py`, line 82). The audit's own third gate, left out of the statement, lets near-miss dates pass: \"A few years off within the same period/context is NOT student harm.\" (`icloud-work/incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py`, lines 150-151). The reading and writing rules still require failing invented studies, fake quotations and named people or events presented as real, which a judge can only spot from its own knowledge (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt`, lines 19-21), and no main question prompt carries the gates.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "121",
+   "quote": "Gate 1 — **State the error and correction.** Write: \"The content says [X]. The",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "136",
+   "quote": "Absence of recall is not absence of fact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "221",
+   "quote": "1. If the passages do NOT address a specific claim → score **1.0** (no evidence to judge)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "125",
+   "quote": "Absence of recall is not absence of fact.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "147-148",
+   "quote": "If you cannot clearly articulate what wrong belief the student would form, the error fails Gate 3 and you must score 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "108",
+   "quote": "The audit used a rigorous 3-gate system that reduced false positives. The main evaluator would sometimes flag borderline factual issues that the audit would correctly pass.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

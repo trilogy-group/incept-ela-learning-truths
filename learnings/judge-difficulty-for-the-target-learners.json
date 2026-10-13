@@ -1,0 +1,203 @@
+{
+ "id": "judge-difficulty-for-the-target-learners",
+ "title": "Judge difficulty for the target learners",
+ "statement": "Judge an item's difficulty against validated items for its grade, weighing the inference it demands and the strength of its wrong options, not by a model's direct rating.",
+ "example": "The reading-question check compares a candidate with the 5 most similar validated questions for its grade.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "demand",
+  "evaluation",
+  "alignment"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator notes in its matching rubric that a task which feels obvious in hindsight to someone who knows the subject is still diagnostically useful if the target students are learning the concept, and fails one only when there is no plausible confusion for the intended grade (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt`). The reading-question pipeline bundled with it judges whether a question suits its grade by comparing it with the 5 most semantically similar validated questions for that grade (`icloud-work/inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json`), and runs that check only when benchmark questions are supplied (`icloud-work/inceptbench/submodules/reading-question-qc/qc_pipeline/README.md`). Both are design choices; no measurement of either was found. Don't judge it by simulated learners either, because a model can't simulate not knowing and so underrates difficulty.",
+ "against": "The check runs only when benchmark items are supplied: \"- Question QC with both keys + --examples: 10-11 checks (adds too-close and difficulty)\" (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/README.md`, line 236). The feature study itself calls direct estimates moderately to strongly correlated with true difficulty, and worse for early grades (Razavi & Powers 2025, https://arxiv.org/abs/2504.08804); the BrainLift calls its r ≈ 0.4–0.6 a rough summary across studies that depends on domain, grade and prompt design (`grade3-reading/knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd`). Simulated students aligned with DPO and calibrated with IRT outperform other simulation approaches, and the BrainLift still finds simulation useful as a supplementary signal (Scarlatos et al. 2025, as reported in `grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 3206); and a predictor framing, rather than role-play, reached r≈0.72–0.79 at population level (`grade3-reading/ti-courseplans/docs/generator-insights.md`, lines 123-124).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "260",
+   "quote": "**NOTE**: A task that feels \"obvious in hindsight\" to an expert is still diagnostically useful if the target student population is learning the concept.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/match_evaluation.txt",
+   "lines": "260",
+   "quote": "Fail only when there is genuinely no plausible confusion for the intended grade/level.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "43",
+   "quote": "A set of the 5 most semantically similar validated test questions that are considered benchmarks for the specified grade level",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/README.md",
+   "lines": "18",
+   "quote": "# Include difficulty assessment (requires benchmark questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/reading-question-qc/qc_pipeline/README.md",
+   "lines": "84",
+   "quote": "- `--examples`: Benchmark questions CSV (enables difficulty assessment check)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "43",
+   "quote": "A set of the 5 most semantically similar validated test questions that are considered benchmarks for the specified grade level",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "43",
+   "quote": "1.  **Level of Inference Required:** The cognitive steps a student must take to arrive at the correct answer (Low, Moderate, High).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "43",
+   "quote": "2.  **Distractor Difficulty:** The quality and plausibility of the incorrect answer choices (Weak, Plausible, Strong).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/config/prompts.json",
+   "lines": "43",
+   "quote": "**Judgment:** [Appropriate / Too Hard / Too Easy]",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/us-reading-comprehension.md",
+   "lines": "96",
+   "quote": "- Assessed against benchmark questions from the same grade",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/qc_pipeline/README.md",
+   "lines": "236",
+   "quote": "- Question QC with both keys + --examples: 10-11 checks (adds too-close and difficulty)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "43",
+   "quote": "scaling up model capability does not improve difficulty alignment with human learners — it often makes it worse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "43",
+   "quote": "More capable models solve more items easily, which systematically compresses their perception of difficulty toward \"easy.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "41",
+   "quote": "Direct LLM ratings show moderate correlations with empirical difficulty at best (often r ≈ 0.4–0.6)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "41",
+   "quote": "They are outperformed by feature extraction plus simple ML, by comparative judgment with anchors, and often by structured rubric-based scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "41",
+   "quote": "Treat direct rating as a fast sanity check or tiebreaker, not as the backbone of your difficulty engine.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "63",
+   "quote": "The feature-based approach achieves correlations up to r ≈ 0.87 vs moderate correlations for direct ratings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3174",
+   "quote": "They cannot simulate what students don't know, even when explicitly prompted to adopt a student persona.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3174",
+   "quote": "More capable models solve more items easily, which systematically compresses their perception of difficulty toward \"easy.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3206",
+   "quote": "the model's underlying competence leaks through role-play.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/generator-insights.md",
+   "lines": "123",
+   "quote": "LLM student role-play is structurally flawed and caps ~67% accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/generator-insights.md",
+   "lines": "125",
+   "quote": "Use prediction to iterate the generator pre-pilot — but it's a stand-in.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3194",
+   "quote": "The feature-based approach achieves correlations up to r ≈ 0.87 vs moderate correlations for direct ratings, with the gap being largest for early grades",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Li et al. 2025",
+   "url": "https://arxiv.org/abs/2512.18880"
+  },
+  {
+   "ref": "Razavi & Powers 2025",
+   "url": "https://arxiv.org/abs/2504.08804"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

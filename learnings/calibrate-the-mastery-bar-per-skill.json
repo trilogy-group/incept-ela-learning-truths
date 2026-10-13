@@ -1,0 +1,156 @@
+{
+ "id": "calibrate-the-mastery-bar-per-skill",
+ "title": "Calibrate the mastery bar per skill",
+ "statement": "A percentage mastery bar means something only while the task mix, difficulty and support stay fixed, so set it per skill, not by one global figure.",
+ "example": "The reading course's feedback routing defines mastery through controlled evidence and downstream risk, not a global raw 90%.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "contested",
+ "detail": "The assessment-as-signal BrainLift treats mastery as a decision rule applied to uncertain evidence: every rule trades a false promotion, which risks failure downstream, against a false non-promotion, which wastes time and motivation, and percent-correct only means something when task difficulty and evidence conditions are held steady. Its evidence base cites work showing mastery behaves more like a graded risk than a clean threshold, and the reading course's feedback routing defines mastery through controlled evidence and downstream risk, not a global raw 90%. Set the bar by weighing the cost of a false pass, advancing a learner too early, against a false fail.",
+ "against": "The platform's rules for every app say to enforce mastery gates at 90% accuracy or more. A course-evaluation rubric in the same project enforces mastery gates at ≥90% accuracy (`grade3-reading/ti-courseplans/skills/timeback-course-eval/references/eval-criteria.md`, line 24).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "57",
+   "quote": "Every mastery rule is a trade: false promotion risks downstream failure; false non-promotion wastes time and motivation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "60",
+   "quote": "Percent-correct only means something when task difficulty and evidence conditions are held steady; otherwise it is entangled with item easiness, scaffolding, and cueing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0157-mastery-signal-evidence-base.qmd",
+   "lines": "419",
+   "quote": "Shows that “mastery” behaves more like a graded risk relationship than a clean threshold",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "88",
+   "quote": "define mastery through controlled evidence and downstream risk, not a global raw `90%`;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "21",
+   "quote": "Enforce mastery gates at ≥90% accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "766",
+   "quote": "Percent-correct only means something when task difficulty and evidence conditions are held steady; otherwise it is entangled with item easiness, scaffolding, and cueing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "767",
+   "quote": "If we change the task mix, we change what “90%” means, which makes the system look consistent while the standard drifts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "789",
+   "quote": "So a single global “90%” (or global posterior cut) is structurally incoherent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "88",
+   "quote": "- define mastery through controlled evidence and downstream risk, not a global raw `90%`;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/timeback-course-eval/references/eval-criteria.md",
+   "lines": "24",
+   "quote": "Enforce mastery gates at ≥90% accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "58",
+   "quote": "a KC that many downstream units depend on (a Factor-2 root prerequisite in the load-bearing memo — camouflage, water cycle) gets a **conservative cut** because a false-pass compounds into unreadable later text; a terminal, low-transfer KC tolerates a looser cut because a false-pass costs little downstream.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "58",
+   "quote": "the per-KC risk-tolerance table is the artifact this section commits to producing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "624",
+   "quote": "- **Mastery boundary:** No global percentage, including 90 percent, is a course-wide mastery definition without task mix, independence, dependency risk, false-promotion cost, and downstream-use evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "88",
+   "quote": "The proposal rejects a global 90-percent mastery rule and requires controlled evidence, independence, risk, and downstream-use boundaries.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "88",
+   "quote": "The proposal rejects a global 90-percent mastery rule and requires controlled evidence, independence, risk, and downstream-use boundaries.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "56",
+   "quote": "The `\"gate\": \"≥90%\"` string in every lesson is a **display threshold**, not our definition of mastery.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Zhang et al. 2025",
+   "url": "https://doi.org/10.5281/zenodo.15870292"
+  },
+  {
+   "ref": "Pelánek & Řihák 2018",
+   "url": "https://doi.org/10.1080/13614568.2018.1476596"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

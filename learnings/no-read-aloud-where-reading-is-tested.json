@@ -1,0 +1,106 @@
+{
+ "id": "no-read-aloud-where-reading-is-tested",
+ "title": "No read-aloud where reading is tested",
+ "statement": "On a scored reading test, read aloud nothing whose reading is assessed, such as the passage or answer options, since listening replaces reading and changes what is measured.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "demand",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 5 reading design defended its cold-text construct when feedback faulted it for having no oral language: audio scaffolds let a weak decoder fake comprehension, so its fix was a typed explanation, not an oral or audio one. A Grade 3 course's rules likewise keep question stems, instructions and prompts silent because reading the task is the assessed skill, while the guide's narration, feedback and modelled answers are spoken.",
+ "against": "The Grade 3 rules carve out spoken task asks by ruling (`grade3-reading/artifacts/judgment-corpus/distilled-src/02-LESSON-STRUCTURE.md`, lines 269-270), and read-aloud of the text is standard in the Grade 3 lessons those rules were written for (`grade3-reading/artifacts/qc-2026-09-30-staging/contradictions.md`, line 18). Another reading course's checklist plays a question's audio when the student asks for it (the record narration-that-waits-for-the-reader). A reading-research digest asks that assessments of young children's reading control for the level of decoding to assess comprehension adequately (`grade3-reading/ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd`, line 725), and this rule keeps decoding inside the scored test. In one build's specification only the rule for task instructions gives a reason; silence on choice questions is stated there as a player rule without one (`grade3-reading/artifacts/u4l2-build/BEAT-SPEC.md`, lines 118-119).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-feedback-orientation/03-CONSTRAINTS-AND-STALE-INPUTS.md",
+   "lines": "24",
+   "quote": "collides with the cold-text construct (SPOV2: audio scaffolds let a weak decoder fake comprehension). The fix is **typed** explanation, not oral/audio.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/02-LESSON-STRUCTURE.md",
+   "lines": "266",
+   "quote": "Question stems, instructions, prompts — reading the task IS the assessed skill",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/02-LESSON-STRUCTURE.md",
+   "lines": "269-270",
+   "quote": "Exceptions carved by ruling: chunked you-do step ASKS speak (PRA-85); find_youdo intro + step-2 keyword ask + quote_wrong speak (PRA-117).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g1-reading/brainlifts/v0.1.md",
+   "lines": "43",
+   "quote": "Audio supports learning; it never reads the scored item aloud.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g1-reading/brainlifts/v0.1.md",
+   "lines": "43",
+   "quote": "No TTS is enabled on passages or answer choices; these are Reading tests, not listening comprehension tests",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g1-reading/brainlifts/v0.1.md",
+   "lines": "83",
+   "quote": "**no TTS on scored passages/answers**; TTS allowed on the question prompt only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g1-reading/brainlifts/v0.1.md",
+   "lines": "43",
+   "quote": "At G1 audio support is heavier",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "396-397",
+   "quote": "Task instructions are DISPLAY-ONLY (reading the task is part of the assessed skill); step-2 feedback IS spoken (post-tap, gives nothing away).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "118-119",
+   "quote": "Stems/options/feedback are silent (never narrated) on every MCQ surface.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/audio/GENERATION-REPORT.md",
+   "lines": "110",
+   "quote": "Skipped by design — the player never speaks these (no clip = correct)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "84",
+   "quote": "Stems/options never narrated.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

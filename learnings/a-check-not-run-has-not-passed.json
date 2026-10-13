@@ -1,0 +1,433 @@
+{
+ "id": "a-check-not-run-has-not-passed",
+ "title": "A check not run has not passed",
+ "statement": "A check that never ran, ran on nothing or was out of service has not passed: count it, and anything made while it was down, as failed or unverified.",
+ "example": "A per-file test gate reported 0 pass and 0 fail because every file lookup missed.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's staged item standard counts a blind solve that was not run as a fail, not a pass (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md`), and its non-negotiables leave no line blank: absence of evidence is marked unverified, not silence (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/non-negotiables.md`). The course-plan standard the project pinned keeps a contribution with no suitable check pending, states the missing check, and forbids agents to invent a passing verdict (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/README.md`). A per-file test gate once reported 0 pass and 0 fail because every file lookup missed, and the rule since is to treat a 0/0 verdict as a harness bug until proven otherwise (`grade3-reading/knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd`). Count every empty, invalid, timed-out or unscorable output as failed or unverified too, and make a run over zero items stop with an error.",
+ "against": "A later run found: the lesson engine's question suggester, with no judge, takes the first well-formed draft unchecked and caches it by text, so the same unchecked question is still served once a judge is back (`g9/transformer/src/question.js`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g4-reading/showcase-lessons/docs/COMPOUNDING-GATE.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "63-64",
+   "quote": "**`NEEDS_LLM_GRADE` (the blind solve not run) is a FAIL, not a pass.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/non-negotiables.md",
+   "lines": "61",
+   "quote": "No line may be left blank; absence of evidence is `UNVERIFIED`, not silence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/docs/standards/course-json/README.md",
+   "lines": "283-284",
+   "quote": "If no suitable check exists, the contribution stays pending and the missing check is stated in the PR. Agents must not invent a passing verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "182",
+   "quote": "**Symptom (2026-10-01):** a per-file test gate reported 0 pass / 0 fail.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "185-186",
+   "quote": "never read a 0/0 verdict as green — treat it as a harness bug until proven otherwise.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "47",
+   "quote": "The keystone item-quality check — passage-blind solvability — is NEVER executed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "48-49",
+   "quote": "The cold-transfer keystone is a LABEL, not a measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0069-self-audit-insights.qmd",
+   "lines": "50",
+   "quote": "make `NEEDS_LLM_GRADE present` a HARD FAIL.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0070-passage-blind-solve-g5-seedbank-2026-06-24.qmd",
+   "lines": "56",
+   "quote": "`NEEDS_LLM_GRADE` (solve not run) is a FAIL, not UNVERIFIED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "315",
+   "quote": "Invalid, empty, timed-out, or unscorable artifacts are failures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0199-engineering-git-gate-traps.qmd",
+   "lines": "181",
+   "quote": "A \"0/0 pass\" test verdict silently meant every file was ABSENT, not green",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144550.md",
+   "lines": "12",
+   "quote": "| Questions Evaluated | 0 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144550.md",
+   "lines": "13",
+   "quote": "| Passed | 0 (0.0%) |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144550.md",
+   "lines": "45",
+   "quote": "*No hard fail rules triggered.*",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/workflow/reports/REPORT_20260223_144550.md",
+   "lines": "57",
+   "quote": "*No specific recommendations at this time. Continue monitoring quality metrics.*",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/moe_extension_summary.md",
+   "lines": "168",
+   "quote": "All acceptance checks passing, zero data quality issues detected.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/input-generator/moe_extension_summary.md",
+   "lines": "80",
+   "quote": "- **MoE fields populated**: 0 entries (expected - no MoE-specific content in test data)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "313",
+   "quote": "The 32 G2 match/sequence items authored during the June-2026 quality-check service outage passed through no trustworthy gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "77",
+   "quote": "The G2 match/sequence items originally authored during the June-2026 quality-check outage were **replaced 2026-07-07** with items quality-scored 1.0 by the healthy-period checker",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RED_TEAM_FINDINGS.md",
+   "lines": "37",
+   "quote": "**G2 match/sequence items passed through during a quality-check service outage** and are flagged \"should be re-validated\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "3-4",
+   "quote": "A block made with no judge is … \"unchecked\": never ready, never served as ready, and made again once a judge is present.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "47",
+   "quote": "a judge that answered nothing found nothing: that empty focus is not kept as the text's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "184",
+   "quote": "a judge that answered nothing leaves no focus behind: the text is read again once the judge answers",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "27",
+   "quote": "A block that failed is kept for a while, so a reload does not make it again; after that, or on retry, it is remade.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "28",
+   "quote": "const FAILED_KEEP_MS = 10 * 60 * 1000;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "363",
+   "quote": "A block made with no judge to check it: muted on the strip, kept out of the lesson, made again once a judge is back.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "4",
+   "quote": "\"unchecked\": never ready, never served as ready, and made again once a judge is present.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "61",
+   "quote": "made, but not yet checked: it is shown once the judge has checked it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "126",
+   "quote": "a block made with no judge is \"unchecked\", never shown;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "31",
+   "quote": "let question = qs[0] ?? null;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "37",
+   "quote": "if (question) store?.saveDoc(\"questions\", { id: key, question, at: new Date().toISOString() });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/question.js",
+   "lines": "17",
+   "quote": "if (hit?.question) return { question: hit.question };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "131",
+   "quote": "a block made with no judge is unchecked: never ready, never served as ready, made again once a judge is present",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "148",
+   "quote": "a block saved as ready before 'unchecked' existed, with no judge call, is unchecked and made again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quotes.test.mjs",
+   "lines": "59",
+   "quote": "without the 3D build's mirror the quotation check still runs, on src/text.js findQuote, and never passes for lack of it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "39",
+   "quote": "Do not report the failed run as a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "139-140",
+   "quote": "G5 has no signpost/step_head stages at all, so cross-stage remains a no-op on `grade-5.json` — a clean G5 run is still evidence of nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/ATTACKS.md",
+   "lines": "49",
+   "quote": "the blind probe silently drops MCQ/MSQ and prints a bare miss",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/NARRATED-TEXT-SEMANTIC-COVERAGE-PROPOSAL.md",
+   "lines": "22",
+   "quote": "A no-policy check is `not evaluated`, not a policy pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-IMPLEMENTATION-AND-TESTS.md",
+   "lines": "44",
+   "quote": "This prevents a blanket green result when known coverage remains incomplete.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "273",
+   "quote": "Amplify runs the server build; it doesn’t run the full quality-check suite for you.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/ARCHITECTURE.md",
+   "lines": "341",
+   "quote": "A timeout or crash is a failed validation run, not a pass with missing findings.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "471",
+   "quote": "~342 player-prose literals, judged those, and reported ALL PASS — a clean bill over 6% of what the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "230-231",
+   "quote": "**An empty selection must FAIL BY NAME** (exit 2): `UNIT=2` matching no lessons once reported ALL PASS over 6% of the corpus.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "193-195",
+   "quote": "The old transcription-direct-to-Google path left production deaf to speech for 14 days silently; the health probe was checking the wrong credential; the route returned HTTP 200 with an error field, so CloudWatch had no record.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "75",
+   "quote": "INCOMPLETE is not clearance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "8",
+   "quote": "An OWED entry is a work item, not a pass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "27",
+   "quote": "- Blind model judging (gemini-3.1-pro-preview and gemini-3.8-flash, two shuffles each, `judging/judgments.json`): all four passes ranked 2.5 Pro takes above every 3.8 take, mainly on exact words and pace.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/judging/judgments.json",
+   "lines": "15, 140, 156",
+   "quote": "\"ranking\": [],",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-moments.mjs",
+   "lines": "163",
+   "quote": "a judge that did not answer is not a pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/COMPOUNDING-GATE.md",
+   "lines": "100-101",
+   "quote": "If the judge is **unavailable** (LLM/gateway errors on every vote, `n == 0`), the gate does **NOT** hard-fail the lesson on infrastructure. It returns `passed: True` with `confidence: 0.0` and a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "313",
+   "quote": "The 32 G2 match/sequence items authored during the June-2026 quality-check service outage passed through no trustworthy gate. Rather than re-trust them, all 32 were **replaced**",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "472",
+   "quote": "There was no genuine audio narration QA because no narration existed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/review-build/VALIDATION.md",
+   "lines": "15",
+   "quote": "Actual playback, clip-end gates, cue timing, and caption synchronization cannot be verified until approved recordings exist.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/review-evidence/README.md",
+   "lines": "8",
+   "quote": "never infer an evaluation result from `state: unrun`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "83",
+   "quote": "| G2 outage gap | CLOSED 2026-07-07: 32 outage-authored items replaced (not re-trusted) with dataset-sourced items scored 1.0 by the healthy-period quality checker; difficulty structure unchanged; evidence = swap table (engine PRs #64/#65) | [RECORD] |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "67",
+   "quote": "the G2 outage-window items passed through *no* gate at all.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

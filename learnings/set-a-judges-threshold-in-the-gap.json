@@ -1,0 +1,121 @@
+{
+ "id": "set-a-judges-threshold-in-the-gap",
+ "title": "Set a judge's threshold in the gap",
+ "statement": "Set a judge's pass threshold in the gap between its lowest-scoring labelled pass and highest-scoring labelled miss, after checking the gap holds across repeated runs.",
+ "example": "On 82 labelled cases the lowest passing mean was 0.61 and the highest failing mean 0.07, so the threshold went at 0.35.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "marking",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A reading course moved its closing-question judge to a vote-based model judge only where the new judge matched or beat the current one on labelled cases. With 7 votes per case it got all 82 labelled cases right, and that held on every one of 6 runs at 5, 7 and 10 votes; the lowest passing mean was 0.61, the highest failing mean 0.07, and the threshold of 0.35 sits roughly in the middle of that gap, with 0 false passes and 0 false misses. On 27 trap cases the gap ran from 0.85 down to 0.05 over 5 runs. Where the same judge got 28 of 36 on a four-way classification, worse than the current judge, it was not adopted.",
+ "against": "This is one judge on one course's closing questions, where the two classes sat far apart; the record says nothing about where to put the threshold when labelled passes and misses overlap.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "3",
+   "quote": "A judge moved to Jev only where it matched or beat the current judge on labelled cases.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "10",
+   "quote": "**Jev.** 7 votes on a `noul` question against the node's own rubric and required criterion: **82/82 OK**. That held on every run: 6 runs at 5, 7 and 10 votes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "11",
+   "quote": "Lowest pass mean: 0.61. Highest miss mean: 0.07.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "12",
+   "quote": "The threshold is **0.35**, roughly the middle of that gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "13",
+   "quote": "Misses: 0 false passes and 0 false misses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "23",
+   "quote": "**Jev.** 7 and 10 votes: **27/27 OK** on 5 runs. Lowest pass mean: 0.85. Highest miss mean: 0.05.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "30",
+   "quote": "Jev ran 7 votes on a `choice` question with 4 classes and got **28/36 (78%)** against the agent's labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "34",
+   "quote": "**Verdict.** Worse than the current (human-read) judge. **Not adopted.**",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "8",
+   "quote": "82 labelled cases",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "10",
+   "quote": "That held on every run: 6 runs at 5, 7 and 10 votes.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "11",
+   "quote": "Lowest pass mean: 0.61. Highest miss mean: 0.07.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "12",
+   "quote": "The threshold is **0.35**, roughly the middle of that gap.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "13",
+   "quote": "Misses: 0 false passes and 0 false misses.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,158 @@
+{
+ "id": "a-leak-check-needs-a-calibrated-solver",
+ "title": "A leak check needs a calibrated solver",
+ "statement": "Calibrate a leak check's blind solver, which answers without the text, on items known to leak and items known to be clean before trusting its leak rate.",
+ "example": "Under a stronger solver, only 20 of 95 items that a weaker one had passed still held.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Re-run through a stronger blind solver, still from another model family, only 20 (21%) of 95 items that a weaker solver had passed survived, and 75 leaked (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`). The opposite failure came from a solver that role-played test-taking tricks: it guessed from option-length and wording tells and returned blind accuracy of 1.0 on items that needed the passage, and once it was swapped for a solver that answered unknown, the same judge certified those items clean (`grade3-reading/knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd`). That audit concluded that blind-solve calibration matters more than which judge is used, and that a solver able to bluff without the passage inflates leak rates. A solver that bluffs from world knowledge flags items that do need the text, and a weak or abstaining one clears items a test-wise student would crack by option length or wording.",
+ "against": "real students include test-wise ones and ones willing to click through or guess (`grade3-reading/knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd`, lines 25-27), so a solver that never guesses can understate the risk. The audit itself says it does not prove its new baseline is the only correct one (`grade3-reading/knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd`), and an exact blind answer still counts as a leak whatever confidence the solver reports (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "67-69",
+   "quote": "of v1's 95 re-gated \"clean\" items, only **20 (21%) survived**; **75 leaked** under the strong solver.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "31",
+   "quote": "it returned blind accuracy of `1.0` on items that genuinely needed the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "70",
+   "quote": "2. A solver that can bluff its way through without the passage will inflate leak rates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "69",
+   "quote": "1. Blind-solve calibration matters more than judge identity alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "29",
+   "quote": "- it guessed from option-length and wording tells;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "44",
+   "quote": "| Blind accuracy on the audited items | `1.0` | about `0.0` |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "56",
+   "quote": "- `correct_is_longest`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "71",
+   "quote": "3. A solver that responds `UNKNOWN` on true comprehension items gives a more honest gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0096-fable-vs-haiku-strictness-audit-2026-07-09.qmd",
+   "lines": "80",
+   "quote": "- the Haiku baseline is the only correct baseline forever;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "67-68",
+   "quote": "anti-gaming rule: length must never be the tell",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "26-27",
+   "quote": "test-wise students, and students willing to click through or guess.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "139",
+   "quote": "its give-away question was answered from general knowledge of Othello (now: the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "86",
+   "quote": "its own words only: a famous text's answer is known to anyone who knows the work, which is no give-away of the question's",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "87",
+   "quote": "Judge only the wording of q, not what a reader may already know about the work.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "130",
+   "quote": "\"label\": \"The question does not give its answer away\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "135",
+   "quote": "\"value\": 0.65,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/kb-authorities.md",
+   "lines": "44",
+   "quote": "- The claude-fable-5 blind-solver was miscalibrated (over-strict in the wrong way), inflating blind accuracy; claude-haiku-4-5 re-baselined 10 MCQs to clean via UNKNOWN on passage-dependent items",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/g3-control-protocol.md",
+   "lines": "53-55",
+   "quote": "a 12-item certified core control, re-gated at the calibrated bar, passed at 92% — proving the gate calibrated rather than too strict, while leaky constructions (encyclopedic clones 6%, redesigns 0%) still failed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

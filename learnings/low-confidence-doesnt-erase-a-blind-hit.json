@@ -1,0 +1,128 @@
+{
+ "id": "low-confidence-doesnt-erase-a-blind-hit",
+ "title": "Low confidence doesn't erase a blind hit",
+ "statement": "When a model answers an item with the text hidden, count its repeated exact recoveries of the key as leaks, even when it says it is unsure or guessing.",
+ "example": "A sealed rule passed an item the solver had recovered exactly 3 times in 8, because it reported low confidence.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a Grade 3 demo unit, a repair's sealed rule replayed 6 of 7 items as certified, but a promotion review found one at 3 of 8 exact plain-blind recoveries and 0.71875 mean partial accuracy, hits the rule had ignored because the solver reported low confidence (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`). Counted objectively, the cohort came to 5 certified, 1 blind-leaky and 1 leaky from earlier lessons, so promotion failed, and the unit's notes record that model self-confidence cannot erase exact blind recoveries. The solvers should be strong, come from more than one model family and be allowed to answer unknown: a weak solver had over-credited items, only 20 of 95 that it called clean surviving a strong one, and a re-check by two other model families counted an item as clean only if both failed to recover it (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`); a solver that answered unknown on items that truly need the passage re-baselined 10 multiple-choice items to clean (`grade3-reading/knowledge_bot/HOTBUCKET.md`).",
+ "against": "The loosened bar used in earlier runs counted an exact blind answer only when the solver also claimed high or medium confidence or repeated it across shuffles (`grade3-reading/artifacts/spine-solve-calibration-2026-07-10/REPORT.md`), and an earlier calibration note in the knowledge store, not cited here, judged that this rightly discarded low-confidence forced guesses. An earlier analysis read the loosened bar as correctly discarding low-confidence forced guesses; the later promotion review reversed a pass on this very point. Every label in the tuning hand-off came from one solver family, and no two-family agreement had been measured at the time (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 188-189). a hit counts only above chance: the sounder leak signal found in another build was a pair mean over many shuffles above a higher margin, or an exact-match rate above the chance floor (`grade3-reading/knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd`, lines 286-287).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "42-43",
+   "quote": "Its immutable protocol still replays 6 certified and 1 spine-leaky.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "43-45",
+   "quote": "Promotion review found `r3-09` at 3/8 exact plain-blind recovery and 0.71875 mean partial accuracy; the sealed rule had ignored those hits because the solver reported low confidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "45-46",
+   "quote": "The objective overlay corrects v6 to 5 certified, 1 blind-leaky, and 1 spine-leaky, so promotion fails.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "59-60",
+   "quote": "model self-confidence cannot erase exact blind recoveries",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "28",
+   "quote": "exact-correct AND [ `answerable_blind=true` OR confidence in {high, medium} ] (believed_hit)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "59-60",
+   "quote": "model self-confidence cannot erase exact blind recoveries.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "67-69",
+   "quote": "showed the weak gpt-4o-mini gate had over-credited items — of v1's 95 re-gated \"clean\" items, only **20 (21%) survived**; **75 leaked** under the strong solver.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "127-129",
+   "quote": "union-of-detection (clean only if BOTH fail to recover). Binding result: 334/353 leaky (94.6%), only **19 genuinely clean**; leak was uniform across all three Lexile bands (93-95%), i.e. systemic to how these items were authored, not band-specific.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "180-182",
+   "quote": "promotion review caught `r3-09` at 3/8 exact blind recoveries and 0.71875 mean partial accuracy; low model confidence had wrongly hidden those hits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "320-322",
+   "quote": "the old `claude-fable-5` blind-solver was over-strict in the wrong way and inflated blind accuracy; `claude-haiku-4-5` re-baselined 10 MCQs to clean by returning `UNKNOWN` on true passage-dependent items. Use this for blind-solver calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "74-75",
+   "quote": "(passage withheld, model+version pinned, temp 0.3, **N=5, FAIL at k≥3/5**, per-format answer-space rules, `ablation_trials[]` persisted)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0126-claude-takeover-audit-2026-07-13.qmd",
+   "lines": "29-30",
+   "quote": "`r3-09` was exactly solved blind in 3/8 shuffles and that low solver confidence had hidden those hits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "59-60",
+   "quote": "the later objective overlay showed why model self-confidence cannot erase exact blind recoveries.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "54",
+   "quote": "r3-09 was solved blind in 3/8 shuffles (0.71875 mean partial accuracy) yet certified because 'the solver claimed low confidence'",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,858 @@
+{
+ "id": "one-process-falling-support",
+ "title": "One process, falling support",
+ "statement": "Modelling, guided practice and independent practice should run the same skill under the same step names, with support that only falls, so they read as one process with labels stripped.",
+ "example": "A check in code catches all three ways this failed in one review round: the answer shown as the model, a hint as the guided step, and a switch of skill as the independent one.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "sequence",
+  "hints"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading course standard calls the I-do, we-do, you-do routine one process practised three ways, never three activities, and its acceptance test is that with the labels stripped the three still teach the same process at decreasing support (`grade3-reading/ti-courseplans/docs/instruction-quality-standard.md`, lines 13-25). A review round found all three ways this fails, and a deterministic lint now catches them, among 6 of the 10 failure shapes that round found (`grade3-reading/ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md`, lines 69-71). A clean-room review found independent work returning to the model's own example and evidence instead of new evidence (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/evidence/AGENT-ENTRYPOINT-CLEAN-ROOM-G3-U4-L1-2026-08-06.qmd`, lines 57-58). Guided work leaves the substantive step unfinished (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json`, line 245), and the independent step is never more scaffolded than the guided one by default: extra help there is offered after a first miss (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md`, lines 332-337). The same skill and step names run through to the recap. The model shows the thinking rather than the answer, guided practice is a part-finished task the student completes rather than a hint, and independent work does the same operation on new material with the least help.",
+ "against": "One lesson ships a gap-fill on its independent step by default, a known inversion accepted on instruction after it was argued (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md`, lines 340-345). The standard also lets the surface format change between stages only while the operation stays demonstrably the same (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd`, line 317). These are one project's rulings and design standard, not a measured effect on learning, and the modelling split has one exception, where composing a summary is itself the child's work. A later ruling accepted keeping the same question from the model to the guided step, against a claim that each stage needs a different question, with only the independent step moving to a fresh one: \"The I-do→we-do handoff keeping the same question is the house release pattern; the\" (`grade3-reading/artifacts/g5-course/G3-U1-L4-RESIDUAL-ADJUDICATION-2026-08-21.md`, line 24). The lint checks only the declared structure; whether a model's trace is a real think-aloud rather than an answer reveal is a judged check, advisory until it is calibrated (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md`, lines 21-23). the Grade 9 design specification lets confident students skip ahead: a quick check at the start of guided practice lets them move straight on (`grade3-reading/knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd`, line 326). Only the shape is checked in code: the reading project's semantic lints stayed advisory after a judge trial ended NO-GO, so whether a think-aloud shows real thinking is not checked by machine. In that case the unmodelled task was objective, had a three-try ladder and revealed its answer at the floor, which the register counts as mitigation (`GAPS-2026-09-11.md`, lines 34-35); and the value analysis says none of it is evidence from a child (`L6-VALUE.md`, lines 3-5). The lesson designs had no guided stage of their own: \"design docs go straight from Modelling Moment to Independent Task — they contain no we-do.\" The rebuilt lesson added one, and the spec keeps one modelled move for good: \"This modelling never fades.\" The study compared less and more experienced learners, not the same learners over time.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "13-14",
+   "quote": "The I-do / we-do / you-do routine is **one process practiced three ways**, never three different activities",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "16-17",
+   "quote": "Revealing the answer is not modelling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "20",
+   "quote": "A hint is not a we-do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/instruction-quality-standard.md",
+   "lines": "22",
+   "quote": "Switching to a different skill is not a you-do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/course-eval-layer/evaluator-spec.md",
+   "lines": "70-71",
+   "quote": "including all three gradual-release exploits (answer-reveal I-do, hint-style we-do, skill-switch you-do)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "245",
+   "quote": "Guided work leaves the substantive learner move genuinely unfinished and increases support without completing it for the learner.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/evidence/AGENT-ENTRYPOINT-CLEAN-ROOM-G3-U4-L1-2026-08-06.qmd",
+   "lines": "57-58",
+   "quote": "You-do returns to the model's animal, evidence, and constructed answer instead of requiring the same operation on new evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "332",
+   "quote": "The gradient half: a you-do step may never be more scaffolded than the corresponding we-do step.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "335-337",
+   "quote": "a scaffold added at the released end is offered **after a first miss**, not imposed as the default — available rather than mandatory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "342-343",
+   "quote": "U1-L1's step-4 gap-fill ships as the default, so the lesson carries a known and deliberate D1.15 inversion",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "317",
+   "quote": "Claim boundary: Surface format may change only when the target operation remains demonstrably stable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "60",
+   "quote": "I-do reveals the answer instead of modeling thought; we-do is only a hint; you-do sometimes switches to a different skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "31-32",
+   "quote": "the I-do must model *thinking* — why this detail and not that one, what was rejected and why — never just reveal a filled-in organiser.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "34-36",
+   "quote": "the we-do gives a *partial* answer the child completes (a hint is not a we-do, a fresh question is not a we-do); I-do, we-do and you-do must run the *same skill*, never switch mid-lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "83-84",
+   "quote": "the teacher models every step up to but not including the final substantive thinking move; the child does that move",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "84-86",
+   "quote": "exception: MAIN IDEA step 4 \"Check coverage,\" where the child composes the summary and the teacher verifies aloud, because composing is the real cognitive work",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-1/teacher-skill/candidate/brainlifts/core/gradual-release.md",
+   "lines": "17",
+   "quote": "Acceptance test: strip the I-do/we-do/you-do labels; a reviewer must still see one process at decreasing support (standard §1).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-1/teacher-skill/candidate/brainlifts/core/gradual-release.md",
+   "lines": "21",
+   "quote": "The labels are where generators fail: round-2 found correctly-labeled sections with wrong substance (answer-reveal I-do, hint we-do, skill-switch you-do). Test substance, never labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "136",
+   "quote": "gradual-release fidelity: labels alone are insufficient;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0123-teacher-g3-reading-candidate-skill.qmd",
+   "lines": "43-44",
+   "quote": "gradual-release doses that survive the strip-the-labels test",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "34",
+   "quote": "the we-do gives a *partial* answer the child completes (a hint is not a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "35",
+   "quote": "we-do, a fresh question is not a we-do); I-do, we-do and you-do must run the *same skill*, never",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "60",
+   "quote": "The I-do/we-do/you-do routine is misapplied: I-do reveals the answer instead of modeling thought; we-do is only a hint; you-do sometimes switches to a different skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "55",
+   "quote": "**MAJOR — we-do renames three of the four I-do step labels (R-KC-11).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "56",
+   "quote": "agree verbatim on all four step labels",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "58",
+   "quote": "we-do (`p21`) diverges on all four",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0123-teacher-g3-reading-candidate-skill.qmd",
+   "lines": "44",
+   "quote": "that survive the strip-the-labels test",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "14",
+   "quote": "the \"I do\" only reveals the answer instead of modelling the thought process; the \"we do\" only offers a hint; the \"you do\" switches to a different skill (supporting details).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D1-D4.md",
+   "lines": "29",
+   "quote": "- **Criterion:** D1.6 (Triple-presence: model/guide/release share an identical ordered step list),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/SIM-REVIEW-D1-D4.md",
+   "lines": "27",
+   "quote": "L5 you-do drops Step 1 and Step 3 of its own four-step rail",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/LESSON-AUTHORING-PLAYBOOK.md",
+   "lines": "94",
+   "quote": "Never rename a step mid-lesson. The names must survive the strip-the-labels test (they describe",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "12",
+   "quote": "| L1 | triple-presence | model, guide, release atoms exist for the lesson's operation_id, with one identical, non-empty ordered step list. Catches the round-2 answer-reveal I-do (payload only the answer = empty steps). |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "280-281",
+   "quote": "I-do/we-do/you-do is misapplied (answer reveal / hint / different skill)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "46",
+   "quote": "Gradual release is one process at decreasing support: the I-do models *thinking*, the we-do walks the same steps with immediate feedback, the you-do releases the same skill",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "21-23",
+   "quote": "The two **semantic** checks in section 5 -- think-aloud authenticity (reasoning trace vs answer reveal) and release-item operation classification -- are advisory until an LLM-judge calibration pass and are deliberately NOT implemented here.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-creation-spovs.md",
+   "lines": "106-109",
+   "quote": "round 2 found our gradual release **misapplied**: the I-do revealed answers instead of modelling the thought process, the we-do gave hints instead of walking the same steps with immediate corrective feedback, and the you-do switched skills.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "24-25",
+   "quote": "strip the labels; a reviewer must still be able to say \"these three artifacts teach the same process at decreasing support.\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "159-160",
+   "quote": "the RECURRING rejection theme \"poor instructional decision making\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "142",
+   "quote": "- Gradual release means model the thought process, let the student practice the same process with guidance, then release the same process to independent work.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "35-36",
+   "quote": "I-do, we-do and you-do must run the *same skill*, never switch mid-lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/scripts/lane-tools/op-lint/README.md",
+   "lines": "17",
+   "quote": "every non-review atom carries exactly the lesson's one `operation_id`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "80-82",
+   "quote": "a lesson teaches ONE procedure across three stages (modelling / we-do / you-do); RULE 1 (STEP LABEL DRIFT, shipped) requires the step be named identically at all three stages",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0232-l4-audit-nine-principles.qmd",
+   "lines": "55",
+   "quote": "MAJOR — we-do renames three of the four I-do step labels (R-KC-11).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "65",
+   "quote": "NO-GO stands; semantic lints remain advisory.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md",
+   "lines": "23",
+   "quote": "so what is modeled matches what is asked.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAP-CLOSURE-PLAN-2026-09-15.md",
+   "lines": "46",
+   "quote": "The detector's census found one more SHIPPED defect of the class: L5 p16 `youdo-clue-hunt` \"Step 2: Find the clues\" vs the model's and the we-do's \"Look for clues\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "114",
+   "quote": "The we-do write-up frame has only one quote blank, while the I-do models two pieces of evidence and the you-do (p16) asks for two",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "34",
+   "quote": "child the six-statement judging task cold",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L6-VALUE.md",
+   "lines": "36",
+   "quote": "Refine arrives unmodeled",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "6",
+   "quote": "the lesson teaches a two-line \"then line + now line\" method, but the model, the guided practice and the solo practice all use one \"now\" line, and the recap then says the student found both.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "30",
+   "quote": "In the one guided rehearsal, the student never practises \"Find what it caused\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "44",
+   "quote": "5. **p20 `finish-the-writeup` and p21 `step4`: the sentence frames leave out Step 4's \"I know\" part, although the lesson teaches it and the recap says the student did it.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "56",
+   "quote": "9. **p20 we-do step names don't match the four steps taught on p18-intro.**",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "223",
+   "quote": "A we-do is a partial the child completes — not a hint, and not a second demonstration.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "335 (textutil text)",
+   "quote": "The Modelling Moment guides (pre-glowed evidence, auto-highlighted Refine, teacher whiteboard); the Independent Task releases (unassisted hunt with feedback ladder, child-written 3-blank frame, judge-then-check Refine with retry ladder).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "28 (textutil text)",
+   "quote": "The child completes the final step only — one typed gap that carries the inference (“…so I think ___”) — with the modelled steps kept visible beside it.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "327",
+   "quote": "The knowledge is permanent; the explaining is temporary.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "329",
+   "quote": "A pattern the narrator used to state can become a retrieval question before the video.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "457",
+   "quote": "This is the evidence base for fading: more structure early, less later (SPOV 8).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "227",
+   "quote": "design docs go straight from Modelling Moment to Independent Task — they contain no we-do.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "24 (textutil text)",
+   "quote": "This modelling never fades.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "references/closing_questions_pattern.md",
+   "lines": "72",
+   "quote": "3. Support fades and never returns.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "references/closing_questions_pattern.md",
+   "lines": "87",
+   "quote": "| Expertise reversal / fading guidance | well evidenced |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "51",
+   "quote": "- The cloze is also selection (`inline_choice`), which is support coming back after Q3 had none. That breaks \"support fades and never returns\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "165",
+   "quote": "Q3 carries a `nudge`, a keyword-triggered `nudge_if` (#13), a `hint` and a `second_hint`. That is more scaffolding than Q2's slots have. The spec says Q3 has none.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L2-main-review.md",
+   "lines": "12",
+   "quote": "- **New high:** the p24b tap-to-fill cloze comes after Use it (CLOSE-AFTER-USE). That's the same problem as G3-U2-L1 high #2.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "583",
+   "quote": "Practice.tsx Model, plainly: the quotation unpicked (GuidedScreens), the sentence rebuilt blank by blank (Rebuild:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "584",
+   "quote": "a wrong pick goes red and stays out), then the paragraph with the guide's thinking beside each move",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "331",
+   "quote": "Now the model is hidden. Rebuild sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "350",
+   "quote": "In the we-do the teacher starts the work, thinks aloud through part of it, and the child finishes that same step with support. A hint is not a we-do, and asking a fresh question is not a we-do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants-draft-v2.dom.txt",
+   "lines": "93",
+   "quote": "Every we-do must start the work for the student (a partial answer, guided steps, immediate corrective feedback) rather than handing over a fresh question — that is a you-do arriving early.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "366",
+   "quote": "Independent practice still walks the procedure. Each step gets a task proving the child did it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "389",
+   "quote": "### G5-POL-INS-003: Make every We-do one genuine shared answer: the teacher authors a content-bearing opening clause, the learner finishes that same answer while the opening and passage evidence remain visible, and misconception-specific support increases without completing the learner's contribution.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/g5-full-course-worktree-full-tree.tar.gz",
+   "member": "g5-reading-v2/package/Grade 5 Reading - Review Evidence/markdown/generation-contract.md",
+   "lines": "392",
+   "quote": "- **Rationale:** Doing one operation step and assigning the next is still sequential independent work. Guided practice requires teacher and learner to co-construct one response before independent release.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/04_HUMAN_CHECK_LESSONS.md",
+   "lines": "29",
+   "quote": "**What went right:** Grade 3's map/explorer/retrieval/writing strengths were preserved as explicit requirements while fake I-do, fake We-do, passive vocabulary, missing oral production, copy-first writing, clutter, and weak responsibility transfer became explicit defects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/adversarial-course-council/initiatives/02-g5-feedback-and-teaching-flow-hardening/HANDOVER.md",
+   "lines": "84",
+   "quote": "- Cosmetic labels for I-do/We-do/You-do are insufficient without observable passage/task state changes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "63",
+   "quote": "prior round: RT-R2 NEW-4 found teaching-move claims with 0/48 lessons carrying the moves",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "18",
+   "quote": "EV: Same RT-R3 report, section 2: find-then-write went 0/48 → 45/48 generated lessons; feedback median 24 words (old ~91-word lineage gone); verified by independent recomputation",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "106-108",
+   "quote": "In the we-do the teacher starts the work, thinks aloud through part of it, and the child finishes that same step with support. A hint is not a we-do, and asking a fresh question is not a we-do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "117-118",
+   "quote": "Enforced for plans by `scripts/validate-lesson-plans.mjs` (exactly one procedure step belongs to the child).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/lesson-architecture.md",
+   "lines": "63-65",
+   "quote": "So the we-do here is a started sentence with the evidence slot filled and one gap left, in the procedure's own frame, not a fresh multiple-choice question with a hint bolted to its stem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "64",
+   "quote": "The sentence stems never fade (DI step language) — only their pre-fill does.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "31",
+   "quote": "The stems themselves are permanent (like the DI step language) — only their *pre-fill* fades.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-writing-scaffold-overview.md",
+   "lines": "29",
+   "quote": "how much of the frame is *pre-filled* shrinks — full echo → clause starter → bare stem → blank box (entry 5) — and how much help the child gets *finding the evidence* shrinks — passage shown → region only → nothing (entry 2).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-fading-guidance.md",
+   "lines": "32",
+   "quote": "Last text = COLD Stage-1: known procedure, new content, no MM, no stems.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "137-139",
+   "quote": "**Rule.** Independent practice still walks the procedure. Each step gets a task proving the child did it: click the thing you are looking for, click the first line of the paragraph to reread, tap the evidence, then a gap fill as modelled.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "141-143",
+   "quote": "The app still needs to support students to do each of these steps. **Have each step appear with a task that demonstrates they have done the step.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "148",
+   "quote": "Followed by convention",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "45",
+   "quote": "Independent practice that changes interface removes the scaffold and the shape of the task at the same time, so the student has nothing left to imitate. Gradual release should remove support and keep structure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "47",
+   "quote": "\"Hide the model, I’ll try\" keeps the grid and empties it. That is the pattern to apply at every handover in the app.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "321",
+   "quote": "The model was one quote, two words, five stem-built sentences. The independent practice is three quotes, conversational, with no stems and no sentence count. Nothing a child learned on the modeled screen transfers to this one.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "122",
+   "quote": "Rebuild independent practice to replicate guided practice: text visible, the same stem grid, the same five-sentence shape.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/_KB_Othello_1_1_Lesson_View.md",
+   "lines": "8",
+   "quote": "Stems available, but students are locked out of writing about the guided practice quote.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "45",
+   "quote": "Independent practice that changes interface removes the scaffold and the shape of the task at the same time, so the student has nothing left to imitate. Gradual release should remove support and keep structure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "47",
+   "quote": "The prototype already contains the correct mechanism. \"Hide the model, I’ll try\" keeps the grid and empties it. That is the pattern to apply at every handover in the app.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "308",
+   "quote": "The app decides when and where extra guidance is given.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1179",
+   "quote": "Make every we-do a step handoff in which the learner completes omitted steps through blocking responses with explicit acceptance rules.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1180",
+   "quote": "A hint followed by passive continuation is not guided practice.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/README.md",
+   "lines": "65-66",
+   "quote": "each is a real blocking response with an acceptance rule;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/generation-contract.md",
+   "lines": "76-77",
+   "quote": "each a blocking response with an acceptance rule;",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "107-108",
+   "quote": "the child finishes that same step with support. A hint is not a we-do, and asking a fresh question is not a we-do.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/lesson-architecture.md",
+   "lines": "60-61",
+   "quote": "says the we-do starts the work and hands the child the rest of the SAME step to finish",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/lesson-architecture.md",
+   "lines": "63-65",
+   "quote": "So the we-do here is a started sentence with the evidence slot filled and one gap left, in the procedure's own frame, not a fresh multiple-choice question with a hint bolted to its stem.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "117-118",
+   "quote": "Enforced for plans by `scripts/validate-lesson-plans.mjs` (exactly one procedure step belongs to the child). Not checked in the authored lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "56",
+   "quote": "I-do/We-do/You-do differ in support, not in what thinking counts. Strip the labels and verify the same process remains.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-cross-stage.mjs",
+   "lines": "42-44",
+   "quote": "\"Add what I know\" is modelled, \"Add what we know\" is done together, \"Add what you know\" is done alone. That is the same step name, correctly authored.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-main-checkout-jul-work.patch",
+   "lines": "20658",
+   "quote": "| **Gradual release misapplied** | I-do revealed the answer (not the thinking); we-do was a hint; you-do switched skills | strip labels from a sampled dose: do the three artifacts teach ONE process at decreasing support? |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "strip the labels; if one ordered process cannot be recovered, the release is not genuine.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/procedures/infer.md",
+   "lines": "74-75",
+   "quote": "Support is removed, never merely repeated: what the guide did with named clues, the child does by finding clues on their own.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "321",
+   "quote": "The model was one quote, two words, five stem-built sentences. The independent practice is three quotes, conversational, with no stems and no sentence count. Nothing a child learned on the modeled screen transfers to this one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "289",
+   "quote": "A gap-fill at step 4 makes the you-do less demanding than the we-do's step 4, which is already a gap-fill — that inverts the release gradient (D1.15)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/README.md",
+   "lines": "29-30",
+   "quote": "if you stripped the I-do / we-do / you-do labels, the three steps would be indistinguishable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "48",
+   "quote": "so the child literally reads \"Step 2: Zoom in\" above the clue-tap they were taught as Step 3, and \"Step 3: Read it closely\" above the write task they were taught as Step 4.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext lines 187-189)",
+   "quote": "the skill introduction folds 'find the clues' and 'pick the best one' into a single Step 2, and both practice pages then split that across two panels, each labelled Step 2.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L5-2026-09-05.md",
+   "lines": "239-242",
+   "quote": "This is a softer instantiation of Step 3 than either the modelled version (p14, testing 9 candidate trait words against the clues) or the independent version (p17, typed trait-word hunt against an accept-list).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "54",
+   "quote": "identical step names across I/We/You-do",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Shanahan, T., et al. (2010). Improving reading comprehension in kindergarten through 3rd grade (NCEE 2010-4038). IES practice guide.",
+   "url": "https://ies.ed.gov/ncee/wwc/practiceguide/14"
+  },
+  {
+   "ref": "Gurlitt & Renkl 2008",
+   "url": "https://doi.org/10.1111/j.1365-2729.2008.00277.x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

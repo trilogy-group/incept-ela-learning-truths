@@ -1,0 +1,414 @@
+{
+ "id": "fade-guidance-as-expertise-grows",
+ "title": "Fade guidance as expertise grows",
+ "statement": "Fade guidance for each skill across a unit as learners gain expertise, because heavy guidance helps novices but slows learners who already know the material.",
+ "example": "One lesson design specification gives guided practice 30% of a first-encounter lesson and 5% of an expert one.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "hints",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A Year 9 lesson design specification cites the expertise reversal effect (Kalyuga et al.): heavy guidance helps novices but slows down learners who already know the material. So as students gain expertise, new knowledge and guided practice shrink and independent practice grows, from 30% of a first-encounter lesson to 5% of an expert one. The reading project's rulings likewise call for scaffolds to fade across a unit. Guidance moves from full modelling to independent work. A student who already shows the skill may skip the full model, and when each scaffold retires is recorded.",
+ "against": "The Grade 3 course never got past one lesson per scaffold level, so fading was never built or measured there, and the specification has guided practice grow again in review lessons, as worked examples and comparative judgement. the five-use fade was never built in the Grade 3 course, which never got past one lesson per scaffold level (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, lines 42-44), and in review lessons guided practice grows again, as worked examples and comparative judgement rather than first-time modelling (`grade3-reading/knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd`, line 306). The project's comprehension doctrine holds an open dispute over whether named inference routines should fade and retire on a stated condition or be retrieved again on a schedule (`grade3-reading/knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd`, line 30). The fade was never built past one lesson per scaffold level, so it stayed unimplemented (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, lines 42-43). A reading BrainLift holds as an open dispute whether named inference routines should fade on a stated condition or be retrieved again on a schedule (`grade3-reading/ti-courseplans/docs/teaching-reading-comprehension-brainlift.md`, T2). A later run found counter-evidence (`grade3-reading/_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/pedagogy/modelling-moment-procedures.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "284",
+   "quote": "The expertise reversal effect (Kalyuga et al.): heavy guidance helps novices but slows down learners who already know the material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "281",
+   "quote": "As students gain expertise, new knowledge and guided practice shrink and independent practice grows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "300",
+   "quote": "| **A. First encounter** | 1.1 | 10 | 30 | 30 | 20 | 10 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "304",
+   "quote": "| **E. Expert** | Whole-text argument | 10 | 5 | 5 | 65 | 15 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "41",
+   "quote": "scaffolds fade across a unit",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "42-43",
+   "quote": "never got past one lesson per scaffold level, so this stayed unimplemented",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "306",
+   "quote": "In review lessons (Profile D), guided practice grows again but changes form: worked examples and comparative judgement, rather than first-time modeling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "284",
+   "quote": "heavy guidance helps novices but slows down learners who already know the material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "280",
+   "quote": "Early in a text, guided practice is essential while students get to know the text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "161",
+   "quote": "Too much feedback can reduce active processing; feedback timing should shift as proficiency improves.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0157-mastery-signal-evidence-base.qmd",
+   "lines": "437",
+   "quote": "Explains why simply increasing support (hints/steps) can raise short-term success without improving learning, and why too little support produces floundering.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0156-assessment-mastery-signal-core.qmd",
+   "lines": "239",
+   "quote": "Too much guidance can mask misconceptions; too little creates failure loops",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0174-august-consolidation-and-scout-lesson-feedback.qmd",
+   "lines": "72-73",
+   "quote": "exposure-based fade progression per skill (heavy model 5/2/1 → shift 3/2/3 → hand-over 1/2/5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "41-42",
+   "quote": "scaffolds fade across a unit (a procedure \"collapses into a two-step option after five successful uses,\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0204-g9-year-9-ela-lesson-design-specification.qmd",
+   "lines": "326",
+   "quote": "A quick check at the start of guided practice lets confident students move straight on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "18",
+   "quote": "exposure-based scaffold fade (5/2/1 → 3/2/3 → 1/2/5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "288-289",
+   "quote": "use explicit instruction with worked examples and fading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "30",
+   "quote": "named inference routines as *fading scaffolds* retired on a stated condition … vs. scheduled recurring retrieval of the routine (a plain reading of practice-architecture doctrine).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0226-g3-pre-submission-closure-audit-2026-09-24.qmd",
+   "lines": "40",
+   "quote": "3. Independent Find pre-glows candidates and states the count (L5-L7), where the design wants an open hunt",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "139-140",
+   "quote": "But the same scaffolding can harm relative experts (expertise reversal) [12].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "233-234",
+   "quote": "Prose in an authoring note does not satisfy D1.13, and a gate must fail **by name** on a scaffold that has no fade record",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "238-239",
+   "quote": "\"states a condition\" is satisfiable by a sentence in a document nothing reads, so nothing ever fades.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "248",
+   "quote": "- **Counts are monotonically non-increasing across the unit.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "669",
+   "quote": "Worked example → completion (last steps blanked) → independent; every scaffold states a fade/retirement condition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "675",
+   "quote": "Model in full, then omit steps progressively (often last-first) to independence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "224",
+   "quote": "In review lessons (Profile D), guided practice grows again but changes form: worked examples and comparative judgement, rather than first-time modeling.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "216",
+   "quote": "| Profile | Example | Retrieval | New knowledge | Guided | Independent | Close |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "220",
+   "quote": "| **C. Revisit / comparison** | Iago's soliloquies side by side | 15 | 10 | 10 | 50 | 15 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "221",
+   "quote": "| **D. Review** | Before an assessment | 20 | 5 | 25 | 40 | 10 |",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "399",
+   "quote": "In review lessons (Profile D), guided practice grows again but changes form: worked examples and comparative judgement, rather than first-time modeling.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "300-302",
+   "quote": "Occasionally; mainly in review lessons.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "199",
+   "quote": "As students gain expertise, new knowledge and guided practice shrink and independent practice grows.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "40",
+   "quote": "The rule is that a child gets a compulsory full model the FIRST time they meet a stage. If stages are available rather than assigned, that first time is a per-child event, not a date in the scheme.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "41",
+   "quote": "Nine rails by four stages is 36 cells. A child who climbs all four stages could meet up to 36 compulsory models across roughly 96 lessons, which is more than a third of them running the long path.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L8d5159.txt",
+   "lines": "41",
+   "quote": "That is the real cost of making stages available, and it is worth knowing before it is built rather than after.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/strategy/grade-9-strategy.md",
+   "lines": "158",
+   "quote": "| Skipping the modelled turn skips learning | Skip only after a first-try pass on a parallel item; the walkthrough stays reachable | Transfer scores of skippers vs non-skippers |",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/peter-pan-readventure-2026-09-29/REPORT.md",
+   "lines": "25",
+   "quote": "**Live per-child skipping is not enabled**: `/book` has no trusted child identity or placement owner to bind the stored record. The current lesson gives every child the full authored model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "89-90",
+   "quote": "exposure-counted scaffold progression (heavy 5/2/1 → shift 3/2/3 → hand-over 1/2/5) against the course graph",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "207-208",
+   "quote": "the verbatim fade table (≤10 exposures → heavy_model 5/2/1; 11–20 → shift 3/2/3; 21+ → hand_over 1/2/5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "108-109",
+   "quote": "claims zero prior exposure to the operation, but canon records a U1·L6 lineage (deepen, not introduce) — the justification is factually wrong, not just an omission.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "81",
+   "quote": "The three response plans (cherry-pick;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "721",
+   "quote": "`prior_exposure_count` 0→1",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "722",
+   "quote": "`rendered_item_counts` 1/1/3→1/3/2",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "758-759",
+   "quote": "The residual heavy_model 5/2/1 gap stays declared, not force-fit, per the audit's instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/NOTE-dose-teach-sections.md",
+   "lines": "93",
+   "quote": "Band A shows full Scout narration + all support; B/C progressively strip it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1112",
+   "quote": "The teacher models how to find and re-read the right part of the text — the locate-the-evidence moves and a pause — running inside the think-aloud, right after the procedure's first step. This modelling never fades.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2628",
+   "quote": "Feedback becomes less explicit as they improve.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Year 9 ELA_ Lesson Design Specification for Devfactory.md",
+   "lines": "202",
+   "quote": "The expertise reversal effect (Kalyuga et al.): heavy guidance helps novices but slows down learners who already know the material.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt",
+   "lines": "342",
+   "quote": "Research. The expertise reversal effect (Kalyuga et al.): heavy guidance helps novices but slows down learners who already know the material.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L9b6d99.txt",
+   "lines": "202",
+   "quote": "**Research.** The expertise reversal effect (Kalyuga et al.): heavy guidance helps novices but slows down learners who already know the material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/analysis/video-pipeline-conformance-audit-v0.2.md",
+   "lines": "48",
+   "quote": "Every video renders at identical scaffolding density.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "153",
+   "quote": "Gradual release should adapt to the student, not run on a fixed schedule.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "824",
+   "quote": "this table describes the spaced-practice system, NOT the in-lesson Modelling Moment, which never tapers: the MM is always a full model with the child doing only the final step",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Kalyuga, Ayres, Chandler & Sweller 2003",
+   "url": "https://doi.org/10.1207/S15326985EP3801_4"
+  },
+  {
+   "ref": "Koedinger & Aleven 2007",
+   "url": "https://doi.org/10.1007/s10648-007-9049-0"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

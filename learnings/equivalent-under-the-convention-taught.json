@@ -1,0 +1,50 @@
+{
+ "id": "equivalent-under-the-convention-taught",
+ "title": "Equivalent under the convention taught",
+ "statement": "Judge whether two answers are equivalent under the convention being taught, since answers that are equal in general can differ in meaning under the lesson's convention.",
+ "example": "Where multiplication is taught as N groups of M objects, 3 × 4 = 12 and 4 × 3 = 12 are not both correct.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "marking",
+  "alignment"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator tells its math judge to put the curriculum's distinctions ahead of general equivalence, giving 3×4 against 4×3 in early-grade math as its example (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/math_evaluation.txt`). An older content check explains why: third-graders learn multiplication as N groups of M objects, so 4 x 3 = 12 and 3 x 4 = 12 are not both correct in that context even though they are mathematically equivalent (`icloud-work/inceptbench/src/inceptbench/agents/simple_content_qc.py`). It holds only where the curriculum makes such a distinction.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "19",
+   "quote": "**Curriculum Context Note**: When curriculum specifies pedagogical distinctions (e.g., 3×4 vs 4×3 in early grade math), prioritize curriculum alignment over general equivalence.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/simple_content_qc.py",
+   "lines": "129-131",
+   "quote": "the equations \"4 x 3 = 12\" and \"3 x 4 = 12\" are NOT both correct (even though they are mathematically equivalent) because they are NOT equivalent within the context of the problem",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/agents/simple_content_qc.py",
+   "lines": "132-133",
+   "quote": "and the 3rd grade math curriculum (3rd grade students learn multiplication as \"N groups of M objects\" so N x M and M x N are NOT the same thing).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

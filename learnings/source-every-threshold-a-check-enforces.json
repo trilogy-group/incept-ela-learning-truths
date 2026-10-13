@@ -1,0 +1,135 @@
+{
+ "id": "source-every-threshold-a-check-enforces",
+ "title": "Source every threshold a check enforces",
+ "statement": "Trace every threshold a check enforces to its source before failing content on it, because a gate without a sourced reason is a preference.",
+ "example": "Against the sourced floor, 79 of 81 item banks passed; an unsourced one had failed all of them.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of a Grade 5 course failed all 81 of its item banks on a size floor of 15. Traced to its source, the 15 appeared as a rule only in the audit script and in a spec line quoting that script, while the course's generator set a floor of 8 with a stated reason; the 15 was the top of an 8–15 target band, hard-coded as the floor. Against the floor of 8, 79 of 81 banks passed and 2 fell short (`grade3-reading/artifacts/g5-merged-course/audit-heuristic-finding.md`). The reading project's draft certification standard asks every new gate to name its provenance, the comment or measurement behind it, since a gate without provenance is a preference (`grade3-reading/artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/audit-heuristic-finding.md",
+   "lines": "8",
+   "quote": "The `>=15` bar is an **arbitrary auditor heuristic**, not a",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/audit-heuristic-finding.md",
+   "lines": "82",
+   "quote": "- Against the **correct floor of 8**: **79/81 pass**; **2 fail**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md",
+   "lines": "168",
+   "quote": "a gate without provenance is a preference, and preferences don't gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "89",
+   "quote": "Fires on ratio >= 2.0 **and** margin >= 6 words against the longest distractor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "90-91",
+   "quote": "Calibrated on all 51 keyed items in approved G3 and G5: worst legitimate case is ratio 1.25 / margin 1; the defect class sits at 5.67 / 14.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "91-93",
+   "quote": "Nothing real occupies the gap, so the thresholds are wide — an item at 1.9 / 5 words passes and would need a human to catch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "112",
+   "quote": "because a floor pinned to whatever currently ships is how the 37px defect hid for a whole build.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/FIXES-LEDGER.md",
+   "lines": "136",
+   "quote": "against the design's own ≥18px rule (`layout_check` assertion 3 encodes the looser 17px",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L4/AUTHORING-NOTES.md",
+   "lines": "576",
+   "quote": "A bespoke check has to quote the rule it is implementing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L5/AUTHORING-NOTES.md",
+   "lines": "765",
+   "quote": "A check stricter than the rule it enforces is not a safer check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L5/AUTHORING-NOTES.md",
+   "lines": "759-761",
+   "quote": "a lesson that was passing `redundancy_check` 161/161 the whole time.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-quality-review/references/rubric.md",
+   "lines": "7-9",
+   "quote": "Every threshold carries the BrainLift tag it inherits (`[LE]` learning evidence, `[AR]` accessibility requirement, `[PC]` platform constraint, `[OH]` operating heuristic).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/video-quality-review/references/rubric.md",
+   "lines": "9-11",
+   "quote": "**An `[OH]` is a heuristic, never a proven learning threshold — findings cite it as \"outside the doctrine band\", never \"harms learning\".**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-visuals-agent-v0.1.md",
+   "lines": "18",
+   "quote": "`[OH]` = operating heuristic; enforce as the current default but never claim it is proven.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/LENGTH-RATIONALE.md",
+   "lines": "58",
+   "quote": "We state this plainly rather than borrow authority we don't have.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

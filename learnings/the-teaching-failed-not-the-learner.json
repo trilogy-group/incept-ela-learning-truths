@@ -1,0 +1,51 @@
+{
+ "id": "the-teaching-failed-not-the-learner",
+ "title": "The teaching failed, not the learner",
+ "statement": "Judge stand-alone instruction by whether a newcomer could answer most of its check questions after one pass; if they could not, the instruction failed, not the learner.",
+ "example": "The bar is at least 2 of 3 check questions answered after watching once.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "evidence-of-learning"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script check starts from the premise that a short video is the only teacher and no one can step in, so a student who can't answer the check questions after watching means the video failed (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). Before scoring, the judge imagines a student new to the topic and asks whether, after one viewing, they could answer at least 2 of 3 multiple-choice questions on the stated idea; if not, the ideas chosen, their number or the explanation is at fault.",
+ "against": "The newcomer is imagined by the judge, not observed: 'Imagine a student who has never seen this topic before.' (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`, line 30). No student data feeds the check.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "14",
+   "quote": "**The video IS the teacher — no instructor rescue is possible.** If a student watches a video and cannot answer the CFU items after watching, the video failed — not the student.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "30",
+   "quote": "Imagine a student who has never seen this topic before. After watching this video once, can they answer ≥2 out of 3 MCQs on the stated KC?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "88",
+   "quote": "someone unfamiliar with the topic can use the taught information to answer the aligned checks.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

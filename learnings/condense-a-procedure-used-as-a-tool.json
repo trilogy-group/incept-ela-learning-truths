@@ -1,0 +1,70 @@
+{
+ "id": "condense-a-procedure-used-as-a-tool",
+ "title": "Condense a procedure used as a tool",
+ "statement": "When one procedure is used as a tool inside another's step, condense it to one sentence, and run it in full only when it is the procedure being modelled.",
+ "example": "Called inside a comparison step, a four-step main-idea procedure collapses to one sentence per text.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The procedure spec of a grade 3 reading course names two ways to combine procedures: a sequential chain, where one runs to its final step before the next starts, and a nested call, where a procedure used inside another's step collapses to a single sentence (`grade3-reading/course-renderer/docs/pedagogy/modelling-moment-procedures.md`, line 30). Its example is a cross-text comparison step that calls the main-idea procedure, which then gives one sentence per text rather than its four steps. The rule sits among the spec's design principles.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "30",
+   "quote": "The rule: if the whole procedure has its own modelling moment, run it in full. If it is a tool inside another procedure's step, condense to one sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "30",
+   "quote": "CONNECT Step 2 for cross-text says \"use MAIN IDEA\" - the MAIN IDEA collapses to one sentence per text, not four steps.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "30",
+   "quote": "The rule: if the whole procedure has its own modelling moment, run it in full. If it is a tool inside another procedure's step, condense to one sentence.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "30",
+   "quote": "NESTED CALL: within a single procedure's step, another procedure is called as a micro-tool. Here, the called procedure collapses to a single sentence - do not run it in full.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "30",
+   "quote": "CONNECT Step 2 for cross-text says \"use MAIN IDEA\" - the MAIN IDEA collapses to one sentence per text, not four steps.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "22",
+   "quote": "Seven procedures cover every Standard Component used in this curriculum as a Modelling Moment target.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

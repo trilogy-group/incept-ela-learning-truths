@@ -1,0 +1,219 @@
+{
+ "id": "say-each-thing-once",
+ "title": "Say each thing once",
+ "statement": "Say each thing once and only to teach: no line restating the printed question or anything already said or shown, explaining the obvious, or competing with the learner's action.",
+ "example": "An automated check warns when a guide line shares 60% or more of its content words with the question beside it.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "stem"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Review comments on a grade 3 reading course cut lines that repeated what the guide had just said or a label the screen already showed, and a review call removed prompts such as 'now tap the correct answer', which generated content kept producing, as inflating cognitive load and teaching nothing (`grade3-reading/course-renderer/docs/rules/content-and-copy.md`, lines 127-157). An attention audit of the course's screens then made the question print its ask once, with everything else framing it or adding to it, and a lint warns at 60% content-word overlap between a guide line and the question beside it. A QA invariant also bars printing a label, such as a blank's number, that the interface already shows.",
+ "against": "Read-along in the same course pairs every spoken line with print: \"Every spoken line has a printed home on the page, sentence for sentence.\" (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 93-94), so the ban holds against a second line that repeats a point, not against printing what the guide says. A repeat can be deliberate: the Grade 9 design specification pins the lesson's question to the top of every screen (`othello-archive/sources/Year 9 ELA- Lesson Design Specification for Devfactory.txt`, line 215).",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "129-130",
+   "quote": "**Rule.** Delete any line that repeats what the guide has just said or what the screen already shows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "144-145",
+   "quote": "**Rule.** Do not print \"now tap the correct answer\" and similar. They inflate cognitive load and teach nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "23-24",
+   "quote": "The question chrome prints the ask; everything else frames or ADDS",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "25-27",
+   "quote": "Lint: ≥60% content-token overlap between a text/speak node and an adjacent question warns (`validate-contracts.mjs`, ask-overlap).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "145-146",
+   "quote": "**E4. No redundant labels**: never print \"Blank 1.\" in copy when the UI already chips \"Blank 1\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "23-24",
+   "quote": "**One ask, printed once.** The question chrome prints the ask; everything else frames or ADDS",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "25",
+   "quote": "never restate the printed question",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "25-26",
+   "quote": "Lint: ≥60% content-token overlap between a text/speak node and an adjacent question warns",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "129-130",
+   "quote": "**Rule.** Delete any line that repeats what the guide has just said or what the screen already shows.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "144-145",
+   "quote": "**Rule.** Do not print \"now tap the correct answer\" and similar. They inflate cognitive load and teach nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "147-148",
+   "quote": "generated content \"frequently produces extraneous, redundant instructional prompts such as 'now tap the correct answer'...",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "145-146",
+   "quote": "**E4. No redundant labels**: never print \"Blank 1.\" in copy when the UI already chips \"Blank 1\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "37",
+   "quote": "Never write instructions that the UI should make obvious.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "BRIEF.md",
+   "lines": "37",
+   "quote": "If the learner would learn the same without it, cut it.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/retrieval.ts",
+   "lines": "349",
+   "quote": "L2–L4: none either. The set tabs already name the sets; a line restating them was clutter (A-55).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/sweep.mjs",
+   "lines": "50",
+   "quote": "a stage label that only repeats the header's \"phase · step\" (or the pinned learning question) is clutter",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "61",
+   "quote": "The same instruction printed twice on one viewport fails too. Instructions: two short sentences, max.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "549",
+   "quote": "Say it once, print it once",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "552",
+   "quote": "Delete any line that repeats what the guide has just said or what the screen already shows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "560",
+   "quote": "Do not print \"now tap the correct answer\" and similar. They inflate cognitive load and teach nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants-draft-v2.dom.txt",
+   "lines": "53",
+   "quote": "Scout (or any guide) must add information; lines that introduce or restate a self-explanatory question, or repeat the previous screen, are cut.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/QA-V5-ACCEPTANCE-MATRIX.md",
+   "lines": "21",
+   "quote": "Enforce two-short-sentence instruction criterion with human judgment",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "337",
+   "quote": "Where a guide or character appears, does it add timely pedagogical value without restating self-explanatory prompts or becoming a distraction?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/instruction-review-profile.json",
+   "lines": "341",
+   "quote": "The guide repeats the visible question, adds misleading commentary, or competes with the learner action.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "131",
+   "quote": "Do not have the guide introduce or restate self-explanatory questions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "147",
+   "quote": "Remove the repeated paragraph explaining the five steps immediately before they are recapped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "4",
+   "quote": "Map every distinct August 11 reviewer observation to the reusable instruction-review criteria without claiming that the current Grade 5 delivery has passed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

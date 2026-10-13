@@ -1,0 +1,49 @@
+{
+ "id": "refuse-to-check-a-half-written-file",
+ "title": "Refuse to check a half-written file",
+ "statement": "Before checking a file, confirm it is whole, such as ending where it must and holding its anchors, and refuse otherwise, because a truncated copy can pass every assertion.",
+ "example": "Cut to 98% of its length, a file passed all 78 of an audit's assertions; cut to 70%, it failed 29.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 reading build's patch scripts truncate a file and then write it, so a check that reads during a write gets a prefix, and its rulebook notes that a prefix scans cleanly. Measured on one audit by cutting the file: at 70% it failed 29 assertions, at 98% it reported all 78 passing with no sign anything was wrong, and at 95% it lost five call sites and still passed its census. That audit and a copy-editing check now refuse to run unless the file ends in its closing html tag and carries its anchor functions, deliberately not a size band, which would need editing at every change, and the rule is to believe a refusal over a green run.",
+ "against": "The incident that first prompted the rule was traced to a load-order race in the player rather than a partial read, and \"a mid-write read and a load-order race present identically\" while needing opposite fixes (grade3-reading/edullm-review-hub/course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md, line 545); the truncation hazard itself rests on the deliberate cutting test.",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "552",
+   "quote": "ALL 78 PASS with no sign anything was wrong",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "549-550",
+   "quote": "so an overlapping read returns a *prefix* — and a prefix scans cleanly",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "553-554",
+   "quote": "now refuse (exit 2) unless the file ends in `</html>` and carries its anchor functions",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

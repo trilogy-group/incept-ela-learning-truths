@@ -1,0 +1,548 @@
+{
+ "id": "verified-facts-as-the-only-source",
+ "title": "Verified facts as the only source",
+ "statement": "Give a writer verified facts and real sources, quoted into its instructions, as the only source it may draw on rather than as inspiration.",
+ "example": "In one published study, grounding the same generator in official curriculum documents raised valid questions from 12-15% to 92-96%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "contested",
+ "detail": "The AP notes report a published study of curriculum-aligned maths questions in which the generator stayed the same and only retrieval changed: valid questions went from 12-15% to 92-96% once generation was grounded in official curriculum documents (`icloud-work/ML learnings/research_educational_content_generation.md`). Another study they cite, on structured output, supplies the plausible candidates up front so that the model's job is selection rather than recall (`icloud-work/ML learnings/research_rag_factual_grounding.md`). The AP project's own reading is that facts work better as constraints than as inspiration, and its note lists checking each fact in the store against the curriculum documents, since some may be outdated or approximate, among improvements not yet made (`icloud-work/ML learnings/knowledge_and_rag_pipeline.md`). The reason given is that, from memory or its own research, a writer invents dates, documents and claims.",
+ "against": "the notes expect the fine-tuned model to follow such a constraint only some of the time (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`), and, citing a keynote paper, they say models are least persuadable by supplied context for static facts such as dates, names and places (`icloud-work/ML learnings/research_rag_factual_grounding.md`). grounding by retrieval didn't fix failures made when a model builds its claims after retrieval; by another account the anchor-fact prompt was not yet tested in a benchmark, and the model sometimes ignores the constraint; one research step that gathered sources raised single questions from 96% to 100%; and the 25% to 100% comparison rests on 5 samples. Neither source tested the remedy itself: the audit could not tell whether retrieval had fired for those prompts at all, and the analysis read its conclusion from the judge's failure labels. Using the given fields did not make the questions right on fact: the next run still had 24 factual failures (`icloud-work/evaluator/docs/reports/BENCHMARK_RUN2_REPORT.md`, line 84), and a later 10-item check built from known-correct facts found real factual errors added while writing 3 of them (`icloud-work/auto-memory-backup/project_grader_audit_results_2_of_3_pass.md`, lines 33-34). The study did not measure this kind of content, and the project rated any lift on its own item types as unmeasured (\"no published measurement on AP-history-shaped tasks\", `icloud-work/auto-memory-backup/research_fewshot_format_not_facts.md`, line 12); its planned comparison has no recorded result. The diagnosis rests on three measurements that the same project calls \"none singularly conclusive\" (`icloud-work/auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md`, line 12). Supplying facts did not settle accuracy everywhere. A training log records \"| Prompt engineering for factual_accuracy | No effect | Model uses parametric memory, not prompted context |\" (`icloud-work/ap-social-studies-generator/docs/TRAINING_DECISIONS.md`, line 142), and a run that injected 4,177 facts noted \"- The 0.00 failures still occur despite facts injection — hard fails are from document CONTENT quality, not missing facts context\", though with no control its effect could not be measured (`icloud-work/ap-social-studies-generator/data/model_findings.md`, lines 230 to 232). The benchmarks behind the 25% to 100% used 5 samples each (`icloud-work/ap-social-studies-generator/CHANGELOG.md`, line 123). The one measured gain behind it was refuted, and the same synthesis puts the lasting lever in an unseen source that leaks nothing and that the question can be answered from, not in where the source came from (`grade3-reading/knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd`). Real sources were not enough on their own: one full run with injected documents reached only 33.3%, and the autopsy says retrieval quality matters (`dbq_structural_zero.md`, line 137). The 0 of 89 came with a judge update that began failing fabricated documents outright, so it measures the missing sources and the stricter judge together. An audit for a one-shot goal later removed the injected document bank as an inference-time crutch, while keeping the curriculum facts in the prompt as part of its contract (`icloud-work/aptraining/.agent/research/inference_clean.md`). In an earlier 20-item sweep with another model, adding curriculum facts on their own lowered factual accuracy to 44% from the baseline's 60% (`sft_v4_prompt_engineering.md`, lines 23 and 25); that note does not say how the facts were framed. The audit had no comparison without the excerpt. The fallback, an item with no source, is the shape the lab later filed as a rubric exploit (`aptraining-local/parallel-ideas-lab/reports/rubber_ducks/sweep_n25_final_verdict_20260526.md`, line 73).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "92",
+   "quote": "RAG methods go from 12-15% validity to 92-96% validity by grounding generation in official curriculum documents. The study uses GPT-4o as the generator for all conditions — the variable is retrieval, not the model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "229",
+   "quote": "This is a \"closed-world\" approach: rather than asking the model to generate historical facts from open memory, you preemptively supply the plausible candidates and the model's job is selection rather than recall.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "102",
+   "quote": "The phrasing change reflects the fundamental insight: facts work better as CONSTRAINTS than as INSPIRATION.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "230",
+   "quote": "3. **Fact verification:** Each fact in curriculum_facts.json should be verified against AP curriculum documents. Some facts may be outdated or approximate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "234",
+   "quote": "None of these are implemented yet.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "113",
+   "quote": "2. At inference time, the model will sometimes follow the constraint, sometimes not",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "33",
+   "quote": "- **Fact dynamicity**: Models are least persuadable by retrieved context for *static* historical facts (dates, names, places) — exactly the kind of facts in our rubrics. Dynamic/recent facts are easier to override with context. (ECIR 2025 keynote, arXiv:2603.09654)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "145",
+   "quote": "Pass rate | 25% | 100% | +75%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "148",
+   "quote": "Flash research stage hallucinated facts that poisoned the compile step. MongoDB verified facts are better.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "123",
+   "quote": "Ran data-driven benchmarks (5 samples each) to decide what to optimize",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "44",
+   "quote": "Research→Compile (single step): 60%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "46",
+   "quote": "Stimulus (from scratch, no research)→Questions: 80% — best",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "48",
+   "quote": "The research step was a hallucination amplifier, not a quality gate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "119",
+   "quote": "Even with 5 relevant curriculum facts injected, the model fabricates its own historical claims.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "82",
+   "quote": "LLM hallucinates specific dates/numbers",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/IMPROVEMENT_PROPOSALS.md",
+   "lines": "84",
+   "quote": "House vote totals wrong (153 vs 174)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/knowledge_and_rag_pipeline.md",
+   "lines": "102",
+   "quote": "facts work better as CONSTRAINTS than as INSPIRATION.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "152",
+   "quote": "Gemini, Mar 9 cert | ~90-95%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "153",
+   "quote": "Gemini, Apr | 97-100% | 3-step Plan→Stimulus→Questions | Plan step added, anchor_fact",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "275",
+   "quote": "Curriculum alignment 0% → 89%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_COMPREHENSIVE_REPORT.md",
+   "lines": "276",
+   "quote": "Endpoint started using `learning_objective` and `statement` fields",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "92",
+   "quote": "RAG methods go from 12-15% validity to 92-96% validity by grounding generation in official curriculum documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "43",
+   "quote": "Pipeline grounding (retrieval, primary sources) doesn't fix this because the failure happens AFTER retrieval",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/training_data_journey.md",
+   "lines": "128",
+   "quote": "Not yet tested in benchmark.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "113",
+   "quote": "the model will sometimes follow the constraint, sometimes not",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "36",
+   "quote": "MCQ: 96% → 100% (research step immediately improved factual accuracy)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-21T0935Z_pipeline_analysis_findings.md",
+   "lines": "43",
+   "quote": "Pipeline grounding (retrieval, primary sources) doesn't fix this because the failure happens AFTER retrieval — in the model's claim-construction step.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_atlas/2026-05-05T1225Z_v41_d13_stimulus_provenance_audit.md",
+   "lines": "25",
+   "quote": "The D13-RAG pathway, as instantiated in v41-d13, does NOT eliminate fabrication.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN2_REPORT.md",
+   "lines": "30",
+   "quote": "The dramatic improvement in curriculum alignment (43% → 89%) confirms the endpoint is now properly utilizing the `learning_objective` and `statement` fields provided in requests.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "33",
+   "quote": "The generator ignores the specific `learning_objective` and `statement` provided in the request. Instead, it produces generic questions about the broad topic area.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "33",
+   "quote": "- **Result:** 7/10 factual_accuracy=1, 3/10 factual_accuracy=0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "34",
+   "quote": "- **Critical finding:** the 3 factual_accuracy=0 verdicts are **LEGITIMATE grader catches of generator errors** — i.e., the test rows had real factual issues that the grader correctly identified",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "20",
+   "quote": "- ICL works because demos show **input distribution + output format**, NOT because they convey correct facts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "21",
+   "quote": "- Random labels in demos barely hurt performance — the demos function as a format prompt, not a knowledge prompt",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/research_fewshot_format_not_facts.md",
+   "lines": "76",
+   "quote": "- Min et al., *Rethinking the Role of Demonstrations* — EMNLP 2022 (https://aclanthology.org/2022.emnlp-main.759/)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md",
+   "lines": "26",
+   "quote": "The model has capacity. It's faithfully learning what's in the corpus. The corpus has wrong content.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "145",
+   "quote": "| Pass rate | 25% | **100%** | **+75%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "148",
+   "quote": "**Decision:** Flash research stage hallucinated facts that poisoned the compile step. MongoDB verified facts are better.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "157",
+   "quote": "**Decision:** Always prefer verified curriculum facts over LLM-generated research. The LLM should construct questions FROM verified facts, not invent its own.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "71-72",
+   "quote": "(1) source-grounding (feed the model real primary-source stimuli; let it write only the questions) was the biggest real lever",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "9",
+   "quote": "aptraining's headline '0.29→0.95 via real passages' is REFUTED — that jump existed only under a discredited Gemini judge; on the binding grader it collapsed to ~28% (DBQ 0%, MCQ_SET 0%, a 'Gemini-judge artifact'), and the actual MCQ fix was the OPPOSITE: REMOVING the stimulus so the grader's leak-probe is skipped (grader-gaming).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "9",
+   "quote": "the durable lever is stimulus ANSWERABILITY / anti-leak (an unseen, non-leaky stimulus the question can actually be answered from), NOT 'real-passage provenance.'",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/postmortem_v89_v90_v91.md",
+   "lines": "32",
+   "quote": "Per v91 ABORT_DEAD: pipeline-side handling of DBQ scores 87.9% — the model CAN do DBQ when given runtime context, but cannot be TRAINED to.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/postmortem_v89_v90_v91.md",
+   "lines": "32",
+   "quote": "224 gold DBQ pairs in v91 did not lift it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ap_social_studies_generator_distilled.md",
+   "lines": "157",
+   "quote": "- Flash research stage could hallucinate facts that poisoned compile; verified facts were better than LLM-generated research.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "111",
+   "quote": "The contrast is the whole story: normal generation without real source injection sits at DBQ 0%; D13 source injection immediately produces non-zero DBQ, but the current naive retrieval/prompting still fails often.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/k_12_social_studies_distilled.md",
+   "lines": "75",
+   "quote": "- Use a vetted knowledge base and closed-world claim checking for AP-level factual accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "223",
+   "quote": "Generation without quoting the contract caused the 17-divergence parity round",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "18",
+   "quote": "RIT meaning free-floats on pre-training (wrong 200-210 / 208/214 anchors)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/TI_COURSEPLANS_PR_PROPOSAL.md",
+   "lines": "18",
+   "quote": "the \"ground from a table, not priors\" discipline",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "89",
+   "quote": "- **Rubric grounding with facts not in the story:**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "90",
+   "quote": "Winter is in the original book, not this retelling.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_curriculum_api_mandatory_2026_05_11.md",
+   "lines": "7",
+   "quote": "All APUSH (and APWH/APGOV/APMAC/APMIC/APHG/APEURO) inference and training MUST use the Curriculum API",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_curriculum_api_mandatory_2026_05_11.md",
+   "lines": "9",
+   "quote": "IB v2.5.6 grader added DBQ stimulus_quality hard-zero (fabricated docs auto-fail) — and our model was generating BLIND to the source materials the grader checks against. Result: DBQ = 0/89 catastrophic across all v50 seeds.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/plans/PLAN-mission-2026-04-26.md",
+   "lines": "59",
+   "quote": "Without them, the model hallucinates dates and fails `factual_accuracy`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "38",
+   "quote": "The model isn't trusted to invent factually grounded primary sources. Mid-2026 fix for fabricated citations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "40",
+   "quote": "*This is not a crutch — it is the prompt contract.*",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_b_openstax_pair_generation.md",
+   "lines": "18",
+   "quote": "GROUND_TRUTH_SOURCE (1400-char excerpt of OpenStax content)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_b_openstax_pair_generation.md",
+   "lines": "64",
+   "quote": "**Forbidden-rules audit validation (2026-05-28 at n=1,200 v2 SAQ+LEQ)**: the ground-truth-source-excerpt grounding pattern prevents Gemini fabrication empirically.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_b_openstax_pair_generation.md",
+   "lines": "64",
+   "quote": "Audit found 0 confirmed fabrications across 1,200 rows; 3 false-positive flags (1 noun-phrase mis-match, 2 missing-from-whitelist real historical works).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_b_openstax_pair_generation.md",
+   "lines": "70",
+   "quote": "- **Total: 468/554 = 84.5%**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "23",
+   "quote": "3. baseline: 45% pass, 60% factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "sft_v4_prompt_engineering.md",
+   "lines": "25",
+   "quote": "5. facts alone: 40% pass, 44% — hurts factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/PIPELINE_WRAPPER_ACTION_PLAN.md",
+   "lines": "108",
+   "quote": "- Few-shot for format only, not factual hallucination.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "55",
+   "quote": "**Do NOT fabricate quotes or sources.** If you don't know a verifiable source, drop the stimulus and write a non-stimulus item.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "44",
+   "quote": "- `statement`: `{{statement}}` (the specific fact this question must assess)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "88",
+   "quote": "Facts work better as constraints than as inspiration.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "89",
+   "quote": "Flat facts injected as hints often lose to parametric memory.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-source-packet.json",
+   "lines": "4",
+   "quote": "Author only original prose and diagrams from the bounded facts below.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-source-packet.json",
+   "lines": "72",
+   "quote": "Do not present the rock cycle as one fixed circular sequence or claim that all pathways take equal time.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-source-packet.json",
+   "lines": "231",
+   "quote": "Use this fact only for the qualitative one-way energy-flow contrast; do not import the source's quantitative rule of thumb into the showcase.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Automated Generation of Curriculum-Aligned Multiple-Choice Questions for Malaysian Secondary Mathematics Using Generative AI (arXiv 2508.04442, 2025)",
+   "url": "https://arxiv.org/abs/2508.04442"
+  },
+  {
+   "ref": "Reducing hallucination in structured outputs via Retrieval-Augmented Generation (NAACL 2024 Industry Track)",
+   "url": "https://arxiv.org/abs/2404.08189"
+  },
+  {
+   "ref": "Understanding the Interplay between LLMs' Utilisation of Parametric and Contextual Knowledge: A keynote at ECIR 2025 (arXiv 2603.09654)",
+   "url": "https://arxiv.org/abs/2603.09654"
+  },
+  {
+   "ref": "Min et al. 2022, Rethinking the Role of Demonstrations, EMNLP 2022",
+   "url": "https://aclanthology.org/2022.emnlp-main.759/"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

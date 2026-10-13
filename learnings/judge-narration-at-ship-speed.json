@@ -1,0 +1,63 @@
+{
+ "id": "judge-narration-at-ship-speed",
+ "title": "Judge narration at ship speed",
+ "statement": "Judge each narration clip at the speed learners will hear it, since a voice that sounds fine at natural pace can be unintelligible when sped up.",
+ "example": "One course's rule judges every clip at 1.25×, the playback speed in both of its apps.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 reading course's published QA rules ask that every clip be judged at 1.25×, the playback speed in both of its apps, because a voice reviewed raw sounds wrong at ship speed; it is a judgement check for a person or an agent, not a validator. A later provenance note found the figure stale for one player, whose passage queue uses 1.2 while other clips keep their own defaults, so the speed to judge at is the one each player actually ships.",
+ "against": "The figure went stale for one player: a later note calls the rule's 'universal 1.25× statement' stale there, since its passage queue uses 1.2 (grade3-reading/ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md, line 50).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "972",
+   "quote": "Judge every clip at 1.25× — playback speed in both apps; a voice reviewed raw sounds wrong at ship speed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "50",
+   "quote": "its universal 1.25× statement is stale for `/book`, whose passage queue uses **1.2** (`core.tsx:632`), with other clips using their current owner/default.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "21",
+   "quote": "ONE fixed narration rate: `AUDIO_RATE=1.25` (measured 104.6 wpm native → ~131 wpm heard).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/06-AUDIO-NARRATION.md",
+   "lines": "37-39",
+   "quote": "**Voice changes must be judged at playback rate, not raw.** Voices are generated at natural pace and sped at play time (1.25x). Any proposed voice swap must be evaluated at 1.25x before accepting — a voice that sounds acceptable raw may be unintelligible at speed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/new-lesson-qa-invariants.md",
+   "lines": "112-113",
+   "quote": "**D2. Judge every clip at 1.25×** — playback speed in both apps; a voice reviewed raw sounds wrong at ship speed.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "require-the-criterion-the-task-is-for",
+ "title": "Require the criterion the task is for",
+ "statement": "Make marking require the content the task exists for, so an answer with that content wrong can't pass on strong language, structure or evidence.",
+ "example": "A retelling that reversed the story's events passed a 2-of-3 bar because two language criteria outvoted the factual one.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 recount was marked by how many of its three criteria were met, with a pass bar of 2: one asked for the events in order, the other two for a connective and a taught word (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 197). A retelling that reversed the story's events was accepted, and a controlled run of the real scoring route, with synthetic model replies, reproduced the arithmetic. A census of 111 visible assessment objects found one more recount with the same bypass, at 2 of 4. Once the factual criterion was required, the real contradiction was rejected and an explicit factual correction was accepted (line 210).",
+ "against": "The live model's own verdicts were not captured, \"The native packet does not expose the provider's raw criterion booleans.\" (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 197), so the live false pass is tied to the count rule only by the controlled probe, and a required criterion does not make the marker right: \"The flag is not a guarantee that the model never misjudges comprehension.\" (line 197). The fix must not over-tighten: its failure conditions include \"an accurate supported answer is forced to meet all optional criteria\" (line 197), and \"Contract required_for_pass sign-off remains the separate .51 merge gate\" (line 199).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "Thus the two language criteria can pass an answer that fails the recount itself.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "| Factual false; both language criteria true | Full, score 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "The independent film census covers the 18 scoped lessons and 111 visible assessment objects: 25 in Grade 3 and 86 in Grade 5.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "197",
+   "quote": "| G3 L7 p19 `recount` | 2 of 4 | Same source-policy bypass; require `retells-in-order`; no claim of a native false pass |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "210",
+   "quote": "real contradiction rejected, held reload, explicit factual correction accepted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "46",
+   "quote": "**A8 · Content-accuracy gate (never reward a misconception, however well-written).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "46-48",
+   "quote": "For any science/social-studies passage, the rubric has an explicit **accuracy gate that caps/zeros** a response on content grounds even when structure/evidence/mechanics are strong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "48-50",
+   "quote": "Screen the Tier-1 prohibited-phrase list (`references` / Cross-Cutting) in the prompt, **hard-fail** it in any model response, and **flag** it in student responses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "52-53",
+   "quote": "Social-studies: don't force a contested claim as settled fact; don't penalise appropriately hedged language.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "40",
+   "quote": "content-accuracy-violation (y/n, from A8 list), length.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

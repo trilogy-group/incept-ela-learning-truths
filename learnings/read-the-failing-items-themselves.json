@@ -1,0 +1,65 @@
+{
+ "id": "read-the-failing-items-themselves",
+ "title": "Read the failing items themselves",
+ "statement": "Read the failing items and the judge's own reasoning, not just the scores and flag fields, because a summary can hide what failed and why.",
+ "example": "In one run, 65 of 76 lesson bundles scored 0 on repetition while every list of repeated item ids was empty.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An evaluator run over 76 lesson bundles of a reading course scored non-repetitiveness at an average of 0.14, with 65 of 76 at exactly 0, yet its lists of repetitive item ids were empty everywhere; the flags were only in its prose reasoning. The same reasoning showed that 9 bundles scored 0.0 because they were multi-passage by design and were judged against one passage, which reflects how the content was packaged for evaluation rather than item quality.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Non-repetitiveness is by far the weakest dimension: **avg 0.14; 65 of 76 bundles scored exactly 0** on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Note `repetitive_item_ids` arrays are empty everywhere despite the 0 scores — the flags live in the prose reasoning, not the ID list.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "55",
+   "quote": "9 bundles got overall score 0.0 (or 0.1 for mastery-formC):",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "58",
+   "quote": "These bundles are BY DESIGN multi-passage (MAP forms, mastery checks, spaced review) — the 0.0 reflects how the content was packaged for evaluation, not necessarily item quality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/SEMANTIC-FIVE-FLAG-DISPOSITION-by-residual.md",
+   "lines": "19",
+   "quote": "The menacing model judgment itself contains an error: it calls the rollercoaster “fun screams,” whereas the actual option only says riders scream.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

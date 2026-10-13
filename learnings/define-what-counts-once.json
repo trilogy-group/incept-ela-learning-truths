@@ -1,0 +1,108 @@
+{
+ "id": "define-what-counts-once",
+ "title": "Define what counts once",
+ "statement": "Say what an answer accepts in one place, since rules written separately for the same answer drift apart.",
+ "example": "One blank had three acceptance rules that disagreed, and another had four.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "key",
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Two external audits of five reading lessons found answers whose acceptance rules disagreed: two blanks each had three rules that disagreed, one had four, another's rubric and its synonym list disagreed, and a word bank keyed 'evil' as right while the same step's hunt left it off its accept list (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`; `grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`). The same audits found one sentence accepted as evidence on one page and rejected on another, in two lessons. Counting the same evidence the same way wherever it appears would carry this rule across pages, but that case still awaits a ruling.",
+ "against": "Whether one sentence may count as evidence on one page and not on another is still waiting for a ruling (`grade3-reading/artifacts/feedback-inceptbench-2026-09-29/REGISTER.md`), and one audit filed that case as worth a look, not serious (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "18",
+   "quote": "The mood blank has three acceptance rules that disagree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "56",
+   "quote": "Four rules for the final blank disagree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "57",
+   "quote": "but the reading-notes Step-3 hunt's accept list omits \"evil\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "117",
+   "quote": "The blank's own acceptance rules disagree",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "13",
+   "quote": "p23 step4 blank: three acceptance rules disagree (criteria vs magic_word.criterion vs accept_forms)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "20",
+   "quote": "one sentence accepted on one page, rejected on another (magician)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-29/REGISTER.md",
+   "lines": "20",
+   "quote": "RULING (open)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "67",
+   "quote": "is rejected as evidence on p16",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "32",
+   "quote": "A child who types \"wonderful\" passes one rule and is blocked by the other.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/obviously-bad-sweep/G5-ALL-2026-08-31.md",
+   "lines": "85-87",
+   "quote": "A child taught to say \"wetland\" is coached, scored, and shown a corrective hint keyed to \"wetlands\" — a real functional drift, not just a style inconsistency.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/07-SCORING-FEEDBACK-XP.md",
+   "lines": "63-65",
+   "quote": "a child who types a fitting synonym is accepted by meaning instead of getting a contradictory double verdict from the keyword finish ladder.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,245 @@
+{
+ "id": "each-stage-on-fresh-material",
+ "title": "Each stage on fresh material",
+ "statement": "Run the worked example, the guided practice and the independent task on different material, so no stage answers another and the last one tests transfer, not rehearsal.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "integrity",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson-components spec sets independent practice on a different, later passage than the worked example used, and the lesson designs check it in their soundness sweeps: one runs the same procedure on a different section of a story, with fresh evidence, and a science lesson models on one section and re-runs the procedure on another. A rebuilt lesson placed its added guided station in a third setting so that it pre-answers neither the model nor the independent task, and its walkthrough gives the reason: repeating on the same evidence is rehearsal, and new evidence is transfer. A history lesson adds that independent practice is released only once the worked model and its completed analysis are taken away.",
+ "against": "The spec is a design: its package says it does not establish runtime verification, student readiness or evidence of learning outcomes (`grade3-reading/edullm-review-hub/course-packages/courses/apush/review/evidence/case-for-review.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/2. Example lesson structure/Example Lesson Components.docx",
+   "lines": "31 (textutil text)",
+   "quote": "Independent practice on a different, later passage than the Modelling Moment used.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 1. Aladdin and the Wonderful Lamp, Part 1 (FICTION, FIND) — v3 (order + MCQ QA).docx",
+   "lines": "334 (textutil text)",
+   "quote": "Same FIND rail, different section, fresh evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "130 (textutil text)",
+   "quote": "The teacher models the full FIND rail on the roots/stem/leaves section (the \"I do\"). Part 3 re-runs it independently on the seeds/flowers section.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "227",
+   "quote": "so it pre-answers neither the model nor the independent task",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "34",
+   "quote": "Repeating on the same evidence is rehearsal; new evidence is transfer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "127",
+   "quote": "Release only after the worked model and its completed analysis are removed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/lesson-01.json",
+   "lines": "128",
+   "quote": "The model uses a cross-period timeline and the guided task uses an imperial comparison; independent work shifts to a regional matrix that has not been modeled.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "26",
+   "quote": "The I-do/we-do/you-do routine is misapplied: I-do reveals the answer instead of modeling thought; we-do is only a hint; you-do sometimes switches to a different skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "60",
+   "quote": "The I-do/we-do/you-do routine is misapplied: I-do reveals the answer instead of modeling thought; we-do is only a hint; you-do sometimes switches to a different skill.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "57",
+   "quote": "the we-do walks the same steps with immediate feedback, the you-do releases the same skill",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "79",
+   "quote": "never the model's quote or a guided one",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/threejs-render.test.mjs",
+   "lines": "186",
+   "quote": "never the model's quote",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "207",
+   "quote": "the student's quote: lines the lesson's blocks found for the question, never the model's or a guided quote",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "212",
+   "quote": "Quote options (not locked)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "21",
+   "quote": "Change the evidence or problem so independent work requires transfer; label invented scenes separately from literary quotations.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "287-288",
+   "quote": "The skill is related, but the named independent target is over-scaffolded.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/provenance/DECISIONS.md",
+   "lines": "40",
+   "quote": "Model INFER on London/Lost Boys; guide on fresh evidence; independently infer Neverland/Hook.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/TEACHING-ASSESSMENT-CONTRACT.md",
+   "lines": "41-44",
+   "quote": "5. **Independent application:** Give new evidence and require the student to perform the named move, not copy the model's conclusion or locate a paraphrase. The independent evidence span, row, case, or source must differ from the completed model and guided answer; merely changing the prompt over the same solved evidence does not count as release.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4386",
+   "quote": "Independent writing introduced as “Now you think alone,” with the model’s quotation locked so the student chooses another.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "3103",
+   "quote": "Mimicry: the Expert models how delivery and context affect meaning using a separate short exchange.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "269-270",
+   "quote": "Six of the seven lessons had some form of it;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/CONTENT-SCHEMA.md",
+   "lines": "536-537",
+   "quote": "So the row the child fills is a row Scout never filled, and the fact they must produce was never on the screen.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/_KB_Othello_1_1_Lesson_View.md",
+   "lines": "8",
+   "quote": "Stems available, but students are locked out of writing about the guided practice quote.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/l1-script/Othello Lesson 1 (1.1)_ Lesson Script v3, Stage 1.txt",
+   "lines": "143",
+   "quote": "The stems stay available, but the guided practice quote is locked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L02a442.txt",
+   "lines": "8",
+   "quote": "Stems available, but students are locked out of writing about the guided practice quote.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "411",
+   "quote": "The guided model and independent task use different evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "516-517",
+   "quote": "Models and guided practice may show complete reasoning on teaching evidence. Independent work must not be a keyed paraphrase of that model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp3-v3-design.txt",
+   "lines": "301",
+   "quote": "Merciless is the Independent-Task payoff (Hook), never the model (children being brave), so it does not pre-answer the model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.4 (pdftotext line 205)",
+   "quote": "So the I-do models on London and the you-do transfers to Neverland by design.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "50-51",
+   "quote": "answer-distance, verbatim-quote, and fresh-evidence-Phase-3 rules",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

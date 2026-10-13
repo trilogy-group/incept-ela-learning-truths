@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A learning",
+  "description": "One record in learnings/<id>.json. Controlled values are listed in schema/vocabulary.json; sources in sources/sources.json. scripts/check.py enforces this.",
+  "type": "object",
+  "required": ["id", "title", "statement", "group", "role", "facets", "stage", "scope", "domains", "kind", "status", "detail", "against", "evidence", "citations", "found_in", "added"],
+  "properties": {
+    "id": { "type": "string", "description": "the title as a GitHub anchor (lower case, punctuation dropped, spaces to hyphens); also the file name" },
+    "title": { "type": "string", "description": "two to eight words" },
+    "statement": { "type": "string", "description": "the learning, one plain sentence; no people's names or roles" },
+    "example": { "type": "string", "description": "optional: one sentence with the number that shows it" },
+    "group": { "type": "string", "description": "a key of vocabulary.groups" },
+    "role": { "type": "string", "description": "criterion, method or context" },
+    "facets": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "keys of vocabulary.facets, the main one first" },
+    "stage": { "type": ["string", "null"], "description": "a key of vocabulary.stages; required when role is method, null otherwise" },
+    "scope": { "type": "string", "description": "universal (holds for any lesson) or domain (holds where its domains say)" },
+    "domains": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "where the evidence came from: keys of vocabulary.domains" },
+    "kind": { "type": "string", "description": "measured, adopted-rule, external-research or open-question" },
+    "status": { "type": "string", "description": "held, contested or open" },
+    "detail": { "type": "string", "description": "markdown: where it came from and what the record shows; cite paths in backticks with their source prefix" },
+    "against": { "type": "string", "description": "markdown: counter-evidence and limits, or \"none found\"" },
+    "evidence": { "type": "array", "items": { "type": "object", "required": ["source", "path"], "properties": {
+      "source": { "type": "string", "description": "a key of sources/sources.json" },
+      "path": { "type": "string", "description": "relative to the source's root" },
+      "lines": { "type": "string" },
+      "quote": { "type": "string", "description": "verbatim from the file" },
+      "verified": { "type": "string", "description": "script, agent or manual: how the quote was checked" },
+      "commit": { "type": "string", "description": "a commit whose message holds the quote; path is then the repository's folder" },
+      "at": { "type": "string", "description": "a revision: the quote is in the file as it was there (for a file deleted later)" },
+      "member": { "type": "string", "description": "a file inside the archive at path, where the quote is" } } } },
+    "citations": { "type": "array", "items": { "type": "object", "required": ["ref", "url"], "properties": { "ref": { "type": "string" }, "url": { "type": "string" } } } },
+    "found_in": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "research run folders under research/" },
+    "added": { "type": "string", "description": "YYYY-MM-DD" },
+    "updated": { "type": "string", "description": "YYYY-MM-DD, when changed after it was added" }
+  }
+}

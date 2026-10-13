@@ -1,0 +1,343 @@
+{
+ "id": "key-it-to-what-only-the-text-holds",
+ "title": "Key it to what only the text holds",
+ "statement": "Key each question to what only the text settles, never to an order, category, word sense or fact the world already supplies.",
+ "example": "In one unit, 8 of 11 cause questions leaked because the key was the answer a solver without the text would most likely guess.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "key",
+  "integrity",
+  "distractors"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one unit's text-hidden gate, 8 of 11 cause questions leaked because the key was the solver's most likely guess from the story's general shape; the survivors hid the key behind details inside the text (the order of events, who acted, which note said what) or let a decoy the world favours out-compete the key. Ordering items did best among the formats other than sorting but failed whenever the steps had a natural order, such as problem, solution, result, and in another bank ordering items built on familiar sequences passed the text-hidden check only about 45% of the time. In context-clue word questions, the 8 that survived used words in technical or domain senses and the 7 that leaked used words in their everyday meaning, and the plan for new items asks that a word's meaning be derivable only from the passage. Word each stem to ask what the text says. Where the text overturns the usual or everyday answer, make that answer a wrong option.",
+ "against": "Items keyed to invented details passed 100% only on a check where the same model family wrote and solved them, which the report names as its one unmitigated risk (`grade3-reading/artifacts/LANE2_GENERATOR.md`, line 204). Ordering items built from snippets of a text passed the blind gate in one pilot, yet several failed on quality for testing the wrong standard, using weak fragments or becoming mechanical put-these-snippets-in-order tasks (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`, line 89), and the context-clue result rests on 15 items (`grade3-reading/artifacts/LANE1_COURSE.md`, line 240). Keying against the usual answer makes the wrong options easy to rule out once the text is read: a quality screen flagged 14 of 26 such items (`grade3-reading/artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md`, lines 94-99). The 480-item probe used one solver family with forced guessing and no with-text control (`grade3-reading/artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md`, lines 50-57), and the unit gate's solver is now treated as historical provenance (`grade3-reading/artifacts/demo-unit-2026-07-10/items/02-gate-summary.md`, lines 5-6). Pointing the stem at the text is not enough on its own: in a 480-item probe the stems said 'Based on the text…' but the answers did not depend on the text (`grade3-reading/artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md`, line 30). How to repair a mismatch is not settled: the course-fix rule edits the passage to use the word, while a content-integrity rule says never to repair a missing quote by changing the passage unless the passage itself is wrong (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "62",
+   "quote": "key is the blind solver's plurality narrative guess dies (8/11 cause leaks, incl.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "64",
+   "quote": "referents (event order, actor identity, note provenance) or anti-schema keys where",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "202",
+   "quote": "every correct answer depends on a passage-specific invented detail that cannot be retrieved from prior knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "278",
+   "quote": "Sequence worked better than the other non-match formats, but it failed whenever the fragments had a natural order:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "285",
+   "quote": "The surviving sequence items need neutral, non-orderable details whose order depends on passage location, not common logic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "50",
+   "quote": "| sequence | 100% | ~45% (world-knowledge seqs) | Some steps deducible without passage |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "240",
+   "quote": "8 survivors: technical/domain-specific words (normal, base, draws, channels, reservations, niche, range, intrusive). 7 leaked: dominant-meaning words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE3_LLM.md",
+   "lines": "244",
+   "quote": "a word's meaning must be derivable only from the passage, not from world knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "20",
+   "quote": "| fragment-sequence | 24 | 24 | 0 | 0 | 100% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "22",
+   "quote": "| choice-hottext | 24 | 4 | 19 | 1 | 17% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/items/02-gate-summary.md",
+   "lines": "28",
+   "quote": "Plain choice/hot-text confirms its high-leak prior (13/16 MCQ leaked).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "17",
+   "quote": "| sequence | 185 | **58.4%** | 3.0% | **~19×** | adjacent-pair order 85.2% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "32",
+   "quote": "real-world things have canonical categories — recoverable with zero reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "44",
+   "quote": "items must hinge on passage-unique facts a general model can't recover",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "45-46",
+   "quote": "invented entities/quantities/relations, story-specific event order rather than canonical process order, passage-defined categories rather than natural-kind categories",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/02-gate-summary.md",
+   "lines": "65",
+   "quote": "a world-favorite decoy out-competes the key",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/RESULTS.md",
+   "lines": "32",
+   "quote": "GK default (d) \"walls keep out water\" is the trap; text says cold WINDS → blind solver actively misled to {a,d}; {a,b} text-locked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FIX_LIST.md",
+   "lines": "75",
+   "quote": "Prompt 'Match each cause to its correct effect based on how the water cycle works' explicitly invites world-knowledge, not the text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/MSQ_REGEN_GUIDE.md",
+   "lines": "39",
+   "quote": "The stem must invoke a passage-specific standard",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "90-92",
+   "quote": "the keyed sense must be the one the PASSAGE forces, and at least one … distractor must be the word's *common* dictionary sense that the passage does NOT use — … so a blind solver who picks the everyday meaning is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/G5_GENERATOR.md",
+   "lines": "92-95",
+   "quote": "**The tested word and its … keyed sense must both actually appear/operate in the passage** (guard against the G3 … vocab-word-mismatch bug: never test a word that isn't in the passage, never key a sense … the passage doesn't license).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "46-47",
+   "quote": "**Vocab word-not-in-passage … FIX by editing the PASSAGE — `PUT {QTI}/stimuli/{id}` to use the word in context. Never reword the stem to dodge it; never delete the item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "171",
+   "quote": "Never repair a missing quote by changing the passage unless the passage authority itself is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/analysis/methodology-2026-07-07/README.md",
+   "lines": "14-17",
+   "quote": "- Sequence: quote NON-orderable fragments (\"the earthworms in our gardens\", \"act like natural pipes\", \"thriving plant life\") — no logical/world order among them, so only text position orders them. (Cloning \"arrange the steps of obsidian formation\" leaks: 6% survive; fragment construction: 60% survive.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "288-289",
+   "quote": "Sequence was the best non-match route, but only when fragments did not form a natural story, process, or chronology.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "344-347",
+   "quote": "Non-orderable sequence worked when fragments were arbitrary, passage-specific, and not reconstructable from real-world chronology. Sequence failed when the order could be recovered from common chronology, narrative convention, or a single lucky shuffle.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "11",
+   "quote": "Exact key recovered: 148 / 152 (0.974).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "13",
+   "quote": "Decision: current selected assessment forms are rejected for mastery/MAP use.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "20",
+   "quote": "2: The feeling arc strongly cues the likely order.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "31",
+   "quote": "1: Each quote directly signals the category.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "42",
+   "quote": "Do not use sequence labels or process wording that gives chronological order without the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course-candidate-v0/assessments/assessment_rejection_report.qmd",
+   "lines": "43",
+   "quote": "Do not use match categories or options that encode their own answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/spine-solve-calibration-2026-07-10/REPORT.md",
+   "lines": "95",
+   "quote": "*Vector:* fragments are word-for-word story quotes with intrinsic narrative chronology — orderable without the source.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "88-89",
+   "quote": "the dominant residual leak is commonsense-recoverable canonical **order** (honey-making, paper recycling, chocolate, frog life-cycle)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/KB-NOTES.md",
+   "lines": "116-118",
+   "quote": "Vocab-in-context items: keyed sense must be the one the passage forces; at least one distractor is the common dictionary sense the passage does NOT use; never test a word absent from the passage (the G3 vocab-word-mismatch bug).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/KB-NOTES.md",
+   "lines": "119",
+   "quote": "`G5_GENERATOR.md` §(a) rule 6",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "205-206",
+   "quote": "L.5 vocabulary items fail blind-solve at high rates (~99%) when the target word carries its common meaning and the student can guess from background knowledge alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "217",
+   "quote": "| L.5.4a (context clues) | 95% | Common vocabulary used in its most familiar sense |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "222-223",
+   "quote": "**The correct answer must require a passage-specific context clue that overrides or narrows the word's common meaning.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "231",
+   "quote": "The 3 distractors must include the common meaning — only the passage-specific meaning is correct",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "212-213",
+   "quote": "A child who has never seen the video can eliminate all three distractors on the giant alone, since a giant in a cave is not a choice, not a home and not a friend.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g4-reading-approval-package.zip",
+   "member": "g4-reading-approval-package/markdown/generation-contract.md",
+   "lines": "75-77",
+   "quote": "**canon facts are banned as answers** (\"Columbus sailed in 1492\" is not an item).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "216-218",
+   "quote": "A version of checkpoint 2 that actually depends on the video would key on something the video said rather than on the category, for example which of the three the crew was warned about or what Odysseus did about the song.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/content/lesson-plans/g4-u1-l3.json",
+   "lines": "307",
+   "quote": "NO ITEM'S CORRECT ANSWER MAY BE A PLOT FACT.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

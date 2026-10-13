@@ -1,0 +1,92 @@
+{
+ "id": "inferences-rest-on-the-text",
+ "title": "Inferences rest on the text",
+ "statement": "An inference, modelled or asked for, may combine only what the text shows with what every student can be assumed to know, never an outside cultural or world fact.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A ruling in the reading project struck a worked example whose extension reached for outside-world knowledge of a foreign city that the course's students could not be expected to have: an inference may only use what the passage's own words show, and an extension deepens the mood from remaining text clues, never a civic or cultural fact the passage never gave (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`). The same procedure's frame is \"The text says ___, and I know ___, so I think ___\", so the knowledge an inference may add is what every student can be assumed to have.",
+ "against": "the same procedure defines inference as combining text clues with what you know (the same file), so where assumed knowledge ends and an outside fact begins is a judgment. The project's own inference frame combines text clues with what the student knows, so where allowed background ends and an outside fact begins is a judgment (`grade3-reading/knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd`, line 76).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "80-82",
+   "quote": "an inference may only use what the passage's own words show; extension deepens the mood from remaining text clues, never a civic/cultural fact the passage never gave.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "80",
+   "quote": "reach for outside-world knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "81",
+   "quote": "inference may only use what the passage's own words show; extension deepens the mood from",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "82",
+   "quote": "remaining text clues, never a civic/cultural fact the passage never gave.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/procedures/infer.md",
+   "lines": "13",
+   "quote": "Three hard rules on the frame, from the authored designs:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/procedures/infer.md",
+   "lines": "19-21",
+   "quote": "The \"I know that\" move supplies WORLD knowledge (what anyone knows about being trapped, being tired, wanting to be safe), never a second quote and never a fact the text already states.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "173",
+   "quote": "A modelled inference may only use what the passage's own words show, so the extension deepens the mood from the remaining clues instead of adding a civic \"rules\" layer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "71",
+   "quote": "London-mood, flying-mood, and Neverland-mood inferences all require either lesson-supplied knowledge bridges (Step 3 MCQ/MSQ at each release level) or common-sense prior knowledge (cold/dark, feather-in-wind)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/04-CONTENT-AUTHORING.md",
+   "lines": "272-273",
+   "quote": "A model think-aloud reasons only from passage evidence, never from background knowledge the child cannot be expected to have.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

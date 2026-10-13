@@ -1,0 +1,501 @@
+{
+ "id": "remake-under-new-rules",
+ "title": "Remake under new rules",
+ "statement": "When a rule changes, remake what was made under the old rule instead of serving it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Each block's key includes the maker's version and its kind's version, so a changed prompt or check makes the block\nagain instead of serving the old one (`g9/transformer/src/blocks.js`); the render and playtest routes take a block only\nunder the key today's rules make (`g9/transformer/src/server.js`, `g9/transformer/test/server.test.mjs`).",
+ "against": "the\nversion is bumped by hand (`g9/transformer/README.md`, \"Improve it\"). A later run found counter-evidence (`downloads/BrainLift - What makes a good intro video.md`). A later run found counter-evidence (`grade3-reading/artifacts/red-team-2026-09-23/PRE-BRIEF.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "53",
+   "quote": "stale solver results are not certification",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "52-53",
+   "quote": "The evidence workbench detects both a historical context-conditioned catch and its later invalidation by a stronger current plain-blind solver",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "24",
+   "quote": "the historical model snapshots are withdrawn after source changes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "22",
+   "quote": "was 0/3 plain-blind and 3/3 spine-conditioned",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "22",
+   "quote": "Current Gemini 3.5 is 3/3 in both conditions, so the item is directly gameable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "11",
+   "quote": "That item remains absent from serving.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/phase-d/DELTA-REPORT.md",
+   "lines": "5",
+   "quote": "**AI use:** treat model results as a 2026-07-10 Gemini 2.5 snapshot, not current certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g3-control-set-2026-07-10/G3-CALIBRATION-REPORT.md",
+   "lines": "84",
+   "quote": "The live course moves — this distribution is dated 2026-07-10; re-pull before re-measuring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "193-198",
+   "quote": "When an upstream spec fails: - mark dependents stale; - repair the upstream object, not only rendered copies; - regenerate descendants; - rerun every named checker on the new hashes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md",
+   "lines": "34-35",
+   "quote": "6. Propagate any upstream failure through every declared dependent lesson, item, chart, and feedback object.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "35",
+   "quote": "Every content, renderer, rubric, model, policy, or dependency change.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "35",
+   "quote": "Evidence records carry artifact and dependency digests; relevant changes force the affected checks to be rerun.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "47",
+   "quote": "never cache-as-truth (a cached bundle can certify content no longer deployed).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "52-53",
+   "quote": "its later invalidation by a stronger current plain-blind solver; stale solver results are not certification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0134-g5-reading-v2-local-design-package.qmd",
+   "lines": "168-170",
+   "quote": "Any canonical, source, model-policy, renderer, validator, or package-contract change invalidates the relevant downstream evidence and requires a fresh rebuild.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "24",
+   "quote": "All 550 forms remain candidates and the historical model snapshots are withdrawn after source changes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "33",
+   "quote": "Current Gemini 3.5 replay: 3/3 in both conditions - direct blind leak; old lift is historical.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K3",
+   "quote": "Extended 2 Jul 2026 to match the revised BG video, which tells the child Part 1 reaches the 'but'.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "992",
+   "quote": "If an appearance has to change, it changes for the unit and every video already made against it is wrong until it is remade.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 4. Mammals - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "10 (textutil text)",
+   "quote": "Instead of pulling from a section untouched by the other exercises, the cloze is now a SUMMARY of the whole text",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 4. Mammals - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "205 (textutil text)",
+   "quote": "Rule 3: cloze on the untouched \"Why Mammals Need Protection\" section, tap-in-order not drag.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "201 (textutil text)",
+   "quote": "Rule 3: cloze on the untouched \"Why Plants Matter\" section, tap-in-order not drag.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 3. The Animal Kingdom - SORT - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "211 (textutil text)",
+   "quote": "Rule 3: cloze on the untouched \"Why Sort Animals?\" and \"Always Learning\" sections, tap-in-order not drag.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 5. Feathers and Scales - CONNECT - Lesson Design (v3 - prototype-aligned).docx",
+   "lines": "263 (textutil text)",
+   "quote": "cloze drawn from the one untouched section",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 7. Invertebrates - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "200 (textutil text)",
+   "quote": "Rule 3: cloze on the untouched \"Staying Safe\" section, tap-in-order not drag.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 9. The Invisible World Microorganisms - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "195 (textutil text)",
+   "quote": "Rule 3: cloze on the untouched \"What Are Microorganisms?\" and \"Why They Matter\" sections, tap-in-order not drag.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "392-393",
+   "quote": "A rule fixed in the generator prompt does not reach any lesson already on disk, and a fix applied on disk does not survive the next regen",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "208",
+   "quote": "**Recommendation:** Consider regenerating questions scoring below 0.60 (97 questions) rather than fixing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/harness-2026-09-14.txt",
+   "lines": "3",
+   "quote": "test_changed_acceptance_contract_invalidates_old_pass",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-claude/bank/final/BANK_REPORT.md",
+   "lines": "43",
+   "quote": "- **Variants are NOT independently anti-leak-gated.** They inherit their base item's certified",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd",
+   "lines": "256",
+   "quote": "- rule that downstream invariants must be recomputed after any fix wave.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "269",
+   "quote": "Regenerating from the knowledge base discards all of that and reintroduces errors that were already caught once.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "47",
+   "quote": "Templates are expected in lessons within the week, and the lesson lane is to be rebuilt against that standard rather than extended from the reference course (DOK1-10).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "193-194",
+   "quote": "A block made before a rule changed is not drawn, whatever key a client sends. Before this fix, a playtest sent the saved link's first six blocks, all made before the line-number rule, and played them; three cited line numbers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "119-120",
+   "quote": "a native render or a playtest takes a block only if it is checked under today's rules: ready, and kept under the key … this text, question, kind and number make now.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "25",
+   "quote": "return hash(MAKER, String(text).trim(), String(question).trim(), mechanic, n, ...(ver > 1 ? [ver] : []));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "17",
+   "quote": "Bumped when what a maker produces changes (prompts, checks), so an old block is made again, not served.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "99-100",
+   "quote": "Bump its version whenever its prompt or checks change, so its blocks are made again.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "65",
+   "quote": "a block made again kept the build's saved progress (its node ids now carry the block's key)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "119",
+   "quote": "a native render or a playtest takes a block only if it is checked under today's rules: ready, and kept under the key",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "120",
+   "quote": "this text, question, kind and number make now. An unchecked or failed block, or one made before a rule changed, is",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "111",
+   "quote": "made under an older key: not played",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "65",
+   "quote": "a block made again kept the build's saved progress (its node ids now carry the block's key);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "71",
+   "quote": "build keeps a student's progress by node id, and a block made again is a new question, not one already answered",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "365",
+   "quote": "a progress of its own, apart from the build's and every other render",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "275",
+   "quote": "const key = crypto.createHash(\"sha256\").update(JSON.stringify([lesson, tables, vocab])).digest(\"hex\").slice(0, 10);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/bf53179f4d5d0451.json",
+   "lines": "69",
+   "quote": "Review the narration of the first beat, which focuses on exploitation rather than learning.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "193",
+   "quote": "A block made before a rule changed is not drawn, whatever key a client sends.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "41",
+   "quote": "a block made again is a new question in the build: its node id carries the block's key, its page id the label",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "69-70",
+   "quote": "saved blocks are shown at once and re-asked of the server, so a block an older maker made is made again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "69-70",
+   "quote": "saved blocks are shown at once and re-asked of the server, so a block an older maker made is made again (all six re-made, ready on the first or second try).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "832",
+   "quote": "when nothing changed, and a block made by an older maker is made again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "24",
+   "quote": "// what is drawn is in the key (each beat's props), so a change to the drawing makes the film again",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/server.test.mjs",
+   "lines": "100",
+   "quote": "a render or a playtest takes a block only if today's rules made it: one kept under an older key is not drawn",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "69-70",
+   "quote": "so a block an older maker made is made again (all six re-made, ready on the first or second try).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "22",
+   "quote": "// bumped when its prompt or checks change, so its blocks are made again (blocks.js)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "193-194",
+   "quote": "Before this fix, a playtest sent the saved link's first six blocks, all made before the line-number rule, and played them; three cited line numbers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "194",
+   "quote": "the saved link's first six blocks, all made before the line-number rule, and played them; three cited line numbers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/blocks.js",
+   "lines": "17",
+   "quote": "// Bumped when what a maker produces changes (prompts, checks), so an old block is made again, not served.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "44-47",
+   "quote": "Content that predates a rule is not an exception — it is listed item by item; the list WARNS on every run instead of failing (so debt stays visible); an unlisted violation still FAILS; an entry nothing currently matches FAILS (an exemption that outlived its cause is a silencer); and the list may only shrink.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CED-LOCAL-RECONCILIATION.md",
+   "lines": "46",
+   "quote": "No legacy SAQ is accepted by shape alone. Every authored SAQ must carry a verified source and source type.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "302-303",
+   "quote": "If an author silently uses the prior format, a whole practice sequence teaches the wrong task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "22",
+   "quote": "**M1. London's \"rules\" are only half removed.**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/research-pack-2026-10-02/full-source-site/sources/leadership/leadership--LEADERSHIP-PLAYBOOK.md",
+   "lines": "93-95"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "30",
+   "quote": "Items predating a rule sit in `scripts/known-debt.mjs` and warn rather than fail",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

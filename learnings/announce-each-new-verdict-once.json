@@ -1,0 +1,56 @@
+{
+ "id": "announce-each-new-verdict-once",
+ "title": "Announce each new verdict once",
+ "statement": "Announce each new piece of feedback once to assistive technology and keep restored earlier feedback quiet, so a screen-reader user never hears an old verdict as new.",
+ "example": "The repaired status passed 5 of 5 checks on the real components, each of which the old build failed as intended.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An audit of reading lessons found that several answer types, among them free responses, sequences and checked multi-select items, gave no lasting accessible update, while wrapping the whole reply history in a live region would have replayed old verdicts on every revisit. The repair put a small, stable, polite status at each interaction that announces each newly settled verdict, stays quiet for restored or repeated history and respects pending and outage states. Its tests passed 5 of 5 on the real components against 5 intended failures on the old build.",
+ "against": "Untested with real assistive technology: \"Actual assistive-tech speech remains separately open at reading-9ur.17.\" (grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json, line 3223)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/announcements.md",
+   "lines": "6",
+   "quote": "Several Reply owners lack a persistent accessible update, while generic live-wrapping history would replay old verdicts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/announcements.md",
+   "lines": "8",
+   "quote": "A small stable polite status at interaction owners announces each new settled identity, suppresses restored/repeated history and respects pending/outage transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/announcements.md",
+   "lines": "4",
+   "quote": "Submit a free response, sequence or checked MSQ; inspect the stable live region and revisit/history transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3223",
+   "quote": "realReact5/5candidate vs5intendedbaselinefailures",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

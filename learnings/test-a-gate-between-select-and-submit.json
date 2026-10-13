@@ -1,0 +1,62 @@
+{
+ "id": "test-a-gate-between-select-and-submit",
+ "title": "Test a gate between select and submit",
+ "statement": "Test an answer gate between selecting and submitting, including a right answer not yet submitted and one then changed, since a correct end screen cannot show an early release.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a Grade 3 reading lesson, selecting the right set in a multiple-select item unlocked Next before the learner pressed Check, and removing one right option left Next unlocked. The green screen after Check looked correct and would have hidden the fault, which showed only in captures of the unsubmitted and the changed states. An audit of the review workflow then required draft, submitted, revised-draft and resubmitted observations, with the page's Next and whether the answer can still be edited, for every control that commits a result.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "15",
+   "quote": "The MSQ's correct selection unlocked Next before Check, and removing a key left completion latched. A post-Check green screen looked correct.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g3/MSQ-CHECK-GATE.md",
+   "lines": "11",
+   "quote": "The successful post-Check screen alone would have hidden this defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "29",
+   "quote": "For controls that commit a result, require **draft → submitted → revised draft → resubmitted** observations, including parent Next and local editability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/WORKFLOW-AUDIT-by-unit1.md",
+   "lines": "31",
+   "quote": "Full end-state screenshots cannot prove absence of premature release.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/ACCEPTANCE-MATRIX.md",
+   "lines": "60",
+   "quote": "Correct green post-Check feedback did not invalidate the decisive pre-Check/removed-key failure.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

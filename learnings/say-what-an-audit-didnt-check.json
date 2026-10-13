@@ -1,0 +1,415 @@
+{
+ "id": "say-what-an-audit-didnt-check",
+ "title": "Say what an audit didn't check",
+ "statement": "Make every check and audit list, item by item, what it read and skipped, and treat the rest as unchecked until covered: a clean result proves only what was read.",
+ "example": "Six green audits failed a real review because none had asked which sources had never been ingested.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's certification contract says closed-world audits must say so: a pass that checks only the sources it ingested has to declare that scope, because six green audits failed a real review when none of them had asked what sources existed that were never ingested (`grade3-reading/artifacts/cert-layer/CONTRACT-v0-2026-08-31.md`). A critic of a later adherence audit, which had read the designs and the served lesson files, listed what that audit could not have checked, from rendered and hidden pages, audio and reading pace to the film, lesson timing and authorities it never consulted, because what the child sees is not what the file holds (`grade3-reading/artifacts/curriculum-adherence-2026-09-24/CRITIC.md`). A readiness plan's gate likewise asks for unobserved and blocked coverage to be stated explicitly (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/PLAN.md`). Unrecognised fields count among what a check did not read. Cover what lies beyond the scope as well, because defects gather just outside a check's scope.",
+ "against": "Phone and tablet findings were later ranked below the laptop student view: fixed if cheap, never blockers (`grade3-reading/knowledge_bot/knowledge/kb-0207-memory-digest-project-reference-user.qmd`, lines 1501-1525). The count check's weakness was rated a judgment, not an observed failure, since the reason for each bump was checked every time (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "286-287",
+   "quote": "Any verification pass that only checks ingested sources must declare that scope explicitly",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "288",
+   "quote": "six green audits failed a real review because none of them asked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/CRITIC.md",
+   "lines": "7",
+   "quote": "Why: what the child sees ≠ what the file holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/PLAN.md",
+   "lines": "70-71",
+   "quote": "state unobserved and blocked coverage explicitly",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "113",
+   "quote": "## Coverage — read this before trusting a clean result",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "123-124",
+   "quote": "**Schema drift is reported, not silent.** `SCHEMA-UNREAD` (info) names any field that holds prose the auditor never reads.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "115",
+   "quote": "- whether wrong-answer feedback agrees with the passage and with other feedback in the same activity (items 1, 9, 10),",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "59-60",
+   "quote": "Every wrong-voice report we have logged came from exactly that excluded set.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0189-validators-and-laws.qmd",
+   "lines": "61-62",
+   "quote": "every `.mp3` referenced anywhere in the lesson JSON (any field, any array) must carry a course-tts voice stamp.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0216-codex-visual-audit-2026-09-07.qmd",
+   "lines": "44-45",
+   "quote": "the content-check battery is desktop-only, so all three classes were invisible to it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "119-120",
+   "quote": "Dose teach MCQs bypassed the QTI debias pass, so rebalancing the graded bank never touched them: hook 69% A, we-do 53% A, **vocab 98% A** (53 of 54).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "127-128",
+   "quote": "**Enumerate every item type that carries a key**, then assert the enumeration > is non-empty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "74-76",
+   "quote": "Known scope trap: it once collected only MCQ nodes while breaches lived in narrated text nodes — **when a checker reports clean, verify what it collected.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "249",
+   "quote": "Name any lesson type the gate does not cover rather than implying full coverage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "219-220",
+   "quote": "**a gate that asserts something true about the wrong subject.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "226",
+   "quote": "header-swap mutation passed 34/34",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "229",
+   "quote": "**Read gates in review, not just product code.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "260-261",
+   "quote": "Assert the *contract* (\"the head derives from the score\"), not the string that happened to be there.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "244",
+   "quote": "MCQ-only collection missed narrated-text breaches twice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/VISUAL-QA-2026-09-11.md",
+   "lines": "30",
+   "quote": "sees this because the path is derived at runtime, not authored (validate-audio-refs walks",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "139",
+   "quote": "The audit script (audit.py) never reads think_aloud.states[].search / we_do.search fields at all",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md",
+   "lines": "22",
+   "quote": "**green at review time** (`ROUNDS.md` \"26 findings landed on lessons whose",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/AUTOMATED-CHECKS-ROADMAP-2026-08-31.md",
+   "lines": "56",
+   "quote": "JSON/JSX text**, and the findings that keep recurring are ones only visible",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "160",
+   "quote": "checkpoint-seeked capture this run did not take) and 6 are sequence-only or",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/VISION-QA-CALIBRATION-2026-08-31.md",
+   "lines": "181",
+   "quote": "The judge passed a screen that never contained the defect's own UI, so this is NOT evidence the fix holds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "81",
+   "quote": "the assertion only asks \"does the count match\", never \"is the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "84",
+   "quote": "review is of names, not a number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "562-564",
+   "quote": "it reads EVERY mp3 our lessons reference, which is the set `voice-provenance` excludes by its own admission and where all four wrong-voice reports originated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1064",
+   "quote": "Finding: 57 checkable criteria have no coverage — 49 of them rejection-grade.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1071",
+   "quote": "(1) extend the schema for the teaching + scheduling layers — nothing else is buildable first, and a course with no teaching layer will return `not_evaluable` rather than passing vacuously;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/sources/SOURCE-MANIFEST.md",
+   "lines": "6-9",
+   "quote": "Six deep audits ran green before that review because every one of them was closed-world: they verified the artifact against the sources we had already ingested, and none asked \"what sources exist that we haven't ingested?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/sources/SOURCE-MANIFEST.md",
+   "lines": "29-30",
+   "quote": "The failure mode this file exists to prevent is the silent one: a source nobody wrote down.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/sources/SOURCE-MANIFEST.md",
+   "lines": "20-21",
+   "quote": "The round does not proceed until the census is clear",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/sources/SOURCE-MANIFEST.md",
+   "lines": "6-9",
+   "quote": "Six deep audits ran green before that review because every one of them was closed-world: they verified the artifact against the sources we had already ingested, and none asked \"what sources exist that we haven't ingested?\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/sources/SOURCE-MANIFEST.md",
+   "lines": "20-22",
+   "quote": "**Every build/audit round STARTS with `npm run census`.** The round does not proceed until the census is clear — every NEW/CHANGED item is either ingested or explicitly deferred with a dated note in this file.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/sources/SOURCE-MANIFEST.md",
+   "lines": "27-28",
+   "quote": "**A source mentioned anywhere — chat, mail, call notes, a doc's own text — is a source.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "31",
+   "quote": "It leaves **137 question checks** and **2,277 generated return cells** unexecuted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "474",
+   "quote": "The missing scan is a technical coverage gap, not evidence the current voice is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/INDEPENDENT-TASK-AUDIT.md",
+   "lines": "5",
+   "quote": "Correction: the first extraction omitted `speak:open` nodes. The recognition-only claims for U9 L1/L2/L3/L5 were wrong and have been withdrawn after inspecting their required productive nodes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "406",
+   "quote": "Narration on legacy vocab, think_aloud, frame and speak nodes is out of scope.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "red_team/findings/ROUND-04.md",
+   "lines": "25",
+   "quote": "29.5% of the certified pool (184/624: 86 mcq + 94 msq + 4 ebsr) is structurally NOT covered by the cross-family blind probe",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "4-5",
+   "quote": "and so nobody reads a clean run as proof of more than it is.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/agent-damage.md",
+   "lines": "31",
+   "quote": "its 2026-07-08 claim 'Every item cross-family blind-solve certified' predates Round-4's finding that 184/624 choice/EBSR items were structurally NOT covered by that probe",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4321",
+   "quote": "I haven’t yet completed the guided/independent screens, so I wouldn’t claim those parts are missing or wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "276",
+   "quote": "I verified the GitHub branches, but couldn’t freshly verify what the hosted site currently serves.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "255-256",
+   "quote": "**This sweep covered six lessons, not all eighteen** — we are not claiming more than we measured.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "301",
+   "quote": "Roughly 120 of the 325 rules are not decidable from lesson JSON.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "122",
+   "quote": "- No human has listened: pronunciation (the narration README flags \"Roderigo\"), pacing, whether \"will kill her\" is plain, whether the score ducking breathes or pumps, musical quality of the fitted synth score.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "68",
+   "quote": "The page's own rules: the answers were written to pass them.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "33",
+   "quote": "Desktop full-page visual pass of every lesson screen | PARTIAL | screens 1, 2–6 traversed programmatically; screenshots of scene 1, check, scene 3, independent screen",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L5-2026-09-05.md",
+   "lines": "105-106",
+   "quote": "flagged as **NOTE-2**, not scored as a finding, because the reference file was not in the audit's input set.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "126-127",
+   "quote": "it proves only authored voiceover/*_voiceover objects",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "342-343",
+   "quote": "jsdom has no fetch, so they now exercise the no-manifest captions-only path",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "87",
+   "quote": "- **(d) Old harness file omission.** The initial harness loaded 12 of 13 bank files (`bank_ebsr_191_200.json` missing), i.e., 630 items rather than 650.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_RESPONSE.md",
+   "lines": "5",
+   "quote": "it audited only the 9-tab Google Doc.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

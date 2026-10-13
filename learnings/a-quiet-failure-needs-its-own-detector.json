@@ -1,0 +1,92 @@
+{
+ "id": "a-quiet-failure-needs-its-own-detector",
+ "title": "A quiet failure needs its own detector",
+ "statement": "Every rule that fails safe by going quiet, such as missing audio playing as silence, needs its own detector, or its failures stay invisible to other checks.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "media"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's rule that a missing clip plays as silence, never as wrong words, made missing audio invisible to every check built around whether the words match, because the rule's failure mode was never instrumented. Its QA notes conclude that a safety rule without a matching detector is a permanent blind spot, and its handover notes say every rule that degrades to quiet needs a detector.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "31",
+   "quote": "A safety rule without a matching detector is a permanent blind spot.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0201-process-lessons-qa-convergence.qmd",
+   "lines": "32-33",
+   "quote": "made missing audio literally invisible to every check built around \"does the words match,\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "457-458",
+   "quote": "Every rule that degrades to quiet needs a detector",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "453",
+   "quote": "Each is a superseded take to delete or a clip whose node lost its path:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-14.md",
+   "lines": "156-158",
+   "quote": "- **Silence is our designed failure mode** (missing clip = silence). Every rule that degrades to quiet needs a detector; derived asset paths (`<clip>-intro-1.mp3`) are invisible to `validate-audio-refs`' authored walk — the new rule covers staged think-alouds only.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "21",
+   "quote": "An em-dash sweep silences 80 clips per lesson until `gen_scout_tts.py` is re-run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "155-157",
+   "quote": "**All 100 referenced .mp3 files exist** on disk under `course-renderer/public/lesson-assets/grade-3/audio/u1/lesson-{4,5,6,7}/`. Zero missing files.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "175",
+   "quote": "a cleared clip nobody cuts is a silent defect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "822-824",
+   "quote": "Browser review after the G5-integrity round found 26 of 44 sampled narration sentences with no entry in `audio/manifest.json` — voice on old sentences, silence on exactly the new/changed ones",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

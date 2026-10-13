@@ -1,0 +1,173 @@
+{
+ "id": "help-that-waits-to-be-asked",
+ "title": "Help that waits to be asked",
+ "statement": "Keep help quiet and optional: glosses, notes and a few named helpers open only when the learner asks or with feedback, never as a constant guide or per-part buttons.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "accessibility"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Early drafts of a Grade 9 unit opening with a visible guide character and constant assistant behaviour were rejected, and the 6 October handover records that the required direction became a mature storytelling experience with quiet on-demand help (line 500); one of its design rules makes support quiet, optional and on demand (line 76). The rebuilt prototype offers three optional scripted helpers, one for a word's meaning or source context, one for a generic next step and one for a manageable way to begin, and during an independent attempt the meanings helper must not write the learner's claim or explain the interpretation being assessed (handover line 155; `g9/prototypes/review-build/DESIGN.md`, line 7).",
+ "against": "On 7 October a visible guide character came back as the film's narrator and questioner, not as help (`g9/film/v07/README.md`, line 11), so the rejection held for help that interrupts, not for every on-screen guide. 'The help examples are scripted, not live AI.' (line 4612) and 'Whether they appear as three characters or different modes remains a design decision.' (line 2871), both in `g9/transcript/chat-transcript.redacted.txt`. The changes to the built lesson were proposed, not built or tried with students. The overload was a judgment, not a measurement, and no script checks the notes against the checkpoints, so the rule that a note never answers one is stated, not tested.",
+ "evidence": [
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "76",
+   "quote": "Make support quiet, optional, and on demand. Avoid an assistant that constantly interrupts.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "500",
+   "quote": "The visible Archivist concept and constant assistant behavior were not the desired approach. The required direction became a mature illustrated storytelling experience with quiet on-demand help.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "155",
+   "quote": "offers a generic next step such as linking a claim to a word and explaining the connection.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "155",
+   "quote": "helps the learner begin with a manageable action.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "155",
+   "quote": "All three are optional scripted support in the current prototype, not a live adaptive tutor.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/review-build/DESIGN.md",
+   "lines": "7",
+   "quote": "controls provide three distinct forms of scripted support; they do not pretend to be live AI.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4568",
+   "quote": "also, given the nature of the age of the students , not to have 1 annoying assistant, but maybe 3 icons that each have their ownb type of help",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4589",
+   "quote": "three quiet, on-demand help icons could work better here",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4589",
+   "quote": "No unsolicited pop-ups or constant chatter. I’ll make that a visible option in the previews, with each icon clear about what help it gives.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "6013",
+   "quote": "Offer different kinds of help without making one authoritative guide the centre of everything (pp.9, 13).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5483",
+   "quote": "My read: the younger feel comes mainly from how constantly the tutor directs the student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5487",
+   "quote": "Retrieval introduces the Archivist on a separate screen, then repeats the same instruction in a speech bubble. Put the instruction directly above the activity and let students start.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5491",
+   "quote": "Bring a guide into view when the student requests help or receives meaningful feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5495",
+   "quote": "I wouldn’t remove scaffolding merely to make it look older; changing how much teaching students receive is a separate decision.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/context.ts",
+   "lines": "2",
+   "quote": "details that usually come up in classroom discussions — currently missing in the scripts",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/context.ts",
+   "lines": "3",
+   "quote": "Pulled, never pushed: a quiet mark beside the line; the note opens in the side panel only if the student asks.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/context.ts",
+   "lines": "4",
+   "quote": "never answers a checkpoint; no context dumps.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "3",
+   "quote": "removed per-part help on 2 Oct (\"overloaded the learning\").",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DESIGN.md",
+   "lines": "23",
+   "quote": "Gloss words: dotted underline in ink. Tapped → the side panel shows the gloss. Never hover-only (tablets).",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "sources/l1-script/Othello Lesson 1 (1.1)_ Lesson Script v3, Stage 1.txt",
+   "lines": "102",
+   "quote": "button sits beside each part (see Appendix B of the reading text).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

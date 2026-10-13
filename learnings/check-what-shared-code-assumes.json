@@ -1,0 +1,235 @@
+{
+ "id": "check-what-shared-code-assumes",
+ "title": "Check what shared code assumes",
+ "statement": "When content or code is shared or ported between courses or levels, compare their conventions one by one and check what the shared code assumes.",
+ "example": "A new level's word cards dropped a say-the-word step on 28 of 28 cards that the shipped level used on 12 of 12.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "alignment",
+  "wording"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review that compared every convention of a new level's lessons with the level already shipped found that the new level's word cards silently dropped the say-the-word step, 28 of 28 cards against 12 of 12 (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R5.md`). A later review found a marking prompt that serves every grade hard-coding \"a sentence a third grader could say aloud\" (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-15-R22.md`), and a port of display code assumed a field the new course never had, so its fallback silently produced a worse screen instead of failing loudly (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-21-R8.md`). Otherwise silent departures and wording fixed to one level slip through.",
+ "against": "Differences the content licenses are not defects: the comparison set aside any difference \"licensed by different canon, different genre (continuous Odyssey narrative vs. four\" (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R5.md`, line 11) or different difficulty.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-20-R5.md",
+   "lines": "45",
+   "quote": "established on every card, course-wide (28/28 G5 cards vs 12/12 G4 cards).**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-15-R22.md",
+   "lines": "34",
+   "quote": "#503 fragment rule (`oneWordRule`): **hardcodes \"a sentence a third grader could say",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-21-R8.md",
+   "lines": "35",
+   "quote": "(`station`) that G5 never authored, and the fallback silently produces a worse UI than what it",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "11",
+   "quote": "letters only: both builds look a key word up in a folded transcript, where a hyphen, apostrophe or accent is lost",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "14",
+   "quote": "The 3D build's src/steps/Close.tsx (norm, lev, hasTerm), copied",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "15",
+   "quote": ".replace(/[^a-z ]/g, \" \")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "26",
+   "quote": "if (forms.some((f) => words.includes(f.trim()))) return \"yes\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "55-56",
+   "quote": "Each is ONE word, written exactly as it is in the sentence, letters only.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/say-it-back.js",
+   "lines": "77",
+   "quote": "Every key word is one word, letters only",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "212",
+   "quote": "the build's quote card names Iago beside any reference.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "374",
+   "quote": "no act and scene for a text that has none",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "375",
+   "quote": "the big idea only where the lesson has one",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "261",
+   "quote": "its key-word cards say \"Link to deceit\": our links go on them only when that is our centre too",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "41-42",
+   "quote": "Type-checked against its own `src/contract.ts` with the TypeScript compiler: **0 errors in the exported lesson**.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "357",
+   "quote": "Exact edits in the scratch copy, each found as many times as it says or the export fails, naming it (the build",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "409",
+   "quote": "is not in it any more (${p.why})",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v08/README.md",
+   "lines": "13",
+   "quote": "**Exit criteria:** each export validates against its target's schema; an imported lesson round-trips.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "203",
+   "quote": "a student's words, run its checks on exports, and a screen for compare two answers.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "33",
+   "quote": "const ctx = { text, question, grade: input.grade ?? 9, focus: [], avoid: avoid.filter(Boolean) };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/server.js",
+   "lines": "171",
+   "quote": "grade: body.grade ?? 9",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "6",
+   "quote": "You write one activity for a Grade 9 English lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "126",
+   "quote": "Would a typical Grade 9 reader know what term_${k} means in line_${k} unaided?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "20",
+   "quote": "The mechanics and the animation are for Grade 9 and older readers, and the work lives in",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "70-71",
+   "quote": "G5 content is expository rather than narrative, and it names things in two shapes this checker was never tuned for",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7248",
+   "quote": "Its script also hard-codes a child-facing delivery, so running it unchanged would give the wrong performance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/GRADE_5_REVIEW_NOTES.qmd",
+   "lines": "30",
+   "quote": "Grade 3-specific story content, mascot language, passage chunking, vocabulary count, or item policy",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "390",
+   "quote": "The two are not equivalents and should not be presented as versions of each other.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "390",
+   "quote": "The two are not equivalents and should not be presented as versions of each other.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/KB-1-1-NOTES-2026-10-01.md",
+   "lines": "32-33",
+   "quote": "The G9 stems are a different, essay-paragraph frame. G9 needs its own frame ruling; don't carry ours over.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

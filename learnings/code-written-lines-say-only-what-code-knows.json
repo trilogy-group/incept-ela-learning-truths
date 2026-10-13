@@ -1,0 +1,55 @@
+{
+ "id": "code-written-lines-say-only-what-code-knows",
+ "title": "Code-written lines say only what code knows",
+ "statement": "Lines that code writes around any text should say only what code can know, such as who speaks or which section comes next, never what the passage means.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The 3D export writes a guide box before and after each section of whatever text it is given. Its code names who speaks in the next section, read from the text's speaker marks, or asks the reader to read slowly with the question in mind, and its comment rules out anything more: who speaks, never the content. Code can read who speaks and where a section falls but cannot know what a passage means, so lines held to the first stay true for any text.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "114",
+   "quote": "Plain lines of ours: who speaks, never the content.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "118",
+   "quote": "k === 0 ? \"first section\" : k === secs.length - 1 ? \"final section\" : \"next section\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "119",
+   "quote": "return say(who ? `In this ${where}, ${who}.` : `In this ${where}, read slowly, with the question in mind.`);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "109",
+   "quote": "const speakers = (sec) => [...new Set(sec.blocks.filter((b) => b.k === \"sp\" && b.who).map((b) => title1(b.who)))];",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

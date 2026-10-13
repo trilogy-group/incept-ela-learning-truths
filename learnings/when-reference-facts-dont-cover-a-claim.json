@@ -1,0 +1,113 @@
+{
+ "id": "when-reference-facts-dont-cover-a-claim",
+ "title": "When reference facts don't cover a claim",
+ "statement": "Whether a judge given reference facts should fail a claim the facts don't support, or only a claim they contradict.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The AP work's evaluator has two grounding designs that disagree. On an unmerged branch the judge is told that a claim no listed fact supports is unsupported, and the facts are capped at 30 per standard, taken in source-file order with no relevance ranking (`icloud-work/inceptbench/src/inceptbench/evaluators/base.py`). The fact audit and the reference-passage path on the main branch fail only a claim a passage directly contradicts, and say not to penalise correct content a passage doesn't mention (`icloud-work/inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py`, `icloud-work/inceptbench-main/src/inceptbench/evaluators/question.py`). With the cap, many true claims would have no matching fact, which argues for the contradiction-only reading, but neither reading has been tested.",
+ "against": "none found; neither reading has been tested.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "620",
+   "quote": "If a claim cannot be supported by an atom listed here, it is unsupported.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "622",
+   "quote": "Cap at 30 atoms to keep prompt size bounded",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/src/inceptbench/evaluators/base.py",
+   "lines": "624-625",
+   "quote": "Atoms are taken in … source-file order (no relevance ranking)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "212",
+   "quote": "3. Score **0.0** ONLY if a passage clearly and directly contradicts",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/question.py",
+   "lines": "1241",
+   "quote": "- Do NOT penalize correct content just because Wikipedia doesn't mention it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "123",
+   "quote": "two readings pose a question, which is neither true nor false: there, nothing said may go against the passage",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "125",
+   "quote": "Does narration_${k} avoid saying anything that passage contradicts?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "126",
+   "quote": "Is everything narration_${k} says true to passage?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/4370894c30725db3.json",
+   "lines": "837",
+   "quote": "\"value\": 0.57,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "177",
+   "quote": "an argument beat's narration that was not \"true\": it now has only to say nothing the text goes against;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "125",
+   "quote": "narration says nothing the text goes against",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/video-essay.js",
+   "lines": "126",
+   "quote": "narration is true to the text",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

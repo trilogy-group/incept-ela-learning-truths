@@ -1,0 +1,841 @@
+{
+ "id": "pipeline-failures-are-not-content-failures",
+ "title": "Pipeline failures are not content failures",
+ "statement": "Report a pass rate over every requested item from live verdicts only, keeping errored, unrun or cached checks and other pipeline failures apart from content failures, none dropped.",
+ "example": "Judge timeouts on long outputs made one item type read 13.3% when its true rate was put at about 45%.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP project, lumping server errors with unreadable outputs produced a false claim that one version was more brittle, and the lesson was to count transport, parse and schema failures separately (`icloud-work/aptraining/.agent/LESSONS_LEARNED.md`; `icloud-work/aptraining/.agent/memory/MEMORY.md`). Judge timeouts on long outputs, at about 67% of one type's gradings, made that type read 13.3% when its true rate was put at about 45%, and leaving generation errors out overstated historical pass rates by 10-25 points (`icloud-work/aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md`; `icloud-work/aptraining/.agent/research/failure_taxonomy.md`). A 0/150 run came from a judge address that pointed at a dead machine, a 6.67-point 'drift' from an output-cleaning pattern that missed the model's tag, and a misnested score lookup silently returned 0.0 (`icloud-work/aptraining/.agent/memory/BEADS.md`; the memory file), so the standing rule is to check the judge's health before diagnosing the model on any all-zero or all-fail result. When the checking tool also fails on the unchanged base, judge the change by the failures it adds.",
+ "against": "The 'TRUE ~45%' figure is the status note's estimate, not a re-graded rate. A clean pipeline audit is weak evidence on its own: one came back 'All three CLEAN;' (`icloud-work/aptraining/.agent/memory/SESSION_DECISIONS_2026_05_11.md`, line 29) while its judge check replayed a single row (`icloud-work/aptraining/.agent/memory/BEADS.md`, line 284). The note contradicts itself on the count: line 25 says all 24 were service errors, while line 27 says 2 of the 24 were genuine failures; the result note agrees with 22 and 2 (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`, line 41). A missing file does not make a claim false: a later review found the cited collapse real on other grounds (`icloud-work/aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md`). The project's validation note argued that passes served from cached content were acceptable, since that content had once passed the live judge (`icloud-work/aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/VALIDATION_REASON.md`). A response in the wrong shape is a failure of the delivered item, not missing evidence (`icloud-work/aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md`). A skip because data is unavailable keeps the score and adds a caveat (`icloud-work/inceptbench-main/tests/test_factual_audit_skipped_scoring.py`, line 75); the fact audit fails open, scoring 1.0, when no reference passages come back (commit 8aedb57); other errors are still tolerated as transient (commit 101e555); and the AP context path still returns an empty context with only a log line on an unknown curriculum, missing skills, no match, a course mismatch or any error (`icloud-work/inceptbench-main/src/inceptbench/evaluators/base.py`, lines 759-821). Those tests use synthetic observations: the gate checks case ids, status and nonblank evidence text, not whether the evidence is a genuine measurement (`grade3-reading/artifacts/codex-qa/tool-reuse-assessment-2026-09-14.md`). Timeouts cluster on long outputs: the other item types timed out on 1-6% of calls (`feedback_ib_grader_v266_dbq_mcqset_timeout_99pct_at_concurrency_default_2026_06_02.md`, line 7). Unreadable output is the item's own failure when the format is part of the task, as when training on 262 answer-format rows left 0 of 150 outputs parseable (`project_eval_is_question_generation.md`, line 56), so such outcomes are counted apart, not dropped. A missing file can be a sync delay rather than a false claim (`feedback_eval_runs_sync_to_icloud.md`, line 31). For missing curriculum context the same evaluator keeps going instead: on a transient error it fails open and degrades to an empty context. Scores that do not apply are now stored as 1.0, with a separate flag as the authoritative signal, so an average that includes them reads them as passes. The lab sometimes counted the other way, treating score errors as failures, and leaving failures out is safe only with the completion rate reported beside the pass rate, as the same contract's four separate metrics do. The promoting note argued that the predictor was grader-backed: \"the cached archetype is itself derived from live-IB-validated v80bchain content, so it's not \"deterministic-from-bank\" in the prior sense.\" (icloud-work/aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/VALIDATION_REASON.md, line 62). Only the question-set runs slipped through: the short-answer and document-based runs held to the same bar carried returned ratings. Practice drifted from this: \"6 fails (5 INFERIOR + 1 None) are real IB rejections.\" (aptraining-local/den-of-ideation/reports/validation_triage/20260524T071351Z_2026-05-24T0713Z_UNIT1_DBQ_SOLVER_VALIDATED.md.md, line 113) counted a row with no rating as a grader rejection. All 101 errors in the 480-item run came from a difficulty level the test plan requested but the generator never supported (`icloud-work/ap-social-studies-generator/python/benchmark_runs/PARTIAL_RESULTS_SUMMARY.md`, line 26), so they are a fault in the request more than in the generator, and the project left infrastructure errors out on purpose (`icloud-work/ap-social-studies-generator/CHANGELOG.md`, line 171: \"- 503 errors from Gemini excluded from pass rate (infrastructure issue, not quality)\"). Reporting both rates covers both cases. A deployed question generator does the opposite to stay available: it retries until success and falls back to extracting JSON by hand (`icloud-work/incept/question-generator-api/docs/GOALS.md`, `icloud-work/incept/question-generator-api/docs/ISSUES.md`). That serves a live service, not an evaluation.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/LESSONS_LEARNED.md",
+   "lines": "65",
+   "quote": "**Lesson:** Always bucket: parse fail (model output broken) vs transport fail (5xx) vs schema fail (valid JSON, wrong structure). Don't aggregate them.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "162",
+   "quote": "`parse_ok=false` lumps 5xx with JSON fails; misread cost a wrong \"v20a more brittle\" claim. Always bucket by error type.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md",
+   "lines": "49",
+   "quote": "| apush/mcq_set | 20% | 13.3% (TRUE ~45%) | 16.7% | Grader timeout on long outputs; TRUE rate higher |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md",
+   "lines": "97",
+   "quote": "mcq_set grader times out on long outputs (~67% grade_fail rate)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "452",
+   "quote": "If errors are added back, the apparent pass rates fall by another 10-25pp depending on cell.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "221",
+   "quote": "Retraction: bon_decode 0/150 root cause is IB endpoint IP mismatch (.10 vs .17), NOT best_of_n.py",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "109",
+   "quote": "The −6.67pp v29 \"drift\" was a stale `strip_think` in `oneshot_generate.py` (matched `<thinking>` long-form only; Qwen3 emits `<think>` short-form).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "101",
+   "quote": "Misnested lookup silently returns 0.0; bug hit in oracle rescore script.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "89",
+   "quote": "(3) For all-zero/all-fail anomalies, check grader endpoint health BEFORE diagnosing model bug.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_eval_503_hiccup.md",
+   "lines": "16",
+   "quote": "The model never produced output.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_eval_503_hiccup.md",
+   "lines": "25",
+   "quote": "**All 24 of v20a's failures were `http_503`s — deployment infrastructure errors, not model output errors.** v18's 6 failures were genuine `Unterminated string` JSON failures. Apples to oranges.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_eval_503_hiccup.md",
+   "lines": "27",
+   "quote": "After retry of the 22 503'd prompts (2 of the 24 were JSON failures), v20a's true parse robustness is **2/297 JSON failures**, vs v18's **6/297**. v20a is actually **more** robust at producing valid JSON, not less.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "17",
+   "quote": "(Initial pass had 22 records lost to deployment 503s, which scored 0; clean re-score after retry is the real number.)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "41",
+   "quote": "- **First read was wrong** — see `feedback_eval_503_hiccup.md`. Initial 24 \"parse fails\" were 22 http_503s + 2 JSON failures. After retrying the 22 503s the merged file is 295/297 parse_ok. v20a's true JSON robustness is **2 fails vs v18's 6** — v20a is actually MORE robust at JSON, not less.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "230",
+   "quote": "11 phantom FAILs cost a diagnosis round",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "84",
+   "quote": "27 false positives cost a full pass to disprove",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "250",
+   "quote": "a transcript finding and a dead process are no longer the same red",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "135",
+   "quote": "The L4 annotation slice adds ZERO failures over base (4 base-subset fails on the",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "60",
+   "quote": "battery 10 fail vs staging 11 (strict subset)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/THELOOP.md",
+   "lines": "753",
+   "quote": "1. **Shadow T8 phantom** (2026-05-06T0005Z) — v29 baseline 0.8667 was being cited across 5+ memos including v42/v40h FINAL verdicts; citation trail terminated at \"historical\" with no on-disk file at canonical schema.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/01_HANDOVER.md",
+   "lines": "66",
+   "quote": "- The only v39 summary file shows 0/150 with **8ms elapsed** — eval never actually ran",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/01_HANDOVER.md",
+   "lines": "68",
+   "quote": "- Eval harness was sending **empty user prompts**, model responded with chatbot fallback",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/VALIDATION_REASON.md",
+   "lines": "5",
+   "quote": "**Verdict:** 50/50 = **100.0% STRICT FRESH** — zero timeout-fallback, all v80bchain fresh generation",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/VALIDATION_REASON.md",
+   "lines": "28",
+   "quote": "**No fallback path.** Parallel K=4 with archetype-predictor scoring. Best fresh K of 4 returned.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/VALIDATION_REASON.md",
+   "lines": "13",
+   "quote": "| Timeout-fallback passes (cached content) | 4/50 = 8% | **0/50 = 0%** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1",
+   "quote": "\"ib_score\": 0.95, \"ib_rating\": \"PREDICTED_PASS_CACHE_NEIGHBOR\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1",
+   "quote": "\"decision\": \"predicted_pass_skip_live_ib\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1830Z_den_solver_v2_online_K_N_with_cache/SECOND_TIER_REASON.md",
+   "lines": "39",
+   "quote": "Effective behavior: high pass rate ONLY for substandards the cache has seen before; cap_reached for novel substandards. Pass rate ≈ cache hit rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/.agent/memory/feedback_check_score_phase_duration.md",
+   "lines": "3",
+   "quote": "If 4,800 IB calls \"complete\" in 5 seconds, scoring failed silently — likely auth or routing.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/.agent/memory/feedback_check_score_phase_duration.md",
+   "lines": "29",
+   "quote": "The script masked this as per-row scoring errors (`ib_overall=None`, `ib_hard_fails=[\"ib_http_401\"]`) instead of aborting on systemic failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/RESULTS.md",
+   "lines": "71",
+   "quote": "**mcq_set diverges by -26.7pp** in clone's run — driven by `n_score_err=29/150` in clone's scoring pass, almost certainly concentrated on mcq_set (avg_overall=0.179 implausibly low otherwise; auto-zeroed errors deflate that cell).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/SELECTOR_CALIBRATION_TAKEAWAYS_20260520.md",
+   "lines": "28-29",
+   "quote": "6. Timeouts are evidence gaps, not content failures. - Evidence: first calibration smoke marked DBQ as 0.0 because local IB timed out, while existing winner scores showed the same rows passed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "147",
+   "quote": "Infra failures should not be analyzed as content quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/evidence/FUTURE_RUN_IMPROVEMENT_BACKLOG_20260521.md",
+   "lines": "149-154",
+   "quote": "Future run classification should first split: … `infra_failure`: model 404/502, timeout, auth, Render cold start, Gemini timeout. … `contract_failure`: response shape invalid for OpenAPI/IB. … `content_failure`: IB evaluated content and failed. … `variety_failure`: passable but static/reused.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "116-117",
+   "quote": "The audits found number drift in documents (0.930 vs 0.928) — which is why the gate lives in code.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01_session_end/SHADOW_HANDOVER.md",
+   "lines": "127",
+   "quote": "**Reality:** the only v39 summary in `workspace/eval/runs/` does show 0/150 with 8ms elapsed — true. But the regression IS real per 0758Z REFRESHER (\"v39 catastrophic, v40 empty outputs, both auto-deleted by Fireworks\").",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/VALIDATION_REASON.md",
+   "lines": "62",
+   "quote": "main-a recommends YES — the cached archetype is itself derived from live-IB-validated v80bchain content, so it's not \"deterministic-from-bank\" in the prior sense.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/WEEKLY_APUSH_PIL_REPORT_20260520.md",
+   "lines": "498",
+   "quote": "8. OpenAPI shape must be enforced at the boundary.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_data/2026-06-02T0341Z_quill_DELIVERED_v92_IB_DBQ_failure_mode_analysis_TIMEOUT_NOT_FAILURE.md",
+   "lines": "10",
+   "quote": "**v92 DBQ pass rate on IB v2.6.6 at n=500 is UNKNOWN.** The \"1% PASS\" headline reflects 99 IB-side TIMEOUTS and 1 valid IB judgment (which PASSED at score 1.0).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/ALERT_2026-06-02T0712Z_v92_IB_DBQ_n100_FIRM_VERDICT_62.2pct_+62pp_lift_PARTIAL_confirmed.md",
+   "lines": "25",
+   "quote": "**v92 DBQ on IB v2.6.6 = 62.2% PASS on 98 valid evals (n=100, 2.0% timeout).**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0615Z_REPORT_unit1_mcq_solver_v2_repair_delivery.md",
+   "lines": "14-16",
+   "quote": "- headline: 47/50 - strict-fresh: 30/50 - predicted timeout fallbacks: 17",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/EXTERNAL_AGENT_BRIEF.md",
+   "lines": "162",
+   "quote": "Our `parse_ok=false` initially counted both transient HTTP 503s (deployment cold-start, not the model's fault) and JSON parse failures (model's fault). For one hour we believed v20a was \"more brittle than v18.\" It wasn't — the deployment was cold-starting.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_shadow/2026-05-01T1238Z_eval_runs_phantom_audit_v2.md",
+   "lines": "37",
+   "quote": "`n_score_err=29/150 (19%)` — pass_rate 0.5333 is on 121 graded rows, not 150",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "101e555",
+   "lines": "8-9",
+   "quote": "The result: evaluations ran without curriculum context with no signal that anything was wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_decomposition_loud_failure.py",
+   "lines": "1-2",
+   "quote": "Tests that decomposition failures propagate loudly instead of silently flattening content into a single evaluation prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_curriculum_loud_failures.py",
+   "lines": "1-2",
+   "quote": "Tests that curriculum API errors propagate loudly through the evaluator pipeline instead of being silently swallowed into an empty context.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_factual_audit_skipped_scoring.py",
+   "lines": "44",
+   "quote": "Auditor error skip on a perfect item must downgrade overall to ACCEPTABLE.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_stimulus_llm_failure_fallback.py",
+   "lines": "4-8",
+   "quote": "When `_extract_stimulus_promises_llm` exhausts its retries and returns None, the detector must still flag a mismatch if the regex fast-path saw a real visual reference and no actual stimulus is present. Otherwise an LLM outage silently disables the entire mismatch detector and \"Look at the chart\" with no chart attached gets a free pass.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "288",
+   "quote": "claims \"the new verbatim-fidelity ratchet in course-renderer\" landed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "525",
+   "quote": "Do not ship \"v1 PASS\" on an unrun check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/harness-2026-09-14.txt",
+   "lines": "10",
+   "quote": "test_empty_observations_are_not_success",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/harness-2026-09-14.txt",
+   "lines": "9",
+   "quote": "test_duplicate_cases_are_not_coverage",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/harness-2026-09-14.txt",
+   "lines": "21",
+   "quote": "test_timeout_is_incomplete",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/FACTS_SHEET.md",
+   "lines": "44",
+   "quote": "Therefore the verdict is **\"PASS-with-Caliper-unverified\"**, NEVER a bare \"PASS\".",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_ib_grader_v266_dbq_mcqset_timeout_99pct_at_concurrency_default_2026_06_02.md",
+   "lines": "10",
+   "quote": "- DBQ: 1 real eval + 99 timeouts → headline 1% PASS (artifact)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_ib_grader_v266_dbq_mcqset_timeout_99pct_at_concurrency_default_2026_06_02.md",
+   "lines": "38",
+   "quote": "Effective_eval_count = N − timeouts, which is the true sample size.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_ib_grader_timeout_300_mcq_set.md",
+   "lines": "11",
+   "quote": "**28 of 30 mcq_set rows timed out** producing `grade_fail status` and corrupting the cell pass-rate denominator.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "75",
+   "quote": "`parse_ok=false` lumps 5xx with JSON fails; misread cost a wrong \"v20a more brittle\" claim. Always bucket by error type.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_gemma4_wraps_json_in_markdown_fences_default_2026_06_02.md",
+   "lines": "9",
+   "quote": "2026-06-02 IB n=500 eval of v92 first-run failed 499/500 with `json_parse:JSONDecodeError`.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_eval_runs_sync_to_icloud.md",
+   "lines": "16",
+   "quote": "Without sync, helpers running phantom-audit on numeric claims correctly find no backing file, even when the claim is real on main-A's laptop.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_eval_runs_sync_to_icloud.md",
+   "lines": "30",
+   "quote": "Phantom-audit should grep `_meta.n_input` vs `total.n` to detect; example seen on `summary_v29_drift_recheck_v2_2026_05_04.json` where n_input=150 but total.n=110.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "31baee4",
+   "lines": "5-8",
+   "quote": "so the degraded result was a misleading overall=0.0 with zero items — indistinguishable from a real content FAIL to a naive consumer. Surfaced by a real full-course run where a gateway outage left 51/126 lessons at degraded 0.0 with no underlying scores.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "31baee4",
+   "lines": "10-11",
+   "quote": "raise so the lesson is recorded as a failed_item (honest \"couldn't evaluate\") rather than a 0.0 score.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "d96a760",
+   "lines": "14-16",
+   "quote": "score=0.0 N/A metrics were registering as real failures in _failure_counts() and driving overall_score_bounds() into the wrong band.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "52b4227",
+   "lines": "4-6",
+   "quote": "Since errored items are excluded from the pass-rate denominator, a stable verdict regression that failed once and then hit a transient error on retry would be downgraded FAIL -> ERROR and silently drop out of the gate",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "52b4227",
+   "lines": "10-11",
+   "quote": "Otherwise a genuine FAIL sticks — a later ERROR cannot overwrite it",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "17",
+   "quote": "- evaluators/base.py: fail-OPEN on *transient* curriculum errors (network,",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "18",
+   "quote": "408/429/5xx after retry exhaustion) -> degrade to empty context;",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "d96a760",
+   "lines": "12-14",
+   "quote": "no-stimulus N/A sentinel metrics (score=0.0) corrupt constrained_overall_score(): change _na sentinel to score=1.0. The has_shared_stimulus=False flag is the authoritative signal;",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/run_324d5e51_what_is_really_going_on.md",
+   "lines": "4",
+   "quote": "**TL;DR:** The headline 14.6 % \"pass rate\" is **meaningless**. The actual model is performing at **70.2 %** on the items that survived two stacked infrastructure failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "21",
+   "quote": "- **Proof it's not code/model:** the same commit (`bb577e2`) produced a 0.0% run and an 84.3% run **26 minutes apart**.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_4c9da828_live_export_analysis.md",
+   "lines": "7",
+   "quote": "Pass rate on evaluated rows only: 861/1020 = 84.4%",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/reports/run_4c9da828_overview.md",
+   "lines": "36",
+   "quote": "**Overall: 861/1080 (79.7%)**",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "211",
+   "quote": "- My initial analyzer conflated skips with failures.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "212",
+   "quote": "- Fixed: track `local_status`, `had_local_error`, `ib_scored` separately.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/run_73348c1a_orchestrator_contract.md",
+   "lines": "98",
+   "quote": "- Schema failures must be counted separately and excluded from quality pass-rate denominators.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/experiments/prompt_perfection/NOTES.md",
+   "lines": "874",
+   "quote": "- MCQ_SET still needs at least `+10` counting score errors as failures.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/run_73348c1a_orchestrator_contract.md",
+   "lines": "139",
+   "quote": "Report four metrics separately:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/run_73348c1a_orchestrator_contract.md",
+   "lines": "142",
+   "quote": "2. Eval completion rate: `real_eval_results / gen_ok`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1-50 (all 50 rows)",
+   "quote": "\"ib_rating\": \"PREDICTED_PASS_CACHE_NEIGHBOR\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-23T0840Z_den_solver_v10_STRICT_FRESH_K4/den_solver_acceptance_20260523T082319Z.jsonl",
+   "lines": "1-50 (all 50 rows)",
+   "quote": "\"decision\": \"predicted_pass_skip_live_ib\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/VALIDATION_REASON.md",
+   "lines": "25",
+   "quote": "| Fresh v80bchain generation → IB pass | 46 | 92.0% | 0.95-1.00 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/validated/2026-05-22T2116Z_den_solver_v8_FIRST_VALIDATED/den_solver_acceptance_20260522T210237Z.jsonl",
+   "lines": "46 of rows 1-50 (all but 12, 35, 42, 45)",
+   "quote": "\"decision\": \"predicted_pass_skip_live_ib\"",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/main_a_acceptance_runs/den_solver_acceptance_20260524T183207Z.jsonl",
+   "lines": "1-50 (all 50 rows)",
+   "quote": "\"decision\": \"predicted_pass_skip_live_ib\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-22T1910Z_iterate_toward_LLM_FINAL_compatible.md",
+   "lines": "23",
+   "quote": "3. If predicted-pass: skip full IB grade, return generation directly",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T073015Z_2026-05-24T0601Z_UNIT1_MCQ_SOLVER_REPAIR.md.md",
+   "lines": "136",
+   "quote": "Den v10 precedent (MCQ_SET, 2026-05-23T08:40Z) was promoted as **VALIDATED** specifically because it cleared 50/50 STRICT FRESH with zero timeout fallback. That set the bar.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T084525Z_2026-05-24T0844Z_UNIT1_MCQ_SOLVER_VALIDATED.md.md",
+   "lines": "157",
+   "quote": "Same bar as Den v10, Den SAQ v1, Den DBQ v1 (no PREDICTED_PASS_LOCAL_* anywhere).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/current_completion_audit_20260524T2053Z.md",
+   "lines": "15",
+   "quote": "Complete: hidden `50/50`, all fresh, zero fallback",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_mcq_solver_v2_validated_addendum_20260524T085013Z.md",
+   "lines": "39",
+   "quote": "| strict-fresh pass | `30/50` / `60%` | `43/50` / `86%` |",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_mcq_solver_v2_validated_addendum_20260524T085013Z.md",
+   "lines": "43",
+   "quote": "The headline rate dropped because v1 was counting fallback-aided passes; v2 is the defensible result.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2056Z_DELIVERED_pipeline_solver_v8_timeout_fallback.md",
+   "lines": "29",
+   "quote": "`passed=32`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2056Z_DELIVERED_pipeline_solver_v8_timeout_fallback.md",
+   "lines": "38",
+   "quote": "15+ failures were two consecutive `ReadTimeout: The read operation timed out`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T2056Z_DELIVERED_pipeline_solver_v8_timeout_fallback.md",
+   "lines": "48",
+   "quote": "`ib_rating=PREDICTED_PASS_TIMEOUT_TEMPLATE_FALLBACK`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1709Z_DELIVERED_pipeline_solver.md",
+   "lines": "95",
+   "quote": "0/10 under strict cap",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-22T1709Z_DELIVERED_pipeline_solver.md",
+   "lines": "99",
+   "quote": "it does not clear the 78% fresh-pass acceptance gate because IB does not return MCQ_SET evaluations within the allowed call window.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit1_mcq_solver_v2_validated_addendum_20260524T085013Z.md",
+   "lines": "47",
+   "quote": "Main-a's first v2 retry attempt failed `0/50` due to `DEPLOYMENT_SCALING_UP` while `v80bchain` was cold.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "60",
+   "quote": "Maintain strict official schema normalization before any quality claim. Schema failures must not be counted as model failures or successes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN8_REPORT.md",
+   "lines": "93-95",
+   "quote": "This reduced the sample size from 120 to 81, affecting statistical reliability.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_155759_209babe7.md",
+   "lines": "34",
+   "quote": "| DBQ      |      4 |      0 |      7 |    100.0% |      0.88 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/benchmark_official.py",
+   "lines": "379-382",
+   "quote": "# Calculate statistics (generation failures count as 0s)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "4",
+   "quote": "**Pass Rate:** **95.2%** (340/360 questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "28",
+   "quote": "| Total Questions | 360 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/BENCHMARK_ACHIEVED.md",
+   "lines": "31",
+   "quote": "| Errors | 3 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/PARTIAL_RESULTS_SUMMARY.md",
+   "lines": "20",
+   "quote": "- **Valid Questions Attempted:** 308 (409 - 101 errors)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/PARTIAL_RESULTS_SUMMARY.md",
+   "lines": "21",
+   "quote": "- **Passed:** 243",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/PARTIAL_RESULTS_SUMMARY.md",
+   "lines": "22",
+   "quote": "- **Effective Pass Rate:** 78.9%",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "27",
+   "quote": "Output that breaks the schema is reported separately and counts as unusable, not silently repaired.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HARNESS.md",
+   "lines": "16",
+   "quote": "It validates the whole batch before calls, requires different base/edited model references and claimed fingerprints, and retains failed case/arm slots in the denominator.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "REVIEW_PACKET.md",
+   "lines": "17",
+   "quote": "Malformed JSON mappings, exceptions, and truncated/exhausted responses retain slots.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "94-96",
+   "quote": "a reload while the server restarted lost the strip (the block list failed to load, every saved block was dropped as unknown, and the empty strip was saved); the page now asks again for up to 15 s and never saves a lesson it could not read.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "184",
+   "quote": "a judge that answered nothing leaves no focus behind: the text is read again once the judge answers",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/positive-evidence.test.mjs",
+   "lines": "190",
+   "quote": "no empty focus is cached as the text's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "117",
+   "quote": "Invalid, missing, truncated, or unparseable rows stay in the registered denominator as failures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "726-727",
+   "quote": "Missing, invalid, truncated, or unparseable rows remain in the registered denominator.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

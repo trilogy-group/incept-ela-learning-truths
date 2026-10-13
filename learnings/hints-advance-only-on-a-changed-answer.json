@@ -1,0 +1,144 @@
+{
+ "id": "hints-advance-only-on-a-changed-answer",
+ "title": "Hints advance only on a changed answer",
+ "statement": "Advance a hint ladder only when the answer has changed since the last try, so resubmitting the same answer cannot unlock more help.",
+ "example": "One inference design asks an unchanged answer to try again and reveals the full words only on the third failed try.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "integrity",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A Grade 3 inference design gives its typed sentence frame a feedback ladder that advances only if the answer has changed since the last try. An empty or unchanged answer is only asked to have another go, and the full words are revealed on the third fail.",
+ "against": "A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "311 (textutil text)",
+   "quote": "FEEDBACK LADDER (only advances if the answer changed since the last try):",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "313 (textutil text)",
+   "quote": "Empty / unchanged: \"Have another go at your answer first, then tap I'm done again.\"",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "316 (textutil text)",
+   "quote": "3rd fail: reveal the full words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "src/lib/scoring/item-engine.ts",
+   "lines": "9",
+   "quote": "U1 an UNCHANGED submission is a noop and costs nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "src/lib/scoring/item-engine.ts",
+   "lines": "44",
+   "quote": "if (signature === l.lastSignature) return { counted: false, exhausted: false }; // U1",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "83",
+   "quote": "if (!unsure.length || response.correct != null) es.attempts++;",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "An unchanged resubmission costs nothing; help comes at a unit's ceiling; single-select never reveals; given and earned completions are kept apart.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Only a headless client of the runtime can pick the same option again.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/PROPOSAL.md",
+   "lines": "9",
+   "quote": "A→B→A forgets A and calls judgeSlotTurn again with attempt3, both prior answers in history and the current metAlready.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/PROPOSAL.md",
+   "lines": "9",
+   "quote": "A new generative response can accept A or force the third-miss floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/IMPLEMENTATION.md",
+   "lines": "7",
+   "quote": "It does not call the judge, append/replace history, replay coaching, spend a try, alter cumulative criteria or trigger a floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/qa16/IMPLEMENTATION.md",
+   "lines": "7",
+   "quote": "A new C after two distinct misses remains the third scored turn.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "81",
+   "quote": "Wrong A remains blocked; a distinct wrong B reveals support but remains blocked; only a fresh learner-selected correct retest exposes Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "65-67",
+   "quote": "4. The retry path did not require two distinct wrong attempts, answer support, and a fresh explicit correct selection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2893",
+   "quote": "Current lastScoredRef forgets A and makes a third judged request, allowing contradictory verdict or premature floor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp2-v3-design.txt",
+   "lines": "330",
+   "quote": "FEEDBACK LADDER (only advances if the answer changed since the last try):",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,57 @@
+{
+ "id": "scan-for-fused-words",
+ "title": "Scan for fused words",
+ "statement": "Scan generated student-facing text for fused words such as 'themain' or 'tothe', and fail it when one appears, because early readers may not recognise them as words.",
+ "example": "One rubric sets the whole diction score to 0.0 if a single merged non-word appears anywhere in the student-facing text.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "wording",
+  "generation",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP work's evaluator lists merged non-word forms such as 'themain', 'tothe' and 'inthe' as serious errors in its article and nonfiction-reading rubrics, especially for early-grade content where students may not recognise malformed words (`icloud-work/inceptbench-main/src/inceptbench/prompts/article/evaluation.txt`, `icloud-work/inceptbench-main/src/inceptbench/prompts/nonfiction_reading/evaluation.txt`). The article rubric sets the whole diction score to 0.0 if one appears anywhere in the student-facing text. The base and closed-ended question rubrics flag them too (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, `icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`), so four rubrics carry the rule.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "759-761",
+   "quote": "- **Merged non-word forms** in student-facing text: `themain`, `forclosure`, `becausethe`, `tothe`, `ofthe`, `inthe`, `sentenceending`, etc. - These are serious errors, especially for early-grade content where students may not recognize malformed words - If merged non-words appear ANYWHERE in the student-facing text, set `diction_and_sentence_structure = 0.0`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/nonfiction_reading/evaluation.txt",
+   "lines": "410-411",
+   "quote": "- **Merged non-word forms**: `themain`, `thewater`, `becausethe`, `tothe`, `ofthe`, `inthe`, etc. - These are serious errors, especially for early-grade content where students may not recognize malformed words",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "425",
+   "quote": "- **Merged non-word forms**: `themain`, `tothe`, `ofthe`, `inthe`, etc. - especially serious for early-grade content where students may not recognize malformed words",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "147",
+   "quote": "- Merged non-word forms (`themain`, `tothe`) → `clarity_precision`",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

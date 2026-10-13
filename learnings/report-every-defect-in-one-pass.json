@@ -1,0 +1,72 @@
+{
+ "id": "report-every-defect-in-one-pass",
+ "title": "Report every defect in one pass",
+ "statement": "Record every defect a check finds, even when the item has already failed for another reason, and keep evaluating, so everything can be fixed in one round.",
+ "example": "A section yielding only one word is reported, because a list that short is more likely to be a bad read than a real lesson.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A code check for references to a neighbouring lesson was at first not recorded when the judge had already failed the same score for another reason, so its defect would surface only after the first issue was fixed; it is now recorded whenever found, with the judge's reasoning kept. The project's research summary reports a lesson with no vocabulary section as content to add, and a section yielding only one word the same way, in the final report beside what is good, bad and missing, and neither stops the rest of the evaluation. It rejects halting a run on a missing section, which would trade one finding for all the others. Every missing or suspiciously thin part is recorded the same way.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "a8818e0",
+   "lines": "27-30",
+   "quote": "- Record the relational-reference defect whenever refs are found, even when the LLM had already failed structure_compliance for another reason (preserve its reasoning) so the N2 defect is discoverable in the same pass instead of only after the first issue is fixed.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "36",
+   "quote": "**Report what is missing or suspiciously thin, and carry on.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "36",
+   "quote": "A lesson with no vocabulary section is a finding sent back to the generator team as content to add.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "36",
+   "quote": "A section yielding only one word is reported the same way, because a list that short is more likely to be a bad read than a real lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "36",
+   "quote": "Neither stops the rest of the evaluation (DOK1-15).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "84",
+   "quote": "Halting the run would trade one finding for all the others.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

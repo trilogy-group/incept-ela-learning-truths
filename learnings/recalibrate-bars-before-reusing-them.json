@@ -1,0 +1,79 @@
+{
+ "id": "recalibrate-bars-before-reusing-them",
+ "title": "Recalibrate bars before reusing them",
+ "statement": "Don't carry pass bars, yields or thresholds measured on one course or grade over to another; recalibrate them on a control set there first.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The bars and yields at hand for a grade 3 reading course had been derived from a grade 5 one, and the practice spec makes a grade 3 recalibration control set a blocking precondition before any grade 3 gate or generation budget goes live, since historical grade 5 volume does not validate a grade 3 estimate (`ti-courseplans-audit/docs/practice-layer-spec.md`). The grade 3 practice criteria repeat it for every threshold and yield (`ti-courseplans-audit/skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "140-141",
+   "quote": "All historical G5-derived bars and yields require a **G3 recalibration control set before any G3 gate or generation budget goes live** (blocking precondition)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "139-140",
+   "quote": "Historical G5 volume does not validate a G3 estimate.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D6-practice-durable-mastery.md",
+   "lines": "33",
+   "quote": "Every G5-derived threshold/yield is recalibrated on a G3 control set before any G3 gate goes live",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "54-55",
+   "quote": "`certification_yield` 0.5 is a historical G5 pricing prior (campaign 48.7%), not a G3 readiness result.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/scripts/lane-tools/theme-demand/README.md",
+   "lines": "73",
+   "quote": "A G3 calibration remains blocking before generation or a G3 gate goes live.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "362",
+   "quote": "**Do not reuse the older 95% macro-F1 / 99% critical-rule-recall threshold here.**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/BRAINLIFT.md",
+   "lines": "204-205",
+   "quote": "a **G3 recalibration is a blocking precondition** before any G3 gate goes live.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

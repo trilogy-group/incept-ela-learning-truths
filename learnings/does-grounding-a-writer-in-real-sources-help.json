@@ -1,0 +1,86 @@
+{
+ "id": "does-grounding-a-writer-in-real-sources-help",
+ "title": "Does grounding a writer in real sources help?",
+ "statement": "Does giving a question writer real source texts, so that it writes only the questions, raise item quality?",
+ "example": "Under one judge a grounded trial passed 5 of 6 items, but on the binding grader the result collapsed to about 28%.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "generation",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An earlier AP question-generation effort reported grounding its writer in real source texts as a win on a six-item smoke test, 5/6 passing at 0.85 and a mean of 0.953 against 0.29, and recorded its confirmation on the real grader as blocked (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`). A later insight entry found the 0.29→0.95 jump existed only under a discredited judge and collapsed to ~28% on the binding grader (`grade3-reading/knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd`), and the reading project's item standard calls real-source provenance a separate, unproven lever (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md`). The reading project's generator assessment calls it the one mechanism that effort found that broke a wall, and its generator plans are built around it: feed real stimuli and let the model write only the questions (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md`; `grade3-reading/knowledge_bot/handoffs/g5-reading-generator-output-spec.md`).",
+ "against": "The same standard still has the model write only the questions where a genuine source exists (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md`, lines 41-42), and the generator handoff calls source grounding the biggest real lever (`grade3-reading/knowledge_bot/handoffs/g5-reading-generator-output-spec.md`, line 74): the practice is kept while its measured gain is not.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "53-54",
+   "quote": "**The recent \"source-grounding breaks the wall\" win is smoke only** (n=6, Unit-1: 5/6 pass@0.85, mean 0.953 vs 0.29)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd",
+   "lines": "55",
+   "quote": "real-grader confirmation of an uncached served KC is BLOCKED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "24-25",
+   "quote": "That **0.29→0.95** jump existed only under a **discredited Gemini judge**. On the **binding grader** it **collapsed to ~28%** (DBQ 0%, MCQ_SET 0%) and was logged as a **\"Gemini-judge artifact.\"**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "39-41",
+   "quote": "(Real-source provenance is a *separate, UNPROVEN* lever: the aptraining \"0.29→0.95 via real passages\" result was **refuted** on the binding grader. Do not relabel machine-authored cold passages as \"real.\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "41-42",
+   "quote": "Where a genuine source exists, the model writes the questions, not the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "92",
+   "quote": "Feed the model real/cold G5-band stimuli and let it write **only the questions**; don't have it invent the passage from nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/analysis/GENERATOR_ASSESSMENT.md",
+   "lines": "92",
+   "quote": "it's the one mechanism aptraining found that broke a wall (n=6 smoke, 5/6 pass@0.85).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g5-reading-generator-output-spec.md",
+   "lines": "74",
+   "quote": "**Source-grounding was the biggest real lever** (feed real stimuli, model writes the questions) — exactly the cold-passage/anti-leak standard in §3. Build the generator around it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

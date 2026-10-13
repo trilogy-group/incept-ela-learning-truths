@@ -1,0 +1,346 @@
+{
+ "id": "research-sets-direction-not-results",
+ "title": "Research sets direction, not results",
+ "statement": "Use published research, judgment-set values and simulated students to direct and stress-test a design, never as proof of whether or how well it works, which only real learners' outcomes show.",
+ "group": "how-people-learn",
+ "role": "context",
+ "facets": [
+  "measurement",
+  "evidence-of-learning",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading course plans' research priorities say their corpus grounds design and does not prove that their implementation works, and is never to be cited as evidence about the courses' outcomes (`grade3-reading/ti-courseplans/docs/reading-science/PRIORITIES.qmd`); their quality standard adds that synthetic prediction, benchmark scores and approval on review are not outcome evidence (`grade3-reading/ti-courseplans/docs/standards/course-quality.qmd`). After an assessment's baseline from a biased slice was replaced by the full population's 196.0, the 46th percentile (n=915), its approval case was held to direction, not magnitude, with no growth number before its pilot (`grade3-reading/ti-courseplans/docs/course-formula-agents.md`), and an audit relabelled a simulation presented as agreement with the real test as internal cross-bank consistency (synthetic) (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md`). A video BrainLift tags each rule as learning evidence, an accessibility requirement, a platform constraint or an operating heuristic, never cites a heuristic as a proven threshold, cites conservative independent numbers because effect sizes inflate when a principle's originator is an author, and lets its own delayed-recall data overrule a cited effect (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md`, `grade3-reading/ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md`). Tag every rule with its evidence. Research and simulation give neither the size of an effect nor a prediction of an outside score.",
+ "against": "the same engine found a real structural cliff in a course design, so a simulation is useful for finding structure, not size. Later, 409 real external test records for 173 students turned up, blocked only by an ID crosswalk (`grade3-reading/artifacts/wiki-research/pedagogy-llm-evals.md`). Scripted walks still play a lesson as a student, to catch defects in its flow rather than to measure learning (`grade3-reading/artifacts/team-direction-2026-09-09/GATE-STANDARD-DRAFT.md`). self-reported simulation over about 17,900 sessions gave ability recovery of r = 0.967 and reliability of 0.931, which is simulation rather than a link to real scores (`grade3-reading/knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd`, line 39). The same summary reports that a model asked to predict where students will struggle, instead of acting as a student, does better: \"Teacher-as-predictor instead reaches r ≈ 0.72–0.79 population-level prediction across three independent research groups\" (`grade3-reading/knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd`, line 75). the 67% and r≈0.72–0.79 figures are cited second-hand in the notes, without a DOI or URL, and the notes were written while there was no real-student data to calibrate against (`ti-courseplans-audit/docs/generator-insights.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/PRIORITIES.qmd",
+   "lines": "81-83",
+   "quote": "this corpus grounds DESIGN, it does not prove OUR implementation works. Never cite it as evidence about our courses' outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/course-quality.qmd",
+   "lines": "81",
+   "quote": "Synthetic prediction, IB scores, or reviewer approval are not outcome evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "262",
+   "quote": "the real figure was **196.0 / 46th pctile (n=915)**. No RIT/growth number pre-pilot; direction, not magnitude",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "34",
+   "quote": "now \"internal cross-bank consistency (synthetic),\" explicitly not MAP agreement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-agent-v0.2.md",
+   "lines": "19",
+   "quote": "- `[OH]` operating heuristic (current guess; has owner + validation experiment; NEVER cite as a proven learning threshold).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "293",
+   "quote": "- **Effect sizes inflate when a principle's originator is an author;** we cite conservative independent numbers and treat any single effect as a direction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/video-generation-human-v0.2.md",
+   "lines": "306-307",
+   "quote": "when our own delayed-recall data contradicts a cited effect, our data wins and this document is edited.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "57",
+   "quote": "All numbers are point estimates against a 5-student synthetic profile dataset.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "57",
+   "quote": "Direction is the trustworthy signal; magnitudes are not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "110",
+   "quote": "2 of 5 recs delivered as predicted, 3 backfired",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "124",
+   "quote": "individual-level r ≈ 0.42",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "124",
+   "quote": "Cohort-run outcomes are the only authoritative measure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "94-95",
+   "quote": "item difficulties are expert-assigned, not estimated from student responses",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "96",
+   "quote": "Each simulation writeup carries an explicit \"What This Does Not Prove\" section",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd",
+   "lines": "157-158",
+   "quote": "SE(b-hat) <= 0.30 logits needs N >= 200 responses/item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "41",
+   "quote": "The engine also identified one specific structural cliff in v2 that the BrainLift doesn't yet address",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "51",
+   "quote": "LLM as expert-predictor not student-simulator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/PROPOSAL_REVIEW_2026_06_16.md",
+   "lines": "131",
+   "quote": "expert-predictor not student-simulator. Six of eight (A–F) sit inside this cluster.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/X1_staar_map_overlap_probe_2026_06_16.md",
+   "lines": "13",
+   "quote": "The repo confirms **0 of 313 overlap**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/X1_staar_map_overlap_probe_2026_06_16.md",
+   "lines": "17",
+   "quote": "it's a measured void, not an assumed one",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/DIRECTION-2026-09-09.md",
+   "lines": "88",
+   "quote": "the 0/313 STAAR×MAP join that killed any RIT",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "259",
+   "quote": "refuse to put a number on RIT until an in-cohort MAP pilot exists",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/PRIORITIES.qmd",
+   "lines": "82-83",
+   "quote": "corpus grounds DESIGN, it does not prove OUR implementation works. Never cite it as evidence about our courses' outcomes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0059-map-equivalent-test-design-v4.qmd",
+   "lines": "64-65",
+   "quote": "the 200-210 claim is by-design **pre-pilot** and confirms only after a linking study",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "40",
+   "quote": "no RIT output; engine physically will not emit RIT until linked to real MAP scores.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "61-62",
+   "quote": "MAP is 0/313 in-cohort — no RIT claim, no \"proven\", no growth multiples",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "110",
+   "quote": "2 of 5 recs delivered as predicted, 3 backfired — engine flagged why",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0007-ti-courseplans-repo.qmd",
+   "lines": "74",
+   "quote": "Running 100K simulated students yields **zero new information** — outputs are determined by the imposed math models + pre-training.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0099-student-simulation-lab-2026-07-09.qmd",
+   "lines": "23",
+   "quote": "This is a deterministic design stress test and reproduction packet.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0010-amalgamation-v2-engine-results.qmd",
+   "lines": "120",
+   "quote": "**No numerical claim in this document should be trusted as a magnitude.**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/gauntlet-spec.md",
+   "lines": "50-51",
+   "quote": "**All results labeled SIMULATED**; calibrate against real-student data as pilots run.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/generator-insights.md",
+   "lines": "123-124",
+   "quote": "LLM student role-play is structurally flawed and caps ~67% accuracy; teacher-as-predictor reaches r≈0.72–0.79 population-level",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/SKILL.md",
+   "lines": "119-121",
+   "quote": "Simulated-student results are predictions, never outcomes — label them as such everywhere; Tier-3 proof is standardized-score movement only.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "325",
+   "quote": "actual developmental suitability remains `VERIFY` until human learner evidence exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "103",
+   "quote": "**Key assumption:** All simulations use b_provisional values as true item difficulties.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "103",
+   "quote": "True concurrent validity requires field data — simulations validate algorithm behavior, not scale accuracy [AERA-2014].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "198",
+   "quote": "If the Rasch model is misspecified for our items, every simulated figure is optimistic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "23",
+   "quote": "Even if it were, simulations assume the Rasch model is correctly specified — that all items discriminate equally and no guessing occurs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "84",
+   "quote": "the first passage is identical in 100% of sessions, an exposure/security issue.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOVER_COURSE_EXPERIENCE_PREFLIGHT_2026-08-11.qmd",
+   "lines": "255",
+   "quote": "- Human-only semantic judgments cannot be minted by a simulated character.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4946",
+   "quote": "The research supports readable text, clear labels and optional help; it doesn’t prove one layout best for learning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "588",
+   "quote": "A reviewer walkthrough can diagnose this requirement but cannot substitute for learner evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "58",
+   "quote": "How students look at or learn from any of the three. There is no eye-tracking or outcome data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "198",
+   "quote": "**None of it is yet empirical.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "230",
+   "quote": "• We will not claim: that a proxy score equals a MAP score (Open — that is the linking study's job); that simulated reliability is operational reliability; a RIT gain, a growth multiple, or \"proven.\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

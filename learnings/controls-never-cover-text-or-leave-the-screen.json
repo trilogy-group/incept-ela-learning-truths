@@ -1,0 +1,71 @@
+{
+ "id": "controls-never-cover-text-or-leave-the-screen",
+ "title": "Controls never cover text or leave the screen",
+ "statement": "No control or pop-up may cover reading text or leave the screen at any width, even after a resize.",
+ "example": "After the window narrowed with a definition open, the pop-up sat at left 328.59 px and right 640.59 px in a 390 px viewport.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "At phone and tablet widths a fixed view toggle sat over the end of a passage's first sentence and hid part of a word, with no tooltip open. A glossary definition opened at laptop width stayed at left 328.59 px, right 640.59 px in a 390 px viewport after the window narrowed, and page-level overflow checks did not catch it. Beside a long answer, an undo label collapsed into a narrow column 37.27px wide, and the expected fix reserves the control's space independently of the answer's length.",
+ "against": "The pop-up case holds only for a resize while it is open: \"Scope: confirmed for a viewport change with the popover already open. Opening it fresh on mobile fits; reopening is a workaround.\" (grade3-reading/visual-findings-2026-09-07/staging-full-sweep/README.md, line 47)",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/README.md",
+   "lines": "59",
+   "quote": "The fixed view toggle sits over the end of the first sentence, hiding part of “sleep.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/README.md",
+   "lines": "59",
+   "quote": "Reading content should remain unobstructed by controls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "44",
+   "quote": "Its measured bounds are left **328.59 px**, right **640.59 px**, width **312 px** in a **390 px** viewport.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "45",
+   "quote": "Expected: reposition the open definition inside the viewport or dismiss it when layout changes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L2-ordering-undo-wrap.md",
+   "lines": "16",
+   "quote": "Expected: a stable readable undo label, with space reserved independently of the answer length.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/L2-ordering-undo-wrap.md",
+   "lines": "24",
+   "quote": "undo button is 37.27px wide × 63px high",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

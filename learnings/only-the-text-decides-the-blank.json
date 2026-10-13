@@ -1,0 +1,87 @@
+{
+ "id": "only-the-text-decides-the-blank",
+ "title": "Only the text decides the blank",
+ "statement": "In a gap-fill choice, every option should come from the same category, read grammatically in the sentence and differ in meaning there, so only understanding the text decides.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "options",
+  "integrity",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Fill-the-blank choice items came into the evaluator with audits that write each option into the sentence (`shadow-bench/src/inceptbench/prompts/question/inline_choice_evaluation.txt`). The item fails if any option makes the sentence ungrammatical, since the skill tested is comprehension, not grammar correction, or if two options mean the same thing there, since the blank then has no unique answer. A correct choice must need the passage read and understood; grammar alone, such as article agreement, or common knowledge must not decide it. Then neither grammar nor elimination can decide the blank.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "66-67",
+   "quote": "- Any option produces an ungrammatical sentence when inserted (all options must fit grammatically — the skill being tested is comprehension, not grammar correction).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "68",
+   "quote": "- Two or more options produce identical meaning in context (the blank has no unique correct answer).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/inline_choice_evaluation.txt",
+   "lines": "32-33",
+   "quote": "A correct inline choice must require the student to have read and understood the passage — it is NOT acceptable if grammar alone (e.g., article agreement) or common knowledge determines the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2.1_ WITW Lesson 1 learning walkthrough v2 (table format).md",
+   "lines": "46",
+   "quote": "Cloze retell; each gap opens exactly 3 same-category choices | Same-category trios kill syntax and elimination guessing — only the story model decides",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "149",
+   "quote": "each trio from the same category, so the sentence stays grammatical whichever the child picks and only meaning decides.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "151",
+   "quote": "three same-category choices per gap means the choice cannot be made on syntax or on elimination-by-absurdity — the child must consult their model of the story.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "337",
+   "quote": "A cloze earns its keep when context genuinely forces the selection",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "379",
+   "quote": "Gap 4 offers only past-tense answers (flickered/vanished/widened) inside a present-tense retell; the slip is in the design doc itself (`artifacts/pp1-v3-design.txt:101`).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

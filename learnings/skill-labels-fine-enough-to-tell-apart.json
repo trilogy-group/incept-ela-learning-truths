@@ -1,0 +1,58 @@
+{
+ "id": "skill-labels-fine-enough-to-tell-apart",
+ "title": "Skill labels fine enough to tell apart",
+ "statement": "Make the skill list a check uses fine enough to separate the skills a lesson might confuse, because a switch between skills sharing one label passes every label-based check.",
+ "example": "Calibrated against 10 failure cases from an outside review, the rule checker passed the skill-switch case because both skills shared one label.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project calibrated its skill taxonomy and deterministic lint against ten failure cases taken from an outside review. In one, a lesson modelled finding the main idea and then released practice on supporting details; the taxonomy folded supporting details into the main-idea skill, so an honest encoding gave both one label and the lesson passed the full lint (`grade3-reading/artifacts/op-taxonomy-calibration-2026-07-10/op-taxonomy-calibration.md`). The calibration called the switch inexpressible, asked for the label to be split, and kept the semantic lints advisory.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/op-taxonomy-calibration.md",
+   "lines": "46",
+   "quote": "| fc-04b-skill-switch-collapsed-tag.json | PASS | (none - taxonomy blind spot, see fc-04) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/op-taxonomy-calibration.md",
+   "lines": "84",
+   "quote": "skill switch is inexpressible - measured: `fc-04b-skill-switch-collapsed-tag.json`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/semantic-judge-calibration-2026-07-10/kc-graph-change-proposal.md",
+   "lines": "86-89",
+   "quote": "Measured: encoding `fc-04b-skill-switch-collapsed-tag.json` PASSES the full deterministic lint (`encodings/lint-results.json`) - the skill switch cannot trip L1/L6 because the label space has no id for the switched-to skill.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "Gradual-release labels can hide a skill switch.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

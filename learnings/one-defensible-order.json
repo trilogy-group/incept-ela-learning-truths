@@ -1,0 +1,85 @@
+{
+ "id": "one-defensible-order",
+ "title": "One defensible order",
+ "statement": "An ordering item needs one defensible order: use only elements with a definite place, such as dated events or discrete steps, never a gradual process or ongoing condition.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "key",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The ordering rubric classifies every element, and one whose starting event, law or publication can't be named is an ongoing state that caps orderability at 3 (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt`). Elements with explicit years or centuries turn the task into reading dates, and the stem must make the ordering criterion explicit, with no element referring forward in a way that reveals its position (the same file).",
+ "against": "Dates are fine when the date is itself the curriculum fact being tested (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt`, lines 178-179). The same rubric judges an order against what is taught at the grade, and tells the judge to \"accept it as correct (score 4 or 5) even if scholarly debate exists at a higher level\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt`, line 97), so one definite place means one place at that grade.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "36",
+   "quote": "The test: if you cannot name the specific event/law/publication that STARTED this condition → it is an ongoing_state → orderability ≤ 3.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "176-178",
+   "quote": "**Dates-in-items flag:** Items containing explicit years/centuries inline (e.g., \"in 1492\", \"c. 1440 CE\", \"during the 15th century\") reduce the task to date-reading rather than content knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "189-190",
+   "quote": "Does the question stem make the ordering criterion explicit? Do items avoid forward references that reveal their relative position?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "40",
+   "quote": "> \"Can I name the specific moment this STARTED — a named law, event, publication, battle, or decree?\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "64",
+   "quote": "- An item is classified ongoing_state or process → orderability ≤ 3 (regardless of position)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "74",
+   "quote": "- BIOLOGY (5): \"Arrange the stages of mitosis: Prophase → Metaphase → Anaphase → Telophase\" — each step has a unique, unambiguous position.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "78",
+   "quote": "- ELA (1): \"Arrange these themes from least to most important\" — subjective, no correct order.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/sequence_evaluation.txt",
+   "lines": "97",
+   "quote": "accept it as correct (score 4 or 5) even if scholarly debate exists at a higher level.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

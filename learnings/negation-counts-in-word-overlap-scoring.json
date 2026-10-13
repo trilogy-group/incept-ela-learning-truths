@@ -1,0 +1,35 @@
+{
+ "id": "negation-counts-in-word-overlap-scoring",
+ "title": "Negation counts in word-overlap scoring",
+ "statement": "When code scores a written answer by word overlap with a key, keep negation words such as 'not' as content words, since dropping them can reverse an answer's meaning.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "key"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The same draft acceptance rules normalise a young reader's written claim before matching it against the key, dropping a fixed list of stopwords, and deliberately keep 'not' off that list because negation is content at grade 3. Matched on words alone, an answer and its opposite can share every other word, so dropping the negation lets them score alike.",
+ "against": "The rule comes from a review-ready draft whose thresholds are uncalibrated proposals, and no measurement of the negation rule itself is recorded (`grade3-reading/_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz::scripts/lane-tools/drafts/m5-acceptance-rules.md`, lines 6-7).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/drafts/m5-acceptance-rules.md",
+   "lines": "18",
+   "quote": "\"not\" is deliberately NOT a stopword (negation is content at grade 3).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

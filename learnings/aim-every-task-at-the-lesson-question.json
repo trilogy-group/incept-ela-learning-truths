@@ -1,0 +1,71 @@
+{
+ "id": "aim-every-task-at-the-lesson-question",
+ "title": "Aim every task at the lesson question",
+ "statement": "Give every task's writer the lesson's one question, and point each task that can serve it at what bears on it, preferring the lines a judge found help answer it.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "generation",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine puts the lesson question into every block's prompt, and before any block is written it asks the judge, line by line, whether each line helps a careful reader answer that question (`g9/transformer/src/mechanics/util.js`; `g9/transformer/src/analyse.js`). The evidence hunt's claim, the open check's key moment and the word web's big idea are each asked for because they bear on the question, and the quick check, open check and evidence hunt are also told up to eight of the lines the judge found most relevant (`g9/transformer/src/mechanics/evidence-hunt.js`, `open-check.js`, `word-web.js`).",
+ "against": "The relevant lines are a preference, not a rule: \"Prefer them, but use any line that fits the task.\" (`g9/transformer/src/mechanics/util.js`, line 41). The glossary, key words and word in focus are chosen for reading the text, not for the question.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "43",
+   "quote": "export const context = (ctx) => `LESSON QUESTION: ${ctx.question}\\n\\nTEXT (${ctx.text.kind}):\\n${unitsBlock(ctx.text)}`;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/analyse.js",
+   "lines": "12",
+   "quote": "Does line L${u.n} of text help a careful reader answer lesson_question?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "23",
+   "quote": "TASK: write one claim about the text that helps answer the lesson question, for the reader to prove by finding the",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "34",
+   "quote": "TASK: one open reading check on a key moment of the text that bears on the lesson question: a question a Grade 9 reader",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "35-36",
+   "quote": "Choose the ONE word for the big idea that runs through this passage and bears on the lesson question",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "41",
+   "quote": "Prefer them, but use any line that fits the task.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

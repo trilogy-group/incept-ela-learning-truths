@@ -1,0 +1,106 @@
+{
+ "id": "identity-and-place-from-the-curriculum-map",
+ "title": "Identity and place from the curriculum map",
+ "statement": "Take each unit's and lesson's identity and place from the curriculum map, confirm it before authoring, check the content against it before submission, and never fix a mismatch by renaming.",
+ "example": "One course's units came from a nine-unit draft while the curriculum map it was meant to implement has fourteen.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "sequence",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A visual readiness audit of a Grade 5 course turned up a curriculum identity issue: its units came from a specification of nine units and 55 lessons rather than the supplied fourteen-unit map, and the audit held that its page fixes remain valid evidence about the pages but do not establish alignment, and that the repair is reconciling content, not renaming units (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md`, lines 9, 27, 35 and 37). A later source audit found a Grade 4 unit built on an internal design that differs from its supplied map, and warned that correcting only the unit title would conceal the mismatch (`grade3-reading/visual-findings-2026-09-08/all-grades-source-audit/GRADE4.md`, line 48). In a Grade 3 course a lesson was written into another lesson's slot because story order was taken as slot authority; it looked coherent in the wrong place and its identity flowed into audio and route paths, so identity now comes from the pinned curriculum graph and is rechecked at the source, build, route and asset layers (`grade3-reading/ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md`, lines 82-93; `grade3-reading/curriculum-gen/.agent/AGENT.md`, lines 48-50). The Grade 5 rebuild's method calls for a curriculum-identity gate before authoring and a content-to-map check before submission, and, after reused lesson IDs carried unrelated completion and art into replacement lessons, requires a curriculum revision to change identities across progress, session state, unit introductions and asset fallbacks (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md`, line 44; `grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md`, line 15).",
+ "against": "A matching map is not thereby right: the first audit says calling the supplied map academically approved or inherently correct would overstate the evidence, and that if the draft is an approved alternative its approval should be attached and named as the target (`grade3-reading/visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md`, lines 5 and 35).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md",
+   "lines": "9",
+   "quote": "This is a curriculum identity issue discovered during the visual-readiness task, not a newly introduced visual regression.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md",
+   "lines": "27",
+   "quote": "Their parent `course-spec.json` defines **nine units and 55 lessons**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md",
+   "lines": "35",
+   "quote": "If the supplied fourteen-unit map is the target, this requires curriculum/content reconciliation, not unit renaming or a CSS repair.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/README.md",
+   "lines": "37",
+   "quote": "remain valid evidence about the pages inspected. They do not establish curriculum alignment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE4.md",
+   "lines": "48",
+   "quote": "Correcting only the unit title would conceal the mismatch.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "83-84",
+   "quote": "Identity also flowed into keyed audio and route paths.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "86-87",
+   "quote": "The lesson itself could look internally coherent while occupying the wrong course position.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Peter-Pan-Quality-Case-Study-2026-08-24.md",
+   "lines": "92-93",
+   "quote": "Course identity comes from the pinned curriculum graph, never from story sequence or filename convenience. Identity is rechecked at source, build, route, and asset layers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "48-50",
+   "quote": "Ids are minted by POSITION — check `_id_rule` before naming anything. A lesson shipped once as `L2` when it was slot 4, and the rename dragged its whole audio directory with it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "44",
+   "quote": "Add a curriculum-identity gate before authoring and a content-to-map check before submission.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "15",
+   "quote": "Curriculum revisions require identity changes across progress, session state, unit introduction and asset fallback.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

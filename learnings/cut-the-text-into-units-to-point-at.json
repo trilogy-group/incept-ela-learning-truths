@@ -1,0 +1,57 @@
+{
+ "id": "cut-the-text-into-units-to-point-at",
+ "title": "Cut the text into units to point at",
+ "statement": "Cut each text into units a question can point at, a spoken line with its speaker, a verse line or a sentence, and never count stage directions as evidence.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The lesson engine parses every text into numbered units its blocks point at, a verse line with its speaker in a play, a line in a poem and a sentence in prose, and keeps stage directions for display but never as evidence (`g9/transformer/src/text.js`, lines 1-2). Line numbers from the writer are mapped to spoken lines only (`g9/transformer/src/mechanics/util.js`, line 28). The preferred quotation matcher, a 3D version's own, refuses a quotation that runs across a stage direction or across two speeches (`g9/transformer/src/glue/threejs.js`, lines 53-54). The code gives no reason for the drama rules.",
+ "against": "Without the 3D version's tools, the fallback matcher joins consecutive spoken lines with the directions left out, so a quotation can then run across a direction or two speeches: \"Find a quotation in the text. It may span consecutive lines.\" (`g9/transformer/src/text.js`, line 52). A later run found: Where a lesson teaches play conventions, a stage direction is the evidence: an archived Grade 3 drama lesson requires an item that only a stage direction, not a spoken line, answers. The rule never to count stage directions as evidence holds only where they are not what is taught (`incept-package-hub/course-packages/archive/g3-reading-v2/authoring/prompts/u02.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "1-2",
+   "quote": "A text becomes numbered units that mechanics can point at: a verse line with its speaker (drama), a line (poem), … or a sentence (prose). Stage directions are kept for display but are never evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "28",
+   "quote": "Writer line numbers (L numbers) -> unit indices, keeping only spoken lines.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs.js",
+   "lines": "53-54",
+   "quote": "punctuation, case and apostrophes aside, never across a … stage direction or two speeches.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/archive/g3-reading-v2/authoring/prompts/u02.md",
+   "lines": "187",
+   "quote": "item requiring the student to use a stage direction — not a spoken line — to answer (distractor:",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

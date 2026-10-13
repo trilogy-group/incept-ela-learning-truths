@@ -1,0 +1,87 @@
+{
+ "id": "check-labels-a-model-made",
+ "title": "Check labels a model made",
+ "statement": "Before building on labels a model made, have a stratified sample re-graded independently and require high agreement, above all on the in-between classes.",
+ "example": "A re-grade of 30 stratified 'supported by the source' labels agreed with only 70% of them, below the 90% bar, and the training run built on them was blocked.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement",
+  "generation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP work built a training set whose labels, made by a model, said whether each span was supported by its source. A second model re-graded 30 stratified spans: agreement was 70% overall against a 90% bar and 60% on the middle 'partly supported' class against an 80% bar, with errors in both directions, and the training run was blocked until the labels were rebuilt (`icloud-work/aptraining/.agent/memory/MEMORY.md`). One span that added a claim its source paragraph did not make had been labelled fully supported. A later plan required at least 27 of 30 spot-checked preference pairs to be confirmed before training (`icloud-work/aptraining/.agent/memory/plan_v92_pipeline_distillation_single_model_2026_05_22.md`).",
+ "against": "The re-grade was itself done by another model, not a person, so the 70% measures agreement between two models, not correctness (`icloud-work/aptraining/.agent/memory/MEMORY.md`). The 27-of-30 bar is a planned completion criterion, not a result.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "133",
+   "quote": "re-graded 30 stratified IsSup spans from `sftv31_self_rag_train.jsonl` with gemini-3.1-pro-preview",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "133",
+   "quote": "Aggregate 70% < 90% \"clean\" bar; partially-class 60% < 80% \"rebuild\" bar.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "133",
+   "quote": "Bidirectional noise on the pivotal partially class — model can't learn calibration offset.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "133",
+   "quote": "a span injecting \"desire to convert Native Americans to Christianity\" against a paragraph about debate over treatment of non-Europeans only",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "133",
+   "quote": "v35 SFT BLOCKED pending rebuild OR explicit acceptance of noisy-label run.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/plan_v92_pipeline_distillation_single_model_2026_05_22.md",
+   "lines": "77",
+   "quote": "Done when: ≥27/30 pairs confirmed \"chosen clearly better than rejected on rubric dim\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/03-execution-timeline.md",
+   "lines": "29",
+   "quote": "V3 blind review produced alpha 0.507091, typed F1 0.058824, and 17 shared ontology gaps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "518",
+   "quote": "Krippendorff's alpha `≥ 0.80` overall and `≥ 0.70` in every reported artifact/rule stratum",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

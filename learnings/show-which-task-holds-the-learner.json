@@ -1,0 +1,57 @@
+{
+ "id": "show-which-task-holds-the-learner",
+ "title": "Show which task holds the learner",
+ "statement": "When progress is locked, show the learner which task is holding it, along with their position in the lesson and the reading mode they are in.",
+ "example": "Walkthroughs asked four questions at every transition, among them whether the student could find the next available action.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Research for a Grade 5 reading course's book redesign found that the reading controls confused mode with action and that the footer dots did not show position. The delivered footer states the page position, the current reading mode and the pending action, and names the task holding the Next button. The course's walkthrough protocol checks at every transition whether the student's current task is clear and whether the next available action can be found.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PLAN.md",
+   "lines": "12",
+   "quote": "reading controls confuse mode with action; footer dots do not communicate position.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/README.md",
+   "lines": "11",
+   "quote": "The footer states page position, current reading mode and the pending action.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/grade5-book-flow/PR-BODY.md",
+   "lines": "12",
+   "quote": "Show page position, stable reading-mode labels and the task holding Next.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/WALKTHROUGHS.md",
+   "lines": "13",
+   "quote": "At each transition check four visual questions: Is the student's current task clear? Can they read all required content? Can they find the next available action? Is new feedback visible or reachable without hiding the task?",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

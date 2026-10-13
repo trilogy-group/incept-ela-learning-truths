@@ -1,0 +1,152 @@
+{
+ "id": "simplify-without-saying-anything-false",
+ "title": "Simplify without saying anything false",
+ "statement": "Simplify without saying or implying anything false, keeping the same conceptual foundation at every level and presenting every model or diagram as a simplification, never as literal reality.",
+ "example": "The same question from a grade 3 and a grade 8 student gets different detail but the same conceptual foundation.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "wording",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The science misconception synthesis has every model carry an explicit health warning that it is a simplified picture and leaves out a lot of detail, and makes a framing statement mandatory whenever an AI system presents a diagram, equation or simplified explanation; the biology card repeats it for every cell diagram. When a question goes beyond a student's level, the chemistry card's answer for grades K-2 gives a true partial account and says more comes in later grades, and the synthesis asks that the same question from a grade 3 and a grade 8 student get different detail but the same conceptual foundation. Check what wording implies as well as what it says.",
+ "against": "A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "119 (textutil text)",
+   "quote": "Every model should carry an explicit health warning: \"This is a simplified picture that helps us understand one thing. It leaves out a lot of detail.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "121 (textutil text)",
+   "quote": "Whenever an LLM system presents a model (diagram, equation, simplified explanation), it MUST include a brief framing statement indicating that the model is a simplification.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Biology Misconception Prevention Guidance.docx",
+   "lines": "260 (textutil text)",
+   "quote": "Every time a cell diagram is shown, include the explicit framing",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Chemistry Misconception Prevention Guidance.docx",
+   "lines": "124 (textutil text)",
+   "quote": "You'll learn more about what's inside atoms in later grades.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Cross-Cutting Synthesis.docx",
+   "lines": "251 (textutil text)",
+   "quote": "The same question from a grade 3 student and a grade 8 student should receive different levels of detail and different mathematical framing, but the SAME conceptual foundation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0141-cross-cutting-science-misconception-synthesis.qmd",
+   "lines": "140",
+   "quote": "**Every model should carry an explicit health warning:**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0141-cross-cutting-science-misconception-synthesis.qmd",
+   "lines": "144",
+   "quote": "it MUST include a brief framing statement indicating that the model is a simplification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "66",
+   "quote": "diagrams or models presented as literal reality;",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "135-136",
+   "quote": "A reading passage that embeds folk science is not neutral prose — it actively undoes correct science instruction",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "145",
+   "quote": "\"the plant grows by taking food from the soil\" implies plants-eat-soil without the literal phrase",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "147",
+   "quote": "a food chain / atom / cell diagram presented as literal reality",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "147",
+   "quote": "is a \"this is a simplification\" note present when a model appears?",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "802",
+   "quote": "Simplification is acceptable only when it remains accurate and does not create a later-blocking misconception.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/misconceptions/cross-cutting-synthesis.md",
+   "lines": "311",
+   "quote": "The same question from a grade 3 student and a grade 8 student should receive different levels of detail and different mathematical framing, but the SAME conceptual foundation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "237-239",
+   "quote": "Human eye color is really polygenic; the single-gene B/b cross is the standard G7 classroom simplification for a *first* Punnett square. **Accepted.**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g6-reading-approval-package.zip",
+   "member": "g6-reading-approval-package/markdown/misconception-check.md",
+   "lines": "36-40",
+   "quote": "must be framed as a simplified representation, not literal reality",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "352-354",
+   "quote": "The Columbian Exchange is often reduced to arrows showing crops, animals, and disease moving both ways. That representation can hide radically unequal demographic effects, coercion, and the role of existing Indigenous and Atlantic systems.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

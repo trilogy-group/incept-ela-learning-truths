@@ -1,0 +1,649 @@
+{
+ "id": "never-present-an-invented-source-as-real",
+ "title": "Never present an invented source as real",
+ "statement": "Never pass an invented text or source off as real: use real ones, copied word for word with checkable attribution, and plainly label anything constructed, adapted, retold or machine-written.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A question benchmark's rules for document-based questions score factual accuracy 0.0 when any document contains fabricated content presented as real without pedagogical justification, or an incorrect attribution (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/dbq_evaluation.txt`, line 17). The same benchmark's fact audit forbids its judge to fail a document as fabricated, or a quotation as not matching its source, because it cannot reliably tell whether specific historical items exist and has no reliable verbatim recall of historical texts (`icloud-work/incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py`, lines 129-134). One reading generator asks its writer for an excerpt from a named literary work, with no stored text to check the excerpt against (`icloud-work/incept/sat-reading-generation/sat-prompts.json`, line 5). So only a stored copy can catch an invented or misattributed source. Every source learners work with should be a real document, copied word for word from a verified collection into the item in code, with a specific, checkable attribution of who made it and when. A writer model invents plausible sources that a judge without a stored copy cannot reliably catch.",
+ "against": "The rule leaves room for a justified invention: it fails fabricated content presented as real only \"without pedagogical justification\" (`icloud-work/incept/inceptbench/src/inceptbench/prompts/question/dbq_evaluation.txt`, line 17). one generator's spec accepts primary-source excerpts that are authentic or authentically styled, and the outside judge's rubric fails invented content only when it is presented as real without a pedagogical justification. A specific attribution is not enough on its own: a later rebuild had a model write excerpts credited to real works from memory, and both judges passed all 18 sets with no word-for-word check against the works (`icloud-work/aptraining/workspace/comms/from_cheater/2026-05-29T1843Z_3ch_DBQ_realsource_E1_DELIVERED.md`, lines 10 and 90-93). The project's own rules disagree on constructed documents. One spec requires '- ALL documents MUST be authentic historical sources or clearly adapted from authentic sources' (`icloud-work/evaluator/docs/GENERATOR_API_SPEC.md`, line 294). The pass contract allows '- retrieve or construct real-source-mirroring documents with period-plausible language and attribution; do not invent unsupported facts.' (`icloud-work/evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md`, line 39). The later repair rules say \"Prefer generic but plausible attributions such as 'Spanish colonial account, early 1500s' over fake named precision.\" (`icloud-work/evaluatorML/.agent/memory/e2e_pipeline/iterate_repair_to_100.py`, line 155), with no label that the text is constructed. The subject spec allowed invented sources ('Primary source excerpts must be authentic or authentically styled', `icloud-work/ap-social-studies-generator/docs/08-AP-SOCIAL-STUDIES-SPEC.md`), and the copyright filter blocks verbatim recall ('The model tries to reproduce actual quotes and triggers copyright filters.', `icloud-work/ap-social-studies-generator/python/CLAUDE.md`), so real excerpts have to come from a vetted bank, not from the model. The document-based rubric fails fabricated content presented as real only when it has no pedagogical justification (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/dbq_evaluation.txt`, L17), and the fact audit forbids failing a document only because the judge believes it does not exist or is fabricated (`icloud-work/inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py`, L117-120). Real sources were necessary but not enough: a naive retrieval patch reached only 33.3%, with 64% of items still scoring zero on source quality (icloud-work/aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md, line 137). The live service turned a described visual document into a generated image the grader could score (icloud-work/aptraining/apllm-history/main.py, lines 532-533), and one criteria pack advised 'plausible attribution lines (author/date/source citation)' (icloud-work/aptraining/helpers/data/output/ib_pass_criteria_pack/README.md, line 23). The invention verdicts came from another model-based rubric, not from a person checking each source; that rubric was later retired from promotion decisions (`icloud-work/aptraining/.agent/memory/MEMORY.md`, line 76), and the calibration gap's investigation was 'deferred until D13 ships + v41-d13 eval.' (the same file, line 80). The general judge did catch some invented sources (`icloud-work/aptraining/.agent/research/failure_taxonomy.md`, line 244), and a later version of it hard-failed fabricated documents (`icloud-work/aptraining/.agent/memory/feedback_curriculum_api_mandatory_2026_05_11.md`, line 9). A later forensic put 26 of 30 document-based failures down to prose descriptions of visuals that weren't there (`icloud-work/aptraining/.agent/memory/state_training_chain_2026_05_12T1300Z.md`, line 54), so part of the lift may come from dropping described visuals, and the injection result rests on 6 items. Training the writer on a real-source corpus did not stop invention ('D13 source-grounded hypothesis falsified.', `icloud-work/aptraining/.agent/memory/MEMORY.md`, line 67), and matched documents plus extra curriculum guidance backfired ('counterproductive (context overload)', `icloud-work/aptraining/.agent/memory/BEADS.md`, line 388). Placing documents in code was designed but had not run in production when the recipe was written (`recipe_track_a_b_kc_pack_substitution.md`, line 74); the measured rise came from putting real documents in the writer's request. A different, grounded writer's own document sets passed a later judge version 139 of 154 times (`recipe_track_b_openstax_pair_generation.md`, line 67), so the near-total failure belongs to one judge version and to writers working without a source excerpt, and the case for real excerpts rests on authenticity. Substituted documents kept the question's theme only about 85% of the time in spot-checks (`recipe_track_a_b_kc_pack_substitution.md`, line 52), so they still need checking against the question. Role-only attributions are a fallback: the lab's notes prefer real source packs and warn that generic fabricated documents may conflict with source-authenticity expectations. The rise in agreement is between two judges, which shows consistency, not correctness. This lineage's own \"validated\" document lane served normalized excerpts, and the grader passed them: \"Source packs use normalized excerpts and should receive provenance spot-check before promotion.\" (icloud-work/aptraining/workspace/comms/from_den/2026-05-23T2115Z_DELIVERED_unit8_dbq_solver_v1_candidate.md, line 55). The attribution case is one task, and what the later honesty flag measured is not spelled out in the sources read. machine-written passages still have a place: the reading project's cold tests use machine-authored passages, checked item by item as non-leaking and labelled as machine-authored, and the claim that real passages raised an AP generator's scores was refuted, the lever being an unseen, non-leaky passage (`grade3-reading/knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd`). It is a judgement, not a measured comparison, and it covers fiction only: four original informational passages written for a demo unit passed review with the verdict \"GREAT\" (`grade3-reading/knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd`). The review judged the gap minor: no child is actively misled, since the first lesson sets the context and the meaning is preserved (`grade3-reading/artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R17.md`).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "17",
+   "quote": "- Score 0.0: Any document contains fabricated content presented as real without pedagogical justification, incorrect attributions, or factual errors in the prompt",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "129-131",
+   "quote": "- Claims that a specific document, artwork, engraving, manuscript, or edition\n    \"does not exist\" or \"is fabricated\" or \"is not canonical.\" You cannot reliably\n    determine whether specific historical items exist in archives or collections.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "132-134",
+   "quote": "- Claims that a specific passage, quote, or description is \"not found in\" or\n    \"does not match\" a named primary source. You do not have reliable verbatim\n    recall of historical texts and cannot verify what a source does or does not say.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/sat-prompts.json",
+   "lines": "5",
+   "quote": "Generate a new question with an excerpt from the following work: {work}.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/sat-prompts.json",
+   "lines": "5",
+   "quote": "Select a new excerpt the specified work that is at least as complex as the example passage, preferably more complex.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "75",
+   "quote": "document_authenticity | 1 | 109 | 0.9%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "77",
+   "quote": "sourcing_opportunity | 11 | 99 | 10.0%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_095143_49918efd.md",
+   "lines": "171",
+   "quote": "This appears to be a fictional source rather than an authentic historical document",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "28-29",
+   "quote": "28/36 fails on factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "32",
+   "quote": "v2 lift: 19.4% → 65.7% on the same KCs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "94-96",
+   "quote": "\"pedagogical adaptation\" rather than fabrication, even though no such specific editorial existed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/08-AP-SOCIAL-STUDIES-SPEC.md",
+   "lines": "152",
+   "quote": "Primary source excerpts must be authentic or authentically styled",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/apllm-history/runtime_assets/ib_satisfaction_kit_v1/raw_rubrics/dbq_evaluation.txt",
+   "lines": "17",
+   "quote": "Any document contains fabricated content presented as real without pedagogical justification",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "93-96",
+   "quote": "The judge interprets generic role-based attributions (\"Editorial in a Midwestern newspaper, 1885\") as \"pedagogical adaptation\" rather than fabrication, even though no such specific editorial existed.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "27-29",
+   "quote": "which triggered the judge's biographical fact-checking — 28/36 fails on factual_accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "53",
+   "quote": "v2 generic-attribution + qualitative-claims + difficulty=\"easy\" → 23/35 = 65.7%",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-29T1456Z_calibration_finding_DBQ_synthetic_docs_Gemini_strict.md",
+   "lines": "18",
+   "quote": "| **DBQ** | **16.7%** | Gemini rejects 15/18 — **synthetic-source attribution** (\"Speech by Iroquois leader c.1570\" etc.) violates Gemini contract rule \"Do not fabricate real attributions\" |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-29T1843Z_3ch_DBQ_realsource_E1_DELIVERED.md",
+   "lines": "90-93",
+   "quote": "my E1 prompt explicitly instructs Claude to use the d13 pack as KC scope hints but write FRESH period-authentic excerpts from genuine works in its knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_cheater/2026-05-29T1843Z_3ch_DBQ_realsource_E1_DELIVERED.md",
+   "lines": "10",
+   "quote": "**18/18 U1 KCs = 100.0% JOINT IB v2.5.11 + Gemini deterministic judge PASS.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "82",
+   "quote": "| document_authenticity     |   28 |  163 |     14.7% |      0.15 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "75",
+   "quote": "| document_authenticity     |    1 |  109 |      0.9% |      0.59 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/LATEST.md",
+   "lines": "169",
+   "quote": "This document has no attribution whatsoever and risks misleading students.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-pass-contract-matrix.md",
+   "lines": "32",
+   "quote": "- fabricated documents presented as real,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/generate_apush_unit1_openapi_poc.py",
+   "lines": "136",
+   "quote": "Avoid fake verbatim quotations; for uncertain source text, write paraphrased source-style excerpts with clear generic attribution.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "520",
+   "quote": "3/5 = fabricated stimulus",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "521",
+   "quote": "constraint eliminated format-fabrication but not content-fabrication",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "130",
+   "quote": "Fabricated poem falsely attributed to",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "591",
+   "quote": "- Think: \"What WOULD they have written?\" not \"What DID they write?\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/sat_rw_evaluation.txt",
+   "lines": "19-23",
+   "quote": "Fail `factual_accuracy` for a false, fabricated, or materially misleading claim in the stimulus, key, or explanation. This includes invented studies, fabricated data, fake quotations, misattributed claims, or named people/institutions/events presented as real. Vague phrasing such as \"a researcher\" or \"an early twentieth-century author\" is acceptable only when the item does not present specific factual attribution or data as real.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/saq_evaluation.txt",
+   "lines": "68",
+   "quote": "- Score 0.0: Stimulus is fabricated/irrelevant/unattributed, OR harmful (wrong, misleading, contradictory, distracting), OR Mode A and stimulus is not core, OR Mode B and no stimulus present",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/dbq_evaluation.txt",
+   "lines": "17",
+   "quote": "- Score 0.0: Any document contains fabricated content presented as real without pedagogical justification, incorrect attributions, or factual errors in the prompt",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "117",
+   "quote": "You MUST NOT score 0.0 based on:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "118-120",
+   "quote": "Claims that a specific document, artwork, engraving, manuscript, or edition \"does not exist\" or \"is fabricated\" or \"is not canonical.\" You cannot reliably determine whether specific historical items exist in archives or collections.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "67",
+   "quote": "- (3x) Some documents appear to be simulated rather than authentic historical sources",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "82",
+   "quote": "| document_authenticity     |   28 |  163 |     14.7% |      0.15 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/evaluation_20260225_081919_0909a798.md",
+   "lines": "63",
+   "quote": "- (8x) Document 1 lacks specific attribution (author, date, source)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "9",
+   "quote": "DBQ is structurally zero on the current InceptBench path because the generator emits DBQ \"documents\" that are visual artifact descriptions or fabricated source descriptions, not usable source text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "111",
+   "quote": "The contrast is the whole story: normal generation without real source injection sits at DBQ 0%; D13 source injection immediately produces non-zero DBQ, but the current naive retrieval/prompting still fails often.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/d13_corpus_v5_inventory.md",
+   "lines": "68",
+   "quote": "1. **DBQ inference-time RAG** — D13 docs are retrieved at runtime to ground DBQ generation. Pipeline-on-v80b uses this and scores **87.9% DBQ** (vs 67% v80b standalone). This is the biggest measured lift in the project per v91 ABORT_DEAD doc.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/ib_satisfaction_kit_v1/generator_prompts/system_prompt_dbq.md",
+   "lines": "129-130",
+   "quote": "1. Copy each document's source/content/metadata verbatim from the retrieval. 2. Do NOT rewrite or summarize the source attribution — keep it exactly as retrieved.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/handover/2026-05-01T1039Z_main_session_close/01_HANDOVER.md",
+   "lines": "89",
+   "quote": "**No mock data.** Every text field traces to a primary source. LLMs are tools (search/OCR/reformat), not content authors. Drop-don't-patch when sources fail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/data/output/v18_rebuild_scope.md",
+   "lines": "15-17",
+   "quote": "D8b confirmed plausible-but-fictional content (real attributions, unverified text) — fine for ≤95% but the floor at 99%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "80",
+   "quote": "v29 fabricates MCQ_SET stimuli at 95% under BAML rubric; IB passes at ~100%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "75",
+   "quote": "MCQ_SET fab rate 100% across v25b/v29/v40h; recipe variations don't fix it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "177",
+   "quote": "SAQ/LEQ 0% fab; MCQ/MCQ_SET/DBQ 100% fab",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "81",
+   "quote": "Oracle's BAML-rubric rescore: -13.3pp aggregate Goodhart gap; SAQ 4/6 not 6/6; **2 fabricated primary sources in MCQ_SET**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/failure_taxonomy.md",
+   "lines": "244",
+   "quote": "Several documents present historically unreliable information (notably the Declaratory Act excerpt and other implausible or likely fabricated source content), which could directly misteach students about key events and policies.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md",
+   "lines": "88",
+   "quote": "### D13 inference injection: 4/6 = 66.7% DBQ (was 0%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/STATE_CURRENT_2026_05_12T0805Z.md",
+   "lines": "90",
+   "quote": "Model uses docs verbatim → stim_q=1.0 → pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/PILLARS_2026_05_12.md",
+   "lines": "64",
+   "quote": "- Stimulus matches /search hit? (else drop)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "187",
+   "quote": "every text field in any new corpus must trace to a primary source; LLMs are tools (search/OCR/reformat) not content authors; drop-don't-patch when sources fail.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_a_b_kc_pack_substitution.md",
+   "lines": "11",
+   "quote": "the `documents` array is **synthesized** — Gemini invents author names + dates + content.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "recipe_track_a_b_kc_pack_substitution.md",
+   "lines": "11",
+   "quote": "Even when grounded in a real OpenStax `_GROUND_TRUTH_SOURCE_` excerpt in the prompt, output documents are stylistic-real not literal-real.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_dbq_stimulus_v2.5.6_root_cause.md",
+   "lines": "3",
+   "quote": "PILLAR 1 confirmed dbq stimulus_quality zeroed 98-100% across v43-soup + v50 + v51 on IB v2.5.6 (n=270 dbq attempts × 3 models, σ=0). Only real-source documents bypass the rubric.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "32",
+   "quote": "- Hot-patch full validation n=30: **10/30 = 33.3% locked rate**",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_d13_inference_injection_partial_fix_2026_05_12.md",
+   "lines": "26",
+   "quote": "- Success rate at \"use docs literally\" is ~20% on v43-soup (1 of 5 graded)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "129",
+   "quote": "DBQ remains data-veracity bound — D13 real-source corpus is the unique remaining lever.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/failed_export_replay/RUNNING_SUMMARY.md",
+   "lines": "88",
+   "quote": "- Dynamic DBQ cannot be allowed to invent source documents. It needs retrieved vetted documents or document-bank retrieval by standard. Source retrieval fixed the focused institution DBQ slice: `dynamic_source_gate_dbq_mcqset_v1` DBQ scored 0.98.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/pil_monitor/inbox/2026-05-19T1456Z_den_unit1_trap_verifier.md",
+   "lines": "58",
+   "quote": "Prefer generic-safe attributions over fancy named sources unless the person/date pair is verified.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_conscience/2026-05-29T1840Z_dream_sequence_sync.md",
+   "lines": "16",
+   "quote": "- **Gemini-vs-IB calibration** 14:55Z: 81.1% overall; DBQ 16.7% (Gemini correctly catches synthetic-source pattern; LEQ/MCQ_SET/SAQ 100%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_conscience/2026-05-30T0640Z_dream_sequence_2_sync.md",
+   "lines": "8",
+   "quote": "Gemini-vs-IB calibration 97.8% on n=90 post-DBQ-realsource-swap (was 81.1% pre-swap)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/killer_pipeline_atomic_ducks_20260525.md",
+   "lines": "98",
+   "quote": "Role-based source descriptions can avoid hallucinated names; use carefully because real source packs are preferable.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/deep_repo_extraction_20260525.md",
+   "lines": "138",
+   "quote": "Generic fabricated documents can reduce obvious fact-check failures, but may conflict with source authenticity expectations.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "56",
+   "quote": "The generator emitted fake maps, charts, photographs, and cartoon descriptions as if they were documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "57",
+   "quote": "InceptBench hard-zeroed those because the stimulus was not real analyzable source material.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_structural_takeaways.md",
+   "lines": "72",
+   "quote": "DBQ needs source ownership outside the model. The model can frame prompt/rubric, but source documents must come from retrieval or locked artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/parallel_ideas_lab_distilled.md",
+   "lines": "10",
+   "quote": "DBQ moved from structural 0% in v50/v52-era model-only runs to 29/30 in the best-worlds wrapper run. The winning lever was source/prompt pipeline behavior, not another DPO tweak.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T132917Z_2026-05-27T1330Z_bm0zjn5z_n100_unit1_RAW_PROBE_REPORT.md.md",
+   "lines": "129",
+   "quote": "`stimulus_quality=0` on 75% of DBQ fails — primary-source documents are synthetic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1958Z_DELIVERED_unit1_dbq_solver_v1_candidate.md",
+   "lines": "74",
+   "quote": "Native environment row failed on fake `1491` source dates; honest modern/ethnohistorical attribution fixed it.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260527T220400Z_2026-05-28T0008Z_track_A_30row_sample_INVALID_TEST_RECOVERY.md.md",
+   "lines": "96",
+   "quote": "PIL still owes the a/b decision on the honesty flag (89% subject-period-dated).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0198-meetings-decisions-timeline-0819-1001.qmd",
+   "lines": "29-30",
+   "quote": "LLM-generated fiction \"is never going to be great\"; real, split-into-parts texts are the priority",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "44-45",
+   "quote": "don't relabel machine-authored cold passages as \"real.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0198-meetings-decisions-timeline-0819-1001.qmd",
+   "lines": "29",
+   "quote": "**Authentic fiction only.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0198-meetings-decisions-timeline-0819-1001.qmd",
+   "lines": "30-31",
+   "quote": "Our canon's synthetic-prose literary units are flagged as rebuild risk.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "24",
+   "quote": "Phase A: 4 original passages ... review verdict \"GREAT\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R17.md",
+   "lines": "140",
+   "quote": "written and labeled an adaptation, not a quotation or original chapter.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R18.md",
+   "lines": "73",
+   "quote": "an explicit attribution `booktag` on the reading page itself (not only on a later evidence/reference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R17.md",
+   "lines": "144",
+   "quote": "No child is actively misled by this gap (L1 establishes context; meaning is preserved); no CRITICAL",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-source-packet.json",
+   "lines": "12",
+   "quote": "Treat a constructed table or index as a hypothetical instructional scenario, not observed scientific data.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/showcase-source-packet.json",
+   "lines": "297",
+   "quote": "Do not reuse reported percentage changes as general constants; any showcase numbers must be source-specific or explicitly hypothetical.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE3.md",
+   "lines": "68",
+   "quote": "Current passage booktags such as “Part 1 of 4” and “Page 1 of 4” do not themselves label an adaptation or establish an original edition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/unscored-continuation.txt",
+   "lines": "3",
+   "quote": "paragraph: Original teaching vignette, not a scene from Shakespeare",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g5-u1/REPORT.md",
+   "lines": "11",
+   "quote": "Lesson 6 clearly labels Burnett's original, an adaptation and the invented first-person experiment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g5-u9/REPORT.md",
+   "lines": "24",
+   "quote": "The comedy transfer scene is labelled as an original vignette.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "artifacts/listen-qa/G5-U1-L5/p6-section-1.txt",
+   "lines": "2-3",
+   "quote": "Sheet 12 is an invented classroom file. Its walls and numbers are not a real National Park Service measurement.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "5",
+   "quote": "Text: abridged from the Folger Shakespeare edition (CC BY-NC 3.0).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "116-118",
+   "quote": "Course-authored explanation remains legitimate, but it calls itself course-authored and cites the factual authority behind it. The course does not manufacture a quotation when a clear paraphrase will do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "663-664",
+   "quote": "Its role must be explicit, its factual authorities must be cited, and it cannot masquerade as a primary source.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

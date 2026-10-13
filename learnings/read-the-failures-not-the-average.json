@@ -1,0 +1,320 @@
+{
+ "id": "read-the-failures-not-the-average",
+ "title": "Read the failures, not the average",
+ "statement": "After every change, read the failing items and compare them with the baseline's item by item, because an unchanged average or pass rate can hide new failures.",
+ "example": "A new version fixed all 9 of the old one's failures and failed 11 new items, with no item failing in both.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When one AP model was retrained, its pass rate fell from 85.0% to 81.7%, two items on its set, yet no item failed in both versions: the new one fixed all 9 of the old one's failures and introduced 11 new ones (`icloud-work/aptraining/.agent/memory/BEADS.md`). On another day, reading the failures showed all 26 were content failures with no parse failure among them, so the plan recorded that three fixes aimed at output format and examples had all addressed the wrong failure mode (`icloud-work/aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md`). Read the checks each failing item failed, and compare before naming a cause: an unchanged total can hide a new kind of failure or an item type that broke.",
+ "against": "the same notes say not every failure needs a full root-cause investigation. The new failures were two items each, few enough that they may be run-to-run variation rather than a real change. At 15 items the source puts its noise floor at about one item per type, so differences by type are directional only.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "112",
+   "quote": "Failure-overlap diagnostic: ZERO row_ids fail in both v8 AND v9 — v9 fixed all 9 v8 fails but introduced 11 new ones.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "27",
+   "quote": "26/26 today's failures are `status:fail rating:INFERIOR` with content-quality dimensions zeroed (`factual_accuracy`, `stimulus_quality`, `difficulty_distribution`). **Zero parse_fail.** Format-fragility hypothesis is dead.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/FINAL_PLAN_2026_05_11_v3.md",
+   "lines": "29",
+   "quote": "**Therefore**: UPLIFT-3 (constrained decode), UPLIFT-3b (per-cell schema), UPLIFT-2 (few-shot) all addressed the wrong failure mode.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "30",
+   "quote": "Average score: 0.833 (Stage 2) vs 0.836 (sft-v4) — nearly identical",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "47",
+   "quote": "The content was HIGH QUALITY. The wrong-topic outputs scored 0.82 on InceptBench for a completely different topic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "49",
+   "quote": "Caught by: Looking at the actual content of regressed items, not just the scores.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/debugging_methodology.md",
+   "lines": "209",
+   "quote": "Not every failure needs a full root-cause investigation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "30",
+   "quote": "- Average score: 0.833 (Stage 2) vs 0.836 (sft-v4) — nearly identical",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "40",
+   "quote": "Instead, 9 regressions all had the same signature: *correct content about the wrong topic.* This is instruction-following failure, not factual failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "49",
+   "quote": "**Caught by:** Looking at the actual content of regressed items, not just the scores.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "70",
+   "quote": "The curriculum facts help non-critical dimensions (educational_accuracy, etc.) enough to push borderline items above the 0.85 threshold, even though they don't help factual_accuracy specifically.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PASS_RATE_ANALYSIS.md",
+   "lines": "242",
+   "quote": "5. Check for regression on previously passing questions",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_pil/2026-05-27T1815Z_V055_DIAGNOSIS_CORRECTED.md",
+   "lines": "16",
+   "quote": "**Real cause** (per the JSONL I should have read first):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_repair_loop_clean4/loop_summary.jsonl",
+   "lines": "2-3",
+   "quote": "{\"round\": 2, \"evaluated\": 100, \"passed\": 87, \"failed\": 13, \"pass_rate\": 0.87, \"zero_metrics\": {\"difficulty_alignment\": 2, \"distractor_quality\": 2",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/e2e_pipeline/apush_unit1_repair_loop_clean4/loop_summary.jsonl",
+   "lines": "2",
+   "quote": "{\"round\": 1, \"evaluated\": 100, \"passed\": 87, \"failed\": 13, \"pass_rate\": 0.87",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "455",
+   "quote": "**The question is not \"did scores go down?\" but \"WHY did they go down and is the fix addressing the right thing?\"**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "603",
+   "quote": "- clarity_precision: 5/8 (62%) ← NEW dominant failure",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "609",
+   "quote": "Gate 3's MCQ failures were about fabricated stimuli. Gate 4's failures are about clarity (ambiguous stems) and factual accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "15",
+   "quote": "| Avg Score | 0.644 | 0.826 | 0.827 | → stable |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "14",
+   "quote": "| Pass Rate | 30.7% | 65.0% | 61.0% | ↓ 4% |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN3_REPORT.md",
+   "lines": "35",
+   "quote": "1. **Match + Easy = 15%** - Catastrophic failure rate",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "15",
+   "quote": "| Avg Score | 0.795 | 0.801 | +0.006 |",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN6_REPORT.md",
+   "lines": "14",
+   "quote": "| Pass Rate | 53.4% | **50.0%** | -3.4% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "7",
+   "quote": "the fix wave introduced a handful of new inconsistencies.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "29",
+   "quote": "- Why wrong: average scores were identical (0.833 vs 0.836). If facts were degraded, avg scores would diverge.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "30",
+   "quote": "- Caught by: per-item comparison showing 9 regressions were all correct-content-wrong-topic, not wrong-facts-right-topic.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "81",
+   "quote": "- sft-v4 baseline: 60% (N=30), avg score 0.836",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "82",
+   "quote": "- Stage 2: 40% (N=30), avg score 0.833",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "3-5",
+   "quote": "RCA of the golden-gate failure on PR #1050 (run 27334898209): all 17 affected items were Social Studies, none were the science/AP-Chemistry content the PR actually changed.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "24",
+   "quote": "A two-cell code path broke; ~45% aggregate = 3 cells working + 2 cells bugged to zero.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/reports/production_surface_40d.md",
+   "lines": "25",
+   "quote": "Pattern: a fix aimed at one cell kills that cell and never repairs the chronically-broken one.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260524T115335Z_2026-05-24T1153Z_UNIT1_DBQ_SOLVER_v2_VALIDATED.md.md",
+   "lines": "127",
+   "quote": "5 of v1's 6 failures repaired; 1 (row 39) still fails; 1 new fail (row 29) introduced — net +4 passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-24T1153Z_UNIT1_DBQ_SOLVER_v2_VALIDATED.md",
+   "lines": "40",
+   "quote": "5 of v1's 6 failures repaired; 1 (row 39) still fails; 1 new fail (row 29) introduced — net +4 passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "131",
+   "quote": "Human/agent external review helps when hypotheses are stuck, but the review must be grounded in actual failing artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "111",
+   "quote": "Diagnose by failed dimension, not by aggregate score. DBQ 0%, MCQ_SET 25%, and SAQ 0% have different mechanisms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-book-2026-09-29/logs/GATE-VERDICT.md",
+   "lines": "3",
+   "quote": "40 pass / 9 fail = pure staging 2cda0e30's red set exactly (`battery-baseline-2cda0e30/` 39/10; the one difference is `test:scoring`, the /tmp clone's esbuild artifact). Failure lines identical step by step; `validate-routine-transcripts` reads 88 of 210 (staging: 88 of 186) — our 24 routine clips are green.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "38",
+   "quote": "G and C both hit 12/15. Neither strictly dominates: **G_only=2 (MCQ rows), C_only=2 (MCQ_SET + DBQ rows).** They solve different rows.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "64",
+   "quote": "4. **Strict dominance is rare.** Only C strictly dominates I (1-0). Every other pair has crossings — recipes trade row classes for row classes.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/typed_recipe_14way_verdict_20260526.md",
+   "lines": "66",
+   "quote": "5. **n=15 noise floor is roughly ±1 row per cell.** Per-cell numbers like \"2/3 vs 0/3\" should be interpreted as directional only.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/rubber_ducks/combo_tournament_protocol_20260525.md",
+   "lines": "15",
+   "quote": "5. Promote only after same-row and fresh-row evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/independent-review-by-unit1.md",
+   "lines": "29",
+   "quote": "compared its returned node IDs with the new helper on **1,112 authored page/art-state combinations**. All matched.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

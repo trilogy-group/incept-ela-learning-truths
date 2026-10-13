@@ -1,0 +1,43 @@
+{
+ "id": "one-error-fails-the-whole-set",
+ "title": "One error fails the whole set",
+ "statement": "In a set of questions judged together, one factual error can fail the whole set, so check each question on its own before the set is judged.",
+ "example": "When factual accuracy failed in one model's question sets, nine other scored dimensions failed with it.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "format"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one fine-tuned model's results, when a question set failed on factual accuracy, nine other dimensions, from educational accuracy to integrity, failed with it (`icloud-work/ap-social-studies-generator/data/model_findings.md`). The generator's notes list a set in which one question had a documented factual error among its ten persistent failure cells, and name per-question independent validation as what it needs (`icloud-work/ap-social-studies-generator/python/CLAUDE.md`).",
+ "against": "the same findings leave open whether the cascade is the evaluator's own failure mode or the sets were that flawed.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/data/model_findings.md",
+   "lines": "961",
+   "quote": "MCQ_SET hard-fail dimensions cascade: when factual_accuracy fails, educational_accuracy, concept_coverage, localization_quality, difficulty_distribution, non_repetitiveness, test_preparedness, answer_balance, stimulus_quality, and integrity_check all fail together.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/CLAUDE.md",
+   "lines": "129",
+   "quote": "| apeuro u7 MCQ_SET | factual | One question in set has documented factual error | Per-question independent validation |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

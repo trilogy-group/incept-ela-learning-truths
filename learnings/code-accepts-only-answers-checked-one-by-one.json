@@ -1,0 +1,63 @@
+{
+ "id": "code-accepts-only-answers-checked-one-by-one",
+ "title": "Code accepts only answers checked one by one",
+ "statement": "Let code accept an answer without the judge only if that answer was checked on its own; answers checked only as a list go to the judge one by one.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "marking",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In the lesson engine's word web, code counts a student's word at once only if it is the centre, a key word or one of their forms: the judge checked the centre and each key word, and a writer's form is kept only if it shares its word's first four letters, so a planted synonym is dropped (`g9/transformer/src/mechanics/word-web.js`; `g9/transformer/test/animated.test.mjs`). The writer's likely words were checked only by one advisory question on whether most of them are linked, so they no longer count without the judge, and any other word stays pending until the judge rules.",
+ "against": "An older note still says likely words skip the judge: \"A word that is not the centre, a key word, one of their forms or a likely word goes to the judge at play time.\" (`g9/transformer/test/calibration/word-web.linked.json`, line 5). The four-letter rule would admit an unrelated word with the same start, and no judge checks the forms one by one.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "99-100",
+   "quote": "code knows only the forms of the centre and the key words (Jev checked those); any other word, the writer's likely … ones included, is the judge's to decide, so here it stays pending",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "86",
+   "quote": "q: noul(\"likely_linked\", \"Are most of the words in likely clearly connected to centre?\"), expect: \"yes\" },",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "59",
+   "quote": "// a form shares the start of its word (\"deceive\", \"deception\" for \"deceit\"); a synonym (\"lie\") is dropped",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/word-web.js",
+   "lines": "15",
+   "quote": "const stemOf = (w) => norm(w).replace(/[^a-z]/g, \"\").slice(0, 4);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated.test.mjs",
+   "lines": "59",
+   "quote": "assert.ok(web.families[0].words.includes(\"deception\") && !web.families[0].words.includes(\"lie\"), \"forms, not synonyms\");",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,337 @@
+{
+ "id": "mastery-only-for-verified-learning",
+ "title": "Mastery only for verified learning",
+ "statement": "Award mastery, progress and rewards only for verified learning: passive activity, clicking through, revealed answers, guessing, replays and low-accuracy work earn nothing, and detected gaming costs points.",
+ "example": "A walkthrough that clicked through without reading earned a mastery stamp at about 20 percent accuracy.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "evidence-of-learning"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a hands-on walkthrough of a Grade 3 course, a course review earned a mastery stamp at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`). An AP course package lists XP only for verified learning among its rules: candidate items, time, reading, voice, navigation in review mode and answer reveal award 0 XP, and its preview awards no mastery while the contract requires 90 percent verified mastery (`grade3-reading/edullm-review-hub/course-packages/courses/apush/review/evidence/incept-acceptance.json`). The package records the XP rule as passing in preview, with runtime unverified.",
+ "against": "On points the sources differ: a Grade 5 release computes preview XP from whole focused minutes at one XP per minute, though only at a successful finish that meets a 90 percent checkpoint (`grade3-reading/edullm-review-hub/docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd`; `grade3-reading/artifacts/wiki-research/hub-review-model.md`), where the AP package gives time 0 XP.",
+ "evidence": [
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "55",
+   "quote": "\"name\": \"XP only for verified learning\",",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "57",
+   "quote": "Candidate items, time, reading, voice, reviewer navigation, and answer reveal award 0 XP; production XP integration is not implemented.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/evidence/incept-acceptance.json",
+   "lines": "51",
+   "quote": "The contract requires 90 percent verified mastery; the preview intentionally keeps later lessons locked and awards no mastery.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "95",
+   "quote": "In a hands-on walkthrough one of us earned a stamp on “The Amazing Axolotl” at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/G5_STUDENT_EXPERIENCE_RELEASE_GATE.qmd",
+   "lines": "38-40",
+   "quote": "Preview XP is calculated once at a successful lesson finish from whole focused minutes at one XP per minute. The finish must resolve required evidence and repairs, avoid the gaming condition, and meet the 90 percent preview checkpoint.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "73",
+   "quote": "One reward unit has a published meaning; full reward follows verified mastery; non-mastered work earns zero; nothing below eighty percent earns reward; replay cannot duplicate it; ledger and display agree.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/timeback-course-eval/examples/reading-explorers-g3-allqtypes.md",
+   "lines": "187",
+   "quote": "Team found the broker fabricates quiz XP with **no 80% floor**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "532",
+   "quote": "Learner outcome: Skipping, guessing, or interface tricks cannot manufacture success.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "534",
+   "quote": "Failure signals: Skip-to-pass; inactive time rewarded; revealed answer counted; repeated submission duplicates credit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0028-non-negotiables.qmd",
+   "lines": "23",
+   "quote": "No XP for passive activity until learning is verified through retrieval. No XP below 80% accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0030-xp-system.qmd",
+   "lines": "50",
+   "quote": "| Any                     | Gaming/cheating | Negative XP        |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0030-xp-system.qmd",
+   "lines": "54",
+   "quote": "**Warning:** No XP is awarded below 80% accuracy. This discourages students from speed-running content or guessing until correct.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0030-xp-system.qmd",
+   "lines": "58",
+   "quote": "Rather than simply awarding zero, the system actively penalizes detected gaming so that the XP totals across the ecosystem remain trustworthy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0032-principles.qmd",
+   "lines": "174",
+   "quote": "Rewards for fake progress train students to optimize the reward system, not their knowledge. Motivation follows mastery, not the reverse.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "52-53",
+   "quote": "The broker previously **fabricated** quiz XP (`correct × 3`, no 80% floor, not time-based",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0060-incept-read-app-field-notebook.qmd",
+   "lines": "53-54",
+   "quote": "Now it records only raw correctness/accuracy and lets TimeBack's gradebook own XP; the only XP surfaced (Caliper `xpEarned`) is time-based.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "369",
+   "quote": "if (v !== 'secure' && attempt >= 2) v = 'secure'",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "373",
+   "quote": "a checkpoint's answer given after two tries is not marked accepted",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/MSQ-CHECK-GATE-REVIEW-by-unit9.md",
+   "lines": "5",
+   "quote": "Msq marks done whenever exact is true, independently of checked; the parent done bank is monotonic. A fleeting unsubmitted exact selection therefore permanently releases the task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/out-of-scope.md",
+   "lines": "7",
+   "quote": "Thus the last correct placement can record completion while pair buttons still allow removal before Check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/g3/MSQ-CHECK-GATE.md",
+   "lines": "25",
+   "quote": "This requires explicit judgment in checked mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-3/out-of-scope.md",
+   "lines": "17",
+   "quote": "Single-choice and per-gap formats intentionally judge on selection; that behavior is not the same aggregate-Check defect.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "11",
+   "quote": "Listening to a question must not count as answering it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/premature-inference-audio/NARRATION-FRONTIER-PROPOSAL.md",
+   "lines": "20",
+   "quote": "the second ending unlocks the page with both questions unanswered",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/tmp-g5-r8-src-scripts.tar.gz",
+   "member": "scripts/lane-tools/drafts/xp-dose-mapping.md",
+   "lines": "36-40",
+   "quote": "preserve exactly this property: **the fastest route to the dose's 25 XP is reading and answering correctly.** A guessing student triggers M7 corrections and lockouts -- slower, never richer. Concretely: a check passed only after correction still unlocks its segment's XP (the M7 flow IS the path back to the segment's XP), but corrections themselves mint no additional XP, so error farming pays nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "96",
+   "quote": "accuracy floor, because a speed-click almost always fails the floor too, and if the floor were",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "932",
+   "quote": "so if the floor ran first the penalty would return 0 and never be reachable.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "115",
+   "quote": "A meta-analysis found effects on cognitive outcomes of g = .49 (k = 19), on motivation g = .36 and on behavior g = .25.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "115",
+   "quote": "Only the cognitive effect held up in the high-rigor studies.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/learners-voice-guide.md",
+   "lines": "118",
+   "quote": "Keep game elements light and tied to competence, such as an evidence portfolio or mastery bars.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "123-125",
+   "quote": "1. Record the response without verified mastery or XP. 2. Route low-confidence constructed responses to human review. 3. Calibrate against independently scored AP responses before enabling mastery effects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "51",
+   "quote": "Target-runtime mastery, XP, event, and accessibility behavior | Contracted, not run",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "231",
+   "quote": "Actual controlled BookLesson/narration probes additionally show L4p1c/L7p3 hidden second question and page unlock after stem audio without answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "413",
+   "quote": "Independent source review must determine a bounded repair that does not let replay earn source completion, call an inherited completion callback or continue into queued material.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-01.md",
+   "lines": "49",
+   "quote": "Reveal opens progression but does not earn an independent success.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-07.md",
+   "lines": "50",
+   "quote": "Label revealed work assisted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/XP-COMPLIANCE-AUDIT.md",
+   "lines": "5-6",
+   "quote": "Award XP only for verified learning — NO XP below 80% accuracy; 0 XP if not mastered; negative XP for gaming;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/peter-pan-evidence-repairs-2026-09-10/SHARED-DECISIONS.md",
+   "lines": "14",
+   "quote": "Arrival, a glossary click or preview mode must not earn reading.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/academics-review-2026-06-29.md",
+   "lines": "98",
+   "quote": "In a hands-on walkthrough one of us earned a stamp on “The Amazing Axolotl” at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/G5-DELIVERY.md",
+   "lines": "33",
+   "quote": "Replay, Book Back, repeated prerequisites and receipt navigation add no credit.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/feedback/academics-review-2026-06-29.md",
+   "lines": "98",
+   "quote": "In a hands-on walkthrough one of us earned a stamp on “The Amazing Axolotl” at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "26",
+   "quote": "mastery progression at at least 90%; no XP below 80%; no XP for passive completion;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "153-154",
+   "quote": "it does not release the beat. Only the MCQ's `onCorrect` clears the hold",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

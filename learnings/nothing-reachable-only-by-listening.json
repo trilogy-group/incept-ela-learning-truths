@@ -1,0 +1,121 @@
+{
+ "id": "nothing-reachable-only-by-listening",
+ "title": "Nothing reachable only by listening",
+ "statement": "Make every page work with narration off: whatever the narration says or reveals must also be reachable by the learner's own tap or a transcript, never only by listening.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Read-aloud is a choice a grade 3 reading course offers on every page, so every page has to work both ways. A review of the read-it-myself mode found that a page staged on narration marks alone dead-ended: the marks never arrived, so the example, the non-example and the gate below them never appeared, and the page's Next stayed locked. The build now reaches each stage by whichever comes first, the voice or the tap, but by convention rather than a validator, so a new staged page type has to opt in (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 228-232).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "210-214",
+   "quote": "Anything a page reveals as the narration reaches it must also be reachable by the child's own tap. A page that stages itself on marks alone dead ends for whoever chose \"I'll read it myself\": the marks never arrive, so the example, the non-example and the gate below them never appear, and the page's own Next stays locked on a gate the child was never shown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "376-377",
+   "quote": "with narration off the paragraph is simply shown, since nothing may be reachable only by listening.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "229-230",
+   "quote": "a stage is reached by whichever came first, the voice or the tap, and the button hides while `isPlaying`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "210-211",
+   "quote": "**Rule.** Anything a page reveals as the narration reaches it must also be reachable by the child's own tap.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "211-214",
+   "quote": "A page that stages itself on marks alone dead ends for whoever chose \"I'll read it myself\": the marks never arrive, so the example, the non-example and the gate below them never appear, and the page's own Next stays locked on a gate the child was never shown.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "222-223",
+   "quote": "Read-aloud is a choice the child is offered on every page, so every page has to work both ways.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "376-377",
+   "quote": "with narration off the paragraph is simply shown, since nothing may be reachable only by listening.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "231-232",
+   "quote": "Convention, not a validator: a new staged node type has to opt in.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "318",
+   "quote": "In the app, preserve an accessible written transcript even when audio succeeds.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "426",
+   "quote": "Written transcripts remain available; audio is not the only route to essential information.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated/AUDIO-HANDOFF.md",
+   "lines": "3",
+   "quote": "The visible transcript is an accessibility and missing-media fallback, not the intended final presentation.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "25",
+   "quote": "details opens, persists (`transcriptOpen`), text equals the exact spoken script (54 words, scene 8)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "24",
+   "quote": "banner \"Recording unavailable. The transcript remains available.\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

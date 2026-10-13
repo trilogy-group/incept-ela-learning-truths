@@ -1,0 +1,165 @@
+{
+ "id": "replace-failed-items-then-recheck-coverage",
+ "title": "Replace failed items, then recheck coverage",
+ "statement": "Take every item a check or filter fails out of what learners see and replace it, not just exclude it from scoring, then recheck skill and format coverage.",
+ "example": "One course went out with 231 of 772 items it had classed as answerable without the text still live.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "format",
+  "alignment"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An adversarial review of the Grade 5 submission found 231/772 items (29.9%) classified as known-leaky, excluded from the gate instruments but not removed from the live course (`grade3-reading/ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md`, line 17), and the course formula drew the lesson that a leaky item awards progress for not reading (`grade3-reading/ti-courseplans/docs/course-formula-agents.md`, line 233). The same review found all 20 two-part evidence items in the excluded bucket, so six-format coverage quietly became five-format on the certified core (the review, line 27). An excluded item still rewards skipping the work, and a filter that is right item by item can drop a whole skill or format.",
+ "against": "the review allowed one way out that the package did not demonstrate: the items confined to non-gating slots (`ti-courseplans-audit/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md`). raw choice items leaked, but choice items built to need the passage passed: a pilot converted 20/27 and a later lane 142/234, so the skew toward technology-enhanced formats can be designed out (`grade3-reading/knowledge_bot/knowledge/kb-0089-parent-claude-sessions-worklog-2026-07-09.qmd`). A later run found: Two later courses took the way out that this record's review allowed but did not see demonstrated: a Grade 8 course confined its leaky formats to a 43-item non-gating practice lane for format exposure, all flagged gating:false with no audit errors, and a Grade 7 audit counted no practice item leaking into a gate. No source measures whether practising on leaky items helps or harms, so whether a failed item may stay in front of learners as flagged practice is open (`incept-package-hub/course-packages/courses/g8-reading/review/evidence/case-for-review.md`). A later run found counter-evidence (`grade3-reading/edullm-review-hub/course-packages/courses/g8-reading/review/evidence/case-for-review.md`). A later run found counter-evidence (`incept-package-hub/course-packages/courses/g8-reading/review/evidence/case-for-review.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "G5 shipped with **231/772 (30%) classified known_leaky still live**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "a leaky item awards progress for non-reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "17",
+   "quote": "The ledger honestly classifies 231/772 items (29.9%) as known_leaky — excluded from gate instruments, but not removed from the live course.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "27",
+   "quote": "All 20 EBSR items sit in the excluded bucket.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "27",
+   "quote": "6-format MAP coverage quietly becomes 5-format on the certified core.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "233",
+   "quote": "G5 shipped with **231/772 (30%) classified known_leaky still live** (excluded from gates but in front of children)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/redteam-sources/g5-reading-redteam-round1-2026-07-06.md",
+   "lines": "17",
+   "quote": "A leaky item awards progress for non-reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "73-74",
+   "quote": "KCT1 (domain-knowledge recall) is ~0 **by design** — passage-independent items are exactly what the anti-leak filter removes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0085-g5-red-team-findings-2026-07-06.qmd",
+   "lines": "25-26",
+   "quote": "anti-leak concentrates items into TEI formats (525/772), no attestation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/start-here.md",
+   "lines": "28",
+   "quote": "full item-type coverage, with the leaky formats confined to a non-gating practice lane.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "47-48",
+   "quote": "5 gating formats (text_entry, sequence, mcq, ebsr, inline_choice) + a **43-item non-gating practice lane** (multi_select, hot_text, match) for",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "49",
+   "quote": "format exposure, never routed through a mastery gate (all `gating:false`, 0 audit errors).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/coverage-matrix.json",
+   "lines": "4",
+   "quote": "Preserve the gating/practice partition; leaky formats never route through a mastery gate.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "47-49",
+   "quote": "5 gating formats (text_entry, sequence, mcq, ebsr, inline_choice) + a **43-item non-gating practice lane** (multi_select, hot_text, match) for format exposure, never routed through a mastery gate (all `gating:false`, 0 audit errors).",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "79-80",
+   "quote": "the leaky formats in a 43-item non-gating practice lane",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/red-team-final.json",
+   "lines": "10",
+   "quote": "\"practice_leaks_into_gate\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "145-146",
+   "quote": "The gating-surface cleanup found that excluded known-leaky ids could still be served. One pass removed 201 excluded references across 73 tests",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "47-49",
+   "quote": "5 gating formats (text_entry, sequence, mcq, ebsr, inline_choice) + a **43-item non-gating practice lane** (multi_select, hot_text, match) for",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_ADDRESS_STATUS.md",
+   "lines": "11",
+   "quote": "all 32 outage items replaced by gate-cleared items — 48 candidates sourced (every one ≥0.85, scored by the healthy-period checker), top-per-cell winners swapped in, all scoring 1.0; difficulty structure unchanged; zero outage items remain",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

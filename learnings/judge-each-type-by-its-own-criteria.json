@@ -1,0 +1,332 @@
+{
+ "id": "judge-each-type-by-its-own-criteria",
+ "title": "Judge each type by its own criteria",
+ "statement": "Judge each kind of item only with checks and a rubric written for its type and format, run only on content positively identified as that kind.",
+ "example": "One judge scored short-answer items, which have no wrong options, 0.071-0.133 on the quality of their wrong options.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "format",
+  "measurement"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The AP project's main judge scored short-answer items on wrong-option quality they cannot have, at 0.071-0.133, which the baseline report estimated at about 5 points of artificial failure (`icloud-work/aptraining/.agent/research/eval_baseline.md`). A second judge that supported only multiple choice and four other formats fell through to its multiple-choice rules on short-answer, essay and document-based items and scored every one 0.0 with no useful dimensions, and an older judge server passed through or skipped the item types it did not know (the same report). Criteria built for another kind manufacture failures or wave items through. Check the judge's agreement per type as well.",
+ "against": "The size of the effect is an estimate and the misapplication was never confirmed ('Investigate whether the IB rubric should skip distractor_quality for non-MCQ types (probably).', `icloud-work/aptraining/.agent/research/eval_baseline.md`, line 267). The files show that the two scores disagree, not which one is right; no person's rating sits beside them. The repository's guide says metrics that don't apply to a type should pass automatically, and the closed-ended rubric passes distractor quality for items without distractors (`icloud-work/inceptbench-main/CONTRIBUTING.md`, line 52; `icloud-work/inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt`, lines 605-606), so whether such a dimension is passed or left out is not settled. Agreement with a reference judge is consistency, not correctness. Part of a reported 97-point disagreement on document-based items came from the reference judge timing out on 99 of 100; re-run at a sustainable rate, that item type passed about 60-67% under the reference against 98% under the second judge (`feedback_ib_grader_v266_dbq_mcqset_timeout_99pct_at_concurrency_default_2026_06_02.md`, lines 10, 17-18). And the judges agreed where the failure was structural: 'Both judges agreed on MCQ_SET 0% — so Gemini can be reliable when the failure mode is structural enough that both judges detect it.' (`feedback_gemini_ib_dbq_judge_divergence_97pp_2026_06_02.md`, line 34). The cause is the note's own reading: the judge 'probably defaulted' to a low score on what it couldn't grade (same file, line 53), and the per-format rubrics were a next step that was not measured (line 73). Identifying the kind is itself hard: the answer-position guard raised its letter threshold twice and then moved to a text-shape test, and its final version lets three-option multiple-choice items skip the test as an accepted trade-off.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "267",
+   "quote": "SAQ has no distractors, so this is an IB grader oddity — it's penalizing SAQ for lacking distractors.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "97",
+   "quote": "Pass an SAQ/LEQ/DBQ in and it falls through the MCQ structural rules and hard-fails on `mcq_wrong_option_count` + `explanation_too_short` — every one scored 0.0 with no useful dimensions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/eval_baseline.md",
+   "lines": "42",
+   "quote": "Anything that ran against it for AP types either passed through or was no-oped.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/results.json",
+   "lines": "89-96",
+   "quote": "\"math_qa_evaluator\": {\n          \"overall\": 0.911111111111111\n        },\n        \"answer_verification\": {\n          \"is_correct\": true\n        },\n        \"reading_question_qc\": {\n          \"overall_score\": 0.5",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/output/results.json",
+   "lines": "101-108",
+   "quote": "\"compliance_math_evaluator\": {\n        \"overall\": 0.5444444444444445\n      },\n      \"answer_verification\": {\n        \"is_correct\": true\n      },\n      \"reading_question_qc\": {\n        \"overall_score\": 0.9",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TEST-FINDINGS-2026-02-17.md",
+   "lines": "40",
+   "quote": "Articles were being evaluated with question criteria (distractor_quality, etc.)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/FRESH_CLAUDE_EVAL_2026-02-17.md",
+   "lines": "134",
+   "quote": "**Root Cause**: The article evaluator is treating articles as MCQs, expecting \"question stem\" and \"answer options\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "20bb29e",
+   "lines": "5-7",
+   "quote": "The independent factual audit produces systematic false positives (misreads position indices as date inversions).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "2300-2302",
+   "quote": "SPR has no answer options, so those audits can mis-fire and force false failures on `curriculum_alignment`, `educational_accuracy`, or",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_962.py",
+   "lines": "213-215",
+   "quote": "History: previously expected INFERIOR, but consensus variance and the original DBQ curriculum-alignment guard firing on all question types caused intermittent passes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "341",
+   "quote": "**Fix**: Removed the skip condition. Updated the audit prompt to handle sequence question format.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "ee21a33",
+   "lines": "18-22",
+   "quote": "#343: follows_direct_instruction incorrectly evaluated for SS articles - Add METRIC SUPPRESSION block to social_studies_evaluation.txt prompt - Add post-processing in ArticleEvaluator.evaluate() to null out DI-only metrics (follows_direct_instruction, worked_examples, practice_problems) for any article routed to the SS overlay",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/social_studies_evaluation.txt",
+   "lines": "55",
+   "quote": "**DO NOT evaluate or output scores for the following metrics** — they are not applicable to Social Studies articles and must be **omitted entirely** from your output:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "122-123",
+   "quote": "types are not interchangeable (MCQ-style questions asked of cloze/hot-text items produced spurious findings on every non-MCQ page)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0238-l4-baseline-submission-and-signoff-packet-2026-08-31.qmd",
+   "lines": "90",
+   "quote": "check written only for L4's syllable-breakdown pattern wrongly applied to L5/L6/L7's simpler vocab",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "79-81",
+   "quote": "The `task-dominance` question specifically needs a rewrite to be split-layout-aware (80% fail rate against this repo's own intentional layout pattern, no discriminating power as worded).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/MEMORY.md",
+   "lines": "82",
+   "quote": "main-A's generic 4-dim prompt missed cell-specific failure modes Oracle's BAML rubric caught — 33pp divergence on SAQ.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "46",
+   "quote": "Gemini scored 0/30 on EVERY mcq_set and dbq cell. The earlier Claude Opus spot-check on 24 BoN-lifted rows had 88% agreement with IB.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "51",
+   "quote": "- My single-prompt JSON rubric (\"factual_accuracy 0-1, overall 0-1\") can't decompose those",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_gemini_ib_dbq_judge_divergence_97pp_2026_06_02.md",
+   "lines": "33",
+   "quote": "- LEQ judge bias goes the OTHER way (Gemini under-credits LEQ). So \"Gemini judge is always wrong\" is too strong. The pattern is direction-specific per cell.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "46",
+   "quote": "Gemini scored 0/30 on EVERY mcq_set and dbq cell.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "41",
+   "quote": "| apwh/mcq_set | 100% | 0% | **100pp** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "42",
+   "quote": "| apwh/dbq | 66.7% | 0% | **67pp** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "53",
+   "quote": "Gemini probably defaulted to <0.85 on anything it couldn't decisively grade.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "60",
+   "quote": "- The judge agrees on simple formats (mcq, saq, leq) at 67-93%",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "69",
+   "quote": "The rubric needs format-specific decomposition (per-question for mcq_set; per-rubric-item for DBQ).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_stacked_decode_RAG_judge_result.md",
+   "lines": "73",
+   "quote": "- **Future judge runs:** build per-format rubrics for mcq_set + dbq (decompose into sub-questions / sub-rubric-items) before re-running held-out.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "29-33",
+   "quote": "infer_item_type defaulted plain-text / unparseable content to \"common_stimulus\", so the NWEA multi-item length floor applied to ordinary standalone fiction_reading / nonfiction_reading passages. A short but at-grade passage (grades 2-5, e.g. ~66 words < the 200-word G3 floor) then had length_appropriateness forced to 0.0 by guard_passage_length_floor.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "3c78f22",
+   "lines": "35-38",
+   "quote": "common_stimulus is now only returned when POSITIVELY detected (a JSON item embedding >=2 sub-questions/items sharing the passage). Plain prose, parse failures, and non-object JSON default to the floor-exempt \"standalone\", so the multi-item floor only fires where it can actually be established.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "5",
+   "quote": "When the decomposer treats multi-part FRQs as a quiz or mcq_set,",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "7-11",
+   "quote": "BAML hallucinated A/B/C/D answer positions, the chi-square test then reported a non-random distribution, and answer_balance scored 0.0 — dragging the overall evaluation from ~0.9 to 0.84 (below the 0.85 pass threshold).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "a236b00",
+   "lines": "4-5",
+   "quote": "defines no intro rubric — so an intro gets coerced into the schema/kc template and can false-fail on orientation-beat+bridge, defeating intro mode's purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "41",
+   "quote": "* fix: raise regex threshold to ≥3 distinct labels to exclude FRQ sub-parts",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "90",
+   "quote": "* fix: schema-agnostic detection only; raise threshold to ≥4 letters",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "122",
+   "quote": "* fix: structural heuristic — labels followed by short answer text = MCQ",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "e1e761c",
+   "lines": "101-102",
+   "quote": "3-option MCQ (very rare, atypical for AP) bypasses and returns 1.0: acceptable trade-off vs. BAML-hallucination risk on misclassified FRQ.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/evidence/GATE-TRANSCRIPT.md",
+   "lines": "8",
+   "quote": "the single-anchor judge under-scores synthesis",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/00-COVER-NARRATIVE.md",
+   "lines": "84-85",
+   "quote": "it looks for reuse of one prior lesson, and a synthesis lesson reuses all of them at once",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/00-COVER-NARRATIVE.md",
+   "lines": "85-86",
+   "quote": "We read this as a limitation of the single-prior judge on synthesis lessons, not a content defect",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-grading.md",
+   "lines": "135-136"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G3V2-RENDER-GAP-ANALYSIS.md",
+   "lines": "17",
+   "quote": "doesn't name it (falls through to 'mcq' label)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

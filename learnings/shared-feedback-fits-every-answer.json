@@ -1,0 +1,86 @@
+{
+ "id": "shared-feedback-fits-every-answer",
+ "title": "Shared feedback fits every answer",
+ "statement": "A retry or hint message shown for every wrong answer must be true of every answer it can be shown for, and must not assume how another part was answered.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "hints",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In reading lessons, retry messages written for one expected wrong answer were shown for every miss: one opened with \"Almost\" for any miss, including answers nowhere near right, and another named a word the item itself accepted, so one student was told about that word while another who typed it passed. On a cloze, the feedback for one blank assumed the blank before it had been answered correctly.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L11-review.md",
+   "lines": "52",
+   "quote": "It is shown for every miss, including \"scary\" or \"gloomy\".",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "67",
+   "quote": "A student who typed \"scared\" is told about \"miserable\", and a student who typed \"miserable\" passes.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-review.md",
+   "lines": "180",
+   "quote": "The `depend` feedback on blank 3 (*\"That word is already in the gap before this one\"*) assumes blank 2 was answered correctly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "651",
+   "quote": "true of *presence* only — a stemmed match proves the child said the word, never that they used it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "652",
+   "quote": "correctly, so no reply may congratulate correct usage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "656",
+   "quote": "word-specific one that fires wrongly **names a word the child never said**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "657",
+   "quote": "asserts fired-word === named-word for every clause shown",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/UNIT.md",
+   "lines": "347",
+   "quote": "and a child who read the sentence correctly is told they read it wrong.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,99 @@
+{
+ "id": "find-every-line-that-proves-the-claim",
+ "title": "Find every line that proves the claim",
+ "statement": "Before an evidence item is used, ask the judge whether each other relevant line also proves the claim, and add every line it is sure of to the key.",
+ "example": "In five runs on one drama text, the judge accepted two to four more lines besides the one the writer keyed.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "key",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The lesson engine's evidence hunt asks the judge, one bounded question per line, whether up to eight of the lines judged most relevant to the question prove the claim as well as the keyed ones, and adds every line it is sure of to the accepted set, so a fair answer is not marked wrong (`g9/transformer/src/mechanics/evidence-hunt.js`). In five lesson runs on one drama text, the one keyed line grew to an accepted set of three to five lines, and in one run the writer keyed a line the other runs had accepted only as an alternative (`g9-transformer-runs/lessons/`). On a short poem the search added no line in three runs, and the live proof table shows the same split: 3 of 8 extra lines held on the drama text, 0 of 8 on the poem (`g9/transformer/v01/QA.md`).",
+ "against": "The pool is capped at eight lines, so a fair line outside it is left to the play-time check: \".filter((i) => !keyed.has(i)).slice(0, 8);\" (`g9/transformer/src/mechanics/evidence-hunt.js`, line 53). The judgments on the extra lines are advisory and came from one judge sample each, and with no labelled cases the judge checks' precision is not yet measured (`g9/transformer/v01/QA.md`, line 46).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "1-2",
+   "quote": "The judge confirms every keyed line … and also finds other lines that prove the claim just as well, so a fair answer is never marked wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "65",
+   "quote": "return { ...item, accepted: [...new Set([...item.evidence, ...also])] };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/evidence-hunt.js",
+   "lines": "53",
+   "quote": "const pool = (ctx.focus ?? []).map((f) => f.i).filter((i) => !keyed.has(i)).slice(0, 8);",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-082157-why-does-iago-say-he-follows-oth.json",
+   "lines": "916-918",
+   "quote": "\"evidence\": [ 41 ],",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-082157-why-does-iago-say-he-follows-oth.json",
+   "lines": "921-927",
+   "quote": "\"accepted\": [ 41, 58, 60, 59, 51 ]",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "939-941",
+   "quote": "\"evidence\": [ 60 ],",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-085057-why-does-iago-say-he-follows-oth.json",
+   "lines": "944-948",
+   "quote": "\"accepted\": [ 60, 41, 58 ]",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "lessons/20261009-082604-what-does-the-poem-suggest-about.json",
+   "lines": "347-351",
+   "quote": "\"accepted\": [ 11, 12, 13 ]",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "19",
+   "quote": "| othello-1-1 | `evidence-hunt` | ready | 1 | 3/3 | 1/1 | 3/8 | 1.4 |",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "25",
+   "quote": "| ozymandias | `evidence-hunt` | ready | 1 | 3/3 | 3/3 | 0/8 | 1.5 |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,71 @@
+{
+ "id": "check-the-hardest-requests-most",
+ "title": "Check the hardest requests most",
+ "statement": "Spot-check a generator's hardest requests most closely, since pass rates can fall steeply as the requested difficulty rises and requests for upper grades can come back simpler than asked.",
+ "example": "Across 1,888 judged maths items, easy requests passed at 34.35% and hard ones at 14.14%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "demand",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In one analysis of 1,888 judged maths items, pass rates fell from 34.35% for easy requests to 26.28% for medium and 14.14% for hard (`icloud-work/incept/nova_forge/EXECUTIVE_SUMMARY.md`), and one grade's hard items passed at 1.54%, 1 of 65 (`icloud-work/incept/nova_forge/EXISTING_GRADES_ANALYSIS.md`). A separate generator's notes say that for upper grades 'Questions may be simpler than expected for grade level' and that 'Grades 9-10 produce elementary-level questions' (`icloud-work/incept/nova_forge/svg-llm/README.md`).",
+ "against": "The gradient is not uniform: in one grade 'Performance is nearly identical across all difficulty levels', at 41.4%, 41.7% and 39.5% (`icloud-work/incept/nova_forge/AGENT2_GRADES_3_8_BASELINE.md`, line 60), and pass rates do not fall with grade, since grade 8 passed at 28.76% and grade 6 at 13.82% (`icloud-work/incept/nova_forge/EXECUTIVE_SUMMARY.md`). The evidence is maths items only, and the upper-grade clause rests on one generator's notes.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "87",
+   "quote": "| **Easy** | 658 | 226 | 432 | 34.35% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "88",
+   "quote": "| **Medium** | 643 | 169 | 474 | 26.28% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "89",
+   "quote": "| **Hard** | 587 | 83 | 504 | 14.14% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXISTING_GRADES_ANALYSIS.md",
+   "lines": "196",
+   "quote": "| Hard | 65 | 1 | 64 | 1.54% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/README.md",
+   "lines": "40",
+   "quote": "- Questions may be simpler than expected for grade level",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/README.md",
+   "lines": "45",
+   "quote": "- Grades 9-10 produce elementary-level questions",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

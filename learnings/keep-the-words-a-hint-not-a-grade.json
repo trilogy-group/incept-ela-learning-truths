@@ -1,0 +1,345 @@
+{
+ "id": "keep-the-words-a-hint-not-a-grade",
+ "title": "Keep the words; a hint, not a grade",
+ "statement": "Keep what students write and show it back; a model's confident reading can choose a hint or move on, but not give a grade.",
+ "example": "An AI marker got 58 of 63 of my test answers right, and every miss was where the wording drifted from the rubric's.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "feedback"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Finding 5 of the film study (`othello-unit-video/research/FINDINGS.md`): an AI marker from an existing reading lesson\ngot 58 of 63 realistic answers right. The 5 misses were all where a student's wording drifted from the rubric's: it\nheld back 3 right answers, credited a wrong one on one criterion, and passed a wrong paragraph. About one call in ten\ndidn't come back within 40 seconds. The lesson engine saves what students write in its claim-evidence-reasoning,\ncompare and debate blocks, shows it back, and never marks it. Its open check acts on a confident judgment only, to give\na hint or move on, and keeps the answer and asks again when the judge is unsure\n(`g9/transformer/src/mechanics/cer-frame.js`, `g9/transformer/src/mechanics/compare-paragraphs.js`,\n`g9/transformer/src/mechanics/debate.js`, `g9/transformer/src/mechanics/open-check.js`).",
+ "against": "the same marker caught\nall 10 known misreadings; a second one accepted 15 of 15 right answers and let none of 28 wrong or partial ones\nthrough; and a large study found model and human markers agreeing almost as well as humans agree with each other\n(kappa 0.70 against 0.75; Henkel et al. 2024, https://arxiv.org/abs/2405.02985). A later run found counter-evidence (`g9/transformer/src/quality/playtest.js`).",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/FINDINGS.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "35",
+   "quote": "\"attempting\"-gameable written step (F4 must log justification as attention evidence, machine-check the citation half)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/start-here.md",
+   "lines": "19",
+   "quote": "deterministic checking is limited to candidate MCQ choices; constructed historical reasoning remains ungraded until a trusted rubric grader and human escalation path are approved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "41",
+   "quote": "a short typed justification that is logged, not auto-graded",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-live-walk-2026-09-30/REGISTER.md",
+   "lines": "31",
+   "quote": "overwrites a correct open answer that differs from the authored one",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/grade-band-profiles.md",
+   "lines": "44",
+   "quote": "child-ASR ~13% error blocks production mastery",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "705",
+   "quote": "Speech can support practice without becoming protected evidence unless its scoring is validated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/alpha-read/modelling-moment-procedures-v2/INDEX.qmd",
+   "lines": "152-153",
+   "quote": "feedback branches by family and never credits language the learner did not supply.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "67",
+   "quote": "asked only of a saved answer: which one change would most improve the paragraph.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "68",
+   "quote": "(support gates), never as a mark,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "75",
+   "quote": "Which ONE change would most improve this Grade 9 claim, evidence and reasoning paragraph?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "79",
+   "quote": "none of these: claim answers prompt, and reasoning explains a word from evidence and links it to claim",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "99",
+   "quote": "choice among four authored steps, filled with the student's own words,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "102",
+   "quote": "a paragraph doing all three got no step (0.26 s).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v05/README.md",
+   "lines": "10",
+   "quote": "- Own words are never marked; the director reads only recognition steps.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/cer-frame.js",
+   "lines": "1",
+   "quote": "The reader's words are saved and shown back, never marked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "13",
+   "quote": "Own words are never marked. The claim-evidence-reasoning entity saves the answer, and the judge only shapes a note.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "32-33",
+   "quote": "Only that step is used, never its verdict, so the answer stays unmarked.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "20-21",
+   "quote": "// Actions that carry the student's own words: saved and shown back, never marked.\nconst OWN_WORDS = new Set([\"cer\"]);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/learning-question.js",
+   "lines": "99",
+   "quote": "\"Saved, beside your first answer.\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/core/runtime.js",
+   "lines": "4",
+   "quote": "Own words are never marked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/spelling.md",
+   "lines": "6",
+   "quote": "Original BookTypeIt cleared the draft and told the child to listen despite a visible word comparison task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/spelling.md",
+   "lines": "8",
+   "quote": "Keep exact editable input; use Look guidance; retain second-miss copy help and exact-letter completion.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "11",
+   "quote": "The learner must reconstruct or copy their own already-recorded answer because our service failed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "15",
+   "quote": "Earlier grades receive an empty initial draft and clear-on-submit behavior.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "32",
+   "quote": "Do not copy an authored reveal or scorer-provided answer into the editor.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "57",
+   "quote": "Restore from the shown authored answer/reveal: replaces original student work and leaks an answer into the input.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/shared/ANSWER-RETRY-PROPOSAL.md",
+   "lines": "59",
+   "quote": "Clear only after failed grading: imposes retyping precisely when revision is needed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-4/CURRENT-RESULTS.md",
+   "lines": "13",
+   "quote": "Spelling: a real miss `enchating` remains editable; correction earns completion",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "720",
+   "quote": "a hint that builds on their last answer is useless beside an empty box where that answer used to be.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "144",
+   "quote": "accurate enough to stand between a child and the next screen; it is accurate enough to key an",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "111",
+   "quote": "It never grades and it never blocks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "705",
+   "quote": "Speech can support practice without becoming protected evidence unless its scoring is validated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1206",
+   "quote": "The actual accepted G5-U1-L7 essay retains four paragraphs (six LF characters) in the learner span, but browser `white-space: normal` collapses those separators.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "187",
+   "quote": "the chart re-words the child's own accepted answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/apps/broker/WRITING-SCORE.md",
+   "lines": "27-29",
+   "quote": "An LLM scoring a child's one-sentence response in real time is appropriate for immediate classroom feedback but not for grade-book accountability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/start-here.md",
+   "lines": "19",
+   "quote": "constructed historical reasoning remains ungraded until a trusted rubric grader and human escalation path are approved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/LIVE-WALK.md",
+   "lines": "84",
+   "quote": "keep the child's accepted words when the rubric lists more than one pass.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/content/archivist-checks.json",
+   "lines": "41",
+   "quote": "Own-words answers are stored, never judged by a keyword match and never replied to; gibberish and too-short text are refused with a plain prompt (feedback 1.4, 8.2).",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1313-1314",
+   "quote": "Uncalibrated prose scoring cannot control learner progression",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "748-749",
+   "quote": "no longer arrives pre-filled — it renders as a target and is filled with the child's own accepted words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "951",
+   "quote": "is rendered as unscored, human-reviewed rehearsal and never gates.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "kappa 0.70 against 0.75; Henkel et al. 2024",
+   "url": "https://arxiv.org/abs/2405.02985"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,73 @@
+{
+ "id": "not-tested-is-not-failed",
+ "title": "Not tested is not failed",
+ "statement": "In any record of what a student knows, keep what was never tested apart from what was tested and failed.",
+ "example": "A diagnostic with time for 40 to 60 items samples roughly 20 to 30% of a course's components.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "ap"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The diagnostic guide in the reading project's knowledge base says a diagnostic should produce a knowledge map with explicit uncertainty that separates components with good evidence from those with little or none, and counts conflating an unassessed component with a failed one among the most common errors in diagnostic systems (`grade3-reading/knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd`). With time for 40 to 60 items on a course of hundreds of components, a diagnostic samples roughly 20 to 30% of the domain. The course's routing contract requires diagnostics to handle unassessed knowledge (`grade3-reading/knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "75",
+   "quote": "An unassessed KC is not the same as a failed KC, and conflating the two is one of the most common errors in diagnostic systems.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "75",
+   "quote": "the map must distinguish between KCs where we have good evidence and KCs where we have little or no evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0154-diagnostic-assessment-brainlift.qmd",
+   "lines": "73",
+   "quote": "A diagnostic assessment might have time for 40-60 items. You are sampling roughly 20-30% of the domain.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "91-92",
+   "quote": "diagnostics route study under uncertainty and must handle slips, guesses, sampling, grain size, and unassessed knowledge; they are not grades;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/XP-RUBRIC.md",
+   "lines": "127",
+   "quote": "counting an ungraded written answer as correct would flatter every accuracy figure it reports.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "467",
+   "quote": "ungraded work counted correct",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,48 @@
+{
+ "id": "one-next-step-never-a-list",
+ "title": "One next step, never a list",
+ "statement": "When feedback on writing finds several gaps, give one next step, on the earliest missing part in the order the writing builds, never a list or a chained second step.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "hints"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A 3D version's paragraph marker returns one next step, never a list, and never writes the student's sentences for them. When several of the four jobs are missing it picks the earliest in point, evidence, analysis, link order, is told not to chain a second step with 'then' or 'and also', and code drops a chained second instruction if the model adds one anyway.",
+ "against": "The code drops only a trailing clause opened by 'then', 'after that', 'also' or 'next' (`othello-archive/server/tasks/practice.mjs`, line 64), and nothing here measures whether one step helps more than a list.",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "4",
+   "quote": "It returns ONE next step, never a list, and never writes the student's sentences for them.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "53",
+   "quote": "(if several jobs are missing, choose the earliest in point, evidence, analysis, link order). Do not chain a second step with 'then' or 'and also'.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/practice.mjs",
+   "lines": "63",
+   "quote": "one step only: drop a chained second instruction if the model adds one anyway",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

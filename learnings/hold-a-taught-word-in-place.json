@@ -1,0 +1,50 @@
+{
+ "id": "hold-a-taught-word-in-place",
+ "title": "Hold a taught word in place",
+ "statement": "Keep a word being taught in the same place through every stage of its routine, reserving room from the start for any control that appears later.",
+ "example": "A taught word shifted about 70px sideways when its speaker icon appeared.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A supplied UI review saw a taught word shift about 70px sideways when its speaker icon appeared (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, line 30). The project found that the 48px speaker was inserted only at the routine's second stage, and reserved its footprint from arrival so the word keeps its position (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 15). A rendered fixture verified identical word position and size for all five scoped words at the arrival, sound-out and completed stages (`grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 28).",
+ "against": "The proof is a component fixture, not the live lesson: \"Its screenshot is illustrative component evidence, not an acceptance screenshot of a runtime lesson.\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 30).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "30",
+   "quote": "Content also moves *within* a screen: on `/p2` the word \"betrayal\" shifts about 70px sideways when the speaker icon appears, and the forward pill moves down roughly 55px across three steps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "15",
+   "quote": "Vocab inserts a48px speaker only atstage2. Reserve its footprint from arrival; retain same word position.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "28",
+   "quote": "It verifies all five scoped vocabulary words at arrival, sound-out and completed stages: identical word x/y/width/height;48×72 reserve; hidden control before its authored stage;48px target; non-overlapping visible label; visible text contained in its accessible name.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

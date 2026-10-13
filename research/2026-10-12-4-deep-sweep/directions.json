@@ -1,0 +1,78 @@
+[
+ {
+  "id": "aptraining-core",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/aptraining/: its top-level .md files, handover/, coordination/, agents/, memory/, apllm-history/, artifacts/, parallel-ideas-lab/ and helpers/ (documents and docstrings only). Then ~/Library/Mobile Documents/com~apple~CloudDocs/work/aptraining-crystal-copy-20260521/: find documents that exist only in this snapshot or differ from the current aptraining (postmortems, reports, decisions) and read those. Context: a project that trained and evaluated models to generate AP social studies questions (multiple choice, short answer, document-based, long essay) to a 97% quality bar."
+ },
+ {
+  "id": "aptraining-workspace",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/aptraining/workspace/: find the written reports, summaries, postmortems, analyses, reviews, READMEs and evaluation write-ups (.md) by name (report, summary, postmortem, findings, lessons, analysis, review, readme, eval) and read them; never data files. Then ~/Library/Mobile Documents/com~apple~CloudDocs/work/aptraining/Cheater/: every document (what gaming of the evaluator or shortcuts were found, and how they were stopped). Context: AP social studies question generation and evaluation."
+ },
+ {
+  "id": "inceptbench",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/inceptbench/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/inceptbench-main/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/inceptbench-latest/: every document on how generated learning items are evaluated: rubrics per item type, hard fails, calibration, changelogs and fixes (what each bug taught), localization guidelines, verifiers; note what changed between the three copies and why. Already used, so look beyond them: docs/AP_EVALUATION.md, docs/legacy/EVALUATORS.md (lines 47-51, 122, 150, 246), docs/MATH_VERIFIER.md, docs/user_guides/api.md, docs/user_guides/examples.md."
+ },
+ {
+  "id": "evaluators",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/evaluator/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/evaluatorML/: how generated items were judged, how evaluators were trained or calibrated, failure analyses, agreement with people."
+ },
+ {
+  "id": "incept-core",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/nova_forge/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/inceptlm/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/incept-multilingual-generation/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/incept-uae-api-website/ (documents only): rules for generating learning content, quality gates, what failed and why."
+ },
+ {
+  "id": "incept-exams",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/aplit-quiz-generation/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/sat-reading-generation/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/ap-benchmark-standalone/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/incept/inceptbench/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/ap-benchmark-standalone/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/question_generator/: exam-style item generation (AP Literature quizzes, SAT reading, AP benchmarks)."
+ },
+ {
+  "id": "social-studies",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/ap-social-studies-generator/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/k_12_social_studies/ (including ap_files): generation rules, item specs (stimulus-based questions, short answer, document-based and long essay tasks), validation, review findings."
+ },
+ {
+  "id": "ml-learnings-deep",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/ML learnings/: all its documents (INDEX.md first), especially those an earlier pass only skimmed: research_* (with the studies they cite), decisions_and_pivots_timeline, master_strategy_apr24, grpo_failures_deep_dive, grpo_design_and_theory, dpo_and_fdpo_pipeline, agent_delegation_architecture, debugging_methodology, what_is_ap_and_why_it_matters. An earlier pass already found these, so look beyond them: marking guides describe the reasoning that earns credit, not lists of facts (15 of 17 factual failures were in the lists) · give a writer verified facts as its only source, not as inspiration (anchor fact: ~90-95% to 97-100%) · topic relevance as its own blocking check (a wrong-topic item scored 0.82) · a wrong key or wrong fact voids the item (scores override to 0.0) · read failing items; an unchanged average (0.833 vs 0.836) hid a new failure · a research step amplified hallucinations (60% vs 80%) · warnings made the writer worse (45% to 30%) · wrong unit metadata failed a whole unit (0% to ~80% when fixed) · decorative pictures and visual documents with no image failed · best-of-N fixes random slips only (88.89% to 98.6%) · selection by a judge's score needs a separate confirming check (reward gaming) · a code math verifier gave zero variance over 81 questions · one bad detail in a shared stimulus fails the whole set · question-specific rubrics (Spearman 0.763-0.906 vs 0.510) · one change at a time (9 of ~45 iterations mattered)."
+ },
+ {
+  "id": "memories-and-small",
+  "scope": "~/Library/Mobile Documents/com~apple~CloudDocs/work/auto-memory-backup/ (past agent memories: feedback and lessons recorded during AP and other learning-content projects; skip anything personal), ~/Library/Mobile Documents/com~apple~CloudDocs/work/common-core-resource-aggregator/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/meaningful_ai_learning/, ~/Library/Mobile Documents/com~apple~CloudDocs/work/ai_coach/ and ~/Library/Mobile Documents/com~apple~CloudDocs/work/expertise-inflation-index/: first decide which of these hold anything about learning or learning content (say so in coverage), then read those deeply."
+ },
+ {
+  "id": "local-ap",
+  "scope": "~/Documents/APinceptbench/. In ~/Downloads/: the unit-N-apush-benchmark.jsonl files (read only the first few records of one or two, to learn what each item records and what its quality fields mean), and the \"Knowledge Schema Generator - ...\" and \"AP US History - Knowledge Schema - SME Tracker\" spreadsheets (read their text with unzip -p <file> xl/sharedStrings.xml; ignore any person's name in them). Documents mentioning AP in ~/Projects/incept-package-hub/. In ~/Projects/grade3-reading/: ti-courseplans/courses/hs-civics/reference/ (one file there is named after a person: read it, but flag it as name_bearing_source), ti-courseplans/courses/map-proxy-assessment/ (validity case, exam spec), artifacts/team-direction-2026-09-09/research/, artifacts/wiki-research/hub-review-model.md, artifacts/g5_build_2026_07_02/."
+ },
+ {
+  "id": "kb-learning-science",
+  "scope": "~/Projects/grade3-reading/knowledge_bot/knowledge/ (a store of summarised sources; INDEX.md lists every entry with tags and keywords): pick every entry tagged or keyed reading-science, brainlift, reading-comprehension, science-curriculum, psychometrics, rand-report, pedagogical-llm, assessment-design, standards or teks, or about instruction, practice, curriculum and knowledge, and read each in full. Never open ~/Projects/grade3-reading/knowledge_bot/.env."
+ },
+ {
+  "id": "kb-reviews-evaluation",
+  "scope": "~/Projects/grade3-reading/knowledge_bot/knowledge/ (INDEX.md first): every entry tagged or keyed reviewer-feedback, reviewer-round, curriculum-review, red-team, anti-leak, calibration, inceptbench, generator, decisions, g3-g5-closeout or coe, or about what reviewers found and how content was evaluated; read each in full. Already used: kb-0069, kb-0070, kb-0099, kb-0235. Never open ~/Projects/grade3-reading/knowledge_bot/.env."
+ },
+ {
+  "id": "kb-course-builds",
+  "scope": "~/Projects/grade3-reading/knowledge_bot/knowledge/ (INDEX.md first): every entry tagged or keyed g3-reading, grade3-reading, g5-reading, peter-pan, coverage-fill or g9-othello: course builds, coverage, and lessons from building them; read each in full. Never open ~/Projects/grade3-reading/knowledge_bot/.env."
+ },
+ {
+  "id": "kb-platform-and-bot",
+  "scope": "~/Projects/grade3-reading/knowledge_bot/knowledge/ entries tagged timeback, qti, oneroster, caliper, sdk, alpharead, audio, course-renderer or atom-composite-ledger (keep only what bears on learning or on making and checking learning content), plus ~/Projects/grade3-reading/knowledge_bot/ BRIEFING.md, HOTBUCKET.md, CHECKLIST.md, MAP.md, ROUTER.md, handoffs/, pr-proposals/, skills/ and templates/. Never open ~/Projects/grade3-reading/knowledge_bot/.env."
+ },
+ {
+  "id": "artifacts-qa",
+  "scope": "~/Projects/grade3-reading/artifacts/: listen-qa-l4-l7-2026-09-24, listen-qa-l1-orphans-2026-09-24, l1-parity-untracked-2026-09-24, peter-pan-standing-2026-09-11, codex-qa, demo-unit-2026-07-10, alpha-read-packager, art-qa-redcontrol-2026-09-11, curriculum-adherence-2026-09-24, HUMAN-REVIEW-2026-09-21 (folder and .md), AlphaRead-QC-Checklist-v2-2026-09-04.md, the feedback-* folders whose names carry no person's name (feedback-inceptbench-*, feedback-content-review-*, feedback-closing-questions-*, feedback-live-walk-*, feedback-codex-visual-*, feedback-devfactory-*, feedback-argus-ui-*, feedback-pp-*, feedback-aladdin-*, feedback-ela-chat-*), compare-2026-09-2*, eval-suite, cert-layer and criteria-register.csv: what QA and reviewers found in lessons, and why."
+ },
+ {
+  "id": "artifacts-builds-research",
+  "scope": "~/Projects/grade3-reading/artifacts/: g5-course, g5-book-2026-09-29, g5-merged-course, g5_build_2026_07_02, course-json-standard-2026-07-13, course-factory-skills, decision-brief-2026-09-10, decision-matrix, decision-packets-2026-09-03, DECISIONS-2026-08-24.md, CLOSURE-PLAN-2026-08-25.md, PROPOSAL_REVIEW_2026_06_16.md, the LANE*.md files, X1_staar_map_overlap_probe_2026_06_16.md, wiki-research, team-direction-2026-09-09, the edullm-* folders, baseline-submission, build-closing-questions-2026-09-25, and the other dated folders not named after a person. Already used: arc-audit/SIM-REVIEW-D5-D6-D11-D13.md, semantic-judge-calibration-2026-07-10, spine-solve-calibration-2026-07-10, GOAL_grade3_hootl_convergence_2026_06_15.md, g9-prep-pack-2026-10-02 INDEX and MANIFEST."
+ },
+ {
+  "id": "ti-courseplans",
+  "scope": "~/Projects/grade3-reading/ti-courseplans/: docs/, feedback/, brainlift/, skills/, handoff/, service/, and courses/ (each course's README, iteration approval packages, response matrices, analysis and reference documents; skip raw lesson-content dumps). Already used: docs/key-quality-gates.md lines 65-66 and courses/g3-reading/iteration-2/approval-package-v2/sources/RESPONSE-MATRIX.md line 21."
+ },
+ {
+  "id": "quality-standard-audit",
+  "scope": "~/Projects/ti-courseplans-quality-standard-audit-handoff-20260806/ and the other ~/Projects/ti-courseplans* folders: the quality standard for course plans, how it was audited, what failed."
+ },
+ {
+  "id": "cloud-curriculum",
+  "scope": "~/Downloads/5. Curriculum/ (an export of a cloud curriculum folder: Texts, including Misconception and alignment checks; Instruction: Procedures, Example lesson structure, Lesson Designs; Curriculum maps). Read .md directly, .docx and .html with textutil -convert txt -stdout <file>, .pdf with pdftotext <file> -, .xlsx with unzip -p <file> xl/sharedStrings.xml, all to stdout. Skip ~/Downloads/5-Curriculum/ (an older copy). Also in ~/Downloads/: \"BrainLift - What makes a good intro video.md\", \"WF - Brainlift Opportunities to - 260724-110911.md\", the two \"WITW Lesson 1 learning walkthrough\" .md files and \"_G3 curriculum Map.xlsx - Curric Map.csv\". This is curriculum material made by others: extract only what it shows or states about how lessons, texts and checks should be built, cite it, and never copy it at length."
+ }
+]

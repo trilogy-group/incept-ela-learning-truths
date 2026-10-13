@@ -1,0 +1,46 @@
+{
+ "id": "refine-the-marking-guide-on-real-answers",
+ "title": "Refine the marking guide on real answers",
+ "statement": "Refine a marking guide against real student answers before relying on it, rather than writing it in one pass.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "scoring-guide",
+  "marking"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A grading study summarised in the AP question work (Grade Like a Human) runs marking-guide generation, grading and post-grading review, and treats writing the guide as an optimisation problem rather than a single pass (`icloud-work/ML learnings/research_educational_content_generation.md`). It found guides tuned on actual student answers more accurate and reliable. The summary gives no figures, the paper was not opened, and the project never tried it.",
+ "against": "The cited work treats marking guides as scoring tools and doesn't test the facts inside them: \"Most work treats rubrics as frozen artifacts used for scoring, not as generated content that must be historically accurate.\" (`icloud-work/ML learnings/research_educational_content_generation.md`, line 75).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "55",
+   "quote": "- Relevant insight: rubrics optimized against actual student answers are more accurate and reliable",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "56",
+   "quote": "- **The key technique:** rubric generation as an optimization problem, not a single-shot generation",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Grade Like a Human: Rethinking Automated Assessment with LLMs (arXiv:2405.19694)",
+   "url": "https://arxiv.org/pdf/2405.19694"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

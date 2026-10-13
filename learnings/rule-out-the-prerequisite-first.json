@@ -1,0 +1,77 @@
+{
+ "id": "rule-out-the-prerequisite-first",
+ "title": "Rule out the prerequisite first",
+ "statement": "Before reading a failed check as a gap in its content, rule out the prerequisite it leans on, such as decoding for reading comprehension or fluency for math.",
+ "example": "One math design cites a programme figure that about 25% of math non-growth traces to a lack of fluency.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "research",
+  "g3"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "The RAND Reading Study Group's 2002 report, in a reading course's digest of it, says assessments of young children's reading must control for the level of decoding to assess comprehension adequately (p. 114), and names word-level skills as the primary source of variability in comprehension among beginning and elementary readers; the digest adds that young readers' scores are otherwise confounded with decoding (`grade3-reading/ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd`, lines 723-725). A grade 4 and 5 math checkpoint design applies the same logic, calling it the math analogue of the reading course's decoding caveat: a checkpoint that fails a non-fluent student and routes them to content misdiagnoses the problem, so checkpoints verify the fluency prerequisite first and route those students out (`grade3-reading/ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md`, line 35). Its 25% figure is relayed from a programme recap, not measured in the design.",
+ "against": "A grade 1 reading design keeps decoding inside its scored tests, with no text-to-speech on passages or answer choices, since these are reading tests, not listening comprehension tests (`grade3-reading/ti-courseplans/courses/g1-reading/brainlifts/v0.1.md`, line 43).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "725",
+   "quote": "must control for the level of decoding to assess comprehension adequately.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "723",
+   "quote": "Assessments of young children's reading must control for the child's level of word-reading/decoding in order to assess comprehension adequately, since young readers' scores are otherwise confounded with decoding ability.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "29",
+   "quote": "reader differences in the acquisition of word-level skills are the primary source of variability in reading comprehension in beginning and elementary school–age readers",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "35",
+   "quote": "~25% of math non-growth traces to fluency; *\"lack of fluency doubles the time to master a course.\"* A checkpoint that fails a non-fluent student and routes them to *content* mis-diagnoses the problem.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "35",
+   "quote": "Checkpoints verify FastMath prerequisite status first and route fluency-gated students out — the math analogue of G1 reading's decoding caveat.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-math-checkpoints/brainlifts/v0.1.md",
+   "lines": "35",
+   "quote": "Source: recap fluency section.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "RAND Reading Study Group 2002, Reading for Understanding (MR-1465)",
+   "url": "https://www.rand.org/pubs/monograph_reports/MR1465.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

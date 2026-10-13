@@ -1,0 +1,108 @@
+{
+ "id": "repair-mechanical-slips-in-code",
+ "title": "Repair mechanical slips in code",
+ "statement": "Repair in code what needs no judgment, such as quotation marks missing round the text's exact words, and send back to the writer only what does.",
+ "example": "On 2 of 2 new texts, the debate block's last draft failed for missing quotation marks alone and never reached the judge.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation",
+  "wording"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The lesson engine gives a failing draft one correction pass with the reasons, and it already repairs some slips in code: it drops a leading verdict, replaces a semicolon or dash standing in for a comma, and renames 'paragraph b' to 'Answer B'. Its debate block requires each push-back to quote the text, which code reads as words inside quotation marks. On a poem and a speech the last drafts' push-backs used the text's exact words without the marks, so after 2 tries both blocks failed on that check alone, with 0 judge calls, though code that finds the text's exact words could have marked them.",
+ "against": "Whether the repaired drafts would have passed is unknown: the first judged drafts did quote the text, and the judge failed one push-back on the poem (0.39, `g9-transformer-runs/decisions/f23aebacf033daa2.json`, lines 119-122) and was unsure of both on the speech (0.52 and 0.51, `g9-transformer-runs/decisions/aeb043df247f1b45.json`, lines 85-88 and 123-126).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "2",
+   "quote": "judge checks the rest on positive evidence, and a failing draft gets exactly one correction pass with the reasons.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js",
+   "lines": "2",
+   "quote": "the animated build's punctuation (no semicolon or dash standing in for a comma)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/house.js",
+   "lines": "3",
+   "quote": "leading verdict (\"Correct.\", \"This is incorrect;\") is dropped: both builds show the verdict themselves (YES, NOT THAT",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "39",
+   "quote": "the reader sees \"Answer A\" and \"Answer B\", so the feedback names them that way (\"paragraph b\" -> \"Answer B\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/debate.js",
+   "lines": "71",
+   "quote": "check(\"counters-quote\", \"Each push-back quotes the text\", item.sides.every((s) => quotesIn(s.counter).length > 0), \"a push-back quotes no words from the text\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/f23aebacf033daa2.json",
+   "lines": "13",
+   "quote": "How do the details of a wrinkled lip and sneer of cold command suggest a ruler who also possessed great passion?",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/aeb043df247f1b45.json",
+   "lines": "17",
+   "quote": "\"counter\": \"How can speech matter if the world will little note, nor long remember what we say here?\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/f23aebacf033daa2.json",
+   "lines": "81-82",
+   "quote": "\"judgeCalls\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/aeb043df247f1b45.json",
+   "lines": "81-82",
+   "quote": "\"judgeCalls\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/aeb043df247f1b45.json",
+   "lines": "28",
+   "quote": "\"counter_1\": \"How do you explain the claim that \\\"the world will little note, nor long remember what we say here\\\"?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "54-56",
+   "quote": "Rewritten rather than rejected. A reply with a dash in it is a good reply with a dash in it, and a child waiting on an answer is not served by it being thrown away and re-asked for.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

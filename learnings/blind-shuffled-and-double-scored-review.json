@@ -1,0 +1,109 @@
+{
+ "id": "blind-shuffled-and-double-scored-review",
+ "title": "Blind, shuffled and double-scored review",
+ "statement": "Score compared versions blind to which system or maker produced each, in shuffled order, and have a second person independently score a preset share plus every disputed or severe case.",
+ "example": "One plan has a second person independently score a preset 25% of the first reviews, 168 of them, plus every disputed or severe case.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An experiment plan hides model identities and response order from the people scoring, and has a second person independently score a preset, stratified 25% of the first reviews (168) plus every disputed or severe case, with differences adjudicated (`uae-education-ai/HERETIC_PLAN.md`). Its harness treats the first-review report as preliminary until those second reviews and the dispute coverage exist (`uae-education-ai/HARNESS.md`). Keep tuning and calibration items out of the final evaluation.",
+ "against": "The protocol had not been run: no human ratings existed when it was written (`uae-education-ai/REVIEW_PACKET.md`). The protocol has not run: its handover says \"The handover is ready; the experiment has not run.\"",
+ "evidence": [
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "28",
+   "quote": "Blind model IDs and response order.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "30",
+   "quote": "independently reviews a prespecified, family/condition-stratified 25% of first reviews (**168**, plus every disputed or severe case); adjudicate differences.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HARNESS.md",
+   "lines": "16",
+   "quote": "Its first-review locked report is explicitly preliminary; an adjudicated report additionally requires the prespecified second reviews and dispute coverage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "568-569",
+   "quote": "Artifact scoring packets use random IDs and balanced assignment. Scorers never see arm, model, prompt, cost, or other scorer labels.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "566",
+   "quote": "calibration items never enter pilot/final.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "558-559",
+   "quote": "Pilot/development clusters are permanently excluded from final evaluation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "12",
+   "quote": "The handover is ready; the experiment has not run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/scoring-operational-repair-plan.md",
+   "lines": "196-197",
+   "quote": "A human audit rate is a floor, not a target; any automatic/human disagreement expands to the entire predeclared audit block and may stop the phase.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L10e9c2.txt",
+   "lines": "27",
+   "quote": "Blind model judging (gemini-3.1-pro-preview and gemini-3.8-flash, two shuffles each, `judging/judgments.json`): all four passes ranked 2.5 Pro takes above every 3.8 take, mainly on exact words and pace.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "749-750",
+   "quote": "Constructed-response calibration uses two independent reviewers and a third adjudicator for disagreement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "13",
+   "quote": "**BLIND REVIEW — do this strictly.** Judge proposals on content only, never on",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

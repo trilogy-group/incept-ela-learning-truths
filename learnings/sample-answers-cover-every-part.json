@@ -1,0 +1,50 @@
+{
+ "id": "sample-answers-cover-every-part",
+ "title": "Sample answers cover every part",
+ "statement": "Make sure every part a question asks for appears in its sample answers, not only in the parts the student sees.",
+ "example": "One history short-answer item's sample responses failed to answer the religious justifications and gender roles its prompt required.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a calibration of AP history items, a short-answer item's sample responses failed to answer the religious justifications and gender roles its prompt required. The fix asked the answer-key verifier to check that every requested component appears in the sample responses, not just in the student-facing parts. Failure analysis of one run's export also counted 21 sample-answer errors.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "46",
+   "quote": "- `apush-u1-0760-saq-hard`: SAQ sample responses failed to answer religious justifications and gender roles required by the prompt.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/CANDIDATE_CALIBRATION_AND_149_GATE_20260520.md",
+   "lines": "51",
+   "quote": "- SAQ answer-key verifier must ensure every requested component appears in the sample responses, not just in the student-facing parts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/next_live_run_prep.md",
+   "lines": "25",
+   "quote": "**Symptom**: 21 sample_response_error + 41 out_of_period + 39 factual_error + named-content-trap families (`content_lakota_pre1607` 14, `content_muscovy_east_india` 7, `content_navigation_acts` 3, `content_requerimiento_overclaim` 2) = chain hallucinating concrete, name-able anachronisms in Unit 1 content.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

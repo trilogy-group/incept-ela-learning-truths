@@ -1,0 +1,63 @@
+{
+ "id": "fit-the-most-constrained-real-screen",
+ "title": "Fit the most constrained real screen",
+ "statement": "Fit the text, the task and the controls on one screen without page scroll at the most constrained size learners really use, measured on a real device.",
+ "example": "A device survey made 1366×640, the usable page on an HD school laptop, the primary layout, with 1180×760 for a landscape tablet.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A device survey for a desktop-first Grade 9 design took 1366×640, the usable page on an HD school laptop, as the primary layout because it is the most common and most constrained real school screen, with 1180×760 for a landscape tablet second. Its test is that if the text pane, the question pane and the footer fit there with no page scroll, the design works anywhere larger, and it asks for the usable height to be checked with window.innerHeight on a real school laptop before the grid is locked. The prototype's screens are built at both sizes.",
+ "against": "The survey says \"I found no authoritative figure for the height lost to Chrome's tab strip, the toolbar and the ChromeOS shelf.\" (othello-course-renderer-draft/repo/docs/design/grade-9/research/edtech-desktop-design.md, line 23), so the usable height rests on a working assumption of roughly 1366×630–660 (line 24).",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "39",
+   "quote": "This is the most common and most constrained real school screen.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "39",
+   "quote": "If text pane, question pane and footer fit here with no page scroll, the design works anywhere larger.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "25",
+   "quote": "Check this with `window.innerHeight` on a real school Chromebook before locking the grid.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "24",
+   "quote": "On a 1366×768 Chromebook that leaves roughly 1366×630–660 of usable page.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/prototype/README.md",
+   "lines": "33",
+   "quote": "Screens are built for 1366×640 (the usable page on an HD Chromebook) and 1180×760 (a landscape iPad).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

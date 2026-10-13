@@ -1,0 +1,186 @@
+{
+ "id": "block-unsupported-scores-in-code",
+ "title": "Block unsupported scores in code",
+ "statement": "Enforce in code the limits on what a score may claim, so no unvalidated score or prediction of a real test appears until evidence supports it.",
+ "example": "Two audits found a figure drifting between documents, 0.930 in one and 0.928 in another.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The case for approval of a pre-pilot proxy for an outside reading test enforces its claims ladder in code: before a pilot the engine returns only a logit with its standard error and domain sub-scores, and the RIT, percentile and CGP scales are blocked, so a score report cannot be misread into a claim the number would carry, because the number is not in the response (`grade3-reading/artifacts/g5_build_2026_07_02/mapproxy_clean.md`). It gives the reason that two audits had found number drift in its documents, 0.930 against 0.928, so the gate that carries the claim lives in code, not prose. The limits cover any score on an outside test's scale, and the evidence that lifts them can be a linking study of the same students taking both tests close together.",
+ "against": "Code has faults of its own: one AP benchmark's scorer reads a missing score on a hard-fail dimension as 1.0, a pass (`APinceptbench/benchmark_official.py`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/mapproxy_clean.md",
+   "lines": "161",
+   "quote": "RIT, percentile, and CGP are **blocked in the engine**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/mapproxy_clean.md",
+   "lines": "163",
+   "quote": "The two audits found number-drift in our *documents* (0.930 vs 0.928)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "37",
+   "quote": "Pre-pilot output is logit ± SE and domain sub-scores; RIT, percentile, and CGP are **blocked in the engine**. Documents can drift; code paths don't.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "39",
+   "quote": "The two audits found number-drift in our *documents* (0.930 vs 0.928) — which is exactly why the load-bearing claim gate lives in code.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "229",
+   "quote": "| Approximate RIT output (200 + 10θ) pre-linking | The transformation's coefficients are exactly what the linking study estimates; emitting the approximation would be the overclaim the design exists to prevent |",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "docs/COURSE_PACKAGE_STANDARD.md",
+   "lines": "203",
+   "quote": "- generated UI cannot invent a stronger status than the manifest.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "benchmark_official.py",
+   "lines": "208",
+   "quote": "score = dim_data.get(\"score\", 1.0) if isinstance(dim_data, dict) else dim_data",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "63",
+   "quote": "3. **No-RIT-pre-pilot is enforced in CODE**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "40",
+   "quote": "- Honesty gate preserved in the email: no RIT output; engine physically will not emit RIT until linked to real MAP scores.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "36",
+   "quote": "same students take both tests within two weeks, order-counterbalanced",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "59-61",
+   "quote": "common-person (anchor-person) linking, **N≥200 dual-tested** (real MAP RIT + our-form score), tail oversampling, report link SE; dual-MAP preferred over STAAR-equate; RIT BLOCKED until the anchor holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "63-65",
+   "quote": "**No-RIT-pre-pilot is enforced in CODE** — `engine/src/map_engine/scorer/report.py` hard-sets `rit_output=BLOCKED_PRE_PILOT`, gates RIT behind `PILOT_PHASE==\"post-pilot\"` AND non-null `LINK_COEFFICIENT_A/B`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "225",
+   "quote": "**Unlock RIT output core-band-first (band-aware gate):**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "225",
+   "quote": "**floor- and ceiling-flagged scores stay logit-only**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "225",
+   "quote": "A single global unlock would let core-band success mask tail unreliability — the gate is band-aware by design",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "16",
+   "quote": "| −0.46 RIT | −0.38 RIT | **−0.04 RIT** (near-eliminated) | abs(bias) < 0.5 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "17",
+   "quote": "| Sim 1 max per-band abs(bias) (RIT 181+) | hidden | 1.20 RIT | 0.83 RIT | **0.83 RIT** | ≤ 1.5 RIT |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "620",
+   "quote": "Before live evidence, only alignment and a validation plan are claimed; predictive or causal claims require appropriately designed real data against a credible external measure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "37",
+   "quote": "RIT, percentile, and CGP are **blocked in the engine**. Documents can drift; code paths don't.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "137",
+   "quote": "Add a validator assertion preventing the stronger status until that evidence exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "314",
+   "quote": "Because our b_provisional values are not yet anchored to NWEA's scale, applying `RIT = 200 + 10θ` to our θ̂ estimates would produce numbers that look like MAP RITs but are not comparable to them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/skill/SKILL.md",
+   "lines": "250",
+   "quote": "(a) the claims ladder must be enforced in code, not prose (RIT block, kill-criteria);",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

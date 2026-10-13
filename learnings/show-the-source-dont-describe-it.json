@@ -1,0 +1,171 @@
+{
+ "id": "show-the-source-dont-describe-it",
+ "title": "Show the source; don't describe it",
+ "statement": "Give students the source itself to analyse, the excerpt, map, picture or chart the item says it rests on, never a prose description, summary or note about it.",
+ "example": "One model's document-based items, built on descriptions of absent maps and invented sources, scored 0.0% in all three runs.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "media",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "An autopsy found one AP model's document-based items structurally at zero because its documents were descriptions of visual artifacts or invented sources, not usable source text, and the evaluator's source check failed them even when the rest looked plausible (`dbq_structural_zero.md`, line 9). Its first example described a map in prose, with no map, no extractable text and nothing for the student to analyse, and the item type stayed at 0.0% across three runs (lines 55 and 107). The rule it set: every document carries analysable text, and a visual is allowed only when the real image or a faithful caption comes from retrieval, never invented by the model (line 122). A description is not a source, and a note on a source's purpose or significance does the analysis for the student.",
+ "against": "The reading of the passage-reference failures is the analysis's gloss on the judge's dimension; the failing items are not quoted, and both counts come from one model and one judge. That judge reads text and sees at most an image's address, so it cannot tell whether a real picture would have served (`icloud-work/aptraining/.agent/research/inference_clean.md`). The repaired packs were themselves \"normalized excerpts/source summaries\" (icloud-work/aptraining/workspace/comms/from_den/2026-05-23T2009Z_DELIVERED_unit8_dbq_source_pack_gate.md, line 36), the replacements were \"source-like\" rather than verbatim excerpts, and each gain was measured on the rows that defined the failure.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "55",
+   "quote": "Why it fails: the model describes an absent map.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "55",
+   "quote": "There is no actual map, no extractable source text, and no real primary-source passage for the student to analyze.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "9",
+   "quote": "DBQ is structurally zero on the current InceptBench path because the generator emits DBQ \"documents\" that are visual artifact descriptions or fabricated source descriptions, not usable source text.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "107",
+   "quote": "| v52 3-seed | IB v2.5.7 | 0.0% | r1/r2/r3 all zero; v52 aggregate only 57.57% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "122",
+   "quote": "If a visual source is ever allowed, the actual visual or a faithful OCR/caption payload must be supplied by retrieval, not invented by the model.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/gate1_decision.md",
+   "lines": "35",
+   "quote": "`passage_reference` failing in 33% of fails is the second pattern: the model writes stimulus passages that reference content the stimulus doesn't actually contain.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/BEADS.md",
+   "lines": "99",
+   "quote": "factual_accuracy 32/43 = 74%, passage_reference 14/43 = 33%, clarity_precision 6/43, curriculum_alignment 3/43, others <5%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/state_training_chain_2026_05_12T1300Z.md",
+   "lines": "51",
+   "quote": "DBQ 0/30 = 0% on IB v2.5.7 is STRUCTURAL not knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/state_training_chain_2026_05_12T1300Z.md",
+   "lines": "52",
+   "quote": "26 of 30 failures (87%) flag visual artifact promise/deliver mismatch",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/state_training_chain_2026_05_12T1300Z.md",
+   "lines": "53",
+   "quote": "Model promises \"Document 1: [a map of X]\" but only writes prose description",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/state_training_chain_2026_05_12T1300Z.md",
+   "lines": "54",
+   "quote": "IB rule: prose description of absent visual = stimulus_quality 0 hard",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "35",
+   "quote": "IB flags these as poor stimulus quality since they describe images rather than containing text",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/inference_clean.md",
+   "lines": "402",
+   "quote": "rubric grader does NOT see the image bytes (or at most sees URLs)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-24T1059Z_DEN_REQUEST_validate_unit1_dbq_solver_v2_source_text_repair.md",
+   "lines": "20",
+   "quote": "The shared failure class was analysis leakage in DBQ document text: summaries gave away source purpose/significance instead of making students infer it.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/to_main/2026-05-24T1059Z_DEN_REQUEST_validate_unit1_dbq_solver_v2_source_text_repair.md",
+   "lines": "22",
+   "quote": "v2 keeps the same routing and source-pack boundary, but repairs the document text for the failure topics and strips analysis-giveaway sentences.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1958Z_DELIVERED_unit1_dbq_solver_v1_candidate.md",
+   "lines": "73",
+   "quote": "Cultural perspective row improved 0.55 -> 0.70 -> 1.0 after replacing summary docs with source-like excerpts and adding Indigenous-perspective documents.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0255Z_DELIVERED_unit9_dbq_solver_v1_candidate.md",
+   "lines": "29",
+   "quote": "Migration/immigration hard row initially scored `0.675 INFERIOR` because the documents read like summaries rather than source excerpts.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T0255Z_DELIVERED_unit9_dbq_solver_v1_candidate.md",
+   "lines": "33",
+   "quote": "result: `1.0 SUPERIOR`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T2115Z_DELIVERED_unit8_dbq_solver_v1_candidate.md",
+   "lines": "46",
+   "quote": "Initial U8 DBQ smoke failed because documents were summaries/meta-commentary.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "player/design/ARCHIVIST-DESIGN.md",
+   "lines": "353",
+   "quote": "The card is a record with a small keeper, not a keeper with a small record.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

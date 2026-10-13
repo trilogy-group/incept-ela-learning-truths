@@ -1,0 +1,58 @@
+{
+ "id": "judged-failures-are-not-learner-difficulty",
+ "title": "Judged failures are not learner difficulty",
+ "statement": "Read the failure rates of generated items as evidence about the writer and the judge, not about what learners find hard.",
+ "example": "From a topic where 3 of 6 generated items failed, an analysis wrote what students confuse, though no student had answered any item.",
+ "group": "how-people-learn",
+ "role": "context",
+ "facets": [
+  "evidence-of-learning",
+  "measurement"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "From topic-level failure rates of generated questions, such as 3 failures among 6 items on one topic, an analysis agent wrote what 'students confuse' on that topic and set a 15-25% selection-rate target for each wrong option (`icloud-work/evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md`). The topic table comes from code over the judge's verdicts, and no learner had answered any of the items.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "603",
+   "quote": "| Spread of Communism after 1900... | 3 | 6 | 50.0% |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "126",
+   "quote": "- Students confuse different communist movements (Russian, Chinese, Cuban)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/analysis/reports/COMPREHENSIVE_FAILURE_REPORT.md",
+   "lines": "345",
+   "quote": "- Validate distractors represent 15-25% selection rate each",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "255",
+   "quote": "The 14-dimension evaluation cannot assess Rasch model fit, item discrimination, or guessing behavior — these require empirical response data.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

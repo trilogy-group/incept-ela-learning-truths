@@ -1,0 +1,373 @@
+{
+ "id": "scripted-readers-first",
+ "title": "Scripted readers first",
+ "statement": "Before a person sees a lesson, have scripted readers play it: one who knows, one who guesses, one who is stuck, and one who tries to game it.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading engine's four scripted readers (strong, guesser, stuck, adversarial) play every lesson the composer builds\n(`g9/transformer/src/quality/personas.js`, `g9/transformer/src/quality/playtest.js`); the adversarial one uses the\nreading engine's line telling the marker to ignore the rubric. They found the two-tries release that never fired and\nthe old blocks with line numbers.",
+ "against": "they find faults in flow and wording, not whether a lesson teaches, and the\nreading engine's harness once silently swapped a scripted reader in for a model one, so a run has to say which it used\n(`grade3-reading/engine/EVIDENCE-2026-09-22.md`). A later run found counter-evidence (`grade3-reading/knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd`). A later run found counter-evidence (`g9-transformer-audit/2026-10-09-builders.json`). A later run found counter-evidence (`g9/transformer/src/quality/playtest.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "EVIDENCE-2026-09-22.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "26-27",
+   "quote": "test-wise students, and students willing to click through or guess",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "120",
+   "quote": "earned a stamp on \"The Amazing Axolotl\" at about 20 percent accuracy by clicking through without reading, then advanced with the passage hidden from view.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd",
+   "lines": "101",
+   "quote": "In a main-idea task, reviewers earned the pass while answering every question incorrectly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "25-27",
+   "quote": "Include below-grade readers, English learners, keyboard-only users, screen-reader users, frustrated students, test-wise students, and students willing to click through or guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "23-24",
+   "quote": "A student is not a solver, a row in a ledger, a completed QTI attempt, or an ideal reviewer clicking the intended path.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "313-315",
+   "quote": "practice/thin-instruction shapes fail; only the full student-ready candidate passes the simulation. This is design evidence, not live child-outcome proof.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0215-g5-media-recovery-plan-and-edullm-entrypoint-test.qmd",
+   "lines": "85-87",
+   "quote": "a real browser reached \"Great Work!\" across all 18 of U1·L3's scenes with **zero answers given**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "75",
+   "quote": "the model's underlying competence leaks through role-play.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "75",
+   "quote": "even sophisticated persona prompting cannot fully overcome the Curse of Knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-2026-09-16/annotation-and-walk/C3-DOCUMENTATION-REVIEW.md",
+   "lines": "14",
+   "quote": "No source presence or page Next state alone proves every subtask.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/decision-matrix/slices/08-VERIFICATION-DISCIPLINE.csv",
+   "lines": "11",
+   "quote": "the walk-lesson script must drive the real app in a real browser through the whole lesson and assert each step, rather than spot-checking",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "86-87",
+   "quote": "**Wrong answers must not pass.** Re-run the reviewer's exploit — all-wrong answers through a full lesson — on every delivery surface before any gate claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "37-38",
+   "quote": "exit codes showed 0 but masked real FAIL counts (L4 14, L5 16, L6 6, L7 4)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/key-quality-gates.md",
+   "lines": "84-86",
+   "quote": "a stale fixture once masked a real regression and once hid an engine crash).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "116-117",
+   "quote": "completes: it plays the key, so a stall is the engine's. neverWrong: every answer is the key's, so a \"wrong\" is the\n// mechanic and its item disagreeing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "83",
+   "quote": "the key's own answer was marked wrong",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "26",
+   "quote": "strong plays every entity to the end, is never refused or told it is wrong, and leaves no finding",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T14-53-30-681Z.json",
+   "lines": "76-77",
+   "quote": "\"wrong\": 0,\n   \"refused\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T14-53-30-681Z.json",
+   "lines": "60",
+   "quote": "\"note\": \"answers from each item's key: plumbing only\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "8",
+   "quote": "what the runtime does not do yet (the v05 director): no way out for a guesser, no answer to an idle",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "9",
+   "quote": "the persona cannot play this: it says nothing about the engine",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/playtest.mjs",
+   "lines": "8",
+   "quote": "Exit 1 on an engine finding, so it can stand as a gate before a scene is served.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-25-25-174Z.json",
+   "lines": "137",
+   "quote": "\"severity\": \"gap\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "playtest/2026-10-09T12-25-25-174Z.json",
+   "lines": "139",
+   "quote": "\"detail\": \"stopped at tick 200 after 190 tries: no attempt ceiling and no reveal\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "141",
+   "quote": "the hunt and debate now release after two tries;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "1-2",
+   "quote": "Deterministic: they never call a model, so the judge is what is\n// under test (and Jev never grades a pick Jev made).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "29",
+   "quote": "reads only what the student sees; inject(item, history) puts the adversarial line where the student writes.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "63",
+   "quote": "half the time too thin, half the time a line copied whole",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "150-151",
+   "quote": "The guesser's seeds are far apart: the generator's first draw barely\n *  moves between neighbouring seeds (0.239 for 7 and for 8).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "152",
+   "quote": "guesser: (run = 0) => guesser(7 + run * 104729)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/personas.js",
+   "lines": "47",
+   "quote": "guess: (v, r) => ({ type: \"choose\", index: pick(r, v.active.view.options.length) }),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/fa497dafbb0eb7c2.json",
+   "lines": "14",
+   "quote": "\"answer\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/e47511c58b5dd64c.json",
+   "lines": "23",
+   "quote": "\"best\": 1,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Scripted free text is template prose, so label its rejections as persona limits (unit/playtest.js).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "3",
+   "quote": "apart from persona limits, as its src/unit/playtest.js does. A broken invariant is a finding, never a crash:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "personas.js has no PLAY entries for the 7 new mechanics, so playtests on lessons that use them stop as persona-limited.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "134-135",
+   "quote": "its four scripted personas (strong, guesser, stuck, adversarial) play every scene headless; all four finish a 15-block Othello lesson",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/app.js",
+   "lines": "692",
+   "quote": "Once the blocks settle, the four personas play the strip headless against an oracle built from each block's key (no",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v05/README.md",
+   "lines": "12",
+   "quote": "**Exit criteria:** sequencing measured with personas before any student sees it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "124-125",
+   "quote": "Under the strip, one line: the four personas' playtest (\"Played by 4 personas: all finished · no faults\").",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "134-135",
+   "quote": "its four scripted personas (strong, guesser, stuck, adversarial) play every scene headless; all four finish a 15-block Othello lesson; replay gives 0 differences;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/ops/playtest.mjs",
+   "lines": "2",
+   "quote": "Play a baked scene headless with the scripted personas, before anyone sees it:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The playtest is not yet run as a gate inside the server before a scene is served.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/playtest.js",
+   "lines": "26",
+   "quote": "It proves plumbing, never the quality of judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "skills/course-experience-preflight/SKILL.md",
+   "lines": "41-42",
+   "quote": "launches the external instructional reviewer, implementing developer agent, and Grade 5 US student in separate processes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": ".claude/skills/ux-review/SKILL.md",
+   "lines": "43-45",
+   "quote": "a deliberate WRONG pick on every MCQ and hot_text (the feedback is on film), one deliberately weak open answer to surface the hint ladder, model answers after that",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "27",
+   "quote": "| Sim 7 adversarial simulees | n/a | all finite, ordered | all finite, ordered | **all finite, bounded, correctly ordered** | no divergence | ✅ |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-1-seed",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

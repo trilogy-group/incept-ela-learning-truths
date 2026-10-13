@@ -1,0 +1,101 @@
+{
+ "id": "support-every-hard-word-in-a-passage",
+ "title": "Support every hard word in a passage",
+ "statement": "Let students hear every hard word in a passage and see what it means, not only the taught words, so no question turns on a word they were never given.",
+ "example": "A review found hard passage words left undefined beyond a lesson's three taught words.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "wording",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of a Grade 3 reading course asked for difficult words beyond the three designated vocabulary words to be handled, since passage words were left undefined, and for hard words to be tappable and read aloud for students who cannot yet decode them. The course's rulebook adopted it: hard passage words, even untaught ones, are tappable and read aloud. An evaluator gap analysis names the same risk for questions: untaught vocabulary or syntax can create construct-irrelevant difficulty.",
+ "against": "a validator checks that the glossary is there, not which words it must hold. A later run found: A classroom guide in the sources takes the opposite line for a class working out a scene it has never read: learners share the words they didn't understand and work out the meanings themselves, which it holds is better than being given a precise definition (`g9/sources/3-D-Shakespeare-Othello-1.1.pdf`). A later run found counter-evidence (`g9/sources/3-D-Shakespeare-Othello-1.1.pdf`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "106",
+   "quote": "Handle difficult words beyond the three designated vocabulary words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "107",
+   "quote": "- Make difficult words tappable and readable aloud—\"hear it, say it, map it\"—for students who cannot yet decode them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "41",
+   "quote": "Hard *passage* words, even untaught ones, are tappable and read aloud",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "43",
+   "quote": "which words must be in it is not checked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0093-evaluator-gap-analysis-inceptbench-academics-2026-07-09.qmd",
+   "lines": "126",
+   "quote": "- N5: linguistic validity. Untaught vocabulary or syntax can create construct-irrelevant difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "271",
+   "quote": "bold plus a dotted underline, available on demand, not interrupting the reading line.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "2",
+   "quote": "Words in bold are hover targets (Appendix A).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/3-D-Shakespeare-Othello-1.1.pdf",
+   "lines": "102",
+   "quote": "Let the students work out the meanings.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/3-D-Shakespeare-Othello-1.1.pdf",
+   "lines": "101-104",
+   "quote": "Invite students to share any words that they didn’t understand, and resist telling the class any answers. Let the students work out the meanings. Getting the basic gist of a word or phrase on their own is better than having the teacher give a precise definition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-16.md",
+   "lines": "75",
+   "quote": "vocabulary used in assessment stems (seized, untamed, mischief, daring, hovered, breathless, gust) is all glossary-listed on p19/p21/p22 (glossary object present on every passage node) or directly contextualized",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

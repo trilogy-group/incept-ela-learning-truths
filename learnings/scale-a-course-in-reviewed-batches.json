@@ -1,0 +1,86 @@
+{
+ "id": "scale-a-course-in-reviewed-batches",
+ "title": "Scale a course in reviewed batches",
+ "statement": "Never generate a course from a single approved lesson: make and review lessons in batches of about three, each showing varied skill teaching, building knowledge and some fading of support.",
+ "example": "One course rule sets batches of about three lessons, with what is new in each flagged for review.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "generation",
+  "sequence"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course's rules record a review ruling that a whole course must not be generated from one approved lesson. Lessons come in batches of about three, each demonstrating varied skill instruction, knowledge compounding within and across units and some fading of scaffolds, with what is new flagged for review. The reasons given were that routines can't be applied blanket-fashion across every text or concept, and that AI-only generation was not helping to communicate complex ideas. It qualifies building one reviewed slice and making it the template.",
+ "against": "Nothing enforces it: \"Process rule, not a code rule.\" (`grade3-reading/course-renderer/docs/rules/knowledge-and-curriculum.md`, line 240). The record one-clean-slice-before-the-course makes one fully reviewed slice the template for the rest of a course, from a Grade 5 plan that put one audit-clean slice of 6-7 lessons before the rest.",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "228-231",
+   "quote": "**Rule.** Do not generate a whole course from one approved lesson. Produce lessons in batches of about three, each batch demonstrating varied skill instruction, knowledge compounding within and across units, and some fading of scaffolds, and flag what is new for review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/feedback/ela-chat-log-2026-08-04-to-08-14.md",
+   "lines": "259",
+   "quote": "You can't just apply routines blanketedly across every text/concept. We were hoping to review today's lesson structure, see that it's good enough, then do lessons in batch of 3.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "234-235",
+   "quote": "We are learning how much AI-only is not helpful for communicating complex ideas so a batched review seems more reasonable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/knowledge-and-curriculum.md",
+   "lines": "240",
+   "quote": "Process rule, not a code rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "123",
+   "quote": "Scale review in small batches, with varied procedures and visible compounding",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "126",
+   "quote": "Do not generate a whole course from one approved lesson. Produce lessons in batches of about three, each batch demonstrating varied skill instruction, knowledge compounding within and across units, and some fading of scaffolds, and flag what is new for review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "22",
+   "quote": "Rules distilled from real reviewer feedback that must hold in every lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/09-PIPELINE-OPS.md",
+   "lines": "25-29",
+   "quote": "lessons are produced and reviewed in batches of about three, each batch demonstrating varied skill instruction, knowledge compounding, and some scaffold fading, with what is new in the batch flagged for review. Never generate a whole course off one approved lesson — a single approval only licenses the next small batch, not the run.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

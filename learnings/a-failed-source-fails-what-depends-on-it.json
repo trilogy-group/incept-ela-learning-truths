@@ -1,0 +1,78 @@
+{
+ "id": "a-failed-source-fails-what-depends-on-it",
+ "title": "A failed source fails what depends on it",
+ "statement": "When a text or specification fails a check, carry the failure to every lesson, item, chart and piece of feedback built on it.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's review packet for science, social-studies and passage integrity ends its work order by propagating any upstream failure through every declared dependent lesson, item, chart and feedback object (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md`). It also requires a list of stale dependents after every failed upstream specification (the same file).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md",
+   "lines": "34-35",
+   "quote": "6. Propagate any upstream failure through every declared dependent lesson, item, chart, and feedback object.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/science-passage-agent.md",
+   "lines": "45",
+   "quote": "A stale-dependency list after every failed upstream specification.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/validate-passage-refs.txt",
+   "lines": "11",
+   "quote": "A node is quoting passage text that no longer exists. Rewriting a passage means updating everything that points at it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE3.md",
+   "lines": "89",
+   "quote": "Replacing readings alone would invalidate many current exact-evidence questions, vocabulary bindings, models and narration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/SPEC-find-infer-procedures.md",
+   "lines": "167",
+   "quote": "The text says that London is \"cold and dark,\" and the children \"could not sleep\" at bedtime because they are bored",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "166-167",
+   "quote": "being cached by sha1(VOICE|STYLE|text), it shipped identically into every node that speaks that sentence",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "102-103",
+   "quote": "For video, a check-8 FAIL on a still is a blocker on the film until a re-render clears it.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

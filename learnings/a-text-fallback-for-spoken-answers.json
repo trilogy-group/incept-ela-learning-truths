@@ -1,0 +1,246 @@
+{
+ "id": "a-text-fallback-for-spoken-answers",
+ "title": "A text fallback for spoken answers",
+ "statement": "Give a spoken-answer task a text fallback of equal status, and keep speech-recognition errors, accent and noise from counting against the content.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "format",
+  "marking"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "contested",
+ "detail": "The assessment pattern library in the reading project's knowledge base lists speech-recognition errors, accent bias and background noise among what contaminates spoken evidence, citing published evidence of racial disparities in major recognition systems, and asks for a text-response fallback of equal status, noise and accent policies, and retakes when the environment likely interfered (`grade3-reading/knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd`). It uses audio features only when fluency is part of the claim. The reading course scores pronunciation leniently, without penalising accent or a noisy room (`grade3-reading/knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd`).",
+ "against": "The reading course requires a word's say-back to be spoken, with typing not accepted, and records as an unresolved contradiction that a child with no working microphone then has no fallback (`grade3-reading/knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd`). A later run found: The reading course renderer's vocabulary rules record the same gap: learners may speak or type everywhere except the vocabulary say-back, which is spoken regardless, so speech is compulsory for a learner who may have no microphone, and what that task does when speech is unavailable awaits a decision (`grade3-reading/course-renderer/docs/rules/vocabulary.md`, lines 346-358) (`grade3-reading/course-renderer/docs/rules/vocabulary.md`). A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`grade3-reading/artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/rules/vocabulary.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/rules/vocabulary.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "567",
+   "quote": "Always provide a text-response fallback of equal status",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "554",
+   "quote": "Speech recognition errors, accent bias, and background noise can contaminate evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "539",
+   "quote": "Evidence of racial disparities in major ASR systems",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0158-assessment-pattern-library-brainlift.qmd",
+   "lines": "572",
+   "quote": "Audio features (only if fluency is part of the claim): Rate-of-speech, pauses, prosody—do not use for content-only claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0181-vocabulary-rulings.qmd",
+   "lines": "64",
+   "quote": "don't penalize accent or a noisy room",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "808",
+   "quote": "For the vocabulary say-back specifically, require speech. Do not accept typing as a substitute for saying the word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "1222",
+   "quote": "Where a task needs a microphone or headphones, the child must have a route through without them",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/VOCAB-NO-SPEECH-PROPOSAL.md",
+   "lines": "7",
+   "quote": "This is a confirmed usability trap for a learner who cannot speak; no pronunciation or successful speech observation was obtained.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-2/g3/EXPLICIT-SPEECH-CHOICE-REVIEW-by-unit9.md",
+   "lines": "9",
+   "quote": "A child who chooses not to speak should be able to continue before encountering that failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-1/g3/VOCAB-NO-SPEECH-PROPOSAL.md",
+   "lines": "13",
+   "quote": "Do not mark the word mastered or pretend speech occurred.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/quality/golden-student-course/versions/1.0.0/STANDARD.qmd",
+   "lines": "703",
+   "quote": "typed or equivalent input, silence, denial, error, and no-microphone paths complete the task",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "142-143",
+   "quote": "a child who says nothing still finishes the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "106-107",
+   "quote": "Spoken and written go to the same marker and the same rubric; the only difference is that a speaker is not marked down for punctuation they never chose.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "355-356",
+   "quote": "the vocabulary say-back is spoken regardless (R-VOC-10)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "356-358",
+   "quote": "So: choice everywhere, except one task where speech is compulsory, for a child who may have no microphone. Needs a decision on what that task does when speech is unavailable.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/oral.mjs",
+   "lines": "12",
+   "quote": "The answer is transcribed speech: ignore filler words, missing punctuation, capital letters and small transcription slips. Never mark down spelling.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/say-word-action-regression.log",
+   "lines": "8",
+   "quote": "PASS Capture failure offers honor fallback and is not a scored miss",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "873",
+   "quote": "presence-only capability check, explicit microphone start, non-speaking route reachable before browser speech calls",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/lesson-01.md",
+   "lines": "11",
+   "quote": "Say and use each orally or in text. Do not require a microphone to continue.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/INTEGRATION-LESSONS.md",
+   "lines": "26",
+   "quote": "Tour copy must describe available typing and speech paths; omit stale narration until a matching recording exists.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "391-392",
+   "quote": "Infrastructure failure is not learner failure",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/FEEDBACK-RESPONSES.md",
+   "lines": "137",
+   "quote": "A child with no microphone, or who says nothing, can still finish every",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "282-284",
+   "quote": "**R-VOC-10 — say-back must be spoken, not typed**: typing is not accepted as a substitute for the vocabulary say-back specifically, because vocalizing is vital for orthographic encoding",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "287-288",
+   "quote": "**R-VOC-11 — pronunciation is scored leniently**: anything reasonably correct passes, an accent or noisy room is never penalised, and XP is kept off the pronunciation task",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/vocabulary.md",
+   "lines": "197-198",
+   "quote": "**Rule.** For the vocabulary say-back specifically, require speech. Do not accept typing as a substitute for saying the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/Incept Service CoE Catchup - 2026_10_07 10_30 CEST - Notes by Gemini.md",
+   "lines": "332",
+   "quote": "let's say the microphone is not working or they're in a noisy place, they should be able to switch and and type as well.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/oral/SpeakBox.tsx",
+   "lines": "2",
+   "quote": "Speaking is never required: typing works the same (and is all Firefox offers).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/vocabulary.md",
+   "lines": "197-198",
+   "quote": "**Rule.** For the vocabulary say-back specifically, require speech. Do not accept typing as a substitute for saying the word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/02-LESSON-STRUCTURE.md",
+   "lines": "210-211",
+   "quote": "Say \"tell\" rather than \"say out loud\" in prompts — \"tell\" is vaguer and captures both writing and speaking",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "87-88",
+   "quote": "otherwise the SAME beat with a clearly labeled type-your-answer input. Talk-or-write both open on every free response.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Koenecke et al. 2020",
+   "url": "https://doi.org/10.1073/pnas.1915768117"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,166 @@
+{
+ "id": "audition-voices-before-making-every-clip",
+ "title": "Audition voices before making every clip",
+ "statement": "Choose a narration voice from auditioned, timed takes of the real script, judged by what is heard and checked word for word, not by catalogue descriptions or requested settings.",
+ "example": "An audition on one 86-word scene caught a model reading its style instruction aloud, and that model was ruled out.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "generation",
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The handover for a narrated opening offered three candidate voices from catalogue adjectives alone, with no listening comparison, and asked that the audition start with the canonical first passage, which tests place-setting, warmth, tragic reversal, name pronunciation, pacing and dramatic restraint in a small sample, and that the voice be selected on its actual output. The audition that followed made ten takes of the 86-word first scene across two models and three voices. It caught one model reading its style instruction aloud, a fault a later re-transcription found in all four of that model's takes, and a model that leaks direction into speech was not trusted across the eight clips.",
+ "against": "The final choice was not made by ear: the model judges split among the voices, and \"With no decisive human preference recorded, the handover's first candidate wins the tie.\" (g9/narration/auditions/2026-10-06-scene1/DECISION.md, line 30); no person had yet listened when the voice was chosen (same file, lines 3 and 32). Pace readings can be confounded by what a clip holds: in an earlier audition the extra length of one model's takes was a spoken instruction, not slow delivery (g9/narration/auditions/2026-10-06-scene1/DECISION.md, line 41).",
+ "evidence": [
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "43",
+   "quote": "Audition the canonical Venice, love, and murder passage first",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "294",
+   "quote": "It tests place-setting, warmth, tragic reversal, name pronunciation, pacing, and dramatic restraint in a small sample.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "296",
+   "quote": "These are catalogue-based candidates only. No listening comparison or final voice selection has occurred.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "347",
+   "quote": "Select a voice based on the actual output, not catalogue adjectives.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "7",
+   "quote": "Ten scene-1 takes (exact `vo_intro_01` text, 86 words) across two models and three candidate voices",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "25",
+   "quote": "A model that can leak direction into speech cannot be trusted across eight clips without a human listening to each take",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/DECISION.md",
+   "lines": "37",
+   "quote": "The 3.8 Flash TTS takes read the style instruction aloud in **all four** takes, not two.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "3",
+   "quote": "select on real output, not catalogue adjectives",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-plain/narration-manifest.json",
+   "lines": "24",
+   "quote": "Read this briskly and clearly, about 170 words per minute, short pauses only, in a warm, grave, melancholy voice.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-plain/narration-manifest.json",
+   "lines": "6",
+   "quote": "\"words\": 75,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-plain/narration-manifest.json",
+   "lines": "7",
+   "quote": "\"duration_seconds\": 31.131,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-archivist/narration-manifest.json",
+   "lines": "24",
+   "quote": "about 160 words per minute",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-archivist/narration-manifest.json",
+   "lines": "6",
+   "quote": "\"words\": 75,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-brisk/brisk-archivist/narration-manifest.json",
+   "lines": "7",
+   "quote": "\"duration_seconds\": 33.051,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v03/narration-manifest.json",
+   "lines": "86",
+   "quote": "about 165 words per minute",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v03/narration-manifest.json",
+   "lines": "6",
+   "quote": "\"words\": 71,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/takes/v03/narration-manifest.json",
+   "lines": "7",
+   "quote": "\"duration_seconds\": 30.331,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v07/README.md",
+   "lines": "17-18",
+   "quote": "**The voice.** Gacrux on gemini-2.5-pro reads this script at about 140 words a minute in any direction, which cannot fit three minutes without stretching.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v07/README.md",
+   "lines": "18",
+   "quote": "gemini-3.1-flash-tts-preview reads it at 158 with the same voice.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,260 @@
+{
+ "id": "judge-the-lesson-not-only-its-items",
+ "title": "Judge the lesson, not only its items",
+ "statement": "Passing items don't make a good set, lesson or course, so judge each whole on how its parts work together, taking item verdicts as given, never by adding them up.",
+ "example": "One evaluator run rated 529 of 1026 items superior but 73 of 76 lessons inferior.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "sequence",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "One evaluator run over 76 cloned reading lessons rated 529 of their 1026 items superior but 73 of the 76 lessons inferior, and 65 of the 76 scored exactly 0 on not repeating themselves. The reading course passed its item-level evaluations but not the holistic course-level one, and a later project note says new metrics are needed to assess lesson sequencing. Judge their sequence, coverage, difficulty ramp and balance, with several lessons in view.",
+ "against": "the scores are one run of a model judge, and the zeros on multi-passage lessons say more about how the evaluation was packaged than about the content. The lesson-level verdicts are the same evaluator's, not a person's, and the notes mark the figure internal-only (`grade3-reading/knowledge_bot/HOTBUCKET.md`). At lesson level the evaluator does average item scores when there is no shared passage: '- _assemble_no_stimulus_result() returns item scores + avg overall' (shadow-bench, git commit 7b5da6e, line 9). The manual cover for cross-lesson defects is untested: 'assigned, not covered' (shadow-bench/docs/brainlift.md line 147). The set specification does not count a shared format as repetition: \"- Same question format (MCQ) applied to different concepts\" (`icloud-work/incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md`, line 203); these stems were near-copies, not one format applied to different concepts. Per-item verdicts vary between runs (see verdicts-vary), and the lesson rubric folds them in by threshold: a lesson fails factual accuracy only when more than 20% of its items do (`lesson_bundle/evaluation.txt` line 140), so a lesson with a few wrong items can pass, against the rule that a wrong key or wrong fact voids an item.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "30",
+   "quote": "| INFERIOR | **73** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "38",
+   "quote": "Across all bundles: **1026 items** total (avg 13.5 per bundle).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "42",
+   "quote": "| SUPERIOR | 529 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "64",
+   "quote": "Non-repetitiveness is by far the weakest dimension: avg 0.14; 65 of 76 bundles scored exactly 0 on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd",
+   "lines": "33",
+   "quote": "G3 passed **individual item** evals but **NOT** the holistic **course-level** eval",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0125-coe-catchup-2026-07-13.qmd",
+   "lines": "102",
+   "quote": "new metrics are needed to assess lesson sequencing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0083-clone-lessons-inceptbench-results-2026-07-02-eval-summary.qmd",
+   "lines": "94",
+   "quote": "Scores are LLM-judge outputs on one run of v2.7.5; the 0.0s on multi-passage bundles say more about eval packaging than content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "361-362",
+   "quote": "clone-lessons run (IB 2.7.5): **73/76 lessons INFERIOR** at lesson level while items pass — never claim course-level IB; internal-only number.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "232-233",
+   "quote": "It measures isolated question/lesson content but **not sequencing or pedagogy** → the eval framework is slated to grow to assess lesson sequencing + knowledge-building across units",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "39",
+   "quote": "**No course score is calculated by adding up lesson scores.**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "145",
+   "quote": "A check that walks a lesson template asks whether each part is well formed, so it passes a course whose lessons are each fine and whose relationships are not — no schema fixes that.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "34",
+   "quote": "All twelve of its checks operate within a single lesson; none compares one lesson against another (DOK1-4).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "35",
+   "quote": "nobody records what the manual pass finds, so its hit rate is unknown.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "11",
+   "quote": "**The target is not a perfect InceptBench score per question — it's the perfect course.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "13",
+   "quote": "A 772-item course where every item scores IB 1.0 but 90% are blind-solvable is a **failed course**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "24",
+   "quote": "UNCERTIFIED, ~90% passage-leakable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "100",
+   "quote": "- Lexile ramp **830 → 1010L**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "101",
+   "quote": "- MAP-style blueprint balance; parallel-form disjointness; passage/stem dedup.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-merged-course/GENERATOR_DIRECTIVE.md",
+   "lines": "104",
+   "quote": "It is **necessary, not sufficient**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "2138",
+   "quote": "- Uses the same question pattern as the example",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quality_control.py",
+   "lines": "304",
+   "quote": "self._run_specific_quality_check(check_name, question, passage, standard_id, task_id),",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quiz_an_artful_arrangement_of_incidents_diff3_2025-10-20_12-21-58.json",
+   "lines": "82",
+   "quote": "The description of the roads' construction in paragraphs 1 through 5 helps develop the passage's central concern primarily by moving from",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "558",
+   "quote": "| 10 | Near-duplicate stems | non_repetitiveness | Template-based generation | Vary stem structure and verb |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "3",
+   "quote": "Per-item quality has already been scored separately; you are evaluating COMPOSITIONAL quality here.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "133-135",
+   "quote": "When per-item evaluation results are provided, you MUST treat them as authoritative: - Do NOT re-evaluate individual item quality — that is already done.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/lesson_bundle/evaluation.txt",
+   "lines": "142",
+   "quote": "- Focus your own analysis on COMPOSITIONAL properties — how items work together.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1064",
+   "quote": "Finding: 57 checkable criteria have no coverage — 49 of them rejection-grade.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/HUMAN-g3r-2026-07-27T08-38-36-019fa24b-fb42-7e61-a954-216db3ef77a4.md",
+   "lines": "1066",
+   "quote": "Root cause is structural. The evaluator's schema models a lesson as `passage + items[]` — no teaching steps, no vocabulary, no day/stage axis. So gradual release, opportunities to respond, reading architecture and vocabulary (63 criteria) are unreachable by construction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/STUDENT_READY_CRITICISM_FRAMEWORK.qmd",
+   "lines": "184",
+   "quote": "`kb-0083` says 73/76 lesson bundles were inferior even when items were stronger",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "483",
+   "quote": "Keep the latest user direction in view and audition the integrated experience rather than evaluating isolated components alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/CASE-FOR-PLAN-REVIEW.md",
+   "lines": "50",
+   "quote": "Item-level evaluation remains useful inside the process; the course contract supplies the upstream and cross-artifact evidence that isolated item evaluation does not test.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/L6.md",
+   "lines": "44",
+   "quote": "This is a pedagogical incompleteness, not a validator defect (all validators pass; no single validator spans vocab-to-you-do linkage).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

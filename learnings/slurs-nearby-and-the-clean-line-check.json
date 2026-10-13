@@ -1,0 +1,99 @@
+{
+ "id": "slurs-nearby-and-the-clean-line-check",
+ "title": "Slurs nearby and the clean-line check",
+ "statement": "Does a slur elsewhere in the passage a judge is shown lower its confidence that a clean line is free of slurs?",
+ "example": "A clean quotation from a play whose passage carries slurs scored 0.75 and 0.80, against 0.98 to 0.99 for quotations from texts without one.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The worked model's clean-line check asks a judge whether the quotation is free of any racist or sexual slur or epithet, while the state the judge is shown also carries the whole passage. On a clean quotation from a play whose passage contains slurs, the judge answered 0.75 and 0.80 across two drafts; on quotations from a poem and a speech without one, it answered 0.98 to 0.99. The question names only the quotation.",
+ "against": "There are only two judgings of one quotation, confounded by text, and the quotation's own wording may read as hostile.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "109",
+   "quote": "Is ${field} free of any racist or sexual slur or epithet?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "108",
+   "quote": "cleanLine(\"quote\"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "20",
+   "quote": "\"passage\": \"Tush! never tell me; I take it much unkindly",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "22",
+   "quote": "\"quote\": \"I follow him to serve my turn upon him\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "360",
+   "quote": "\"value\": 0.75,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b9cb3d0f3a8639c0.json",
+   "lines": "728",
+   "quote": "\"value\": 0.8,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "360",
+   "quote": "\"value\": 0.98,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/68d85cc9b79fb956.json",
+   "lines": "728",
+   "quote": "\"value\": 0.99,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "356, 730",
+   "quote": "\"value\": 0.98,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "1102",
+   "quote": "\"value\": 0.99,",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

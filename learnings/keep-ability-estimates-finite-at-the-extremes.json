@@ -1,0 +1,69 @@
+{
+ "id": "keep-ability-estimates-finite-at-the-extremes",
+ "title": "Keep ability estimates finite at the extremes",
+ "statement": "Use an ability estimate that stays finite for all-right and all-wrong answers without pulling the strongest and weakest students toward the average, and test it on extreme answer patterns.",
+ "example": "One engine's estimate stayed finite and correctly ordered across about 17,900 simulated sessions, with 0 divergences.",
+ "group": "checking-answers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A reading assessment's design rejects plain maximum likelihood, which diverges to ±∞ when every answer is right or every answer is wrong, and a prior-based estimate, which shrinks very high and very low scorers toward the prior mean, though they are the students growth tracking most needs (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`). It uses maximum likelihood with fences, a published method that adds two fictional items 3.8 logits beyond the easiest and hardest items taken, which the reference test also documents (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md`). Its seventh simulation ran all-correct, all-wrong, alternating and rapid-guessing profiles, all finite, fence-bounded and correctly ordered, with 0 divergences in ~17,900 sessions (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`).",
+ "against": "For the first 2 items the likelihood is nearly flat, so each session still starts on a prior-based estimate and switches after 3 or more responses (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md`, line 112). The stability evidence is simulated, not from real students.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "56",
+   "quote": "Pure MLE diverges to ±∞ for all-correct or all-incorrect response patterns.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "54",
+   "quote": "students with very high or very low ability are shrunk toward the prior mean",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "56",
+   "quote": "items to prevent this divergence without introducing prior-based bias",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "88",
+   "quote": "The 3.8-logit fence offset is NWEA's documented constant",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "333",
+   "quote": "Sim 7: all-correct / all-wrong / alternating / rapid-guessing profiles all finite, fence-bounded, correctly ordered; 0 divergences in ~17,900 sessions",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Maximum likelihood score estimation method with fences for short-length tests and computerized adaptive tests, Applied Psychological Measurement 40(4), 289–301 (2016)",
+   "url": "https://doi.org/10.1177/0146621615573389"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

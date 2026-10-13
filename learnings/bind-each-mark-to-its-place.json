@@ -1,0 +1,184 @@
+{
+ "id": "bind-each-mark-to-its-place",
+ "title": "Bind each mark to its place",
+ "statement": "Bind each marked word in a quotation to its exact position, and refuse a mark named only by a word that recurs there rather than guess which one.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "media",
+  "integrity"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The quotation-card frame module marks a span by its code-point offsets together with the exact text expected there, so either occurrence of a repeated word can be targeted, and editing the quotation without rebinding the mark fails validation (`g9-unit-video-packages/quote-card/README.md`). Its notes say the older pilot highlighted the first matching substring, and that a migration should reject ambiguous repeated words instead of guessing an occurrence. The lesson engine's own binder still takes the first whole-word match, ignoring case (`g9/transformer/src/video/frames.js`); no stored block marks a word that occurs twice in its quotation, so no wrong highlight has been seen.",
+ "against": "The lesson engine's binder marks a repeated word at its first occurrence without a warning: \"const m = re.exec(q);\" (g9/transformer/src/video/frames.js line 42).",
+ "evidence": [
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "31",
+   "quote": "`expectedText` must exactly match the selected range; editing the quote without rebinding the mark fails validation.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "31",
+   "quote": "This makes either occurrence of a repeated word independently targetable.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "37",
+   "quote": "The older Python pilot names this block `quote_card` and highlights the first matching substring.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "quote-card/README.md",
+   "lines": "37",
+   "quote": "It should reject ambiguous repeated words instead of guessing an occurrence.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/frames.js",
+   "lines": "37",
+   "quote": "/** Unicode code-point offsets of a word in a quotation, as the quote card wants them; null if it is not there whole. */",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2389",
+   "quote": "native Enter on earlier quoted Captain Hook banks later Captain Hook was watching.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2389",
+   "quote": "Proposal: pure ordered paragraph/sentence occurrence mapping",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "2400",
+   "quote": "Native wrong occurrence denied, actual clues/best gate and L7 opening retained.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "382",
+   "quote": "Current sentence replay resolves text only. Actual G3L7p8 has two Tap. marks and p9 three Tick. marks; string-first lookup rewinds all identical targets to the first occurrence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "382",
+   "quote": "bind repeated printed occurrences to their actual mark indices",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "394",
+   "quote": "verifies twoTap/threeTick distinct boundaries and single highlights",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.md",
+   "lines": "56",
+   "quote": "| reading-9ur.49 | closed | Prevent clue credit and found marks on unrelated repeated name fragments |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/gold-standard/clue-location/CLUE-LOCATION-PROPOSAL.md",
+   "lines": "7",
+   "quote": "banks **“Captain Hook was watching”** as one of the two clues, without activating the actual occurrence later in the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/gold-standard/clue-location/CLUE-LOCATION-PROPOSAL.md",
+   "lines": "9",
+   "quote": "`partOfLine` accepts the normalized12-character name by containment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/gold-standard/clue-location/CLUE-LOCATION-PROPOSAL.md",
+   "lines": "19",
+   "quote": "Use ordered sentence positions, not bare containment or a claim that the clue appears somewhere in that paragraph.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-08/README.md",
+   "lines": "53",
+   "quote": "Global short-fragment matching could bind an earlier name/whisper to a later authored clue. Two exact PP owners now bind whole clue occurrences to their printed source positions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "22",
+   "quote": "Split quote heads/tails did not individually match their measured sentence; repeated “Tap.”/“Tick.” used the first matching text and could wash the wrong occurrence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "133-134",
+   "quote": "straddles two printed units (core.tsx unitsOf only re-joins a cut at a mid-sentence closing quote), so it never glows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/peter-pan/fill/l5-l7-parity/batch-2026-09-18/DECISIONS.md",
+   "lines": "136",
+   "quote": "every hot_text span must resolve to exactly one printed unit (the census script lives in this record; validate-passage-refs only proves substrings).",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/ui-audit/2026-09-08/README.md",
+   "lines": "53",
+   "quote": "A short repeated phrase grants or spends the wrong clue evidence",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/ui-audit/2026-09-08/README.md",
+   "lines": "53",
+   "quote": "Global short-fragment matching could bind an earlier name/whisper to a later authored clue.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/ui-audit/2026-09-08/README.md",
+   "lines": "53",
+   "quote": "Two exact PP owners now bind whole clue occurrences to their printed source positions.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

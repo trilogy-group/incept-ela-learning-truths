@@ -1,0 +1,56 @@
+{
+ "id": "reproducible-is-not-valid",
+ "title": "Reproducible is not valid",
+ "statement": "Let a reproducible procedure such as hashing select and split examples, never assign their meaning labels, which need independent annotation from the source, measured agreement and adjudication.",
+ "example": "A quick builder for a reference label set took meaning labels from hash-derived choices and returned 45 records when 48 were requested.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A quick builder for a reference label set assigned meaning fields, each rule's effect and scope, from hash-derived choices, and emitted 45 records when 48 were requested. The project's lesson log names the root cause as reproducibility confused with validity, a deterministic construction treated as if it supplied ground truth. Its lesson lets hashes select and split examples but never invent labels, and the plan for the label set requires meaning labels from two independent people, not hashes or the model that wrote the material.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/LESSONS_LEARNED.md",
+   "lines": "29",
+   "quote": "A quick gold builder assigned semantic `effect` and `scope` fields using SHA-derived choices and emitted 45 records despite requesting 48.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/LESSONS_LEARNED.md",
+   "lines": "30",
+   "quote": "Reproducibility was confused with validity; deterministic construction was treated as if it supplied semantic ground truth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/LESSONS_LEARNED.md",
+   "lines": "31",
+   "quote": "Hashes may select and split examples, never invent semantic labels. Gold labels require independent source-grounded annotation, frozen raw judgments, measured agreement, and adjudication.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/gold-standard-builder-plan.md",
+   "lines": "157",
+   "quote": "Semantic labels must come from two independent humans, not hashes or an author model.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

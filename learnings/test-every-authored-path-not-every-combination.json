@@ -1,0 +1,77 @@
+{
+ "id": "test-every-authored-path-not-every-combination",
+ "title": "Test every authored path, not every combination",
+ "statement": "Before release, run every authored wrong-answer check and every meaningful return to a phase, and treat generated combinations of test conditions as diagnostic inventory, not a requirement.",
+ "example": "One ledger observed 236 returns and kept the 2,272 remaining generated return cells as diagnostic inventory, not a brute-force target.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Test conditions generated along four axes for a set of interactive lessons ran into the thousands, and one accepted ledger left 2,277 generated return cells unexecuted. The audit's requirement-level strategy kept every applicable wrong-once check and meaningful phase return written into the lessons as required, and called the generated cells diagnostic coverage, not an invented Cartesian release requirement. The audit also warns against expanding every phase into all transport and history combinations without a concrete requirement, while waiving no technical gap as human judgment.",
+ "against": "An earlier ruling in the same ledger resisted waiving cells: \"Existing source/native evidence is extensive but representative; it cannot silently waive unexecuted cells or classify them as human judgment.\" (grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json, line 444). It also sits in tension with the rule to test a claim across everything it covers (see Sample every unit the claim covers), unless the generated combinations are not themselves the claim.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "45",
+   "quote": "preserves every applicable authored wrong-once check and meaningful phase return.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "45",
+   "quote": "Generated four-axis cells are diagnostic coverage, not an invented Cartesian release requirement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "45",
+   "quote": "No technical gap is waived as human judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "31",
+   "quote": "It leaves **137 question checks** and **2,277 generated return cells** unexecuted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "446",
+   "quote": "141 observed questions /236 observed returns",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "446",
+   "quote": "The 2,272 remaining return cells are diagnostic inventory, not a brute-force target.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/FINAL-TECHNICAL-AUDIT.md",
+   "lines": "47",
+   "quote": "do not rerun the full census or expand every phase into all transport/history combinations without a concrete requirement.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

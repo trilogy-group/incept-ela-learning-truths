@@ -1,0 +1,77 @@
+{
+ "id": "misconceptions-are-not-suggestions",
+ "title": "Misconceptions are not suggestions",
+ "statement": "Don't hand a writer known misconceptions as loose suggestions for wrong options: it may write them into stems and explanations as if they were true.",
+ "example": "Appended to the request as suggested distractors, misconceptions cut passes from 19 of 22 to 14 of 22.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "distractors"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a 22-item multiple-choice probe on one model, appending curriculum misconceptions to the request as suggested distractor concepts cut passes from 19/22 to 14/22, a fall of 22.7 points, and alignment fell from 1.000 to 0.727, with questions testing misconceptions as if they were valid (`feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md`). The writer put the misconception into the stem or the right answer's explanation instead of the wrong options, and the note reads the instruction to use them as inspiration as too soft.",
+ "against": "One seed, one model, 22 items (same file, line 32). Given instead as curriculum context, the same kind of material was credited, as a hypothesis, with better wrong options in a 6-item probe (`feedback_mcq_set_RAG_actively_helps_v2.5.6.md`, line 15).",
+ "evidence": [
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "9",
+   "quote": "The model treats them as factual content rather than as distractor inspiration.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "15",
+   "quote": "| A vanilla (no injection) | 19/22 | 86.4% | 0.968 |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "16",
+   "quote": "| B misconceptions appended to user | 14/22 | 63.6% | 0.915 |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "21",
+   "quote": "- `mastery_learning_alignment`: 1.000 → 0.727 (**−0.273**) — questions test misconceptions as if valid",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "24",
+   "quote": "v43-soup includes the misconception content in the question stem or correct-answer rationale rather than in wrong-answer options.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "32",
+   "quote": "- n=22 small sample, single seed (20260512), single model (v43-soup ty16vgj9)",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_mcq_set_RAG_actively_helps_v2.5.6.md",
+   "lines": "15",
+   "quote": "**Why (hypothesis):** Curriculum KCs provide canonical assessment_boundaries and common_misconceptions that the model uses as material for distractor generation, lifting difficulty_distribution scores.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

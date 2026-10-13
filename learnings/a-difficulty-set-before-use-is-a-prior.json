@@ -1,0 +1,337 @@
+{
+ "id": "a-difficulty-set-before-use-is-a-prior",
+ "title": "A difficulty set before use is a prior",
+ "statement": "Treat any difficulty, threshold or cut score set before learners have answered as a labelled prior, and replace it with live response data.",
+ "example": "Estimating one item's difficulty with reasonable precision needs at least 100 to 200 responses, and at about 10 students per course even 100 takes 10 to 20 cohorts.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A diagnostic BrainLift worked through on AP courses notes that estimating one item's difficulty with reasonable precision needs at minimum 100-200 responses, that at about 10 students per course it takes 10-20 cohorts to reach 100, and so parameters must come from judgment and structural defaults (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, lines 382-384). Its cold-start section, drawing on published studies, ranks a model's direct rating as the weakest approach (often r ≈ 0.4–0.6), behind feature-based models (r ≈ 0.7–0.87 with ≥100 calibrated items) and placement against 3–5 calibrated anchors, distrusts predictions that swing under small wording changes, and requires every pre-use value to carry a provenance label such as 'pre-use predicted, N=0' (lines 3172-3196). The reading courses' standard says the same: predicted difficulty is a prior with method, population, provenance and uncertainty, which live data must eventually replace (`grade3-reading/ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0164-g3-v2-feedback-agent-routing.qmd`, lines 97-98). Estimate a pre-use difficulty from item features or calibrated anchors rather than a model's own rating, record its method, sample size and uncertainty, and set no cut score on it.",
+ "against": "Both stronger methods need calibrated items that a new course doesn't have, which leaves rubric scoring of difficulty drivers for the cold start (`grade3-reading/ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md`, line 3186); and in one assessment bank all 650 items carry assigned, uncalibrated difficulties, so nobody knows how hard any single item actually is for students (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`, line 11). Simulation suggests a well-built adaptive engine tolerates the guess, keeping reliability at or above 0.85, though with less precision than after calibration. The one internal case offered for it is unsettled: two simulation misses were traced to difficulties assigned by hand rather than estimated from responses (`grade3-reading/knowledge_bot/knowledge/kb-0080-map-proxy-case-for-approval-2026-07-02-incept-map-proxy-approval-package.qmd`), but a later self-reported run on a bigger bank (786 items vs 650) reported RMSE 3.20 against the earlier 4.12 (`grade3-reading/knowledge_bot/knowledge/kb-0086-round2-feedback-brainlifts-2026-07-09.qmd`). The 200-response line is the doctrine's example, not a calibrated threshold. Simulated students are best used only as a supplementary signal, and the advice to place a new item against calibrated anchors is the BrainLift's own view, with no study cited for it (`grade3-reading/knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "382",
+   "quote": "Estimating a single item's difficulty and discrimination parameters with reasonable precision requires at minimum 100-200 student responses to that item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "383",
+   "quote": "it takes 10-20 cohorts to accumulate even 100 responses per item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "384",
+   "quote": "It means the parameters must come from expert judgment and structural defaults, not from data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3172",
+   "quote": "Treat direct rating as a fast sanity check or tiebreaker, not as the backbone of your difficulty engine.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3184",
+   "quote": "Best when you have ≥100 calibrated items to train on. Typical r ≈ 0.7–0.87 with empirical difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3185",
+   "quote": "Present the new item alongside 3–5 anchor items with known difficulties from the same KC, and ask for relative placement.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3196",
+   "quote": "if small wording changes cause wild swings in your predicted difficulty, the prediction is probably wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "3180",
+   "quote": "Every pre-use difficulty value must travel with a provenance label (\"pre-use predicted, N=0\") and an uncertainty indicator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "97-98",
+   "quote": "predicted difficulty is a prior with method, population, provenance, and uncertainty; live data must eventually replace it;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "11",
+   "quote": "This means we do not know how hard any individual item actually is for students.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "39",
+   "quote": "the 161–220 figures above are authoring band labels, not measured difficulty.",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "92",
+   "quote": "**24 out of 39 hard questions failed (62%)**",
+   "verified": "script"
+  },
+  {
+   "source": "APinceptbench",
+   "path": "docs/reports/BENCHMARK_RUN5_REPORT.md",
+   "lines": "96",
+   "quote": "| Difficulty Alignment | **17** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "14",
+   "quote": "Simulation 3 shows the engine tolerates this at the expected σ ≈ 0.5–1.0 logits level (reliability ≥ 0.85 maintained) [SIMULATION], but precision is below what it will be post-calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "89",
+   "quote": "Difficulty should always travel with uncertainty and provenance",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "91",
+   "quote": "How much data it is based on (N, SE).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0161-assessment-item-difficulty-core.qmd",
+   "lines": "190",
+   "quote": "“<200 responses ⇒ item difficulty is provisional; do not use to set cuts”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "97-98",
+   "quote": "predicted difficulty is a prior with method, population, provenance, and uncertainty; live data must eventually replace it;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "41",
+   "quote": "Direct LLM ratings show moderate correlations with empirical difficulty at best (often r ≈ 0.4–0.6)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "63",
+   "quote": "The feature-based approach achieves correlations up to r ≈ 0.87 vs moderate correlations for direct ratings",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "43",
+   "quote": "scaling up model capability does not improve difficulty alignment with human learners — it often makes it worse",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "46",
+   "quote": "**SPOV 4: Comparative judgment with anchors is underrated and should be your first move when you have even a small calibrated bank**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "49",
+   "quote": "Every pre-use difficulty value must travel with a provenance label (\"pre-use predicted, N=0\") and an uncertainty indicator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "65",
+   "quote": "if small wording changes cause wild swings in your predicted difficulty, the prediction is probably wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "142",
+   "quote": "If the estimates across paraphrases differ by more than one band, the estimate is unstable and should be flagged for human review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0163-cold-start-item-difficulty-estimation.qmd",
+   "lines": "75",
+   "quote": "Simulation is currently best used as a supplementary signal",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "54",
+   "quote": "Difficulty metadata distinguishing predicted, provisional live, and calibrated states.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/assessment-item-agent.md",
+   "lines": "66",
+   "quote": "Do not call pre-use LLM difficulty a calibrated item parameter.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd",
+   "lines": "153-154",
+   "quote": "**No threshold calibration** — cut-scores, mastery gates, WCPM targets are reasoned pilot defaults, to be tuned against real attempt data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0008-alpha-courses-repo.qmd",
+   "lines": "153-154",
+   "quote": "cut-scores, mastery gates, WCPM targets are reasoned pilot defaults, to be tuned against real attempt data.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "36",
+   "quote": "launch on Lexile priors, set `p_m_observed` after ~150-250 live responses",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "118-120",
+   "quote": "The band is logged per sitting (dev console + the pace ledger, src/lib/paceLedger.ts) so the 180 s can be recalibrated after a week.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/ASSESSMENT-QUALITY-MEMO.md",
+   "lines": "72",
+   "quote": "(0 of 432 built items have a `difficulty` field). Without difficulty/discrimination metadata the adaptive loop flat-lines at \"medium,\" so *flat-gain detection cannot yet be computed the way this policy requires*.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "196",
+   "quote": "No learner gate is active before threshold calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "213",
+   "quote": "a universal one-check threshold is not empirical learner evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "197",
+   "quote": "| 0.0 | 0 RIT | 0.3977 | 0.886 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "203",
+   "quote": "| 1.0 | 10 RIT | 0.4502 | 0.890 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "211",
+   "quote": "Robustness to parameter error does not mean scores are accurate in absolute terms.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/course-graph-guide.md",
+   "lines": "196",
+   "quote": "No learner gate is active before threshold calibration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "162",
+   "quote": "The step parameter Δ = 0.5 logits is an authoring estimate [AUTHORING-DECISION].",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "256",
+   "quote": "- The ≥0.85 threshold is an authoring decision, not an empirically validated cutoff [AUTHORING-DECISION].",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Razavi & Powers 2025",
+   "url": "https://arxiv.org/abs/2504.08804"
+  },
+  {
+   "ref": "Li et al. 2025, Can LLMs Estimate Student Struggles? Human-AI Difficulty Alignment with Proficiency Simulation for Item Difficulty Prediction, arXiv:2512.18880",
+   "url": "https://doi.org/10.48550/arXiv.2512.18880"
+  },
+  {
+   "ref": "Razavi & Powers 2025, Estimating Item Difficulty Using Large Language Models and Tree-Based Machine Learning Algorithms, arXiv:2504.08804",
+   "url": "https://doi.org/10.48550/arXiv.2504.08804"
+  },
+  {
+   "ref": "Sarkar et al. 2025, ScoreCLIQ: A Dynamic LLM-Based Framework for Item Difficulty Estimation, AIED 2025 (CCIS 2591)",
+   "url": "https://doi.org/10.1007/978-3-031-99264-3_21"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "never-reword-a-question-for-the-interface",
+ "title": "Never reword a question for the interface",
+ "statement": "Never change a question's wording to feed an interface feature, such as adding a clause so an annotation has another word to mark.",
+ "example": "One question gained a clause so its annotation had a third word to mark, and was restored to its original after review.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "stem",
+  "wording"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A check sheet for one Grade 3 lesson in the reading course renderer records that a clause was prepended to its question on 16 September so the question's annotation had a third word to mark, and that a rewrite two days later turned the question into a comparison (`grade3-reading/course-renderer/scripts/verify/L2-WEDO-QC.md`, line 3). Review on 22 September rejected the rewrite, asking why there should be a comparison and what the question had been before. The restore took the question back to its original wording of 3 September, the clause and its third mark went with it, and the sheet now checks that the original question is the one shown (line 7).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/verify/L2-WEDO-QC.md",
+   "lines": "3",
+   "quote": "The question is the ORIGINAL 3 September one, \"How does Aladdin feel when the huge genie appears?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/verify/L2-WEDO-QC.md",
+   "lines": "3",
+   "quote": "this question is crap. When did it become 'braver than his mother'. Why should there be a comparison? What was it before?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/verify/L2-WEDO-QC.md",
+   "lines": "3",
+   "quote": "no \"His mother is terrified.\" clause, the one PR #299 prepended on 16.09 so the annotation had a third word to mark",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/verify/L2-WEDO-QC.md",
+   "lines": "3",
+   "quote": "the third mark and its New word lines went with the clause",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "scripts/verify/L2-WEDO-QC.md",
+   "lines": "7",
+   "quote": "(the original, no mother clause)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

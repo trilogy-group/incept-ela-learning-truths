@@ -1,0 +1,69 @@
+{
+ "id": "teach-a-claim-a-question-can-check",
+ "title": "Teach a claim a question can check",
+ "statement": "Instruction must contain at least one concrete claim from which a check question with a definite answer and plausible wrong options can be written; otherwise no retrieval can follow it.",
+ "example": "To pass, at least one question must be writable with a definite answer and at least 2 plausible wrong options.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The video-script check fails a script so vague, hedged or opinion-based that no single unambiguous multiple-choice question can be derived from it (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`). To pass, at least one question must be writable with a definite correct answer and at least 2 plausible wrong options. The rubric justifies the check by the testing effect, citing Roediger & Butler 2011 by author and year only: retrieval right after instruction, it says, turns short-term exposure into durable memory.",
+ "against": "Deliberately lenient: '**This is a low bar.**' (`shadow-bench/src/inceptbench/prompts/video_script/evaluation.txt`, line 433).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "431",
+   "quote": "The CFU is the primary encoding event — retrieval immediately after instruction is what converts short-term exposure to durable memory (testing effect; Roediger & Butler, 2011).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "440",
+   "quote": "**Fail:** The script is so vague, so hedged, or so opinion-based that no single unambiguous MCQ can be derived from it.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "436",
+   "quote": "- A definite correct answer (not \"it depends\" or \"both could be right\")",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "437",
+   "quote": "- At least 2 plausible but wrong distractors",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "433",
+   "quote": "**This is a low bar.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Roediger & Butler 2011",
+   "url": "https://doi.org/10.1016/j.tics.2010.09.003"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

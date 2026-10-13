@@ -1,0 +1,84 @@
+{
+ "id": "a-bigger-bank-doesnt-spread-use",
+ "title": "A bigger bank doesn't spread use",
+ "statement": "Growing an adaptive bank doesn't by itself spread use across it.",
+ "example": "When staged expansions took one bank from 650 to 786 items, never-used items rose from 241 to 289, about the same share, and over-exposed items stayed at 38.",
+ "group": "making-and-reviewing",
+ "role": "context",
+ "facets": [
+  "measurement",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Across a reading assessment's simulation runs on its 650-item bank, never-used items fell from 322 to 241 and items used in more than 30% of sessions from 41 to 38 (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md`). Staged expansions then added 92 edge items extending the floor and ceiling, 18 above the ceiling and 26 for under-covered standards (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`), and on the 786-item bank never-used items rose to 289, about the same share as 241 of 650, while over-exposed items stayed at 38. The package records that use remains concentrated and that balancing exposure across bands is the open follow-up (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`).",
+ "against": "The largest single exposure did fall as the bank grew, from 0.909 to 0.709 (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md`). Most added items sit at the floor and ceiling, which adaptive selection rarely reaches because it concentrates use near the middle of the population (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md`), so the result says little about adding items where use is concentrated.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "24",
+   "quote": "| Sim 5 never-used items | 322/650 | 256/650 | 241/650 | **289/786** | ↓ | rose with the larger bank; per-band exposure balancing is the open follow-up |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/03_SIMULATION_EVIDENCE.md",
+   "lines": "25",
+   "quote": "| Sim 5 over-exposed (>30%) | 41/650 | 39/650 | 38/650 | **38/786** | ↓ | max exposure 0.709; exposure-aware scoring the open follow-up |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "47",
+   "quote": "| +92 | Floor extension to ~RIT 155; ceiling to 235 | Merged; harness-validated |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "48",
+   "quote": "| +44 (26 + 18) | 26 standard-gap items closing nine under-target standards (see §5 note); 18 G5 super-ceiling items at **RIT 231–250**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/MAP_PROXY_VALIDITY_CASE.md",
+   "lines": "147",
+   "quote": "26 standard-gap items closing nine under-target standards + 18 G5 super-ceiling items at RIT 231–250",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "116",
+   "quote": "289 items were never used in the v4 run — never-used rose from 241/650 at v3 as the bank grew to 786 items; randomesque top-5 selection in both selection phases spreads exposure, but utilization remains concentrated and per-band exposure balancing is the open follow-up",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "115",
+   "quote": "max item exposure fell to 0.709 (from 0.909 at v3)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "53",
+   "quote": "Natural CAT exposure concentrates responses at the population center: tail-band items would see only ~50–100 responses each under proportional usage — below the calibration floor.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

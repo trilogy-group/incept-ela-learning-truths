@@ -1,0 +1,56 @@
+{
+ "id": "tag-each-items-standard-in-its-data",
+ "title": "Tag each item's standard in its data",
+ "statement": "Tag every item with the standard it measures in its structured data, not in a title or the item text, using one code convention that resolves in the official framework.",
+ "example": "One audited test carried standards on 0 of its 28 items, with the codes only in titles.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "measurement"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A course check found standards on 0 of 28 items of one test, with the codes only in titles (`grade3-reading/knowledge_bot/BRIEFING.md`), and a pull of another live course found no standards field on any of its 1,026 items and just 3 codes in the whole file, all in lesson titles (`grade3-reading/knowledge_bot/knowledge/kb-0082-rex-v2-live-course-pull-2026-07-02-rex-v2-live-course-pull.qmd`). The staged integration standard keeps standards in structured metadata, never only inside the item markup, which once caused a false zero on pull, and asks for one code convention, normalized so nothing is counted twice (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/timeback-integration.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/BRIEFING.md",
+   "lines": "32",
+   "quote": "**CCSS 0/28** (codes only in titles)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0082-rex-v2-live-course-pull-2026-07-02-rex-v2-live-course-pull.qmd",
+   "lines": "71",
+   "quote": "**No item in this dump carries any standards field.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/timeback-integration.md",
+   "lines": "146-147",
+   "quote": "Standards live in **`metadata`, never inline in `rawXml`.** A rawXml-only authoring shortcut produces a false-zero on pull (this caused a spurious \"zero standards\" FAIL pre-re-pull).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/timeback-integration.md",
+   "lines": "144-145",
+   "quote": "Human codes (`RI.3.1`, `CCSS.ELA-LITERACY.RI.3.1`) are accepted but **pick one convention** and normalize (`CCSS.ELA-LITERACY.` → bare code) so the reader doesn't double-count.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

@@ -1,0 +1,66 @@
+{
+ "id": "sequence-by-knowledge-and-by-difficulty",
+ "title": "Sequence by knowledge and by difficulty",
+ "statement": "Sequence a course so knowledge and difficulty both progress, since ordering by standard or by readability alone left one of them flat.",
+ "example": "A course organised by standard had all four units flat at about 900 to 913 on a reading-level scale.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "demand",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A coherence check on one course plan found no cross-unit difficulty escalation: all four units sat at about 900-913L because they were organised by standard (`grade3-reading/artifacts/LANE1_COURSE.md`). In another build, the assembly script grouped items by readability band and no knowledge progression existed (`grade3-reading/artifacts/g5_build_2026_07_02/g5_analysis_digest.md`), and a review called one course a readability staircase rather than a knowledge progression (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "208",
+   "quote": "All 4 units are flat at ~900-913L average.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE1_COURSE.md",
+   "lines": "208",
+   "quote": "Units are organized by CCSS domain, not by difficulty progression.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/g5_analysis_digest.md",
+   "lines": "40",
+   "quote": "groups by LEXILE band (830/920/1010L), not topic coherence; no knowledge progression exists",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "43",
+   "quote": "The course is sequenced as a Lexile staircase, not a knowledge progression",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "25",
+   "quote": "flat Lexile ~900-913L (no cross-unit ramp, Gate 4C)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

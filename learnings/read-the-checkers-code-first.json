@@ -1,0 +1,77 @@
+{
+ "id": "read-the-checkers-code-first",
+ "title": "Read the checker's code first",
+ "statement": "Read the checker's own code to learn exactly what it grades and parses, and match each item type's output structure to it, checked in code before producing at scale.",
+ "example": "Training rows whose part labels were uppercase strings instead of the parser's lowercase nested parts dropped that item type from 90% to 16.7%.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "After training on 385 short-answer rows that used uppercase part labels with bare strings, where the expected structure has lowercase parts each nested with a question and a sample response, that type collapsed from 90% to 16.7% (`feedback_per_cell_schema_must_match_fewshot_bank_chain_canon.md`). The evaluation runner parses raw output once and counts a parse failure as a fail with no repair, so 262 rows of answer-format anchors gave 0/150 parsed (`project_eval_is_question_generation.md`). Reading the runner's code showed that it grades question objects, against a standing rule to train only answers.",
+ "against": "The project held the opposite rule at the same time, that every training row should emit the answer rather than a question (`feedback_answer_format_only.md`, line 7). And sometimes the checker was what needed fixing: a strict parser failed 499 of 500 items that a model had wrapped in code fences, until it learned to strip them (`feedback_gemma4_wraps_json_in_markdown_fences_default_2026_06_02.md`, lines 9 and 13).",
+ "evidence": [
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_per_cell_schema_must_match_fewshot_bank_chain_canon.md",
+   "lines": "18",
+   "quote": "**v81 SAQ collapsed -73.3pp (90% → 16.7%) after training on my Track B v2 corpus.** Root cause: 385/385 SAQ training rows used UPPERCASE A/B/C with bare-string parts, but the chain canon (fewshot_bank/by_cell/saq.jsonl) uses lowercase a/b/c with nested `{question, sample_response}` per part.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_eval_is_question_generation.md",
+   "lines": "30",
+   "quote": "These are **question structures**. The model is graded on generating well-formed exam questions matching these schemas.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_eval_is_question_generation.md",
+   "lines": "32",
+   "quote": "Line 88: `parse_json_response()` — single-attempt JSON parse on raw model output. Per the constraint block at lines 13-18, parse failure counts as a fail with no repair.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "project_eval_is_question_generation.md",
+   "lines": "56",
+   "quote": "This is the v38 failure mode (262 rows of answer-format anchors → 0/150 parse_ok).",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_answer_format_only.md",
+   "lines": "7",
+   "quote": "Every SFT/DPO row must train the model to **emit the answer**, not to generate questions about content.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_gemma4_wraps_json_in_markdown_fences_default_2026_06_02.md",
+   "lines": "9",
+   "quote": "2026-06-02 IB n=500 eval of v92 first-run failed 499/500 with `json_parse:JSONDecodeError`.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "feedback_gemma4_wraps_json_in_markdown_fences_default_2026_06_02.md",
+   "lines": "13",
+   "quote": "enhanced `_extract_json()` that strips fences + regex-extracts `{...}` blocks as fallback.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

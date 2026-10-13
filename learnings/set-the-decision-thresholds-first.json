@@ -1,0 +1,170 @@
+{
+ "id": "set-the-decision-thresholds-first",
+ "title": "Set the decision thresholds first",
+ "statement": "Before measuring, write down what each result will mean and the ship, hold and abort bars, count the thing the decision is about, and apply the bars as written.",
+ "example": "A retrieval fix that scored 0.704 against a 0.92 confirmation threshold set in advance was recorded as falsified.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The AP project wrote its decision rules before each evaluation: one decision tree said in advance what a result within 0.01 of the baseline would mean (`v38_decision_rules.md`, line 33), and a later decision matrix fixed its pass and abort bands (`project_v93_falsifier_kill_2026_05_23.md`, line 28). When retrieval at generation time scored a mean of 0.704 against a 0.92 confirmation threshold, the hypothesis was recorded as falsified (`RESULTS.md`, line 85). The bars include the margin over the version in use that a new one must beat. One grader spot-check was set in advance to halt all training at 7 of 10 or fewer; it came in at 7 of 10, and training went on (`icloud-work/auto-memory-backup/feedback_main_self_discipline_phase_1_2_3.md`, line 58; `icloud-work/auto-memory-backup/project_grader_audit_results_2_of_3_pass.md`, line 51).",
+ "against": "Overlapping bands left one result undecided: it landed at the abort/adjust boundary on the overall score while clearly failing the pass gate (`project_v93_falsifier_kill_2026_05_23.md`, line 29). The override may have been right: the three fails were real errors the grader caught (`icloud-work/auto-memory-backup/project_grader_audit_results_2_of_3_pass.md`, line 34), so 7 of 10 was not the grader failure the rule was meant to detect. No other decision table's outcome is recorded in this evidence.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/coordination/RESULTS.md",
+   "lines": "85",
+   "quote": "Cont mean 0.704 is far below the 0.92 confirmation threshold; the cell main-A predicted would lift most (MCQ) actually regressed slightly under RAG.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/memory/project_v93_falsifier_kill_2026_05_23.md",
+   "lines": "28",
+   "quote": "Per orch decision matrix (PASS ≥+3pp overall AND ≥+10pp factual / ABORT <+5pp AND <+0pp):",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/v38_decision_rules.md",
+   "lines": "33",
+   "quote": "### If v38 aggregate continuous within ±0.01 (0.928–0.948) of v29",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_main_self_discipline_phase_1_2_3.md",
+   "lines": "58",
+   "quote": "| Quill 10-row IB grader calibration spot-check (`s-quill-ib-calibration-spot-check-1500`) | 10/10 = trust factual_accuracy verdicts; 8-9/10 = noisy, treat individual verdicts as low-confidence (≥2-row signal required); ≤7/10 = **HALT all training pending IB recovery** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_main_self_discipline_phase_1_2_3.md",
+   "lines": "110",
+   "quote": "| ≥+5pp aggregate over baseline | Ship BoN K=4 as v25b/v29 production decode strategy. Proceed to Phase 2 FLAME. Update HANDOFF. |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_data_ceiling_not_capacity_ceiling.md",
+   "lines": "54",
+   "quote": "The probe's purpose is to RESOLVE the unknown, not to hedge the bet. Either result is informative.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_grader_audit_results_2_of_3_pass.md",
+   "lines": "51",
+   "quote": "- ✅ Quill calibration spot-check: ≤7/10 = HALT (not triggered; 7/10 passed plus 3 are legit catches)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/PLAN.md",
+   "lines": "445",
+   "quote": "Tier 1 — Plan fails without these (revised per adversarial review #8)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/PLAN.md",
+   "lines": "447",
+   "quote": "Forgetting this lets a 75% noise-band result be promoted as a +0.6pp \"win\" over the actual user-facing baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/PLAN.md",
+   "lines": "120",
+   "quote": "A \"step-function win\" must beat the deployable, not the component.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/v38_decision_rules.md",
+   "lines": "9",
+   "quote": "3 full runs via `robust_eval_3run.sh`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/v38_decision_rules.md",
+   "lines": "12",
+   "quote": "Statistical threshold: σ_floor = 1.54pp (APUSH aggregate from R41 probe)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "136",
+   "quote": "Rather than deciding by argument, the decision is **pre-committed to data, before RIT unlock**:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "140",
+   "quote": "- **Criterion:** dichotomous scoring wins if its linking residuals are lower *and* the CI excludes zero; otherwise PCM is retained. The decision is made before RIT output is unlocked, so the shipped RIT transformation is fitted under the winning rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "319-320",
+   "quote": "Relative wins over a prompt or LoRA arm are insufficient: the preregistration must set an absolute acceptable OC-WMPF floor before calls.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0132-eppc-bias-experiment-execution-handover.qmd",
+   "lines": "509",
+   "quote": "These are minimum bars for a credible primary-control prototype. Pilot performance cannot lower them.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "26",
+   "quote": "20–30 s, 1280×720 or higher, three modules, valid JSON output, `ffprobe` and sampled frames pass | One module or timing fault: fix and re-render",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L021d12.txt",
+   "lines": "3",
+   "quote": "Fixed before looking at the other two videos' results.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_CASE_FOR_APPROVAL.md",
+   "lines": "34",
+   "quote": "Three design commitments are made in advance, so the plan cannot be quietly re-scoped later",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/04_CONCURRENT_VALIDITY_PLAN.md",
+   "lines": "196",
+   "quote": "**Success/kill criteria (usage-based — all meaningful at N=40):** session completion ≥ 90%; session duration within the expected 30–60-minute envelope; rapid-guess rate < 10%.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

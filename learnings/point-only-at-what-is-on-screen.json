@@ -1,0 +1,178 @@
+{
+ "id": "point-only-at-what-is-on-screen",
+ "title": "Point only at what is on screen",
+ "statement": "Never point anyone reading or marking an item at what they cannot see, like an off-screen label, code, highlight or line, or the brief and source facts behind it.",
+ "example": "On about 28 word cards, the second hint told a student to reread a line they had not met and could not see.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A review of the reading course found a question and its feedback citing a \"Source C\" that no passage, tag or heading in the lesson ever named, a label leaked from the source material, and internal span codes in a modelled think-aloud that nothing on the child's screen carried. The next review found that on about 28 word cards, which come before any passage and show no text, the second hint told the student to reread a line they had not met, and that nine hints sent students to reread a highlight that was never shown, because the highlighting data went only to the scorer.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19.md",
+   "lines": "18",
+   "quote": "passage, booktag, or heading in this lesson ever names a \"Source C\". It is leaked",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "62",
+   "quote": "has not met and cannot see.** Vocab pages come before any passage and render in",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-08-19-R2.md",
+   "lines": "110",
+   "quote": "is ever highlighted.** `grounding` is scorer-only (verified: `SpeakGate`/`ScrItem`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter2.md",
+   "lines": "42",
+   "quote": "Part (a) scoring is problematic: it references 'the brief'",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/archive/OPENCLAW_HUMAN_REVIEW.md",
+   "lines": "106",
+   "quote": "- Articles reference numbered \"Facts\" from knowledge base that aren't shown in the output",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/generators/saq.py",
+   "lines": "765-766",
+   "quote": "must be self-contained and readable by someone who ONLY sees the question.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "39",
+   "quote": "the reader sees \"Answer A\" and \"Answer B\", so the feedback names them that way (\"paragraph b\" -> \"Answer B\")",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/ed2f90f660c18774.json",
+   "lines": "13",
+   "quote": "Paragraph a is stronger because it makes a precise claim",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "111",
+   "quote": "What a viewer reads at a film's stops (the questions, options and feedback) speaks of the film, never of how it is",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "112",
+   "quote": "made: no beat, cue, caption or frame.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md",
+   "lines": "10",
+   "quote": "New persistent status reused an instruction to start the film “above” while the primary action moves to the footer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/NAVIGATION-INDEPENDENT-REVIEW-by-residual.md",
+   "lines": "11",
+   "quote": "Quiet-reading status told Peter Pan learners to tap Listen to page, but the displayed control is Read to me.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/item-visibility-audit-2026-07-21.json",
+   "lines": "2",
+   "quote": "Prove that all 550 Grade 5 candidate items can be interpreted from student-visible lesson surfaces without relying on hidden local-code semantics.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/item-visibility-audit-2026-07-21.json",
+   "lines": "22-29",
+   "quote": "\"claim_inventory\", \"answerability metadata\", \"misconception feedback\", \"answer keys and rationales\", \"measurement and anti_leak metadata\", \"internal element IDs and from/to implementation links\", \"authoring constraints\", \"prior-lesson memory unless the current served lesson repeats the meaning\"",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/item-visibility-audit-2026-07-21.json",
+   "lines": "91",
+   "quote": "\"finding_items\": 23",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/item-visibility-audit-2026-07-21.json",
+   "lines": "83",
+   "quote": "\"all_prior_findings_repaired_and_rechecked\": true,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/Grade 5 Reading - Complete Course Review.zip",
+   "member": "Grade 5 Reading - Complete Course Review/audit/feedback-semantic-audit-2026-07-21.json",
+   "lines": "88",
+   "quote": "G5-U6L7-I04 depended on undefined R6/X semantics.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/close.mjs",
+   "lines": "21",
+   "quote": "the play text is no longer on their screen, so point them to a moment (\"Think back to when…\") or quote one short line, never \"look at the text\".",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/retrieval.mjs",
+   "lines": "35",
+   "quote": "The text is not on their screen, so never tell them to \"look at\" or \"reread\" it; point them to a moment instead (\"Think back to when…\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/jev-select/SKILL.md",
+   "lines": "20-21",
+   "quote": "Put the candidate's content in the state, not a label. Asking \"is this about part-2\" makes the judge resolve an index into prose, and it will not.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

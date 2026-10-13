@@ -1,0 +1,64 @@
+{
+ "id": "no-clock-unless-speed-counts",
+ "title": "No clock unless speed counts",
+ "statement": "Put a clock on a test only when working against time is part of what it measures; on an untimed test a clock changes what is measured.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading assessment dropped timed sections because the test it mirrors is an untimed power test, where a clock changes the construct and rewards the rapid guessing that test penalizes (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md`). An audit of a reading course's positions lists 'comprehension is untimed; speed is a different construct' as borrowed from reading research, but names no study for its claim that time pressure triples the on-screen accuracy penalty (`grade3-reading/artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md`). A clock fits, for example, when a test rehearses a timed exam.",
+ "against": "One course plan asks for a timer on a mock exam so that it mirrors the timed AP exam, which is why the rule allows a clock when a test rehearses a timed exam; that plan is not cited because its file's path carries a person's name.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_BRAINLIFT.md",
+   "lines": "232",
+   "quote": "| Timed sections | MAP is an untimed power test; a clock changes the construct and rewards the rapid-guessing MAP penalizes |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/02-current-brainlift-spov-audit.md",
+   "lines": "46",
+   "quote": "Comprehension is untimed; speed is a different construct; time-pressure triples the on-screen accuracy penalty.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "97",
+   "quote": "The gap appears only for expository text, grows under time pressure, and digital natives show no advantage.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/research/edtech-desktop-design.md",
+   "lines": "99",
+   "quote": "Remove time pressure and ask for a self-check before showing answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/reference/CAT_MAP_EXAM_SPEC.md",
+   "lines": "17",
+   "quote": "| Timing | Untimed — power test, not speed test | NWEA published guidance [NWEA-VERIFIED] |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

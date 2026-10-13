@@ -1,0 +1,64 @@
+{
+ "id": "score-narration-fidelity-on-the-script",
+ "title": "Score narration fidelity on the script",
+ "statement": "Score a narration's fidelity to its source on the script, not a recogniser's transcript, whose errors count as changes, and use recognition only to confirm the audio reads it.",
+ "example": "Scored on a recogniser's transcript, a film whose script matched its source word for word came out at 98.4%.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "measurement",
+  "evaluation"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A comparison of three opening films found that all three read the same 434-word script verbatim, while the recogniser heard 432, 429 and 427 of 436 normalised words, its misses being numerals, homophones and name spellings plus a few words that may be misread or mispronounced (`g9/library/text/L88a690.txt`, lines 27-28). Scored on the recogniser's output instead of its script, one film came out at 98.4%, purely from recogniser errors such as \"bruined\" counted as script changes (lines 52-54; `g9/library/text/L4fa28c.txt`, line 32). Since then fidelity is measured on each film's script, with the recogniser used only to confirm the audio reads it.",
+ "against": "A recogniser's misses can still hide real misreadings, so each still needs a listen: \"plus a few words that may be misread or mispronounced\" (`g9/library/text/L88a690.txt`, line 28).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "52-53",
+   "quote": "Fidelity is measured on each film's script, with Whisper used only to confirm the audio reads it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "53-54",
+   "quote": "Scored on Whisper's output instead, … film comes out at 98.4%, purely from recogniser errors.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L4fa28c.txt",
+   "lines": "32",
+   "quote": "recogniser errors (bruined, More, Rodrigo) counted as script changes",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "27-28",
+   "quote": "The misses are numerals, homophones and name spellings, plus a few words that may be misread or mispronounced",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L88a690.txt",
+   "lines": "27",
+   "quote": "Whisper hears 432, 429 and 427 of 436 normalised words.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

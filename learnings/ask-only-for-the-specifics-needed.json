@@ -1,0 +1,129 @@
+{
+ "id": "ask-only-for-the-specifics-needed",
+ "title": "Ask only for the specifics needed",
+ "statement": "Ask a writer only for the specifics a task needs, taken from a verified record, since every name, date or figure it recalls is a chance to invent one.",
+ "example": "Dropping the named-source requirement raised factual accuracy from 60% to 70%, at 20 items per variant.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the AP work, 15 of 17 factual-accuracy failures on short-answer items disappeared once the marking guide stopped asking for a list of specific named evidence, and the record's lesson is that every specific claim is an opportunity for the model to be slightly wrong. In a sweep of variants at 20 items each, dropping the named-source requirement raised factual accuracy from 60% to 70%, and invented attributions were the main fabrication in generated source passages, plausible but not accurate. An item of 7 documents holds 7 independent claims that must all be right, and a more inventive writer's longer documents carried more fabricated details. Marking guides should describe the reasoning that earns credit, not list specific evidence.",
+ "against": "Cutting more did not keep helping: dropping dates as well gave 50% factual accuracy, and an outright ban on specific dates gave 0% on short answers (master_strategy_apr24.md line 105); the gain was two items in twenty; and the pipeline still credits a newly written passage to the historical figure in its plan, which a verified attribution doesn't turn into a real quotation. On the fine-tuned writer an instruction not to list specifics was ignored: telling it not to use specific facts \"just means it uses wrong specific facts instead of right ones\" (`icloud-work/ML learnings/sft_v7_benchmark_postmortem.md`, line 62).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "130",
+   "quote": "**The broader lesson:** The more specific the evidence the model is asked to enumerate, the more hallucination surface area. Every specific claim (date, name, treaty, publication founding year) is an opportunity for the model to be slightly wrong. Reducing the specificity requirement reduces the hallucination rate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "126",
+   "quote": "**Result:** 15 of 17 factual_accuracy failures in SAQ disappeared immediately.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "50",
+   "quote": "**Method:** test_variants.py — 9 variants, N=20 each, APUSH Unit 7",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "56",
+   "quote": "| no_source | 50% | 70% | Best factual_accuracy |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "| baseline | 45% | 60% | Standard prompt |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "169",
+   "quote": "3. **Attribution is the trap.** Every MCQ_SET needs a historical author and date. The model learned to generate plausible-sounding attributions. Plausible ≠ accurate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "116",
+   "quote": "**3. DBQ document generation is the hardest factual load.** 7 documents × each needing accurate source/date/content = 7 independent factual claims that all must be correct. Probability of all 7 being right with a 14B model: low.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "168",
+   "quote": "**The counterintuitive insight:** Flash produces CLEANER DBQ outputs than Pro in some cases. Pro's creativity → longer, more detailed documents → more hallucination surface area. Flash's conservatism → shorter, more cautious documents → fewer fabricated details → better factual_accuracy.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "59",
+   "quote": "| no_source_nodates | 40% | 50% | No source + no dates |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "63",
+   "quote": "- Output: primary source passage attributed to the historical author in the plan",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "47",
+   "quote": "The failures are NOT in the question itself. They're in the **scoring notes the model generates**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_rag_factual_grounding.md",
+   "lines": "35",
+   "quote": "- **Task format**: When the generation task involves producing many fields simultaneously (like a structured rubric with question stem, answer choices, scoring guide, and historical evidence), the model's attention dilutes across fields and it falls back on parametric defaults for lower-salience fields like rubric details.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "122",
+   "quote": "15 of 17 factual_accuracy failures were in the scoring notes, not in the question content itself.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/gemini_benchmark_relentless.md",
+   "lines": "124",
+   "quote": "**The fix:** Changed scoring notes instruction to: \"Describe analytical reasoning that earns the point (no evidence lists).\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

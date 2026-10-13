@@ -1,0 +1,63 @@
+{
+ "id": "no-dead-ends-for-the-learner",
+ "title": "No dead ends for the learner",
+ "statement": "No state, such as a reload mid-step, a failed 3D or media part, or help that has run out, may leave a learner without a way on.",
+ "example": "A word-web row whose give-after-two-misses had run out of words is released rather than left with nothing to add.",
+ "group": "making-and-reviewing",
+ "role": "criterion",
+ "facets": [
+  "accessibility",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a 3D version of the Grade 9 lessons, a reload between a lesson's last task and its return to the learning question once left a dead screen; the closing step now counts the task done once its final answer is saved, and finishes a step a reload left between the last reply and the save (`othello-archive/src/steps/Close.tsx`, lines 74-75 and 198). Its reading page sends the learner on when a stage fails, its unit film falls back to a still picture when the 3D fails, and a word-web row that has run out of words to give is released instead of stalling (`othello-archive/src/steps/Reading.tsx`, line 19; `othello-archive/src/film/Film.tsx`, line 135; `othello-archive/src/retrieval/Recall.tsx`, line 173).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "75",
+   "quote": "which the last task only sets after the learning-question return, so a reload in between left a dead screen)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Close.tsx",
+   "lines": "198",
+   "quote": "a reload between the last reply and the save: finish it now (never a dead end)",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/Reading.tsx",
+   "lines": "19",
+   "quote": "never strand the student behind a stage that failed",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/film/Film.tsx",
+   "lines": "135",
+   "quote": "3D failed, showing the still",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/retrieval/Recall.tsx",
+   "lines": "173",
+   "quote": "row is released instead of leaving the student with nothing to add (A-329: never loop, never dead-end)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

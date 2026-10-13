@@ -1,0 +1,56 @@
+{
+ "id": "one-typeface-for-the-text-one-for-teaching",
+ "title": "One typeface for the text, one for teaching",
+ "statement": "Set the studied text in one typeface and all instructions, definitions and feedback in another, used the same way throughout, so learners can tell the text from the teaching.",
+ "example": "Definitions and example sentences appeared in a third typeface, with nothing to signal why.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "stimulus",
+  "wording"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A supplied UI review of a Grade 3 lesson found definitions and example sentences set in a serif while everything else used a rounded sans, with nothing to signal why that content was different (`grade3-reading/ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md`, line 34). The project kept the literary serif for the passage, verse and quoted evidence and set definitions and examples in the instructional sans throughout (`grade3-reading/ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md`, line 19; `grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 17). A rendered fixture checks the distinction between instructional and source fonts (the same file, line 28). It is the visual counterpart of reading the text in one voice and the teaching in another.",
+ "against": "The change is a source candidate only: \"This is a source candidate, not a deployed or final browser-accepted state.\" (`grade3-reading/ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md`, line 3).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/aladdin-p1-ui-review.reference.md",
+   "lines": "34",
+   "quote": "The definitions and example sentences are set in a serif while everything else uses the rounded sans, with nothing to signal why that content is different.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/REVIEW-MAPPING.md",
+   "lines": "19",
+   "quote": "Book story serif remains for literary passage; definitions/examples use the instructional display sans consistently.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "17",
+   "quote": "Passage, verse and evidence quotations retain literary serif.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/gold-standard/STYLE-IMPLEMENTATION-by-residual.md",
+   "lines": "28",
+   "quote": "It also checks computed palette, contrast, instructional/source font distinction, vocabulary underline versus actual spoken wash, feedback rule and focus outline.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

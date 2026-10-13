@@ -1,0 +1,101 @@
+{
+ "id": "make-a-scored-selection-recomputable",
+ "title": "Make a scored selection recomputable",
+ "statement": "Choose topics or texts by an open score whose factors, weights and totals anyone can recompute, and let a person override it only with a recorded reason.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In its queue of work after feedback on the reading course, the project made two things preserve-obligations: a topic scorecard whose every topic record exposes factor values, weights, total and verdict, so the verdict can be recomputed, and a visible human override where a person can keep or reject a topic against the score with a recorded reason (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl`). The curriculum packet requires a topic score replay showing factors, weights, formula result, human override and final verdict (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/curriculum-agent.md`).",
+ "against": "The same obligations say the praise applied to the approach, not to the metric's calibration, and that a human override is a governance control, not evidence that the chosen topic is effective (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl`). It rests on one review's endorsement, not on a measured outcome. the same review could not yet follow one factor of the score, a load-bearing metric, and asked for it to be explained, so a formula is only open to challenge once its factors are (the same file).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl",
+   "lines": "2",
+   "quote": "Every topic record exposes factor values, weights, total, and verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl",
+   "lines": "3",
+   "quote": "Retain a visible human override path where a person can keep or reject a topic against the score with a recorded reason.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/feedback-obligations.jsonl",
+   "lines": "3",
+   "quote": "Human override is a governance control, not evidence that the selected topic is effective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/curriculum-agent.md",
+   "lines": "38",
+   "quote": "Topic score replay showing factors, weights, formula result, human override, and final verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "9",
+   "quote": "praises the transparent scorecard, human override",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0164-g3-v2-feedback-agent-routing.qmd",
+   "lines": "26",
+   "quote": "transparent plan-first topic scoring, reasoned human override",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "17",
+   "quote": "They can challenge the weightings, inspect what falls out, and push on a decision they disagree with.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0136-g3-reading-v2-reviewer-feedback.qmd",
+   "lines": "18",
+   "quote": "A person overrode the score and gave a reason rather than allowing the number to decide.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/TOPIC-SELECTION.md",
+   "lines": "10",
+   "quote": "portfolio-level deficit the per-topic scorecard structurally could not see",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": ".artifacts/source/g3-reading-approval-package.zip",
+   "member": "reapproval-package/sources/LOAD-BEARING-METRIC.md",
+   "lines": "121",
+   "quote": "**Override** = a keep that contradicts the score, justified by a *limitation of the scorecard itself*.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

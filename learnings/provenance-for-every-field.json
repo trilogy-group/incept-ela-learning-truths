@@ -1,0 +1,163 @@
+{
+ "id": "provenance-for-every-field",
+ "title": "Provenance for every field",
+ "statement": "Record where each field came from, not only each record, marking model-inferred content as unsourced with its reasoning, because one record can mix official text with generated fields.",
+ "example": "In one course's 2,703 records, 43% had at least one generated field.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "generation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of an AP curriculum store found records under one source tag whose statements were official but whose misconceptions and assessment boundaries had been filled in by a model, because the official framework doesn't publish them (`icloud-work/auto-memory-backup/feedback_field_level_provenance.md`, lines 12-21). Field-level tags were then added: in one course 43% of 2,703 records had a generated field, mostly dates and themes, with misconceptions, boundaries or objectives generated in 88 (3%) (line 29). It takes recording where every asset came from down to each field.",
+ "against": "Generated fields were few, and they were kept as a lower tier rather than dropped: \"- For the LLM-tagged remainder (3%/1%): use as inspiration only, IB-graded as truth-checker\" (`icloud-work/auto-memory-backup/feedback_field_level_provenance.md`, line 33). In the other course 77% of records had a generated field, mostly dates and themes (line 30). For the main course, model-written misconceptions, scope boundaries and objectives were few, 88 records or 3% (`feedback_field_level_provenance.md`, line 29), and no harm from mixed records was measured. Mostly absent in practice: 'Most existing data was loaded from Google Sheets without per-field citations. Requiring `sources` across the board would fail validation on ~20,000 existing files.' (shadow-curriculum/plans/schema-decisions.md line 92).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "17",
+   "quote": "When a corpus marks provenance at the record level (e.g., `merge_source: inceptbench_remapped`), do **NOT** treat all fields in that record as equally authoritative. Different fields in the same record can have different provenance. A consumer that trains on the record as a unit will train on the LLM-generated fields as if they were authoritative.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "12",
+   "quote": "The CB CED does not publish assessment_boundaries or common_misconceptions for APEURO; null fields were filled by Haiku-4.5. Record-level merge_source masks this from consumers.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "29",
+   "quote": "- APUSH (2,703 records): 43% have any LLM-tagged field. **Misconceptions/boundaries/LOs LLM-filled in only 88 records (3%).** date+theme are the dominant LLM-backfill targets.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "33",
+   "quote": "- For the LLM-tagged remainder (3%/1%): use as inspiration only, IB-graded as truth-checker",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_field_level_provenance.md",
+   "lines": "30",
+   "quote": "- APWH (1,696 records): 77% have any LLM-tagged field. **Misconceptions/boundaries/LOs LLM-filled in only 23 records (1%).** date+theme dominate.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "119",
+   "quote": "Curriculum API merge_source is record-level; same record mixes CB-canonical statement with Haiku-generated misconceptions/assessment_boundaries.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_field_level_provenance.md",
+   "lines": "21",
+   "quote": "The `statement` field carries CB-canonical KC text. The `common_misconceptions` and `assessment_boundaries` fields carry Haiku-4.5-generated text",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_field_level_provenance.md",
+   "lines": "29",
+   "quote": "APUSH (2,703 records): 43% have any LLM-tagged field.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_field_level_provenance.md",
+   "lines": "32",
+   "quote": "- Filter `'common_misconceptions' NOT IN (llm_generated_fields or [])` → 97% of APUSH, 99% of APWH misconceptions are CB-canonical, safe as authoritative distractor seeds",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "reference_external_ib_v253_at_10.md",
+   "lines": "26",
+   "quote": "| Curriculum dataset | Had LLM-fabricated fields (APEURO assessment_boundaries, common_misconceptions, expanded_LOs all Haiku-generated) |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "MEMORY.md",
+   "lines": "95",
+   "quote": "every text field in any new corpus must trace to a primary source; LLMs are tools (search/OCR/reformat) not content authors; drop-don't-patch when sources fail.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_field_level_provenance.md",
+   "lines": "29",
+   "quote": "**Misconceptions/boundaries/LOs LLM-filled in only 88 records (3%).**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "39",
+   "quote": "- `source` must be nullable because some content is LLM-inferred and has no external citation — but the rationale for that inference is still valuable audit data, so `reasoning` stays required. (\"We made this up, and here's why\" is more useful than \"we made this up.\")",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "72",
+   "quote": "**Decision:** `sources` is an object whose keys are free-form — typically the name of the field each citation backs, or the string `\"this\"` for the entity as a whole.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/schema-decisions.md",
+   "lines": "81",
+   "quote": "a flat array forces that mapping to live in prose inside `reasoning`, where it can drift.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/data-hierarchy.md",
+   "lines": "267",
+   "quote": "\"reasoning\": \"Inferred by LLM (Gemini 2.5 Pro) using the CB Assessment Framework PDF as context — no CB source explicitly defines key concepts at the per-standard level.\"",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "27",
+   "quote": "Contract consumes a versioned cue/spec artifact and records timing provenance",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/base.md",
+   "lines": "7-8",
+   "quote": "You invent only what no input specifies, and everything you invent you list in `_gates.invented` so a reviewer can see it.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/check-fidelity.mjs",
+   "lines": "8-9",
+   "quote": "sourced checks: every entry in src/content/checks.ts marked source",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

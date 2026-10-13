@@ -1,0 +1,121 @@
+[
+ {
+  "id": "g3-ui-audit-reports",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/ui-audit-2026-09-08/: its top-level .md (README, WORKFLOW, FINAL-TECHNICAL-AUDIT, PORTAL-SCOPE-CORRECTION, RESUME), bead-specs/, and gold-standard/ (every .md, and what each .json or .log fixture tests). A UI audit of the reading lessons: what was checked, what a gold standard was, what failed."
+ },
+ {
+  "id": "g3-ui-audit-rounds",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/ui-audit-2026-09-08/round-1/ and any other round or findings folders in ~/Projects/grade3-reading/ui-audit-2026-09-08/: every .md (DECISIONS, INTERACTIONS, per-unit findings), and enough of each subfolder's .txt and .json findings to learn what kinds of defects were found and how often; never every file, never the images."
+ },
+ {
+  "id": "g3-visual-findings",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/visual-findings-2026-09-07/ and ~/Projects/grade3-reading/visual-findings-2026-09-08/: any .md, and enough of the .txt and .json findings, by kind, to learn what visual and audio defects lessons had and what rules followed; skip the .png and .wav files."
+ },
+ {
+  "id": "g3-course-renderer",
+  "sources": [
+   "grade3-reading-course-renderer"
+  ],
+  "scope": "~/Projects/grade3-reading/course-renderer/ (a checkout of the renderer the lessons run in): documentation only: README, docs/, artifacts/, content/ guidelines and specs, .claude/ skills, QA and review notes. Skip node_modules, source code and media."
+ },
+ {
+  "id": "g3-review-hub",
+  "sources": [
+   "grade3-reading-review-hub"
+  ],
+  "scope": "~/Projects/grade3-reading/edullm-review-hub/: documentation only: APP_DELIVERABLES.qmd, website/ documentation and content guidelines, deploy notes, review rubrics and QA records. Skip node_modules, source code and .beads data."
+ },
+ {
+  "id": "g3-archive",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/_archive/: handovers/, 2026-08-13-consolidation/ and its other .md files; skip the .tgz and the stale beads data."
+ },
+ {
+  "id": "g3-experiments",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/bias_experiment/ (including its .agent/memory failure records), ~/Projects/grade3-reading/red_team/, ~/Projects/grade3-reading/curriculum-gen/, ~/Projects/grade3-reading/helpers/, ~/Projects/grade3-reading/agent-kit/, ~/Projects/grade3-reading/incept-read-app/, ~/Projects/grade3-reading/workspace/, ~/Projects/grade3-reading/ti-courseplans-wiki/ and ~/Projects/grade3-reading/inbox/: documents only."
+ },
+ {
+  "id": "g3-artifacts-remainder",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/artifacts/: every folder and file that run 4's two artifacts readers did not read (their coverage is in ~/Projects/learning-truths/research/2026-10-12-4-deep-sweep/coverage.json, under artifacts-qa and artifacts-builds-research). Folders named after a person may be read but never cited."
+ },
+ {
+  "id": "g3-courseplans-remainder",
+  "sources": [
+   "grade3-reading"
+  ],
+  "scope": "~/Projects/grade3-reading/ti-courseplans/: everything run 4's ti-courseplans reader did not read (its coverage is in ~/Projects/learning-truths/research/2026-10-12-4-deep-sweep/coverage.json), especially the courses beyond Grade 3 reading; skip raw lesson-content dumps."
+ },
+ {
+  "id": "g9-transcript",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/transcript/chat-transcript.redacted.txt: a redacted team chat transcript, about 280 KB; read it all. Extract what it shows about making the unit's film and lessons (decisions, feedback, what reviewers asked for and why), never who said it."
+ },
+ {
+  "id": "g9-library",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/library/: README.md, CATALOG.md, TIMELINE.md, topics/, curation/ (a curation card for every document) and collections/; read text/ only where a card points to a finding."
+ },
+ {
+  "id": "g9-sources",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/sources/: the curriculum documents (the unit video info sheet, the first round of feedback, the Year 9 lesson design specification, the lesson design and scaffolding document, the knowledge base overview, the Act 1 reading texts, the video feedback, the meeting notes). Read-only material made by others: extract only what it states about how lessons, texts, videos and checks should be built; cite it; never copy it at length. Read .docx with textutil -convert txt -stdout, .pdf with pdftotext <file> -."
+ },
+ {
+  "id": "g9-production-notes",
+  "sources": [
+   "g9"
+  ],
+  "scope": "~/Projects/g9/script/, ~/Projects/g9/narration/ (audition notes and READMEs), ~/Projects/g9/score/, ~/Projects/g9/art/ (briefs and finish tests), ~/Projects/g9/film/ (every README, QA, storyboard note and audit beyond film/v07/README.md and film/v07/render/QA.md, already used), ~/Projects/g9/docs/ and ~/Projects/g9/player/ (beyond player/README.md and player/qa/QA.md, already used)."
+ },
+ {
+  "id": "course-renderer-draft",
+  "sources": [
+   "course-renderer-draft"
+  ],
+  "scope": "~/Projects/othello-course-renderer-draft/: documentation and content notes for the Grade 9 staging draft; skip node_modules, source code and media."
+ },
+ {
+  "id": "package-hub",
+  "sources": [
+   "incept-package-hub"
+  ],
+  "scope": "~/Projects/incept-package-hub/: documentation only (READMEs, docs, specs, audits, review notes); skip node_modules and source code."
+ },
+ {
+  "id": "threejs-fork",
+  "sources": [
+   "othello-archive"
+  ],
+  "scope": "~/Projects/othello-archive/ (a fork of the 3D build, on its marking-gate branch): every document, and the marking gate's tests and fixtures."
+ },
+ {
+  "id": "kit-variant",
+  "sources": [
+   "unit-video-kit-essay"
+  ],
+  "scope": "~/Projects/unit-video-kit-essay/: every document that differs from ~/Projects/unit-video-kit/ (compare the file lists and contents), especially the essay modules."
+ }
+]

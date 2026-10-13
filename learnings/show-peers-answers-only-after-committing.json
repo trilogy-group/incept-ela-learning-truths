@@ -1,0 +1,62 @@
+{
+ "id": "show-peers-answers-only-after-committing",
+ "title": "Show peers' answers only after committing",
+ "statement": "Show how other learners answered only after a learner has committed their own answer, and never with names.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Two Grade 9 design canvases set when other learners' answers appear. One shows the live split of how others ruled only after the student commits, under the heading peers after the verdict, and the current one ends on a wrap, peers only after you commit, whose class split is live from the class, shown only after the learner submits and never with names. The built prototype also ends with where the class landed.",
+ "against": "The prototype's split is not real yet: \"The class split on the wrap shows `[X]%` and `[Y]%` placeholders; it needs real response data.\" (othello-course-renderer-draft/repo/docs/design/grade-9/prototype/README.md, line 42), so the effect of seeing it only after committing is not measured.",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/02-case-files.html",
+   "lines": "47",
+   "quote": "Peers after the verdict",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/02-case-files.html",
+   "lines": "47",
+   "quote": "The live split of how others ruled appears only after the student commits.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/03-desktop-othello.html",
+   "lines": "38",
+   "quote": "Wrap: the argument is the artifact; peers only after you commit",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/canvases/03-desktop-othello.html",
+   "lines": "38",
+   "quote": "Live from your class. Shown only after you submit. Names are never shown.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/design/grade-9/prototype/README.md",
+   "lines": "31",
+   "quote": "**Done**: the argument to keep, the big idea, where the class landed, what's next.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

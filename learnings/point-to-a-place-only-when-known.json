@@ -1,0 +1,64 @@
+{
+ "id": "point-to-a-place-only-when-known",
+ "title": "Point to a place only when known",
+ "statement": "Let model-written feedback name a place in the text, such as its first line, only when the model was given each excerpt's position; otherwise block such claims in code.",
+ "example": "A feedback-only safeguard passed 52/52 route checks, against 9 expected failures on the old route.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "feedback",
+  "generation",
+  "stimulus"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "On a third miss, a generated hint told a child to look at the very first line of the story for an offer that comes later (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 1328). The feedback writer had been given grounding excerpts with no story positions, and the first excerpt happened to hold the offer. The repair was a deterministic, feedback-only locator safeguard, and an independent review verified it on 52/52 route checks against 9 expected failures on the old route, with all 134 original assertions unchanged (line 1339).",
+ "against": "The cause is a co-occurrence, not a proven mechanism: \"The first excerpt happens to contain the offer; that correlation does not establish model-internal causation.\" (`grade3-reading/ui-audit-2026-09-08/BEAD-REGISTER.json`, line 1328). The safeguard was proven only under controlled responses: \"Finite detector protection is proven under controlled route responses; no forced native bad phrase or universal language claim.\" (line 1339).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1328",
+   "quote": "On current 660a8339/d0qep15iE3avbSb2NmTik, the real third L4 p24 opening miss tells the child to look at the very first line of the story for Peter's offer, but the story begins The Darling children could not sleep.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1328",
+   "quote": "Generated feedback receives unordered grounding excerpts without story positions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1328",
+   "quote": "Propose and independently review a bounded feedback-only locator safeguard for excerpt-only G3 open requests.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1339",
+   "quote": "verifies 52/52 current versus43pass/9expected baseline failures with all134 original assertions unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "1339",
+   "quote": "Accepted feedback-only safeguard committed51c160f8",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

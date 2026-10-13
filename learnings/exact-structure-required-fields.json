@@ -1,0 +1,129 @@
+{
+ "id": "exact-structure-required-fields",
+ "title": "Exact structure, required fields",
+ "statement": "Give the writer the item's exact structure and make every field that matters required; without a structure items failed far more often, and fields left optional got left out.",
+ "example": "With no schema, the pass rate fell to 5% against a 45% baseline.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "format"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the same prompt sweep, raw generation with no schema passed 5% of items against a 45% baseline, at 20 items per variant (`icloud-work/ML learnings/prompt_engineering_deep_dive.md`). One writer filled every schema field, optional ones included, while another often left optional fields out, such as the source attribution, so the anchor-fact field was made required (`icloud-work/ML learnings/week_of_apr_21.md`). Any structural deviation fails an item on specification compliance (`icloud-work/ML learnings/what_is_ap_and_why_it_matters.md`).",
+ "against": "Structure doesn't carry correctness: \"The knowledge and content quality within the structure is what differentiates model sizes — not the structural compliance itself\" (`icloud-work/ML learnings/research_model_size_vs_data_quality.md`, line 150). In the same sweep factual accuracy moved much less than the pass rate (50% with no schema against 60% at baseline), and structure is a hard fail only for some item types (`icloud-work/ML learnings/evaluation_methodology.md`, lines 44-50).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "62",
+   "quote": "| bare | 5% | 50% | No schema, raw generation |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "57",
+   "quote": "| baseline | 45% | 60% | Standard prompt |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/week_of_apr_21.md",
+   "lines": "135",
+   "quote": "Gemini reliably fills all JSON schema fields including optional ones. Fireworks model frequently omits optional fields (e.g., `source_attribution`). Keep required fields minimal; never rely on optional field presence for correctness. The `anchor_fact` field is required in the schema specifically because of this.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "45",
+   "quote": "Any structural deviation = automatic fail on `specification_compliance`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "12",
+   "quote": "Reply with JSON only, matching the shape you are given exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/index.js",
+   "lines": "1-2",
+   "quote": "A mechanic is one module with seven parts: identity, a writer prompt, normalize (shape), … codeChecks (facts), judge (bounded questions with positive evidence), view (what the student sees; never a key)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "20",
+   "quote": "must be a list of exactly",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "25",
+   "quote": "must be an index from 0 to",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "32",
+   "quote": "lines that exist in the text",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/mechanics.test.mjs",
+   "lines": "35",
+   "quote": "normalize rejects a reply of the wrong shape",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "63",
+   "quote": "the reply could not be used:",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/transform.test.mjs",
+   "lines": "36",
+   "quote": "an unusable reply is held with the reason, and no judge means unjudged, never ready",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "17",
+   "quote": "return v.trim().slice(0, max);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "68-69",
+   "quote": "cfu dialogue evidence shape needs {instruction, sentences, correct_index, feedback} (the L6 build shipped 11 defects, several of this class).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

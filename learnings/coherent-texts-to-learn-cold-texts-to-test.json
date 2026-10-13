@@ -1,0 +1,480 @@
+{
+ "id": "coherent-texts-to-learn-cold-texts-to-test",
+ "title": "Coherent texts to learn, cold texts to test",
+ "statement": "Sequence the texts learners study so taught knowledge recurs and builds, and base every scored test and transfer item on unseen, unrelated texts whose answers were never taught.",
+ "example": "Readers of a coherent text set gained 5.59 concept idea-units against 2.63 for unrelated texts over six texts in three days.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "An outside review of a Grade 3 reading course found it sequenced as a Lexile staircase rather than a knowledge progression, with assessment passages kept off the taught topics by design, so knowledge was engineered out; it asked for learning texts in which taught knowledge recurs and compounds, with cold, non-overlapping passages kept for the test. In a randomised study, readers of a coherent text set gained 5.59 vs 2.63 concept idea-units (η²=.32) over six texts in three days. In a test or transfer item the same overlap would be a leak.",
+ "against": "The study took place in one rural school with fourth graders reading on grade level, and its gains were in topic knowledge, vocabulary and retelling of a new text; its comprehension-question scores were not significant. a project note warned that knowledge-building can be gamed if later questions become answerable from earlier lessons, and the store rates the transfer of knowledge as near-domain at best (η²=.09). Knowledge carried forward can answer a test item: in one historical gate run, an item no blind solver answered (0/3) was answered every time with the earlier lessons' texts (3/3) and was swapped, though a later replay with a newer model answered it blind as well. The later design's separation was verified only at design level, so whether it holds at run time was unverified. When the target test mixes unrelated texts, topic coherence is itself a scaffold to fade before the test, gradually rather than at a cliff (`grade3-reading/artifacts/g5_build_2026_07_02/approval_clean.md`). The study had 59 readers in one rural school over a 3-day intervention, its comprehension-question measure was null and unreliable, and it is not clear whether texts that merely share a topic would do the same (`ti-courseplans-audit/docs/reading-science/SYNTHESIS.qmd`); the BrainLift itself notes that knowledge transfer is near-domain at best (η²=.09). The study had 59 on-grade readers in one rural school over a three-day intervention, its comprehension-question measure was unreliable, and it is unclear whether texts that merely share a topic work the same way (`grade3-reading/ti-courseplans/docs/reading-science/SYNTHESIS.qmd`, lines 186-189). The course plans add that what carries over to a cold text is operations, vocabulary and format fluency, not topic knowledge: \"Topic knowledge is the vehicle, never the cargo\" (`grade3-reading/ti-courseplans/docs/practice-layer-spec.md`, lines 125-128). knowledge-building can be gamed if later questions become answerable from earlier lessons without proving comprehension, a concern raised at a meeting on 2026-07-09 (`grade3-reading/knowledge_bot/knowledge/kb-0098-incept-service-coe-catchup-2026-07-09.qmd`, lines 38-39). none found; the spec itself calls the benchmark a transfer read, not an impact claim (`ti-courseplans-audit/docs/practice-layer-spec.md`). A later run found counter-evidence (`othello-course-renderer-draft/repo/docs/extras/alpharead-fading-guidance.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "70",
+   "quote": "Sequence the learning texts so taught knowledge recurs and compounds, and reserve cold, non-overlapping passages for the test only, where that property belongs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "68",
+   "quote": "by design ensures assessment passages never overlap taught topics so a student \"can't pass on recall.\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "66",
+   "quote": "Coherent-set readers gained 5.59 vs 2.63 concept idea-units (η²=.32) over six texts in three days",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "68",
+   "quote": "The course is sequenced as a Lexile staircase, not a knowledge progression, and by design ensures assessment passages never overlap taught topics",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "68",
+   "quote": "A child can find the main idea fifty times on fifty disconnected passages and never accumulate the knowledge that makes main ideas easy to find.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "54",
+   "quote": "Conceptually coherent text sets outperform unrelated texts for both knowledge and vocabulary growth",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0118-curriculum-architecture-brainlift-core.qmd",
+   "lines": "82",
+   "quote": "use the curriculum to keep generative knowledge warm by use; use spaced practice for the residue.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0098-incept-service-coe-catchup-2026-07-09.qmd",
+   "lines": "38-39",
+   "quote": "knowledge-building can be gamed if later questions become answerable from earlier lessons without proving true comprehension",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0121-teaching-comprehension-insights-brainlift.qmd",
+   "lines": "48",
+   "quote": "knowledge transfer is near-domain at best … η²=.09",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "45",
+   "quote": "***To change this:*** Sequence the learning texts so taught knowledge recurs and compounds, and reserve cold, non-overlapping passages for the test only, where that property belongs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "43",
+   "quote": "by design ensures assessment passages never overlap taught topics so a student “can’t pass on recall.”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "66",
+   "quote": "Whether dose-item overlap is teaching or leaking depends on item class — the same overlap is legitimate in an in-lesson knowledge check and a leak in a comprehension/transfer item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "67",
+   "quote": "It took five adversarial rounds to isolate this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0081-g3-reviewer-feedback-raw-2026-07-02-reading-explorers-v2-review-verbatim.qmd",
+   "lines": "70",
+   "quote": "Sequence the learning texts so taught knowledge recurs and compounds, and reserve cold, non-overlapping passages for the test only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "81-82",
+   "quote": "\"Independent item claim_ids must be a subset of independent_claim_ids and disjoint from teaching_claim_ids\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "32",
+   "quote": "choice-hottext-20: plain-blind 0/3 but 3/3 with prior-lesson corpus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "33",
+   "quote": "Current Gemini 3.5 replay: 3/3 in both conditions - direct blind leak; old lift is historical.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "87-88",
+   "quote": "so whether it executes correctly at runtime is unverified, not just unapproved.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "45",
+   "quote": "Sequence the learning texts so taught knowledge recurs and compounds, and reserve cold, non-overlapping passages for the test only, where that property belongs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "43",
+   "quote": "by design ensures assessment passages never overlap taught topics",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "25",
+   "quote": "The passages jumped from e.g. the axolotl to shadows with no visible link, there is no pre-teaching of key ideas, and no strategy is revisited at greater depth.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/03-transfer-practice-layer.md",
+   "lines": "59",
+   "quote": "do not use cold passages as the main teaching surface;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "296",
+   "quote": "is the last scaffold, and like every other scaffold it fades gradually",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "130-131",
+   "quote": "Coherent-set readers gained 5.59 vs 2.63 concept idea-units (η²=.32) over six texts in three days (Cervetti 2016, pp. 769–771).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "132-133",
+   "quote": "The largest Cervetti effect was *incidental* vocabulary: η²=.625, no meanings taught, target words recurring ~6× across the set (pp. 766–772).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "166",
+   "quote": "Cold plain text belongs at the *test*, not throughout learning; sequence passages so knowledge recurs and compounds",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/sources.qmd",
+   "lines": "18",
+   "quote": "DOI: 10.1007/s11145-016-9628-x",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/reading-science/SYNTHESIS.qmd",
+   "lines": "186-188",
+   "quote": "N=59, one rural school, on-grade readers, 3-day intervention, null (unreliable) comprehension-questions measure, and \"it is not clear whether the same effects would be observed using texts that merely cohered around the same topic\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "89-90",
+   "quote": "knowledge transfer is near-domain at best (Cervetti η²=.09)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "166",
+   "quote": "then made passages cold and non-overlapping *throughout learning*",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "166",
+   "quote": "Cold plain text belongs at the *test*, not throughout learning; sequence passages so knowledge recurs and compounds",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "62-65",
+   "quote": "59 fourth graders randomly assigned to read six texts that either cohered around bird concepts or spanned six unrelated topics — matched for total words, readability, and embedded target words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "69-70",
+   "quote": "\"For the total concept units, the main effect of treatment is significant in favor of the CC group, F(1, 56) = 26.84, p = .000, partial g2 = .324\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "73-75",
+   "quote": "the main effect of treatment is significant, F(1, 56) = 93.16, p = .000, partial g2 = .625.\" (p. 772) — despite the CC words being *rarer* in English.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "132",
+   "quote": "The largest Cervetti effect was *incidental* vocabulary",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "186-187",
+   "quote": "N=59, one rural school, on-grade readers, 3-day intervention, null (unreliable) comprehension-questions measure",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "127-128",
+   "quote": "Topic knowledge is the vehicle, never the cargo.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd",
+   "lines": "79-80",
+   "quote": "The **scored `item_bank`/independent claims stay disjoint from that on-ramp and from every teaching claim**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "71",
+   "quote": "The cold benchmark is **never a mastery gate and never teaching material**",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "71-72",
+   "quote": "v1 is observe-only (results route to humans, not automated adaptation)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "61",
+   "quote": "sealed windowed diagnostic on never-taught topics, burn-after-serve",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/practice-layer-spec.md",
+   "lines": "61",
+   "quote": "a transfer *read*, not an impact claim",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-modes-spec.md",
+   "lines": "68-69",
+   "quote": "Cold passages are never taught from — they are the practice layer's sealed benchmark.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-assessor/SKILL.md",
+   "lines": "27-28",
+   "quote": "passages with ZERO overlap with instruction (verified, the G4/G5 cold-finals property); parallel forms, disjoint.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "71",
+   "quote": "The cold benchmark is **never a mastery gate and never teaching material**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/practice-layer-spec.md",
+   "lines": "148-149",
+   "quote": "a **contamination ledger** keeping cold-pool topics out of every lane's generation prompts is required tooling",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/handoffs-2026-07-13/pedagogy-llm-eval-contract.md",
+   "lines": "71-72",
+   "quote": "A model trained on a cold topic cannot be evaluated on it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/review-hub/course-insights-d7f57fb/ATOMS.json",
+   "lines": "470",
+   "quote": "Keep held-out assessment sources separate from lesson-visible teaching and practice sources.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/00_AUDITS_AND_FIXES.md",
+   "lines": "18",
+   "quote": "| 10 | The public no-login test URL allows anonymous farming of the item bank |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/05_LIMITATIONS.md",
+   "lines": "118",
+   "quote": "- Item security is weaker: students who take the test multiple times will see repeated items (mean pairwise between-session overlap 29.4%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/review/history/2026-07-27-review-preparation-projections.md",
+   "lines": "17-18",
+   "quote": "All 120 assessment candidates and 182 assessment/retry-only sources remain out of the learner projection.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "311",
+   "quote": "use **original/obscure passages for *assessment*** (famous sources stay for *teaching*); and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/brainlift.html",
+   "lines": "1",
+   "quote": "transfer requires cold passages on never-taught topics and remains separate from course mastery or an impact claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "110",
+   "quote": "So **\"you always know what topic you're reading\" is the last scaffold, and like every other scaffold it fades gradually, not at a cliff**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/v0.2.md",
+   "lines": "37",
+   "quote": "MAP Science at G7 tests all four MS NGSS domains back-to-back without warning.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/v0.2.md",
+   "lines": "40",
+   "quote": "**Implication:** Units are domain-coherent for *acquisition*, but every weekly retrieval queue pulls items from ALL domains touched so far.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "2888",
+   "quote": "Independent practice asks the student to evaluate a competing reading using textual evidence, followed later by an unfamiliar passage without the scaffold.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/review/brainlift.html",
+   "lines": "157-158",
+   "quote": "held-out assessment sources remain separate from lesson-visible sources, keys remain reviewer-only, and retries require a different",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-3-feasibility.md",
+   "lines": "116-117",
+   "quote": "A passage a student decoded aloud in Band A/B is, by definition, **not cold** when it reappears in the Band-C",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/source/canonical/pedagogy-policy.json",
+   "lines": "1789-1790",
+   "quote": "Teaching from or gating on the cold pool contaminates the benchmark and turns transfer evidence into rehearsal evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/extras/alpharead-fading-guidance.md",
+   "lines": "62",
+   "quote": "The cold text = the mastery diagnostic: known procedure + new content, current stage, inside the built knowledge web.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "38",
+   "quote": "five scored MCQ/SAQ sources withheld from Lessons 1-7 so the checkpoint measures source transfer rather than recall of a modeled analysis;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "417-418",
+   "quote": "If a review lesson repeats assessment wording or shows the exact evidence path before a checkpoint, the score measures recognition.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Cervetti, Wright & Hwang 2016",
+   "url": "https://doi.org/10.1007/s11145-016-9628-x"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,942 @@
+{
+ "id": "machine-checks-are-not-judgment",
+ "title": "Machine checks are not judgment",
+ "statement": "Keep machine checks apart from human judgment: a quality call stays unjudged until a person has watched or listened, and an AI judge only picks what that person reviews.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every number in the first film's QA comes from a measurement on the delivered files, and none replaces a real\naudition (`g9-film-v01-render/QA.md`); a review marked a quality call \"present, unjudged\" where it needed a listen\n(`g9/review/2026-10-06-film-reviews/VIDEO-REVIEW.md`); and a successful render is technical proof only\n(`g9/tools/unit-video-essay/INTEGRATION.md`). AI judges are a filter: a voice is chosen by listening\n(`othello-unit-video/research/METHODS.md`), and automated player runs are muted, so a person still has to watch with\nsound (`othello-unit-video/.claude/skills/uvk-checks-make/SKILL.md`).",
+ "against": "the person's pass never happened for the\nfinal film, which no person has watched (`g9/film/v07/README.md`), and in three blind passes every judge preferred the\nsame take. A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md`). A later run found counter-evidence (`grade3-reading/ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-06-film-reviews/VIDEO-REVIEW.md"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-checks-make/SKILL.md"
+  },
+  {
+   "source": "g9",
+   "path": "film/v07/README.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/MANUAL-AUDIT-10-QUESTIONS.md",
+   "lines": "311",
+   "quote": "The 58% \"pass rate\" from the heuristic evaluator was misleading — real quality is ~90%.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "189",
+   "quote": "InceptBench 97% pass rate does NOT mean 97% of questions are publishable.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "187",
+   "quote": "a confusing but technically correct question can pass",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "14",
+   "quote": "31% are rejected for factual inaccuracies or misalignment with learning objectives",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/LIVE_STATUS.md",
+   "lines": "7",
+   "quote": "# 90.0% (54/60)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/LIVE_STATUS.md",
+   "lines": "22",
+   "quote": "- **Empty or null 'answer'**: 2 occurrences",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/root/INDEX.md",
+   "lines": "252",
+   "quote": "- Fill rate: 100% (was 0%)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/root/INDEX.md",
+   "lines": "254",
+   "quote": "- Pass rate: 7% (format issues by design)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "117",
+   "quote": "Shape validity does not establish semantic compliance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "119",
+   "quote": "Formal schema validity, policy fidelity, blinded artifact quality, and student outcomes are different claims.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "285-286",
+   "quote": "JSON Schema/AJV can reject malformed structures; it cannot prove that a lesson embodies the pedagogy.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "117-118",
+   "quote": "schema validity is a document-integrity floor only, never a course-quality/child-readiness/outcome verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0170-apush-deliverable-shape-user-pause-checkpoint.qmd",
+   "lines": "120-121",
+   "quote": "Replace the two remaining `cleared` phrases in MCQ/MCQ_SET with `machine-checked` or `selected`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "81",
+   "quote": "\"built and machine-verified, awaiting human review,\" never more.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "44-46",
+   "quote": "Voice identity (timbre) is invisible to a text validator, and listen-QA transcribes WORDS, not timbre, so a correctly-worded clip in the wrong voice passes every automated check.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "291",
+   "quote": "Whisper mis-hears short morphemes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "291",
+   "quote": "listen-QA transcripts are unreliable on sub-syllable fragments and isolated affixes, so a flagged single-morpheme clip needs a human ear before it is filed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/HUMAN-REVIEW-2026-09-21.md",
+   "lines": "22",
+   "quote": "whisper hears \"ant\" as \"and\"; does a child?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "60",
+   "quote": "26 findings landed on lessons whose gate was green at review time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/calibration/ROUNDS.md",
+   "lines": "65-66",
+   "quote": "23 remain irreducibly human",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "219",
+   "quote": "human tier (irreducibly human, and why)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/cert-layer/CONTRACT-v0-2026-08-31.md",
+   "lines": "221-223",
+   "quote": "every gate above checks fidelity to the doc, not whether the doc's pedagogy is sound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/CHECKLIST.md",
+   "lines": "65",
+   "quote": "**Human content review** — machine-authored content (CCSS tags, feedback, recall/MAP items) `humanApproved=false` until a human signs off.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "55-56",
+   "quote": "**`metadata.humanApproved` persists** (PUT False → GET False) → the human-review gate can live on the item. All machine-drafted edits stay `humanApproved=false` until a human signs off.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/text-quality-lane.md",
+   "lines": "5-6",
+   "quote": "the machine stage never approves, it only rejects and orders the queue.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/train-teacher/references/text-quality-lane.md",
+   "lines": "36-37",
+   "quote": "The screen discriminates; it does not approve.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "263",
+   "quote": "`humanApproved:false` on 772/772 (G5) / 957/957 (G4) submitted to educators means \"no human has read what you'd put in front of ten-year-olds\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/course-formula-agents.md",
+   "lines": "263",
+   "quote": "even a sampled ~60-item review converts \"0 human-reviewed\" into \"sampled + attested\"",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/instruction-quality-standard.md",
+   "lines": "101",
+   "quote": "Human edit pass before ship — \"several read as unedited AI output\" must never recur.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0228-g3-listen-qa-transcript-receipts-2026-09-24.qmd",
+   "lines": "43-44",
+   "quote": "machine transcripts needing human disposition before any claim about audio quality is made from them",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "313",
+   "quote": "Every compressed script is read aloud by a human before it ships",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "315",
+   "quote": "It removes the connective words first — the ones that named what the child was looking at and what to call it — because on the page those words look like padding.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "BrainLift - What makes a good intro video.md",
+   "lines": "355",
+   "quote": "A line that fails any of these usually reads perfectly well on the page. That is why the pass has to be spoken.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "26",
+   "quote": "Authored, mechanically validated, runtime verified, human accepted, production verified, and outcome validated remain distinct states.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "104",
+   "quote": "- Claim boundary: A weaker evidence type cannot be upgraded by confidence or repetition.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/text-quality-lane.md",
+   "lines": "3-4",
+   "quote": "generated text is untrusted until certified, exactly as generated items are.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/text-quality-lane.md",
+   "lines": "5-6",
+   "quote": "the machine stage never approves, it only rejects and orders the queue.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/text-quality-lane.md",
+   "lines": "34-35",
+   "quote": "the screen independently flagged **cohesion density 0.17 with a 3-sentence static run**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/text-quality-lane.md",
+   "lines": "36-37",
+   "quote": "On a clean target-quality sample: cohesion 0.58, passes. The screen discriminates; it does not approve.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/course-formula-agents.md",
+   "lines": "263",
+   "quote": "even a sampled ~60-item review converts \"0 human-reviewed\" into \"sampled + attested\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "22-23",
+   "quote": "This split is the whole point: mechanical findings are trustworthy as stated, judgment findings are the reviewer's and are labelled as such.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "393-394",
+   "quote": "Never present a judgment call as a mechanical fact.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "20",
+   "quote": "The script never pretends to decide these; it hands over the material.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "41",
+   "quote": "Inceptbench gates nothing today. It advises.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "81",
+   "quote": "a flag on approved content is a fact about Inceptbench, not about the content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "151",
+   "quote": "- **Reading Greptile reviews as authoritative.** They're a useful first pass, not the final word. Always cross-check.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "189",
+   "quote": "**Practical implication:** InceptBench 97% pass rate does NOT mean 97% of questions are publishable. Some will require teacher review. But it's a reliable quality gate for training and benchmarking purposes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/overnight_automation.md",
+   "lines": "226",
+   "quote": "- Rarely caught code bugs (like the f-string bug) — those needed human review",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/what_is_ap_and_why_it_matters.md",
+   "lines": "106",
+   "quote": "Every question would be usable on an actual AP exam without teacher modification. Correct historical content, period-accurate, right cognitive level, right structural format. A teacher reviewing these questions would accept them for direct use.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/sat-reading-generation/README.md",
+   "lines": "340",
+   "quote": "Generated questions should be reviewed by subject matter experts before use in formal assessments.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/archive/OPENCLAW_HUMAN_REVIEW.md",
+   "lines": "13",
+   "quote": "I read each one as a human reviewer would",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/COMPREHENSIVE-AUDIT-2026-02-18.md",
+   "lines": "80",
+   "quote": "| Cognitive Demand | C- | Mostly recall, light analysis |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/submodules/EduBench/README.md",
+   "lines": "218",
+   "quote": "- **Consistency between humans and models**: The model evaluations do not fully align with human judgments, which may be due to limited understanding of the evaluation criteria by the models.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "docs/COURSE_PACKAGE_STANDARD.md",
+   "lines": "237",
+   "quote": "Warnings remain visible. Human-review requirements do not disappear when the release envelope passes.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "49",
+   "quote": "Automated structural, route, source-link, and mutation checks do not substitute for these gates.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/hub-review-model.md",
+   "lines": "213-214",
+   "quote": "Never describe mechanical validation as human review, certification, runtime verification, or release authorization.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "307",
+   "quote": "This instrument's item quality is established **empirically, not editorially** — and that is a design position, not an omission:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0167-portable-workspace-checkpoint-apush-g5.qmd",
+   "lines": "55-56",
+   "quote": "That green state is not the semantic verdict.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "57",
+   "quote": "A clean automated report is useful pre-review evidence, never a substitute for reviewer judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "46",
+   "quote": "On the same 297 prompts, the IB grader (gpt-5.2 default-PASS bias) gives **92.3%**, but the held-out Gemini-3.1-pro judge gives **49.2%**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/output/analytics.md",
+   "lines": "64",
+   "quote": "- DBQ + mcq_set cells: held-out judge says **0/30** even when IB says 70-100%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0245-coe-sync-2026-08-31-cert-layer-portal-fixes.qmd",
+   "lines": "34-35",
+   "quote": "findings landed on lessons the calibration log marked green at review time",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "13",
+   "quote": "Machine verification is exhaustive on shape and silent on doability by a Grade-3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-23/index.html",
+   "lines": "122",
+   "quote": "133 clips machine-checked, zero human listens",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/cross-cutting.md",
+   "lines": "247",
+   "quote": "- The \"43 of 285 criteria require a named human — no script or LLM-judge can close them\" fact,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course-json-standard-2026-07-13/README.md",
+   "lines": "59",
+   "quote": "- Schema validity is a document-integrity floor, not a course-quality, child-readiness, or",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/knowledge-first-reading-course-proposal-2026-07-09/04-evidence-contract.md",
+   "lines": "58",
+   "quote": "If human review is unavailable, mark the claim as `owner_gap`, not `verified`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/TOOLING.md",
+   "lines": "10-11",
+   "quote": "A green deterministic gate is not academic, accessibility, factual, or readiness approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0228-g3-listen-qa-transcript-receipts-2026-09-24.qmd",
+   "lines": "21",
+   "quote": "no human has heard the 120 branch clips,\" meaning these are machine transcripts, not human listens).",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/SKILL.md",
+   "lines": "69",
+   "quote": "Structurally-verified ≠ instructionally-sound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "23",
+   "quote": "machine checks do not approve content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "149-151",
+   "quote": "is not the same as truly ready",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "57",
+   "quote": "A clean automated report is useful pre-review evidence, never a substitute for reviewer judgment.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/sources/knowledge-bot/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "23",
+   "quote": "Deterministic screens route every passage to named human review; machine checks do not approve content.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "HERETIC_PLAN.md",
+   "lines": "26",
+   "quote": "An exact-answer/hint checker may catch mechanical errors, but semantic help quality is human-reviewed.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "143",
+   "quote": "The system catches only mistakes an expert has named at least once, so content that can fail in new ways still needs an expert.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "analyzer/.agent/BRIEFING.md",
+   "lines": "28",
+   "quote": "Grader (IB v2.5.x) co-evolved with chain — \"sometimes a sycophant of the chain\"",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/reports/synapse_checkin_2026_05_27_pipeline_quality_paradox.md",
+   "lines": "141",
+   "quote": "Different optimization targets (pass judge vs serve educators)",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "54",
+   "quote": "The deterministic hard gates are good as a safety layer, not a complete quality judge.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "118-119",
+   "quote": "The quote card leaves a one-word last line, and its underline starts on the space before a marked word (to fix in the modules).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "9",
+   "quote": "This is a technical mux check, not a listening review.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "167",
+   "quote": "a console of judgments, a profiler, for whoever builds the engine; never shown to reviewers",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "core/README.md",
+   "lines": "24",
+   "quote": "Visual descriptions still need editorial review.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/README.md",
+   "lines": "22",
+   "quote": "The generated narration has machine checks but no human listening or academic sign-off.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "44",
+   "quote": "The generated voice has **not** received human listening or curriculum sign-off; matched alignment flags are not such proof.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7166",
+   "quote": "That shortlist is based on [Google’s voice catalogue](https://ai.google.dev/gemini-api/docs/speech-generation#voice-options). I haven’t heard a generated reading yet, so I’ll test the love-to-murder passage before committing to the full narration.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "91",
+   "quote": "Technical level checks were performed, but the score was not auditioned. Technical audio measurements do not establish musical quality, intelligibility under speech, or acceptable transitions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "325",
+   "quote": "A waveform or a codec report alone is not an audition.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "307",
+   "quote": "Automated transcription can assist comparison but does not replace listening.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "355-356",
+   "quote": "a deliverable that has not had a human pass is not eligible to go to external reviewers, full stop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "360-361",
+   "quote": "no submission is exempt on the theory that the machine gate + adversarial pass was sufficient on its own",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/bead-specs/acceptance.md",
+   "lines": "3",
+   "quote": "Do not infer human ratification from software tests or feedback-site Fixed statuses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "741",
+   "quote": "Full listening, real child pronunciation and assistive-technology review remain human tasks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "37",
+   "quote": "`u1/contact-sheet.jpg` and `u9/contact-sheet.jpg` are inspection aids; they are not substitutes for listening to the movies.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/STATE.md",
+   "lines": "135",
+   "quote": "Do not claim a human visual or academic approval from the automated evidence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "135-136",
+   "quote": "This screen deliberately rejects badly and never approves; even a machine-clean result would still require an English specialist.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-16.md",
+   "lines": "82",
+   "quote": "Clip inventory/ASR do not prove listening quality or every native path.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "7002",
+   "quote": "File and level checks passed, but I couldn’t audition playback, so treat this as a music sketch to judge.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4946",
+   "quote": "Interaction checks passed; visual browser QA remains unverified.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5397",
+   "quote": "none, all complete fucking shit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "docs/PR_AND_RELEASE_STANDARD.qmd",
+   "lines": "131",
+   "quote": "Agent red-team evidence strengthens a review; it does not replace human academic or release authority.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "10",
+   "quote": "Links went out on the strength of green validators.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "3",
+   "quote": "**Machine-verified. No human has listened to or watched this file yet.** Every number below comes from a measurement on the delivered files; none replaces the real audition the handover (§10, §12) requires.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "narration/auditions/2026-10-06-scene1/README.md",
+   "lines": "8",
+   "quote": "Assists listening; does not replace it.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-moments.mjs",
+   "lines": "161",
+   "quote": "a split -> REVIEW, which a person (or the lead, by eye) must clear before shipping",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/La813aa.txt",
+   "lines": "8",
+   "quote": "Assists listening; does not replace it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L1716c4.txt",
+   "lines": "3",
+   "quote": "No human has watched or listened.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/02_ITEM_BANK.md",
+   "lines": "310",
+   "quote": "A measurement instrument's items are validated by how they behave, not how they read",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/science-process.md",
+   "lines": "106-107",
+   "quote": "A machine-clean record is still `CLEAN_TO_SPECIALIST`, never `APPROVED`.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "44",
+   "quote": "this QA verified words by transcription and alignment, not by ear",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/Peter-Pan-L4-review-response-2026-08-25.pdf",
+   "lines": "p.5 (pdftotext lines 232-233)",
+   "quote": "Every mechanical check passes and the build is green, which is not the same as good.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "44",
+   "quote": "120 dialogue-branch clips were cut 2026-09-22 and no human has heard them.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/listen-qa/SKILL.md",
+   "lines": "42",
+   "quote": "Every finding = A HUMAN LISTENS to that clip. The script triages; ears decide.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/08-VERIFICATION-DISCIPLINE.md",
+   "lines": "354-356",
+   "quote": "AI-only output is now being declined outright — a deliverable that has not had a human pass is not eligible to go to external reviewers, full stop.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/06-AUDIO-NARRATION.md",
+   "lines": "259-260",
+   "quote": "the validator wiring passing does not mean … signed off on the audio content itself",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/PROTEST_BRIEF.md",
+   "lines": "65",
+   "quote": "For a measurement instrument, the load-bearing QC is statistical, not editorial.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/red-team/RECHECK_FINDINGS.md",
+   "lines": "67",
+   "quote": "SME sampling remains advisable even under the §9 stance — a 60-item human sample is cheap insurance against an educator-reviewer who doesn't accept the empirical-QC argument.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "44",
+   "quote": "Page-level horizontal-overflow checks do not catch this fixed popover.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/staging-full-sweep/README.md",
+   "lines": "129",
+   "quote": "All recorded page-level horizontal-width checks were clear, but S1 demonstrates why that alone is insufficient.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "15",
+   "quote": "**475 screenshots:**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "16",
+   "quote": "and no document-level horizontal overflow.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "16",
+   "quote": "Screenshots were visually inspected; geometry alone was not used to judge fit.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/laptop-student-sweep/README.md",
+   "lines": "3",
+   "quote": "**Two new confirmed visual findings: one P2 and one P3.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/REGRESSIONS.md",
+   "lines": "18",
+   "quote": "Do not replace visual inspection with an overflow count.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/README.md",
+   "lines": "16",
+   "quote": "A merge or passing geometry check is not a visual retest.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

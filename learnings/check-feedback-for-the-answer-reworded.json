@@ -1,0 +1,185 @@
+{
+ "id": "check-feedback-for-the-answer-reworded",
+ "title": "Check feedback for the answer reworded",
+ "statement": "Check wrong-option feedback for the right answer said in other words, which a word-match check misses and a truth check never asks about.",
+ "example": "The code check fires only on a run of at least three of the right option's own words, so a shipped quick check whose wrong-option feedback gave the answer in other words passed it.",
+ "group": "what-a-student-is-told",
+ "role": "method",
+ "facets": [
+  "feedback",
+  "integrity",
+  "evaluation"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The shared code check flags a wrong option's feedback only when it repeats a run of the right option's words as long as the option, with a floor of three words, so it cannot catch a key of one or two words or any key said in other words. A quick check on a poem shipped ready with two wrong-option feedback lines that gave the keyed answer in other words, one telling the reader who the poem's speaker is, although its prompt says such feedback must not name the right answer and its judge asks nothing about feedback. In a remade film check, two such lines were judged only on whether they were true (0.72, 0.95), while a later draft that repeated the option's own words was caught.",
+ "against": "Whether a line names the answer in other words is itself a judgment, so a paraphrase check would need person-labelled cases before it holds a block. Pointing back to what was said is what the prompt asks for, so the line may count as a hint rather than a give-away: \"wrong option's sends the viewer back to what was said without using the right option's words\" (`g9/transformer/src/mechanics/video-essay.js`, line 54).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "54",
+   "quote": "sharedRun(f, right) < Math.max(3, right.split(",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "116",
+   "quote": "sharedRun(f, c.options[c.answer]) >= Math.max(3, words(c.options[c.answer]).length)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "6",
+   "quote": "\"status\": \"ready\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "16",
+   "quote": "The traveler is the one who spoke the description to the narrator, but the narrator is the speaker of the poem itself",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "18",
+   "quote": "whereas the description of the ruins is spoken by the narrator repeating the traveler",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "57",
+   "quote": "\"label\": \"Wrong-option feedback does not name the answer\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/856ace1aed960671.json",
+   "lines": "58",
+   "quote": "\"ok\": true,",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/quick-check.js",
+   "lines": "27",
+   "quote": "Wrong option: one sentence that sends the reader back to specific words (quote a few of them) without naming the",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "1639",
+   "quote": "\"id\": \"feedback_1_A_true\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "1641",
+   "quote": "\"value\": 0.72,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "1656",
+   "quote": "\"id\": \"feedback_1_B_true\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/0419fc2dc6f6bacf.json",
+   "lines": "1658",
+   "quote": "\"value\": 0.95,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/0419fc2dc6f6bacf.json",
+   "lines": "97",
+   "quote": "Wrong-option feedback does not name the answer: question 2, option A: its feedback names the right answer",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "83",
+   "quote": "Re-examine the two readings presented, which both place long term power on the side of physical action rather than speech.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/34c293906aa945a2.json",
+   "lines": "78",
+   "quote": "One reading stresses the weakness of speech while the other stresses the power of action",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/util.js",
+   "lines": "128",
+   "quote": "Is everything feedback_${k}_${letters[i]} says true to ${upto} and passage?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "101",
+   "quote": "p8: all three wrong replies say \"Read the words after *but*…\", and the key sentence is the only one with \"but\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "102",
+   "quote": "p16 Search: the wrong replies say \"captives\" and \"people he has captured\"; the key says \"prisoners\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "41",
+   "quote": "**M5. p22 best-pick praise gives away Steps 3 and 4.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "103",
+   "quote": "The new FEEDBACK-LEAK rule doesn't catch these because they point rather than quote.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "158",
+   "quote": "The two new rules (FEEDBACK-LEAK, STORY-ORDER) and voice-laws pass on L4–L7.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-30-staging/FINDINGS.md",
+   "lines": "173",
+   "quote": "FEEDBACK-LEAK catches quoted key words, not pointers (\"after but\", synonyms) or give-aways in praise and nudge lines (M5, M9, M10, M14, M16, M20).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,143 @@
+{
+ "id": "dont-build-on-unchecked-output",
+ "title": "Don't build on unchecked output",
+ "statement": "Don't let a later step or model build on generated output, a model's own research included, until it is checked and approved, since its errors carry forward.",
+ "example": "Trained on the previous model's ungraded items, the next one lost 8.9 points on short answers and 10 on multiple choice.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "evaluation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a training chain, one model was trained on the previous model's ungraded generations before that model had a verdict; it inherited the earlier model's weaknesses, lost 8.9 points on short answers and 10 on multiple choice, and scored 53.11%, 3.11 points below the model it learned from (`project_v50_v56_strategy_with_numbers_2026_05_12.md`). The project then listed training on ungraded generations as a banned anti-pattern.",
+ "against": "One run, and the earlier model had itself regressed (same file, line 66), so how much of the loss came from the ungraded data is not separated. for single questions the same note credits the research step with a rise from 96% to 100%, put down to better factual accuracy (`icloud-work/ML learnings/mcq_set_journey.md`). For single questions the same research step, once it actually ran, raised the pass rate from 96% to 100% (10/10), which the log credits to the verified facts it supplies.",
+ "evidence": [
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "83",
+   "quote": "v51 was trained on v50's *ungraded* gens before v50 had a verdict. Result: v51 inherited v50's weaknesses + degraded on saq −8.9pp and mcq −10pp.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "17",
+   "quote": "| v51 (speculative DPO on v50 ungraded gens) | n/a | **53.11%** (−3.11pp vs v50) | 1.02pp |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "67",
+   "quote": "| v51 | v50 ungraded gens (speculative, banned anti-pattern) | DPO | v43-soup | 8192 | already trained — **regressed −3pp** |",
+   "verified": "script"
+  },
+  {
+   "source": "ap-helpers-data-agent-memory",
+   "path": "project_v50_v56_strategy_with_numbers_2026_05_12.md",
+   "lines": "66",
+   "quote": "| v50 | curriculum500 (programmatic extract, no D13) | DPO | v43-soup | 8192 | already trained — **regressed** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "24",
+   "quote": "- Research step chained stimulus to potentially bad sources (if the research hallucinated a source, the stimulus inherited the hallucination)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "44",
+   "quote": "1. Research→Compile (single step): 60% — worse than before",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "46",
+   "quote": "3. Stimulus (from scratch, no research)→Questions: 80% — best",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "48",
+   "quote": "**Counter-intuitive finding:** Removing the research step IMPROVED MCQ_SET quality. The research step was a hallucination amplifier, not a quality gate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/mcq_set_journey.md",
+   "lines": "36",
+   "quote": "- MCQ: 96% → 100% (research step immediately improved factual accuracy)",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "27",
+   "quote": "- Problem: stimulus chained to potentially hallucinated research sources",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "26",
+   "quote": "- **Result: 60% (6/10)** — same problem",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "31",
+   "quote": "- **Result: 80% (8/10)** — best so far",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "55",
+   "quote": "2. **Chaining research→stimulus** — constrains stimulus to potentially bad sources",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "mcq_set_improvement_log.md",
+   "lines": "15",
+   "quote": "**Result for MCQ**: With research actually working, MCQ went from 96% → **100% (10/10, all perfect 1.00 scores)**. The research pipeline provides verified facts that dramatically improve quality.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Knowledge Schema Generator - AP USH Unit 1 - Instructions.csv",
+   "lines": "40",
+   "quote": "20. Run step 11 in main.py which is to generate relationships. This will be the very last step after the KS for the unit has been approved.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "352",
+   "quote": "Correct any pronunciation or wording error before timing the edit.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

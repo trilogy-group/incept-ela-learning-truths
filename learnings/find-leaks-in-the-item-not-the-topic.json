@@ -1,0 +1,92 @@
+{
+ "id": "find-leaks-in-the-item-not-the-topic",
+ "title": "Find leaks in the item, not the topic",
+ "statement": "Judge whether an item leaks from how its stem, options and key relate to the passage, not from topic words in the passage, which barely separate leaky from clean items.",
+ "example": "On 163 clean and 240 leaky items, a passage topic-word penalty separated the two by only +0.018, about chance.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "evaluation",
+  "stimulus"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A draft review of the training reward for a grade-5 reading-item generator re-measured its passage heuristics itself, against 163 verified clean items and 240 leaky ones. The penalty that scores the passage for about 70 curriculum topic words separated leaky from clean by only +0.018 (AUC about 0.5), and the version that shipped penalised 9.8% of the clean items. The review concludes that a leak is a property of the stem, options and key given the passage, not of the passage alone: the leaks the penalty missed had no curriculum word to fingerprint, so it proposes moving the penalty from the passage to the question and key.",
+ "against": "The same review keeps a small topic signal: \"**Graded, not binary:** −0.05 soft topic hint; reserve larger penalties for high-precision signals.\" (`grade3-reading/artifacts/g5-stage3-llm-guidance/HANDOFF.md`, line 85). Its proposed item-level detector was no more precise, \"positive **false-fire 80%** — it nukes 4 of 5 good items.\" (the same file, lines 92-93), so no detector built on the item's relation to the passage had been validated yet.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "9-10",
+   "quote": "Every number below was **independently re-measured in this lane** against the labeled corpus",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "19-20",
+   "quote": "`curriculum_penalty` separates leaky from clean by only **+0.018** (mean reward delta pos −0.0196 vs neg −0.0375; AUC ≈ 0.5).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "29-30",
+   "quote": "Leak is a property of `(stem, options, key | passage)`, not of the passage alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "40",
+   "quote": "**163 positives** (clean, requires-reading)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "42",
+   "quote": "**240 leaky negatives** (80 each seq/hot-text/match).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "74-75",
+   "quote": "The penalty scores the **passage** for ~70 curriculum topic words; \"leaky\" is a property of the **question/key↔passage** relationship, not the topic.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "76-77",
+   "quote": "**9.8% false-positive** (16/163 verified-clean items penalized)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "90",
+   "quote": "no curriculum proper-noun to fingerprint, so the encyclopedic penalty misses all of it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-stage3-llm-guidance/HANDOFF.md",
+   "lines": "97-98",
+   "quote": "leak lives in `(stem, key | passage)`, not in surface tokens.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

@@ -1,0 +1,56 @@
+{
+ "id": "what-each-source-gave-before-modelling",
+ "title": "What each source gave, before modelling",
+ "statement": "After the first read and before any modelling, have students say what each source contributed, unscored if need be but never accepting a blank.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "sequence",
+  "evidence-of-learning",
+  "stimulus"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 reading lesson that pairs an article with a diagram found no completion check before the worked example, although the course's design required students to state what the prose contributes, what the diagram contributes and why its dashed connector differs before the model. The audit allowed the check to be unscored but not a no-op. The fix added one typed box per source and one for the visual difference, unscored and unrecorded, and refuses any empty box with a nudge.",
+ "against": "The check refuses only empty boxes: \"every box must carry ≥1 word (F7's empty-input rule)\" (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`, line 735). The model answer shown straight after it states what later steps ask the student to produce, \"the article gave you the rule for reading any arrow, the map gave you this kelp forest's actual arrows, and the dashed line is different because it marks a habitat, not a meal\" (`grade3-reading/artifacts/u4l2-build/content/u4l2-content.json`, line 311), and a later gate accepts the same content (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`, lines 694-695). That sits against the record dont-spend-a-later-steps-evidence-early.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "125-127",
+   "quote": "Canon requires the student to state what the prose contributes, what the diagram contributes, and why the dashed connector differs — before the I-do models the move.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "136",
+   "quote": "but must not be a static-recast no-op",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "734-736",
+   "quote": "unscored (`complete(...,null)` — no tally) per the I09 pattern, but never a no-op: every box must carry ≥1 word (F7's empty-input rule) or the submit bounces with a nudge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "782",
+   "quote": "\"just for you; nothing is recorded or graded\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

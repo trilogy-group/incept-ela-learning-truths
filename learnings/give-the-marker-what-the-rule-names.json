@@ -1,0 +1,409 @@
+{
+ "id": "give-the-marker-what-the-rule-names",
+ "title": "Give the marker what the rule names",
+ "statement": "A marker can apply a rubric's rule only if it is given what the rule refers to; otherwise enforce the rule in code.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "marking",
+  "scoring-guide"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the marking test, one rubric said a quotation must not be the one the lesson's guide had used, but the marker was\nnever told which quotation that was, so an answer that broke the rule met every criterion, and on the re-check it\npassed all five again (`g9/review/2026-10-07-archivist-marking-test/README.md`). A rule the marker can't see has to be\nenforced in code: the lesson engine settles a \"quote\" criterion in code, against the text\n(`g9/transformer/src/glue/animated-judge.js`).",
+ "against": "A later run found counter-evidence (`icloud-work/inceptbench/docs/EVALUATOR_VARIANCE_FIX.md`). A later run found counter-evidence (`shadow-bench/`). A later run found counter-evidence (`g9/transformer/src/mechanics/compare-paragraphs.js`).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "review/2026-10-07-archivist-marking-test/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated-judge.js"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "75-78",
+   "quote": "Without a quotable spec, this metric default-passes regardless of how non-standard the item is (stem-only, no stimulus, terse explanation). This is a defense-in-depth metric that currently provides zero defense for APUSH MCQs.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/lit-question-qc.json",
+   "lines": "28",
+   "quote": "Examples: Official College Board questions demonstrating precise analytical language - {examples}",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/quiz_an_artful_arrangement_of_incidents_diff3_2025-10-20_12-21-58.json",
+   "lines": "48",
+   "quote": "Terminology is specific and accurate without ambiguity, aligning with College Board style.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md",
+   "lines": "121",
+   "quote": "Critical: `_get_ap_curriculum_context` is \"fail-closed\" — but \"fail-closed\" here means \"return empty context and continue grading,\" NOT \"fail the row.\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md",
+   "lines": "19",
+   "quote": "because tier-2/3 metrics (`curriculum_alignment`, `difficulty_alignment`) default-pass on missing data per R20.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_runs/analysis_iter2.md",
+   "lines": "42",
+   "quote": "Part (a) scoring is problematic: it references 'the brief'",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "14-18",
+   "quote": "**Why it leaks:** Mode B fires only when the curriculum API's `assessment_boundaries` for the KC say a stimulus is required. For APUSH MCQs, the curriculum data does **not** carry that flag, so Mode C applies and \"no stimulus = PASS\" — even though every real AP US History MCQ includes a primary-source stimulus.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "20-21",
+   "quote": "**Patch:** mark `requires_stimulus: true` on the APUSH/APWH/APEURO MCQ KCs in the curriculum API so Mode B engages.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "29-30",
+   "quote": "Treat the provided Assessment Boundaries as authoritative; do not invent exclusions beyond them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": "plans/data-hierarchy.md",
+   "lines": "202",
+   "quote": "| `assessment_boundaries`  | array of strings \\| null   |",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "35",
+   "quote": "Failing `difficulty_alignment` using your own judgment when no curriculum difficulty definitions are provided. Without definitions → 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/video_script/evaluation.txt",
+   "lines": "383",
+   "quote": "The evaluator cannot see prior atoms in this course — this metric is scoped to what a typical student would know from general K-6 schooling alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/sft_v7_benchmark_postmortem.md",
+   "lines": "86",
+   "quote": "2. `specification_compliance`: InceptBench occasionally treats DBQ as if it should be a closed-ended MCQ question, not a document-based essay prompt. This may be an evaluator misconfiguration, not a real quality issue.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "14",
+   "quote": "- Failing `difficulty_alignment` using your own judgment when no curriculum difficulty definitions are provided. Without definitions → 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/plans/01-data-comparison-old-vs-new-api.md",
+   "lines": "181",
+   "quote": "| Difficulty Definitions | `item.attributes.difficulty_definitions` | AUTHORITATIVE for difficulty scoring |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/archive/old_docs/gvc/NEXT_STEPS.md",
+   "lines": "34",
+   "quote": "Claude is being asked to validate format, but it doesn't have the **specific assessment boundaries** that InceptBench uses.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/_deprecated/outboxes/from_research/2026-04-28T1240Z_R29_ib_curriculum_503_findings.md",
+   "lines": "96",
+   "quote": "**Empty curriculum_context is just not prepended to the system prompt. Evaluation proceeds.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "75-77",
+   "quote": "Without a quotable spec, this metric default-passes regardless of how non-standard the item is (stem-only, no stimulus, terse explanation).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/calibration/validator.py",
+   "lines": "81-116",
+   "quote": "difficulty=example.question_dict.get(\"difficulty\", \"medium\"),",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "30",
+   "quote": "4. **Evaluation Alignment**: Pass substandard info to evaluation and score 0.0 if off-topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "48",
+   "quote": "InceptBench is designed for K-12 Common Core (math/ELA). It doesn't cover:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/INCEPTBENCH_INTEGRATION_PLAN.md",
+   "lines": "24",
+   "quote": "DEFAULT_CURRICULUM = \"common_core\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench",
+   "commit": "0a22a5b",
+   "lines": "14-16",
+   "quote": "- Inject the raw stem text (capped at 2000 chars) inside the cue block so the LLM cannot crop or deny material that is quoted alongside the instruction that asks it to verify.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/EVALUATOR_VARIANCE_FIX.md",
+   "at": "e5be84f^",
+   "lines": "422",
+   "quote": "**Finding**: **Wikipedia-grounded Gemini performed WORSE** — caught only 3/22 factual errors (down from 6/22 baseline) and increased variance to 7.0% (up from 5.5%).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/artifacts/second_tier/2026-05-22T1715Z_cheater_exploit_002_stimulus_strip/RUBRIC_BLINDSPOTS.md",
+   "lines": "75-77",
+   "quote": "Without a quotable spec, this metric default-passes regardless of how non-standard the item is (stem-only, no stimulus, terse explanation).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0196-engine-reading-game-engine-jev.qmd",
+   "lines": "145-146",
+   "quote": "traced to one broken check (`JUDGE-ANSWERABLE` firing on 77 of 78 items because it was shown a bare stem with no passage/options)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/GAPS-2026-09-11.md",
+   "lines": "259",
+   "quote": "with the blank's own ask → band full, score 1",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "215",
+   "quote": "the criterion text in context \"may simply not know where the line is\" (missing discrimination",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_misconceptions_user_prompt_injection_hurts_2026_05_12.md",
+   "lines": "29",
+   "quote": "- **For grader-side:** misconceptions field belongs in IB rubric (used to verify distractor variety) — already where the v2.5.6 grader uses them.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "eec4d73",
+   "lines": "3-8",
+   "quote": "_evaluate_item assembled a stripped item_content for QuestionEvaluator that omitted scoring, rubric, model_response, and answer_explanation. The scr_evaluation.txt overlay MUST-FAILs specification_compliance and distractor_quality when no rubric content is present, so every SCR item going through LessonBundleEvaluator Phase 1 produced false zeros on both metrics.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "35",
+   "quote": "- Failing `difficulty_alignment` using your own judgment when no curriculum difficulty definitions are provided. Without definitions → 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "401e078",
+   "lines": "17-18",
+   "quote": "- evaluators/base.py: fail-OPEN on *transient* curriculum errors (network, 408/429/5xx after retry exhaustion) -> degrade to empty context;",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1958Z_DELIVERED_unit1_dbq_solver_v1_candidate.md",
+   "lines": "72",
+   "quote": "Adding canonical `rubric_notes` and matching known DBQ schema made IB return scores.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "57",
+   "quote": "const state = { paragraph_A: item.paragraphs[0], paragraph_B: item.paragraphs[1] };",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/compare-paragraphs.js",
+   "lines": "61",
+   "quote": "free of factual errors about the text it discusses?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/proof-2026-10-09.json",
+   "lines": "259-262",
+   "quote": "\"id\": \"weaker-honest\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.6",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/f603c8d14862db8a.json",
+   "lines": "83-87",
+   "quote": "\"id\": \"weaker-honest\", \"label\": \"The weaker paragraph has no factual error\", \"required\": true, \"verdict\": \"holds\", \"p\": 0.84",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "src/decide/questions.js",
+   "lines": "5",
+   "quote": "export const GATES = Object.freeze({ confidence: 0.55, top: 0.6, margin: 0.15 });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "34-35",
+   "quote": "Each checks one fact or idea the narration has just given that matters for the lesson question",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/film-check.js",
+   "lines": "80",
+   "quote": "const state = { passage, film_narration: film.captions.map((c) => c.line).join(\" \"),",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/c36730609689f122.json",
+   "lines": "13",
+   "quote": "\"stem\": \"What is the student expected to trace across this unit?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/DECISIONS.md",
+   "lines": "26",
+   "quote": "Every AI decision is a Jev question tailored to it, with the evidence in its state",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "32",
+   "quote": "Rubrics carry source \"transformer:<text key>\" so the judge endpoint (animated-judge.js) can find the text.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/animated-judge.test.mjs",
+   "lines": "34",
+   "quote": "a quote criterion is settled in code: the text's own words count, words not in the text do not, no judge needed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "3020",
+   "quote": "L4p25 grounding compresses source so referents are lost.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/council-human-handover-2026-08-13/03_AUDIT_FINDINGS_AND_OPEN_RISKS.md",
+   "lines": "113",
+   "quote": "Agent instructions required council README/charter/protocol/config, but workspace admission did not include all of them. A worker could be judged against rules it never received.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/04-CONTENT-AUTHORING.md",
+   "lines": "307-309",
+   "quote": "The say-back scorer must receive the authored criteria and grounding, not just the bare word and definition, or it falls back to \"was this a real attempt\" and a bare word passes",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "28-30",
+   "quote": "**Judge must be given the node's own pass threshold explicitly**: a judge left to guess treats \"pass\" as all-criteria-met and withholds the closing line on answers that cleared the actual bar.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "49-50",
+   "quote": "The rubric says the quote must not be \"the one the Archivist used\", but the judge is not told which quote that is.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "31",
+   "quote": "It missed 2 of 4 rulings because the row text is a pointer to the transcript, not the words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "408",
+   "quote": "`choices` + `choice_facts` + `event_examples` as scorer grounding (never rendered)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "34-36",
+   "quote": "**Compare-turn judge carries conversation history**: the judge request includes earlier scored turns, capped at 6 turns of 500 chars each, so a follow-up reason like \"because he sprinkled water\" is judgeable against the trick the child already committed to.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

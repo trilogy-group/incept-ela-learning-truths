@@ -1,0 +1,81 @@
+{
+ "id": "point-only-at-steps-that-exist",
+ "title": "Point only at steps that exist",
+ "statement": "Every hint, recap or feedback line that points to another step must name a step that exists, by its current name, and say what that step actually did.",
+ "example": "In one audit, three wrong-option feedback lines used a step name the lesson had retired.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "alignment",
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A curriculum-adherence report on four Grade 3 lessons found a build frame whose hint told students to use one of the words they had locked in at Step 3, a step that did not exist in the served lesson, and a recap meant to mirror the model's thinking whose text described a different task. An external audit of the same lessons found three wrong-option feedback lines using a step name the lesson had retired.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "57",
+   "quote": "whose hint says \"Use one of the words you locked in at Step 3\", a step that does not exist",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "98",
+   "quote": "but the text describes the Hook task, not the Lost Boys model",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "115",
+   "quote": "Three wrong-option feedback lines use \"Zoom in\", the retired step-name",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L6/AUTHORING-NOTES.md",
+   "lines": "675-676",
+   "quote": "The missing evidence pool was never the unit's prose. It is the unit's earlier CHARTS.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/content/U1-L6/AUTHORING-NOTES.md",
+   "lines": "680",
+   "quote": "Every tale a hinge recap row names must have been charted in an",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/UNIT1-VERTICAL-SLICE.md",
+   "lines": "54",
+   "quote": "Resolution of every scored function to its registry entry, existing lesson check, and different-evidence parallel retry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/pre-weekend-audit/SKILL.md",
+   "lines": "44",
+   "quote": "Cross-lesson promises: receipts' next_title, forward references that must pay off.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,120 @@
+{
+ "id": "keep-adult-controls-off-the-learners-screen",
+ "title": "Keep adult controls off the learner's screen",
+ "statement": "Keep what is meant for adults, such as timers, build strings, counters and skip or review switches, off the learner's screen.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The reading project's QC checklist makes it a blocking rule that timers, build strings, counters, scripts and skip controls appear only in the preview mode, and its attention standard keeps them to the preview or the end-of-lesson receipt (`grade3-reading/artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md`; `grade3-reading/course-renderer/docs/process/ATTENTION-HIERARCHY.md`). The checklist flagged a switch to the review view in the student page, warning that if it stayed every gate would be one tap from skippable, and a UI review agent later found that unlabelled switch on staging and on production: one tap put a child in the review view, where every gate opens (`grade3-reading/artifacts/feedback-argus-ui-2026-09-30/REGISTER.md`). The fix renders the switch only once a page is already in review mode or a staging flag turns it on (the same register).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "104",
+   "quote": "Timers, build strings, counters, scripts, skip controls in previewer (?review=1) only; student DOM greps clean",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/ATTENTION-HIERARCHY.md",
+   "lines": "44-46",
+   "quote": "**Metadata lives with adults.** Grade/build strings, timers, page counters, scripts, skip controls: previewer (`?review=1`) or the receipt only.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "181",
+   "quote": "if it stays, every gate is one tap from skippable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-argus-ui-2026-09-30/REGISTER.md",
+   "lines": "11",
+   "quote": "every gate opens (`nextLive = !locked \\|\\| reviewer`)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-argus-ui-2026-09-30/REGISTER.md",
+   "lines": "11",
+   "quote": "toggle renders only after `?review=1` (mode already review)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/reviewer-annotations/README.md",
+   "lines": "19",
+   "quote": "The reviewer component loads conditionally and never mounts in student mode.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/qa-checklist.dom.txt",
+   "lines": "37",
+   "quote": "If you can see timers, page counters, or Skip, you are in the wrong app. Stop. Most of one review round described previewer-only chrome.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4764",
+   "quote": "I’ll separate the review notes from the student experience and send a revised offline ZIP.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "183-184",
+   "quote": "Where we broke this rule we say so — the progress bar shows a raw *\"18 / 46\"* to students, against our own design note.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Act 1 reading texts/Act 1/1. 1.1 - Iago_s Introduction - Text.docx",
+   "lines": "4",
+   "quote": "Grey [tags] in the Archivist boxes are for Devfactory only.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-6/distilled/05-UI-UX-PRINCIPLES.md",
+   "lines": "47-49",
+   "quote": "Remove non-essential chrome (status labels, timers, and similar meta-indicators) from reading surfaces specifically — the reading experience itself should read like a book, not an instrumented app.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "41",
+   "quote": "the numeric `n / 28` (`.lp-num`) renders **in previewer mode only**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "318-319",
+   "quote": "only in previewer mode, never to students.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

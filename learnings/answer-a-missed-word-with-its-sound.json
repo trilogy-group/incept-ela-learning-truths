@@ -1,0 +1,97 @@
+{
+ "id": "answer-a-missed-word-with-its-sound",
+ "title": "Answer a missed word with its sound",
+ "statement": "When a spoken word isn't accepted, show what was heard, the printed word and its say-it spelling, and offer, never force, its sound, since writing alone can't teach pronunciation.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback",
+  "media"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "In a grade 3 reading course a child's missed word once got the reply 'What I heard: Esip. Start by saying the word itself', which named neither the word nor its sound and sent the child back to repeat whatever they believed it sounded like. The rule now has the reply name what was heard, print the word and its say-it spelling and offer the guide saying it again, composed in code from the transcript and the word rather than by a model (`grade3-reading/course-renderer/docs/rules/audio-and-voiceover.md`, lines 258-263). An earlier version replayed the clip before every retry and was dropped as one control too many: offering the sound is the part that teaches, and playing it over the child only slows the retry.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "236-239",
+   "quote": "When a child says a word and the gate does not accept it, the reply names what was heard, prints the word and its say-it spelling, and offers the guide saying it again. The sound is always ON OFFER and never imposed: Try again opens the microphone straight away.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "241",
+   "quote": "No amount of written feedback teaches a pronunciation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "250",
+   "quote": "Offering the sound is the part that teaches.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/audio-and-voiceover.md",
+   "lines": "258-260",
+   "quote": "composes the reply from the transcript, the word and `pronunciation`, rather than asking a model to invent one.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "242-244",
+   "quote": "named neither the word nor its sound, and sent them straight back to the microphone to repeat whatever they already believed the word sounded like.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "236-238",
+   "quote": "the reply names what was heard, prints the word and its say-it spelling, and offers the guide saying it again.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "238-239",
+   "quote": "The sound is always ON OFFER and never imposed: Try again opens the microphone straight away.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "241",
+   "quote": "**Why.** No amount of written feedback teaches a pronunciation.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "246-247",
+   "quote": "This rule used to make Try again replay the clip first, so that a retry could not begin without the sound. That was one control too many.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/audio-and-voiceover.md",
+   "lines": "250",
+   "quote": "Offering the sound is the part that teaches.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

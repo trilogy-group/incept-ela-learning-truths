@@ -1,0 +1,122 @@
+{
+ "id": "count-only-independent-agreement",
+ "title": "Count only independent agreement",
+ "statement": "Treat a finding as settled only when independent methods or sources reach it.",
+ "example": "One faulty item was caught both by a blind solve that guessed it 4 times out of 4 and by a separate reading of its options' length and phrasing.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A review of 269 teaching-video transcripts, split into 9 batches, treated findings that recurred across independent batches as high-confidence and a technique seen once as a candidate, not a rule (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md`, lines 13-18). In one build, two agents grepped a file holding a NUL byte without the flag that reads such files, both got nothing, and both reported that no filter existed: true, as it turned out, but reached by an invalid method twice (`grade3-reading/ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md`, lines 1104-1117). A red-team addendum calls two independent instruments landing on one item the strongest signal in the document, and the argument for running both. A finding seen once, carried from another project, or reached twice by the same source, model or method is a single candidate.",
+ "against": "It rests on one case. a decision matrix keeps duplicate rulings instead of merging them, treating repetition across sources as evidence of consensus across authorities (`grade3-reading/knowledge_bot/knowledge/kb-0242-decision-matrix-judgment-corpus.qmd`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "17-18",
+   "quote": "Findings that recurred across *independent* batches were treated as high-confidence; a technique seen once was treated as a candidate, not a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "1115-1117",
+   "quote": "**Two agents independently agreeing via the same blind method is not corroboration; it is one unverified claim counted twice.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "207",
+   "quote": "RT-5 was found by blind-solve (4/4, 83s guess-through).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/feedback-2026-08-06-addendum.md",
+   "lines": "208-209",
+   "quote": "Two independent instruments landing on one item is the strongest signal in the document",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "30-31",
+   "quote": "not two teams replicating independently. Treat it as a hypothesis-transfer, not a cross-validated law.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0064-insight-stimulus-provenance-unlock.qmd",
+   "lines": "29-31",
+   "quote": "it's **one author importing AP findings onto grade-3**, not two teams replicating independently. Treat it as a hypothesis-transfer, not a cross-validated law.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd",
+   "lines": "55-56",
+   "quote": "re-label the anti-leak engine MEASURED-in-history/UNTESTED-in-reading",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "188-189",
+   "quote": "single-family blind-solve confound (every label comes from one solver family; no two-family agreement had been measured",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "13",
+   "quote": "The 269 transcripts (~494k words) were split into 9 batches and read in full",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "17-18",
+   "quote": "Findings that recurred across *independent* batches were treated as high-confidence; a technique seen once was treated as a candidate, not a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/IES-CORPUS-REVIEW-2026-08-05.md",
+   "lines": "5-6",
+   "quote": "every one traced to a named IES video.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v01/render/QA.md",
+   "lines": "75",
+   "quote": "the alignment build flagged this same 0.769 s",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/handoff/timeback-course-explorer/brainlift/amalgamation-v2.md",
+   "lines": "23",
+   "quote": "so \"every v2 agrees\" reflects partly inherited, not fully independent, convergence.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

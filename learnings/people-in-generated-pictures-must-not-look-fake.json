@@ -1,0 +1,210 @@
+{
+ "id": "people-in-generated-pictures-must-not-look-fake",
+ "title": "People in generated pictures must not look fake",
+ "statement": "A person in a generated picture or film must not look machine-made, so that no student dismisses the material as fake and skips it.",
+ "example": "Calibrated on 9 film frames and 7 drawn pictures, the check failed 1 film frame and no drawn child.",
+ "group": "pictures-sound-film",
+ "role": "criterion",
+ "facets": [
+  "media",
+  "generation"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading project ruled that a human figure in its films must not read as AI-made, because the failure is lost attention, not looks: a young viewer who names a figure as fake dismisses the film. Its art check gained an explicit 'would a child call this fake AI?' gate for humans, where a fail blocks whatever style was approved, with stylisation away from realism or less screen time as the remedy. Before judging new stills, the check was run on existing pictures to prove it fired on film-frame humans and stayed quiet on drawn children; it failed 1 of 9 film frames and every drawn child passed. Ask of each figure whether a child would call it fake, and if so stylise it away from realism or show it less.",
+ "against": "one small study comparing four levels of realism found cartoon-like agents scored worst on students' valence and arousal and semi-realistic or realistic ones highest; it did not test near-photoreal AI-rendered people, so it cautions against going fully cartoon rather than arguing for realism (`grade3-reading/knowledge_bot/knowledge/kb-0248-g9-video-research-full-files.qmd`, lines 202-207; Muniady & Mohamad Ali 2020, https://eric.ed.gov/?id=EJ1270816). The calibration was still awaiting a person's eye on three borderline frames. The concern is stated, not observed. The check's threshold stays provisional until a person confirms it, and the flips came between runs whose criteria differed by a tightening (`grade3-reading/artifacts/art-qa-redcontrol-2026-09-11/RECORD.md`, lines 42-43 and 69-72). It states a concern rather than an observed result; no student reaction was measured.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0207-memory-digest-project-reference-user.qmd",
+   "lines": "3929-3930",
+   "quote": "add an explicit \"would a child call this fake AI?\" gate for humans",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0207-memory-digest-project-reference-user.qmd",
+   "lines": "3930",
+   "quote": "a fail there is a blocker regardless of style approval",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0207-memory-digest-project-reference-user.qmd",
+   "lines": "3931",
+   "quote": "- If a human cannot be made to pass, prefer stylization away from realism (more cartoon, less",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0207-memory-digest-project-reference-user.qmd",
+   "lines": "3920",
+   "quote": "the failure mode is attention loss, not aesthetics",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "74-75",
+   "quote": "prove the new check discriminates (fires on AI-generated film-frame humans, stays quiet on drawn children)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0219-watch-48h-and-art-qa-redcontrol.qmd",
+   "lines": "90-91",
+   "quote": "discrimination confirmed (only FAIL is a film frame, every drawn child is a clean PASS on every read)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0248-g9-video-research-full-files.qmd",
+   "lines": "203-204",
+   "quote": "semi-realistic/realistic agents scored *highest* on student valence/arousal, **cartoon-like scored worst**, stylized in between.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "4",
+   "quote": "I never want a student to declare 'Fake AI video'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "58-59",
+   "quote": "The only FAIL is a film frame; every drawn-children image is a clean PASS on every read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "137-138",
+   "quote": "the human needs to look less AI generated... I never want a student to declare 'Fake AI video' and skip to the next.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/finish-test/README.md",
+   "lines": "3",
+   "quote": "Three frames (the love painting, \"Honest Iago\", the Ottoman fleet), each repainted in two finishes with gemini-3-pro-image-preview, using the original as the input image.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/finish-test/README.md",
+   "lines": "7",
+   "quote": "**A (oil):** barely changed. Darker and a little more textured, but the same digital gloss. Does not solve the problem.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/finish-test/README.md",
+   "lines": "8",
+   "quote": "**B (engraved line + watercolour wash):** clearly different. Ink hatching, flat quiet light, paper texture; reads as an illustration printed in an old edition. Composition and faces hold on all three. Weakest on \"Honest Iago\", which stays closest to painted.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/finish-test/README.md",
+   "lines": "10",
+   "quote": "Chosen: B, applied to every painting in film v7 (`../finish-b/`).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v07/README.md",
+   "lines": "8",
+   "quote": "every painting repainted in finish B, the engraved finish the finish test recommended",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "51-52",
+   "quote": "would an 8–10-year-old say \"that's fake AI\" within two seconds? … If yes → FAIL regardless of style approval.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "64-66",
+   "quote": "A single strong tell on a foreground face is a FAIL; several weak tells on a background figure is a FAIL; one weak tell on a small background figure is a PASS-with-note.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "66-68",
+   "quote": "Photoreal or stock-render skin on a close-up foreground face is always a strong tell (tightened after the 2026-09-11 red control: the frames the ruling was about were passing on \"reads as a portrait\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "71-73",
+   "quote": "NONFICTION platform art intentionally pairs an ANIMATED near peer with a photorealistic, visually accurate world. There the split is the design, not a tell",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "95-99",
+   "quote": "Every check-8 FAIL follows its own ladder, cheapest first, and NEVER ships on the strength of a style approval: (1) push the manifest STYLE string further from realism (more illustrated, flatter shading, simpler faces) and regen; (2) reframe so the face is smaller or turned — wide shot, three-quarter back, silhouette;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "99-102",
+   "quote": "(3) where the scene allows, let a creature/mascot carry the beat instead of the human; (4) if none of that passes, the scene is cut from the set and the gap is recorded in the register — a known-uncanny human is a defect, not a tradeoff.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "102-103",
+   "quote": "For video, a check-8 FAIL on a still is a blocker on the film until a re-render clears it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "179",
+   "quote": "A flat performance cannot be repaired in the edit, but it can be shown less, and a held generated talking head carries artifacts that read as uncanny the longer it stays on screen.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/VIDEO-SYNTHESIS.md",
+   "lines": "17-18",
+   "quote": "2. **AI presenters show no reliable learning loss, but a real engagement and comfort loss** (several 2023–25 studies, file 01; \"weaker social presence\", file 03). That is exactly the \"skip it\" risk.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "44-46",
+   "quote": "The failure mode is attention loss: a student who says \"fake AI video\" skips the film, and with it the landing-in-the-text the film exists for.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Muniady & Mohamad Ali 2020",
+   "url": "https://eric.ed.gov/?id=EJ1270816"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

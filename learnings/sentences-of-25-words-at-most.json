@@ -1,0 +1,171 @@
+{
+ "id": "sentences-of-25-words-at-most",
+ "title": "Sentences of 25 words at most",
+ "statement": "Cap every sentence a student must act on, from instructions and questions to hints and feedback, at about 25 words.",
+ "example": "The readability data the rule cites put a 14-word sentence at about 90% understood and a 43-word sentence under 10%.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "accessibility",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project adopted the cap from a request to check the course is age appropriate, citing research that tied sentence length to comprehension at that grade band (R² = .55). It covers instructions, question stems, hints, second hints, reveals and the reply to a wrong answer, with story prose and the taught sentence frames exempt. A validator enforces it on written content, and the live scoring route holds its own generated praise and feedback to the same ceiling, since no static validator can see a line that does not exist until a child answers. The same cap is the practical rule carried to the Grade 9 unit.",
+ "against": "The 25-word figure was set for one grade band. A later run found counter-evidence (`grade3-reading/ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt`). A later run found counter-evidence (`grade3-reading/course-renderer/docs/rules/content-and-copy.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "92-93",
+   "quote": "from a request to check the course is age appropriate",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "94",
+   "quote": "R² = .55 sentence-length/comprehension finding at this grade band",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "95-96",
+   "quote": "readability data putting a 14-word sentence at ~90% understood and a 43-word sentence under 10%",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "96-97",
+   "quote": "Instructions, question stems, hints, second hints, reveals, the reply to a wrong answer",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "97",
+   "quote": "25 words a sentence, maximum",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "99",
+   "quote": "Two deliberate exemptions, both because a blanket cap would break them: **story prose**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "101",
+   "quote": "**the taught sentence frames**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "106",
+   "quote": "Enforced by `checkSentenceLength` in `validate-contracts.mjs`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "109-110",
+   "quote": "since no static validator can see a line that does not exist until a child answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "112-113",
+   "quote": "cap every instructional/feedback sentence (never story prose or a named scaffold frame) at 25 words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "96-97",
+   "quote": "Instructions, question stems, hints, second hints, reveals, the reply to a wrong answer, and the guide's own think-aloud commentary: 25 words a sentence, maximum.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "95-96",
+   "quote": "putting a 14-word sentence at ~90% understood and a 43-word sentence under 10%",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "66-68",
+   "quote": "**Rule.** Instructions, question stems, hints, second hints, reveals, the reply to a wrong answer, and the guide's own think-aloud commentary: 25 words a sentence, maximum.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "74-76",
+   "quote": "**Story prose.** Literature at grades 4 to 6 runs longer than anything else a child reads. Editing a narrative sentence down to hit a number is exactly the Lexile-driven editing R-KC-6 forbids.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/integration/check-before-final-content.txt",
+   "lines": "186",
+   "quote": "26-word sentence, on the known ceiling debt list. Splitting it is owed, and doing so retires the entry.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "536",
+   "quote": "Two surfaces are deliberately exempt, and a blanket rule would break both.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "95-101",
+   "quote": "The corpus was already in band when this was written, at a mean of 11.5 words a sentence and a median of 10. The problem was the tail, and specifically the tail on the surfaces above: a 47-word line of modelled thinking, a 39-word hunt instruction, a 34-word reply to a wrong answer. Twenty-three sentences were split. That is the shape of this rule's value, and the reason it is a ceiling on one class of sentence rather than a target for the average: an average that looks healthy hides the individual sentence a child is stuck on.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "81-83",
+   "quote": "and the modelled write-up, the exemplar and the cloze the child completes are all that frame filled in. They pass 40 words by construction. Splitting one would model a shape the child is then asked not to use.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/content-and-copy.md",
+   "lines": "96-98",
+   "quote": "The problem was the tail, and specifically the tail on the surfaces above: a 47-word line of modelled thinking, a 39-word hunt instruction, a 34-word reply to a wrong answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "127-128",
+   "quote": "passage truth, ≤ 25-word acted-on sentences, anti-gaming, printed = spoken",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

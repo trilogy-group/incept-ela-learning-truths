@@ -1,0 +1,52 @@
+{
+ "id": "ask-for-operations-with-a-purpose",
+ "title": "Ask for operations with a purpose",
+ "statement": "Ask only for operations with a purpose in the scenario, since an arbitrary instruction tests whether students follow directions, not the skill.",
+ "example": "A Grade 3 line-plot question asked for the total number of crayons in all lengths except 2 1/2 inches, with no reason given for leaving that length out.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "stem",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator passed a Grade 3 line-plot question asking for the total number of crayons in all lengths except 2 1/2 inches without flagging the exclusion, and review found no reason for leaving out exactly that value. A must-fail audit was added to the math rules: a data-interpretation question must connect its operation to a real purpose in the scenario, and an arbitrary count, sum, exclusion or filter fails educational accuracy because it only tests whether a student can follow an unmotivated directive. The rule rests on that one reviewed item.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "14-19",
+   "quote": "Questions that ask students to perform arbitrary, unmotivated operations on data — for example, counting items that exclude a specific value without a stated reason, summing an arbitrary subset, or filtering by a criterion that is not meaningful in the scenario — fail `educational_accuracy` because they do not assess a genuine mathematical skill; they only test whether a student can follow an unmotivated directive.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "0af5df4",
+   "lines": "3-5",
+   "quote": "The evaluator passed a Grade 3 line-plot question asking 'What is the total number of crayons in all lengths except 2 1/2 inches?' without flagging the unmotivated exclusion criterion.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/math_evaluation.txt",
+   "lines": "23-24",
+   "quote": "A good data-interpretation question connects the operation to a real purpose in the scenario",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,42 @@
+{
+ "id": "disambiguate-a-rule-that-reads-two-ways",
+ "title": "Disambiguate a rule that reads two ways",
+ "statement": "When a content rule can be read two ways, add a one-line disambiguation and an example of what it does and doesn't forbid.",
+ "example": "In an audit against 325 rules, one rule read the wrong way would have made every card of one kind in the shipped course defective.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A Grade 3 lesson was audited against a nine-document rulebook, 325 rules in all, by nine independent rule-by-rule audits, an adversarial pass on every serious finding and a re-check of each one that survived. One rule, that a vocabulary card's example never contains the target word, was read by a careful audit as never containing the word being defined, which would have made every card of that kind in the shipped course defective; the intended meaning was another card's taught word. The verdict counted it among four problems in the rulebook itself and asked for a one-line disambiguation with an example.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "344-346",
+   "quote": "04 §3's *\"The example never contains the target word\"* was read by a careful auditor as *\"never contains the word being defined\"* — which would make **every V3 card in the shipped course** defective.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/l4-audit/VERDICT.md",
+   "lines": "346-347",
+   "quote": "This needs a one-line disambiguation and an example",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

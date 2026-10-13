@@ -1,0 +1,133 @@
+{
+ "id": "prove-coverage-item-by-item",
+ "title": "Prove coverage item by item",
+ "statement": "Prove coverage by counting how many lessons and items serve each required skill, reading each scored item against the standard's boundary, and treat a zero as a gap.",
+ "example": "All 82 sub-codes were covered at least once, but 61 of them were rated Low.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course closed 15 zero-coverage sub-codes to 0 in three verification passes, checking every closure against the code's exact assessment boundary by reading the actual scored item, not relabelling a slot (`grade3-reading/artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md`). A gap analysis the next day found all 82 sub-codes covered at least once but 61 of 82 rated Low, most with one item each (`grade3-reading/artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md`). Skills carried from an earlier grade were held out of placement, neither counted as coverage zeros nor fake-placed into slots they don't belong in (`grade3-reading/artifacts/g5-course/RULING-B-CARRIED-MASTERY.md`). Count from the current placements, and never put a skill in a slot it doesn't fit to close a gap.",
+ "against": "a thin count need not be a gap: a whole-course thematic map calls thin cells the places where a thread rests at a grade and returns deeper later, a spiral rather than a checklist (`downloads/5. Curriculum/Curriculum maps/1. Mapping Docs/Grade_3-12_Full_Thematic_Map.xlsx`, sheet 'Coverage check').",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md",
+   "lines": "79",
+   "quote": "Went from **15 zero-coverage sub-codes → 0** across three verification passes today.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/CURRICULUM-REVIEW-STANDING-2026-08-17.md",
+   "lines": "81",
+   "quote": "reading the actual scored item (not just relabeling a slot).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md",
+   "lines": "49",
+   "quote": "but 61/82 rated \"Low\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md",
+   "lines": "49",
+   "quote": "most codes are thinly covered, one item each",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/RULING-B-CARRIED-MASTERY.md",
+   "lines": "20",
+   "quote": "without being counted as coverage zeros, and without fake-placing them into slots they don't",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of DevFactory_Example_Backward-Design_Threads.docx",
+   "lines": "69 (textutil text)",
+   "quote": "Three text types currently return zero hits and must be covered — best homed in Science and Geography, not a separate strand:",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of DevFactory_Example_Backward-Design_Threads.docx",
+   "lines": "62 (textutil text)",
+   "quote": "Biography, memoir and autobiography currently return zero hits anywhere.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K36",
+   "quote": "ONLY PLACEMENT OF RL.3.3.e.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell O43 (the stored count on the RL.3.3.e row)"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/standards-coverage.json",
+   "lines": "8",
+   "quote": "\"all_15_covered\": true,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/coverage-matrix.json",
+   "lines": "126",
+   "quote": "\"total_kcs\": 35,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/coverage-matrix.json",
+   "lines": "127",
+   "quote": "\"covered_by_gating_items\": 16,",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/coverage-matrix.json",
+   "lines": "172",
+   "quote": "\"_domain_content_spine\": {",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/validation/coverage-matrix.json",
+   "lines": "174",
+   "quote": "\"covered_gating\": 0,",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/RED_TEAM_R4.md",
+   "lines": "27",
+   "quote": "The package targets the STAAR CR blueprint but its KC spine covers only ONE of its three CR types (undisclosed coverage-vs-scope gap)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

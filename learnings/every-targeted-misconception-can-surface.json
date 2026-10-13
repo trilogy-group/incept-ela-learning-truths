@@ -1,0 +1,50 @@
+{
+ "id": "every-targeted-misconception-can-surface",
+ "title": "Every targeted misconception can surface",
+ "statement": "Check that every misconception a lesson means to catch is keyed by a wrong option or judged answer and routed to its own feedback, or it goes undetected.",
+ "example": "A full-file search found three misconception ids in one lesson's content, none of them the one the lesson existed to catch.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "distractors",
+  "feedback",
+  "alignment"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An audit of a Grade 5 lesson searched its whole content file and found that the misconception the lesson existed to catch, trusting only one of its two sources, had no wrong option keyed to it, no feedback routed to it and no id anywhere, while three other misconception ids were present. The fix added a wrong option keyed to it with its own scaffolding feedback, and later verification found it routed live through that option. The gap was found by a full-file search for the misconception's id.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "243-244",
+   "quote": "is never surfaced anywhere: no non-example option keys it, no feedback routes to it, so the misconception the lesson exists to catch goes completely undetected.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "250-252",
+   "quote": "only `mc-hunter-to-prey`, `mc-dashed-means-food`, `mc-population-overreach` exist as misconception ids anywhere in the file; `mc-one-source-only` does not appear (verified via full-file search).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "890-892",
+   "quote": "`mc-one-source-only` routes via `dashed_contrast.check` option D + its scaffolding-question feedback + the fixture `misconception_map` {B: mc-dashed-means-food, D: mc-one-source-only}.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

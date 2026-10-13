@@ -1,0 +1,185 @@
+{
+ "id": "help-after-a-try-cues-first",
+ "title": "Help after a try, cues first",
+ "statement": "Offer help only after the student has tried, and order hints from general cues to specific ones, naming the clue's own words only in the last hint.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "hints",
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A course feedback meeting warned that an immediately available hint lowers desirable difficulty and set the rule: attempt first, then targeted help. A census of the lessons flagged guided-practice nudges that named the clue's own words instead of a criterion cue, and the fix pattern rewords them as criterion cues, naming the clue's actual words only in the last nudge. The general cues say what to look for.",
+ "against": "When help should start was never settled: three consecutive errors was offered as a trigger, but neither the exact count nor an exception policy was finalized (`grade3-reading/knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd`, line 43). It is a fix pattern from a census, not yet a hard validator.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "43",
+   "quote": "an immediately available hint lowers desirable difficulty",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0172-g3-reading-course-feedback-2026-08-04.qmd",
+   "lines": "43",
+   "quote": "The durable rule is attempt first, then targeted help.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "50",
+   "quote": "A related census run the same round, not yet a hard validator",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "52-53",
+   "quote": "**NUDGE-NAMES-KEY** (a we-do nudge names the clue's own words instead of a criterion cue",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "53-54",
+   "quote": "reword to criterion cues, naming a clue's actual words only in the *last* nudge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "52-54",
+   "quote": "a we-do nudge names the clue's own words instead of a criterion cue — fix pattern: reword to criterion cues, naming a clue's actual words only in the *last* nudge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0183-copy-question-quality-rulings.qmd",
+   "lines": "50",
+   "quote": "not yet a hard validator",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "42",
+   "quote": "\"third_nudge\": \"the words to read again, quoted exactly, still not the answer\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138-139",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may quote the line to read)",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "41",
+   "quote": "\"nudge\": \"where to look, and one question, without the answer\", \"second_nudge\": \"closer, still not the answer\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "OC and DB use max_tries 2, not the audit's 3.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "Their second and third nudges still feed the build's Hint button.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/open-check.js",
+   "lines": "117",
+   "quote": "return missed(`${vs.includes(\"holds\") ? \"Part of it is there. \" : \"\"}${item.criteria[k].nudge}`);",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/orientation-sweep-digest/kb-authorities.md",
+   "lines": "4",
+   "quote": "hint only after attempt (3-error trigger NOT finalized)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "110",
+   "quote": "So the child is handed the two-misses-deep scaffold at first sight, and the hint ladder for this blank collapses to a single functional rung.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "130",
+   "quote": "both keep \"Use our word from today. It starts with m and means showing no kindness or mercy at all.\" — that is the correct rung and it is where the cue is supposed to live.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "186",
+   "quote": "F7 (L6 p16 ask without the letter cue, clip re-cut)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/UX-REDESIGN-BRIEF.md",
+   "lines": "80-81",
+   "quote": "Iteration-2 handed over the exemplar alongside the task, which is how \"copy the line\" became the taught habit (F6).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Readventure - Lesson Design and Scaffolding - Updated.docx",
+   "lines": "67",
+   "quote": "Hint 1 names the section. Hint 2 names the specific cue.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/retrieval.ts",
+   "lines": "152",
+   "quote": "DRAFT: one at a time, only after a long pause. Each narrows; none supplies the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "140",
+   "quote": "Students should attempt recall before seeing answers or use an explicit “I’m not sure” route.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/one-perfect-lesson/SKILL.md",
+   "lines": "66",
+   "quote": "purposeful response every screen; hint only after an attempt",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

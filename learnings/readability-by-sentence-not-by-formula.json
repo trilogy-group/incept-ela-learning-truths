@@ -1,0 +1,65 @@
+{
+ "id": "readability-by-sentence-not-by-formula",
+ "title": "Readability by sentence, not by formula",
+ "statement": "When long words, such as a taught word, lift a readability score, judge whether an item reads too hard by its sentence length and clause depth instead.",
+ "example": "Options of single-clause sentences of 9–15 words were flagged because their long words lifted the formula score.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "wording",
+  "evaluation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A content audit for Grade 3 reading lessons flags a question that reads materially harder than its passage by a readability formula, but on vocabulary items the taught word is long on purpose and lifts the score without making the sentence hard, so its instructions say to judge sentence length and clause depth there instead (`shadow/content-eval/SKILL.md`). Three lesson reviews set formula flags aside on that ground: single-clause options of 9–15 words, sentences of 12–18 words at most one clause deep, and options of about 15–18 words with one clause each (`shadow/content-eval/reports/G3-U1-L12-review.md`, `shadow/content-eval/reports/G3-U1-L13-review.md`, `shadow/content-eval/reports/G3-U1-L14-review.md`).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "112-115",
+   "quote": "On those items judge **sentence length and clause depth**, not the score — a 24-word option with an embedded `because` clause against a grade-4 passage is a real problem; four short sentences carrying one long target word is not.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L12-review.md",
+   "lines": "132",
+   "quote": "- **READABILITY on p2c, p3c and p4c:** the options are single-clause sentences of 9–15 words. The inflated FK score comes from polysyllabic words, not clause depth.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L13-review.md",
+   "lines": "153",
+   "quote": "- **READABILITY on p2c form1 and p4c form1/form2:** the sentences are 12–18 words, at most one clause deep plus the tag \"That is loyalty.\" That's acceptable at grade 3; the FK score is inflated by the two-sentence options.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U1-L14-review.md",
+   "lines": "114",
+   "quote": "- **READABILITY** on p2c `form2` (FK 5.9) and p3c `form1` (FK 6.3) against a passage at 3.5. The options are about 15–18 words with one clause each, which is borderline but readable.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-engine",
+   "path": "reports/PETER-PAN-IMPROVEMENTS-2026-09-28.md",
+   "lines": "35-36",
+   "quote": "READABILITY on Word Power items is inflated by the polysyllabic taught word — the eval's own calibration note says to judge sentence length instead.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

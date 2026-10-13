@@ -1,0 +1,82 @@
+{
+ "id": "measure-early-readers-rate-not-only-accuracy",
+ "title": "Measure early readers' rate, not only accuracy",
+ "statement": "For early readers, measure oral reading rate as well as accuracy, since rate tracks standardized reading scores more closely, and a reader can be accurate yet slow.",
+ "example": "In one grade-2 cohort of 51 learners, words correct per minute correlated 0.43 with the standardized reading percentile, against 0.20 for accuracy.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "domain",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A proxy check on 51 second-grade learners with at least five fluency attempts and a standardized reading score correlated each fluency measure with the external percentile: words correct per minute at r = 0.43, accuracy at r = 0.20 (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md`, lines 58-64). A pedagogy red team on the same course had argued that accuracy is the least sensitive fluency measure, that rate and prosody are what predict comprehension, and that a cohort can be 86% accurate and still read slowly, word by word (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md`, line 62).",
+ "against": "Only a third of the fluency learners had a score that could be joined, hence n = 51 (`grade3-reading/ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md`, line 73). Fluency practice also transfers only moderately: in a meta-analysis of repeated reading, the effect was smallest, .35, on comprehension outcomes (`grade3-reading/ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd`, line 469).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "58",
+   "quote": "was run on the 51 G2 students with both ≥5 fluency attempts and a MAP record:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "62",
+   "quote": "| Fluency **WCPM** → MAP percentile | **0.43** (moderate) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "64",
+   "quote": "| Fluency **accuracy** → MAP percentile | 0.20 (weak) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "62",
+   "quote": "Accuracy is the *least* sensitive fluency measure; the fluency constructs that actually predict comprehension are **rate (WCPM) and prosody**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/redteam-2-pedagogy.md",
+   "lines": "62",
+   "quote": "A cohort can be 86% accurate and still dysfluent (slow, word-by-word, no prosody) — and dysfluent readers comprehend poorly *even when accurate*.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g2-reading/analysis/optionB-prime-narrow-rebuild.md",
+   "lines": "73",
+   "quote": "Caveats: n=51 (only ⅓ of fluency students had a joinable MAP record)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "469",
+   "quote": "It was largest (.55) when the outcome measure was word recognition, next largest (.44) with a fluency measure, and smallest (.35) with a comprehension outcome measure.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Reading for Understanding: Toward an R&D Program in Reading Comprehension (RAND, 2002)",
+   "url": "https://www.rand.org/pubs/monograph_reports/MR1465.html"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

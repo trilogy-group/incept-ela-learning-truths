@@ -1,0 +1,113 @@
+{
+ "id": "the-taught-word-in-closing-questions",
+ "title": "The taught word in closing questions",
+ "statement": "Should a lesson's closing questions make students use the word it taught, or only the language of the concept it built?",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "alignment",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "An AI review of one lesson's closing questions raised it as a question rather than a defect: the sequence worked only in the concept's language, and the taught word came back only in a later cloze and the end-of-lesson receipt. Four other lessons had the same shape, asking for the taught word only through a prompt to use today's word in the retell and the closing cloze, and the design pattern's own wording reads either way. The pattern also asks for one push for the taught word before weaker language is accepted, but the rubrics had no push mechanism; the register left the question for a ruling.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "60",
+   "quote": "does the closing sequence have to make the child USE THE TAUGHT WORD, or is the reading-goal concept language the only target?",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/REGISTER.md",
+   "lines": "51",
+   "quote": "Vocabulary floor: one push before accepting weaker language",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "114-119",
+   "quote": "**The taught word is prompted, never required (every lesson).** One slot's ask ends \"Can you use the word X?\" with one of the lesson's taught words (L1: \"Now, when was it broken? Can you use the word betrayal?\"), and that slot's rubric says the word is \"welcome and never required\": an answer without it that meets the rest passes, and the word alone with no story moment does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/handover/closing-questions/HANDOVER.md",
+   "lines": "119-120",
+   "quote": "`validate-contracts.mjs` (`checkClosingFrameTaughtWord`) fails a closing Find it here frame that lacks either.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/extras/alpharead-lesson-design-witw-part-1.md",
+   "lines": "428",
+   "quote": "**Special / \"magic\" word requirement:** the answer must contain the taught word **\"eerie\"** (tested with `/eerie/i`).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "137-138",
+   "quote": "row E1 (does the closing sequence have to use the TAUGHT word?).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/generated/feedback-2026-08-11-crosswalk.json",
+   "lines": "363",
+   "quote": "Design the final question to create a genuine opportunity to use the focal vocabulary.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/01-NON-NEGOTIABLES.md",
+   "lines": "216-218",
+   "quote": "**Wrap retell requires a lesson word** (2026-08-17): the prompt names them (trickster, cunning, outwit) and the grade deterministically requires ≥1 (any inflection), capped below full credit otherwise",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/content/close.ts",
+   "lines": "149",
+   "quote": "Do not require the word \"dramatic irony\" or the promotion.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/tasks/threads.mjs",
+   "lines": "30",
+   "quote": "they must use one, or a form of one, e.g. \"deceives\" for \"deceitful\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/handover/closing-questions/HANDOVER.md",
+   "lines": "114-119",
+   "quote": "**The taught word is prompted, never required (every lesson).** One slot's ask ends \"Can you use the word X?\" with one of the lesson's taught words (L1: \"Now, when was it broken? Can you use the word betrayal?\"), and that slot's rubric says the word is \"welcome and never required\": an answer without it that meets the rest passes, and the word alone with no story moment does not.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PRE-WEEKEND-SMOKE-2026-08-28.md",
+   "lines": "102-103",
+   "quote": "**Retell criteria** `uses-merciless` (L6) and `uses-triumphant` (L7) — both confirmed to reference the actual vocab word taught earlier in the same lesson",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

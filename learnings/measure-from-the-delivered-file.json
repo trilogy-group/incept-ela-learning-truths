@@ -1,0 +1,649 @@
+{
+ "id": "measure-from-the-delivered-file",
+ "title": "Measure from the delivered file",
+ "statement": "Take every length and time from the delivered file, leave a value empty until it is measured, label an estimate as one, and stop the build rather than guess.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "measurement"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Every cut, caption and music move is placed from measured word times, and a render with estimated times is labelled\nas one (`othello-unit-video/research/METHODS.md`). Shot timings stayed empty until the approved voice files had been\nheard and measured (`g9/film/TREATMENT.md`). The kit ties each cut to a spoken phrase that must occur exactly once\nin its scene (`unit-video-kit/.claude/skills/uvk-film-make/SKILL.md`), and its renderer fails loudly when one is\nabsent or ambiguous (`unit-video-kit/tools/film/render-narrated.js`). An animated\nversion's lesson data labelled its film 2:45; the delivered file measured 3:28\n(`g9/review/2026-10-08-lesson1-build-map/README.md`).",
+ "against": "the shortened opening in the context map is arithmetic\non caption times, not a render (`g9/review/2026-10-07-act1-context-map/README.md`).",
+ "evidence": [
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "g9",
+   "path": "film/TREATMENT.md"
+  },
+  {
+   "source": "unit-video-kit",
+   "path": ".claude/skills/uvk-film-make/SKILL.md"
+  },
+  {
+   "source": "unit-video-kit",
+   "path": "tools/film/render-narrated.js"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-08-lesson1-build-map/README.md"
+  },
+  {
+   "source": "g9",
+   "path": "review/2026-10-07-act1-context-map/README.md"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/URGENT-BUG-STILL-PRESENT.md",
+   "lines": "35",
+   "quote": "The \"20/20 tests passing\" claim is misleading",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/URGENT-BUG-STILL-PRESENT.md",
+   "lines": "28",
+   "quote": "Result: 7 out of 10 questions (70%) have the bug.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95",
+   "quote": "Recompute, never self-report",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95-96",
+   "quote": "they trusted generator-asserted `word_count`/Lexile",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0206-memory-digest-feedback-rules.qmd",
+   "lines": "203-205",
+   "quote": "five errors shipped in meeting-facing docs in one day, and every single one was a figure or scope claim INHERITED from an intermediate source",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0206-memory-digest-feedback-rules.qmd",
+   "lines": "207",
+   "quote": "Zero derived claims were wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/codex-qa/controller-2026-09-14/PLAN.md",
+   "lines": "42",
+   "quote": "Usage omissions remain explicit, never fabricated zeros.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/ADVERSARIAL-REVIEW-2026-09-08-R18.md",
+   "lines": "129",
+   "quote": "900L is a provisional planning target, not a measured score or approved readability level.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "95-99",
+   "quote": "they trusted generator-asserted `word_count`/Lexile and a 30-char substring \"verbatim\" check (defeated by paraphrase). Our contract has the same shape. Action: independently recompute Lexile, word_count, hot-text/EBSR spans (NFKC exact-match against the tokenized passage), answer-checkability at intake; any self-reported field used as a gate is UNVERIFIED.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "168-169",
+   "quote": "re-measures every agent-reported number independently rather than trusting it, and corrects two:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "498-499",
+   "quote": "**Course truth (live):** 745 items / 52 tests / 13 units / 56 stimuli (`kb-0058`) — **diverges** from the manifest (`kb-0014`: 703/47/10) and the QTI pkg (`kb-0004`: 576). Confirm which is canonical.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/course-layout.md",
+   "lines": "98",
+   "quote": "| `README.md` map | `mastery_test_1/2.jsonl`, 30 items | `form_a/b.jsonl`, 40 items |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "118-119",
+   "quote": "corrected a prior false claim (\"U4L1 through U4L9 complete\"): **only 6 of 12 built lessons have any audio at all.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "94-96",
+   "quote": "**Eleven you-do aux clips were raw PCM saved under `.mp3` names** (`out.write_bytes(audio)` ran because the cutting shim had no `write_mp3`) — browser fired media errors on the first found reply; `validate-assets`, voice-provenance and voiceover-sync were all green because none of them opens the file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "40",
+   "quote": "which says NOT MET / 3 FAIL.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "40-41",
+   "quote": "**These are two different course-ids.** Fix: rebuild the g3 `COMPLIANCE.md` from PR #3's `rex-v2-compliance-comparison.qmd` (the real rex-clone-v2 eval)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "41-42",
+   "quote": "never cite a PASS no on-disk COMPLIANCE.md with that course_id + a fresh live pull backs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "63-65",
+   "quote": "**No-RIT-pre-pilot is enforced in CODE** — `engine/src/map_engine/scorer/report.py` hard-sets `rit_output=BLOCKED_PRE_PILOT`, gates RIT behind `PILOT_PHASE==\"post-pilot\"` AND non-null `LINK_COEFFICIENT_A/B`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd",
+   "lines": "66-67",
+   "quote": "lift the PILOT_PHASE/link-coefficient gate pattern into our scoring contract (makes our honesty policy a code invariant)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx",
+   "lines": "sheet 'V7.0 Executive Summary', cell A65",
+   "quote": "- RETIRED standards: 11 (preserved for traceability)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K36",
+   "quote": "ONLY PLACEMENT OF RL.3.3.e.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell O43 (the stored count on the RL.3.3.e row)"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Copy of G3-8_Threads_FourTier.docx",
+   "lines": "401 (textutil text)",
+   "quote": "Grade 3 texts are folder-exact; G4–G8 texts and the upper-grade big-idea / vocabulary tiers come from the master sheet and are indicative until those units are built folder-first.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Grade_3-12_Full_Thematic_Map.xlsx",
+   "lines": "sheet 'How to read this', cell A15",
+   "quote": "417 enumerated titles (the list's own summary said 418; its Grade-5 tab actually enumerates 69, not 70)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Grade_3-12_Full_Thematic_Map.xlsx",
+   "lines": "sheet 'How to read this', cell A15",
+   "quote": "Grades 7–12 draw on the list's thinner secondary section — those rungs are the first candidates for review.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/aplit-quiz-generation/main.py",
+   "lines": "519",
+   "quote": "quiz = self.format_quiz_output(passed_questions, passage, explanations)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/qwen3-math/docs/inceptml_full_report.md",
+   "lines": "382",
+   "quote": "- the wrapper filtered with `if validate_question(q)` but returned the original `q`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/demo_articles/grade4_fractions.md",
+   "lines": "56",
+   "quote": "![Generated visual]([IMAGE_2])",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/VALIDATION-REPORT-15-45.md",
+   "lines": "118",
+   "quote": "**Experiments ran in isolation. Production hasn't been tested.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/CHANGELOG.md",
+   "lines": "78",
+   "quote": "The `simple_api.py` transform layer was silently dropping fields before sending to the evaluator, causing failures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/BUILD_FACTS.md",
+   "lines": "16",
+   "quote": "Use the render-truth manifest as the ONE source",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0120-rivers-demo-unit-live-2026-07-13.qmd",
+   "lines": "55",
+   "quote": "the live-rendered surface must be reviewed, not just source artifacts.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0169-g5-reading-v2-final-submission-2026-07-20.qmd",
+   "lines": "24",
+   "quote": "the historical model snapshots are withdrawn after source changes.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/variant-calibration-lab-snapshot/KNOWN_ISSUES.md",
+   "lines": "10",
+   "quote": "**Symptom**: local mirror's DBQ pass rate is 5-25%; live export shows 90%+.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "96",
+   "quote": "voice-provenance and voiceover-sync were all green because none of them opens the file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd",
+   "lines": "15",
+   "quote": "never an agent's self-report and never an HTTP 200 (a PUT can return 200 yet silently revert)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/COURSE_QUALITY_GATE_REPORT.md",
+   "lines": "259",
+   "quote": "but because **nothing re-ran IB (or the deterministic coherence gate) on the assembled live form**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/docs/SUMMARY_AGENT.qmd",
+   "lines": "111",
+   "quote": "silent-no-op feedback writes**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/GAP-ANALYSIS-2026-08-18.md",
+   "lines": "6",
+   "quote": "mechanically verified this session, not read from commit messages or status docs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/DECISIONS-2026-08-24.md",
+   "lines": "83",
+   "quote": "- **Verify against the file, not the report.** Confident-wrong moments this",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0182-audio-voice-rulings.qmd",
+   "lines": "95-98",
+   "quote": "every text-side validator (voiceover-sync hashes, read-along marks, the walkers) can be green while the audio itself is wrong — a reviewer heard \"betrayal\" as \"trail\" because the /b/ onset sat at -84dB in the clip, and every text-side check passed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "94-95",
+   "quote": "**772/772 stimuli** had been flattened at publish time into one tagless `<p>` (titles welded onto bodies, e.g. \"PapyrusIn\"; \"surface.Passage 2\"; data tables collapsed)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "31-32"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "91",
+   "quote": "Unit-2: a fix-note said \"11w\" while the delivered option was 10w",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0222-g3-l4-l1-parity-rebuild-2026-09-17-to-21.qmd",
+   "lines": "95-96",
+   "quote": "`validate-assets`, voice-provenance and voiceover-sync were all green because none of them opens the file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0176-g3-peter-pan-pr-timeline.qmd",
+   "lines": "53",
+   "quote": "Every deploy was proven by **hashing the served file**, never by a 200 response",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/1. Mapping Docs/Grade_3-12_Full_Thematic_Map.xlsx",
+   "lines": "sheet 'How to read this', cell A15",
+   "quote": "417 enumerated titles (the list's own summary said 418; its Grade-5 tab actually enumerates 69, not 70).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Curriculum maps/_G3 curriculum Map.xlsx",
+   "lines": "sheet 'SC Coverage', cell K36 (the stored tally in cells N43, O43, P43 reads RL.3.3.e, 0.0, None for the same component)",
+   "quote": "ONLY PLACEMENT OF RL.3.3.e.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.2 - The Living World - Lesson Designs/3.2 - 1. The Wonderful World of Plants - FIND - Lesson Design (v2 - MCQ pauses + science sweep).docx",
+   "lines": "73 (textutil text)",
+   "quote": "(Confirm each word appears in the final passage; drop any that do not and add any missed content words at the same reading level.)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/CONTENT-FAILURE-CLASSES.md",
+   "lines": "176-177",
+   "quote": "Docs said fiction runs 450–500 words. Measured: informational passages were **312–333** while stories were 451–502.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "173",
+   "quote": "the endorsed chunked variant is NOT in content/course.json (RT-11) — unreachable by children.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/train-teacher/references/teacher-contract.md",
+   "lines": "69-70",
+   "quote": "Do not trust the authored annotation — recompute.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "reports/G3-U2-L1-main-review.md",
+   "lines": "20",
+   "quote": "The renderer (`reading.tsx`) labels the fold \"The text so far\" when the lesson has a \"Read the text\" station, and all five reading pages do.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "139-140",
+   "quote": "The option order is *not* in this list: the renderer does not shuffle, so `ANSWER-BIAS` reads the real key.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/memory/feedback_pipeline_eval_not_model_eval_2026_05_12.md",
+   "lines": "44",
+   "quote": "Pipeline output: NEVER MEASURED — eval has been bypassing the wrapper",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/plans/PLAN-mission-2026-04-26.md",
+   "lines": "150",
+   "quote": "Dep-03  Final canary: 10-cell re-eval through the integrated path",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "session_20260422_grpo_to_pipeline.md",
+   "lines": "44",
+   "quote": "**LESSON:** Always test the raw rollout format, not the production pipeline format. They are different paths.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "203",
+   "quote": "- Real source of (1)/(2) export 81.6% baseline is `/v1/apush-all-units-generator` (every item id starts `apush-all-units-`).",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/validation_triage/20260528T030737Z_2026-05-28T0312Z_ESCALATE_F14_blocking_track_B_v2_grading.md.md",
+   "lines": "105",
+   "quote": "NOT firing IB grading on the 79 partial rows (would mis-represent the corpus)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "104",
+   "quote": "Best-of-N was implemented once but not actually active.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/to_den/2026-05-25T0615Z_TASK_concrete_deployable_workflow.md",
+   "lines": "94",
+   "quote": "main-a runs n=50 hidden hold-out K=1 single-shot on the WORKFLOW (not your dev scripts) — confirms numbers reproduce",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/video/produce.js",
+   "lines": "66",
+   "quote": "takes.push({ file: f, seconds: wavSeconds(wav), sha256: sha(wav) });",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "8",
+   "quote": "`ffprobe` reports 22.125 seconds for the container versus 22.120 seconds for the source WAV.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/video.test.mjs",
+   "lines": "70",
+   "quote": "film ${probe.format.duration} s, manifest ${m.duration} s",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "213",
+   "quote": "reads at ~1.8 words/sec (NOT the ~2.4 a silent",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "214",
+   "quote": "word count suggests — at 2.4 every shot overran",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/video-scripts/U1.md",
+   "lines": "3",
+   "quote": "a silent word-count badly over-estimates her, so a 8s shot holds only ~14 words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "352",
+   "quote": "Derive boundaries from measured acoustic evidence, never text proportions.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit1/PROCEDURE-PROPOSAL.md",
+   "lines": "31",
+   "quote": "Media timestamps must correspond to actual generated speech, not estimated offsets.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE4.md",
+   "lines": "89",
+   "quote": "Lexile values in `content/course-rationale.json` are explicitly **targets**, not measurements.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/unit9/README.md",
+   "lines": "40",
+   "quote": "No Lexile score is asserted.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/audits/PETER-PAN-AUDIT-2026-08-24.md",
+   "lines": "161",
+   "quote": "Lexile: **absent** from every source. Do not quote one.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "59",
+   "quote": "Label it `demo` timing, keep the words original, and withhold audio/caption claims until a measured narration track is attached.",
+   "verified": "script"
+  },
+  {
+   "source": "unit-video-kit-essay",
+   "path": "docs/ESSAY-MODULES-PLAN.md",
+   "lines": "17",
+   "quote": "a fresh render and independent probes confirm duration, frame size, module coverage, and an unchanged G9 working tree.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5253",
+   "quote": "The 36-second wait also needs measuring in the actual interaction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/FEEDBACK-RESPONSES.md",
+   "lines": "240-241",
+   "quote": "When we measured, the informational passages were 312 to 333 words while the stories were 451 to 502.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/REVIEW-ROUNDS.md",
+   "lines": "159",
+   "quote": "No approximate sentence timestamps are inferred from text length.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "script/v02/Othello-Opening-Recording-Manifest.json",
+   "lines": "20",
+   "quote": "No durations or cue positions have been measured. Add them only from approved recorded files.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/TREATMENT.md",
+   "lines": "28",
+   "quote": "Its runtime must not be used as a narration timing guide.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L25efa0.txt",
+   "lines": "43",
+   "quote": "The lesson data labels it `2:45`; only the storyboard fallback shows that label.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Ldb4a38.txt",
+   "lines": "16",
+   "quote": "the page node says `runtime: 2:45` and has segment \"at\" labels of 0:30/0:40/1:05…, but the film is 3:28 and those segments start at 0:41/0:56/1:25….",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "89",
+   "quote": "Its timing is estimated because no spoken recording exists.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "prototypes/app-narrated-qa/QA.md",
+   "lines": "5",
+   "quote": "Narration: gemini-2.5-pro-preview-tts, voice Orus, eight AAC-LC .m4a clips, 260.2 s total.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-archive",
+   "path": "handover-2026-10-06/Othello-handover-docs-and-transcript-2026-10-06.zip",
+   "member": "Othello-handover/Othello-project-handover.txt",
+   "lines": "318",
+   "quote": "Never mark estimated timings as measured.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/lesson-build/SKILL.md",
+   "lines": "32-33",
+   "quote": "missing-clip reds for this lesson only are the honest signal — never fake marks",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

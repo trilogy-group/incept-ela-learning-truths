@@ -1,0 +1,348 @@
+{
+ "id": "check-what-a-picture-implies",
+ "title": "Check what a picture implies",
+ "statement": "Check every generated or repainted picture by eye against its brief and the text, and draw maps and diagrams from data.",
+ "example": "1 of 18 repaints added people to an empty room and still passed my frame check.",
+ "group": "pictures-sound-film",
+ "role": "method",
+ "facets": [
+  "media",
+  "integrity"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "The film's treatment asked for cuts to be revised if they imply someone is present where the text does not place them\n(`g9/film/TREATMENT.md`). In 1 of 18 repaints the image model added two people to an empty room and put out its last\ncandle, and the frame check passed it, because it confirmed which file was on screen, not what it showed\n(`othello-unit-video/.claude/skills/uvk-art-make/SKILL.md`; `othello-unit-video/research/METHODS.md`, \"Limits\"). The\nkit also records 1 in 22 finished paintings coming back with a paper border drawn in, faces moving 30 to 60 pixels\nafter a repaint, and a generated map putting places in the wrong spots, so maps are drawn from public map data\n(`unit-video-kit/.claude/skills/uvk-art-make/SKILL.md`, `unit-video-kit/docs/TROUBLESHOOTING.md`).",
+ "against": "none\nfound.",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "film/TREATMENT.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": ".claude/skills/uvk-art-make/SKILL.md"
+  },
+  {
+   "source": "othello-unit-video",
+   "path": "research/METHODS.md"
+  },
+  {
+   "source": "unit-video-kit",
+   "path": ".claude/skills/uvk-art-make/SKILL.md"
+  },
+  {
+   "source": "unit-video-kit",
+   "path": "docs/TROUBLESHOOTING.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/art-qa-redcontrol-2026-09-11/RECORD.md",
+   "lines": "7",
+   "quote": "Purpose: prove the new check DISCRIMINATES — fires on AI-generated film frames with humans, stays",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0213-qc-week-0902-0904.qmd",
+   "lines": "69-70",
+   "quote": "**L1 p8 opening image is a spoiler** (shows the stranger who doesn't enter the text until p10).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Chemistry Misconception Prevention Guidance.docx",
+   "lines": "88 (textutil text)",
+   "quote": "Do NOT use illustrations that color-code individual atoms to match the bulk substance (orange atoms for copper, blue atoms for water).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Biology Misconception Prevention Guidance.docx",
+   "lines": "38 (textutil text)",
+   "quote": "Scala naturae; popular culture; tree diagrams with humans at top",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Science/Biology Misconception Prevention Guidance.docx",
+   "lines": "100 (textutil text)",
+   "quote": "Do NOT oversimplify phylogenetic trees by placing humans at the top/right.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "108",
+   "quote": "This is the analysis model's best visual guess, NOT verified programmatic data.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/svg_pipeline/README.md",
+   "lines": "44",
+   "quote": "3. **Verifiable by construction** - If params extracted correctly, SVG is correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/svg-llm/TRAINING_BEST_PRACTICES.md",
+   "lines": "77",
+   "quote": "- Manually review 20 generated SVGs",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'AP Us Images QC', cell M35",
+   "quote": "Several vehicles visible in the driveways and on the streets are clearly modern car models (e.g., SUVs, modern sedans), which are anachronistic for a 1950s Levittown setting.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'Articles-readable-exp', cell M39",
+   "quote": "Text in image on gen ai article is nonsensical",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles', cell M36",
+   "quote": "The first image should be regenerated. The clothing is far too modern.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/article/evaluation.txt",
+   "lines": "658",
+   "quote": "> - Apply **heightened scrutiny** for historical, scientific, or factual inaccuracies",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "152-153",
+   "quote": "- ❌ `quant_count_mismatch` - Wrong counts - ❌ `label_invention` - Invented labels",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/parallel-ideas-lab/reports/dbq_structural_zero.md",
+   "lines": "122",
+   "quote": "If a visual source is ever allowed, the actual visual or a faithful OCR/caption payload must be supplied by retrieval, not invented by the model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0208-handover-archive-all.qmd",
+   "lines": "1283",
+   "quote": "image with a 0.46 match was being served (pictures now need positive evidence, accepted count fell 16 → 9)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "59-60",
+   "quote": "the model drifts on count once past roughly four figures",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/AlphaRead-QC-Checklist-v2-2026-09-04.md",
+   "lines": "180",
+   "quote": "the model adds the mother unprompted, and once drew five children from a four-child cast",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/L4-REVIEW-GAPS-2026-09-16.md",
+   "lines": "116",
+   "quote": "Peter on the chimney with THREE legs",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0200-content-audio-review-traps.qmd",
+   "lines": "57-63",
+   "quote": "a generated cover image duplicated a pinned character — 5 children shown instead of a pinned cast of 4. **Mechanism:** cast pinning inside a CAST block in the prompt is not enough; the model drifts on count once past roughly four figures, and pinning the count in only one place in the prompt doesn't anchor it. **Fix:** repeat the EXACT-N count inside the SCENE line itself (not just the CAST block), use explicit separation language, and enumerate individually for stubborn cases; EYEBALL every generated image before wiring it into `art.ts`.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/video-red-team/references/finding-taxonomy.md",
+   "lines": "24",
+   "quote": "image-model text corruption",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0249-g9-idea-research-full-files.qmd",
+   "lines": "532-533",
+   "quote": "**The specific comics failure is cross-panel drift, not single-panel flaws.**",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "team_learnings_20260422.md",
+   "lines": "60",
+   "quote": "- Don't train inline SVGs — generate image configs with known interfaces instead",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "d5721a7",
+   "lines": "3-4",
+   "quote": "A SAT Math geometry diagram had a label (2x + 4) that appeared to be positioned against the wrong line segment.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "bd221e5",
+   "lines": "26-27",
+   "quote": "Sub-issues #1 (image-not-detected) and #2 (wrong counts on number lines/rulers/unit squares) are non-deterministic LLM-vision behaviors",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/INTEGRATION.md",
+   "lines": "22",
+   "quote": "Check the rhythm by watching it at normal speed, then have both the words and what each reveal implies reviewed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "tools/unit-video-essay/QA.md",
+   "lines": "14",
+   "quote": "At 05.20 seconds the first beat groups “Iago” and “words / his weapon” on the left figure, with one short arrow to his face. The earlier long crossing arrow and Roderigo-side placement were removed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-unit-video-packages",
+   "path": "annotated-asset/README.md",
+   "lines": "43",
+   "quote": "The host should still render a review frame at its target size and check text placement before publishing a video.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "196",
+   "quote": "annotated-asset: its arrows need positions read from the picture;",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "66",
+   "quote": "the guide's portrait was a broken image",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/briefs.json",
+   "lines": "186",
+   "quote": "with a decorative woodcut border and a small woodcut picture of Venice on the left page",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "25",
+   "quote": "it labels the child's own character a trickster right after a video full of trickster animals. Remove the avatar from word cards.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "47",
+   "quote": "A ship rowing itself with nobody aboard while the narration promises \"we'll follow one hero.\"",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-intro-audit.md",
+   "lines": "62",
+   "quote": "Object moving with no cause plus warped anatomy.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "379-380",
+   "quote": "Every moving thing has a visible agent, including the anchor, the weaving, the transformation and the closing scroll.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "10-12",
+   "quote": "This pass caught 2 defects in 21 on the Peter Pan batch (a cast/scene contradiction and a Lost-Boy undercount) that zero validators could see.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "25-26",
+   "quote": "COUNT the people — must equal the cast's EXACTLY-N. Count carefully, including background/overlapping figures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "26-28",
+   "quote": "Overlapping-heads undercounts are a known failure (peterpan-4-rescue) — if figures can't be separately counted, that IS the finding.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v06/README.md",
+   "lines": "24-25",
+   "quote": "The map is drawn from Natural Earth 1:50m land (public domain), so Venice and Cyprus sit at their real positions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "art/README.md",
+   "lines": "5",
+   "quote": "Every generated image was reviewed by eye on 2026-10-06 for character identity, style match, absence of text, and the handover's rules (no depicted death; scene 6 uses three extinguished candles and the strawberry handkerchief).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L0bb3e2.txt",
+   "lines": "24-25",
+   "quote": "The map is drawn from Natural Earth 1:50m land (public domain), so Venice and Cyprus sit at their real positions.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb9608f.txt",
+   "lines": "122-124",
+   "quote": "Subramaniam criticized geographical inaccuracies in the video map, where Venice is depicted as part of the mainland heartland rather than an island",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "8-9",
+   "quote": "Text checks cannot see a duplicated face, a five-child cast of four, a chain-link fence that was wooden last scene, or a spoiler.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

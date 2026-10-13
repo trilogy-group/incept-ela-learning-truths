@@ -1,0 +1,98 @@
+{
+ "id": "name-the-steps-never-number-them",
+ "title": "Name the steps, never number them",
+ "statement": "Name each procedure step in its own words, on screen and aloud, never by a number, which only signals unseen steps, and say the procedure's name whenever it runs.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "sequence"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The course renderer's pedagogy rules require a modelling moment to say which of its seven procedures it is running and to show the step it is on, named and never numbered, on screen or aloud (`othello-course-renderer-draft/repo/docs/rules/pedagogy-and-lesson-structure.md`, lines 327-345). A label such as \"Step two, part a\" tells a child only that unseen steps are coming, while the step's own words are the teaching. The procedure specification behind the rule treats steps as student-facing, to be displayed, spoken and internalised (`othello-course-renderer-draft/repo/docs/pedagogy/modelling-moment-procedures.md`, line 24). The same rules also have the procedure's name said each time it runs, since a child who watched one procedure four times without once hearing its name had four demonstrations and no tool.",
+ "against": "The same repository's QA invariants require step numbers that are sequential and unique per beat, with never two \"Step 2\" blocks (`othello-course-renderer-draft/repo/docs/qa/new-lesson-qa-invariants.md`, lines 34-35), and the procedure specification voices the search with the step numbers, as in \"Step 1, Read the question…\" (`othello-course-renderer-draft/repo/docs/pedagogy/modelling-moment-procedures.md`, lines 838 and 840). The course's QA invariants check numbers: \"**A3. Step numbering is sequential and unique per beat.** Never two \"Step 2\" blocks; never a Step 3 numbered 2.\" (`grade3-reading/course-renderer/docs/qa/new-lesson-qa-invariants.md`, lines 34-35), and a built lesson decided on \"One ladder everywhere, matching the p17 chart and the p25 recap: Step 1 Read the question, Step 2 Find it in the text, Step 3 State the answer, Step 4 Refine the concept, Step 5 Let's try extra thinking.\" (`grade3-reading/course-renderer/content/lesson-plans/g3-u2-l1.json`, line 760).",
+ "evidence": [
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "333",
+   "quote": "The step is named, never numbered, on screen or aloud.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "333-335",
+   "quote": "\"Step two, part a\" tells a child only that steps they have not seen are coming and that they cannot see how many",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "343-345",
+   "quote": "Seven named procedures are the whole design: a child who has watched FIND four times without once hearing it called FIND has been given four demonstrations and no tool.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "329-330",
+   "quote": "**Rule.** A modelling moment says which of the seven procedures it is running and shows the step the guide is on, advancing as the voice reaches it.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "24",
+   "quote": "Steps are student-facing. They can be displayed on screen, spoken aloud, and internalised.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/qa/new-lesson-qa-invariants.md",
+   "lines": "34-35",
+   "quote": "**A3. Step numbering is sequential and unique per beat.** Never two \"Step 2\" blocks; never a Step 3 numbered 2.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "838",
+   "quote": "voiced once inside the think-aloud with the step numbers",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "840",
+   "quote": "(\"Step 1, Read the question…\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "333",
+   "quote": "The step is named, never numbered, on screen or aloud.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "333-336",
+   "quote": "\"Step two, part a\" tells a child only that steps they have not seen are coming and that they cannot see how many; the step's own words, \"What is the main thing in each part?\", are the whole of the teaching.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

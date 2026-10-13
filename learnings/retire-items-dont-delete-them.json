@@ -1,0 +1,51 @@
+{
+ "id": "retire-items-dont-delete-them",
+ "title": "Retire items, don't delete them",
+ "statement": "Retire an item instead of deleting it, and record what it was merged into or is now covered by, so every change can be traced.",
+ "example": "One standards workbook keeps its retired standards on a tab of their own, each marked with what it was merged into, covered by or rewritten as.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "integrity"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A standards workbook's version summary lists its retired standards as preserved for traceability, and its retired tab marks each with what it was merged into, covered by or rewritten as (`downloads/5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx`). A count made in this run found the summary's 11 retired standards against 9 rows on that tab, so the trace itself has to be checked against its data.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx",
+   "lines": "sheet 'V7.0 Executive Summary', cell A65",
+   "quote": "- RETIRED standards: 11 (preserved for traceability)",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Texts/Misconception and alignment checks/Social studies/Consensus social science standards.xlsx",
+   "lines": "sheet 'Retired Standards', cell X2",
+   "quote": "Cat 1: Merged into K.His.3",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/pedagogy-and-lesson-structure.md",
+   "lines": "401-402",
+   "quote": "What a lesson had before in that slot (recap questions, cloze retells, dialogue branches, ladders, boundary checks) is hidden, never deleted, as L1 and L2 did.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

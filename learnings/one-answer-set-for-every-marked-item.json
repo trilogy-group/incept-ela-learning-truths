@@ -1,0 +1,270 @@
+{
+ "id": "one-answer-set-for-every-marked-item",
+ "title": "One answer set for every marked item",
+ "statement": "Before a marker scores students, probe every marked item with the same set of answers, among them partial, wrong, misspelled, negated and empty ones, and the hint echoed back.",
+ "example": "One probe sent 4 kinds of answer to each of 4 marked items: a full answer, one part only, a plausible wrong one and the hint echoed back.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "marking",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A live probe of a reading engine's marker sent four answers to each of four open items, a full answer, one meeting one criterion only, a plausible wrong one and the hint echoed back, and all 16 verdicts were right (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md`). A set of verification proposals adds a correct meaning with a typo, nonsense resembling a keyword, a valid synonym, a fluent wrong answer, a partial answer and a contradictory premise (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md`). A closing-question pattern shows why a negation belongs in the set: matching on 'broken' passes 'trust can never be broken', the opposite of the answer (`grade3-reading/artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt`). The full set is the ideal answer, a partial one, plausible and fluent wrong ones, a misspelled right one, a synonym, the hint echoed back, the answer's negation, keyword-stuffed nonsense, an off-topic one and an empty one.",
+ "against": "Of these, only the four-answer probe was run, and its expected verdicts were set by agents, not a person; the longer list is a proposal marked not executed (`grade3-reading/artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md`). The faults were narrow ones: 114 of the 117 judge cases written for that build were right before the fix, and all three wrong ones were of the one kind (`grade3-reading/knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd`, line 96).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/readiness-l5-2026-09-17/sim-review/lens-judge-probe.md",
+   "lines": "10",
+   "quote": "Four variants per item: full-pass, one-criterion-only, plausible wrong, hint-echo.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "8",
+   "quote": "compare correct meaning with a typo, nonsense resembling a keyword, valid synonym, fluent wrong answer, partial answer and contradictory premise",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-devfactory-2026-09-10/analysis-current-courses/VERIFICATION-PROPOSALS.md",
+   "lines": "1",
+   "quote": "# Proposed repair and verification packages — not executed",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-closing-questions-2026-09-24/Closing_Questions_Pattern.txt",
+   "lines": "68",
+   "quote": "Never string-match. Matching on “broken” passes “trust can never be broken,” which is the opposite of the answer.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd",
+   "lines": "78-79",
+   "quote": "the gate was punishing the child for saying the taught sentence exactly.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd",
+   "lines": "76-77",
+   "quote": "rejects an answer whose containment ratio against it is >= 0.70. The flagged sentence was 84/114 = **0.74** of its own criterion's",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0229-closing-questions-build-2026-09-25.qmd",
+   "lines": "96",
+   "quote": "117 judge cases authored, 114 OK/3 WRONG pre-fix (all three the echo class)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "63",
+   "quote": "oral/typed judges accept empty or content-blind answers.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0237-u4l2-carbon-copy-build-2026-08-13-to-08-21.qmd",
+   "lines": "72",
+   "quote": "The local evaluation fallback grades free responses by keyword overlap, and a porting note propagates that defect.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "18",
+   "quote": "export const ORDER = [\"short-right\", \"misspelt-right\", \"vague\", \"nonsense\", \"literal\", \"near-quote\", \"injection\"];",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/quality.test.mjs",
+   "lines": "111",
+   "quote": "needs both groups",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "97",
+   "quote": "const status = asked.length < rows.length ? \"broken\" : wrong ? \"failing\" : !good.length || !bad.length ? \"unmeasured\" : unsure || flips ? \"advisory\" : \"calibrated\";",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "17",
+   "quote": "other kinds sort after these.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/evidence-hunt.tapped-proves.json",
+   "lines": "15",
+   "quote": "Roderigo's line shares the words \\\"follow him\\\" but says nothing about Iago's purpose.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/calibration/cer-frame.next-step.json",
+   "lines": "13",
+   "quote": "The reasoning repeats the quotation and explains no word in it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Play-time checks get labelled student answers, sorted the way check-marking.mjs sorts them: short and right, right but misspelt, vague, nonsense, literal, near quote, injection.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The calibration numbers come from the label oracle, which answers from the labels themselves, so they prove the wiring and measure nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "6",
+   "quote": "a seed set this small is diagnostic only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "167-168",
+   "quote": "**F2. A self-contradicting answer is refused and named** (\"yes he does not trust\").",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/README.md",
+   "lines": "30",
+   "quote": "Four approved **service-level** scorer probes also passed on a9/build jkij: G3L4p21 and G3L6p14 each rejected a contradictory keyword answer and accepted a supported paraphrase.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/CALIBRATION-HARNESS-SPEC.md",
+   "lines": "29-30",
+   "quote": "**Must include misleading-surface items** — a fluent, on-topic paragraph that makes no evidence- backed claim — \"those separate a real scorer from a fluency-detector\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4g5-writing/approval-package/sources/GENERATION-CONTRACT.md",
+   "lines": "89-90",
+   "quote": "**No fluent-but-empty 2.** The forbidden-shortcut rows (`ASSESSMENT-PACKS`) exist so the scorer can't award full marks to a well-organised answer with no claim/no link",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-writing/alphawrite-observations.md",
+   "lines": "7",
+   "quote": "Evaluation of written answers is not always accurate. Even partially correct answers get approved. It's pretty weak. In fact you can get an almost nonsensical sentence to pass.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "18",
+   "quote": "27 labelled cases",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "19",
+   "quote": "every \"Does NOT pass\" trap quoted in each Use-it rubric (L11–L14), word for word;",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "20",
+   "quote": "a paraphrase of each trap",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "21",
+   "quote": "rubric-style passes, including \"another story\".",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "22",
+   "quote": "App route x2: **27/27 OK**.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/JEV-PROPOSALS.md",
+   "lines": "23",
+   "quote": "Lowest pass mean: 0.85. Highest miss mean: 0.05.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "444",
+   "quote": "wrong attempt per authored question, current open-response cheat and duplicate probes, refresh and distinct Back paths per authored phase, and nonadjacent read-along sentence taps per passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "JEV-PROPOSALS.md",
+   "lines": "19-20",
+   "quote": "every \"Does NOT pass\" trap quoted in each Use-it rubric (L11–L14), word for word; - a paraphrase of each trap",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "127",
+   "quote": "Reject gibberish. Do not reply to noise as though it were an answer.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "README.md",
+   "lines": "60",
+   "quote": "marking: 48 Grade 9 answers on L1's checkpoints; fails on a wrong answer marked secure or a reply that breaks the rules below",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/Lb99a1c.txt",
+   "lines": "18",
+   "quote": "`testset.json`: 63 answers across the seven marked checks, written in Grade 9 student voice:",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

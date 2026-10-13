@@ -1,0 +1,63 @@
+{
+ "id": "find-what-every-run-shared",
+ "title": "Find what every run shared",
+ "statement": "When many runs agree on a limit, find what they all had in common before calling it a limit.",
+ "example": "Retrained on the same data with only its learning rate corrected, one multiple-choice item type went from 76.7% to 93.3%.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "generation"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Across eleven training runs every useful variant landed between 76.7% and 85.0%, and the band was recorded as the model's ceiling (`icloud-work/auto-memory-backup/project_14b_saturation.md`). All of them had been trained with a learning rate set far too low (`icloud-work/auto-memory-backup/project_lr_was_too_low.md`), and the project's memory rules now list \"All 11 experiments saw X, so X is a law.\" among the patterns to refuse until shared confounds are checked (`icloud-work/auto-memory-backup/MEMORY_GOVERNANCE.md`). Retrained on the same data with the rate corrected, two multiple-choice item types went from 80.0% to 90.0% and from 76.7% to 93.3% (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`).",
+ "against": "The fix did not lift everything: \"| apush/mcq_set | 50.0% (0.862) | 36.7% (0.699) | **−13.3pp** |\" (`icloud-work/auto-memory-backup/project_v20a_lr1e4_result.md`, line 26). The band came from runs scored on 60 multiple-choice prompts and mostly trained on multiple-choice items only, while the corrected run was trained on all types. The list of runs at the wrong setting names ten, not eleven, and one of them used 1.5e-5 (`icloud-work/auto-memory-backup/project_lr_was_too_low.md`, lines 24 and 31).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/MEMORY_GOVERNANCE.md",
+   "lines": "113",
+   "quote": "- **\"All 11 experiments saw X, so X is a law.\"** → no. Check the shared confounds (e.g., wrong LR across all 11).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_lr_was_too_low.md",
+   "lines": "24",
+   "quote": "**v8/v18/v9/v11/v12/v13d/v14a/v15/v16b/v17 all used LR 2e-5.** All experiments tonight are confounded by this mistake.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_14b_saturation.md",
+   "lines": "15",
+   "quote": "The pattern band is tight: every \"useful\" variant lands in [76.7%, 85.0%] aggregate.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "25",
+   "quote": "| apush/mcq | 80.0% (0.902) | **90.0%** (0.941) | +10.0pp |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/project_v20a_lr1e4_result.md",
+   "lines": "30",
+   "quote": "| apwh/mcq | 76.7% (0.894) | **93.3%** (0.925) | +16.6pp |",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

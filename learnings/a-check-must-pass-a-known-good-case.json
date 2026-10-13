@@ -1,0 +1,453 @@
+{
+ "id": "a-check-must-pass-a-known-good-case",
+ "title": "A check must pass a known-good case",
+ "statement": "Before trusting a check's rejections, run it over content known to be good, and treat its flags there as faults in the check.",
+ "example": "A question set known to be good timed out on the same grading route, at 35.024 s and again at 90.020 s, while a single question scored 1.0 in 24.385 s.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "When locally valid new question sets kept timing out, a probe sent a known-good earlier set through the same scoring route as a control: it timed out too, at 35.024 s and again at 90.020 s under a longer cap, while single questions and short answers scored 1.0 SUPERIOR, which placed the block in the grader's route rather than in the content (notes of 23 and 24 May 2026). A guard for one war's name fired on the longer name of the next and failed three valid items, items about the later war were routed to the earlier war's template because its name matched, and two similarly named documents collided on one source key. A question-set validator's first version over-blocked known passing rows, and its hard gates were narrowed. A period check also flagged a founding document from inside the period asked about as later drift. Content known to be good includes known-good cases, near misses and items people approved. Narrow such a check, or demote it to information, when most of its hits land on sound content.",
+ "against": "none found for the grading route and the name checks; for the period check, the reports never say what set the flag off, so whether it rejected a good document is open. The rule holds only while people read closely: the source says to revisit it if they stop, 'since the flag would then be the only judgment in the loop' (shadow-bench/docs/brainlift.md line 81). People can miss defects too, and 'nothing flows back from the classroom to reveal whether they missed any.' (line 143). These facts are the source's recollections, not records (line 181).",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1408Z_BLOCKED_mcqset_eval_timeout_probe.md",
+   "lines": "35",
+   "quote": "| `u1_mcq_set_control` | `mcq_set` | 35.024s | `ReadTimeout: timed out` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1408Z_BLOCKED_mcqset_eval_timeout_probe.md",
+   "lines": "33",
+   "quote": "| `u2_mcq_minimal` | `mcq` | 24.385s | `1.0 SUPERIOR` |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1408Z_BLOCKED_mcqset_eval_timeout_probe.md",
+   "lines": "39",
+   "quote": "The current block is MCQ_SET evaluator-path timeout, not Unit-2 content alone.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-24T1013Z_BLOCKED_unit2plus_mcqset_evaluator_health_reprobe.md",
+   "lines": "18",
+   "quote": "`u1_mcq_set_control`: timed out at `90.020s`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1721Z_DELIVERED_unit8_mcq_solver_v1_candidate.md",
+   "lines": "53",
+   "quote": "Misses: three local scope-guard failures because `World War II` triggered a bad `world war i` substring guard",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1648Z_DELIVERED_unit7_mcq_solver_v1_candidate.md",
+   "lines": "54",
+   "quote": "Miss 1: `World War II: Military` routed to WWI because `world war i` matched `world war ii`",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T2258Z_DELIVERED_unit6_dbq_solver_v1_candidate.md",
+   "lines": "47",
+   "quote": "accidental Homestead Act / Homestead Strike slug collision.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/experiments/b0035_mcqset_stage_validator/RESULTS.md",
+   "lines": "24",
+   "quote": "The first version over-blocked known passing rows because InceptBench tolerates some source-referential wording.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "den-of-ideation/reports/unit3_dbq_source_pack_gate_20260524T001732Z.md",
+   "lines": "52",
+   "quote": "doc 3: Constitution of the United States — doc_3_post_unit3_drift",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "90-91",
+   "quote": "Across 11 lessons it fired 184 times — on most distractors in the course.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "81",
+   "quote": "**Calibration notes, all learned from real data — do not undo these:**",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "SKILL.md",
+   "lines": "70",
+   "quote": "Deliberately narrow (fires only at that extreme), because good distractors are built from real story phrases; everything short of the extreme goes to the evidence pack as per-option `passage_coverage` for the judgment pass",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "31",
+   "quote": "the content ships and the check gets fixed. If both flag the same thing, the check has earned its place.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "31",
+   "quote": "A rejection adds a check; a disagreement corrects one (DOK1-9).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "81",
+   "quote": "a flag on approved content is a fact about Inceptbench, not about the content.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "37",
+   "quote": "Both comparisons already occur on delivery; only the results are missing. Recording them costs a line per batch and is the only route to knowing whether either works (DOK3-2).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "141",
+   "quote": "Because nothing is logged, the project has no agreement rate and no evidence its manual backstop works — not for want of experiments, but because the outcomes are discarded each time they are produced.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "docs/brainlift.md",
+   "lines": "185",
+   "quote": "Inceptbench was not run on it, so no Inceptbench verdict and … verdict have ever existed on the same lesson, and no agreement rate has ever been recorded.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "38",
+   "quote": "Ozymandias's comparison was held once: one paragraph quoted the single word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "39",
+   "quote": "and the exact-quotation check only accepted quotations of two or more words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "40",
+   "quote": "single word when that word is in the text, with a test for it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/test/text.test.mjs",
+   "lines": "28",
+   "quote": "assert.deepEqual(findQuote(t, \"ancient,\"), [31]);",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/text.js",
+   "lines": "57",
+   "quote": "if (!q.includes(\" \")) { const u = ls.find((x) => norm(x.text).split(\" \").includes(q));",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "38-39",
+   "quote": "one paragraph quoted the single word \"boundless\", and the exact-quotation check only accepted quotations of two or more words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v01/QA.md",
+   "lines": "39-40",
+   "quote": "The check now accepts a single word when that word is in the text, with a test for it.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "138-139",
+   "quote": "the open check's leak rule was stricter than the animated build's (a hint may quote the line to read)",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "111",
+   "quote": "\"value\": 0.56,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "254",
+   "quote": "\"value\": 0.7,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "394",
+   "quote": "\"value\": 0.62,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "444",
+   "quote": "\"q\": \"According to Iago, what is his purpose in continuing to serve Othello?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "534",
+   "quote": "\"value\": 0.68,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "111",
+   "quote": "\"value\": 0.69,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "280",
+   "quote": "\"value\": 0.71,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/b5f74899349e1331.json",
+   "lines": "437",
+   "quote": "\"value\": 0.65,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/a775ad50ec1c4070.json",
+   "lines": "37",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "blocks/b5f74899349e1331.json",
+   "lines": "39",
+   "quote": "\"The question does not give its answer away: the judge found this does not hold\"",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "calibration/2026-10-09T12-25-25-449Z.json",
+   "lines": "6",
+   "quote": "\"note\": \"answers from the labels themselves: proves the wiring, measures nothing\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "83-84",
+   "quote": "Write the POSITIVE fixture (defect present) and the NEGATIVE fixture (the near-miss shape, one edit from the positive) **first**.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/test/run.mjs",
+   "lines": "13-15",
+   "quote": "Negatives are the point. A checker that flags everything passes every positive and is worthless. Each checker here carries at least one negative that is deliberately one edit away from its positive.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "92",
+   "quote": "A checker that flags everything passes every positive test and is worthless.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-cross-stage.mjs",
+   "lines": "302",
+   "quote": "Measured against the corpus, BOTH readings of it flag approved content:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/check-cross-stage.mjs",
+   "lines": "322-324",
+   "quote": "Neither is a defect a pre-review gate can assert. Shipping either reading would flag reviewed, approved work — worse than no checker.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "462",
+   "quote": "The same measure is deliberately NOT applied to the authored ladder.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/rules/questions-and-assessment.md",
+   "lines": "466-467",
+   "quote": "A threshold there would fail good content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/BEAD-REGISTER.json",
+   "lines": "72",
+   "quote": "This is a demonstrated false-negative against the course contract, not a supported test-input correction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/media/README.md",
+   "lines": "35",
+   "quote": "It first identifies a known word, three circles and the actual calibration audio. Only after this passes does it inspect each entire MP4 without receiving the expected narration, transcribe it, and report audio/visual issues.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "26-27",
+   "quote": "Method: one investigator per finding, then three adversarial refuters each, prompted to default to refuting when uncertain. 16 agents. Zero upheld.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/AGENT.md",
+   "lines": "88-90",
+   "quote": "Findings there are false positives until proven otherwise, one at a time, by reading the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/redteam-g3-round3-report-and-evidence.tar.gz",
+   "member": "RED_TEAM_ROUND3.md",
+   "lines": "262",
+   "quote": "| Misconception scanner is anti-calibrated on this corpus | 0/8 exact disclosed Tier-1 sentences detected; 0 Tier-1 hits across all 7 showcases; correct variation-first natural-selection sentence hard-fails; full raw-corpus hits are distractor/context false positives while disclosed defects are missed. | `reading-vdl` |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "22-23",
+   "quote": "a silent-reason detector was flagging a real design policy (\"question stems are never pre-read\") as a placeholder — six false positives on a shipped lesson, class now closed.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "234",
+   "quote": "The walk failures need an important qualifier: earlier comparisons traced many to outdated test selectors and layout assertions that also failed on clean staging.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "333",
+   "quote": "Gate against pure staging: the battery and the per-file test run each fail only where staging also fails, and tsc is clean.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "454",
+   "quote": "problem was found — before the fix it reported 4 of 20 clean strings as defects.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/07-SCORING-FEEDBACK-XP.md",
+   "lines": "97-101",
+   "quote": "This measure is deliberately NOT applied to the hint ladder itself — a `second_hint` legitimately shares up to 0.69–0.75 of content words with its neighbor, because saying the same missing piece more concretely necessarily reuses words, and a threshold there would fail good content.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g3-u2-l1.json",
+   "lines": "1038",
+   "quote": "Puck says the morpheme's real sound: 'sur' as 'sir' and 'de' as 'dee' (which the transcriber spells 'd'). Four takes running, the clip was refused.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "226",
+   "quote": "Six of the seven procedure names are missing, so a Grade-3 lesson that says 'Today we INFER' fails the ALL-CAPS rule on its own procedure name.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "film/v04/render/QA.md",
+   "lines": "9",
+   "quote": "Narration: 8/8 clips word-exact on no-hint transcription after tempo (diffs only",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "45-46",
+   "quote": "the only automated findings are a known weak-attack probe artifact (flagged and passed clips have indistinguishable leading silence).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/tts-clips/SKILL.md",
+   "lines": "141-142",
+   "quote": "The first draft of this law was per node and produced nine false positives on exactly that pairing; it was rewritten before wiring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/art-qa/SKILL.md",
+   "lines": "114-115",
+   "quote": "The check is trusted only if it discriminates — fires on the frames it should and stays quiet on the drawn children.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,55 @@
+{
+ "id": "read-a-simplified-text-against-its-original",
+ "title": "Read a simplified text against its original",
+ "statement": "Check a simplified text by reading it against its original, because a better reading-level score can hide a changed meaning, lost key terms and mechanical prose.",
+ "example": "Simplified versions read at a lower grade in 68 of 71 pairs, yet one sentence split re-paired ideas and changed a paragraph's meaning.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "wording",
+  "stimulus",
+  "generation"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In a readability trial, a prompted model simplified articles, and the simplified version had a lower reading grade than the original in 68 of 71 rows, for example 16.1 to 11.9 (`icloud-work/k_12_social_studies/ap_files/Articles Tracker.xlsx`, sheet 'ReadabilityExperiment-dev-inter'). Reading the pairs line by line found a sentence split that paired the wrong ideas and changed a paragraph's meaning (cell N13), and splits that gave the prose a predictable, mechanical pattern (cell N8). Review of another simplified run found curriculum terms replaced by everyday words and asked for them to stay (sheet 'APUSH Articles-readable-exp', cell M2).",
+ "against": "The simplified version was still preferred in most pairs (sheet 'ReadabilityExperiment-dev-inter', column K 'final preference': 23 'New' against 7 'Old', with 41 left blank), so on balance simplifying helped.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'ReadabilityExperiment-dev-inter', cell N13"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'ReadabilityExperiment-dev-inter', cell N8",
+   "quote": "Some of these changes give the flow an overly predictable pattern. That's not always a bad thing, but it can feel very mechanical and repetitive, which is not ideal.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/ap_files/Articles Tracker.xlsx",
+   "lines": "sheet 'APUSH Articles-readable-exp', cell M2"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE3.md",
+   "lines": "60",
+   "quote": "Part 4 is especially concrete: its specified “squared his shoulders” evidence becomes “stood up tall” on the first read and the later model source.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

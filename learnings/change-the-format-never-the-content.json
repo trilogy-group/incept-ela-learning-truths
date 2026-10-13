@@ -1,0 +1,68 @@
+{
+ "id": "change-the-format-never-the-content",
+ "title": "Change the format, never the content",
+ "statement": "When a delivery format or schema cannot carry approved content, change the format, the schema or the code that renders it, never the content's claims, sources or meaning.",
+ "example": "A plan for a 130-lesson course aborts any step that would change authored historical meaning to fit delivery.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "format"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A production plan for moving an authored 130-session AP history course into a delivery contract says a failed slice repairs the projector or contract, never the historical claim merely to satisfy presentation. Its gates abort any step that would change historical content, fabricate evidence, or change authored meaning, source binding or assessment candidates. The course's status file reports the contract binding all 130 lessons, with one projection passing deterministic and leakage checks. It widens the media rule of meeting a length limit by splitting material rather than cutting approved words.",
+ "against": "Gate 2 also lets the representative source object be repaired (\"Adjust: repair only the contract, projector, or representative source object and rerun the complete slice.\", PRODUCTION-HARDENING-PLAN.md line 92), and no case in these files shows content held unchanged under a failing projector.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "51",
+   "quote": "If it fails: F3 or F4; repair the projector or contract, never the historical claim merely to satisfy presentation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "87",
+   "quote": "Abort: the control would require changing historical content, fabricating evidence, or claiming an unavailable runtime.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "99",
+   "quote": "Abort: propagation changes authored historical meaning, source binding, assessment candidates, or sealed baseline provenance.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "92",
+   "quote": "Adjust: repair only the contract, projector, or representative source object and rerun the complete slice.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/FULL-COURSE-AUTHORING-STATUS.md",
+   "lines": "36-38",
+   "quote": "A transport-neutral production contract binds all 130 lessons to progressive reveal, response, correction, different-evidence retry, mastery, XP, spacing, anti-gaming, accessibility, and event requirements. One role-separated U1L1 projection passes deterministic and leakage checks.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

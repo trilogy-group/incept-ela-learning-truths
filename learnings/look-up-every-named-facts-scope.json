@@ -1,0 +1,86 @@
+{
+ "id": "look-up-every-named-facts-scope",
+ "title": "Look up every named fact's scope",
+ "statement": "Check every named fact in generated content against the unit, period and standard it must stay within with a lookup, since prompt warnings reduce out-of-scope facts but don't remove them.",
+ "example": "A prompt block listing date traps cut out-of-period examples by about 30-50%, but did not remove them.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "evaluation",
+  "generation"
+ ],
+ "stage": "settle",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A guide to passing the judge names a real but out-of-period example as the writer's most common failure across item types, and says a prompt block listing the common date traps reduces it by ~30-50% without eliminating it. On one topic the writer kept inserting such an event despite the chronology guardrail and never got above 0.78 in 22 tries. An adversarial report proposes a deterministic curriculum lookup that flags any named statute outside the period. Checking a named fact for truth alone is not enough: in one course's knowledge-schema tracker, a fact was removed as out of the course's time frame, significant events lost their mapping to a specific standard because they fit only the overall learning objective, and a true sentence was faulted for missing the heart of its topic.",
+ "against": "None found. The lookup is proposed, not tested, and the ~30-50% cut is the guide's own estimate. The tally comes from keywords in free-text comments, not a coded field, so the categories overlap and placement leads repeats only narrowly. The comments cluster in three units (44, 31 and 44), so the mix reflects a few people's habits.",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md",
+   "lines": "60-61",
+   "quote": "v80b's most common failure across cells is inserting a real but out-of-period example",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/from_cheater/SINGLE_IB_GRADE_SURVIVAL_GUIDE.md",
+   "lines": "62-64",
+   "quote": "An explicit \"high-risk pitfalls\" block in the prompt that enumerates the common date-traps reduces this by ~30-50%. Doesn't eliminate it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "62-63",
+   "quote": "Tried K=22 total across v3/v4/v5/v6 and never converged above 0.78.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-008-dbq-7doc-generic-attrib.md",
+   "lines": "64-65",
+   "quote": "v80b keeps inserting a date-pitfall event despite the chronology guardrail.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/exploits/EXPLOIT-004-saq-no-stimulus.md",
+   "lines": "129-131",
+   "quote": "A deterministic curriculum-API lookup that flags any named statute outside the period would catch the rest.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 1 Nodes', row 10, column M (Comment/Reason); column N reads 'Removed'",
+   "quote": "Out of time frame for this course",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 9 Nodes', rows 109-112, column M; column N reads 'Removed standard mapping'",
+   "quote": "Tricky, because these are significant events but they align with the overall learning objective rather than a specific standard",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "AP US History - Knowledge Schema - SME Tracker.xlsx",
+   "lines": "sheet 'Unit 6 Nodes', row 202, column M",
+   "quote": "This sentence is true but does not get to the heart of the divisions that occurred in the gilded age.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

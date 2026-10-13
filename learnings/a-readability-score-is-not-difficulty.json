@@ -1,0 +1,215 @@
+{
+ "id": "a-readability-score-is-not-difficulty",
+ "title": "A readability score is not difficulty",
+ "statement": "A readability score is not a text's difficulty: judge difficulty from the exact excerpt students read, by reading it as well as by formula.",
+ "group": "the-text",
+ "role": "context",
+ "facets": [
+  "stimulus",
+  "measurement",
+  "demand"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The staged assessment standard flags a readability score as a secondary proxy, not item difficulty itself (`grade3-reading/knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md`). The project's reading-science summary holds that text difficulty is a match among the text, the reader's knowledge and the task, so no single readability number can gate a text (`grade3-reading/knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd`). Its digest of a national reading study records that readability estimates disagree with one another and give no diagnostic information for individualizing instruction (`grade3-reading/knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd`; RAND Reading Study Group 2002, https://www.rand.org/pubs/monograph_reports/MR1465.html). Weigh the new knowledge the excerpt carries, the reader's knowledge and the task. Rate decoding and understanding separately, gate no text on one number, and never swap out the words that carry its knowledge to lower a score.",
+ "against": "The measure is a heuristic: the notes call the FK-to-band reading \"a judgment call, not a psychometric fact\" and say the bands are not to be reused as policy (the same file, lines 4 and 15). For that same book, a documented whole-book Lexile measure was kept as the better evidence of its band, ahead of the formula's own figures (`grade3-reading/artifacts/g5-course/pd-texts/winnie-the-pooh-onepager.md`, line 27).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/assessment-design.md",
+   "lines": "97-98",
+   "quote": "Lexile is a readability proxy, **not** item difficulty itself — flag it `[SECONDARY]`.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/applied/teaching-comprehension-insights-brainlift.qmd",
+   "lines": "48",
+   "quote": "Text difficulty is a match among text factors, reader knowledge, and task — no single readability number can gate a text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "705",
+   "quote": "different readability estimates don't agree with each other and provide no diagnostic information for individualizing instruction.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "18",
+   "quote": "measures lexically simpler than the primer (FK 3.5) because its sentences are short; its",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "19",
+   "quote": "step up is carried by conceptual load (five new knowledge ids, two taught terms) and by",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "20",
+   "quote": "denser stated/implied layering, which the FK heuristic does not see.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "44",
+   "quote": "REVISE cannot swap payload words out",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/00-difficulty-notes.md",
+   "lines": "46",
+   "quote": "FLAG -> SCAFFOLD: vocabulary_support pre-teach for \"erosion\" and \"gorge\" (pronunciation + meaning) before the reading dose",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-course/pd-texts/winnie-the-pooh-onepager.md",
+   "lines": "28",
+   "quote": "Chapter range FK 4.84 (ch VI) to",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "53",
+   "quote": "Choose texts for a coherent knowledge sequence and a genre balance that includes poetry, drama and more literary work, and judge complexity qualitatively as well as by Lexile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "107-108",
+   "quote": "For these readers, texts with high coherence consistently produced higher performance scores than texts with low coherence.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/SYNTHESIS.qmd",
+   "lines": "109-110",
+   "quote": "A coherent text base slightly enhanced recall, but actually lowered performance on tests that tapped the mental model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/teaching-reading-comprehension-brainlift.md",
+   "lines": "114-115",
+   "quote": "7. Text difficulty is a match among text factors, reader knowledge, and task — no single readability number can gate a text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/strategy-text-fit.md",
+   "lines": "13",
+   "quote": "but also the comprehension demands of the text how hard is it to understand this text these two things are not always aligned",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "58",
+   "quote": "Word-reading demand and comprehension demand are rated separately ('not always aligned'); a text can be easy to decode and hard to understand.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/G5-BAR.md",
+   "lines": "77-78",
+   "quote": "G5 complexity in this lesson is NOT long sentences. The FK 4.23 is deliberate — the text reads easy so the *task* can be hard.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/QUALITY-UPDATE-2026-07.md",
+   "lines": "18-19",
+   "quote": "poetry deliberately excluded since Lexile is unreliable for verse",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/LENGTH-RATIONALE.md",
+   "lines": "15",
+   "quote": "| U6–U7 | ~600–750 | a story needs room; poems exempt |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/QUALITY-UPDATE-2026-07.md",
+   "lines": "39-40",
+   "quote": "The A3/Lexile figures use InceptBench's wordfreq estimator, which runs ~85L lower than an FK-based proxy; neither is real MetaMetrics Lexile.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/showcase-lessons/docs/QUALITY-UPDATE-2026-07.md",
+   "lines": "40-41",
+   "quote": "Treat as directional, confirm with a MetaMetrics tool before any external Lexile claim.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D8-text-quality.md",
+   "lines": "30",
+   "quote": "Word-reading demand and comprehension demand are rated separately ('not always aligned'); a text can be easy to decode and hard to understand",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/validation/full-course-validation.json",
+   "lines": "215",
+   "quote": "Passage cleared machine rejection but carries specialist flags: FK=2.83 (target 3.5-6.5)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/reading-science/DIGEST-rand-mr1465-2002.qmd",
+   "lines": "329",
+   "quote": "texts are not difficult or easy in and of themselves, but they become difficult or easy at the interface with readers and the purpose of the activity",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g5-reading/review/evidence/case-for-review.md",
+   "lines": "127",
+   "quote": "No official Lexile-certified build target is licensed, and text difficulty depends on reader, text, and task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/map-proxy-assessment/validity/01_PSYCHOMETRIC_DESIGN.md",
+   "lines": "279",
+   "quote": "The uncertainty in b_provisional is estimated at σ ≈ 0.5–1.0 logits (5–10 RIT) based on the typical discrepancy between Lexile-derived difficulty estimates and empirically calibrated Rasch b values [AUTHORING-DECISION; DERIVED from literature on Lexile→IRT mapping].",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "RAND Reading Study Group 2002",
+   "url": "https://www.rand.org/pubs/monograph_reports/MR1465.html"
+  },
+  {
+   "ref": "What Works Clearinghouse video, Select texts purposefully to support comprehension development",
+   "url": "https://www.youtube.com/watch?v=V4atucROaSQ"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

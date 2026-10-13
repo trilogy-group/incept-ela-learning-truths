@@ -1,0 +1,135 @@
+{
+ "id": "an-inference-is-never-written-out",
+ "title": "An inference is never written out",
+ "statement": "An inference question's answer must be supported by the text but not stated in it, because a stated conclusion only tests finding.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "demand",
+  "key",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading curriculum's inference lesson design ends with a soundness sweep that checks both answers are supported by the text but not stated: neither reason is written out, and both are inferred. Its quick finding checks are the contrast case, where the answer is stated in the sentence just read. A stated conclusion is a leak unless finding the answer is the skill being tested.",
+ "against": "The probe covered 18 items in three lessons of one course, and the project treats its reading leak check as a build-time lint, not a deep guarantee (`grade3-reading/knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "354 (textutil text)",
+   "quote": "Both answers supported by the text, not stated.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "354 (textutil text)",
+   "quote": "Neither reason is written out; both are inferred.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "5. Curriculum/Instruction/3.1 - Fantasy Classics - Lesson Designs/3.1 - 2. Aladdin and the Wonderful Lamp, Part 2 (FICTION, INFER) — v3 (new INFER design).docx",
+   "lines": "89 (textutil text)",
+   "quote": "Pure literal FIND: the answer is stated in the sentence just read.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0243-generator-quality-schema-cluster-2026-07.qmd",
+   "lines": "26-27",
+   "quote": "in reading, finding the answer in the passage IS the skill, so the usual history-style \"answer is in the source\" leak check is deliberately skipped.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "75-76",
+   "quote": "stating the trait/conclusion itself is a disguised-FIND violation).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "84",
+   "quote": "| **Total** | **18** | **16** | **1** | **1** |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "469",
+   "quote": "Do not state the lesson's takeaway in the text",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "472",
+   "quote": "The passage must let the child infer the point. Do not write the moral into the story.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/content-and-copy.md",
+   "lines": "217-218",
+   "quote": "**Rule.** The passage must let the child infer the point. Do not write the moral into the story.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "336-339",
+   "quote": "the review warns against choosing texts that are too explicit, because \"very explicit texts provide few opportunities for inferences to be made\", which is an argument against a passage that states why anybody did anything.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-08/all-grades-source-audit/GRADE3.md",
+   "lines": "52",
+   "quote": "The original Design 1 explicitly calls betrayal/betrayed an encapsulating word absent from the text and reserved for the independent task. This change makes the interpretation appear directly in the passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "workspace/comms/from_plan/2026-08-31T182831Z-work-queue.md",
+   "lines": "57-59",
+   "quote": "A you-do explicitness table per lesson: item id, question text, verdict (TEXT-STATES-IT-EXPLICITLY / REQUIRES-INFERENCE), with the source passage line quoted for every EXPLICIT verdict",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp-depth-6h/INFERENCE-INTEGRITY-L5-L7.md",
+   "lines": "52",
+   "quote": "the item explicitly frames itself as an inference (\"one thing the text does not say straight out\") and instructs the child to use the exact two words (\"clever,\" \"brave\") that the very next sentence of the pinned passage states outright.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "273",
+   "quote": "Both answers are stated outright in the paragraph above, which is appropriate for a Check but means it is retrieval, so the lesson needs something beyond it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0231-pp-depth-6h-doc-diffs.qmd",
+   "lines": "112-113",
+   "quote": "sequence is currently correct, flagged only because a future reorder of p21a ahead of p16b would create a violation.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

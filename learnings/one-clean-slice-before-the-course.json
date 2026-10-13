@@ -1,0 +1,137 @@
+{
+ "id": "one-clean-slice-before-the-course",
+ "title": "One clean slice before the course",
+ "statement": "Build and fully review one complete, representative slice of lessons, by hand if need be, before automating or making the rest, and make it the template.",
+ "example": "The plan allowed 48 hours for one audit-clean slice of 6-7 lessons.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The reading project's delivery plan for a Grade 5 course committed to 48 hours for one audit-clean vertical slice of 6-7 lessons before the rest of the course (`grade3-reading/knowledge_bot/HOTBUCKET.md`, the 2026-07-15 delivery-control entry). Its control rule replaces every earlier estimate at that gate, and a missed gate changes the date, never the quality bar (the same entry). The slice goes through every check before the rest is made.",
+ "against": "This is a plan's commitment; nothing cited here records the slice gate being met or missed. in an AP generator project the bar moved instead: set on 2026-04-26, softened between 04-27 and 04-28, and repinned on 2026-06-08 (`grade3-reading/knowledge_bot/knowledge/kb-0063-aptraining-prior-exploration.qmd`). A later run found counter-evidence (`grade3-reading/artifacts/judgment-corpus/distilled-src/09-PIPELINE-OPS.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "156",
+   "quote": "48 hours for one audit-clean 6-7 lesson vertical slice",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/HOTBUCKET.md",
+   "lines": "164-166",
+   "quote": "Replace all priors at the 48-hour vertical-slice gate. A missed gate changes the date, never the quality bar.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0076-coe-catchup-2026-06-30.qmd",
+   "lines": "16",
+   "quote": "**Handcraft first, automate later** — manually craft the first 1–2 courses to set the quality bars/guardrails before the full automated pipeline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0251-g9-prep-pack-index-manifests-leadership-playbook.qmd",
+   "lines": "596-597",
+   "quote": "the template lesson is not a planning document — it is the first fully-built, fully-reviewed lesson",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0180-lesson-structure-procedure-rulings.qmd",
+   "lines": "88-89",
+   "quote": "The exact FIND/INFER rail wording was ruled multiple times and each later ruling supersedes the one before it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0129-g5-delivery-sequence-and-eta-calibration.qmd",
+   "lines": "126-127",
+   "quote": "Choose a representative unit, not the easiest one.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0129-g5-delivery-sequence-and-eta-calibration.qmd",
+   "lines": "47",
+   "quote": "A missed gate changes the date, never the gate.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/09-PIPELINE-OPS.md",
+   "lines": "25-29",
+   "quote": "lessons are produced and reviewed in batches of about three, each batch demonstrating varied skill instruction, knowledge compounding, and some scaffold fading, with what is new in the batch flagged for review. Never generate a whole course off one approved lesson — a single approval only licenses the next small batch, not the run.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "5592",
+   "quote": "I’d first make one short storyboard with a sample voiceover script.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/CASE-FOR-APPROVAL.md",
+   "lines": "284-285",
+   "quote": "which is what makes 37 more lessons a production run rather than 37 more hand audits.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/judgment-corpus/distilled-src/09-PIPELINE-OPS.md",
+   "lines": "28-29",
+   "quote": "Never generate a whole course off one approved lesson — a single approval only licenses the next small batch, not the run.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/meeting-notes/ELA - CNU + Academics - 2026_10_01 20_30 IST - Notes by Gemini.md",
+   "lines": "152",
+   "quote": "I think at times you know what you think is going to work as good procedure when it's actually actioned you think actually that's not doing what I want it to do.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "116-117",
+   "quote": "then an **independent zero-yellow red-team** ran: **PASS, all-green, on the FIRST try**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g6-science/brainlifts/v0.1.md",
+   "lines": "44",
+   "quote": "cloning an unreviewed template would compound any flaw across two courses.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/PRODUCTION-HARDENING-PLAN.md",
+   "lines": "13",
+   "quote": "Project one representative vertical slice before applying any mechanical schema migration across the corpus.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

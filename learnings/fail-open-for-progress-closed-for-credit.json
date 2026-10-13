@@ -1,0 +1,64 @@
+{
+ "id": "fail-open-for-progress-closed-for-credit",
+ "title": "Fail open for progress, closed for credit",
+ "statement": "When lesson machinery fails, let the learner carry on rather than trap them, but credit only what they did, by a typed answer or fallback check, never on trust.",
+ "group": "checking-answers",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "marking",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "contested",
+ "detail": "The reference player spec that a Grade 5 reading lesson copied makes every failure release the learner: a render that throws, a missing clip, a missing image or a downed scorer must never wall the child in. The same spec accepts a spoken turn on trust when no microphone or scorer is available. An audit of the build cites a course rule against honour-system theatre, and the build instead offers the same step with a typed answer box when no speech recogniser is available and falls back silently to a local judge when the remote scorer fails. An item released after repeated wrong answers is marked as practised with help, never tallied as solo.",
+ "against": "The reference spec credits on trust: \"No mic/STT available → honour-system accept\" (`grade3-reading/artifacts/u4l2-build/BEAT-SPEC.md`, line 125) and \"Degrade-open: scorer down → honour-system accept.\" (the same file, line 410). The fallback check is weaker than the remote one: a gate's floor \"can be bridged by an answer that names one source plus the other side's content word\" (`grade3-reading/artifacts/g5-deploy/BUILD-NOTES.md`, lines 788-789).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "131-133",
+   "quote": "a render that throws, a missing clip, a 404'd image or a downed scorer must never wall the child in — release the beat, silent-skip the clip, hide the figure, thank the speaker. A child is never left without the question or the way out.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "87-88",
+   "quote": "otherwise the SAME beat with a clearly labeled type-your-answer input. Talk-or-write both open on every free response.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "316-317",
+   "quote": "Any failure (timeout 60 s, non-200, bad shape, static serving) degrades SILENTLY to the local judge, label unchanged.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "186",
+   "quote": "(no honor-system theater)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/BUILD-NOTES.md",
+   "lines": "95",
+   "quote": "marks the item \"practiced with help\" (never tallied as solo)",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

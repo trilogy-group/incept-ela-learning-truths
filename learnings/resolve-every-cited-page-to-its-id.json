@@ -1,0 +1,55 @@
+{
+ "id": "resolve-every-cited-page-to-its-id",
+ "title": "Resolve every cited page to its id",
+ "statement": "Before acting on feedback, resolve each page it cites to the page's stable id, from its link or by matching its on-screen text, since delivery surfaces number pages differently.",
+ "example": "An old link to page 5 opens the page whose id is p4, because the count includes an opening video.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A reading course delivers each lesson on two surfaces that name the same page differently. On one, a page's address is its authored id, but old links that give a page number still resolve by position, so `?page=5` lands on `/p4`, the fifth page counting the opening video (`grade3-reading/.claude/skills/reviewer-round/SKILL.md`, lines 25-29); the other prepends a welcome page and one page per unit film on a unit's first lesson, so its 'page 3' is often the lesson's first page (lines 30-36). The course's procedure for taking in feedback therefore resolves every cited link or screenshot to the lesson and page id before registering it, matches a screenshot's on-screen text into the lesson's data when there is no link, and records both forms and which surface the feedback came from (lines 19-23 and 35-44).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "35-37",
+   "quote": "the book's \"page 3\" is often the lesson's p0 — NEVER count dots or \"page N\" words from a reviewer; resolve to the id in the URL bar or, for a screenshot with no URL, match the on-screen text into the lesson JSON",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "26-29",
+   "quote": "Legacy ?page=<n> still resolves, by POSITION, into the path form (verified live: ?page=5 lands on /p4, the 5th page counting the video opener p0) — so a ?page=N link in old feedback is a position, not an id.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "39-40",
+   "quote": "A reviewer phrase like \"the vocab page\" or \"page 5 of 13\" is AMBIGUOUS across surfaces",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/reviewer-round/SKILL.md",
+   "lines": "22-23",
+   "quote": "Resolve each cited link/screenshot to `lessonId + page id` before registering, and record BOTH forms in the register row",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

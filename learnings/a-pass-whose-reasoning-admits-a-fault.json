@@ -1,0 +1,109 @@
+{
+ "id": "a-pass-whose-reasoning-admits-a-fault",
+ "title": "A pass whose reasoning admits a fault",
+ "statement": "Scan a judge's reasoning in code for a fault it admits and then excuses on grounds outside the rubric, and overturn or re-check that pass.",
+ "example": "The detector now fires only on an un-negated admission with a concession such as but or good enough within about 80 characters.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": "judge",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An AP evaluator's guards catch a judge that admits a distractor is implausible but invents a non-rubric excuse to score it 1.0 anyway, and one that admits a document set addresses a different focus than the standard requires yet passes it as the same general subject or period. Its first distractor guard fired on any mention of an admission word, even in endorsing or negated reasoning, and those endorsing mentions were the main false-positive class that made a 0.99 regression gate flake; it now needs an un-negated admission with a concession cue nearby. Never let a judge's reasoning and verdict disagree in the item's favour, and match the admission and the excuse together rather than a bare keyword.",
+ "against": "Phrase lists need careful exclusions: broader cues such as causal or mechanism fire far too often on factually correct explanations, so its admission keywords are kept narrow. The admission phrases are kept narrow on purpose, because broader cues such as \"causal\" or \"mechanism\" fired far too often on correct explanations that merely mention causation (`icloud-work/inceptbench-main/src/inceptbench/evaluators/guards.py`, lines 671-674).",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "485-487",
+   "quote": "The evaluator may internally admit a distractor is implausible (\"quite implausible\", \"somewhat silly\") but invent a non-rubric excuse to score 1.0 anyway.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "2157-2161",
+   "quote": "The evaluator may admit that the DBQ prompt and documents address a different specific sub-topic or analytical focus than the standard requires (e.g., the standard asks for gender roles but the DBQ covers religion, labor, or sovereignty), yet rationalize a pass by claiming it falls within the \"same general subject domain\" or \"same broad historical period.\"",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ce96a3f",
+   "lines": "3-6",
+   "quote": "The distractor-rationalization guard fired on any distractor_quality=1.0 metric whose reasoning merely MENTIONED an admission keyword (implausible/silly/obviously-wrong), even in an endorsing or negated frame (\"the distractors are plausible; none are implausible\").",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ce96a3f",
+   "lines": "6-8",
+   "quote": "Those endorsing mentions were the dominant golden false-positive class that made the 0.99 golden-regression gate flake on PR #1031.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "ce96a3f",
+   "lines": "10-12",
+   "quote": "Tighten the guard to fire only on the genuine self-rationalization shape: an un-negated admission keyword WITH a concession cue (but/however/still serviceable/good enough/...) within ~80 chars on either side.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/evaluators/guards.py",
+   "lines": "699-700",
+   "quote": "Admission keywords are kept narrow on purpose: broader cues like \"causal\" or \"mechanism\" trigger far too often on factually-correct",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluatorML/.agent/memory/analysis/2026-05-25-ib-criteria-pack-audit.md",
+   "lines": "65",
+   "quote": "- B3: base prompt anti-contradiction self-heal can flip failures to pass if reasoning says correct.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/prompts/base.py",
+   "lines": "66",
+   "quote": "3. Inconsistency between issues and scores is an evaluation ERROR",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/ap_benchmark/core/models.py",
+   "lines": "233",
+   "quote": "Validate self-consistency: every 0.0 has issues, every issue has 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/evaluators/guards.py",
+   "lines": "489-491",
+   "quote": "The evaluator may internally admit a distractor is implausible (\"quite implausible\", \"somewhat silly\") but invent a non-rubric excuse to score 1.0 anyway.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_1004.py",
+   "lines": "13-15",
+   "quote": "added a deterministic guard to catch evaluator self-rationalization when it admits a sub-topic mismatch but dismisses it as \"same general subject domain\"",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

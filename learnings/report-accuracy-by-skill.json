@@ -1,0 +1,213 @@
+{
+ "id": "report-accuracy-by-skill",
+ "title": "Report accuracy by skill",
+ "statement": "Report how students do skill by skill, on items that need the text.",
+ "example": "An average over easy items hid three skills below 50%.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "measurement",
+  "evidence-of-learning"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "On the course the reading project set out to improve, students' accuracy on its three weakest skills was 39%, 42% and\n48% (compare and contrast, cause and effect, sequence)\n(`grade3-reading/artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md`), while the usual 83% figure was an average\nover the course's easy items, the wrong instrument (`grade3-reading/NORTH_STAR.md`).",
+ "against": "the true baseline is\nunknown, and nothing here re-measured it (the same file).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/GOAL_grade3_hootl_convergence_2026_06_15.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "NORTH_STAR.md"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/team-direction-2026-09-09/research/01-brainlift-doctrine-and-our-spovs.md",
+   "lines": "72",
+   "quote": "the 39–48% sub-skill numbers are measured only on students who *did* complete items, so the 12.5% completion floor is a worse problem than the skill gap.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "164 (textutil plain-text output)",
+   "quote": "inference was 5× undercounted by the heuristic (actually 9.7%, not 2%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/op-taxonomy-calibration-2026-07-10/r2-feedback-docx-converted.txt",
+   "lines": "51",
+   "quote": "Tagging still does not match what items assess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0244-g3-proposal-bakeoff-seven-proposals-2026-06-15.qmd",
+   "lines": "78-79",
+   "quote": "Discovered the **grade-band inversion** (at-grade students are the WORST performers, 73.0%/16.6% XP, vs below-grade 83.2%/44.8%)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0092-student-ready-criticism-framework-2026-07-09.qmd",
+   "lines": "25-27",
+   "quote": "Include below-grade readers, English learners, keyboard-only users, screen-reader users, frustrated students, test-wise students, and students willing to click through or guess.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0221-early-planning-history-and-sep22-snapshots.qmd",
+   "lines": "74-75",
+   "quote": "re-measure the 83% baseline on hard/near-neighbour items, not the incumbent's easy-distractor items;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0217-team-direction-2026-09-09.qmd",
+   "lines": "41",
+   "quote": "the wrong-instrument correction of the 83% baseline.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "343",
+   "quote": "The output of a diagnostic should be a per-KC probability of mastery (or a categorical estimate: \"likely mastered / uncertain / likely not mastered\"), not an aggregate score.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "343",
+   "quote": "An unassessed KC is not the same as a failed KC, and conflating the two is one of the most common errors in diagnostic systems.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "158",
+   "quote": "**Look at which dimensions failed, not just whether it passed.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/EXECUTIVE_SUMMARY.md",
+   "lines": "296",
+   "quote": "- **Grade 6 MSQ (20 questions):** 0% pass rate - all failing",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/feedback_shadow_course_checker.md",
+   "lines": "41",
+   "quote": "6. **Cell-coverage drift.** Is one cell sucking attention away from cells closer to target? Worst-cell focus is the mission; aggregate is a side effect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/STATISTICAL_ANALYSIS.md",
+   "lines": "239",
+   "quote": "| Feb 22 | 91.7% | APGOV-only (biased) |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/apush/source/sealed-authoring/authoring/apush/canonical/unit2/assessment-set.json",
+   "lines": "67",
+   "quote": "Report performance by item and historical function. Do not convert this local sample into an AP score prediction.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/helpers/shadow/CHANGELOG.md",
+   "lines": "20",
+   "quote": "- **Quill Q1 (13:30Z):** APUSH/SAQ vs APWH/SAQ +23pp factual_accuracy gap, clustered in APUSH unit-6 (Gilded Age) + unit-8 (Cold War) named-entity hallucinations",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/v2_final_package/WHY_V2_WINS.md",
+   "lines": "12",
+   "quote": "**The weakness is text structure** — compare/contrast 39%, cause/effect 42%, sequence 48% (vs 83% blended).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/approval_clean.md",
+   "lines": "350",
+   "quote": "- Blended: 83% (heavily weighted by easier item types)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0058-eval-reading-explorers-g3-allqtypes.qmd",
+   "lines": "38",
+   "quote": "**ZERO CCSS standards** across all 745 items (RL/RI/L.3.x absent from every rawXml + metadata). Format coverage excellent (all 6 MAP formats), but no alignment ⇒ can't map to MAP skills, can't feed CASE, blocks Level-2.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback3/WF - Assessment  Feedback Brain - 260624-200115.md",
+   "lines": "343",
+   "quote": "A score of \"65% on Unit 3\" is useless for personalisation.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/ML_TRAINING_INSIGHTS_REPORT.md",
+   "lines": "434",
+   "quote": "Grade 7 passes at only 7.6% vs Grade 4 at 41%.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "46",
+   "quote": "Report by rule and family as well as overall, including high-impact cases such as leaked independent-practice answers and adversarial content.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_apush_only_eval.md",
+   "lines": "26",
+   "quote": "3. Save APUSH and APWH summaries separately. Don't compute \"aggregate\" pass rate — it's misleading.",
+   "verified": "script"
+  },
+  {
+   "source": "aptraining-local",
+   "path": "parallel-ideas-lab/variant-calibration-lab/LAB_PIPELINE_GUIDE.md",
+   "lines": "127",
+   "quote": "- **SAQ silent regression -4.5pp** — nobody was focused on this; warrants bisect of deploys 0506c1fd→e7e1d980",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/UNIT1_TO_ALL_UNITS_TRANSFER_PLAN.md",
+   "lines": "118",
+   "quote": "- Use the same stop rule: if any type drops below 90% in the sample, stop and repair that type before broadening.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/experiments/production_all_units/RUNNING_SUMMARY.md",
+   "lines": "2054",
+   "quote": "This meets the raw 95% slice threshold but fails the methodology/type-floor gate because MCQ_SET is 8/9 = 88.89%.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-2-round-1",
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-12"
+}

@@ -1,0 +1,78 @@
+{
+ "id": "distinct-ai-roles-one-moderator",
+ "title": "Distinct AI roles, one moderator",
+ "statement": "Give each AI voice in a multi-voice discussion a distinct role and put one moderator in charge of turn order, since extra voices helped only once their roles differed.",
+ "example": "Removing the AI classmates from one moderated classroom system cut student participation by a reported 26.5% and 45.2% on two engagement measures.",
+ "group": "how-people-learn",
+ "role": "criterion",
+ "facets": [
+  "format",
+  "practice"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "research",
+  "g9"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "Notes on a proposed discussion with several AI voices found that distinct agent roles beat a single generic agent or an undifferentiated panel: earlier multi-agent work found more agents helped only once roles differed, and a 2025 small RCT again found role identity, not agent count, drove the effect (`g9/library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md`, lines 15-23). In an LLM classroom of teacher, assistant and classmate agents tested online with 400+ students, removing the classmates cut participation by a reported 26.5% and 45.2% on two engagement metrics, in a system that also has a moderator governing turn order so classmates don't crowd the student out (lines 34-39). The project's synthesis concluded that gains come from distinct roles plus a moderator, not from more voices (`g9/library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/IDEA-SYNTHESIS.md`, line 16).",
+ "against": "The moderator half is a design inference: the ablation removed the classmate agents, not the moderator, and the notes tag the result as a field study and ablation in a preprint, not independently replicated (`g9/library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md`, lines 36-39). No study tests a live, voice-based debate among several AI voices about literature with learners aged 13 to 18 directly (the same file, line 146).",
+ "evidence": [
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md",
+   "lines": "15",
+   "quote": "**1. Distinct agent *roles* beat a single generic agent or an undifferentiated panel.**",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md",
+   "lines": "20-21",
+   "quote": "A 2025 ACM study retesting this with modern conversational agents again finds role identity, not agent count, drives the effect **(small RCT)**.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md",
+   "lines": "21-23",
+   "quote": "Earlier multi-agent work (\"Togetherness,\" 2014) found *more* agents helped only once roles differed — extra undifferentiated voices did not reproduce the gain **(small observational study)**.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/idea-02-ai-classmates-multi-agent-debate.md",
+   "lines": "36-38",
+   "quote": "Removing the classmate agents cut student participation substantially (reported 26.5%/45.2% drops on two engagement metrics) — but the system also has an explicit \"class control mechanism\" (a moderator governing turn order) so classmates don't crowd the student out",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/collections/g3-repo-initiative-g9-othello-2026-10-01/research/IDEA-SYNTHESIS.md",
+   "lines": "16",
+   "quote": "Gains come from **distinct roles plus a moderator**, not from more voices",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Togetherness: Multiple Pedagogical Conversational Agents (2014)",
+   "url": "https://link.springer.com/chapter/10.1007/978-3-319-07221-0_14"
+  },
+  {
+   "ref": "Do Pedagogical Agent Roles Matter? (2025)",
+   "url": "https://doi.org/10.1145/3806774.3827972"
+  },
+  {
+   "ref": "Zhang et al. 2025, SimClass",
+   "url": "https://arxiv.org/abs/2406.19226"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

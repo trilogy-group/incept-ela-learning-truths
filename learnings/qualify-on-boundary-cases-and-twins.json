@@ -1,0 +1,71 @@
+{
+ "id": "qualify-on-boundary-cases-and-twins",
+ "title": "Qualify on boundary cases and twins",
+ "statement": "Qualify anyone whose labels will set a standard on boundary cases and their opposite-value twins, not only clear cases, since clear-case accuracy can hide shared boundary failures.",
+ "example": "Two candidates scored 9/10 on clear positives and nearest neighbours but 3/10 and 2/10 on boundary cases and 3/10 each on opposite-value cases.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "review",
+  "evaluation",
+  "measurement"
+ ],
+ "stage": "review",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A blind, synthetic 60-item qualification round tested whether two candidates could reproduce a frozen scheme for coding teaching principles into typed fields. Both scored 9/10 on positives and nearest neighbours and 10/10 on missingness and scope gaps, with structurally valid submissions, but 3/10 and 2/10 on boundary cases and 3/10 each on reciprocal cases, the same effect with the opposite value. Fifteen of their sixteen shared failures had identical failed field signatures, which the round read as a gap in protocol and competence rather than random noise.",
+ "against": "The round says it \"does not establish that candidate.5 is incorrect, that the broader typed representation is invalid, or that any pedagogical intervention is effective\" (grade3-reading/bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md lines 116-118), and it qualified coders of a rule schema, not markers of student work.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "36",
+   "quote": "| Positive | 9/10 | 9/10 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "37",
+   "quote": "| Boundary | 3/10 | 2/10 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "38",
+   "quote": "| Reciprocal | 3/10 | 3/10 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "43-46",
+   "quote": "This is not a general schema or routing collapse. Missingness and scope-gap handling were perfect, positives and nearest neighbors were nearly perfect, and submissions were structurally valid. The discriminating failure is boundary/reciprocal reasoning, concentrated in typed force and value encoding:",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/g3-boundary-reciprocal-mismatch-repair-plan.md",
+   "lines": "54-55",
+   "quote": "Fifteen of the sixteen shared failures have identical failed field signatures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/.agent/memory/G3_CANDIDATE5_ADDENDUM_ROUND_2026-07-16.md",
+   "lines": "57-58",
+   "quote": "The correlated error profile points to a protocol/competence boundary, not random reviewer noise.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

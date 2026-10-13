@@ -1,0 +1,55 @@
+{
+ "id": "cut-hedges-keep-needed-quantifiers",
+ "title": "Cut hedges, keep needed quantifiers",
+ "statement": "Cut vague hedges such as 'maybe' from teaching text but keep the precise quantifiers accuracy needs, such as 'most' or 'some', checking each against the facts.",
+ "group": "the-text",
+ "role": "criterion",
+ "facets": [
+  "wording",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The grade-7 science script rules separate two kinds of qualifier: vague epistemic hedges such as 'maybe', 'might', 'sort of' and 'kind of' signal uncertainty and add no information, so they are removed, while precise scope quantifiers such as 'most', 'some', 'about a tenth' and 'nearly all' stay wherever accuracy requires them (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md`, lines 180-186). Removing a needed quantifier creates a false absolute, and the test given is to delete the word: if the claim becomes false or over-general, the word was required; if only a note of doubt goes, it was a hedge (lines 188-191). In one fix, 'A few, like bacteria, are a single cell' became 'Some, like bacteria, are a single cell', since single-celled life is abundant, not rare, and a sweep of every unit for similar slips found no others needing correction (`grade3-reading/ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md`, lines 445-449).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "182-185",
+   "quote": "REMOVE **vague epistemic hedges** (\"maybe\", \"might\", \"sort of\", \"probably\", \"a little\", \"kind of\") — they signal uncertainty and add no information; KEEP **precise scope quantifiers** (\"most\", \"some\", \"roughly\", \"about a tenth\", \"nearly all\", \"almost every\") that are factually REQUIRED for accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "188-189",
+   "quote": "removing a precise quantifier creates a **false absolute** and fails `factual_accuracy`",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-generation-v0.1.md",
+   "lines": "190-191",
+   "quote": "delete the word — if the claim becomes false or over-general, it was a required quantifier (keep it); if nothing changes but a note of doubt, it was a hedge (cut it).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "445-447",
+   "quote": "`g7-cells-01` \"A few, like bacteria, are a single cell\" → **\"Some, like bacteria, are a single cell\"** (single-celled life is abundant, not rare).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

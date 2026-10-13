@@ -1,0 +1,269 @@
+{
+ "id": "build-tested-texts-from-particulars",
+ "title": "Build tested texts from particulars",
+ "statement": "When questions test a text, build it from particulars that only it supplies and no student of the topic could already know, with every claim about the world still true.",
+ "example": "Multiple-choice questions on passages that restated well-documented curriculum facts were answered without the passage 99.5% of the time.",
+ "group": "the-text",
+ "role": "method",
+ "facets": [
+  "stimulus",
+  "integrity"
+ ],
+ "stage": "write",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "Blind-solving a generated reading bank found multiple-choice questions leaking at 99.5% and traced it to passages that described well-documented curriculum facts, so asking what a passage says about something asked what any educated reader already knew from school (`grade3-reading/artifacts/LANE2_GENERATOR.md`). The fix it set was passages about specific events, character decisions, arguments or surprising claims that cannot be known without reading that passage. A later generation run still saw multiple-choice items leak through ordinary school knowledge (`grade3-reading/artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md`). Such particulars include a specific event, decision, stance, reversal or causal chain, or invented people, places and quantities. When questions leak, change the text rather than the questions or distractors, because a text that restates widely known facts can be answered from general knowledge.",
+ "against": "Learning texts are the exception: an external review faulted a course for keeping its passages from overlapping taught topics, so knowledge could not pay off, and asked for cold passages only in the test (`grade3-reading/artifacts/g5_build_2026_07_02/feedback_clean.md`). Making a passage needed does not make it true: the generator's guide says the anti-leak rule \"does NOT mean the passage's own facts are sourced or true\" (`grade3-reading/artifacts/alpha-read-packager/generator/GENERATOR.md`, line 160). The Grade 5 passage generator also blocks curriculum topics such as the water cycle for leak risk (`grade3-reading/artifacts/alpha-read-packager/generator/g5/PASSAGE_GENERATOR.md`, lines 23-25), which a course built to teach those topics cannot do. Familiar topics are wanted in teaching material: the course's guidance for science and social-studies content holds that topics taught in an earlier grade are always fair game for re-encounter (`grade3-reading/knowledge_bot/knowledge/kb-0137-science-social-studies-reencounter-guidance.qmd`, line 29), so the rule is for questions that test reading, not for what is taught. the rule is for texts a test rests on: texts on one topic are meant to build knowledge during learning, so one project's reconciliation was cold texts at the gate and test and topic-coherent ones during learning (`grade3-reading/knowledge_bot/knowledge/kb-0074-g3-reviewer-feedback-distilled-for-g5-2026-06-30.qmd`, lines 42-43).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "15",
+   "quote": "| MCQ | 200 | **99.5%** | 7 of 1,473 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "21",
+   "quote": "**Root cause: passages describe well-documented curriculum facts.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "29",
+   "quote": "The generator asks \"what does the passage say about X?\" — but X is something any educated reader already knows from school.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE2_GENERATOR.md",
+   "lines": "33",
+   "quote": "passages must describe specific events, character decisions, author arguments, or surprising/counterintuitive claims that are genuinely unknowable without reading this specific passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-expansion-session-2026-07-08-codex/QUESTION_GENERATION_RETROSPECTIVE_2026-07-08.md",
+   "lines": "269",
+   "quote": "MCQ leaked through ordinary school knowledge",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "43",
+   "quote": "by design ensures assessment passages never overlap taught topics",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5_build_2026_07_02/feedback_clean.md",
+   "lines": "45",
+   "quote": "reserve cold, non-overlapping passages for the test only, where that property belongs.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/PASSAGE_DESIGN_RULES.md",
+   "lines": "5",
+   "quote": "The fix is not to write harder distractors; it is to write passages that carry information the student cannot have encountered before opening this specific text.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/PASSAGE_DESIGN_RULES.md",
+   "lines": "11",
+   "quote": "If the answer is YES for any item, the passage is leaking. Do not patch the item — fix the passage first.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "45-46",
+   "quote": "invented entities/quantities/relations, story-specific event order rather than canonical process order, passage-defined categories rather than natural-kind categories",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/alpha-read-packager/generator/g5/GATE1_BLIND_SOLVE_REPORT.md",
+   "lines": "17",
+   "quote": "| sequence | 185 | **58.4%** | 3.0% | **~19×** | adjacent-pair order 85.2% |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/demo-unit-2026-07-10/02-factuality-claims.md",
+   "lines": "100-101",
+   "quote": "It carries the true cargo; it asserts nothing about the real world.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd",
+   "lines": "37-38",
+   "quote": "regeneration was abandoned — the root cause is passage design (encyclopedic passages), not item quality.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "50-52",
+   "quote": "4 encyclopedic passage types to **avoid**: curriculum-fact, headline-figure, biography, generic-process … 6 cold passage types to **use**: decision-reaction, argument-stance, obscure-consequence, surprising-reversal, specific-comparison, causal-chain … The passage-necessity test: \"Could a student who studied this topic but did NOT read this passage answer correctly?\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/generator/passage_blind_verdicts.json",
+   "lines": "90",
+   "quote": "General-knowledge leak (trophic cascade): the item mirrors the well-known Yellowstone wolf",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0236-g5-package-build-facts-and-g3-fixlist-apply-2026-07-02.qmd",
+   "lines": "119-120",
+   "quote": "cold-solvable ~0.8 because camel adaptations are world-famous general knowledge; distractor surgery can't close it, needs full content replacement",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "302",
+   "quote": "argument-atom slice on famous primary sources leaked **~98.6%** (66/69 blind-solvable",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "304-305",
+   "quote": "the leak is the reasoning, not the wording; re-anchoring rewrites converted only 1/11",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "294-295",
+   "quote": "choice-family items on famous/transferable sources blind-solve near-totally, and *argument*-analysis items are the worst offenders because the reasoning itself leaks.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "305-306",
+   "quote": "The one converting rewrite was a **text_entry item whose answer is a verbatim passage phrase**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "311",
+   "quote": "use **original/obscure passages for *assessment*** (famous sources stay for *teaching*); and",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/load-bearing-rubric.md",
+   "lines": "45-47",
+   "quote": "High-allusion topics are kept for the *teaching* value but carry a mandatory design consequence: items must anchor to passage-specific particulars, never canon facts",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/load-bearing-rubric.md",
+   "lines": "43-45",
+   "quote": "Extremely high allusion density means the knowledge saturates children's media and LLM pretraining — so assessment items over it become answerable *without the passage* (the measured Magellan failure).",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "302",
+   "quote": "choice/EBSR/MSQ-only argument-atom slice on famous primary sources leaked **~98.6%**",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "302-303",
+   "quote": "(66/69 blind-solvable by gpt-4.1; 97.1% by claude-haiku-4-5)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "303-304",
+   "quote": "items testing transferable argument-structure reasoning on famous primary sources are blind-solvable by construction",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "304",
+   "quote": "the leak is the reasoning, not the wording;",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/releases/2026-07-26/artifacts/Grade 7 Reading - BrainLift.md",
+   "lines": "311",
+   "quote": "use **original/obscure passages for *assessment*** (famous sources stay for *teaching*)",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "51-52",
+   "quote": "each through 3 gates + the anti-memorization / invented-particulars screen.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "55-56",
+   "quote": "The redesign defeats the G8 POC's 98.6%-leak failure.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/top-level-docs/HANDOFF_3_KEY_ISSUES.md",
+   "lines": "11",
+   "quote": "6. **Generator 480-item bundle FAILED binding Gate 1** (blind recovery 58–86% vs chance; encyclopedic content).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/dirty-state/ti-courseplans-untracked.tar.gz",
+   "member": "courses/g5-reading/QUESTION_CONVERSION_RETROSPECTIVE.qmd",
+   "lines": "349-351",
+   "quote": "Arbitrary in-text specifics worked for some formerly leaky items: names, titles, similes, counts, or local details with plausible alternates. These forced passage consultation when the detail was not common knowledge.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/courses/g8-reading/review/evidence/case-for-review.md",
+   "lines": "51-52",
+   "quote": "each through 3 gates + the anti-memorization / invented-particulars screen.",
+   "verified": "script"
+  },
+  {
+   "source": "incept-package-hub",
+   "path": "course-packages/courses/g7-reading/review/evidence/validation/standards-coverage-gate.json",
+   "lines": "69",
+   "quote": "never the fully-arbitrary invented sense that let single-text interpret items certify at 0.00.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

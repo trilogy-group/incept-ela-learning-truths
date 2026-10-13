@@ -1,0 +1,48 @@
+{
+ "id": "keep-standards-free-of-pipeline-details",
+ "title": "Keep standards free of pipeline details",
+ "statement": "Keep pipeline and data-format instructions out of a curriculum's descriptions, and don't remove a real constraint from a standard unless it is kept somewhere else.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "alignment",
+  "review"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "A procedure for reviewing edits to a curriculum data store, written from real reviews, sets as its goal never approving an edit that contradicts itself or strips a constraint without a replacement (`shadow/curriculum/.agents/skills/curriculum-pr-review/SKILL.md` line 10). Edits that strip internal field names and typing rules from standards are approved only after checking the repository's schemas: a typing rule that isn't in them was a leaked pipeline detail, and removing it is correct (lines 47 and 143). A removed rule is also fine when the standard's own examples already encode it (line 142).",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "10",
+   "quote": "Goal: a deterministic, batchable review that lands quickly and never approves anything that contradicts itself or strips a constraint without a replacement.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "143",
+   "quote": "If `stimulus_description` / `slope` typing rules don't appear in `schemas/*.schema.json`, they were leaked pipeline details and removal is correct.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-curriculum",
+   "path": ".agents/skills/curriculum-pr-review/SKILL.md",
+   "lines": "142",
+   "quote": "**A removed rule is fine if the examples already encode it.**",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12"
+}

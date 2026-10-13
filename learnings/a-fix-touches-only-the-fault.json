@@ -1,0 +1,136 @@
+{
+ "id": "a-fix-touches-only-the-fault",
+ "title": "A fix touches only the fault",
+ "statement": "A fix a checker proposes changes only the faulty span, keeps the objective and the useful teaching content, and adds no unsupported claim.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "alignment",
+  "integrity"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "An evaluation design for an AI judge lets a correction alter only the span it cites, keep the useful teaching content and the learning objective, and avoid unsupported claims (`uae-education-ai/EVALUATION.md`). Its scoring penalizes unnecessary edits on cases that already follow the rule and vague requests for evidence on cases that can't be decided. The criteria are a design that had not been run.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "27",
+   "quote": "A correction may alter only the cited span, preserve useful teaching content and the learning objective, and avoid unsupported claims.",
+   "verified": "script"
+  },
+  {
+   "source": "uae-education-ai",
+   "path": "EVALUATION.md",
+   "lines": "51",
+   "quote": "penalize unnecessary edits on compliant cases and vague evidence requests on insufficient cases.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/transform.js",
+   "lines": "20",
+   "quote": "YOUR PREVIOUS DRAFT FAILED THESE CHECKS. Fix every one and return the whole JSON again:",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "21, 164",
+   "quote": "\"q\": \"According to Iago, what is his only reason for continuing to serve Othello?\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "111",
+   "quote": "\"value\": 0.56,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/a775ad50ec1c4070.json",
+   "lines": "254",
+   "quote": "\"value\": 0.7,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "423",
+   "quote": "\"sentence_0_2\": \"The phrase \\\"long remember\\\" implies that official speeches leave almost no mark on history.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "658",
+   "quote": "\"value\": 0.48,",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "796",
+   "quote": "\"sentence_0_1\": \"The phrase long remember suggests that spoken dedications carry minimal lasting weight in human history.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-runs",
+   "path": "decisions/be97f27fc4c4a65a.json",
+   "lines": "1017",
+   "quote": "\"value\": 0.31,",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "89-92",
+   "quote": "One licensed form edit exists: where an AUTHORED distractor breaks a form rule (e.g. it leaves the correct answer the single longest or shortest option), the generator may minimally rephrase THAT distractor, recording it in `_gates.form_edits`.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/README.md",
+   "lines": "92-93",
+   "quote": "The stem and the correct option are never touched — the fidelity gate enforces exactly that split.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/base.md",
+   "lines": "31",
+   "quote": "a reader who knows the authored option must still recognize it",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/base.md",
+   "lines": "32-34",
+   "quote": "Replacing a distractor's scenario with a new one is not a form edit, it is a rewrite, and a rewrite of authored content fails the lesson.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "119",
+   "quote": "Do NOT delete the whole third sentence as the finding proposed; deleting it strips the use-today's-word directive and makes L6 weaker than L4/L5/L7, which all keep it. Keep the directive, drop the letter and the colon.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

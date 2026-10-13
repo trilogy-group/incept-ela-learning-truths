@@ -1,0 +1,92 @@
+{
+ "id": "feed-every-ruling-back-to-the-checker",
+ "title": "Feed every ruling back to the checker",
+ "statement": "When a flagged item is ruled fine, record the ruling where the checker reads it, so the same false flag doesn't come back on later runs.",
+ "group": "making-and-reviewing",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "review"
+ ],
+ "stage": "improve",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The content audit for Grade 3 reading lessons decides which unfamiliar words to flag from a grade-3 known-word list. Each time a lesson is adjudicated, a word found to be known is added there, which silences its false flags on every later run, and the audit's notes call the list accumulated judgment, not a static config (`shadow/content-eval/README.md`).",
+ "against": "The list lags the rulings: \"The other high-priority unexplained-word candidates are known at grade 3; I haven't added them to `grade3_known_words.txt`.\" (`shadow/content-eval/reports/G3-U1-L2-review.md`, line 94).",
+ "evidence": [
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "144-145",
+   "quote": "`references/grade3_known_words.txt` is the grade-3 baseline that decides which unfamiliar words are worth flagging.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-content-eval",
+   "path": "README.md",
+   "lines": "145-147",
+   "quote": "It improves every time a lesson is adjudicated — adding a genuinely-known word there silences its false flags across all future runs. Treat it as accumulated judgment, not a static config.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "36-39",
+   "quote": "So a `grade-5.json` run is expected to report **4 findings**, all noise. Treat a 5th as new and adjudicate it. Do not add a suppression list — the whole file is four lines of prose and re-reading it is cheaper than maintaining exact-string exemptions that rot the moment a lesson is edited.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "135-137",
+   "quote": "A `grade-5.json` run is currently EXPECTED to report 4 claim-fidelity, 1 key-integrity and 10 forward-reference findings, all adjudicated or documented as noise. Treat anything beyond those counts as new.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "7-8",
+   "quote": "The rule for adding here: a limit is recorded only after the finding has been checked against the passage and judged, with the evidence written down.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/.agent/RESOURCES.md",
+   "lines": "121-122",
+   "quote": "It is an exact-string list of content that predates a rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "curriculum-gen/checks/KNOWN-LIMITS.md",
+   "lines": "81-82",
+   "quote": "Spot-checked, not adjudicated one by one, so the count is a baseline to beat rather than a ruling",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": ".claude/skills/arc-audit/SKILL.md",
+   "lines": "20-22",
+   "quote": "This worked: zero re-litigated rulings across three agents. An unbriefed agent burns its round re-flagging what a ruling already closed.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/red-team-2026-09-23/PRE-BRIEF.md",
+   "lines": "3-4",
+   "quote": "An unbriefed reviewer re-discovers our own settled decisions and drowns the real gaps.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

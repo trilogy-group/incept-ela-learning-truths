@@ -1,0 +1,42 @@
+{
+ "id": "when-a-question-and-its-text-disagree",
+ "title": "When a question and its text disagree",
+ "statement": "When a question and its text disagree, it is not settled which should change: one rule edits the passage for a vocabulary item, another bars editing it for a quotation.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "stimulus",
+  "alignment"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The course-fix procedure repairs a vocabulary item whose word is not in the passage by editing the passage to use the word in context, never by rewording the stem or deleting the item (`grade3-reading/knowledge_bot/skills/timeback-course-fix/SKILL.md`). The content-integrity check says never to repair a missing quotation by changing the passage unless the passage's own authority is wrong (`grade3-reading/knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md`). The second rule's exception, a passage that is itself wrong, may reconcile the two, but no ruling was found that says so.",
+ "against": "No ruling reconciling the two rules was found.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/handoffs/g3-reading-v2-feedback-2026-07-16/tooling/ti-courseplans-2169d1f/skills/course-content-integrity/SKILL.md",
+   "lines": "171",
+   "quote": "Never repair a missing quote by changing the passage unless the passage authority itself is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/skills/timeback-course-fix/SKILL.md",
+   "lines": "46-47",
+   "quote": "**Vocab word-not-in-passage (NN#5):** FIX by editing the PASSAGE — `PUT {QTI}/stimuli/{id}` to use the word in context. Never reword the stem to dodge it; never delete the item.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

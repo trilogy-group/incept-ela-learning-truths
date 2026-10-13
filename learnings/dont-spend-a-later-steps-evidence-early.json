@@ -1,0 +1,235 @@
+{
+ "id": "dont-spend-a-later-steps-evidence-early",
+ "title": "Don't spend a later step's evidence early",
+ "statement": "No step may use up what a later one teaches or tests.",
+ "example": "One lesson's follow-up keys repeated the guide's line just before them at 1.00 overlap, and measured 0 after the rewrite.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "integrity",
+  "sequence",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A comparison of one course's branched follow-up checks measured how much each key repeated the guide's line just before it: one lesson echoed its answer at 1.00 overlap and another at 0.80, against 0.50 in a third, and both measured 0 after the rewrite; before it, the right answer had been the sentence the guide just said, word for word (`grade3-reading/artifacts/compare-2026-09-23/index.html`). An external audit of four lessons found a vocabulary check whose key reused the teaching card's own example, an early check whose key was the exact line the next page's worked model then 'finds', and a search step whose right answer named two of the three lines the next step asks for (`grade3-reading/artifacts/feedback-inceptbench-2026-09-30/REGISTER.md`). A curriculum audit found an early check that spent the worked model's clue before the model used it (`grade3-reading/artifacts/curriculum-adherence-2026-09-24/REPORT.md`), and a gap list found a goal line that supplied the inference before the model asked for it (`grade3-reading/artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md`). It is the step-to-step form of nothing-gives-the-answer-first. A key that repeats the line just heard, or the example that taught it, tests only echo, and an earlier line that names a later step's evidence or inference leaves that step nothing to do.",
+ "against": "A later run found counter-evidence (`grade3-reading/course-renderer/docs/video/u1-script-critique.md`).",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-23/index.html",
+   "lines": "68",
+   "quote": "Measured across every branched cfu, ours were the outliers: L4 echoed its answer at",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/compare-2026-09-23/index.html",
+   "lines": "77",
+   "quote": "The right answer is the sentence Scout just said, word for word.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "63",
+   "quote": "and it reuses the p2 card's own key concept (bared teeth)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "94",
+   "quote": "p13's key ('John grabbed a wooden sword and stood in front of his little brother.') is the exact line p14's I-do model later 'finds'",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/feedback-inceptbench-2026-09-30/REGISTER.md",
+   "lines": "127",
+   "quote": "The Search step's correct answer names two of the three Step-3 evidence lines directly",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/curriculum-adherence-2026-09-24/REPORT.md",
+   "lines": "112",
+   "quote": "pre-spends the MM clue \"without a mother\"",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/peter-pan-standing-2026-09-11/PP-STANDING.md",
+   "lines": "36",
+   "quote": "L5 goal pre-supplies the inference",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "78",
+   "quote": "You-do step 1 never answers the lesson's question. Its MCQ asks what to hunt FOR, not the question itself; an option set that resolves the question is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/feedback-reconciliation/invariants.dom.txt",
+   "lines": "79",
+   "quote": "checked by validate-blind-solve + validate-question-claims (partial)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "45-47",
+   "quote": "**A6. You-do step 1 never answers the lesson's question.** Its MCQ asks what to hunt FOR, not the question itself; an option set that resolves the question is a leak.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/qa/new-lesson-qa-invariants.md",
+   "lines": "47-49",
+   "quote": "partially automated — validate-blind-solve + validate-question-claims; OWED: fail a step-1 option that keyword-overlaps the you-do question's answer.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "334",
+   "quote": "A plan is not a model answer, and a model answer at this point would remove the writing.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "334",
+   "quote": "The likely reading is that the plan carries what the paragraph has to contain — answer, quote, word, second word, restatement — without supplying the words.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "374",
+   "quote": "A plan or a model answer. A model answer at that point would remove the writing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/prompt-packs/reading-g3/base.md",
+   "lines": "160-161",
+   "quote": "Never use the taught word anywhere in the modelling pages. It is cashed by the child in the independent task.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/authoring/inputs/rule-packs/reading-g3.json",
+   "lines": "186",
+   "quote": "The rule: the taught word NEVER appears in the modelling moment (it pre-answers the model) and MUST be cashed in the independent task. Enforced by vocab:taught-word-withheld-from-model.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/final-u9-review.json",
+   "lines": "43",
+   "quote": "The reading says a long search could suggest doubt, then the independent task asks how Jo could show doubt. It repeats an already supplied interpretation.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "visual-findings-2026-09-07/review-readiness/curriculum-alignment/rebuild/methodology/README.md",
+   "lines": "125",
+   "quote": "Check the entire prior learner-visible transcript, not just the model excerpt.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/handovers/HANDOVER-2026-09-24.md",
+   "lines": "381",
+   "quote": "L7 p16 independent Search key names two of the three actions Step 3 asks for;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/qc-2026-09-29-staging/FINDINGS.md",
+   "lines": "48",
+   "quote": "**MINOR: the p7 reading goal gives the model's answer away.** It names \"the gentle Lost Boys\", and the p14 model then concludes \"gentle, lonely characters\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "authoring/inputs/prompt-packs/reading-g3/base.md",
+   "lines": "160-161",
+   "quote": "Never use the taught word anywhere in the modelling pages. It is cashed by the child in the independent task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/video/u1-script-critique.md",
+   "lines": "244-246",
+   "quote": "The item still requires judging what a section spends most of its words on, which is the skill, so this is a watch item rather than a defect.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "library/text/L36b8ba.txt",
+   "lines": "334",
+   "quote": "A plan is not a model answer, and a model answer at this point would remove the writing.",
+   "verified": "script"
+  },
+  {
+   "source": "course-renderer-draft",
+   "path": "repo/docs/video/u1-script-critique.md",
+   "lines": "242",
+   "quote": "**The video now hands the child the answer to Lesson 1's own main-idea item.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "464",
+   "quote": "a retrieval task that activates a prerequisite without previewing the independent answer;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp4-v4-design.txt",
+   "lines": "80",
+   "quote": "They stay off the two actions saved for the Modelling Moment and the Independent Task (Wendy freeing herself; Peter driving Hook to the railing), so nothing is pre-answered.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/pp3-v3-design.txt",
+   "lines": "80",
+   "quote": "Both on \"but something changes\" content (the raid and the capture), not on the bravery or cruelty evidence, which is saved for the FIND Modelling Moment and Independent Task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/PEDAGOGY-L7-2026-09-05.md",
+   "lines": "223-225",
+   "quote": "None pre-answer the two FIND-target actions (Wendy's rope-freeing, Peter's disarm/slash are deliberately held for p14 and p16 respectively).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "277-278",
+   "quote": "no cross-stop or forward leak (no stop may ask for an I-do/we-do/you-do answer).",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

@@ -1,0 +1,49 @@
+{
+ "id": "reasoning-or-score",
+ "title": "Reasoning or score",
+ "statement": "Whether a judge's own reasoning should overrule its failing score is unsettled, since an item's explanation might steer that reasoning toward a pass.",
+ "group": "not-settled",
+ "role": "context",
+ "facets": [
+  "evaluation",
+  "integrity"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "open-question",
+ "status": "open",
+ "detail": "The judge's instructions include an anti-contradiction step: when its reasoning concludes the content is correct but a score is 0.0, it must change the score to 1.0. An adversarial reading argues that because the judge writes its reasoning before the score is applied, an item explanation templated to read as correct can force a score of 1.0, and proposes letting the rule fire only between the overall score and the individual metrics. No run in the files read isolates the rule's effect. To settle it: score the same items with and without the per-metric rule, against verdicts a person has checked.",
+ "against": "Items that carried the mirror-style explanation the reading blames, under an authority-framed source, still passed only 4 of 10, so the explanation alone did not force passes: \"Result: 4/10 = 40% pass vs. 2/2 = 100% on the no-stimulus control on the same content.\" (icloud-work/aptraining/Cheater/reports/DEAD_HYPOTHESES.md, 9-10)",
+ "evidence": [
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "51-55",
+   "quote": "But because the judge writes reasoning BEFORE the score is applied, a template-driven explanation that prefills the judge's reasoning toward \"content is correct\" will force the score to 1.0 even when the judge's gut would have failed it.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/RUBRIC_BLINDSPOTS.md",
+   "lines": "58-60",
+   "quote": "**Patch:** the self-heal rule should fire ONLY in the overall-score-vs-individual-metric direction (the original intent), not in the per-metric direction.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/Cheater/reports/DEAD_HYPOTHESES.md",
+   "lines": "9-10",
+   "quote": "Result: 4/10 = 40% pass vs. 2/2 = 100% on the no-stimulus control on the same content.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

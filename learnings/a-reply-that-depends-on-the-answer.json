@@ -1,0 +1,417 @@
+{
+ "id": "a-reply-that-depends-on-the-answer",
+ "title": "A reply that depends on the answer",
+ "statement": "Make every reply depend on what the learner actually said, have each hint add what the answer lacks, and test that every branch, including 'I don't know', can fire.",
+ "group": "what-a-student-is-told",
+ "role": "criterion",
+ "facets": [
+  "feedback"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g3",
+  "research"
+ ],
+ "kind": "external-research",
+ "status": "held",
+ "detail": "A research synthesis on the third turn of classroom talk, the reply after a child answers, notes that most instruction and most software stop at a confirmation such as \"good\", the weakest use of the moment (Shute 2008), and that the clearest sign of a real third turn is a next question that uses what the child just said (Nystrand et al. 1997). Its rule is that a reply that would be the same whatever the child said is not a real response and should be rebuilt. A built Grade 3 lesson applies the idea to choice questions: each wrong option is a coded misconception, and its feedback names that mismatch without quoting the key. A hint must add what the answer lacks, and every branch, including the one for 'I don't know', must be able to fire.",
+ "against": "A recast, the reply that restates the learner's idea more fully, often goes unnoticed by children and does not reliably teach one specific point, so where something must be learned exactly the same brainlift prefers asking the learner to say it again in their own words (Lyster & Saito 2010, https://doi.org/10.1017/S0272263109990520). A later run found counter-evidence (`grade3-reading/incept-read-app/docs/G4-SCR-example-native-qti.md`).",
+ "evidence": [
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "71",
+   "quote": "The clearest sign that the app has taken a real third turn is that its next question uses what the child just said (Nystrand et al., 1997). A reply that would read the same no matter what the child answered is not a third turn.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "87",
+   "quote": "If the reply would be the same no matter what the child said, it is not a real response and should be rebuilt.",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "18",
+   "quote": "Most instruction, and most software, stops after the child answers and offers only a confirmation such as “good” before moving on, which is the weakest use of the moment (Shute, 2008).",
+   "verified": "script"
+  },
+  {
+   "source": "downloads",
+   "path": "SUPERSEDED — see v2 (table format)_ WITW Lesson 1 learning walkthrough.md",
+   "lines": "67",
+   "quote": "Each distractor is a coded misconception (a happy place, a cheerful place, a cozy-ordinary thing) and its feedback names the mismatch — “was anyone uneasy there?” — without ever quoting the key.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "185",
+   "quote": "all 18 iter-3 CFUs classify the child down `correct_full/brief/partly/off/silent` by the **hot-text TAP index**; the spoken answer never drives the branch",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "187",
+   "quote": "iter-3 `silent`/\"I don't know\" branch authored + gated in 18/18 but **can never fire** (any tap resolves elsewhere; no timeout / \"I'm not sure\" affordance)",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/course-red-team/references/opportunities-to-respond-brainlift.md",
+   "lines": "71",
+   "quote": "A reply that would read the same no matter what the child answered is not a third turn.",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "16",
+   "quote": "The multi-turn conversation branches on the produced/spoken answer, not on a tap or click index",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "184",
+   "quote": "the reply reads the same no matter what the child said",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "185",
+   "quote": "the spoken answer never drives the branch",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "27-28",
+   "quote": "must be true for EVERY index classified into that branch",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback 4/WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "71",
+   "quote": "A reply that would read the same no matter what the child answered is not a third turn.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/FEEDBACK-LEDGER.md",
+   "lines": "396",
+   "quote": "When I press the hint, it just tells me to say where the hornets go. The answer already does this.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/feedback/feedback 4/WF - Brainlift Opportunities to - 260724-110911.md",
+   "lines": "70",
+   "quote": "because children often do not notice a recast, it does not reliably teach one specific point (Lyster & Saito, 2010).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/course-red-team/references/finding-taxonomy.md",
+   "lines": "187",
+   "quote": "branch authored + gated in 18/18 but **can never fire**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "868",
+   "quote": "**An authored branch nothing can reach is not a feature, it is a file.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-3/BUILD-RULES.md",
+   "lines": "874-875",
+   "quote": "**When you author a branch, name the input that selects it**; if you cannot, it is decoration.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/docs/standards/student-course-quality/versions/2.0.0/GOLDEN-CHECKLIST.qmd",
+   "lines": "97",
+   "quote": "Every branch is reachable in tests; correct, partial, misconception, off-topic, silence, error, and missing-data routes receive semantically appropriate next moves.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-archivist.js",
+   "lines": "237",
+   "quote": "analysis: span ? `Pick one word in \"${strip(span)}\" and say what it suggests.` : \"Pick one word in your quotation and say what it suggests.\",",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "99-100",
+   "quote": "It is now a Jev choice among four authored steps, filled with the student's own words, and shown only when Jev is sure.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/v02/QA.md",
+   "lines": "100-101",
+   "quote": "a paragraph that explains no word got \"pick one word in \"I follow him to serve my turn upon him\" and say what it suggests\" (0.34 s)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "48",
+   "quote": "of seven spoken responses per lesson, **one** got a reply",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "49",
+   "quote": "that could not have been written before the child spoke; two got nothing at all",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/BRAINLIFT.md",
+   "lines": "51",
+   "quote": "Click-feedback is easy to author and reads as responsiveness, so a build can look",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v3/FIXES-LEDGER.md",
+   "lines": "65",
+   "quote": "Was: 5 of 7 spoken responses got a fixed string or nothing",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/verification/README.md",
+   "lines": "144",
+   "quote": "two replies to two different answers may not be the same reply",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "381",
+   "quote": "Asserts no two siblings are equal, no two exceed 0.85 token overlap (a one-noun paraphrase is",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "382",
+   "quote": "the real corpus defect, not an exact copy)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/FEEDBACK-RESPONSES.md",
+   "lines": "133-134",
+   "quote": "This replaced 72 interchangeable \"nice job\" lines.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "391",
+   "quote": "IDENTITY only: three one-sentence acknowledgements may legitimately read alike",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "831",
+   "quote": "An authored branch nothing can reach is not a feature, it is a file.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-review-hub",
+   "path": "course-packages/archive/g3-reading-v4/content-for-analysis/BUILD-RULES.md",
+   "lines": "837-838",
+   "quote": "When you author a branch, name the input that selects it",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/g5-audit/P2-RULESET.md",
+   "lines": "439",
+   "quote": "Recasts don't reliably teach — children don't notice them; when a specific idea must be learned, PROMPT the child to restate it in their own words.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-DECISION-LOG.md",
+   "lines": "33",
+   "quote": "Welcome promises contingent listening",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-DECISION-LOG.md",
+   "lines": "33",
+   "quote": "while every oral/typed turn resolves to an answer-independent recast",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-DECISION-LOG.md",
+   "lines": "33",
+   "quote": "**CONFIRMED VIOLATION → F14**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/pedagogy/modelling-moment-procedures.md",
+   "lines": "868",
+   "quote": "Feedback for varied accept-lists runs one branch per answer family",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "214",
+   "quote": "24.09 signed off (addition)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/process/CONTRACT-SIGNOFFS.md",
+   "lines": "216-219",
+   "quote": "the one authored push is picked by the answer's own words, the first `nudge_if` whose word is in the answer, else `nudge`, so a child who already talked about trust is never told \"You told me what he will do\".",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "17",
+   "quote": "Recasts don't reliably teach — children don't notice them; when a specific idea must be learned, PROMPT the child to restate it in their own words",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/dimensions/D2-opportunities-to-respond.md",
+   "lines": "25",
+   "quote": "The app never restates the correct answer for the child; it prompts the child to complete/say it ('the Earth's gravity always ___?')",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "254",
+   "quote": "Every learner receives the same canned next line.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Perfect-Course-Rulebook.md",
+   "lines": "317",
+   "quote": "no support for “I don’t know”",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "incept-read-app/docs/G4-SCR-example-native-qti.md",
+   "lines": "113-114",
+   "quote": "too-short, verbatim-copy, and non-attempts (gibberish, repeated filler, \"idk\") are caught and forced to a re-type before the LLM even scores.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/codex-history-extract/CODEX-HISTORY-EVERYTHING-OUT.md",
+   "lines": "54-56",
+   "quote": "OTR = cue → response → **third turn**; the third turn is where teaching happens; a reply that reads identically regardless of the child's answer is not a third turn (**answer-dependence test**); quality sign is *uptake*.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transcript/chat-transcript.redacted.txt",
+   "lines": "4333",
+   "quote": "Mentor: respond to what the student actually says, identify the difficulty, and give the smallest useful intervention before letting them try again.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/rules/questions-and-assessment.md",
+   "lines": "382-384",
+   "quote": "many of its items carry one explanation reused as both `_good` and `_bad`, so the identical words come back whether the child was right or wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "sources/Othello_1_Feedback_DevFactory.md",
+   "lines": "41",
+   "quote": "On the quote break-down screen, the input \"fdsf\" receives a courteous Socratic reply. On the same screen a misspelling is silently corrected rather than marked.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "server/api.mjs",
+   "lines": "34",
+   "quote": "Respond to what the student actually wrote. Quote their words back when it helps.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g3-reading/iteration-4/feedback-on-iteration-4/feedback-0806-pedagogy.md",
+   "lines": "50",
+   "quote": "the authored band-0 line is dead code, and the generic line that fires instead asks for a recount on a judgement task.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/arc-audit/REGISTER-2026-09-15.md",
+   "lines": "189",
+   "quote": "REFUTED: F3 (dialogue brief/silent: engine falls back to partial; scorer never emits those bands)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/GRADE5-AUDIT.md",
+   "lines": "393-394",
+   "quote": "every oral/typed turn in the build resolves to a fixed, answer-independent recast regardless of what the student actually said",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/g5-deploy/EVALUATION-API.md",
+   "lines": "64",
+   "quote": "uptake-first: names something specific the student actually said (never generic \"great job\")",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/u4l2-build/BEAT-SPEC.md",
+   "lines": "435-436",
+   "quote": "All five branches must exist and be valid.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Shute 2008",
+   "url": "https://doi.org/10.3102/0034654307313795"
+  },
+  {
+   "ref": "Lyster & Saito 2010",
+   "url": "https://doi.org/10.1017/S0272263109990520"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

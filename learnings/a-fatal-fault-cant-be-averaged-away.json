@@ -1,0 +1,900 @@
+{
+ "id": "a-fatal-fault-cant-be-averaged-away",
+ "title": "A fatal fault can't be averaged away",
+ "statement": "A fatal fault, such as a wrong key, a wrong fact or off-topic content, fails the item, so each needs a blocking check rather than a share of an average.",
+ "example": "A bank of items that a general quality judge had passed turned out 36% leaky.",
+ "group": "ai-judges-and-markers",
+ "role": "method",
+ "facets": [
+  "evaluation",
+  "integrity",
+  "key",
+  "alignment"
+ ],
+ "stage": "measure",
+ "scope": "universal",
+ "domains": [
+  "ap",
+  "g3",
+  "research"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "In the reading project, a general quality benchmark scored answer-leaking items 1.0: a different-family blind solve of a seed bank it had passed found 4/11 confirmed leaks, a 36%-leaky bank, and a generated question it scored 1.0 had a blind-solve rate of 100%. A tuning spec caps a leaking item's reward at 0.2 however clean its structure, so the loop cannot find reward by maximizing all other checks while ignoring the one that matters. A proposal review records a finding about the incumbent course: a 92% mismatch rate in its literary units, 12/13 guiding items asking wrong-subject questions. The project's standard treats items as learning events, so a bad item teaches a false belief. An ambiguous key is a fatal fault too. Such a fault fails the item outright and any set that contains it, whatever its other scores, since an average barely penalises it.",
+ "against": "One note records a call that re-checking items the quality benchmark and a second model had passed was redundant (`grade3-reading/knowledge_bot/knowledge/kb-0072-learnings-from-incept-map-proxy-2026-06-25.qmd`, lines 77-78); a later two-family re-gate found 334 of 353 supposedly safe items leaky (`grade3-reading/knowledge_bot/knowledge/kb-0235-g5-course-build-pipeline-2026-06-23-to-06-30.qmd`, lines 127-129). a veto gives a training loop no graded signal: one reinforcement run aborted because a hard fail forced every candidate's score to 0.0, and its notes say the evaluator was designed as a quality gate, not a reward shaper. The topic check is already a hard fail for some item types, and 0.82 still missed the 0.85 pass mark. A pass-fail gate on its own gives no signal for improving weak output: \"Binary 0/1 from hard-fails gives you nothing to compare. The evaluator was designed as a quality gate, not a reward shaper.\" (`icloud-work/ML learnings/grpo_failures_deep_dive.md`, line 19). 0.82 is still under the 0.85 pass mark (`icloud-work/ML learnings/evaluation_methodology.md`), so the overall score alone failed these items. These are stated designs: nothing here counts how often a veto changed a verdict, and the maths benchmark that auto-rejects invalid keys has no recorded results (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/uae-mathematics.md`, line 131). Not every evaluator in the same work voids. A math content evaluator scores nine criteria, accuracy among them, as pass or fail and averages them: \"Overall score = pass_count / 9\" (`icloud-work/incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/math-content-evaluator.md`, line 109). A reading-question checker passes a question at 0.8 overall, and its single-correct-answer check is one of nine for a choice question, so an item could fail that check and still pass (`icloud-work/incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/README.md`, lines 99-122). The probe doesn't report how the judge scored that item, so it shows the failure such a check is for, not the check at work. In a later run 15 of 26 alignment failures (58%) were a wrong format rather than a wrong topic, so the check's count mixed two causes (`icloud-work/evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md`, line 24). None found. This evidence records the rule and the count it produced, not a check that the vetoed items were worse. The wrong-topic items' 0.82 was still below the evaluator's 0.85 pass mark (`icloud-work/ML learnings/evaluation_methodology.md`, L38). Not every inaccuracy voids an item: the fact audit does not count a date a few years off within the same period as student harm (`icloud-work/inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py`, L139-140), and the base rubric counts only errors that interfere with the targeted task as a stimulus failure (`icloud-work/inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt`, L133). here one critical failure caps the score at 0.84 rather than voiding it; only two critical failures or a failed integrity check send it to 0.0. The cap and the weights are reported from a read of the judge's code, not quoted from it, and the filtering advice is a recommendation, not a measured result. A hard fail is only as good as its reference: with curriculum labels shifted by one period, a grader marked factual accuracy 0 on correct content (`feedback_oracle_source_reconciliation.md`, line 28). The lesson-level rubric still lets an average decide: a lesson fails factual accuracy only when more than 20% of its items do (`shadow/bench/src/inceptbench/prompts/lesson_bundle/evaluation.txt` line 140), so a lesson with a few wrong items can pass. Only 453 of the 1,080 requests had evaluations in that export (`icloud-work/aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md`, lines 7-9), and a count of failure classes does not show what an overall score alone would have let through. The overall score did fail this item, since 0.8 is under the 0.85 pass mark, and for short-answer, long-essay and document-based tasks the evaluator already counts curriculum alignment as a hard fail. As a training reward the same kind of gate failed: the report says a binary hard-fail reward was wrong because reinforcement learning needs gradient signal, not just pass/fail gates.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/docs/standards/item-quality.md",
+   "lines": "9-10",
+   "quote": "**InceptBench ≥0.9 is necessary, not sufficient.** IB grades *instructional* quality — it scored **answer-leaking items 1.0**. So a clean IB score does **not** mean an item is sound.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/AUDIT_ACTIONS.md",
+   "lines": "9-10",
+   "quote": "**Result: 4/11 CONFIRMED leaks, 8/11 answerable-blind, only 3/11 cleanly passage-dependent → a 36%-leaky bank that IB had passed.**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/pr-proposals/ti-courseplans-standards/staged/courses/g5-reading/llm/LLM_SPEC.qmd",
+   "lines": "114-115",
+   "quote": "Observed failure (DAPO epoch 0): model generated `\"What is the primary function of chlorophyll?\"` from a photosynthesis passage. IB score: 1.0. Blind-solve rate: 100%.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/LANE3_LLM.md",
+   "lines": "347",
+   "quote": "The hard cap on `passage_independent_answer` prevents the PPO loop from finding reward by maximizing all other checks while ignoring the one that matters. An item that leaks the answer is worth at most 0.2, regardless of how clean its structure is.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/wiki-research/redteam-standard.md",
+   "lines": "139",
+   "quote": "Items are learning events; a bad item teaches a false belief",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "artifacts/course_approaches_20260616/Course Approaches/Grade 3 Reading - Proposal Review & Synthesis.docx",
+   "lines": "164",
+   "quote": "the 92% mismatch rate in literary units (12/13 guiding items ask wrong-subject questions)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "47",
+   "quote": "The wrong-topic outputs scored 0.82 on InceptBench for a completely different topic.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "122",
+   "quote": "query_relevance - Topic alignment (VETO: <0.4 = auto-reject)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/user_guides/examples.md",
+   "lines": "218",
+   "quote": "Congruent and Similar Triangles",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/user_guides/examples.md",
+   "lines": "223",
+   "quote": "What is the value of x in 3x + 7 = 22?",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/user_guides/examples.md",
+   "lines": "247",
+   "quote": "\"score\": 0.88,",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "47",
+   "quote": "final score is overridden to 0.0 regardless of other evaluator scores",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/docs/legacy/EVALUATORS.md",
+   "lines": "51",
+   "quote": "Prior to v1.4.0, answer verification incorrectly added 0.0 to the average (asymmetric penalty).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "38",
+   "quote": "Pass = overall_score >= 0.85 AND all hard-fail dimensions = 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "40",
+   "quote": "An item can score 0.92 overall and still hard-fail if a single hard-fail dimension drops below 1.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "49",
+   "quote": "LEQ | curriculum_alignment, factual_accuracy",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_failures_deep_dive.md",
+   "lines": "17",
+   "quote": "if factual_accuracy OR curriculum_alignment OR specification_compliance failed, the entire score was forced to 0.0.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/grpo_failures_deep_dive.md",
+   "lines": "19",
+   "quote": "The evaluator was designed as a quality gate, not a reward shaper.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "146",
+   "quote": "The binary reward is specifically better than continuous scores in this paper because continuous rewards get gamed by output style (longer, more confident responses get higher scores even with wrong facts). Binary RAR forces the model to be either fully correct or abstain.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_dpo_grpo_factual.md",
+   "lines": "85",
+   "quote": "FLAME diagnoses a specific problem: conventional SFT+DPO alignment pipelines inadvertently *increase* hallucination because reward signals prioritize helpfulness, verbosity, and fluency over correctness.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "40",
+   "quote": "This is NOT just overall_score ≥ 0.85. An item can score 0.92 overall and still hard-fail if a single hard-fail dimension drops below 1.0. The hard-fail dimensions are binary gates — they must all be perfect.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/prompt_engineering_deep_dive.md",
+   "lines": "70",
+   "quote": "The curriculum facts help non-critical dimensions (educational_accuracy, etc.) enough to push borderline items above the 0.85 threshold, even though they don't help factual_accuracy specifically.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/stage2_postmortem_full.md",
+   "lines": "47",
+   "quote": "The content was HIGH QUALITY. The wrong-topic outputs scored 0.82 on InceptBench for a completely different topic. The model wasn't forgetting facts — it was ignoring instructions.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/research_educational_content_generation.md",
+   "lines": "25",
+   "quote": "2. **Adjacent-topic drift**: Content from a nearby era/domain bleeds in despite topic constraints",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ML learnings/evaluation_methodology.md",
+   "lines": "38",
+   "quote": "**Pass = overall_score >= 0.85 AND all hard-fail dimensions = 1.0**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "87",
+   "quote": "### 3.2 Factual Accuracy (Critical — cascades to parent)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/docs/MCQ_SET_PASS_SPEC.md",
+   "lines": "89",
+   "quote": "**Child aggregation**: If ANY child question has `factual_accuracy = 0.0`, the parent quiz gets `factual_accuracy = 0.0` → C≥1 → INFERIOR.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "163",
+   "quote": "- `factual_accuracy`: If the provided `factual_accuracy failures` count is > 0 → MCQ set factual_accuracy = 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "164",
+   "quote": "- `educational_accuracy`: If the provided `educational_accuracy failure percentage` is > 20% → MCQ set educational_accuracy = 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "2",
+   "quote": "Independent factual-accuracy audit grounded in Wikipedia passages.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "5",
+   "quote": "(typically a different model than ``evaluator``) receives:",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/inceptbench/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "14",
+   "quote": "via ``min(main, audit)`` — if either the main evaluator or the audit catches a factual",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/text-content-evaluator.md",
+   "lines": "110",
+   "quote": "**Query Relevance VETO:** Content with query_relevance < 0.4 is automatically rejected regardless of other scores.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/uae-mathematics.md",
+   "lines": "33",
+   "quote": "Auto-reject if answer key invalid.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/PIPELINE_EVALUATION.md",
+   "lines": "92",
+   "quote": "- Always generates addition problems regardless of topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/inceptapi.com/INCEPT_Benchmarking_Framework.html",
+   "lines": "631",
+   "quote": "Immediate rejection if answer is incorrect or ambiguous",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/reward_training/docs/training/TRAINING_STRATEGY.md",
+   "lines": "99",
+   "quote": "- These are \"sneaky bad\" - look okay but have critical flaws",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "214",
+   "quote": "- **Issue:** The explanation incorrectly interprets x = 0 as “the first month.” The y-intercept corresponds to x = 0 (at opening), not the first month after opening.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "210-211",
+   "quote": "**Question ID:** `cc-math-8-fillin-medium-44`\n- Score: 0.800",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/nova_forge/FAILURE_PATTERN_ANALYSIS.md",
+   "lines": "4",
+   "quote": "**Threshold:** 0.85",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-uae-api-website/bench.inceptapi.com/content/english/pages/math-content-evaluator.md",
+   "lines": "109",
+   "quote": "**Scoring:** Each criterion is evaluated as pass (1.0) or fail (0.0). Overall score = pass_count / 9",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/incept-multilingual-generation/src/external_submodules/reading-question-qc/README.md",
+   "lines": "122",
+   "quote": "- Questions with ≥0.8 overall score are considered \"passed\"",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_main/2026-05-27T1330Z_bm0zjn5z_n100_unit1_RAW_PROBE_REPORT.md",
+   "lines": "37",
+   "quote": "**Concrete symptom** (DBQ sample): asked to generate a DBQ for \"Native American Societies Before European Contact\" (Unit-1 = 1491-1607), the model produced a DBQ about *\"the development of distinct American culture in the 1920s.\"*",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_FAILURE_REPORT.md",
+   "lines": "30",
+   "quote": "**65 out of 79 failed questions** had curriculum alignment issues. This is the **dominant failure mode**.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "evaluator/docs/reports/BENCHMARK_RUN4_REPORT.md",
+   "lines": "24",
+   "quote": "**15 out of 26 curriculum alignment failures (58%) are due to FORMAT MISMATCH.**",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_teacher_data.md",
+   "lines": "52",
+   "quote": "\"hard_fail_dimensions\": [],         // dim names that scored 0.0 (drives DPO REJECTED)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "auto-memory-backup/reference_teacher_data.md",
+   "lines": "72",
+   "quote": "| **CHOSEN** (≥0.85 + no hard fail) | **408** |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "21",
+   "quote": "Users could select \"Seven Years' War\" but get a question about \"African and European musical traditions\".",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/analysis/failure_analysis.md",
+   "lines": "324",
+   "quote": "- Questions set DURING a time period but not ABOUT the period's key content",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/docs/archive/TECHNICAL-DECISIONS.md",
+   "lines": "30",
+   "quote": "4. **Evaluation Alignment**: Pass substandard info to evaluation and score 0.0 if off-topic",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "k_12_social_studies/docs/BENCHMARK-RIGOR-ANALYSIS.md",
+   "lines": "44",
+   "quote": "Our weighted average could theoretically pass with a factual error if other scores are high.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "ap-social-studies-generator/python/benchmark_results/unit_1/diagnosis.md",
+   "lines": "35",
+   "quote": "A factual error was identified in the third question of the set during the individual question evaluation, which voids the factual accuracy of the quiz as a whole.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_984.py",
+   "lines": "6-7",
+   "quote": "Root cause: the DBQ evaluation prompt did not explicitly require the prompt TOPIC to match the requested substandard, only that documents support the analytical task.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/tests/test_evaluator_prompt_rules_984.py",
+   "lines": "9-10",
+   "quote": "Fix: updated dbq_evaluation.txt curriculum_alignment Score 0.0 to require BOTH document support AND topic match; added golden-110 regression entry.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/releases/v1.4.0.md",
+   "lines": "46-48",
+   "quote": "- Answer verification added 0.0 to average (asymmetric penalty) - Penalty magnitude depended on number of other evaluators - Mathematically flawed: 4 evaluators = 25% penalty, 6 evaluators = 16.7% penalty",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/releases/v1.4.0.md",
+   "lines": "69",
+   "quote": "- Consistent hard gate: wrong answer = 0.0 final score",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench/releases/v1.4.0.md",
+   "lines": "70",
+   "quote": "- Gate behavior independent of number of evaluators",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/mcq_set/evaluation.txt",
+   "lines": "163",
+   "quote": "- `factual_accuracy`: If the provided `factual_accuracy failures` count is > 0 → MCQ set factual_accuracy = 0.0",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/closed_ended_evaluation.txt",
+   "lines": "227",
+   "quote": "If a rationale misattributes causality, misstates a mechanism, or contains a clearly incorrect fact — even when the evaluator attempts to dismiss it with \"pedagogical sense,\" \"educational context,\" or similar phrasing — that IS a factual_accuracy failure.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/tools/factual_accuracy_audit.py",
+   "lines": "139-140",
+   "quote": "A few years off within the same period/context is NOT student harm.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "inceptbench-main/src/inceptbench/prompts/question/_base_evaluation.txt",
+   "lines": "133",
+   "quote": "- **Passage-based questions**: Other errors elsewhere in a passage do not constitute a stimulus failure; only errors interfering with the targeted task matter.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "27-28",
+   "quote": "14 dimensions, each binary 0.0/1.0, tiered CRITICAL (`factual_accuracy`, `educational_accuracy`)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "30-31",
+   "quote": "real aggregation is tier-weighted average, then a **CRITICAL veto** caps the score at 0.84 if any CRITICAL metric is 0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "32-33",
+   "quote": "`integrity_check ==0` or >=2 critical-fails -> (0.0,0.0); 1 critical-fail -> (0.55,0.84)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "35",
+   "quote": "pass = >=0.85",
+   "verified": "script"
+  },
+  {
+   "source": "ti-courseplans-audit",
+   "path": "docs/standards/student-course-quality/versions/1.0.0/STANDARD.qmd",
+   "lines": "168",
+   "quote": "Human override cannot erase factual, safety, or integrity failures.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "27-28",
+   "quote": "tiered CRITICAL (`factual_accuracy`, `educational_accuracy`)",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "30-31",
+   "quote": "a **CRITICAL veto** caps the score at 0.84 if any CRITICAL metric is 0",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "knowledge_bot/knowledge/kb-0234-misc-artifacts-gate-eval-checks-recovery.qmd",
+   "lines": "35",
+   "quote": "pass = >=0.85.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "64",
+   "quote": "| `curriculum_alignment` | Critical | Content must match requested standard |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "78",
+   "quote": "| 1 | any | 0.60-0.69 | FAIL |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "incept/README.md",
+   "lines": "63",
+   "quote": "| `factual_accuracy` | Critical | All facts, dates, names must be correct |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/MEMORY.md",
+   "lines": "76",
+   "quote": "`overall` (0-1, holistic; **the threshold 0.85 is on this**)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/MEMORY.md",
+   "lines": "76",
+   "quote": "`factual_accuracy` (binary, critical), `educational_accuracy` (binary, critical)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/achieved.md",
+   "lines": "133",
+   "quote": "Identified BAML/Gemini grader, CRITICAL_VETO_CAP=0.84, critical metrics (factual_accuracy + educational_accuracy 2× weight).",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/.agent/research/best_approach_analysis.md",
+   "lines": "152",
+   "quote": "The fix is **stricter dimension-level filters** (filter on `factual_accuracy = 1.0` per failure_taxonomy.md §5 recommendations), not the overall ≥0.95 score.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "11",
+   "quote": "**Result:** Stage 2 scored 40% vs sft-v4 baseline 60%. Every question type regressed. 9 regressions, 3 improvements vs sft-v4 on the same 30 prompts.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "17",
+   "quote": "Stage 2 generates valid, coherent, well-formed AP content — for the WRONG topic. It ignores `topic`, `time_period`, `unit`, and `qtype` constraints and picks its own topic. Examples:",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "22",
+   "quote": "The content is factually correct about the wrong thing.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "24",
+   "quote": "**Why:** The Stage 2 RAFT training data had zero hard negatives for constraint adherence.",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "stage2_postmortem.md",
+   "lines": "42",
+   "quote": "- Stronger prompt injection at inference time ✗",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "continuous_improvement.md",
+   "lines": "41",
+   "quote": "- No HARD FAIL dimension < 1.0",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "continuous_improvement.md",
+   "lines": "42",
+   "quote": "- Overall score >= 0.70",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "continuous_improvement.md",
+   "lines": "47",
+   "quote": "- `factual_accuracy` — No factual errors",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "continuous_improvement.md",
+   "lines": "48",
+   "quote": "- `answer_validity` — MCQ must have exactly 1 correct answer",
+   "verified": "script"
+  },
+  {
+   "source": "home-agent-memory",
+   "path": "findings_sftv7_20260424.md",
+   "lines": "50-51",
+   "quote": "**Pattern:** scoring_notes contained specific evidence (dates, named events) that\nInceptBench hard-fails when wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "ap-agent-memory",
+   "path": "feedback_oracle_source_reconciliation.md",
+   "lines": "28",
+   "quote": "InceptBench grader marks factual_accuracy = 0 even when content is correct, because the KC claim is wrong.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "3-7",
+   "quote": "distractor_quality is an IMPORTANT-tier metric. When a deterministic guard (or the LLM) scored it 0.0, the guards recomputed the overall via the raw tier-weighted average, which left a single noncritical zero at ~0.91 — above the 0.85 pass threshold — so a question whose distractors are all implausible or giveaway still PASSED.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "7-8",
+   "quote": "Such a question can be answered by elimination without curriculum knowledge, turning it into a logic puzzle.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "12-13",
+   "quote": "so any guard that zeros a metric drives the overall into the failure-pattern band (one noncritical failure -> (0.55, 0.84), capped below pass).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "",
+   "commit": "f7298c7",
+   "lines": "23-24",
+   "quote": "the reproducer flipped from PASS@0.9143 to mean overall 0.78, failing ~80% of runs (distractor_quality=0.0 in 23-25/30)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md",
+   "lines": "24",
+   "quote": "| quality_fail_standard_alignment | 71 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md",
+   "lines": "22",
+   "quote": "| quality_fail_chronology | 11 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md",
+   "lines": "46",
+   "quote": "| mcq_set | quality_fail_standard_alignment:45, quality_fail_schema_or_structure:1, quality_fail_stimulus_quality:1 |",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/parallel-ideas-lab/reports/a0f_failure_map_20260519.md",
+   "lines": "9",
+   "quote": "- Evaluation results in export: 453",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "74",
+   "quote": "- The set fails if ANY single question fails any metric.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq_set.md",
+   "lines": "10",
+   "quote": "IB grades this as one unit; if any question fails, the whole set fails.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "51",
+   "quote": "## PASS criteria (every one must hold)",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/services-ib-generator/runtime_assets/ib_satisfaction_kit_v1/generator_prompts/system_prompt_mcq.md",
+   "lines": "74",
+   "quote": "- Exactly one correct.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining/workspace/comms/from_den/2026-05-23T1538Z_DELIVERED_unit5_mcq_solver_v1_candidate.md",
+   "lines": "29",
+   "quote": "the miss was `Sectional Conflict: Regional Differences` routed to a generic Compromise item and scored `0.8 INFERIOR`.",
+   "verified": "script"
+  },
+  {
+   "source": "icloud-work",
+   "path": "aptraining-crystal-copy-20260521/full-copy/aptraining-root/den-of-ideation/reports/ml_learnings_distilled.md",
+   "lines": "46",
+   "quote": "InceptBench pass is not just `overall_score >= 0.85`; hard-fail dimensions must also be perfect.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "misleads quietly, so gloss_fits must be required, not advisory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "worked-model.js:103: the class check is advisory, so a confident Jev no still ships (the audit advised this).",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/worked-model.js",
+   "lines": "112",
+   "quote": "so it never holds the block, but one Jev did not confirm is not shown",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/quality/calibrate.js",
+   "lines": "79",
+   "quote": "an advisory check still changes what a student",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/glossary.js",
+   "lines": "125",
+   "quote": "required: drafted",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "The calibration numbers come from the label oracle, which answers from the labels themselves, so they prove the wiring and measure nothing.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "21",
+   "quote": "Reversing these events is a factual contradiction, not an alternative interpretation or a spelling/style preference.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "27",
+   "quote": "Thus the two language criteria can pass an answer that fails the recount itself.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "33",
+   "quote": "| Factual false; both language criteria true | Full, score 1 |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "38",
+   "quote": "The native false pass is proven; the independent route probe proves a sufficient policy defect even if the provider correctly marks the factual criterion false.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "62",
+   "quote": "a full band requires both the existing count threshold and every flagged criterion to be freshly true",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ui-audit-2026-09-08/round-5/final-standard-verification/recount-factual-gate/CAUSE-AND-PROPOSAL.md",
+   "lines": "69",
+   "quote": "The flag is not a guarantee that the model never misjudges comprehension.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "623",
+   "quote": "Answerability is checked before aggregate scoring.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "625-626",
+   "quote": "A high average score cannot compensate for a wrong key, an impossible rubric point, a fabricated source, or leaked feedback.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans-wiki/Anatomy-of-a-Perfect-Course.md",
+   "lines": "13",
+   "quote": "A zero in one factor cannot be rescued by polish in another.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/INCEPTBENCH-EVALUATION-CONTRACT.md",
+   "lines": "139-140",
+   "quote": "Hard gates run before aggregate interpretation. One failure fails the record; an average cannot offset it.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/ui-audit/2026-09-09/G3-DELIVERY.md",
+   "lines": "25",
+   "quote": "Numeric thresholds remain unchanged; the current account must also satisfy the factual criterion.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "scripts/qc-judge.mjs",
+   "lines": "5",
+   "quote": "Fails on: a wrong or partial answer marked secure;",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g7-science/brainlifts/script-qc-evidence-v0.1.md",
+   "lines": "54-55",
+   "quote": "The 8 quality dimensions are judged **single-breach-fail** — no averaging",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "_archive/2026-08-13-consolidation/apush-corpus-hardening-20260731-tip.tar.gz",
+   "member": "apush/docs/BRAINLIFT.md",
+   "lines": "742-743",
+   "quote": "One hard-gate failure fails the record. A mean cannot average away a fabricated quotation, ambiguous key, impossible rubric point, or hidden cache read.",
+   "verified": "script"
+  }
+ ],
+ "citations": [
+  {
+   "ref": "Train for Truth, Keep the Skills: Binary Retrieval-Augmented Reward Mitigates Hallucinations (arXiv:2510.17733, 2025)",
+   "url": "https://arxiv.org/abs/2510.17733"
+  },
+  {
+   "ref": "FLAME: Factuality-Aware Alignment for Large Language Models (arXiv:2405.01525, NeurIPS 2024)",
+   "url": "https://arxiv.org/abs/2405.01525"
+  }
+ ],
+ "found_in": [
+  "2026-10-12-3-round-2",
+  "2026-10-12-4-deep-sweep",
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}

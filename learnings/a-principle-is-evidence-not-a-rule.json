@@ -1,0 +1,64 @@
+{
+ "id": "a-principle-is-evidence-not-a-rule",
+ "title": "A principle is evidence, not a rule",
+ "statement": "Treat a teaching principle, or a question generated from one, as evidence for a rule: before it drives generation, state its conditions, effect, scope, precedence, exceptions, conflicts and tests.",
+ "example": "A 562-row corpus of teaching principles mixed evidence, preferences, specifications, findings and policy, and lacked predicates, effects, scope, precedence, exceptions, conflicts and tests.",
+ "group": "generating-with-a-model",
+ "role": "method",
+ "facets": [
+  "generation",
+  "review",
+  "alignment"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "Intake analysis for an experiment on steering generation with teaching rules examined a 562-row corpus of teaching principles and the yes-or-no questions generated from it. Its records mixed evidence, preferences, specifications, findings and policy, and predicates, effects, scope, precedence, exceptions, conflicts and tests were absent, so treating them as executable switches was rejected as a category error. The intake ruled that a principle statement is source evidence, not an executable rule, and the study's closing lessons reject treating source statements as executable rules without typing and review. An approved rule needs its proposition, effect, applicability, exceptions, provenance and tests to be reviewable, and a model may help extract it but may not certify it.",
+ "against": "none found",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "19",
+   "quote": "Records mixed evidence, preferences, specifications, findings, and policy; predicates, effects, scope, precedence, exceptions, conflicts, and tests were absent.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/02-assumption-register.md",
+   "lines": "44",
+   "quote": "The retained source snapshot contains 562 doctrine rows.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/docs/01-goal-and-scope.md",
+   "lines": "33",
+   "quote": "A doctrine statement is source evidence, not already an executable rule.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/llm-instruction-portability-study/docs/04-decision-and-lessons.md",
+   "lines": "39",
+   "quote": "Treating source statements as executable rules without typing and review.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "bias_experiment/experiment-record/evidence/knowledgebot/kb-0131-pedagogy-decision-bank-experiment-intake.qmd",
+   "lines": "254-255",
+   "quote": "`approved` requires the proposition, answer/effect, applicability, exceptions, source provenance, and tests to be reviewable. A model may assist extraction but may not certify its own atom.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13"
+}

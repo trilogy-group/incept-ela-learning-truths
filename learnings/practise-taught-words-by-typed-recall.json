@@ -1,0 +1,186 @@
+{
+ "id": "practise-taught-words-by-typed-recall",
+ "title": "Practise taught words by typed recall",
+ "statement": "After study, practise taught words by typed recall: cue each by its meaning in a one-blank sentence pointing to it alone and containing no form of it; nudge before revealing.",
+ "example": "Code holds a deck when any sentence lacks exactly one blank or contains its word or one of its forms, quotations included.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "practice",
+  "format",
+  "integrity",
+  "key"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "g9"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The 9 October audit of the lesson engine found that the word web lands a lesson's key words face down but nothing makes students practise them. It proposed a set to study in which each word is cued by its meaning in a gap sentence from the text and typed from memory (`g9-transformer-audit/2026-10-09-best-of-everything.json`). The key-words block built from that proposal holds, in code, any sentence that lacks exactly one blank or contains its word or one of its forms anywhere, quotations included. It also asks the judge whether each gap, with its meaning as the cue, points to its own word rather than another word in the deck (`g9/transformer/src/mechanics/key-words.js`, lines 26-31, 75-76 and 92). Its view lists the study set in alphabetical order so no gap lines up with its word, another deck word the writer lists as fitting a gap is not marked a miss, the second miss gives the word, and marking is code only, so a session needs no model and replays exactly (the same file, lines 1-5 and 100-118).",
+ "against": "In the animated version's export the deck becomes a choice: \"In the animated render, keyword_cards offers a choice, not recall, so the full deck appears only in the transformer's own view.\" (`g9-transformer-audit/2026-10-09-best-of-everything.json`, line 1; the export at `g9/transformer/src/glue/animated.js`, line 152). The leak check sees only the forms listed for the deck, plus a prefix match on long words, because a block cannot see the word web's forms (`g9-transformer-audit/2026-10-09-builders.json`, line 1; `g9/transformer/src/mechanics/key-words.js`, line 30). No lesson from the engine has yet been reviewed by a person or used by a student (`g9/transformer/README.md`, line 120). An animated version's export checks the deck with one gap answered by a choice, not typed from memory (`g9/transformer/src/glue/animated.js`, line 152). A later run found: an early-grades vocabulary routine calls a frame where the learner fills the blank with the word a pitfall, since it has the learner say the word rather than explore its meaning (`grade3-reading/ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md`).",
+ "evidence": [
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "Each word is cued by its meaning in a gap sentence from the text, and the student types it from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "26",
+   "quote": "Does the sentence give its word away: the word or one of its forms, anywhere in it, quotations included.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "75",
+   "quote": "Each sentence has exactly one blank",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "92",
+   "quote": "does gap_${i} point to word_${i} rather than to any other word in deck?",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "100",
+   "quote": "the study set in alphabetical order, and the gaps with their cues, so no gap lines up with its word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "116",
+   "quote": "fits the sentence (another accepted word), but the meaning cued is a different word: not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-best-of-everything.json",
+   "lines": "1",
+   "quote": "In the animated render, keyword_cards offers a choice, not recall, so the full deck appears only in the transformer's own view.",
+   "verified": "script"
+  },
+  {
+   "source": "g9-transformer-audit",
+   "path": "2026-10-09-builders.json",
+   "lines": "1",
+   "quote": "KW checks leaks against the deck's own forms: a block cannot see the web's forms.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/README.md",
+   "lines": "120",
+   "quote": "No lesson has been reviewed by a person or used by a student.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "1",
+   "quote": "study a set, then recall each word into a gap. Each word comes back in a sentence about the text with a",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "2",
+   "quote": "blank where it goes, cued by its meaning, and the student types it from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "4",
+   "quote": "gets a nudge, since a taught word is spelled right; the second miss gives the word.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "513",
+   "quote": "Opening.tsx KeywordCards, then the 3D build's recall",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "514",
+   "quote": "memory, cued by its meaning; a miss gets a nudge, the second gives the word",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/web/lesson.js",
+   "lines": "541",
+   "quote": "Study each word and what it means. Then put them away, and put each back into its sentence from memory.",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/threejs-render.js",
+   "lines": "12",
+   "quote": "a key-words deck: study the set, then each word into its gap, cued by its meaning",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/mechanics/key-words.js",
+   "lines": "121",
+   "quote": "The word you want begins with",
+   "verified": "script"
+  },
+  {
+   "source": "g9",
+   "path": "transformer/src/glue/animated.js",
+   "lines": "152",
+   "quote": "check: { prompt: \"Which word fits?\"",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/KeyWords.tsx",
+   "lines": "5",
+   "quote": "A word that fits the sentence but not the meaning cued is not a miss.",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "src/steps/KeyWords.tsx",
+   "lines": "151",
+   "quote": "fits the sentence (another accepted word), but the meaning cued is a different word: not a miss",
+   "verified": "script"
+  },
+  {
+   "source": "othello-archive",
+   "path": "DRAFTS.md",
+   "lines": "405",
+   "quote": "| 359 | alsoFits | \" fits the sentence too. But this meaning is |",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/skills/g3-reading-red-team/references/teaching-moves/vocabulary-use-routine-and-volume.md",
+   "lines": "21",
+   "quote": "Or to fill in the blank with the word admire. … we're really trying to provide an opportunity for them to explore the meaning of the word, not just to say the word.",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl",
+  "2026-10-12-6-transformer-ideas"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

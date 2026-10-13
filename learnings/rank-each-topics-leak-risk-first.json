@@ -1,0 +1,127 @@
+{
+ "id": "rank-each-topics-leak-risk-first",
+ "title": "Rank each topic's leak risk first",
+ "statement": "Before planning lessons or items, rank topics and stories by how much readers and models already know, key nothing to that knowledge, and test the best-known without the text.",
+ "example": "A probe found 6 of 6 sampled two-part evidence items answerable without the passage, explorer items among them answered from prior knowledge.",
+ "group": "writing-questions",
+ "role": "method",
+ "facets": [
+  "integrity",
+  "stimulus"
+ ],
+ "stage": "ground",
+ "scope": "universal",
+ "domains": [
+  "g3"
+ ],
+ "kind": "measured",
+ "status": "held",
+ "detail": "A grade-4 red-team review pulled 6 random two-part evidence items, hid the passage and answered all 6, some from prior knowledge of the real-world facts the course teaches, although the course's rubric gate had passed all six. The course's topic plan then ranked each unit's prior-knowledge risk, highest for its best-known exploration and colonial topics, and set a design consequence for each level: items anchored to the passage's own particulars, and a mandatory cross-family text-hidden check before any item ships. Its topic rubric puts a ceiling on how much a topic's allusion density counts for the same reason: knowledge that saturates children's media and model training makes items answerable without the passage. In a grade-5 assessment, 28 of 36 evaluable items leaked, traced to passages built on widely known domain facts.",
+ "against": "Prior knowledge was not the only cause in that probe: evidence options restating the first part's answer, and distractor tells, also let items leak (`grade3-reading/ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md`, lines 33-35). No measurement shows leaks rising steadily with how well known a topic is. The research note calls its case against the best-known takeaway an argument, not a finding (`grade3-reading/course-renderer/docs/research/g4-u1-l2-the-cyclops.md`, line 442); the lesson plan accepts it on its merits.",
+ "evidence": [
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/topic-selection.md",
+   "lines": "239-242",
+   "quote": "The G4 red team proved the trap empirically: **6/6 sampled EBSR items were blind-solvable, including Magellan/explorer items answerable from prior knowledge.** Knowledge-rich topics make this *worse*, the better we teach world knowledge, the more items become answerable without the passage unless disjointness is designed in.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/topic-selection.md",
+   "lines": "246",
+   "quote": "Items anchor to passage-specific particulars (this voyage's dates/decisions/quotes), never to canon facts; cross-family blind-solve gate mandatory before any item ships",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/load-bearing-rubric.md",
+   "lines": "43-45",
+   "quote": "Extremely high allusion density means the knowledge saturates children's media and LLM pretraining — so assessment items over it become answerable *without the passage* (the measured Magellan failure).",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md",
+   "lines": "31",
+   "quote": "I pulled **6 random EBSR items** live, stripped the passage, and attempted them blind. **6/6 were solvable without the passage:**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md",
+   "lines": "34",
+   "quote": "the knowledge-expedition design makes items about real-world facts (pitch physics, Magellan, explorer funding) answerable by any knowledgeable solver with no passage.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g4-reading/approval-package/RED_TEAM_FINDINGS.md",
+   "lines": "37",
+   "quote": "The rubric gate (item ≥0.85 + lesson-level >20% rule) **passed all six of these items** — so the rubric is demonstrably not a substitute for the empirical run.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/assessments/DESIGN.md",
+   "lines": "89",
+   "quote": "Sequence / match / EBSR (36 evaluable items): **8 cold (22%), 28 leaked (78%)**",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading",
+   "path": "ti-courseplans/courses/g5-reading/assessments/DESIGN.md",
+   "lines": "90",
+   "quote": "Passages rely on widely-known domain facts; a language model can answer items from prior knowledge alone.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "446-450",
+   "quote": "First, it is blind-solvable. \"Odysseus is clever\" is the single most widely known fact about Odysseus, it is the answer Storyworks prints in its own key, and a child who has never read our passage will produce it. A SPINE lesson whose target concept can be stated correctly without reading fails R-Q-3 at the level of the lesson rather than the item.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "content/lesson-plans/g4-u1-l2.json",
+   "lines": "471",
+   "quote": "Against: it is blind-solvable, since Odysseus is clever is the single most widely known fact about him and a child who has never read our passage will produce it, which fails R-Q-3 at the level of the lesson rather than the item",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "506-507",
+   "quote": "It cannot catch a question whose answer a child already holds.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l2-the-cyclops.md",
+   "lines": "514-515",
+   "quote": "The film is rated R, so most nine year olds will not have seen it, but trailers, posters and playground talk are not rated.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "500-504",
+   "quote": "What this makes unusable. Any item whose answer is a plot fact about either episode: - What did Circe do to the men. Answer available verbatim from a television episode broadcast this year.",
+   "verified": "script"
+  },
+  {
+   "source": "grade3-reading-course-renderer",
+   "path": "docs/research/g4-u1-l3-circe-and-the-lotus-eaters.md",
+   "lines": "516-518",
+   "quote": "So the design rule follows from the risk: no item's correct answer may be a plot fact. Every answer must be a motive, a clue selection, or a category judgement, and every option must be quotable from our passage",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-5-full-crawl"
+ ],
+ "added": "2026-10-13",
+ "updated": "2026-10-13"
+}

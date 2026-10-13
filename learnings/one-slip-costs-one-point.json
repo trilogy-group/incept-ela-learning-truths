@@ -1,0 +1,65 @@
+{
+ "id": "one-slip-costs-one-point",
+ "title": "One slip costs one point",
+ "statement": "Score the working separately from the final answer and let later parts credit work that follows from the student's own earlier answer, so a slip costs only one point.",
+ "example": "A correct setup with one arithmetic slip still earns its setup points.",
+ "group": "writing-questions",
+ "role": "criterion",
+ "facets": [
+  "scoring-guide",
+  "marking",
+  "format"
+ ],
+ "stage": null,
+ "scope": "universal",
+ "domains": [
+  "ap"
+ ],
+ "kind": "adopted-rule",
+ "status": "held",
+ "detail": "The evaluator's free-response rules make method credit separable from final-answer credit, so a correct setup with a single arithmetic slip still earns its setup points (`shadow-bench/src/inceptbench/prompts/question/frq_long_evaluation.txt`). A well-formed multi-part item lets a student who erred early still earn later points by crediting work consistent with their own earlier value, and at least one part should not depend on a prior numeric result. A significant-figure slip costs only the point where precision is checked and does not cascade, and the AP Chemistry overlay states the same convention, error carried forward (`shadow-bench/src/inceptbench/prompts/question/ap_chemistry_evaluation.txt`).",
+ "against": "Some rubrics cascade on purpose: '- AUTO-ZERO CASCADE: if Trait 1 = 0, Trait 2 is automatically 0' (`shadow-bench/src/inceptbench/prompts/question/ecr_evaluation.txt`, line 30), in an essay rubric whose first trait is the development of ideas and whose second is conventions.",
+ "evidence": [
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "42-44",
+   "quote": "Method credit is **separable** from the final-answer credit: a correct setup with a single arithmetic slip should still earn the setup point(s).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "109-112",
+   "quote": "- A well-formed multi-part item must allow a student who erred on an early part to still earn later points: later parts should credit work **consistent with the student's own earlier (even if wrong) value**, and at least one part should be answerable **without** depending on a prior numeric result.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/frq_long_evaluation.txt",
+   "lines": "149-150",
+   "quote": "- Significant-figure precision is normally checked at only one or a few designated points and a sig-fig slip costs **only** that point — it does not cascade.",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ap_chemistry_evaluation.txt",
+   "lines": "66-67",
+   "quote": "credit work that is **consistent with a student's earlier answer** (error-carried-forward).",
+   "verified": "script"
+  },
+  {
+   "source": "shadow-bench",
+   "path": "src/inceptbench/prompts/question/ecr_evaluation.txt",
+   "lines": "30",
+   "quote": "- AUTO-ZERO CASCADE: if Trait 1 = 0, Trait 2 is automatically 0",
+   "verified": "script"
+  }
+ ],
+ "citations": [],
+ "found_in": [
+  "2026-10-12-4-deep-sweep"
+ ],
+ "added": "2026-10-12",
+ "updated": "2026-10-13"
+}
