@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build and check the knowledge library and contract, then export public generation inputs."""
 from datetime import datetime, timezone
+import argparse
 import json
 import os
 from pathlib import Path
@@ -42,6 +43,8 @@ def execute():
     directory.mkdir(mode=0o700)
     status = {"state": "running", "run": str(directory.relative_to(ROOT)), "model_calls": 0, "checks": {}}
     steps = {"build": "scripts/build.py", "library": "scripts/check.py", "contract": "contract/scripts/check.py"}
+    if (ROOT / ".local" / "question-examples" / "catalog.json").exists():
+        steps["examples"] = "scripts/question_examples.py"
     try:
         for name, script in steps.items():
             result = subprocess.run([sys.executable, str(ROOT / script)], cwd=ROOT, capture_output=True, text=True)
@@ -66,4 +69,14 @@ def execute():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build/check the library, or collect its pinned question examples.")
+    parser.add_argument("--collect-examples", action="store_true")
+    parser.add_argument("--source-cache", type=Path)
+    args = parser.parse_args()
+    if args.collect_examples:
+        from question_examples import collect
+        print(json.dumps(collect(args.source_cache or ROOT / ".local" / "example-sources"), indent=2))
+        raise SystemExit(0)
+    if args.source_cache is not None:
+        parser.error("--source-cache is used with --collect-examples")
     raise SystemExit(execute())

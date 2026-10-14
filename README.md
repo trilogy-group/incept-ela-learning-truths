@@ -20,6 +20,8 @@ This builds the pages, checks the library and contract, and exports public gener
 
 [knowledge-v1](https://github.com/trilogy-group/incept-ela-learning-truths/tree/knowledge-v1) pins the initial library and shared formats in [baseline.json](baseline.json). Held, contested and open statuses remain intact; this is a research baseline, not academic qualification. Maintain it through specific corrections or dated rulings with evidence. Later changes do not alter this pin; a new baseline needs its own version.
 
+Reference example collection: [examples/sources.json](examples/sources.json) pins the source versions. `python3 run.py --collect-examples` reads matching bytes from `.local/example-sources/` and builds `.local/question-examples/`: `browse.json` gives one example per available source kind, `questions.jsonl` holds the collection, and `catalog.json` records hashes, source pointers, context and coverage gaps. Use `--source-cache <directory>` for another cache. Course snapshots, historical variants, guided tasks and generated formative prompts remain distinguishable. Intended answers are source material, not quality labels. The full corpus stays local; the normal runner checks it when present. The original 40-unit contract and `knowledge-v1` remain pinned.
+
 Stage 0 supplies the structure and reference. Stage 1 runs the starters. Stage 2 needs model generation and evaluator measurements against independent labels. Software checks and exact quotations do not establish question quality or learning gains. Only the library and contract are generator inputs. Public evaluator code and development cases must stay out of generator contexts; independent gold labels and sealed tests belong in separate restricted storage.
 
 <!-- generated: start -->
