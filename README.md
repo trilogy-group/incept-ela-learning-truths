@@ -18,6 +18,8 @@ python3 run.py
 
 This builds the pages, checks the library and contract, and exports public generation inputs to `exports/generator/`. Source checks use the registered research clones. It calls no model. [CLAUDE.md](CLAUDE.md) covers record maintenance.
 
+[knowledge-v1](https://github.com/trilogy-group/incept-ela-learning-truths/tree/knowledge-v1) pins the initial library and shared formats in [baseline.json](baseline.json). Held, contested and open statuses remain intact; this is a research baseline, not academic qualification. Maintain it through specific corrections or dated rulings with evidence. Later changes do not alter this pin; a new baseline needs its own version.
+
 Stage 0 supplies the structure and reference. Stage 1 runs the starters. Stage 2 needs model generation and evaluator measurements against independent labels. Software checks and exact quotations do not establish question quality or learning gains. Only the library and contract are generator inputs. Public evaluator code and development cases must stay out of generator contexts; independent gold labels and sealed tests belong in separate restricted storage.
 
 <!-- generated: start -->

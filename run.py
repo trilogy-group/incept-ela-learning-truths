@@ -51,6 +51,7 @@ def execute():
                 raise ValueError(name + " failed; inspect its saved log")
         bundle = export()
         status.update({"state": "passed-package-checks", "record_count": bundle["record_count"], "exports": bundle["exports"],
+                       "knowledge_baseline": bundle["knowledge_baseline"],
                        "meaning": "Library consistency, committed reference integrity and reported source comparison; no evaluator qualification or learner-quality claim."})
     except (OSError, ValueError, KeyError) as error:
         status.update({"state": "failed", "error": str(error)})

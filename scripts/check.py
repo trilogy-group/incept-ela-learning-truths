@@ -153,6 +153,12 @@ def check_runs():
 
 
 def main():
+    from export_questions import verify_baseline
+    try:
+        baseline = verify_baseline()
+        print(f"{baseline['release']}: baseline verified against its pinned Git source")
+    except (OSError, ValueError, KeyError, subprocess.CalledProcessError):
+        errors.append("baseline.json does not match its pinned Git source")
     check_runs()
     runs = {p.name for p in (ROOT / "research").iterdir() if p.is_dir() and (p / "run.json").exists()}
     seen = set()
