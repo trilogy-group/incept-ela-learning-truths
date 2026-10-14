@@ -525,6 +525,64 @@
       "version_role": "fixed source-main snapshot at intake",
       "authorship": "reference-build implementation drafts and source wording; not individually verified",
       "related_context_source": "three-d-act1"
+    },
+    {
+      "id": "animated-current-main",
+      "repository": "trilogy-group/ela-lessons",
+      "visibility": "private source repository",
+      "cache_repository": "animated",
+      "commit": "4c1e26c8e87891d70cb0d9b3e9163ceb7ce25892",
+      "path": "src/content/othello-1-1.json",
+      "sha256": "d388ae850b7a1e145e4c8bfc06a228642814130d9737599ffd02c0b1acac9bd4",
+      "as_of": "2026-10-14",
+      "adapter": "animated",
+      "version_role": "current-hosted-main-at-refresh",
+      "authorship": "current authored teaching reference; intended answers and draft rubrics remain source material",
+      "baseline": {
+        "designation": "user-designated default golden positive baseline",
+        "scope": "this current authored source only",
+        "independent_quality_label": false,
+        "qualification": "not established"
+      },
+      "hosted": {
+        "entry_points": [
+          "https://main.d2ugg6yjeo6j4t.amplifyapp.com/",
+          "https://main.d2ugg6yjeo6j4t.amplifyapp.com/e1#/intro"
+        ],
+        "bundle_sha256": [
+          "61260fcd0840c525a902817b89de16127e394a905b9f0d68813416a501c7094a",
+          "61260fcd0840c525a902817b89de16127e394a905b9f0d68813416a501c7094a"
+        ],
+        "lesson_semantic_equal_to_main": true,
+        "checked_at": "2026-10-14T15:37:03.520253+00:00"
+      },
+      "refresh_command": "python3 scripts/current_reference.py --refresh"
+    },
+    {
+      "id": "animated-former-current-f1565047",
+      "repository": "trilogy-group/ela-lessons",
+      "visibility": "private source repository",
+      "cache_repository": "animated",
+      "commit": "f1565047f1ab75f2cead15699546bc8723ac4e39",
+      "path": "src/content/othello-1-1.json",
+      "sha256": "50b6d44f206b3d4a6e27030b5cc6fd170c9d7c1b616f4d0ecd241839407b5d96",
+      "as_of": "2026-10-14",
+      "adapter": "animated",
+      "version_role": "former-hosted-main-snapshot",
+      "authorship": "current authored teaching reference; intended answers and draft rubrics remain source material",
+      "hosted": {
+        "entry_points": [
+          "https://main.d2ugg6yjeo6j4t.amplifyapp.com/",
+          "https://main.d2ugg6yjeo6j4t.amplifyapp.com/e1#/intro"
+        ],
+        "bundle_sha256": [
+          "3f5ed45e637c9db9ab1248b4496e960abe51658a6861e3f5c04f35627bd3ce78",
+          "3f5ed45e637c9db9ab1248b4496e960abe51658a6861e3f5c04f35627bd3ce78"
+        ],
+        "lesson_semantic_equal_to_main": true,
+        "checked_at": "2026-10-14T15:30:50.561000+00:00"
+      },
+      "refresh_command": "python3 scripts/current_reference.py --refresh"
     }
   ],
   "not_collected": [

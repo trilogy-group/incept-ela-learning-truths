@@ -21,7 +21,7 @@ from redact import scrub
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / ".local" / "question-examples"
 SOURCE_CONFIG = ROOT / "examples" / "sources.json"
-VERSION = "authored-examples 0.1"
+VERSION = "authored-examples 0.2"
 
 
 def encoded(value):
@@ -420,13 +420,16 @@ def collect(cache_root):
         document, redacted = sanitize(document)
         items, omissions = extract(document, source["adapter"])
         context_path = "contexts/" + source["id"] + ".json"
-        documents[context_path] = encoded(document)
-        for item in items:
+        # Keep native object traversal order as well as ordered arrays, so the
+        # extractor's sequence can be replayed from the saved context.
+        documents[context_path] = (json.dumps(document, ensure_ascii=False, indent=2) + "\n").encode()
+        for extraction_order, item in enumerate(items, 1):
             if at(document, item["pointer"]) != item["native"]:
                 raise ValueError("native source pointer mismatch")
             key = identity(item, document)
             occurrence = {"source_id": source["id"], "pointer": item["pointer"],
-                          "context_pointer": item["context_pointer"], "context": context_path}
+                          "context_pointer": item["context_pointer"], "context": context_path,
+                          "extraction_order": extraction_order}
             if item.get("operation"):
                 occurrence["operation"] = item["operation"]
             if item.get("exposure_status"):
@@ -445,7 +448,9 @@ def collect(cache_root):
                     rows[key]["view"] = item["view"]
             # Two operations may share a native node (e.g. argument rebuttal and
             # explanation); identity also includes the exact authored prompt.
-            if occurrence in rows[key]["occurrences"]:
+            if any({field: value for field, value in previous.items() if field != "extraction_order"}
+                   == {field: value for field, value in occurrence.items() if field != "extraction_order"}
+                   for previous in rows[key]["occurrences"]):
                 raise ValueError("duplicate source occurrence")
             rows[key]["occurrences"].append(occurrence)
         sources.append({**source, "context": context_path, "context_sha256": digest(documents[context_path]),
@@ -536,7 +541,8 @@ def check(directory=DESTINATION, cache_root=None):
         if len(found) != len(expected):
             raise ValueError("source occurrence count differs")
         expected_keys = Counter((identity(item, document), item["pointer"], item["context_pointer"], item.get("operation")) for item in expected)
-        expected_map = {(identity(item, document), item["pointer"]): item for item in expected}
+        expected_map = {(identity(item, document), item["pointer"], item.get("operation")): {**item, "extraction_order": order}
+                        for order, item in enumerate(expected, 1)}
         found_keys = Counter((row["id"], item["pointer"], item["context_pointer"], item.get("operation")) for row, item in found)
         if expected_keys != found_keys:
             raise ValueError("source pointer or example identity differs")
@@ -547,7 +553,11 @@ def check(directory=DESTINATION, cache_root=None):
                 raise ValueError("source wording or key differs")
             if occurrence["context"] != source["context"]:
                 raise ValueError("source context differs")
-            matching = expected_map[(row["id"], occurrence["pointer"])]
+            matching = expected_map[(row["id"], occurrence["pointer"], occurrence.get("operation"))]
+            if occurrence.get("extraction_order") != matching["extraction_order"]:
+                raise ValueError("source extraction order differs: " + source["id"] + " " + occurrence["pointer"]
+                                 + " " + str(occurrence.get("operation")) + " " + str(occurrence.get("extraction_order"))
+                                 + " != " + str(matching["extraction_order"]))
             if occurrence.get("exposure_status") != matching.get("exposure_status"):
                 raise ValueError("source exposure status differs")
             if occurrence.get("context_status") != matching.get("context_status"):
