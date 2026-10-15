@@ -5,8 +5,8 @@ Research and shared formats for the questions lane. Each learning keeps its evid
 The three repositories are:
 
 - [incept-ela-learning-truths](https://github.com/trilogy-group/incept-ela-learning-truths): the public library, proposal and shared contract.
-- [question-generator](https://github.com/trilogy-group/incept-ela-question-generator): the generator. Today it fills two lesson templates without a model.
-- [question-evaluator](https://github.com/trilogy-group/incept-ela-question-evaluator): the evaluator. It runs on the reference lesson and is not yet qualified.
+- [question-generator](https://github.com/trilogy-group/incept-ela-question-generator): an offline template baseline and an optional model writer using supplied lesson and task context.
+- [question-evaluator](https://github.com/trilogy-group/incept-ela-question-evaluator): standalone field checks and separate development reviews of items and instructional sequences. Academic accuracy is not qualified.
 
 Start with [AGENTS.md](AGENTS.md) and [IDEAS.md](IDEAS.md). [PERFECT-QUESTION.md](PERFECT-QUESTION.md) and [GENERATING.md](GENERATING.md) summarize the records. [RELATED.md](RELATED.md) links the related repositories.
 
@@ -24,7 +24,15 @@ Reference example collection: [examples/sources.json](examples/sources.json) pin
 
 Refresh the current teaching references with `python3 scripts/current_reference.py --refresh`. It compares both hosted layouts with current source main, records routes and asset hashes in a new private snapshot, preserves previous collections and source pins, and refreshes local examples. It keeps distinct references when deployment lags behind source changes. The current authored references are the default positive baselines designated by the user; this supplies no independent quality labels.
 
-Stage 0 supplies the structure and reference. Stage 1 runs the starters. Stage 2 needs model generation and evaluator measurements against independent labels. Software checks and exact quotations do not establish question quality or learning gains. Only the library and contract are generator inputs. Public evaluator code and development cases must stay out of generator contexts; independent gold labels and sealed tests belong in separate restricted storage.
+## Review before the next stage
+
+Implementation snapshot: [evaluator `48d9c43`](https://github.com/trilogy-group/incept-ela-question-evaluator/commit/48d9c43a32c04d0f42d3b9d66d2b2bca3ce16d07), [generator `ed8aae4`](https://github.com/trilogy-group/incept-ela-question-generator/commit/ed8aae40112401e609cc1cf2fb3bf34ba71e7ddf), and the [shared context contract](contract/README.md). The library still contains 1,279 records with their scope and counterevidence.
+
+Checks passed at those versions: 333 evaluator tests, 78 focused tests on Node 18.20.8, and 55 Python plus 42 Node generator tests. The 14-item text and 50-activity native handoffs are producer-generated offline mock fixtures. Supplied context and field pointers resolve; the checks do not establish context completeness, the pointers' role as response evidence or writing quality. The original 40-unit reference remains a separate historical snapshot. No dedicated evaluator or generator UI exists.
+
+Separate read-only Claude Code reviews of the evaluator and generator are complete. Each reviewer received permitted public knowledge and only its own half's internals. The reviews cover concrete defects, unsupported claims and the top three next steps; they are not academic qualification. Documentation claims have been narrowed where needed. Implementation suggestions remain unapplied, with receipts in the evaluator's private evidence index and the raw generator review kept with its owner.
+
+The next evidence gap is academic accuracy: reconstruct accepted and defective cases with complete lesson context, resolve conflicting rulings, and measure a fixed evaluator against independent held-out judgments. Compare it with a strong ordinary AI review given the same context. Software checks, model agreement and exact quotations do not establish question quality or learning gains. Public evaluator code and development cases must stay out of generator contexts; independent gold labels and sealed tests belong in separate restricted storage.
 
 <!-- generated: start -->
 

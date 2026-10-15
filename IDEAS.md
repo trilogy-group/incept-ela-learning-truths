@@ -9,9 +9,9 @@ The generator is the deliverable. The evaluator must earn trust before its appro
 ## Stages
 
 - **Stage 0, shape:** shared formats, the reference example, separation rules and passing checks.
-- **Stage 1, first working loop:** the evaluator runs on the reference; the generator emits valid question sets from two authored templates. Neither claims quality, and the generator does not yet produce the reference lesson.
-- **Stage 2, next:** model generation, starting with the reference reading checks; independently labelled cases; evaluator measurements by format, including false accepts, false rejects, uncertainty and repeat variation. Agree the qualification criteria before testing. This stage needs separate owners and controlled access.
+- **Stage 1, working prototype:** an offline template baseline, an optional model writer, explicit lesson/task context, and standalone item and sequence development review. The 14-item text and 50-activity native handoffs demonstrate mock transport and field binding. They do not establish generation or judging quality.
+- **Stage 2, next:** review both halves separately, then reconstruct independently judged cases with complete learner context. Measure false accepts, false rejects, uncertainty and repeat variation within a declared scope, against a fixed ordinary AI baseline. Agree qualification criteria before testing and keep final holdouts sealed. Wider generation and individual adaptation follow evidence; they are not prerequisites for this review.
 
-The first target is the authored Othello Act 1, Scene 1 lesson in `contract/`: forty extracted units across ten native kinds, including guided practice and paragraph subchecks. Matching its format is only a start. Every generated sequence still needs supported interpretations, useful choices and appropriate challenge.
+The reference target is the authored Othello Act 1, Scene 1 lesson. The pinned `contract/` archive has forty extracted units across ten native kinds, including guided practice and paragraph subchecks. Later source captures and mock transport fixtures keep their own source versions and roles. Matching a format is only a start. Every generated sequence still needs supported interpretations, useful choices and appropriate challenge.
 
 The library retains 1,279 records from six runs, with their evidence and limits. Pages are generated from the records. Research workflows and journals remain available for traceability. No new research run is part of this transfer.
