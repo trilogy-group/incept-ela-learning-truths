@@ -4,6 +4,9 @@ The generator and evaluator share these formats and the public knowledge library
 
 - `lesson-context 0.1`: public lesson context, with the lesson question, keywords and native pages in learner order.
 - `question-set 0.1`: the returned sequence. Each unit keeps its native form and a plain view: choices and key, a prompt and marking rubric, or the format’s named fields.
+- `instructional-plan/0.1`: optional public teaching intent in `course_context.instructional_plan`, defined in [schema/instructional-plan.schema.json](schema/instructional-plan.schema.json). It declares lesson and task purpose, target authority, ordered teaching and response/feedback events, support, expected response evidence and sequence relationships. Native transports carry course context under `lesson-context.native.course_context`.
+
+Use explicit purposes (`instruction`, `practice`, `diagnostic`, `assessment`) and claim scopes (`static-design`, `individualized`, `mastery-claim`). Anchor each event before an item or `END`; distinguish declared, reported observed and conditional events. A reported observation is a supplied claim. Prior teaching of a target is different from disclosure of a particular task answer; only `disclosed_item_ids` records that disclosure. Expected evidence is a design proposal, not a correct-answer label. Source-projected goals remain proposals. Missing plans and unknown learner history must remain explicit unknowns.
 
 The schemas are in schema/. examples/othello-1-1/ preserves the authored Othello Act 1, Scene 1 lesson at source commit `3ed708e126aec14b7456679b9236e01c1081df16`. Its 40 extracted units span ten kinds, including guided tasks and paragraph subchecks. This is a reference shape and target, not forty independent mastery checks or approved quality labels.
 
